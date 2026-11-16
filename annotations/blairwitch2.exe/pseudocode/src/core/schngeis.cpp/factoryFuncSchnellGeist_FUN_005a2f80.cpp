@@ -11,7 +11,7 @@ CSchnellGeist * __cdecl core_schngeis_cpp_factoryFuncSchnellGeist_FUN_005a2f80(v
 {
   CSchnellGeist *pCVar1;
   
-  pCVar1 = (CSchnellGeist *)operator_new(0x11870);
+  pCVar1 = operator_new(0x11870);
   if (pCVar1 == (CSchnellGeist *)0x0) {
     return (CSchnellGeist *)0x0;
   }

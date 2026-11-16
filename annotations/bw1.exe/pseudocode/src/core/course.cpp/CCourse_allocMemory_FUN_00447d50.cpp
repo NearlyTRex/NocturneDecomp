@@ -15,7 +15,7 @@ void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00447d50(CCourse *this_ptr,
   
   core_course_cpp_CCourse_free_FUN_00447ee0(this_ptr);
   this_ptr->len = param_2;
-  pCVar1 = (CCourseFrame *)operator_new_array(param_2 * 0x1c);
+  pCVar1 = operator_new_array(param_2 * 0x1c);
   this_ptr->frames = pCVar1;
   if (pCVar1 != (CCourseFrame *)0x0) {
     return;

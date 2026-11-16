@@ -15,7 +15,7 @@ section .text
     PUSH 0x594                          ; 004d50a0
         ;   Label: core_holycrss.cpp_factoryFuncHolycross_FUN_004d50a0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004d50a5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004d50aa
     TEST EAX,EAX                        ; 004d50ad
     JNZ 0x004d50b2                      ; 004d50af

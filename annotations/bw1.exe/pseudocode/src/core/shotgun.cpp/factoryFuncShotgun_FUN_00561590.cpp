@@ -11,7 +11,7 @@ CShotgun * __cdecl core_shotgun_cpp_factoryFuncShotgun_FUN_00561590(void)
 {
   CShotgun *pCVar1;
   
-  pCVar1 = (CShotgun *)operator_new(0x584);
+  pCVar1 = operator_new(0x584);
   if (pCVar1 == (CShotgun *)0x0) {
     return (CShotgun *)0x0;
   }

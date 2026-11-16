@@ -10,17 +10,17 @@ void __cdecl core_dpart_cpp_CDemonPart_free_FUN_00479ae0(CDemonPart *this_ptr)
 
 {
   if (this_ptr->vertex_positions != (CVector3i *)0x0) {
-    FUN_005c09f0(this_ptr->vertex_positions);
+    debugFree(this_ptr->vertex_positions);
     this_ptr->vertex_positions = (CVector3i *)0x0;
   }
   if (this_ptr->face_data != (SSurfacePlane *)0x0) {
-    FUN_005c09f0(this_ptr->face_data);
+    debugFree(this_ptr->face_data);
     this_ptr->face_data = (SSurfacePlane *)0x0;
   }
   if (this_ptr->vertex_normals == (CVector3i *)0x0) {
     return;
   }
-  FUN_005c09f0(this_ptr->vertex_normals);
+  debugFree(this_ptr->vertex_normals);
   this_ptr->vertex_normals = (CVector3i *)0x0;
   return;
 }

@@ -11,7 +11,7 @@ CTempleStone * __cdecl core_stone_cpp_factoryFuncTempleStone_FUN_00562400(void)
 {
   CTempleStone *pCVar1;
   
-  pCVar1 = (CTempleStone *)operator_new(0x7d8);
+  pCVar1 = operator_new(0x7d8);
   if (pCVar1 == (CTempleStone *)0x0) {
     return (CTempleStone *)0x0;
   }

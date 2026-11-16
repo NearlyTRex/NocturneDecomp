@@ -17,8 +17,8 @@
 ;   core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220
 ;   core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -100,8 +100,8 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005ac8b0
     PUSH EAX                            ; 005ac8b3
-    CALL crt_unknown.c_FUN_005b7fce     ; 005ac8b4
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 005ac8b4
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 005ac8b9
     MOV EAX,EBX                         ; 005ac8bc
     POP ESI                             ; 005ac8be
@@ -109,8 +109,8 @@ section .text
     RET                                 ; 005ac8c0
     PUSH EAX                            ; 005ac8c1
         ;   Label: LAB_005ac8c1
-    CALL crt_unknown.c_FUN_005b7fdc     ; 005ac8c2
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 005ac8c2
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 005ac8c7
     MOV EAX,EBX                         ; 005ac8ca
     POP ESI                             ; 005ac8cc

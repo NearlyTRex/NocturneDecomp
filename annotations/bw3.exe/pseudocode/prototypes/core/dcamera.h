@@ -145,6 +145,10 @@ int __cdecl CDemonCamera::sampleLightingAntialiased(CDemonCamera *this_ptr,CVect
 // Address: 0044bb00
 int __cdecl CDemonCamera::calculateAttenuatedDirectionalLight(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
 
+// Original: core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044bc50
+// Address: 0044bc50
+void __cdecl CDemonCamera::saveCameraTransform(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix);
+
 // Original: core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044bfe0
 // Address: 0044bfe0
 void __cdecl CDemonCamera::convertPaletteToDisplayFormat(CDemonCamera *this_ptr);
@@ -228,6 +232,10 @@ void __cdecl blendCoronaTextureSpan(int scanline_y,int x_start,int x_end,SCorona
 // Original: core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690
 // Address: 0044e690
 void __cdecl CDemonCamera::renderGlobeCoronas(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
+
+// Original: core_dcamera.cpp_transformAndStoreVertex_FUN_0044eeb0
+// Address: 0044eeb0
+void __cdecl transformAndStoreVertex(int vertex_index,float x,float y,float z);
 
 // Original: core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20
 // Address: 0044ef20

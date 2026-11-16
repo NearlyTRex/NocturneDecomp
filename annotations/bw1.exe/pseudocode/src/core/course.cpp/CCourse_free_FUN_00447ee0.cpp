@@ -9,7 +9,7 @@
 void __cdecl core_course_cpp_CCourse_free_FUN_00447ee0(CCourse *this_ptr)
 
 {
-  FUN_005c0336(this_ptr->frames);
+  free(this_ptr->frames);
   this_ptr->frames = (CCourseFrame *)0x0;
   this_ptr->len = 0;
   return;

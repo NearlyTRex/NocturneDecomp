@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_004fc040
 ;   core_mission.cpp_CDemonMission_saveActor_FUN_004fc1a0
-;   crt_unknown.c_FUN_005b8010
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5cab4e                       ; 0040ba1e | DAT_005cab4e
     MOV ECX,dword ptr [0x007bc034]      ; 0040ba23 | DAT_007bc034
     PUSH ECX                            ; 0040ba29
-    CALL crt_unknown.c_FUN_005b8010     ; 0040ba2a
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0040ba2a
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040ba2f
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040ba32
     PUSH EBX                            ; 0040ba36

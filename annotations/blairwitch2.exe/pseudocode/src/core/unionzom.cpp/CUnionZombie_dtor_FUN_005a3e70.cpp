@@ -16,12 +16,12 @@ CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZo
   SFollowFormation *pSVar2;
   CClothList *pCVar3;
   CDeformableModelInstance *pCVar4;
-  CUnionZombie *pCVar5;
-  void *ptr;
+  CUnionZombie *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CUnionZombieTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CUnionZombieTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   this_ptr_00 = (this_ptr->base).base.base.base.particle_systems + 4;
@@ -35,12 +35,12 @@ CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZo
                      ((CClothList *)&pSVar2[-1].slots[2].offset.y,0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);
-  pCVar5 = (CUnionZombie *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930
-                     ((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
+  ptr = (CUnionZombie *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                  ((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
   if ((flags & 2) == 0) {
-    return pCVar5;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar5);
-  return pCVar5;
+  debugFreeChecked(ptr);
+  return ptr;
 }

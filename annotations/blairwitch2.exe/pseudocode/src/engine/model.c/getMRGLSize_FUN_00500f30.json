@@ -16,12 +16,6 @@
   },
   "cross_references": [
     {
-      "addr": "005006a0",
-      "from_addr": "005006b0",
-      "name": "FUN_005006a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004079f0",
       "from_addr": "00407a40",
       "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0",
@@ -43,6 +37,12 @@
       "addr": "004dfd50",
       "from_addr": "004dfdba",
       "name": "engine_keyframe.c_recomputeKeyFrameNormals_FUN_004dfd50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005006a0",
+      "from_addr": "005006b0",
+      "name": "engine_model.c_byteswapMRGLData_FUN_005006a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -108,7 +108,7 @@
       {
         "call_addr": "005006b0",
         "call_type": "direct",
-        "caller": "FUN_005006a0",
+        "caller": "engine_model.c_byteswapMRGLData_FUN_005006a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

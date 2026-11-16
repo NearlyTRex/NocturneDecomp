@@ -15,7 +15,7 @@ section .text
     PUSH 0x11858                        ; 005a26a0
         ;   Label: core_fforest.cpp_factoryFuncTwigZombie_FUN_005a26a0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005a26a5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005a26aa
     TEST EAX,EAX                        ; 005a26ad
     JNZ 0x005a26b2                      ; 005a26af

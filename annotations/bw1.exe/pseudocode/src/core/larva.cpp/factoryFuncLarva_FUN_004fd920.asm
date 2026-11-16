@@ -15,7 +15,7 @@ section .text
     PUSH 0xc274                         ; 004fd920
         ;   Label: core_larva.cpp_factoryFuncLarva_FUN_004fd920
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004fd925
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004fd92a
     TEST EAX,EAX                        ; 004fd92d
     JNZ 0x004fd932                      ; 004fd92f

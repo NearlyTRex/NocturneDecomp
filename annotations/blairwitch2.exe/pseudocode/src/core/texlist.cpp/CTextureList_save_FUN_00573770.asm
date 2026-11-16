@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
-;   crt_unknown.c_FUN_005b8010
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
 ; *****************************************************************************
@@ -116,8 +116,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x108]     ; 00573837
     PUSH EAX                            ; 0057383e
     XOR EDI,EDI                         ; 0057383f
-    CALL crt_unknown.c_FUN_005b8010     ; 00573841
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 00573841
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP]             ; 00573846
     ADD ESP,0xc                         ; 00573849
     TEST EDX,EDX                        ; 0057384c
@@ -135,8 +135,8 @@ section .text
     PUSH EAX                            ; 0057386c
     INC EDI                             ; 0057386d
     ADD ESI,0x18                        ; 0057386e
-    CALL crt_unknown.c_FUN_005b8010     ; 00573871
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 00573871
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP]             ; 00573876
     ADD ESP,0x10                        ; 00573879
     CMP EDI,EDX                         ; 0057387c

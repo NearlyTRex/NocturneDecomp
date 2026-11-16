@@ -11,27 +11,20 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040be80(CRuleList *rules,char *pro
 {
   int iVar1;
   int iVar2;
-  char (*pacVar3) [100];
-  char (*pacVar4) [100];
   
   if (DAT_007c3038 != 1) {
-    FUN_005c03c0(DAT_007c3034,"%s{ // %s\n",&DAT_006106c0,property_name);
+    _fprintf(DAT_007c3034,"%s{ // %s\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(1);
-    FUN_005c03c0(DAT_007c3034,"%s%d // ruleCount\n",&DAT_006106c0,rules->list_size)
-    ;
+    _fprintf(DAT_007c3034,"%s%d // ruleCount\n");
     iVar1 = 0;
     if (0 < rules->list_size) {
-      pacVar3 = rules->events;
-      pacVar4 = rules->conditions;
       do {
-        FUN_005c03c0(DAT_007c3034,"%s\"%s\" => \"%s\"\n",&DAT_006106c0,pacVar4,pacVar3);
+        _fprintf(DAT_007c3034,"%s\"%s\" => \"%s\"\n");
         iVar1 = iVar1 + 1;
-        pacVar3 = pacVar3 + 1;
-        pacVar4 = pacVar4 + 1;
       } while (iVar1 < rules->list_size);
     }
     core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(-1);
-    FUN_005c03c0(DAT_007c3034,&DAT_005d2d28,&DAT_006106c0);
+    _fprintf(DAT_007c3034,&DAT_005d2d28);
     return;
   }
   do {

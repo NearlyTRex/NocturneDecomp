@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_array_FUN_005a40df
-;   crt_unknown.c_FUN_005a30c4
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
 ;
 ; *****************************************************************************
 
@@ -50,7 +50,7 @@ section .text
         ;   Label: LAB_00436433
     PUSH EAX                            ; 0043643a
     CALL crt_memory.c_operator_new_array_FUN_005a40df ; 0043643b
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005a40df(uint size)
     ADD ESP,0x4                         ; 00436440
     MOV dword ptr [ESP + 0x20],EAX      ; 00436443
     TEST EAX,EAX                        ; 00436447
@@ -194,8 +194,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 0043658f
         ;   Label: LAB_0043658f
     PUSH ECX                            ; 00436593
-    CALL crt_unknown.c_FUN_005a30c4     ; 00436594
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 00436594
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 00436599
     POP ESI                             ; 0043659c
     ADD ESP,0x30                        ; 0043659d

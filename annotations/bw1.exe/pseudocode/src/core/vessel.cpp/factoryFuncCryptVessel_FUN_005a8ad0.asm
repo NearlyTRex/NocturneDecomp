@@ -15,7 +15,7 @@ section .text
     PUSH 0x7f4                          ; 005a8ad0
         ;   Label: core_vessel.cpp_factoryFuncCryptVessel_FUN_005a8ad0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005a8ad5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005a8ada
     TEST EAX,EAX                        ; 005a8add
     JNZ 0x005a8ae2                      ; 005a8adf

@@ -11,7 +11,7 @@ CGun * __cdecl core_gun_cpp_factoryFuncGun_FUN_004d0f30(void)
 {
   CGun *pCVar1;
   
-  pCVar1 = (CGun *)operator_new(0x594);
+  pCVar1 = operator_new(0x594);
   if (pCVar1 == (CGun *)0x0) {
     return (CGun *)0x0;
   }

@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   crt_unknown.c_FUN_005a3770 at 005a3775
 ;   crt_unknown.c_FUN_005a3e68 at 005a3e8b
 ;   crt_unknown.c_FUN_005a9768 at 005a9806
 ;   crt_unknown.c_FUN_005a9e88 at 005aa030
+;   crt_unknown.c_debugFree_FUN_005a3770 at 005a3775
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006075c4

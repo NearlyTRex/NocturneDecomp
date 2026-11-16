@@ -55,7 +55,7 @@
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_string.c__strcmp_FUN_005a3d00
 ;   crt_string.c__strncpy_FUN_005a4ee0
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
@@ -321,8 +321,8 @@ section .text
         ;   Label: LAB_004c05da
     PUSH EDX                            ; 004c05de
     ADD ESI,0x4                         ; 004c05df
-    CALL crt_unknown.c_FUN_005a3770     ; 004c05e2
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 004c05e2
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 004c05e7
     CMP ESI,EBX                         ; 004c05ea
     JL 0x004c05da                       ; 004c05ec

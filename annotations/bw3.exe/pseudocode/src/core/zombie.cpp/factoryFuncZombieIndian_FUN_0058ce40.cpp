@@ -11,7 +11,7 @@ CZombieIndian * __cdecl core_zombie_cpp_factoryFuncZombieIndian_FUN_0058ce40(voi
 {
   CZombieIndian *pCVar1;
   
-  pCVar1 = (CZombieIndian *)operator_new(0xd14c);
+  pCVar1 = operator_new(0xd14c);
   if (pCVar1 == (CZombieIndian *)0x0) {
     return (CZombieIndian *)0x0;
   }

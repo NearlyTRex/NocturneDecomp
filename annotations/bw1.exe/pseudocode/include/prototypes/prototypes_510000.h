@@ -264,7 +264,7 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_0051f1d0(CMobster *thi
 ECollisionType __cdecl core_mobster_cpp_CMobster_getCollisionType_FUN_0051f310(CMobster *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_0051f330(CMobster *this_ptr,int taunt_category);
 CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_0051f4b0(CMobster *this_ptr,uint flags);
-void FUN_0051f650(SMRGLHeaderExtended *param_1,int param_2);
+void __cdecl engine_model_c_byteswapMRGLData_FUN_0051f650(SMRGLHeaderExtended *mrgl_data,int data_size);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_0051f6d0(char *filename);
 void __cdecl engine_model_c_freeMRGLData_FUN_0051f8a0(SMRGLHeaderExtended *mrgl_data);
 SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_0051f920(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);

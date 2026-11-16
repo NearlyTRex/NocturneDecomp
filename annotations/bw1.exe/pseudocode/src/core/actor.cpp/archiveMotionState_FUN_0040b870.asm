@@ -35,7 +35,7 @@
 ;   core_motion.cpp_CMotionController_load_FUN_00525380
 ;   core_motion.cpp_CMotionController_save_FUN_00525420
 ;   crt_stdio.c_fgetc_FUN_005c0530
-;   crt_unknown.c_FUN_005c03c0
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -115,8 +115,8 @@ section .text
     PUSH 0x5d2af4                       ; 0040b8fd | = "%s{ // %s\n"
     MOV ECX,dword ptr [0x007c3034]      ; 0040b902 | DAT_007c3034
     PUSH ECX                            ; 0040b908
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040b909
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040b909
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040b90e
     PUSH 0x1                            ; 0040b911
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040ad60 ; 0040b913
@@ -138,8 +138,8 @@ section .text
     PUSH 0x5d2aff                       ; 0040b943 | DAT_005d2aff
     MOV EDI,dword ptr [0x007c3034]      ; 0040b948 | DAT_007c3034
     PUSH EDI                            ; 0040b94e
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040b94f
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040b94f
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b954
     POP EDI                             ; 0040b957
     POP EBP                             ; 0040b958

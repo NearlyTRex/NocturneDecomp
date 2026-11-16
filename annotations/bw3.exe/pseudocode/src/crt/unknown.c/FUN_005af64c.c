@@ -12,13 +12,13 @@ void FUN_005af64c(void)
 
 {
   FUN_005b0bb0();
-  if (_DAT_02d25924 != 0) {
-    FUN_005a3770(_DAT_02d25924);
-    _DAT_02d25924 = 0;
+  if (_DAT_02d25924 != (void *)0x0) {
+    debugFree(_DAT_02d25924);
+    _DAT_02d25924 = (void *)0x0;
   }
-  if (_DAT_02d261e0 != 0) {
-    FUN_005a3770(_DAT_02d261e0);
-    _DAT_02d261e0 = 0;
+  if (_DAT_02d261e0 != (void *)0x0) {
+    debugFree(_DAT_02d261e0);
+    _DAT_02d261e0 = (void *)0x0;
   }
   if (_DAT_0060797d != (LPCH)0x0) {
     FreeEnvironmentStringsA(_DAT_0060797d);

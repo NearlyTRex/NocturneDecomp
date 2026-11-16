@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 58,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 17,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 68
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     {
       "addr": "005c03c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
     }
   ],
   "globals": [
@@ -192,26 +192,26 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 8,
       "match": "DAT_005e969f",
       "severity": "mild",
-      "text": "puVar2 = &DAT_005e969f;",
+      "text": "format = &DAT_005e969f;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 11,
       "match": "DAT_005e969a",
       "severity": "mild",
-      "text": "puVar2 = &DAT_005e969a;",
+      "text": "format = &DAT_005e969a;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 18,
       "match": "DAT_005e96ad",
       "severity": "mild",
-      "text": "FUN_005c03c0(file,&DAT_005e96ad);",
+      "text": "_fprintf(file,&DAT_005e96ad);",
       "type": "undefined_data"
     }
   ]

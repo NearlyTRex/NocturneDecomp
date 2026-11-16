@@ -16,16 +16,16 @@ void __cdecl engine_texture_cpp_CTextureCache_replaceTrueColorTexture_FUN_005743
   
   dest = this_ptr->entries + ((texture->base).count & 0xffff);
   if (dest->texture_data != (uchar *)0x0) {
-    FUN_005b86a0(dest->texture_data);
+    debugFree(dest->texture_data);
   }
   if (dest->opacity_data != (uchar *)0x0) {
-    FUN_005b86a0(dest->opacity_data);
+    debugFree(dest->opacity_data);
   }
   if (dest->palette_data != (uchar *)0x0) {
-    FUN_005b86a0(dest->palette_data);
+    debugFree(dest->palette_data);
   }
   if (dest->true_color_data != (uchar *)0x0) {
-    FUN_005b86a0(dest->true_color_data);
+    debugFree(dest->true_color_data);
   }
   pcVar2 = texture->texture_name;
   memset(dest,0,0x60);

@@ -55,7 +55,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0047d230(CStrList *str_
   }
   type_info = &g_CEdButtonTypeInfo;
   iVar9 = iVar2;
-  pvVar3 = (void *)operator_new_array(iVar2 * 0xe4 + 4);
+  pvVar3 = operator_new_array(iVar2 * 0xe4 + 4);
   local_44 = (CEdButton *)__vec_new(pvVar3,iVar9,type_info);
   iVar9 = 0;
   local_18 = 0;
@@ -254,7 +254,7 @@ LAB_0047d33f:
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
   } while (iVar9 == -2);
   pvVar3 = __vec_delete(local_44,&g_CEdButtonTypeInfo);
-  FUN_005a30b6(pvVar3);
+  free(pvVar3);
   DAT_005fba2c = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(g_CEditorToolsPtr);

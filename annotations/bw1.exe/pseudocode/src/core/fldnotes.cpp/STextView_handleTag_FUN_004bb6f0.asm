@@ -188,7 +188,7 @@ section .text
         ;   XREF to: 004bb738 (CONDITIONAL_JUMP)  ; LAB_004bb738
     PUSH 0x2c                           ; 004bb840
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004bb842
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004bb847
     TEST EAX,EAX                        ; 004bb84a
     JZ 0x004bb86f                       ; 004bb84c
@@ -278,7 +278,7 @@ section .text
         ;   XREF to: 004bb9c2 (CONDITIONAL_JUMP)  ; LAB_004bb9c2
     PUSH 0x4c                           ; 004bb93b
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004bb93d
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004bb942
     TEST EAX,EAX                        ; 004bb945
     JZ 0x004bb955                       ; 004bb947
@@ -372,7 +372,7 @@ section .text
         ;   XREF to: 004bba9f (CONDITIONAL_JUMP)  ; LAB_004bba9f
     PUSH 0x118                          ; 004bba13
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004bba18
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004bba1d
     TEST EAX,EAX                        ; 004bba20
     JZ 0x004bba2d                       ; 004bba22

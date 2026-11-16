@@ -9,18 +9,18 @@
 CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00476700(CDoc *this_ptr,uint flags)
 
 {
-  CDoc *pCVar1;
-  void *ptr;
+  CDoc *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CDocTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CDocTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ea980(&this_ptr->base,1);
+  ptr = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ea980(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005c0344(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

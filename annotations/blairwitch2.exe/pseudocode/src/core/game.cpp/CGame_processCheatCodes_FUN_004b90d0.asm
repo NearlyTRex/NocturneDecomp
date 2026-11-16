@@ -1238,7 +1238,7 @@ section .text
     MOV EDI,0x5d7efa                    ; 004b9d87 | DAT_005d7efa
     XOR ESI,ESI                         ; 004b9d8c
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004b9d8e
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004b9d93
     TEST EAX,EAX                        ; 004b9d96
     JZ 0x004ba0b5                       ; 004b9d98

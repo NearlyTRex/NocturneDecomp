@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_memory.c_realloc_FUN_005a3e50
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     JZ 0x005b0bed                       ; 005b0be2
         ;   XREF to: 005b0bed (CONDITIONAL_JUMP)  ; LAB_005b0bed
     PUSH EAX                            ; 005b0be4
-    CALL crt_unknown.c_FUN_005a3770     ; 005b0be5
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005b0be5
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005b0bea
     MOV dword ptr [EBX],0x0             ; 005b0bed
         ;   Label: LAB_005b0bed

@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_malloc_FUN_005a3650
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
@@ -104,8 +104,8 @@ section .text
     POP EDI                             ; 00437ee6
     MOV ESI,dword ptr [ESP + 0x54]      ; 00437ee7
     PUSH ESI                            ; 00437eeb
-    CALL crt_unknown.c_FUN_005a3770     ; 00437eec
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00437eec
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 00437ef1
     ADD ESP,0x68                        ; 00437ef4
     POP EBP                             ; 00437ef7

@@ -15,7 +15,7 @@ section .text
     PUSH 0x11860                        ; 005aa5d0
         ;   Label: core_hellhag.cpp_factoryFuncHag_FUN_005aa5d0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005aa5d5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005aa5da
     TEST EAX,EAX                        ; 005aa5dd
     JNZ 0x005aa5e2                      ; 005aa5df

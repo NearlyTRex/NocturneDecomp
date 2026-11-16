@@ -700,13 +700,38 @@
         "start":"00404620"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00404620",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"engine_3d.c_drawLineStrip3D_FUN_00404620",
+    "ret":"SMRGLHeaderExtended*",
     "vars":{
+      "params":[
+        {
+          "name":"line_strip",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SLineStrip*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -7128,13 +7153,20 @@
         "start":"0042c420"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0042c420",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_0042c420",
+    "ret":"ColorConversionFunc*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -19335,14 +19367,29 @@
         "start":"00478aa0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00478aa0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_dtri.cpp_clipPolygonToTop_FUN_00478aa0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"y_max",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -31918,13 +31965,38 @@
         "start":"004ea6a0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_004ea6a0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"engine_matrix.c_projectToScreen_FUN_004ea6a0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"input_value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -34049,14 +34121,45 @@
         "start":"005006a0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_005006a0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"engine_model.c_byteswapMRGLData_FUN_005006a0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"mrgl_data",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderExtended*"
+        },
+        {
+          "name":"data_size",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -51720,15 +51823,10 @@
         "start":"00594d20"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00594d20",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"core_xform.cpp_clipPolygonStage4_FUN_00594d20",
+    "ret":"void"
   },
   {
     "addr":"005980a0",
@@ -58610,14 +58708,29 @@
         "start":"005b86a0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_005b86a0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"crt_unknown.c_debugFree_FUN_005b86a0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        }
+      ]
     }
   },
   {

@@ -15,11 +15,11 @@
 ; undefined8       Stack[-0x28]:8  local_28
 ;
 ; XREF[6]:
-;   FUN_00451750 at 0045182c
-;   FUN_004518b0 at 00451992
-;   FUN_00451ce0 at 00451dc2
 ;   core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00451a20 at 00451afa
+;   core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00451750 at 0045182c
 ;   core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00451e50 at 00451f32
+;   core_dcube.cpp_clipPolygonAgainstMinY_FUN_004518b0 at 00451992
+;   core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00451ce0 at 00451dc2
 ;   core_dcube.cpp_clipTriangleToAABB_FUN_00453230 at 00453841
 ;
 ; Referenced Globals:

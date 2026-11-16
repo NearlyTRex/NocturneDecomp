@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005c0d10
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     RET                                 ; 0052b153
     PUSH EBX                            ; 0052b154
         ;   Label: LAB_0052b154
-    CALL crt_unknown.c_FUN_005c09f0     ; 0052b155
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0052b155
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0052b15a
     MOV dword ptr [ESI + 0x4],0x0       ; 0052b15d
     MOV byte ptr [EDI],0x0              ; 0052b164

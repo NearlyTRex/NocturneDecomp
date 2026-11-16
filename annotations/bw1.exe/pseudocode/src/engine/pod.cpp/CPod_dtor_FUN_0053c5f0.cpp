@@ -13,7 +13,7 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_0053c5f0(CPod *this_ptr,uint flags)
   
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CPodTypeInfo);
-    FUN_005c0336(ptr);
+    free(ptr);
     return this_ptr;
   }
   this_ptr->vtable = (CPod_vtable *)&PTR_engine_pod_cpp_CPod_dtor_FUN_0053c5f0_00604a34;
@@ -21,6 +21,6 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_0053c5f0(CPod *this_ptr,uint flags)
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_005c0344(this_ptr);
+  debugFreeChecked(this_ptr);
   return this_ptr;
 }

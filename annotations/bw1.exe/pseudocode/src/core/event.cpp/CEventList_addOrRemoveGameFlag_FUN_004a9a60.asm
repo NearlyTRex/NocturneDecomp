@@ -29,9 +29,9 @@
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;   crt_string.c_memmove_FUN_005c25d0
 ;   crt_string.c_strupr_FUN_005c2c20
-;   crt_unknown.c_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -153,8 +153,8 @@ section .text
     PUSH EDI                            ; 004a9b64
     INC EBX                             ; 004a9b65
     ADD ESI,0x20                        ; 004a9b66
-    CALL crt_unknown.c_FUN_005c03c0     ; 004a9b69
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004a9b69
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     MOV ECX,dword ptr [EBP + 0x1908]    ; 004a9b6e
     ADD ESP,0xc                         ; 004a9b74
     CMP EBX,ECX                         ; 004a9b77

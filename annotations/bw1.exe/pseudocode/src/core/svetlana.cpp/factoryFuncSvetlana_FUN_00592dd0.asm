@@ -15,7 +15,7 @@ section .text
     PUSH 0x95630                        ; 00592dd0
         ;   Label: core_svetlana.cpp_factoryFuncSvetlana_FUN_00592dd0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00592dd5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 00592dda
     TEST EAX,EAX                        ; 00592ddd
     JNZ 0x00592de2                      ; 00592ddf

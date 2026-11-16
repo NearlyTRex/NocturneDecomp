@@ -11,7 +11,7 @@ CZombieCemetery * __cdecl core_zombie_cpp_factoryFuncZombieCemetery_FUN_0058cc90
 {
   CZombieCemetery *pCVar1;
   
-  pCVar1 = (CZombieCemetery *)operator_new(0xd14c);
+  pCVar1 = operator_new(0xd14c);
   if (pCVar1 == (CZombieCemetery *)0x0) {
     return (CZombieCemetery *)0x0;
   }

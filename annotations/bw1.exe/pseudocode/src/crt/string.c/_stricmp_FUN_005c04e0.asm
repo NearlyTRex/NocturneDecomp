@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   str2
 ;
 ; XREF[114]:
-;   FUN_005390c0 at 0053914c
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_005380c0 at 005380ef
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_005390c0 at 0053914c
 ;   core_actor.cpp_CDemonActor_load_FUN_0040aed0 at 0040af1a
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_0041ac60 at 0041ac80
 ;   core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 at 0042b2aa

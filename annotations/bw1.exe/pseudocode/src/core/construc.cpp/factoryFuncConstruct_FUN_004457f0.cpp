@@ -11,7 +11,7 @@ CConstruct * __cdecl core_construc_cpp_factoryFuncConstruct_FUN_004457f0(void)
 {
   CConstruct *pCVar1;
   
-  pCVar1 = (CConstruct *)operator_new(0xca6c);
+  pCVar1 = operator_new(0xca6c);
   if (pCVar1 == (CConstruct *)0x0) {
     return (CConstruct *)0x0;
   }

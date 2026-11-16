@@ -16,6 +16,6 @@ void __cdecl engine_mini3d_cpp_free32_FUN_00514cf0(void *ptr)
     _DAT_01d1d404 = 0xdfe;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CMini3D::free32 - NULL pointer being freed");
   }
-  FUN_005c09f0((int)ptr - (uint)*(byte *)((int)ptr + -1));
+  debugFree((void *)((int)ptr - (uint)*(byte *)((int)ptr + -1)));
   return;
 }

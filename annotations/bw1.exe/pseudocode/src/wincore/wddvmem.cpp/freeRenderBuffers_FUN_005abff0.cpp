@@ -11,19 +11,19 @@
 void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_005abff0(void)
 
 {
-  if (DAT_00629010 == 0) {
-    if (_DAT_02c99310 == 0) {
+  if (DAT_00629010 == (void *)0x0) {
+    if (_DAT_02c99310 == (void *)0x0) {
       return;
     }
   }
   else {
-    FUN_005c09f0(DAT_00629010);
-    DAT_00629010 = 0;
-    if (_DAT_02c99310 == 0) {
+    debugFree(DAT_00629010);
+    DAT_00629010 = (void *)0x0;
+    if (_DAT_02c99310 == (void *)0x0) {
       return;
     }
   }
-  FUN_005c09f0(_DAT_02c99310);
+  debugFree(_DAT_02c99310);
   DAT_0071362c = 0;
   return;
 }

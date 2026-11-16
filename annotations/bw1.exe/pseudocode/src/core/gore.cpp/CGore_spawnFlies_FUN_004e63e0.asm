@@ -41,7 +41,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x20]      ; 004e63e7
     PUSH 0x2a20                         ; 004e63eb
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004e63f0
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004e63f5
     TEST EAX,EAX                        ; 004e63f8
     JNZ 0x004e64ba                      ; 004e63fa

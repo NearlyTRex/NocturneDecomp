@@ -428,6 +428,35 @@
     "variadic":false
   },
   {
+    "addr":"004044d0",
+    "calls":[
+      "00404410",
+      "00407df0"
+    ],
+    "conv":"__cdecl",
+    "instructions":50,
+    "method":"drawLineStrip3D",
+    "name":"engine_3d.c_drawLineStrip3D_FUN_004044d0",
+    "params":[
+      {
+        "name":"line_strip",
+        "type":{
+          "kind":"struct",
+          "name":"SLineStrip",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
+    },
+    "tu":"engine/3d.c",
+    "variadic":false
+  },
+  {
     "addr":"00404dd0",
     "calls":[
       "00403920",
@@ -3648,14 +3677,80 @@
     "calls":[
       "00437270"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":118,
-    "method":"FUN_004382d0",
-    "name":"cockpit_ckptutil.c_FUN_004382d0",
+    "method":"blitHorizontallyClippedSprite",
+    "name":"cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004382d0",
+    "params":[
+      {
+        "name":"sprite_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"max_height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"unused_param",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_y_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_stride",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -3752,6 +3847,24 @@
     "ret":{
       "kind":"builtin",
       "name":"int",
+      "ptr":0
+    },
+    "tu":"engine/clipper.c",
+    "variadic":false
+  },
+  {
+    "addr":"0043bed0",
+    "calls":[
+      "0043b8b0"
+    ],
+    "conv":"__cdecl",
+    "instructions":105,
+    "method":"clipPolygonFarPlane",
+    "name":"engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -14840,6 +14953,43 @@
     "variadic":false
   },
   {
+    "addr":"0051f650",
+    "calls":[
+      "005030e0",
+      "0051fee0"
+    ],
+    "conv":"__cdecl",
+    "instructions":46,
+    "method":"byteswapMRGLData",
+    "name":"engine_model.c_byteswapMRGLData_FUN_0051f650",
+    "params":[
+      {
+        "name":"mrgl_data",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderExtended",
+          "ptr":1
+        }
+      },
+      {
+        "name":"data_size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"engine/model.c",
+    "variadic":false
+  },
+  {
     "addr":"0051f6d0",
     "callers":[
       "004fcb40",
@@ -15534,6 +15684,42 @@
       "ptr":0
     },
     "tu":"core/motion.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"005257d0",
+    "calls":[
+      "005030e0"
+    ],
+    "conv":"__cdecl",
+    "instructions":36,
+    "method":"getMpegLayer2AllocationTable",
+    "name":"sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_005257d0",
+    "params":[
+      {
+        "name":"layer",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"mode_extension",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":1
+    },
+    "tu":"sound/mp3.cpp",
     "variadic":false
   },
   {
@@ -23190,14 +23376,25 @@
   },
   {
     "addr":"005b47d0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":131,
-    "method":"FUN_005b47d0",
-    "name":"wincore_winrun.cpp_FUN_005b47d0",
+    "method":"positionMovieWindow",
+    "name":"wincore_winrun.cpp_positionMovieWindow_FUN_005b47d0",
+    "params":[
+      {
+        "name":"parent_window",
+        "type":{
+          "header":"winuser",
+          "kind":"system",
+          "name":"HWND",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/winrun.cpp",

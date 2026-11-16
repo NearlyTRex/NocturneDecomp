@@ -365,6 +365,35 @@
     "variadic":false
   },
   {
+    "addr":"00404620",
+    "calls":[
+      "00404560",
+      "00407fc0"
+    ],
+    "conv":"__cdecl",
+    "instructions":50,
+    "method":"drawLineStrip3D",
+    "name":"engine_3d.c_drawLineStrip3D_FUN_00404620",
+    "params":[
+      {
+        "name":"line_strip",
+        "type":{
+          "kind":"struct",
+          "name":"SLineStrip",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
+    },
+    "tu":"engine/3d.c",
+    "variadic":false
+  },
+  {
     "addr":"00404fa0",
     "calls":[
       "00403970",
@@ -4513,6 +4542,24 @@
     "variadic":false
   },
   {
+    "addr":"0042c420",
+    "callers":[
+      "00516750"
+    ],
+    "conv":"__cdecl",
+    "instructions":2,
+    "method":"getRGBConvertersionFunction",
+    "name":"cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_0042c420",
+    "receiver":false,
+    "ret":{
+      "kind":"funcdef",
+      "name":"ColorConversionFunc",
+      "ptr":1
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"0042c520",
     "callers":[
       "004a7d00",
@@ -8464,6 +8511,34 @@
       "ptr":1
     },
     "tu":"core/dtrace.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00478aa0",
+    "calls":[
+      "00478900"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonToTop",
+    "name":"core_dtri.cpp_clipPolygonToTop_FUN_00478aa0",
+    "params":[
+      {
+        "name":"y_max",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dtri.cpp",
     "variadic":false
   },
   {
@@ -13712,6 +13787,35 @@
     "variadic":false
   },
   {
+    "addr":"004ea6a0",
+    "calls":[
+      "004e8d30",
+      "005b7ff0"
+    ],
+    "conv":"__cdecl",
+    "instructions":53,
+    "method":"projectToScreen",
+    "name":"engine_matrix.c_projectToScreen_FUN_004ea6a0",
+    "params":[
+      {
+        "name":"input_value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "tu":"engine/matrix.c",
+    "variadic":false
+  },
+  {
     "addr":"004ea8a0",
     "cls":"CMelee",
     "conv":"__cdecl",
@@ -14907,6 +15011,43 @@
       "ptr":0
     },
     "tu":"core/mobster.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"005006a0",
+    "calls":[
+      "004e4500",
+      "00500f30"
+    ],
+    "conv":"__cdecl",
+    "instructions":46,
+    "method":"byteswapMRGLData",
+    "name":"engine_model.c_byteswapMRGLData_FUN_005006a0",
+    "params":[
+      {
+        "name":"mrgl_data",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderExtended",
+          "ptr":1
+        }
+      },
+      {
+        "name":"data_size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"engine/model.c",
     "variadic":false
   },
   {
@@ -22225,6 +22366,24 @@
     "variadic":false
   },
   {
+    "addr":"00594d20",
+    "calls":[
+      "005947f0"
+    ],
+    "conv":"__cdecl",
+    "instructions":120,
+    "method":"clipPolygonStage4",
+    "name":"core_xform.cpp_clipPolygonStage4_FUN_00594d20",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/xform.cpp",
+    "variadic":false
+  },
+  {
     "addr":"005980a0",
     "calls":[
       "0040d340",
@@ -24663,14 +24822,24 @@
     "calls":[
       "005b86b0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":5,
-    "method":"FUN_005b86a0",
-    "name":"crt_unknown.c_FUN_005b86a0",
+    "method":"debugFree",
+    "name":"crt_unknown.c_debugFree_FUN_005b86a0",
+    "params":[
+      {
+        "name":"ptr",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"crt/unknown.c",

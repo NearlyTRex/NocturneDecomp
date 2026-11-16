@@ -15,7 +15,7 @@ section .text
     PUSH 0x10b00                        ; 0052a6f0
         ;   Label: core_sentinel.cpp_factoryFuncSentinel_FUN_0052a6f0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0052a6f5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0052a6fa
     TEST EAX,EAX                        ; 0052a6fd
     JNZ 0x0052a702                      ; 0052a6ff

@@ -53,9 +53,21 @@ int __cdecl rayTriangleFloorTest(CDemonTriangle *triangle,CVector3f *position,fl
 // Address: 00490df0
 void __cdecl clipLineToPlane(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
+// Original: core_dtri.cpp_clipPolygonToTop_FUN_00490f90
+// Address: 00490f90
+void __cdecl clipPolygonToTop(float y_max);
+
+// Original: core_dtri.cpp_clipPolygonToBottom_FUN_004910f0
+// Address: 004910f0
+void __cdecl clipPolygonToBottom(float y_min);
+
 // Original: core_dtri.cpp_clipPolygonToRight_FUN_00491260
 // Address: 00491260
 void __cdecl clipPolygonToRight(float x_max);
+
+// Original: core_dtri.cpp_clipPolygonToNear_FUN_00491520
+// Address: 00491520
+void __cdecl clipPolygonToNear(float z_near);
 
 // Original: core_dtri.cpp_clipPolygonToFar_FUN_00491690
 // Address: 00491690

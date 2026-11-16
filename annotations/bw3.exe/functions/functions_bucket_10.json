@@ -7352,13 +7352,20 @@
         "start":"00434e90"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00434e90",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00434e90",
+    "ret":"ColorConversionFunc*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -8154,15 +8161,10 @@
         "start":"0043b09c"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0043b010",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043b010",
+    "ret":"void"
   },
   {
     "addr":"0043f110",
@@ -14933,14 +14935,29 @@
         "start":"00479b10"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00479b10",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_dtri.cpp_clipPolygonToTop_FUN_00479b10",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"y_max",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -29673,13 +29690,53 @@
         "start":"004e5410"
       }
     ],
+    "conv":"__stack_esi",
     "importable":true,
-    "name":"FUN_004e5410",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"engine_matrix.c_transformWorldToView_FUN_004e5410",
+    "ret":"CVector3i*",
     "vars":{
+      "params":[
+        {
+          "name":"input_coords",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"output_coords",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

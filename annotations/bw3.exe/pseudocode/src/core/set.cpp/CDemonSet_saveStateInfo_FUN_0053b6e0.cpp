@@ -10,40 +10,32 @@ void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0053b6e0(CDemonSet *this_p
 
 {
   int iVar1;
-  CDemonSet *pCVar2;
   
-  FUN_005a3140(file_handle,"@// Set state version\n" + 1);
-  FUN_005a3140(file_handle,&DAT_005d08bd,3);
-  FUN_005a3140(file_handle,"// Camera count, enabled list\n");
+  _fprintf(file_handle,"@// Set state version\n" + 1);
+  _fprintf(file_handle,&DAT_005d08bd);
+  _fprintf(file_handle,"// Camera count, enabled list\n");
   iVar1 = 0;
-  FUN_005a3140(file_handle,&DAT_005d08e0,this_ptr->camera_count);
-  pCVar2 = this_ptr;
+  _fprintf(file_handle,&DAT_005d08e0);
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      FUN_005a3140(file_handle,&DAT_005d08e4,pCVar2->cameras[0].enabled);
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
+      _fprintf(file_handle,&DAT_005d08e4);
     } while (iVar1 < this_ptr->camera_count);
   }
   iVar1 = 0;
-  FUN_005a3140(file_handle,"// Camera ambient light\n");
-  pCVar2 = this_ptr;
+  _fprintf(file_handle,"// Camera ambient light\n");
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      FUN_005a3140(file_handle,&DAT_005d0901,(double)pCVar2->cameras[0].ambient_value)
-      ;
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
+      _fprintf(file_handle,&DAT_005d0901);
     } while (iVar1 < this_ptr->camera_count);
   }
   iVar1 = 0;
-  FUN_005a3140(file_handle,"// Camera groups\n");
-  pCVar2 = this_ptr;
+  _fprintf(file_handle,"// Camera groups\n");
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      FUN_005a3140(file_handle,&DAT_005d0917,pCVar2->cameras[0].camera_group);
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
+      _fprintf(file_handle,&DAT_005d0917);
     } while (iVar1 < this_ptr->camera_count);
   }
   return;

@@ -16,7 +16,7 @@
 ;
 ; XREF[12]:
 ;   core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 at 0059a833
-;   engine_clipper.c_FUN_00432880 at 0043293c
+;   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880 at 0043293c
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330 at 00431414
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00433000 at 004330cc
 ;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290 at 0046c3a5

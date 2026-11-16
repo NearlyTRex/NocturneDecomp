@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d7f1b8
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;   engine_font.cpp_CBitFont_dtor_FUN_004c0b60
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
         ;   XREF to: 004c0b60 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004c0b60(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0045e7cb
     PUSH EAX                            ; 0045e7ce
-    CALL crt_unknown.c_FUN_005c0344     ; 0045e7cf
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0045e7cf
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0045e7d4
     XOR EBP,EBP                         ; 0045e7d7
         ;   Label: LAB_0045e7d7
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 004c0b60 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004c0b60(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0045e7ef
     PUSH EAX                            ; 0045e7f2
-    CALL crt_unknown.c_FUN_005c0344     ; 0045e7f3
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0045e7f3
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0045e7f8
     XOR ECX,ECX                         ; 0045e7fb
         ;   Label: LAB_0045e7fb
@@ -84,8 +84,8 @@ section .text
         ;   XREF to: 004c0b60 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004c0b60(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0045e814
     PUSH EAX                            ; 0045e817
-    CALL crt_unknown.c_FUN_005c0344     ; 0045e818
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0045e818
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0045e81d
     XOR EDI,EDI                         ; 0045e820
         ;   Label: LAB_0045e820
@@ -100,8 +100,8 @@ section .text
         ;   XREF to: 004c0b60 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004c0b60(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0045e839
     PUSH EAX                            ; 0045e83c
-    CALL crt_unknown.c_FUN_005c0344     ; 0045e83d
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0045e83d
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0045e842
     XOR EDX,EDX                         ; 0045e845
         ;   Label: LAB_0045e845
@@ -117,8 +117,8 @@ section .text
         ;   XREF to: 004c0b60 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004c0b60(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0045e864
     PUSH EAX                            ; 0045e867
-    CALL crt_unknown.c_FUN_005c0344     ; 0045e868
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0045e868
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0045e86d
     XOR EDI,EDI                         ; 0045e870
         ;   Label: LAB_0045e870
@@ -133,8 +133,8 @@ section .text
         ;   XREF to: 004c0b60 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004c0b60(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0045e889
     PUSH EAX                            ; 0045e88c
-    CALL crt_unknown.c_FUN_005c0344     ; 0045e88d
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0045e88d
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0045e892
     XOR EDX,EDX                         ; 0045e895
         ;   Label: LAB_0045e895
@@ -199,8 +199,8 @@ section .text
         ;   XREF to: 004c0b60 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004c0b60(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0045e92d
     PUSH EAX                            ; 0045e930
-    CALL crt_unknown.c_FUN_005c0344     ; 0045e931
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0045e931
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0045e936
     JMP 0x0045e7b2                      ; 0045e939
         ;   XREF to: 0045e7b2 (UNCONDITIONAL_JUMP)  ; LAB_0045e7b2

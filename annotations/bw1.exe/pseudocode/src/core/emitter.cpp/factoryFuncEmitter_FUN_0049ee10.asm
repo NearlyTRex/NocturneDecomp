@@ -15,7 +15,7 @@ section .text
     PUSH 0x4c0                          ; 0049ee10
         ;   Label: core_emitter.cpp_factoryFuncEmitter_FUN_0049ee10
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0049ee15
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0049ee1a
     TEST EAX,EAX                        ; 0049ee1d
     JNZ 0x0049ee22                      ; 0049ee1f

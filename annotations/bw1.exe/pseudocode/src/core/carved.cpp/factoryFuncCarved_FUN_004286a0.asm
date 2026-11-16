@@ -15,7 +15,7 @@ section .text
     PUSH 0xc2f4                         ; 004286a0
         ;   Label: core_carved.cpp_factoryFuncCarved_FUN_004286a0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004286a5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004286aa
     TEST EAX,EAX                        ; 004286ad
     JNZ 0x004286b2                      ; 004286af

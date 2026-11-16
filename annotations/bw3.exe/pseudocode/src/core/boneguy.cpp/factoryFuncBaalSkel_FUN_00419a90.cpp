@@ -11,7 +11,7 @@ CBaalSkel * __cdecl core_boneguy_cpp_factoryFuncBaalSkel_FUN_00419a90(void)
 {
   CBaalSkel *pCVar1;
   
-  pCVar1 = (CBaalSkel *)operator_new(0xd698);
+  pCVar1 = operator_new(0xd698);
   if (pCVar1 == (CBaalSkel *)0x0) {
     return (CBaalSkel *)0x0;
   }

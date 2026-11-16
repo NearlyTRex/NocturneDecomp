@@ -39,7 +39,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_memory.c_memset_FUN_005b77c0
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_00589430
@@ -103,8 +103,8 @@ section .text
     JZ 0x00588af0                       ; 00588add
         ;   XREF to: 00588af0 (CONDITIONAL_JUMP)  ; LAB_00588af0
     PUSH ECX                            ; 00588adf
-    CALL crt_unknown.c_FUN_005b86a0     ; 00588ae0
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 00588ae0
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     XOR EDI,EDI                         ; 00588ae5
     ADD ESP,0x4                         ; 00588ae7
     MOV dword ptr [0x00622010],EDI      ; 00588aea | DAT_00622010
@@ -114,8 +114,8 @@ section .text
     JZ 0x00588b0b                       ; 00588af8
         ;   XREF to: 00588b0b (CONDITIONAL_JUMP)  ; LAB_00588b0b
     PUSH EBP                            ; 00588afa
-    CALL crt_unknown.c_FUN_005b86a0     ; 00588afb
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 00588afb
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     XOR EDX,EDX                         ; 00588b00
     ADD ESP,0x4                         ; 00588b02
     MOV dword ptr [0x0070c62c],EDX      ; 00588b05 | DAT_0070c62c

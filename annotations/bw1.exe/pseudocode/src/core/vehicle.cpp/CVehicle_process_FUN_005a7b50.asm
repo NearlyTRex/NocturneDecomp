@@ -541,7 +541,7 @@ section .text
     PUSH 0xc340                         ; 005a81e0
         ;   Label: LAB_005a81e0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005a81e5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005a81ea
     TEST EAX,EAX                        ; 005a81ed
     JZ 0x005a81fa                       ; 005a81ef
@@ -554,7 +554,7 @@ section .text
         ;   Label: LAB_005a81fa
     MOV ESI,EAX                         ; 005a81ff
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005a8201
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005a8206
     TEST EAX,EAX                        ; 005a8209
     JZ 0x005a8216                       ; 005a820b

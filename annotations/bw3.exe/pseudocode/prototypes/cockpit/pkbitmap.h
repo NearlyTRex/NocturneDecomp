@@ -25,6 +25,10 @@ void __cdecl CPackedBitmap::reset(CPackedBitmap *this_ptr);
 // Address: 0050f230
 void __cdecl CPackedBitmap::free(CPackedBitmap *this_ptr);
 
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_0050f260
+// Address: 0050f260
+void __cdecl CPackedBitmap::freePackedData(CPackedBitmap *this_ptr);
+
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_0050f280
 // Address: 0050f280
 int __cdecl CPackedBitmap::getTotalMemoryUsage(CPackedBitmap *this_ptr);
@@ -48,6 +52,10 @@ void __cdecl CPackedBitmap::renderWithGlobalClipping(CPackedBitmap *this_ptr,int
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0050f6c0
 // Address: 0050f6c0
 void __cdecl CPackedBitmap::renderIfIntersectsRect(CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right,int rect_bottom);
+
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0050f780
+// Address: 0050f780
+void __cdecl CPackedBitmap::copyNoClip(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910
 // Address: 0050f910

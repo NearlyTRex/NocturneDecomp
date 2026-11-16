@@ -50,7 +50,7 @@
     {
       "addr": "005c09f0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c09f0"
+      "name": "crt_unknown.c_debugFree_FUN_005c09f0"
     }
   ],
   "globals": [
@@ -158,17 +158,17 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(char *)(((int)piVar1",
+      "match": "(char *)(((int)puVar1",
       "severity": "moderate",
-      "text": "if (*(char *)(((int)piVar1 - (int)_DAT_02c9f6d4 >> 2) + (int)_DAT_02c9f6d0) != '\\0') {",
+      "text": "if (*(char *)(((int)puVar1 - (int)_DAT_02c9f6d4 >> 2) + (int)_DAT_02c9f6d0) != '\\0') {",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 13,
-      "match": "(int)piVar1",
+      "match": "(int)puVar1",
       "severity": "moderate",
-      "text": "if (*(char *)(((int)piVar1 - (int)_DAT_02c9f6d4 >> 2) + (int)_DAT_02c9f6d0) != '\\0') {",
+      "text": "if (*(char *)(((int)puVar1 - (int)_DAT_02c9f6d4 >> 2) + (int)_DAT_02c9f6d0) != '\\0') {",
       "type": "pointer_truncation"
     }
   ]

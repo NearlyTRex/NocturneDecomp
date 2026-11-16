@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
-;   crt_unknown.c_FUN_005b8010
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     PUSH 0x5dfde3                       ; 0050429c | = "%s\"%s\",%g // current motion name, c..."
     MOV ECX,dword ptr [EBP + 0x14]      ; 005042a1
     PUSH ECX                            ; 005042a4
-    CALL crt_unknown.c_FUN_005b8010     ; 005042a5
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 005042a5
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x18                        ; 005042aa
     POP EBP                             ; 005042ad
     POP EDI                             ; 005042ae
@@ -82,8 +82,8 @@ section .text
     PUSH 0x5dfe15                       ; 005042c2 | = "%s\"%s\",%g // current motion name, c..."
     MOV ECX,dword ptr [EBP + 0x14]      ; 005042c7
     PUSH ECX                            ; 005042ca
-    CALL crt_unknown.c_FUN_005b8010     ; 005042cb
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 005042cb
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x18                        ; 005042d0
     POP EBP                             ; 005042d3
     POP EDI                             ; 005042d4

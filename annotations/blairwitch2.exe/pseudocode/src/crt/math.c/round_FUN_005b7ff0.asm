@@ -10,9 +10,6 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[218]:
-;   FUN_0043e450 at 0043e5bc
-;   FUN_004ea6a0 at 004ea704
-;   FUN_005044c0 at 00504528
 ;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042ebf0 at 0042edcc
 ;   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_0042ef90 at 0042f0ff
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610 at 0046763b
@@ -20,6 +17,9 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a4ae
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0 at 0040d01d
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 004106e0
+;   core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980 at 0059f9a9
+;   core_bat.cpp_CBat_getBoundingBox_FUN_00411480 at 00411496
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00416d70 at 00416def
 ;   ... and 208 more
 ;
 ; *****************************************************************************

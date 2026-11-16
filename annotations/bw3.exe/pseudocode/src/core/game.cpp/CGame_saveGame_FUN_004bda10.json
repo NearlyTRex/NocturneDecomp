@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 518,
-    "complexity_score": 367,
+    "complexity_score": 414,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 162,
-    "suspect_count": 19,
+    "pseudocode_lines": 159,
+    "suspect_count": 24,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 680
+    "total_lines": 677
   },
   "cross_references": [
     {
@@ -89,6 +89,16 @@
       "name": "crt_stdio.c_fopen_FUN_005a43ec"
     },
     {
+      "addr": "005a3140",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005a3140"
+    },
+    {
+      "addr": "005a54b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_remove_FUN_005a54b0"
+    },
+    {
       "addr": "005a3260",
       "is_variadic": false,
       "name": "crt_string.c__stricmp_FUN_005a3260"
@@ -97,16 +107,6 @@
       "addr": "005a5128",
       "is_variadic": false,
       "name": "crt_string.c_splitpath_FUN_005a5128"
-    },
-    {
-      "addr": "005a3140",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3140"
-    },
-    {
-      "addr": "005a54b0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a54b0"
     },
     {
       "addr": "005a28c0",
@@ -812,7 +812,7 @@
       "line": 75,
       "match": "DAT_005c3580",
       "severity": "mild",
-      "text": "file_handle = _fopen(\"save\\\\$$SAVE$$.TMP\",&DAT_005c3580);",
+      "text": "file = _fopen(\"save\\\\$$SAVE$$.TMP\",&DAT_005c3580);",
       "type": "undefined_data"
     },
     {
@@ -820,7 +820,23 @@
       "line": 80,
       "match": "DAT_007df9c0",
       "severity": "mild",
-      "text": "DAT_007df9c0 = file_handle;",
+      "text": "DAT_007df9c0 = file;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_005c35c2",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005c35c2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 92,
+      "match": "DAT_005c35fa",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005c35fa);",
       "type": "undefined_data"
     },
     {
@@ -833,7 +849,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 101,
+      "match": "DAT_005c360b",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005c360b);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_005c360f",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005c360f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_005c362f",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005c362f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
       "match": "DAT_007df9c0",
       "severity": "mild",
       "text": "DAT_007df9c0 = (_FILE *)0x0;",
@@ -841,7 +881,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 129,
       "match": "DAT_005c365f",
       "severity": "mild",
       "text": "iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_005749d0(&local_1c,local_28c,&DAT_005c365f)",
@@ -849,7 +889,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 137,
       "match": "DAT_005fea0c",
       "severity": "mild",
       "text": "support_trstream_cpp_COutStreamFile_write_FUN_005748e0(&local_1c,&DAT_005fea0c,4);",
@@ -857,7 +897,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 153,
+      "line": 150,
       "match": "DAT_01d225c8",
       "severity": "mild",
       "text": "pcVar3 = &DAT_01d225c8;",
@@ -881,7 +921,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 154,
+      "line": 151,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

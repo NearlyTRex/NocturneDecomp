@@ -15,7 +15,7 @@ section .text
     PUSH 0x374                          ; 0056df70
         ;   Label: core_trigger.cpp_factoryFuncTrigger_FUN_0056df70
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0056df75
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0056df7a
     TEST EAX,EAX                        ; 0056df7d
     JNZ 0x0056df82                      ; 0056df7f

@@ -172,9 +172,9 @@ void __cdecl cockpit_ckptutil_c_optimizedMemcpy_FUN_0042c1d8(void *dest_buffer,v
 void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042c2d2(void *dest_buffer,void *src_buffer,int byte_count);
 void __cdecl cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_0042c3e0(void *output_buffer,void *input_buffer,int pixel_count);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void);
-code * FUN_0042c420(void);
-code * FUN_0042c430(void);
-code * FUN_0042c450(void);
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_0042c420(void);
+code * cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430(void);
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_get16BitConversionFunction_FUN_0042c450(void);
 void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042c520(char *filename,void *buffer,int size);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_0042c670(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042c6f0(char *filename,uchar *output_palette);
@@ -186,9 +186,9 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_0042ce80(void *sprite_d
 void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042cff0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
 void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_0042d230(void *sprite_data,int dest_x,int dest_y,int width,int height);
 void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_0042d390(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
-void cockpit_ckptutil_c_FUN_0042d550(void);
-undefined8 cockpit_ckptutil_c_FUN_0042d5c0(void);
-int cockpit_ckptutil_c_FUN_0042d700(void);
+void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_0042d550(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset);
+void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042d5c0(void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param,int src_y_offset,int src_stride);
+void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_0042d700(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y);
 void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_0042d820(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042d850(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_0042d9f0(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);

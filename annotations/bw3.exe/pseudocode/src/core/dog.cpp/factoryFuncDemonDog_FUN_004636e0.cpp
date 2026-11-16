@@ -11,7 +11,7 @@ CDemonDog * __cdecl core_dog_cpp_factoryFuncDemonDog_FUN_004636e0(void)
 {
   CDemonDog *pCVar1;
   
-  pCVar1 = (CDemonDog *)operator_new(0xd064);
+  pCVar1 = operator_new(0xd064);
   if (pCVar1 == (CDemonDog *)0x0) {
     return (CDemonDog *)0x0;
   }

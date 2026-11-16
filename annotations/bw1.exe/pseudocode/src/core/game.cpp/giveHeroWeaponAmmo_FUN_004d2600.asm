@@ -26,7 +26,7 @@ section .text
         ;   Label: core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600
     PUSH 0x31c                          ; 004d2601
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d2606
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     MOV EBX,EAX                         ; 004d260b
     ADD ESP,0x4                         ; 004d260d
     TEST EAX,EAX                        ; 004d2610

@@ -9,18 +9,18 @@
 CAsciiUnarmor * __cdecl support_codec_cpp_CAsciiUnarmor_dtor_FUN_00441dd0(CAsciiUnarmor *this_ptr,uint flags)
 
 {
-  CAsciiUnarmor *pCVar1;
-  void *ptr;
+  CAsciiUnarmor *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CAsciiUnarmorTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CAsciiUnarmorTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CAsciiUnarmor *)support_codec_cpp_CCodec_dtor_FUN_00440810(&this_ptr->base,1);
+  ptr = (CAsciiUnarmor *)support_codec_cpp_CCodec_dtor_FUN_00440810(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

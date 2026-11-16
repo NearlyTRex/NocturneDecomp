@@ -48,7 +48,7 @@ CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_0045d7c0(CFil
     (*pacVar5)[1] = cVar1;
     pacVar5 = (char (*) [40])(*pacVar5 + 2);
   } while (cVar1 != '\0');
-  this_ptr_00 = (CDemonFilter *)operator_new(0x4c);
+  this_ptr_00 = operator_new(0x4c);
   pCVar3 = (CDemonFilter *)0x0;
   if (this_ptr_00 != (CDemonFilter *)0x0) {
     pCVar3 = core_dfilter_cpp_CDemonFilter_ctor_FUN_0045d950(this_ptr_00);

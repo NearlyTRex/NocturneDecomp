@@ -11,7 +11,7 @@ CSpawner * __cdecl core_spawner_cpp_factoryFuncSpawner_FUN_00563870(void)
 {
   CSpawner *pCVar1;
   
-  pCVar1 = (CSpawner *)operator_new(0x2574);
+  pCVar1 = operator_new(0x2574);
   if (pCVar1 == (CSpawner *)0x0) {
     return (CSpawner *)0x0;
   }

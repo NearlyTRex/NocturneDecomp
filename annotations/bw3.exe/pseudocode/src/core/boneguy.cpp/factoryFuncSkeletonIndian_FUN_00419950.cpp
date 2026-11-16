@@ -11,7 +11,7 @@ CSkeletonIndian * __cdecl core_boneguy_cpp_factoryFuncSkeletonIndian_FUN_0041995
 {
   CSkeletonIndian *pCVar1;
   
-  pCVar1 = (CSkeletonIndian *)operator_new(0xd698);
+  pCVar1 = operator_new(0xd698);
   if (pCVar1 == (CSkeletonIndian *)0x0) {
     return (CSkeletonIndian *)0x0;
   }

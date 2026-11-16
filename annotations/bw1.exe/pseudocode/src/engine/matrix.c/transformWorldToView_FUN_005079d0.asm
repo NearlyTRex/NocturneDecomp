@@ -7,7 +7,7 @@
 ; CVector3i *      Stack[0x4]:4   input_coords
 ;
 ; XREF[1]:
-;   FUN_00509340 at 00509366
+;   engine_matrix.c_projectToScreen_FUN_00509340 at 00509366
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c51d2c

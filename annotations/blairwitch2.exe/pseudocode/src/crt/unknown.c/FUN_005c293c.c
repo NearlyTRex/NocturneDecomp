@@ -2,21 +2,21 @@
 // Address: 005c293c
 // Address Range: [[005c293c, 005c2978]]
 // Convention: unknown
-// Signature: int crt_unknown_c_FUN_005c293c(int param_1)
+// Signature: void * crt_unknown_c_FUN_005c293c(void *param_1)
 
 #include "nocturne.h"
 
-int FUN_005c293c(int param_1)
+void * FUN_005c293c(void *param_1)
 
 {
   uint uVar1;
   
-  if (param_1 == 0) {
+  if (param_1 == (void *)0x0) {
     param_1 = calloc(1,0x000000F4);
     uVar1 = 0x000000F4;
-    if (param_1 != 0) {
-      *(byte *)(param_1 + 0x52) = 1;
-      *(uint *)(param_1 + 0xf0) = uVar1;
+    if (param_1 != (void *)0x0) {
+      *(byte *)((int)param_1 + 0x52) = 1;
+      *(uint *)((int)param_1 + 0xf0) = uVar1;
     }
   }
   FUN_005c4c80(param_1);

@@ -93,10 +93,10 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle *tri
 int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_004783e0(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
 int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_00478550(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
-void FUN_00478aa0(float param_1);
-void FUN_00478c00(float param_1);
+void __cdecl core_dtri_cpp_clipPolygonToTop_FUN_00478aa0(float y_max);
+void __cdecl core_dtri_cpp_clipPolygonToBottom_FUN_00478c00(float y_min);
 void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_00478d70(float x_max);
-void FUN_00479030(float param_1);
+void __cdecl core_dtri_cpp_clipPolygonToNear_FUN_00479030(float z_near);
 void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_004791a0(float z_far);
 int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max);
 int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_00479df0(void);
@@ -151,7 +151,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorToo
 void __cdecl shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(CEditorTools *this_ptr,char *format);
 void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf80(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
-void FUN_0047c060(CEditorTools *param_1,char *param_2);
+void __cdecl shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0047c060(CEditorTools *this_ptr,char *dialog_text);
 int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0047c0f0(CStrList *str_list,char *dialog_title,int dialog_mode);
 int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760(CEditorTools *this_ptr,char *format_string);
 int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0047c7f0(CEditorTools *this_ptr,char *format_string);

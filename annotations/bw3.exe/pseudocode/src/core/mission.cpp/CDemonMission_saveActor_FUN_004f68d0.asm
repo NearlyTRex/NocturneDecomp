@@ -21,7 +21,7 @@
 ;   TerminatedCString s_none_00600670
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3140
+;   crt_stdio.c_fprintf_FUN_005a3140
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH 0x5c89a1                       ; 004f68ed | DAT_005c89a1
     PUSH EBX                            ; 004f68f2
         ;   Label: LAB_004f68f2
-    CALL crt_unknown.c_FUN_005a3140     ; 004f68f3
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004f68f3
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004f68f8
     MOV EDX,dword ptr [ESP + 0x18]      ; 004f68fb
     TEST EDX,EDX                        ; 004f68ff
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 004f6903
     PUSH 0x5c89a6                       ; 004f6904 | = "\t\t// %s\n"
     PUSH EBX                            ; 004f6909
-    CALL crt_unknown.c_FUN_005a3140     ; 004f690a
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004f690a
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004f690f
     POP EBX                             ; 004f6912
     RET                                 ; 004f6913
@@ -67,8 +67,8 @@ section .text
     PUSH 0x5c89af                       ; 004f691c | DAT_005c89af
         ;   Label: LAB_004f691c
     PUSH EBX                            ; 004f6921
-    CALL crt_unknown.c_FUN_005a3140     ; 004f6922
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004f6922
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004f6927
     POP EBX                             ; 004f692a
     RET                                 ; 004f692b

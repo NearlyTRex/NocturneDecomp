@@ -11,7 +11,7 @@ CShadow * __cdecl core_shadow_cpp_factoryFuncShadow_FUN_0053c1d0(void)
 {
   CShadow *pCVar1;
   
-  pCVar1 = (CShadow *)operator_new(0x10b80);
+  pCVar1 = operator_new(0x10b80);
   if (pCVar1 == (CShadow *)0x0) {
     return (CShadow *)0x0;
   }

@@ -16,9 +16,9 @@ int __cdecl core_gore_cpp_CGore_save_FUN_004e6730(CGore *this_ptr,_FILE *file_ha
   int iVar2;
   CBloodSplat *this_ptr_01;
   
-  FUN_005c03c0(file_handle,"--- Gore ---\n");
+  _fprintf(file_handle,"--- Gore ---\n");
   iVar2 = 0;
-  FUN_005c03c0(file_handle,&DAT_005e4183,_DAT_01cf69f8);
+  _fprintf(file_handle,&DAT_005e4183);
   if (0 < _DAT_01cf69f8) {
     this_ptr_00 = (CBloodPool *)0x1cf69fc;
     do {
@@ -28,7 +28,7 @@ int __cdecl core_gore_cpp_CGore_save_FUN_004e6730(CGore *this_ptr,_FILE *file_ha
     } while (iVar2 < _DAT_01cf69f8);
   }
   iVar1 = 0;
-  iVar2 = FUN_005c03c0(file_handle,&DAT_005e4187,_DAT_01cd56b0);
+  iVar2 = _fprintf(file_handle,&DAT_005e4187);
   if (0 < _DAT_01cd56b0) {
     this_ptr_01 = (CBloodSplat *)0x1cd56b4;
     do {

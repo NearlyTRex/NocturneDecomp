@@ -11,7 +11,7 @@ CDraculaBride * __cdecl core_dracbrid_cpp_factoryFuncDraculaBride_FUN_00462b70(v
 {
   CDraculaBride *pCVar1;
   
-  pCVar1 = (CDraculaBride *)operator_new(0x10c28);
+  pCVar1 = operator_new(0x10c28);
   if (pCVar1 == (CDraculaBride *)0x0) {
     return (CDraculaBride *)0x0;
   }

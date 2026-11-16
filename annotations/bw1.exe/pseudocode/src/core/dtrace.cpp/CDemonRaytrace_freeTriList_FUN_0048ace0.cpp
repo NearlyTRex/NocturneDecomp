@@ -10,10 +10,10 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_0048ace0(CDemonRaytr
 
 {
   if (this_ptr->triangle_list != (CDemonTriangle *)0x0) {
-    FUN_005c0336(this_ptr->triangle_list);
+    free(this_ptr->triangle_list);
   }
   if (this_ptr->triangle_flags != (uchar *)0x0) {
-    FUN_005c0336(this_ptr->triangle_flags);
+    free(this_ptr->triangle_flags);
   }
   this_ptr->triangle_flags = (uchar *)0x0;
   this_ptr->triangle_count = 0;

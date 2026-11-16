@@ -109,7 +109,7 @@ section .text
     ADD EAX,0x4                         ; 0051037c
     PUSH EAX                            ; 0051037f
     CALL crt_memory.c_operator_new_array_FUN_005a40df ; 00510380
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005a40df(uint size)
     ADD ESP,0x4                         ; 00510385
     PUSH EAX                            ; 00510388
     CALL crt_memory.c___vec_new_FUN_005a5584 ; 00510389

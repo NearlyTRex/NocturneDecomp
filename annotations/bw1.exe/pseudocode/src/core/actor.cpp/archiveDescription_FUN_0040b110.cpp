@@ -24,13 +24,13 @@ void __cdecl core_actor_cpp_archiveDescription_FUN_0040b110(char *property_descr
     }
   }
   else if ((DAT_007c3040 == 0) && (property_name != (char *)0x0)) {
-    FUN_005c03c0(DAT_007c3034,"    // %s\n",property_name);
+    _fprintf(DAT_007c3034,"    // %s\n");
     if ((DAT_007c3034->_flag & 0x20) == 0) {
       return;
     }
   }
   else {
-    FUN_005c03c0(DAT_007c3034,&DAT_005d2a2a);
+    _fprintf(DAT_007c3034,&DAT_005d2a2a);
     if ((DAT_007c3034->_flag & 0x20) == 0) {
       return;
     }

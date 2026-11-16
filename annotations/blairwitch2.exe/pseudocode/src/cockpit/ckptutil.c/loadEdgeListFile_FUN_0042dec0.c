@@ -52,7 +52,7 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042dec0(char *filename,SEd
         core_main_c_displayErrorAndQuit_FUN_004e4500(&stack0xffffff98);
       }
       if (edge_lists->edge_data != (SEdge *)0x0) {
-        FUN_005b86a0(edge_lists->edge_data);
+        debugFree(edge_lists->edge_data);
       }
       if (0 < edge_lists->edge_count) {
         size = edge_lists->edge_count * 8;

@@ -48,7 +48,7 @@
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
 ;   crt_string.c_splitpath_FUN_005a5128
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_dosio.cpp_getFile_FUN_004659c0
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
@@ -530,8 +530,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa14]     ; 004bf1f7
     PUSH EAX                            ; 004bf1fe
     MOV byte ptr [EDI + 0x968],0x0      ; 004bf1ff
-    CALL crt_unknown.c_FUN_005a3770     ; 004bf206
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 004bf206
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 004bf20b
     ADD ESP,0xa1c                       ; 004bf20e
     POP EBP                             ; 004bf214

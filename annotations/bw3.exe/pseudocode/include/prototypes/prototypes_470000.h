@@ -95,10 +95,10 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_00479050(CDemonTriangle *tri
 int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_00479450(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
 int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_004795c0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00479970(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
-void FUN_00479b10(float param_1);
-void FUN_00479c70(float param_1);
+void __cdecl core_dtri_cpp_clipPolygonToTop_FUN_00479b10(float y_max);
+void __cdecl core_dtri_cpp_clipPolygonToBottom_FUN_00479c70(float y_min);
 void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_00479de0(float x_max);
-void FUN_0047a0a0(float param_1);
+void __cdecl core_dtri_cpp_clipPolygonToNear_FUN_0047a0a0(float z_near);
 void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_0047a210(float z_far);
 int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0047a3d0(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max);
 int __cdecl core_dtri_cpp_getClippedTriangleCount_FUN_0047ae00(int flags);

@@ -8,8 +8,8 @@
 ; SRenderVertex    Stack[0x34]:48   vertex2
 ;
 ; XREF[2]:
-;   FUN_00404620 at 004046a6
 ;   engine_3d.c_drawLine3DFromIndices_FUN_00407f40 at 00407fa5
+;   engine_3d.c_drawLineStrip3D_FUN_00404620 at 004046a6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0070c5bc

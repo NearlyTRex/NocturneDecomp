@@ -428,6 +428,35 @@
     "variadic":false
   },
   {
+    "addr":"004044d0",
+    "calls":[
+      "00404410",
+      "00407e30"
+    ],
+    "conv":"__cdecl",
+    "instructions":50,
+    "method":"drawLineStrip3D",
+    "name":"engine_3d.c_drawLineStrip3D_FUN_004044d0",
+    "params":[
+      {
+        "name":"line_strip",
+        "type":{
+          "kind":"struct",
+          "name":"SLineStrip",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
+    },
+    "tu":"engine/3d.c",
+    "variadic":false
+  },
+  {
     "addr":"00404dd0",
     "calls":[
       "00403920",
@@ -5853,6 +5882,52 @@
     "variadic":false
   },
   {
+    "addr":"0044bc50",
+    "calls":[
+      "0045b870",
+      "005a3120"
+    ],
+    "cls":"CDemonCamera",
+    "conv":"__cdecl",
+    "instructions":195,
+    "method":"saveCameraTransform",
+    "name":"core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044bc50",
+    "params":[
+      {
+        "name":"new_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"rotation_matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"transform_matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcamera.cpp",
+    "variadic":false
+  },
+  {
     "addr":"0044d7d0",
     "conv":"__cdecl",
     "instructions":11,
@@ -6076,6 +6151,34 @@
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00451750",
+    "calls":[
+      "004515b0"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonAgainstMaxY",
+    "name":"core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00451750",
+    "params":[
+      {
+        "name":"max_y_plane",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcube.cpp",
     "variadic":false
   },
   {

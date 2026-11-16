@@ -43,12 +43,6 @@ Consider removing the Ghidra label and leaving the raw number.
     readMessageFile
       PUSH 0x6225f0                       ; 00530ccf | DAT_006225f0
 
-  DAT_007c7bdc  value=0x7C7BDC (8158172)  refs=4
-    FUN_0043bed0
-      MOV EDI,0x7c7bdc                    ; 0043bf94 | DAT_007c7bdc
-    clipPolygonToViewFrustum
-      MOV EDI,0x7c7bdc                    ; 0043ca11 | DAT_007c7bdc
-
   DAT_007c6180  value=0x7C6180 (8151424)  refs=4
     CCharacter_renderTransparent
       PUSH 0x7c6180                       ; 004302b7 | DAT_007c6180
@@ -68,6 +62,12 @@ Consider removing the Ghidra label and leaving the raw number.
       MOV EAX,0x713a84                    ; 0040594e | DAT_00713a84
     renderPolygonTexturedHardwareOp40
       MOV EAX,0x713a84                    ; 004058a1 | DAT_00713a84
+
+  DAT_007c7bdc  value=0x7C7BDC (8158172)  refs=4
+    clipPolygonFarPlane
+      MOV EDI,0x7c7bdc                    ; 0043bf94 | DAT_007c7bdc
+    clipPolygonToViewFrustum
+      MOV EDI,0x7c7bdc                    ; 0043ca11 | DAT_007c7bdc
 
   DAT_007c61c4  value=0x7C61C4 (8151492)  refs=3
     CCharacter_renderAttachedModels

@@ -9230,15 +9230,10 @@
         "start":"00432560"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00432560",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_00432560",
+    "ret":"void"
   },
   {
     "addr":"00433760",
@@ -11213,14 +11208,29 @@
         "start":"004444e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_004444e0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_dcube.cpp_clipPolygonAgainstMinZ_FUN_004444e0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"min_z_plane",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -30586,14 +30596,45 @@
         "start":"0047c060"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0047c060",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0047c060",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CEditorTools*"
+        },
+        {
+          "name":"dialog_text",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -73951,9 +73992,9 @@
         "start":"005ba1e0"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_005ba1e0",
+    "name":"crt_stdio.c_remove_FUN_005ba1e0",
     "ret":"int",
     "vars":{
       "params":[
@@ -73997,7 +74038,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_005ba2e0",
+    "name":"crt_io.c_chdir_FUN_005ba2e0",
     "ret":"int",
     "vars":{
       "params":[

@@ -9,7 +9,7 @@
 ; SRenderVertex *  Stack[0xc]:4   output
 ;
 ; XREF[2]:
-;   FUN_0043bed0 at 0043c03f
+;   engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0 at 0043c03f
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190 at 0043cb2b
 ;
 ; Referenced Globals:

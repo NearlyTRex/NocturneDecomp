@@ -10,7 +10,7 @@
 ;   engine_model.c_getMRGLBounds_FUN_00500970 at 00500db4
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;   engine_boss.c_modelStructNotSupported3_FUN_0041a4e0
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     MOV EDX,EDX                         ; 0050094e
     PUSH EBP                            ; 00500950
         ;   Label: LAB_00500950
-    CALL crt_unknown.c_FUN_005b86a0     ; 00500951
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 00500951
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 00500956
     POP EBX                             ; 00500959
     POP ESI                             ; 0050095a
@@ -80,8 +80,8 @@ section .text
     RET                                 ; 0050095d
     PUSH EBP                            ; 0050095e
         ;   Label: LAB_0050095e
-    CALL crt_unknown.c_FUN_005b86a0     ; 0050095f
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 0050095f
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 00500964
     POP EBP                             ; 00500967
     POP EDI                             ; 00500968

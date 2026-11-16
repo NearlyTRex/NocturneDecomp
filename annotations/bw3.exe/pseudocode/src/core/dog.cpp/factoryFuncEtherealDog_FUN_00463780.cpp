@@ -11,7 +11,7 @@ CEtherealDog * __cdecl core_dog_cpp_factoryFuncEtherealDog_FUN_00463780(void)
 {
   CEtherealDog *pCVar1;
   
-  pCVar1 = (CEtherealDog *)operator_new(0xd064);
+  pCVar1 = operator_new(0xd064);
   if (pCVar1 == (CEtherealDog *)0x0) {
     return (CEtherealDog *)0x0;
   }

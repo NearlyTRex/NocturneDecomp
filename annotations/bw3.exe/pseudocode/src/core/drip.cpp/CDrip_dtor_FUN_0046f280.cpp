@@ -9,18 +9,18 @@
 CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_0046f280(CDrip *this_ptr,uint flags)
 
 {
-  CDrip *pCVar1;
-  void *ptr;
+  CDrip *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CDripTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CDripTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CDrip *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
+  ptr = (CDrip *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

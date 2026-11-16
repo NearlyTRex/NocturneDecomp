@@ -15,7 +15,7 @@ section .text
     PUSH 0x594                          ; 004d0f30
         ;   Label: core_gun.cpp_factoryFuncGun_FUN_004d0f30
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004d0f35
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004d0f3a
     TEST EAX,EAX                        ; 004d0f3d
     JNZ 0x004d0f42                      ; 004d0f3f

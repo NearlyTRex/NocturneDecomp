@@ -11,7 +11,7 @@ CWaterActor * __cdecl core_wateract_cpp_factoryFuncWaterActor_FUN_00586970(void)
 {
   CWaterActor *pCVar1;
   
-  pCVar1 = (CWaterActor *)operator_new(0x2b394);
+  pCVar1 = operator_new(0x2b394);
   if (pCVar1 == (CWaterActor *)0x0) {
     return (CWaterActor *)0x0;
   }

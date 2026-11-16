@@ -23,7 +23,7 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004cfbd0(CGround *this_ptr)
     _DAT_01d71de4 = 0xd5;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CGround::init - Out of memory");
   }
-  this_ptr_00 = (CTextureList *)operator_new(0x6d64);
+  this_ptr_00 = operator_new(0x6d64);
   pCVar2 = (CTextureList *)0x0;
   if (this_ptr_00 != (CTextureList *)0x0) {
     pCVar2 = core_texlist_cpp_CTextureList_ctor_FUN_005690a0(this_ptr_00);

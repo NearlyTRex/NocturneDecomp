@@ -11,7 +11,7 @@ CPlatform * __cdecl core_platfrm_cpp_factoryFuncPlatform_FUN_00518080(void)
 {
   CPlatform *pCVar1;
   
-  pCVar1 = (CPlatform *)operator_new(0x884);
+  pCVar1 = operator_new(0x884);
   if (pCVar1 == (CPlatform *)0x0) {
     return (CPlatform *)0x0;
   }

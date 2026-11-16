@@ -8,7 +8,6 @@
 ; CVector3i *      Stack[0x8]:4   input
 ;
 ; XREF[63]:
-;   FUN_0044eeb0 at 0044ef12
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409980 at 00409a0d
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041e100 at 0041e1ad
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0 at 0041dd4a
@@ -17,6 +16,7 @@
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042d9f0 at 0042dbd9
 ;   core_cloth.cpp_CCloth_renderBone_FUN_0043f160 at 0043f246
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20 at 0044f09d
+;   core_dcamera.cpp_transformAndStoreVertex_FUN_0044eeb0 at 0044ef12
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004540c0 at 0045415c
 ;   ... and 53 more
 ;

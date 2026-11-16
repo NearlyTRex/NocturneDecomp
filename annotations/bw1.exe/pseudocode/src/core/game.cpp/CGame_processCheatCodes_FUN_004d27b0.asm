@@ -1917,7 +1917,7 @@ section .text
     MOV EDI,0x3                         ; 004d3c4a
     MOV [0x01cd0c68],AL                 ; 004d3c4f | DAT_01cd0c68
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d3c54
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d3c59
     TEST EAX,EAX                        ; 004d3c5c
     JZ 0x004d3c69                       ; 004d3c5e
@@ -1936,7 +1936,7 @@ section .text
     MOV EDI,0x5e22f5                    ; 004d3c78 | DAT_005e22f5
     MOV ESI,0x7                         ; 004d3c7d
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d3c82
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d3c87
     TEST EAX,EAX                        ; 004d3c8a
     JZ 0x004d3c97                       ; 004d3c8c
@@ -1955,7 +1955,7 @@ section .text
     MOV ESI,0x5e22fa                    ; 004d3ca6 | DAT_005e22fa
     MOV EDI,0x8                         ; 004d3cab
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d3cb0
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d3cb5
     TEST EAX,EAX                        ; 004d3cb8
     JZ 0x004d3cc5                       ; 004d3cba
@@ -1986,7 +1986,7 @@ section .text
     MOV ESI,0x5e2319                    ; 004d3cfb | = "CCrossbow"
     MOV EDI,0x1                         ; 004d3d00
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d3d05
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d3d0a
     TEST EAX,EAX                        ; 004d3d0d
     JZ 0x004d3d1a                       ; 004d3d0f
@@ -3804,7 +3804,7 @@ section .text
     PUSH 0x2d8                          ; 004d520d
     MOV byte ptr [0x01cd0c68],BL        ; 004d5212 | DAT_01cd0c68
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5218
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d521d
     TEST EAX,EAX                        ; 004d5220
     JZ 0x004d522d                       ; 004d5222
@@ -3897,7 +3897,7 @@ section .text
     PUSH 0x2d8                          ; 004d5307
     MOV byte ptr [0x01cd0c68],BH        ; 004d530c | DAT_01cd0c68
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5312
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d5317
     TEST EAX,EAX                        ; 004d531a
     JZ 0x004d5327                       ; 004d531c
@@ -4572,7 +4572,7 @@ section .text
     MOV EDI,0x3                         ; 004d5aea
     MOV byte ptr [0x01cd0c68],BL        ; 004d5aef | DAT_01cd0c68
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5af5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d5afa
     TEST EAX,EAX                        ; 004d5afd
     JZ 0x004d5b0a                       ; 004d5aff
@@ -4640,7 +4640,7 @@ section .text
     MOV EDI,0x7                         ; 004d5b9a
     MOV byte ptr [0x01cd0c68],BH        ; 004d5b9f | DAT_01cd0c68
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5ba5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d5baa
     TEST EAX,EAX                        ; 004d5bad
     JZ 0x004d5bba                       ; 004d5baf
@@ -4708,7 +4708,7 @@ section .text
     MOV ESI,0x8                         ; 004d5c4a
     MOV byte ptr [0x01cd0c68],CL        ; 004d5c4f | DAT_01cd0c68
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5c55
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004d5c5a
     TEST EAX,EAX                        ; 004d5c5d
     JZ 0x004d5c6a                       ; 004d5c5f

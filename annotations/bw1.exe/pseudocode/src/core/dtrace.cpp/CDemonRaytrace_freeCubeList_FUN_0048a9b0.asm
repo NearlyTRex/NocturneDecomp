@@ -11,8 +11,8 @@
 ;
 ; Called Functions:
 ;   core_dpart.cpp_CDemonPart_dtor_FUN_004799c0
-;   crt_unknown.c_FUN_005c0344
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;
 ; *****************************************************************************
 
@@ -62,16 +62,16 @@ section .text
         ;   XREF to: 004799c0 (UNCONDITIONAL_CALL)  ; CDemonPart * core_dpart.cpp_CDemonPart_dtor_FUN_004799c0(CDemonPart * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0048aa10
     PUSH EAX                            ; 0048aa13
-    CALL crt_unknown.c_FUN_005c0344     ; 0048aa14
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0048aa14
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0048aa19
     JMP 0x0048a9f9                      ; 0048aa1c
         ;   XREF to: 0048a9f9 (UNCONDITIONAL_JUMP)  ; LAB_0048a9f9
     MOV EBX,dword ptr [ESI + 0x4c]      ; 0048aa1e
         ;   Label: LAB_0048aa1e
     PUSH EBX                            ; 0048aa21
-    CALL crt_unknown.c_FUN_005c09f0     ; 0048aa22
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0048aa22
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0048aa27
     POP EBX                             ; 0048aa2a
     POP EDI                             ; 0048aa2b

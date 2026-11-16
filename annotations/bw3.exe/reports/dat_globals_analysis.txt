@@ -13,10 +13,10 @@ Current type breakdown:
   undefined8                     19
   undefined2                     4
 
-DAT_ globals with type hints: 1299 / 3185
+DAT_ globals with type hints: 1300 / 3185
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1048)
+HIGH CONFIDENCE INFERENCES (1049)
 --------------------------------------------------------------------------------
   DAT_005b5849                    addr=005b5849    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005b584d (TerminatedCString) at offset -4
@@ -1011,6 +1011,8 @@ HIGH CONFIDENCE INFERENCES (1048)
   DAT_00730410                    addr=00730410    current=undefined4      likely=float           refs=2
   DAT_00730418                    addr=00730418    current=undefined4      likely=int             refs=11
   DAT_0073047c                    addr=0073047c    current=undefined4      likely=int             refs=4
+  DAT_007df9b4                    addr=007df9b4    current=undefined4      likely=char *          refs=18
+    nearby: g_CDemonActorClassInfo.name_hash (undefined4) at offset +4
   DAT_007df9c8                    addr=007df9c8    current=undefined4      likely=int             refs=5
     nearby: g_CDemonActorClassInfo.name_hash (undefined4) at offset +24
   DAT_007dff8c                    addr=007dff8c    current=undefined4      likely=int             refs=4
@@ -1974,7 +1976,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1886)
+NO TYPE HINTS (1885)
 --------------------------------------------------------------------------------
   DAT_005c601d                    addr=005c601d    type=undefined1      refs=1  nearby: s_You_ve_received_d_health_005c6021 at -4
   DAT_005c6b1f                    addr=005c6b1f    type=undefined4      refs=1  nearby: s_falloff_005c6b2b at -12
@@ -2448,7 +2450,6 @@ NO TYPE HINTS (1886)
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_007dd9f0                    addr=007dd9f0    type=undefined4      refs=2
   DAT_007df974                    addr=007df974    type=undefined4      refs=2  nearby: g_CDemonActorClassInfo at -4
-  DAT_007df9b4                    addr=007df9b4    type=undefined4      refs=18  nearby: g_CDemonActorClassInfo.name_hash at +4
   DAT_007df9b8                    addr=007df9b8    type=undefined4      refs=26  nearby: g_CDemonActorClassInfo.name_hash at +8
   DAT_007df9bc                    addr=007df9bc    type=undefined4      refs=4  nearby: g_CDemonActorClassInfo.name_hash at +12
   DAT_007df9c0                    addr=007df9c0    type=undefined4      refs=2  nearby: g_CDemonActorClassInfo.name_hash at +16
@@ -3903,10 +3904,10 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01d70a78                    addr=01d70a78    refs=30    type=undefined4      nearby: g_CKeyActorClassInfo.name_hash(+4)
   DAT_01c6e24c                    addr=01c6e24c    refs=29    type=undefined4    
   DAT_01c60dac                    addr=01c60dac    refs=29    type=undefined4    
-  DAT_01c5fadc                    addr=01c5fadc    refs=27    type=undefined4    
   DAT_01c5fad0                    addr=01c5fad0    refs=27    type=undefined4      likely=float
-  DAT_01c6b59c                    addr=01c6b59c    refs=26    type=undefined4      likely=float
+  DAT_01c5fadc                    addr=01c5fadc    refs=27    type=undefined4    
   DAT_007df9b8                    addr=007df9b8    refs=26    type=undefined4      nearby: g_CDemonActorClassInfo.name_hash(+8)
+  DAT_01c6b59c                    addr=01c6b59c    refs=26    type=undefined4      likely=float
   DAT_01c5fae0                    addr=01c5fae0    refs=25    type=undefined4    
   DAT_01c5baec                    addr=01c5baec    refs=25    type=undefined4      nearby: g_CElephantGunClassInfo.name_hash(-228)
   DAT_01c6b598                    addr=01c6b598    refs=24    type=undefined4      likely=float

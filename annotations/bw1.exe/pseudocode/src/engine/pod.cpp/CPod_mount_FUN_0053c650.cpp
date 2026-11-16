@@ -15,7 +15,7 @@ int __cdecl engine_pod_cpp_CPod_mount_FUN_0053c650(CPod *this_ptr,char *pod_file
   CPodFile *pCVar3;
   char *pcVar4;
   
-  this_ptr_00 = (CPodFile *)operator_new(0x42c);
+  this_ptr_00 = operator_new(0x42c);
   pCVar3 = (CPodFile *)0x0;
   if (this_ptr_00 != (CPodFile *)0x0) {
     pCVar3 = engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(this_ptr_00);
@@ -46,7 +46,7 @@ int __cdecl engine_pod_cpp_CPod_mount_FUN_0053c650(CPod *this_ptr,char *pod_file
       }
       if (pCVar3 != (CPodFile *)0x0) {
         pCVar3 = engine_pod_cpp_CPodFile_dtor_FUN_0053b210(pCVar3,0);
-        FUN_005c0344(pCVar3);
+        debugFreeChecked(pCVar3);
       }
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                          ("Too many PODs already mounted");
@@ -65,7 +65,7 @@ int __cdecl engine_pod_cpp_CPod_mount_FUN_0053c650(CPod *this_ptr,char *pod_file
     }
     if (pCVar3 != (CPodFile *)0x0) {
       pCVar3 = engine_pod_cpp_CPodFile_dtor_FUN_0053b210(pCVar3,0);
-      FUN_005c0344(pCVar3);
+      debugFreeChecked(pCVar3);
     }
   }
   return 0;

@@ -9,7 +9,7 @@
 ; SRenderVertex *  Stack[0xc]:4   vertex_out
 ;
 ; XREF[2]:
-;   FUN_00594a30 at 00594b0b
+;   core_xform.cpp_clipPolygonStage2_FUN_00594a30 at 00594b0b
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00594f40 at 00595475
 ;
 ; Referenced Globals:

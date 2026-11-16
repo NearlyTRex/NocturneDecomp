@@ -17,21 +17,21 @@
   },
   "cross_references": [
     {
-      "addr": "00432560",
-      "from_addr": "0043261b",
-      "name": "FUN_00432560",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00432880",
       "from_addr": "00432e8b",
-      "name": "engine_clipper.c_FUN_00432880",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00433000",
       "from_addr": "0043362d",
       "name": "engine_clipper.c_clipPolygonToViewport_FUN_00433000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432560",
+      "from_addr": "0043261b",
+      "name": "engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_00432560",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -77,7 +77,7 @@
       {
         "call_addr": "0043261b",
         "call_type": "direct",
-        "caller": "FUN_00432560",
+        "caller": "engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_00432560",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -88,7 +88,7 @@
       {
         "call_addr": "0043266e",
         "call_type": "direct",
-        "caller": "FUN_00432560",
+        "caller": "engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_00432560",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -99,7 +99,7 @@
       {
         "call_addr": "00432e8b",
         "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_00432880",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +110,7 @@
       {
         "call_addr": "00432ee1",
         "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_00432880",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

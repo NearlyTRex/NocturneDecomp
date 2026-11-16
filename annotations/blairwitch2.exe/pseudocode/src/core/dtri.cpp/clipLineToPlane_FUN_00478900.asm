@@ -15,11 +15,11 @@
 ; undefined8       Stack[-0x28]:8  local_28
 ;
 ; XREF[6]:
-;   FUN_00478aa0 at 00478b7c
-;   FUN_00478c00 at 00478ce2
-;   FUN_00479030 at 00479112
+;   core_dtri.cpp_clipPolygonToBottom_FUN_00478c00 at 00478ce2
 ;   core_dtri.cpp_clipPolygonToFar_FUN_004791a0 at 00479282
+;   core_dtri.cpp_clipPolygonToNear_FUN_00479030 at 00479112
 ;   core_dtri.cpp_clipPolygonToRight_FUN_00478d70 at 00478e4a
+;   core_dtri.cpp_clipPolygonToTop_FUN_00478aa0 at 00478b7c
 ;   core_dtri.cpp_clipTriangleToBounds_FUN_00479360 at 00479973
 ;
 ; Referenced Globals:

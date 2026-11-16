@@ -19,10 +19,7 @@ void __cdecl core_actor_cpp_archiveLocation_FUN_0040b300(CLocation *location_ptr
     }
   }
   else {
-    FUN_005c03c0
-              (DAT_007c3034,"%s%d,%g,%g,%g",&DAT_006106c0,location_ptr->area_id,
-               (double)(location_ptr->position).x,(double)(location_ptr->position).y,
-               (double)(location_ptr->position).z);
+    _fprintf(DAT_007c3034,"%s%d,%g,%g,%g");
   }
   core_actor_cpp_archiveDescription_FUN_0040b110("4D location",property_name);
   return;

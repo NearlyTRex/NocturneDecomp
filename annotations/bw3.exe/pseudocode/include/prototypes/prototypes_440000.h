@@ -242,7 +242,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044af
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044b4a0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
-void FUN_0044bc50(int param_1,float *param_2,CMatrix3x3f *param_3);
+void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044bc50(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix);
 void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044bfe0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044c060(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044c130(CDemonCamera *this_ptr,char *filename);
@@ -264,7 +264,7 @@ int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_0044dff0(int start_x,int s
 void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_0044e250(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
-void FUN_0044eeb0(int param_1,float param_2,float param_3,float param_4);
+void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_0044eeb0(int vertex_index,float x,float y,float z);
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);
 int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_0044f4d0(CDemonCamera *this_ptr,CVector3f *position,float radius);
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_0044f680(CDemonCamera *this_ptr,float intensity);

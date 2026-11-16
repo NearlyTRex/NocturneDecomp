@@ -11,7 +11,7 @@
 ;   undefined4 DAT_02c8a680
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;   engine_texture.cpp_CTextureCache_freeTextures_FUN_005965d0
 ;   engine_texture.cpp_CTextureCache_reset_FUN_005965c0
 ;
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 005965d0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_freeTextures_FUN_005965d0(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 005979fc
     PUSH EBX                            ; 005979ff
-    CALL crt_unknown.c_FUN_005c0344     ; 00597a00
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 00597a00
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 00597a05
     XOR EBX,EBX                         ; 00597a08
     MOV dword ptr [0x02c8a680],EBX      ; 00597a0a | DAT_02c8a680

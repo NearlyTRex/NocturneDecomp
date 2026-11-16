@@ -11,7 +11,7 @@ CSvetlana * __cdecl core_svetlana_cpp_factoryFuncSvetlana_FUN_00592dd0(void)
 {
   CSvetlana *pCVar1;
   
-  pCVar1 = (CSvetlana *)operator_new(0x95630);
+  pCVar1 = operator_new(0x95630);
   if (pCVar1 == (CSvetlana *)0x0) {
     return (CSvetlana *)0x0;
   }

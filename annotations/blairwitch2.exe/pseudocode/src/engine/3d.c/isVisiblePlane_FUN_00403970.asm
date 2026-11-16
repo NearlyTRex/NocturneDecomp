@@ -7,7 +7,6 @@
 ; SClipPlane *     Stack[0x4]:4   plane
 ;
 ; XREF[82]:
-;   FUN_004055d0 at 00405610
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041aa20 at 0041ab8c
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_00461a50 at 00461ad5
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0 at 00407b30
@@ -17,6 +16,7 @@
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f40 at 00406f5a
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406e00 at 00406e1a
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004056b0 at 004056be
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057d0 at 004057de
 ;   ... and 72 more
 ;
 ; Referenced Globals:

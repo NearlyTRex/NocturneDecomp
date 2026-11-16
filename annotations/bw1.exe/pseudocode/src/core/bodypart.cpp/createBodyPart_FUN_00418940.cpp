@@ -23,7 +23,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418940(CVector3f *pos
   float10 fVar8;
   float10 fVar9;
   
-  this_ptr = (CBodyPart *)operator_new(0xf34);
+  this_ptr = operator_new(0xf34);
   this_ptr_00 = (CBodyPart *)0x0;
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00418b40(this_ptr);

@@ -11,7 +11,7 @@ CAngelDemon * __cdecl core_hotdemon_cpp_factoryFuncAngelDemon_FUN_004d63e0(void)
 {
   CAngelDemon *pCVar1;
   
-  pCVar1 = (CAngelDemon *)operator_new(0xd088);
+  pCVar1 = operator_new(0xd088);
   if (pCVar1 == (CAngelDemon *)0x0) {
     return (CAngelDemon *)0x0;
   }

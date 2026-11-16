@@ -18,7 +18,7 @@ SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_dtor
   pSVar2 = _DAT_01d0cfa0;
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_PageResource_TwanaEntryTypeInfo);
-    FUN_005a30b6(ptr);
+    free(ptr);
     return this_ptr;
   }
   (this_ptr->base).vtable = &g_SPageResourceTwanaEntryVTable;
@@ -31,6 +31,6 @@ SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_dtor
   if ((flags & 2) == 0) {
     return pSVar2;
   }
-  FUN_005a30c4(pSVar2);
+  debugFreeChecked(pSVar2);
   return pSVar2;
 }

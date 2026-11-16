@@ -12,7 +12,7 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_0048ac70
 ;   core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_0048ace0
-;   crt_unknown.c_FUN_005c0336
+;   crt_unknown.c_free_FUN_005c0336
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0
@@ -112,13 +112,13 @@ section .text
     POP EDI                             ; 0048abc6
     MOV ECX,dword ptr [EBP + 0x4]       ; 0048abc7
     PUSH ECX                            ; 0048abca
-    CALL crt_unknown.c_FUN_005c0336     ; 0048abcb
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 0048abcb
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 0048abd0
     MOV ESI,dword ptr [EBP + 0x54]      ; 0048abd3
     PUSH ESI                            ; 0048abd6
-    CALL crt_unknown.c_FUN_005c0336     ; 0048abd7
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 0048abd7
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 0048abdc
     MOV EAX,dword ptr [EBX + 0x8]       ; 0048abdf
     MOV EDX,dword ptr [ESP + 0xc]       ; 0048abe2

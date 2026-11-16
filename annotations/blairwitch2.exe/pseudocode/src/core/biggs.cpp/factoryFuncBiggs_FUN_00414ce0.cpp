@@ -11,7 +11,7 @@ CBiggs * __cdecl core_biggs_cpp_factoryFuncBiggs_FUN_00414ce0(void)
 {
   CBiggs *pCVar1;
   
-  pCVar1 = (CBiggs *)operator_new(0x1190c);
+  pCVar1 = operator_new(0x1190c);
   if (pCVar1 == (CBiggs *)0x0) {
     return (CBiggs *)0x0;
   }

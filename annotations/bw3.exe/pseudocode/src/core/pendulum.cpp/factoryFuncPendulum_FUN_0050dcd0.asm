@@ -15,7 +15,7 @@ section .text
     PUSH 0x444                          ; 0050dcd0
         ;   Label: core_pendulum.cpp_factoryFuncPendulum_FUN_0050dcd0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0050dcd5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0050dcda
     TEST EAX,EAX                        ; 0050dcdd
     JNZ 0x0050dce2                      ; 0050dcdf

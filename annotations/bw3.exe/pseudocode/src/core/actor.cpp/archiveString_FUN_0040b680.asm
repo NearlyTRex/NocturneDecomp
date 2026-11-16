@@ -33,9 +33,9 @@
 ;   core_actor.cpp_archiveDescription_FUN_0040b350
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b2d0
 ;   crt_stdio.c_fgetc_FUN_005a32b0
+;   crt_stdio.c_fprintf_FUN_005a3140
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;   crt_stdio.c_ungetc_FUN_005a3480
-;   crt_unknown.c_FUN_005a3140
 ;
 ; *****************************************************************************
 
@@ -147,8 +147,8 @@ section .text
     PUSH 0x5b5ada                       ; 0040b76d | = "%s\"%s\""
     MOV ECX,dword ptr [0x007df9b4]      ; 0040b772 | DAT_007df9b4
     PUSH ECX                            ; 0040b778
-    CALL crt_unknown.c_FUN_005a3140     ; 0040b779
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0040b779
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040b77e
     PUSH EBX                            ; 0040b781
     PUSH 0x5f0958                       ; 0040b782 | = "String"

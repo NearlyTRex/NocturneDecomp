@@ -25,8 +25,8 @@
 ; Called Functions:
 ;   core_actor.cpp_archiveDescription_FUN_0040b110
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b090
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;   crt_stdio.c_fscanf_FUN_005c04b0
-;   crt_unknown.c_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5d2a60                       ; 0040b384 | = "%s%d,%g,%g,%g"
     MOV EBX,dword ptr [0x007c3034]      ; 0040b389 | DAT_007c3034
     PUSH EBX                            ; 0040b38f
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040b390
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040b390
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x28                        ; 0040b395
     POP EBX                             ; 0040b398
     JMP 0x0040b336                      ; 0040b399

@@ -7,16 +7,16 @@
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   FUN_00510d20 at 00510d28
-;   FUN_00510d70 at 00510d76
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0 at 005106b7
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740 at 0051075a
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810 at 00510829
-;   cockpit_pkbmpset.cpp_FUN_00510c70 at 00510c8a
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00510d20 at 00510d28
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70 at 00510c8a
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00510d70 at 00510d76
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005a308f
-;   crt_unknown.c_FUN_005a30b6
+;   crt_unknown.c_free_FUN_005a30b6
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00510683
     PUSH EAX                            ; 00510686
-    CALL crt_unknown.c_FUN_005a30b6     ; 00510687
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00510687
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     MOV dword ptr [EBX],0x0             ; 0051068c
     ADD ESP,0x4                         ; 00510692
     MOV dword ptr [EBX + 0x4],0x0       ; 00510695

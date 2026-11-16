@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740 at 00510772
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810 at 005108e6
-;   cockpit_pkbmpset.cpp_FUN_00510c70 at 00510ca4
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70 at 00510ca4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
@@ -54,7 +54,7 @@ section .text
     LEA EAX,[EDI + 0x4]                 ; 005106df
     PUSH EAX                            ; 005106e2
     CALL crt_memory.c_operator_new_array_FUN_005a40df ; 005106e3
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005a40df(uint size)
     ADD ESP,0x4                         ; 005106e8
     PUSH EAX                            ; 005106eb
     CALL crt_memory.c___vec_new_FUN_005a5584 ; 005106ec

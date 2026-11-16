@@ -15,7 +15,7 @@ section .text
     PUSH 0xdc98                         ; 00598fb0
         ;   Label: core_darkwolf.cpp_factoryFuncWhitewolf_FUN_00598fb0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00598fb5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 00598fba
     TEST EAX,EAX                        ; 00598fbd
     JNZ 0x00598fc2                      ; 00598fbf

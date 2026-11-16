@@ -10,21 +10,21 @@ CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_00444210(CLZW
 
 {
   CLZWDictionary *pCVar1;
-  CLZWDecompress *pCVar2;
-  void *ptr;
+  CLZWDecompress *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CLZWDecompressTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CLZWDecompressTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = support_codec_cpp_CLZWDictionary_dtor_FUN_00442f90(&this_ptr->lzw_dict,0);
-  pCVar2 = (CLZWDecompress *)
-           support_codec_cpp_CCodec_dtor_FUN_00442bb0
-                     ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);
+  ptr = (CLZWDecompress *)
+        support_codec_cpp_CCodec_dtor_FUN_00442bb0
+                  ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_005c0344(pCVar2);
-  return pCVar2;
+  debugFreeChecked(ptr);
+  return ptr;
 }

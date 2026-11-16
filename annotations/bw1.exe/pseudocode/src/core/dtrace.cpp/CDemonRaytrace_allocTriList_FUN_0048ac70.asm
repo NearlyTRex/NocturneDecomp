@@ -32,13 +32,13 @@ section .text
     SUB EAX,EDX                         ; 0048ac81
     PUSH EAX                            ; 0048ac83
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 0048ac84
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 0048ac89
     MOV EDX,dword ptr [EBX + 0x4]       ; 0048ac8c
     PUSH EDX                            ; 0048ac8f
     MOV dword ptr [EBX + 0x8],EAX       ; 0048ac90
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 0048ac93
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 0048ac98
     MOV ECX,dword ptr [EBX + 0x8]       ; 0048ac9b
     MOV dword ptr [EBX + 0xc],EAX       ; 0048ac9e

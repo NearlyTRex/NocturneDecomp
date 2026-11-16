@@ -49,7 +49,7 @@
     {
       "addr": "005b7fdc",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7fdc"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005b7fdc"
     }
   ],
   "globals": [],
@@ -157,11 +157,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 18,
-      "match": "pCVar3 = (T *)pCVar3->ARRAY",
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
-      "text": "pCVar3 = (CFilterCache *)pCVar3->filter_names;",
+      "text": "pCVar2 = (CFilterCache *)pCVar2->filter_names;",
       "type": "shadow_pointer_walk"
     }
   ]

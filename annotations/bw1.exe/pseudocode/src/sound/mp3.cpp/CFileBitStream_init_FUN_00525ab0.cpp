@@ -19,7 +19,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_00525ab0(CFileBitStream *this
     this_ptr->file_handle = (_FILE *)0x0;
   }
   if (this_ptr->buffer != (char *)0x0) {
-    FUN_005c09f0(this_ptr->buffer);
+    debugFree(this_ptr->buffer);
     this_ptr->buffer = (char *)0x0;
   }
   this_ptr->file_handle = file_handle;

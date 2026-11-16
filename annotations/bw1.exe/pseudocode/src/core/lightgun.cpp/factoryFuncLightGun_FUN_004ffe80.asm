@@ -15,7 +15,7 @@ section .text
     PUSH 0x598                          ; 004ffe80
         ;   Label: core_lightgun.cpp_factoryFuncLightGun_FUN_004ffe80
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004ffe85
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004ffe8a
     TEST EAX,EAX                        ; 004ffe8d
     JNZ 0x004ffe92                      ; 004ffe8f

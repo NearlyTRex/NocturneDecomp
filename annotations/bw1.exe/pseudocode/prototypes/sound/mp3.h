@@ -5,6 +5,14 @@
 // Function prototypes for sound/mp3.cpp
 // Generated from Ghidra function signatures
 
+// Original: sound_mp3.cpp_validateLayer2AllocationTable_FUN_00525690
+// Address: 00525690
+int __cdecl validateLayer2AllocationTable(SMpegFrame *frame);
+
+// Original: sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_005257d0
+// Address: 005257d0
+void * __cdecl getMpegLayer2AllocationTable(int layer,int mode_extension);
+
 // Original: sound_mp3.cpp_calculateMpegFrame_FUN_00525840
 // Address: 00525840
 void __cdecl calculateMpegFrame(SMpegFrame *frame);

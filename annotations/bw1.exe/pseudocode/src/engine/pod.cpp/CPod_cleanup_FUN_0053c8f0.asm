@@ -11,7 +11,7 @@
 ;   engine_pod.cpp_CPod_dtor_FUN_0053c5f0 at 0053c607
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0053b210
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
         ;   XREF to: 0053b210 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0053b210(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0053c92b
     PUSH EAX                            ; 0053c92e
-    CALL crt_unknown.c_FUN_005c0344     ; 0053c92f
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0053c92f
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0053c934
     JMP 0x0053c908                      ; 0053c937
         ;   XREF to: 0053c908 (UNCONDITIONAL_JUMP)  ; LAB_0053c908

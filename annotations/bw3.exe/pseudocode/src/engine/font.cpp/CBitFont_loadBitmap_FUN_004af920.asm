@@ -132,7 +132,7 @@ section .text
     PUSH ESI                            ; 004af9eb
         ;   Label: LAB_004af9eb
     CALL crt_memory.c_operator_new_array_FUN_005a40df ; 004af9ec
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005a40df(uint size)
     MOV EDX,dword ptr [EBX]             ; 004af9f1
     MOV dword ptr [EBX + EDX*0x4 + 0x194],EAX ; 004af9f3
     MOV EAX,dword ptr [EBX]             ; 004af9fa

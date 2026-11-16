@@ -15,7 +15,7 @@ section .text
     PUSH 0x55c                          ; 005ab990
         ;   Label: core_waypoint.cpp_factoryFuncWayPoint_FUN_005ab990
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005ab995
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005ab99a
     TEST EAX,EAX                        ; 005ab99d
     JNZ 0x005ab9a2                      ; 005ab99f

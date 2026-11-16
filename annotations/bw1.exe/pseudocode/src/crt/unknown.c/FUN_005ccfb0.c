@@ -12,16 +12,16 @@ void FUN_005ccfb0(void)
 
 {
   uint *puVar1;
-  uint *puVar2;
+  uint *ptr;
   
-  puVar2 = _DAT_02c9ffa0;
-  while (puVar2 != (uint *)0x0) {
-    puVar1 = (uint *)*puVar2;
-    if (puVar2[3] != 0) {
-      FUN_005c09f0(puVar2[2]);
+  ptr = _DAT_02c9ffa0;
+  while (ptr != (uint *)0x0) {
+    puVar1 = (uint *)*ptr;
+    if (ptr[3] != 0) {
+      debugFree((void *)ptr[2]);
     }
-    FUN_005c09f0(puVar2);
-    puVar2 = puVar1;
+    debugFree(ptr);
+    ptr = puVar1;
   }
   return;
 }

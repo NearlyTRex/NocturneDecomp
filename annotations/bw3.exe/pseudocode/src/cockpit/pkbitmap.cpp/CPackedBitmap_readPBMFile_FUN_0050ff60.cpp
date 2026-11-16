@@ -60,7 +60,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0050ff60(CPacked
       if (((iStack_1c != 0) || (iStack_18 != 0)) ||
          ((this_ptr->width + -1 != iStack_14 || (this_ptr->height + -1 != unaff_EBP))))
       goto LAB_0050ffaa;
-      piVar3 = (int *)operator_new_array((this_ptr->height + 1) * 4);
+      piVar3 = operator_new_array((this_ptr->height + 1) * 4);
       this_ptr->row_offsets = piVar3;
       if (piVar3 != (int *)0x0) {
         SVar1 = _fread(this_ptr->row_offsets,(this_ptr->height + 1) * 4,1,file_handle);

@@ -43,7 +43,7 @@ section .text
     SHL EAX,0x2                         ; 00567474
     PUSH EAX                            ; 00567477
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00567478
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 0056747d
     MOV dword ptr [EBX + 0x2324],EAX    ; 00567480
     TEST EAX,EAX                        ; 00567486

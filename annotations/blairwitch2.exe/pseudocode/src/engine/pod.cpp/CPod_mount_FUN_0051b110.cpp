@@ -20,7 +20,7 @@ void __cdecl engine_pod_cpp_CPod_mount_FUN_0051b110(CPod *this_ptr,char *pod_fil
     _DAT_01d046a4 = 0x3eb;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many .POD files at once!");
   }
-  this_ptr_00 = (CPodFile *)operator_new(0x42c);
+  this_ptr_00 = operator_new(0x42c);
   pCVar1 = (CPodFile *)0x0;
   if (this_ptr_00 != (CPodFile *)0x0) {
     pCVar1 = engine_pod_cpp_CPodFile_ctor_FUN_00519e50(this_ptr_00);

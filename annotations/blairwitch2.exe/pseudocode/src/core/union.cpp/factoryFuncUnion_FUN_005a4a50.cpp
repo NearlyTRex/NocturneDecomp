@@ -11,7 +11,7 @@ CUnion * __cdecl core_union_cpp_factoryFuncUnion_FUN_005a4a50(void)
 {
   CUnion *pCVar1;
   
-  pCVar1 = (CUnion *)operator_new(0x11864);
+  pCVar1 = operator_new(0x11864);
   if (pCVar1 == (CUnion *)0x0) {
     return (CUnion *)0x0;
   }

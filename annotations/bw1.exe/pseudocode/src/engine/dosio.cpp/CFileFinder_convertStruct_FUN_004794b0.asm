@@ -21,7 +21,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_string.c__strncpy_FUN_005c20d0
-;   crt_unknown.c_FUN_005c2106
+;   crt_unknown.c___I8D_FUN_005c2106
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14]      ; 0047952f
     MOV EDX,dword ptr [EBX + 0x18]      ; 00479532
     MOV EBX,0x989680                    ; 00479535
-    CALL crt_unknown.c_FUN_005c2106     ; 0047953a
-        ;   XREF to: 005c2106 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c2106()
+    CALL crt_unknown.c___I8D_FUN_005c2106 ; 0047953a
+        ;   XREF to: 005c2106 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c___I8D_FUN_005c2106()
     SUB EAX,0xb61082f0                  ; 0047953f
     MOV dword ptr [ESI + 0x108],EAX     ; 00479544
     POP EBP                             ; 0047954a

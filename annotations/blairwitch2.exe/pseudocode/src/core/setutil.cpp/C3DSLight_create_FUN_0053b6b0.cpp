@@ -22,7 +22,7 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(C3DSLight *
   char (*filter_name) [40];
   char *pcVar7;
   
-  this_ptr_00 = (CDemonLight *)operator_new(0x2fb0);
+  this_ptr_00 = operator_new(0x2fb0);
   this_ptr_01 = (CDemonLight *)0x0;
   if (this_ptr_00 != (CDemonLight *)0x0) {
     this_ptr_01 = core_dlight_cpp_CDemonLight_ctor_FUN_00449c70

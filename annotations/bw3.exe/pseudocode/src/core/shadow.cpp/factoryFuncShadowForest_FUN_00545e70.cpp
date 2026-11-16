@@ -11,7 +11,7 @@ CShadowForest * __cdecl core_shadow_cpp_factoryFuncShadowForest_FUN_00545e70(voi
 {
   CShadowForest *pCVar1;
   
-  pCVar1 = (CShadowForest *)operator_new(0xd0e8);
+  pCVar1 = operator_new(0xd0e8);
   if (pCVar1 == (CShadowForest *)0x0) {
     return (CShadowForest *)0x0;
   }

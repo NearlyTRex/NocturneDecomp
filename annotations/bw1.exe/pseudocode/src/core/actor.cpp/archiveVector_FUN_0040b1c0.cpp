@@ -19,9 +19,7 @@ void __cdecl core_actor_cpp_archiveVector_FUN_0040b1c0(CVector3f *vector_ptr,cha
     }
   }
   else {
-    FUN_005c03c0
-              (DAT_007c3034,"%s%g,%g,%g",&DAT_006106c0,(double)vector_ptr->x,
-               (double)vector_ptr->y,(double)vector_ptr->z);
+    _fprintf(DAT_007c3034,"%s%g,%g,%g");
   }
   core_actor_cpp_archiveDescription_FUN_0040b110("3D vector",property_name);
   return;

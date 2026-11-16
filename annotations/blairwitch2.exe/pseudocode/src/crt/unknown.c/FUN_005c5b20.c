@@ -11,30 +11,30 @@
 uint FUN_005c5b20(void)
 
 {
-  int *piVar1;
+  uint *puVar1;
   
-  piVar1 = _DAT_026807e4;
-  if (_DAT_026807e4 != (int *)0x0) {
-    for (; *piVar1 != 0; piVar1 = piVar1 + 1) {
-      if (_DAT_026807e0 != (int *)0x0) {
-        if (*(char *)(((int)piVar1 - (int)_DAT_026807e4 >> 2) + (int)_DAT_026807e0) != '\0') {
-          FUN_005b86a0(*piVar1);
+  puVar1 = _DAT_026807e4;
+  if (_DAT_026807e4 != (uint *)0x0) {
+    for (; (void *)*puVar1 != (void *)0x0; puVar1 = puVar1 + 1) {
+      if (_DAT_026807e0 != (uint *)0x0) {
+        if (*(char *)(((int)puVar1 - (int)_DAT_026807e4 >> 2) + (int)_DAT_026807e0) != '\0') {
+          debugFree((void *)*puVar1);
         }
-        *piVar1 = 0;
+        *puVar1 = 0;
       }
     }
-    if (_DAT_026807e0 == (int *)0x0) {
-      piVar1 = (int *)malloc(5);
+    if (_DAT_026807e0 == (uint *)0x0) {
+      puVar1 = (uint *)malloc(5);
     }
     else {
-      piVar1 = (int *)realloc(_DAT_026807e4,5);
+      puVar1 = (uint *)realloc(_DAT_026807e4,5);
     }
-    if (piVar1 == (int *)0x0) {
+    if (puVar1 == (uint *)0x0) {
       return 0xffffffff;
     }
-    _DAT_026807e4 = piVar1;
-    *piVar1 = 0;
-    _DAT_026807e0 = piVar1 + 1;
+    _DAT_026807e4 = puVar1;
+    *puVar1 = 0;
+    _DAT_026807e0 = puVar1 + 1;
     *(byte *)_DAT_026807e0 = 0;
   }
   return 0;

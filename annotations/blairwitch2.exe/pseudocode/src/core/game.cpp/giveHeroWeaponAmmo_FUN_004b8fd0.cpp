@@ -13,7 +13,7 @@ void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fd0(char *class_name,EAmm
 {
   CAmmo *pCVar1;
   
-  pCVar1 = (CAmmo *)operator_new(0x47c);
+  pCVar1 = operator_new(0x47c);
   if (pCVar1 == (CAmmo *)0x0) {
     return;
   }

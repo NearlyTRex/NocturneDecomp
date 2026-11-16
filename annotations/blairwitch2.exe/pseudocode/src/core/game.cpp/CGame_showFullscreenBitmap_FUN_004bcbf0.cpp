@@ -191,7 +191,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
             core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(this_ptr);
             core_game_cpp_CGame_saveClockTime_FUN_004b3000(this_ptr);
             this_ptr->bitmap_filename[0] = '\0';
-            FUN_005b86a0(local_18);
+            debugFree(local_18);
             iStack_20 = 0;
             if (DAT_006141bc < 1) {
               return;

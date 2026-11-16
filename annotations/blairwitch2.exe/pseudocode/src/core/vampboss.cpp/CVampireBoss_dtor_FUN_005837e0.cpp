@@ -15,12 +15,12 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampire
   CFlame *pCVar4;
   SFollowFormation *pSVar5;
   CClothList *pCVar6;
-  CVampireBoss *pCVar7;
-  void *ptr;
+  CVampireBoss *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CVampireBossTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CVampireBossTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_005b6e80(&this_ptr->morph,0);
@@ -39,12 +39,12 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampire
                      ((CClothList *)&pSVar5[-1].slots[2].offset.y,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar6[-0x19].filenames[6] + 0x10),0);
-  pCVar7 = (CVampireBoss *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930
-                     ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
+  ptr = (CVampireBoss *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                  ((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
   if ((flags & 2) == 0) {
-    return pCVar7;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar7);
-  return pCVar7;
+  debugFreeChecked(ptr);
+  return ptr;
 }

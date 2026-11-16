@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   apply_palette_flag
 ;
 ; XREF[1]:
-;   FUN_00517d70 at 00517d9c
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_00517d70 at 00517d9c
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00516960

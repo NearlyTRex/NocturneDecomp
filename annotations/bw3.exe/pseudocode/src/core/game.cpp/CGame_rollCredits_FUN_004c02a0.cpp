@@ -189,7 +189,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
         do {
           puVar1 = (uint *)((int)local_154c + iVar4);
           iVar4 = iVar4 + 4;
-          FUN_005a3770(*puVar1);
+          debugFree((void *)*puVar1);
         } while (iVar4 < iVar9);
       }
       engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d300(&local_4c,0);

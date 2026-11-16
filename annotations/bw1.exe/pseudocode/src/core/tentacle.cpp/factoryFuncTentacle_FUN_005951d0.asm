@@ -15,7 +15,7 @@ section .text
     PUSH 0xc2d8                         ; 005951d0
         ;   Label: core_tentacle.cpp_factoryFuncTentacle_FUN_005951d0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005951d5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005951da
     TEST EAX,EAX                        ; 005951dd
     JNZ 0x005951e2                      ; 005951df

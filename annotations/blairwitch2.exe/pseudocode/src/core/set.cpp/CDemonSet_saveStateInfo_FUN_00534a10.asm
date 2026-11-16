@@ -18,7 +18,7 @@
 ;   undefined4 DAT_005e5c16
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b8010
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;
 ; *****************************************************************************
 
@@ -32,26 +32,26 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 00534a17
     PUSH 0x5e5bda                       ; 00534a1b | s_Set_state_version_005e5bd9+1
     PUSH EDI                            ; 00534a20
-    CALL crt_unknown.c_FUN_005b8010     ; 00534a21
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 00534a21
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00534a26
     PUSH 0x5e5bf0                       ; 00534a29 | DAT_005e5bf0
     PUSH EDI                            ; 00534a2e
-    CALL crt_unknown.c_FUN_005b8010     ; 00534a2f
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 00534a2f
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00534a34
     PUSH 0x5e5bf3                       ; 00534a37 | = "// Camera count, enabled list\n"
     PUSH EDI                            ; 00534a3c
-    CALL crt_unknown.c_FUN_005b8010     ; 00534a3d
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 00534a3d
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00534a42
     MOV EDX,dword ptr [EBP]             ; 00534a45
     PUSH EDX                            ; 00534a48
     PUSH 0x5e5c12                       ; 00534a49 | DAT_005e5c12
     PUSH EDI                            ; 00534a4e
     XOR EBX,EBX                         ; 00534a4f
-    CALL crt_unknown.c_FUN_005b8010     ; 00534a51
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 00534a51
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     MOV ECX,dword ptr [EBP]             ; 00534a56
     ADD ESP,0xc                         ; 00534a59
     TEST ECX,ECX                        ; 00534a5c
@@ -66,8 +66,8 @@ section .text
     PUSH EDI                            ; 00534a6f
     ADD ESI,0x1a4                       ; 00534a70
     INC EBX                             ; 00534a76
-    CALL crt_unknown.c_FUN_005b8010     ; 00534a77
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 00534a77
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP]             ; 00534a7c
     ADD ESP,0xc                         ; 00534a7f
     CMP EBX,EDX                         ; 00534a82

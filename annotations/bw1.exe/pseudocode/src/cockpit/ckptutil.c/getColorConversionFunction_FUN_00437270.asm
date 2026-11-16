@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[10]:
-;   cockpit_ckptutil.c_FUN_004382d0 at 00438318
-;   cockpit_ckptutil.c_FUN_00438410 at 00438448
 ;   cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0 at 004380c8
+;   cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004382d0 at 00438318
 ;   cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90 at 00437bd8
 ;   cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40 at 00437f78
 ;   cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00437940 at 0043799f
 ;   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560 at 0043856b
 ;   cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00437700 at 00437757
 ;   cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437d00 at 00437d3c
+;   cockpit_ckptutil.c_blitVerticalColumn_FUN_00438410 at 00438448
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00537760 at 005377a6
 ;
 ; Referenced Globals:

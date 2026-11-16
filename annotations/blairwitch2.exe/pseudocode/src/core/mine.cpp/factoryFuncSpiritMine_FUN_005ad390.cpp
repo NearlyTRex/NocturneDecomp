@@ -11,7 +11,7 @@ CSpiritMine * __cdecl core_mine_cpp_factoryFuncSpiritMine_FUN_005ad390(void)
 {
   CSpiritMine *pCVar1;
   
-  pCVar1 = (CSpiritMine *)operator_new(0x838);
+  pCVar1 = operator_new(0x838);
   if (pCVar1 == (CSpiritMine *)0x0) {
     return (CSpiritMine *)0x0;
   }

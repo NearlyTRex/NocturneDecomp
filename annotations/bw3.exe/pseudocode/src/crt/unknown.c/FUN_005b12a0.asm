@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005a3650
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   crt_unknown.c_FUN_005ab400
 ;   crt_unknown.c_FUN_005b08a0
 ;   crt_unknown.c_FUN_005b146c
@@ -116,8 +116,8 @@ section .text
     JNZ 0x005b136f                      ; 005b135d
         ;   XREF to: 005b136f (CONDITIONAL_JUMP)  ; LAB_005b136f
     PUSH EBX                            ; 005b135f
-    CALL crt_unknown.c_FUN_005a3770     ; 005b1360
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005b1360
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     MOV EAX,0xffffffff                  ; 005b1365
     JMP 0x005b1461                      ; 005b136a
         ;   XREF to: 005b1461 (UNCONDITIONAL_JUMP)  ; LAB_005b1461
@@ -150,13 +150,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 005b13a4
     PUSH ECX                            ; 005b13a8
     MOV EBX,EAX                         ; 005b13a9
-    CALL crt_unknown.c_FUN_005a3770     ; 005b13ab
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005b13ab
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005b13b0
     MOV ESI,dword ptr [ESP + 0xc]       ; 005b13b3
     PUSH ESI                            ; 005b13b7
-    CALL crt_unknown.c_FUN_005a3770     ; 005b13b8
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005b13b8
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005b13bd
     TEST EBX,EBX                        ; 005b13c0
     JNZ 0x005b13d1                      ; 005b13c2
@@ -226,8 +226,8 @@ section .text
     JNZ 0x005b145b                      ; 005b1443
         ;   XREF to: 005b145b (CONDITIONAL_JUMP)  ; LAB_005b145b
     PUSH EBX                            ; 005b1445
-    CALL crt_unknown.c_FUN_005a3770     ; 005b1446
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005b1446
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     MOV EAX,0xffffffff                  ; 005b144b
     ADD ESP,0x4                         ; 005b1450
     ADD ESP,0x14                        ; 005b1453

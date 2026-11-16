@@ -11,13 +11,13 @@
 void FUN_005bd118(void)
 
 {
-  if (_DAT_02680174 != 0) {
-    FUN_005b86a0(_DAT_02680174);
-    _DAT_02680174 = 0;
+  if (_DAT_02680174 != (void *)0x0) {
+    debugFree(_DAT_02680174);
+    _DAT_02680174 = (void *)0x0;
   }
-  if (_DAT_02680178 != 0) {
-    FUN_005b86a0(_DAT_02680178);
-    _DAT_02680178 = 0;
+  if (_DAT_02680178 != (void *)0x0) {
+    debugFree(_DAT_02680178);
+    _DAT_02680178 = (void *)0x0;
   }
   return;
 }

@@ -11,12 +11,12 @@
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ac1b0(void)
 
 {
-  if (DAT_00629010 != 0) {
-    FUN_005c09f0(DAT_00629010);
-    DAT_00629010 = 0;
+  if (DAT_00629010 != (void *)0x0) {
+    debugFree(DAT_00629010);
+    DAT_00629010 = (void *)0x0;
   }
-  if (_DAT_02c99310 != 0) {
-    FUN_005c09f0(_DAT_02c99310);
+  if (_DAT_02c99310 != (void *)0x0) {
+    debugFree(_DAT_02c99310);
     DAT_0071362c = 0;
   }
   engine_special_cpp_kill_FUN_00581f20();

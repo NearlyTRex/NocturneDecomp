@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_moon.cpp_CMotionList_ctor_FUN_00502760
-;   crt_unknown.c_FUN_005badc7
+;   crt_unknown.c___CHK_FUN_005badc7
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
 
     PUSH 0x8                            ; 005407e0
         ;   Label: core_skeleton.cpp_CSkeleton_ctor_FUN_005407e0
-    CALL crt_unknown.c_FUN_005badc7     ; 005407e5
-        ;   XREF to: 005badc7 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005badc7()
+    CALL crt_unknown.c___CHK_FUN_005badc7 ; 005407e5
+        ;   XREF to: 005badc7 (UNCONDITIONAL_CALL)  ; void crt_unknown.c___CHK_FUN_005badc7(int stack_size)
     MOV EDX,dword ptr [ESP + 0x4]       ; 005407ea
     PUSH EDX                            ; 005407ee
     CALL core_moon.cpp_CMotionList_ctor_FUN_00502760 ; 005407ef

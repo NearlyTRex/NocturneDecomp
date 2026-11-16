@@ -25,7 +25,7 @@ SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNot
     _DAT_01d71de4 = 0x722;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Too many field note entries in section %s, adding entry %s");
   }
-  pSVar2 = (SNotesEntry *)operator_new(0x15c);
+  pSVar2 = operator_new(0x15c);
   pSVar3 = (SNotesEntry *)0x0;
   if (pSVar2 != (SNotesEntry *)0x0) {
     core_fldnotes_cpp_SNotesEntry_ctor_FUN_004a98f0(pSVar2);

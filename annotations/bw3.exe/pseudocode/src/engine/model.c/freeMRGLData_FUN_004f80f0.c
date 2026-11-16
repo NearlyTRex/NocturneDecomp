@@ -25,11 +25,11 @@ void __cdecl engine_model_c_freeMRGLData_FUN_004f80f0(SMRGLHeaderExtended *mrgl_
           pSVar2 = (SMRGLHeaderExtended *)&(pSVar2->base).count;
         } while (iVar1 < mrgl_data->child_count);
       }
-      FUN_005a3770(mrgl_data);
+      debugFree(mrgl_data);
       return;
     }
     if (iVar1 != 0x26) {
-      FUN_005a3770(mrgl_data);
+      debugFree(mrgl_data);
       return;
     }
     engine_boss_c_modelStructNotSupported3_FUN_0041ac90(mrgl_data);

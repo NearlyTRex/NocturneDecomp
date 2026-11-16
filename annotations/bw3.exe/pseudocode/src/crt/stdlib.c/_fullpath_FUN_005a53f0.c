@@ -28,7 +28,7 @@ char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size)
     iVar2 = _stricmp(path,(char *)&DAT_005da6d8);
     if (iVar2 == 0) {
       if (buffer_size < 4) {
-        FUN_005a3770(unaff_EBP);
+        debugFree(unaff_EBP);
         setErrno(0xe);
         return (char *)0x0;
       }

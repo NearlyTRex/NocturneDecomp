@@ -5,6 +5,10 @@
 // Function prototypes for core/dstrendr.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_dstrendr.cpp_renderDepthOnlyReversed_FUN_00486de0
+// Address: 00486de0
+void __edi_esi_ebx renderDepthOnlyReversed(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+
 // Original: core_dstrendr.cpp_renderDepthOnlyStandard_FUN_00486e26
 // Address: 00486e26
 void __edi_esi_ebx renderDepthOnlyStandard(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);

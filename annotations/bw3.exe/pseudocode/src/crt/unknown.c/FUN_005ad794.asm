@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_005ad7c0
     PUSH 0x1                            ; 005ad7c2
     CALL crt_memory.c_calloc_FUN_005a4b20 ; 005ad7c4
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005a4b20(uint count, uint size)
     ADD ESP,0x8                         ; 005ad7c9
     MOV EBX,EAX                         ; 005ad7cc
     TEST EAX,EAX                        ; 005ad7ce

@@ -28,7 +28,7 @@ section .text
     PUSH EAX                            ; 0048a971
     PUSH 0x58                           ; 0048a972
     CALL crt_memory.c_calloc_FUN_005c1cb0 ; 0048a974
-        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005c1cb0()
+        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005c1cb0(uint count, uint size)
     ADD ESP,0x8                         ; 0048a979
     MOV dword ptr [EBX + 0x4c],EAX      ; 0048a97c
     TEST EAX,EAX                        ; 0048a97f

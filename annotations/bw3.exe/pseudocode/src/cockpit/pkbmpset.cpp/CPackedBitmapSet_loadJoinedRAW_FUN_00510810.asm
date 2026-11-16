@@ -25,7 +25,7 @@
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_getFile_FUN_004659c0
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
@@ -195,8 +195,8 @@ section .text
         ;   XREF to: 0051095b (CONDITIONAL_JUMP)  ; LAB_0051095b
     PUSH EBP                            ; 005109f2
         ;   Label: LAB_005109f2
-    CALL crt_unknown.c_FUN_005a3770     ; 005109f3
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005109f3
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005109f8
     MOV ECX,dword ptr [ESP + 0x190]     ; 005109fb
     PUSH ECX                            ; 00510a02

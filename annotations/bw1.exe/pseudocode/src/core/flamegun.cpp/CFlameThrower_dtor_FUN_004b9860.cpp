@@ -9,18 +9,18 @@
 CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004b9860(CFlameThrower *this_ptr,uint flags)
 
 {
-  CFlameThrower *pCVar1;
-  void *ptr;
+  CFlameThrower *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CFlameThrowerTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CFlameThrowerTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CFlameThrower *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
+  ptr = (CFlameThrower *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005c0344(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

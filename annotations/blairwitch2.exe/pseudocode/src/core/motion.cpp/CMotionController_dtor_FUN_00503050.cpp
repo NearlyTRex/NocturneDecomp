@@ -13,7 +13,7 @@ CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_00503050(
   
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CMotionControllerTypeInfo);
-    FUN_005b7fce(ptr);
+    free(ptr);
     return this_ptr;
   }
   this_ptr->vtable =
@@ -22,6 +22,6 @@ CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_00503050(
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_005b7fdc(this_ptr);
+  debugFreeChecked(this_ptr);
   return this_ptr;
 }

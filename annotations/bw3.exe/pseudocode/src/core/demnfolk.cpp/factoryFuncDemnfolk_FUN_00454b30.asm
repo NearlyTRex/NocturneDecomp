@@ -15,7 +15,7 @@ section .text
     PUSH 0xd14c                         ; 00454b30
         ;   Label: core_demnfolk.cpp_factoryFuncDemnfolk_FUN_00454b30
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00454b35
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 00454b3a
     TEST EAX,EAX                        ; 00454b3d
     JNZ 0x00454b42                      ; 00454b3f

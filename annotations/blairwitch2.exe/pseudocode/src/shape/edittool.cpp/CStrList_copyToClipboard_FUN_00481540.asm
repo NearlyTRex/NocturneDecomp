@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
-;   crt_unknown.c_FUN_005b7fce
+;   crt_unknown.c_free_FUN_005b7fce
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_0047fc30
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00481240
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_00481580
     PUSH EBP                            ; 00481581
     CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 00481582
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005b8df8(uint size)
     ADD ESP,0x4                         ; 00481587
     MOV dword ptr [ESP],EAX             ; 0048158a
     TEST EAX,EAX                        ; 0048158d
@@ -126,8 +126,8 @@ section .text
     ADD ESP,0x8                         ; 00481603
     MOV ESI,dword ptr [ESP]             ; 00481606
     PUSH ESI                            ; 00481609
-    CALL crt_unknown.c_FUN_005b7fce     ; 0048160a
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 0048160a
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 0048160f
     ADD ESP,0x4                         ; 00481612
     POP EBP                             ; 00481615

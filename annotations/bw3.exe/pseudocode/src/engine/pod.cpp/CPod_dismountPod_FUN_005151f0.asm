@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
-;   crt_unknown.c_FUN_005a30c4
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
 ;   engine_pod.cpp_CPodFile_dtor_FUN_00512f70
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
         ;   XREF to: 00512f70 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_00512f70(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00515238
     PUSH EAX                            ; 0051523b
-    CALL crt_unknown.c_FUN_005a30c4     ; 0051523c
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 0051523c
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 00515241
     MOV EBP,dword ptr [EBX]             ; 00515244
         ;   Label: LAB_00515244

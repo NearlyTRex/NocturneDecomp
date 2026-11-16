@@ -313,7 +313,7 @@ section .text
         ;   XREF to: 00592736 (CONDITIONAL_JUMP)  ; LAB_00592736
     PUSH 0xc29c                         ; 00592607
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0059260c
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 00592611
     TEST EAX,EAX                        ; 00592614
     JZ 0x00592621                       ; 00592616

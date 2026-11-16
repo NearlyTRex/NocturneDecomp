@@ -17,7 +17,7 @@
 ;   undefined4 DAT_02c806b8
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     JZ 0x0056f658                       ; 0056f645
         ;   XREF to: 0056f658 (CONDITIONAL_JUMP)  ; LAB_0056f658
     PUSH ESI                            ; 0056f647
-    CALL crt_unknown.c_FUN_005c09f0     ; 0056f648
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0056f648
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR EBP,EBP                         ; 0056f64d
     ADD ESP,0x4                         ; 0056f64f
     MOV dword ptr [0x02c806b8],EBP      ; 0056f652 | DAT_02c806b8
@@ -70,8 +70,8 @@ section .text
     RET                                 ; 0056f6a2
     PUSH EDX                            ; 0056f6a3
         ;   Label: LAB_0056f6a3
-    CALL crt_unknown.c_FUN_005c09f0     ; 0056f6a4
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0056f6a4
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR EBX,EBX                         ; 0056f6a9
     ADD ESP,0x4                         ; 0056f6ab
     MOV dword ptr [0x02c80694],EBX      ; 0056f6ae | DAT_02c80694
@@ -79,8 +79,8 @@ section .text
         ;   XREF to: 0056f63c (UNCONDITIONAL_JUMP)  ; LAB_0056f63c
     PUSH EAX                            ; 0056f6b6
         ;   Label: LAB_0056f6b6
-    CALL crt_unknown.c_FUN_005c09f0     ; 0056f6b7
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0056f6b7
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR ECX,ECX                         ; 0056f6bc
     ADD ESP,0x4                         ; 0056f6be
     MOV dword ptr [0x02c80670],ECX      ; 0056f6c1 | DAT_02c80670

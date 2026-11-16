@@ -3635,6 +3635,24 @@
     "variadic":false
   },
   {
+    "addr":"00434e90",
+    "callers":[
+      "0050f780"
+    ],
+    "conv":"__cdecl",
+    "instructions":2,
+    "method":"getRGBConvertersionFunction",
+    "name":"cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00434e90",
+    "receiver":false,
+    "ret":{
+      "kind":"funcdef",
+      "name":"ColorConversionFunc",
+      "ptr":1
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"00434f90",
     "callers":[
       "00437c50"
@@ -4132,6 +4150,24 @@
     "instructions":71,
     "method":"clipPolygonRightPlaneGlobal",
     "name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043ad90",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"engine/clipper.c",
+    "variadic":false
+  },
+  {
+    "addr":"0043b010",
+    "calls":[
+      "0043ab20"
+    ],
+    "conv":"__cdecl",
+    "instructions":58,
+    "method":"clipPolygonTopPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043b010",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -6991,6 +7027,34 @@
       "ptr":1
     },
     "tu":"core/dtrace.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00479b10",
+    "calls":[
+      "00479970"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonToTop",
+    "name":"core_dtri.cpp_clipPolygonToTop_FUN_00479b10",
+    "params":[
+      {
+        "name":"y_max",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dtri.cpp",
     "variadic":false
   },
   {
@@ -12401,6 +12465,42 @@
       "kind":"builtin",
       "name":"void",
       "ptr":0
+    },
+    "tu":"engine/matrix.c",
+    "variadic":false
+  },
+  {
+    "addr":"004e5410",
+    "callers":[
+      "004e6d80"
+    ],
+    "conv":"__stack_esi",
+    "instructions":74,
+    "method":"transformWorldToView",
+    "name":"engine_matrix.c_transformWorldToView_FUN_004e5410",
+    "params":[
+      {
+        "name":"input_coords",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_coords",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"class",
+      "name":"CVector3i",
+      "ptr":1
     },
     "tu":"engine/matrix.c",
     "variadic":false

@@ -49,7 +49,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00565
   local_30 = 0;
   local_44 = 0;
   if (1 < this_ptr->num_parts) {
-    pCVar1 = (CDeformableModelInstance *)operator_new(0x23a4);
+    pCVar1 = operator_new(0x23a4);
     local_24 = (CDeformableModelInstance *)0x0;
     if (pCVar1 != (CDeformableModelInstance *)0x0) {
       local_24 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00567370(pCVar1);

@@ -8,7 +8,6 @@
 ; CVector3i *      Stack[0x8]:4   input
 ;
 ; XREF[71]:
-;   FUN_004416b0 at 00441712
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0 at 00409b7d
 ;   core_basicene.cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0 at 0059fb77
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041ae50 at 0041aefd
@@ -18,6 +17,7 @@
 ;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a8825
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80 at 00424e69
 ;   core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760 at 0042b891
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 at 0042568c
 ;   ... and 61 more
 ;
 ; Referenced Globals:

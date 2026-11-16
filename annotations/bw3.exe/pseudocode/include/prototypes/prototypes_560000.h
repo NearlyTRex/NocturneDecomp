@@ -35,6 +35,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SHardwareEdge.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SLaserInfo.h"
@@ -85,7 +86,7 @@ void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_005630a3(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0056313e(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_00563257(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
-undefined8 FUN_0056325d(void);
+void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_0056325d(int scanline_y,SHardwareEdge *right,SHardwareEdge *left);
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_transformPoint_FUN_0056356c(SProjectedVertex *output,CVector3i *input);
 void __cdecl core_spawner_cpp_staticInit_FUN_00563840(void);

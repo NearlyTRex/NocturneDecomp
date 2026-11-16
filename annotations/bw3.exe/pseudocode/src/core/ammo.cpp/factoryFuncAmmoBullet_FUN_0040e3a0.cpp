@@ -11,7 +11,7 @@ CAmmoBullet * __cdecl core_ammo_cpp_factoryFuncAmmoBullet_FUN_0040e3a0(void)
 {
   CAmmoBullet *pCVar1;
   
-  pCVar1 = (CAmmoBullet *)operator_new(800);
+  pCVar1 = operator_new(800);
   if (pCVar1 == (CAmmoBullet *)0x0) {
     return (CAmmoBullet *)0x0;
   }

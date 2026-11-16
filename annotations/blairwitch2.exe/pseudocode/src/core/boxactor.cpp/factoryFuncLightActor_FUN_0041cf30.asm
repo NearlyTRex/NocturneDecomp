@@ -15,7 +15,7 @@ section .text
     PUSH 0x37e4                         ; 0041cf30
         ;   Label: core_boxactor.cpp_factoryFuncLightActor_FUN_0041cf30
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0041cf35
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0041cf3a
     TEST EAX,EAX                        ; 0041cf3d
     JNZ 0x0041cf42                      ; 0041cf3f

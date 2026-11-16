@@ -15,7 +15,7 @@ section .text
     PUSH 0x6e0                          ; 00485970
         ;   Label: core_elephant.cpp_factoryFuncElephantGun_FUN_00485970
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00485975
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0048597a
     TEST EAX,EAX                        ; 0048597d
     JNZ 0x00485982                      ; 0048597f

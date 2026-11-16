@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_memory_c_calloc_FUN_005b98d0(int param_1,int param_2)
+; void * __cdecl crt_memory_c_calloc_FUN_005b98d0(uint count,uint size)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   count
+; uint             Stack[0x8]:4   size
 ;
 ; XREF[7]:
 ;   core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_00446510 at 0044651a

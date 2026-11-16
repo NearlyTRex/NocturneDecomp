@@ -11,7 +11,7 @@ CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_0045e240(void)
 {
   CZombieDog *pCVar1;
   
-  pCVar1 = (CZombieDog *)operator_new(0x10b04);
+  pCVar1 = operator_new(0x10b04);
   if (pCVar1 == (CZombieDog *)0x0) {
     return (CZombieDog *)0x0;
   }

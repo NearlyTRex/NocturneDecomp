@@ -27,7 +27,7 @@ EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00431000(CCha
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  FUN_005a3ff0(local_70);
+  _strlwr(local_70);
   if ((this_ptr->base).lifecycle_state == ACTOR_DESTROYED) {
     return DEATH_STATE_DEAD;
   }

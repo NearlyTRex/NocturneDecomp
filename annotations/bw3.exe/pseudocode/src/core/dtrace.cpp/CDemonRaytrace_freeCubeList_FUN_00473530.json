@@ -42,14 +42,14 @@
       "name": "core_dpart.cpp_CDemonPart_dtor_FUN_00466290"
     },
     {
-      "addr": "005a30c4",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30c4"
-    },
-    {
       "addr": "005a3770",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3770"
+      "name": "crt_unknown.c_debugFree_FUN_005a3770"
+    },
+    {
+      "addr": "005a30c4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005a30c4"
     }
   ],
   "globals": [],
@@ -152,7 +152,7 @@
       "line": 15,
       "match": "(int)&this_ptr->cube_list->triangle_count",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&this_ptr->cube_list->triangle_count + iVar4);",
+      "text": "puVar1 = (uint *)((int)&this_ptr->cube_list->triangle_count + iVar3);",
       "type": "pointer_truncation"
     },
     {
@@ -160,7 +160,7 @@
       "line": 15,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&this_ptr->cube_list->triangle_count + iVar4);",
+      "text": "puVar1 = (uint *)((int)&this_ptr->cube_list->triangle_count + iVar3);",
       "type": "pointer_cast"
     }
   ]

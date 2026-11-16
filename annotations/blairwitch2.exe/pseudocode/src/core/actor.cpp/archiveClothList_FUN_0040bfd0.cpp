@@ -11,24 +11,20 @@ void __cdecl core_actor_cpp_archiveClothList_FUN_0040bfd0(CClothList *cloth_list
 {
   int iVar1;
   int iVar2;
-  char (*pacVar3) [40];
   
   if (DAT_007bc038 != 1) {
-    FUN_005b8010(DAT_007bc034,"%s{ // %s\n",&DAT_00609590,property_name);
+    _fprintf(DAT_007bc034,"%s{ // %s\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040b050(1);
     iVar1 = 0;
-    FUN_005b8010
-              (DAT_007bc034,"%s%d // clothCount\n",&DAT_00609590,cloth_list->count);
+    _fprintf(DAT_007bc034,"%s%d // clothCount\n");
     if (0 < cloth_list->count) {
-      pacVar3 = cloth_list->filenames;
       do {
         iVar1 = iVar1 + 1;
-        FUN_005b8010(DAT_007bc034,"%s\"%s\"\n",&DAT_00609590,pacVar3);
-        pacVar3 = pacVar3 + 1;
+        _fprintf(DAT_007bc034,"%s\"%s\"\n");
       } while (iVar1 < cloth_list->count);
     }
     core_actor_cpp_adjustIndentationLevel_FUN_0040b050(-1);
-    FUN_005b8010(DAT_007bc034,&DAT_005cad30,&DAT_00609590);
+    _fprintf(DAT_007bc034,&DAT_005cad30);
     return;
   }
   do {

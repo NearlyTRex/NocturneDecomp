@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 224,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 99,
+    "pseudocode_lines": 74,
     "suspect_count": 12,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 383
+    "total_lines": 358
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     {
       "addr": "005c03c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
     }
   ],
   "globals": [
@@ -309,98 +309,98 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 11,
       "match": "DAT_005deec6",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005deec6,5);",
+      "text": "_fprintf(file_handle,&DAT_005deec6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005deedf",
+      "severity": "mild",
+      "text": "_fprintf(file_handle,&DAT_005deedf);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 18,
-      "match": "DAT_005deedf",
+      "match": "DAT_005deee3",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005deedf,(this_ptr->events).count);",
+      "text": "_fprintf(file_handle,&DAT_005deee3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 23,
-      "match": "DAT_005deee3",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005deee3,pacVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
       "match": "DAT_005def03",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def03,(this_ptr->current_events).count);",
+      "text": "_fprintf(file_handle,&DAT_005def03);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 27,
       "match": "DAT_005def07",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def07,pacVar2);",
+      "text": "_fprintf(file_handle,&DAT_005def07);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_005def2a",
+      "severity": "mild",
+      "text": "_fprintf(file_handle,&DAT_005def2a);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_005def2e",
+      "severity": "mild",
+      "text": "_fprintf(file_handle,&DAT_005def2e);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 40,
-      "match": "DAT_005def2a",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def2a,(this_ptr->persistent_events).count);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005def2e",
-      "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def2e,pacVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
       "match": "DAT_005def57",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def57,(this_ptr->timers).count);",
+      "text": "_fprintf(file_handle,&DAT_005def57);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 49,
       "match": "DAT_005def87",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def87,(this_ptr->counters).count);",
+      "text": "_fprintf(file_handle,&DAT_005def87);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 59,
       "match": "DAT_005defbf",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005defbf,(this_ptr->actor_vars).count);",
+      "text": "_fprintf(file_handle,&DAT_005defbf);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 68,
       "match": "DAT_005defe7",
       "severity": "mild",
-      "text": "iVar1 = FUN_005c03c0(file_handle,&DAT_005defe7,(this_ptr->game_flags).count);",
+      "text": "iVar1 = _fprintf(file_handle,&DAT_005defe7);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 72,
       "match": "DAT_005defeb",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005defeb,pacVar2);",
+      "text": "_fprintf(file_handle,&DAT_005defeb);",
       "type": "undefined_data"
     }
   ]

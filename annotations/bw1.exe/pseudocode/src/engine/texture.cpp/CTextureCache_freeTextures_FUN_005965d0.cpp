@@ -19,16 +19,16 @@ void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005965d0(CTexture
   this_ptr->current_texture_count = 0;
   do {
     if (pSVar2->texture_data != (uchar *)0x0) {
-      FUN_005c09f0(pSVar2->texture_data);
+      debugFree(pSVar2->texture_data);
     }
     if (pSVar2->opacity_data != (uchar *)0x0) {
-      FUN_005c09f0(pSVar2->opacity_data);
+      debugFree(pSVar2->opacity_data);
     }
     if (pSVar2->palette_data != (uchar *)0x0) {
-      FUN_005c09f0(pSVar2->palette_data);
+      debugFree(pSVar2->palette_data);
     }
     if (pSVar2->true_color_data != (uchar *)0x0) {
-      FUN_005c09f0(pSVar2->true_color_data);
+      debugFree(pSVar2->true_color_data);
     }
     pSVar2 = pSVar2 + 1;
   } while (pSVar2 != (STextureCacheEntry *)&this_ptr->current_texture_count);

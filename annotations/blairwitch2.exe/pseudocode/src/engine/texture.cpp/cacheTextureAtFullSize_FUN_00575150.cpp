@@ -167,9 +167,9 @@ void __cdecl engine_texture_cpp_cacheTextureAtFullSize_FUN_00575150(SMRGLTexture
         iStack_20 = iStack_20 + 1;
       } while (iStack_20 < (int)puStack_14);
     }
-    FUN_005b86a0(pvStack_2c);
+    debugFree(pvStack_2c);
     if (puStack_18 != (uchar *)0x0) {
-      FUN_005b86a0(puStack_18);
+      debugFree(puStack_18);
     }
     engine_texture_cpp_storePalettedTexture_FUN_00574ea0
               (texture,(int)puStack_14 * 2,puStack_30,puStack_38,puStack_28);

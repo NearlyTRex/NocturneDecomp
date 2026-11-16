@@ -11,7 +11,7 @@ CBindEvil * __cdecl core_bindevil_cpp_factoryFuncBindEvil_FUN_0040f750(void)
 {
   CBindEvil *pCVar1;
   
-  pCVar1 = (CBindEvil *)operator_new(0x5a0);
+  pCVar1 = operator_new(0x5a0);
   if (pCVar1 == (CBindEvil *)0x0) {
     return (CBindEvil *)0x0;
   }

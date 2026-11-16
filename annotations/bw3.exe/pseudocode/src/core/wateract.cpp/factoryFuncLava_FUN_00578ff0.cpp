@@ -11,7 +11,7 @@ CLava * __cdecl core_wateract_cpp_factoryFuncLava_FUN_00578ff0(void)
 {
   CLava *pCVar1;
   
-  pCVar1 = (CLava *)operator_new(0x2b23c);
+  pCVar1 = operator_new(0x2b23c);
   if (pCVar1 == (CLava *)0x0) {
     return (CLava *)0x0;
   }

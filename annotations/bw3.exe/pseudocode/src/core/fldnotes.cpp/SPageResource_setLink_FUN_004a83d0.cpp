@@ -23,7 +23,7 @@ void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource 
     }
   }
   else {
-    FUN_005a3770(this_ptr->link);
+    debugFree(this_ptr->link);
     this_ptr->link = (char *)0x0;
     if (param_2 == (char *)0x0) {
       return;

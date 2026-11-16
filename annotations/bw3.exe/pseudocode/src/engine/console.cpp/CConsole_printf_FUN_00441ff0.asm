@@ -31,8 +31,8 @@
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fopen_FUN_005a43ec
+;   crt_stdio.c_fprintf_FUN_005a3140
 ;   crt_stdio.c_vsprintf_FUN_005a2898
-;   crt_unknown.c_FUN_005a3140
 ;   engine_console.cpp_CConsole_writeChar_FUN_004420c0
 ;
 ; *****************************************************************************
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 00442097
     PUSH 0x5b93e2                       ; 00442098 | DAT_005b93e2
     PUSH EBX                            ; 0044209d
-    CALL crt_unknown.c_FUN_005a3140     ; 0044209e
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0044209e
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004420a3
     PUSH EBX                            ; 004420a6
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004420a7

@@ -4002,14 +4002,64 @@
     "calls":[
       "0042c410"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":86,
-    "method":"FUN_0042d700",
-    "name":"cockpit_ckptutil.c_FUN_0042d700",
+    "method":"blitVerticalColumn",
+    "name":"cockpit_ckptutil.c_blitVerticalColumn_FUN_0042d700",
+    "params":[
+      {
+        "name":"sprite_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"unused_param",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"start_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -4218,14 +4268,32 @@
       "0051c760",
       "0055f920"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":581,
-    "method":"FUN_00432880",
-    "name":"engine_clipper.c_FUN_00432880",
+    "method":"clipPolygonToViewFrustumAdvanced",
+    "name":"engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
+    "params":[
+      {
+        "name":"vertex_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vertex_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -7872,6 +7940,34 @@
         "type":{
           "kind":"builtin",
           "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dtri.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00478c00",
+    "calls":[
+      "00478900"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonToBottom",
+    "name":"core_dtri.cpp_clipPolygonToBottom_FUN_00478c00",
+    "params":[
+      {
+        "name":"y_min",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }
@@ -16340,6 +16436,42 @@
       "ptr":0
     },
     "tu":"core/motion.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00504600",
+    "calls":[
+      "004e4500"
+    ],
+    "conv":"__cdecl",
+    "instructions":36,
+    "method":"getMpegLayer2AllocationTable",
+    "name":"sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_00504600",
+    "params":[
+      {
+        "name":"layer",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"mode_extension",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":1
+    },
+    "tu":"sound/mp3.cpp",
     "variadic":false
   },
   {

@@ -11,44 +11,43 @@
 void __cdecl core_script_cpp_CScript_saveState_FUN_0054b710(CScript *this_ptr,_FILE *file_handle)
 
 {
-  uint uVar1;
-  int iVar2;
+  int iVar1;
   
-  FUN_005c03c0(file_handle,"// CScript version\n");
-  FUN_005c03c0(file_handle,&DAT_005f0185,6);
-  FUN_005c03c0(file_handle,"// gGame->letterboxMode\n");
-  FUN_005c03c0(file_handle,&DAT_005f01a2,g_CGamePtr->letterbox_mode);
-  FUN_005c03c0(file_handle,"// gGame->allowDamageFlag\n");
-  FUN_005c03c0(file_handle,&DAT_005f01c1,g_CGamePtr->allow_damage_flag);
-  FUN_005c03c0(file_handle,"// gGame->allowEnemyAttackFlag\n");
-  FUN_005c03c0(file_handle,&DAT_005f01e5,g_CGamePtr->allow_enemy_attack_flag);
-  FUN_005c03c0(file_handle,"// letterBoxBlackT\n");
-  FUN_005c03c0(file_handle,&DAT_005f01fd,(double)_DAT_01e818b0);
-  FUN_005c03c0(file_handle,"// nextCmd\n");
-  FUN_005c03c0(file_handle,&DAT_005f020d,this_ptr->next_cmd);
-  FUN_005c03c0(file_handle,"// currentMessage\n");
-  FUN_005c03c0(file_handle,"\"%s\"\n",this_ptr->current_message);
-  FUN_005c03c0(file_handle,"// cmdTimer\n");
-  FUN_005c03c0(file_handle,&DAT_005f0237,(double)this_ptr->cmd_timer);
-  FUN_005c03c0(file_handle,"// dialogWavTime\n");
-  FUN_005c03c0(file_handle,&DAT_005f024d,(double)this_ptr->dialog_wav_time);
-  FUN_005c03c0(file_handle);
+  _fprintf(file_handle,"// CScript version\n");
+  _fprintf(file_handle,&DAT_005f0185);
+  _fprintf(file_handle,"// gGame->letterboxMode\n");
+  _fprintf(file_handle,&DAT_005f01a2);
+  _fprintf(file_handle,"// gGame->allowDamageFlag\n");
+  _fprintf(file_handle,&DAT_005f01c1);
+  _fprintf(file_handle,"// gGame->allowEnemyAttackFlag\n");
+  _fprintf(file_handle,&DAT_005f01e5);
+  _fprintf(file_handle,"// letterBoxBlackT\n");
+  _fprintf(file_handle,&DAT_005f01fd);
+  _fprintf(file_handle,"// nextCmd\n");
+  _fprintf(file_handle,&DAT_005f020d);
+  _fprintf(file_handle,"// currentMessage\n");
+  _fprintf(file_handle,"\"%s\"\n");
+  _fprintf(file_handle,"// cmdTimer\n");
+  _fprintf(file_handle,&DAT_005f0237);
+  _fprintf(file_handle,"// dialogWavTime\n");
+  _fprintf(file_handle,&DAT_005f024d);
+  _fprintf(file_handle,"// whoIsSpeaking\n");
   core_script_cpp_writeActorReference_FUN_0054b3a0(file_handle,&this_ptr->who_is_speaking);
-  FUN_005c03c0(file_handle);
+  _fprintf(file_handle,"// focusActor\n");
   core_script_cpp_writeActorReference_FUN_0054b3a0(file_handle,&this_ptr->focus_actor);
-  FUN_005c03c0(file_handle);
-  FUN_005c03c0(file_handle,&DAT_005f0287);
-  FUN_005c03c0(file_handle);
-  iVar2 = 0;
-  FUN_005c03c0(file_handle,&DAT_005f02a5);
+  _fprintf(file_handle,"// focusActorLocked\n");
+  _fprintf(file_handle,&DAT_005f0287);
+  _fprintf(file_handle,"// callStack count, list\n");
+  iVar1 = 0;
+  _fprintf(file_handle,&DAT_005f02a5);
   if (0 < this_ptr->call_stack_count) {
     do {
-      iVar2 = iVar2 + 1;
-      FUN_005c03c0(file_handle,&DAT_005f02a9);
-    } while (iVar2 < this_ptr->call_stack_count);
+      iVar1 = iVar1 + 1;
+      _fprintf(file_handle,&DAT_005f02a9);
+    } while (iVar1 < this_ptr->call_stack_count);
   }
-  FUN_005c03c0(file_handle);
-  uVar1 = core_script_cpp_CScript_computeChecksum_FUN_0054b940(this_ptr);
-  FUN_005c03c0(file_handle,&DAT_005f02b5,uVar1);
+  _fprintf(file_handle,"// CRC\n");
+  core_script_cpp_CScript_computeChecksum_FUN_0054b940(this_ptr);
+  _fprintf(file_handle,&DAT_005f02b5);
   return;
 }

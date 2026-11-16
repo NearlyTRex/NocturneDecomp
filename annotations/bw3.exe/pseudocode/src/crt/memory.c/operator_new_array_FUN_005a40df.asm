@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_memory_c_operator_new_array_FUN_005a40df(undefined4 param_1)
+; void * __cdecl crt_memory_c_operator_new_array_FUN_005a40df(uint size)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   size
 ;
 ; XREF[20]:
 ;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_00436400 at 0043643b
@@ -28,7 +30,7 @@ section .text
         ;   Label: crt_memory.c_operator_new_array_FUN_005a40df
     PUSH EDX                            ; 005a40e3
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 005a40e4
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 005a40e9
     RET                                 ; 005a40ec
 

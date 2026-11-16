@@ -11,7 +11,7 @@ CSimpleCross * __cdecl core_cross_cpp_factoryFuncSimpleCross_FUN_005a7950(void)
 {
   CSimpleCross *pCVar1;
   
-  pCVar1 = (CSimpleCross *)operator_new(0x828);
+  pCVar1 = operator_new(0x828);
   if (pCVar1 == (CSimpleCross *)0x0) {
     return (CSimpleCross *)0x0;
   }

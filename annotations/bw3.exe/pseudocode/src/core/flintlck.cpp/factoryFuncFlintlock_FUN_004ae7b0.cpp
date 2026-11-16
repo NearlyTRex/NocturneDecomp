@@ -11,7 +11,7 @@ CFlintlock * __cdecl core_flintlck_cpp_factoryFuncFlintlock_FUN_004ae7b0(void)
 {
   CFlintlock *pCVar1;
   
-  pCVar1 = (CFlintlock *)operator_new(0x594);
+  pCVar1 = operator_new(0x594);
   if (pCVar1 == (CFlintlock *)0x0) {
     return (CFlintlock *)0x0;
   }

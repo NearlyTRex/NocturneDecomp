@@ -654,14 +654,14 @@
       "name": "crt_stdio.c_fopen_FUN_005c157c"
     },
     {
+      "addr": "005c03c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
+    },
+    {
       "addr": "005bfb18",
       "is_variadic": false,
       "name": "crt_stdio.c_vsprintf_FUN_005bfb18"
-    },
-    {
-      "addr": "005c03c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
     },
     {
       "addr": "00445500",
@@ -916,7 +916,7 @@
       "line": 36,
       "match": "DAT_005d6cf7",
       "severity": "mild",
-      "text": "file_handle = _fopen(\"console.txt\",&DAT_005d6cf7);",
+      "text": "file = _fopen(\"console.txt\",&DAT_005d6cf7);",
       "type": "undefined_data"
     },
     {
@@ -924,7 +924,7 @@
       "line": 38,
       "match": "DAT_005d6cfa",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005d6cfa,local_1014);",
+      "text": "_fprintf(file,&DAT_005d6cfa);",
       "type": "undefined_data"
     },
     {

@@ -25,6 +25,18 @@ void __cdecl basicIndexedTo16Bit(void *output_buffer,void *input_buffer,int pixe
 // Address: 00434e80
 ColorConversionFunc * __cdecl getColorConversionFunction(void);
 
+// Original: cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00434e90
+// Address: 00434e90
+ColorConversionFunc * __cdecl getRGBConvertersionFunction(void);
+
+// Original: cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00434ea0
+// Address: 00434ea0
+code * getOptimizedMemcpyFunction(void);
+
+// Original: cockpit_ckptutil.c_get16BitConversionFunction_FUN_00434ec0
+// Address: 00434ec0
+ColorConversionFunc * __cdecl get16BitConversionFunction(void);
+
 // Original: cockpit_ckptutil.c_applyActPalette_FUN_00434f90
 // Address: 00434f90
 void __cdecl applyActPalette(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
@@ -65,17 +77,17 @@ void __cdecl blitSimpleSprite(void *sprite_data,int dest_x,int dest_y,int width,
 // Address: 00435cb0
 void __cdecl blitDualModeSprite(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
 
-// Original: cockpit_ckptutil.c_FUN_00435e70
+// Original: cockpit_ckptutil.c_copyBitmapRegion_FUN_00435e70
 // Address: 00435e70
-void FUN_00435e70(void);
+void __cdecl copyBitmapRegion(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset);
 
-// Original: cockpit_ckptutil.c_FUN_00435ee0
+// Original: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_00435ee0
 // Address: 00435ee0
-undefined8 FUN_00435ee0(void);
+void __cdecl blitHorizontallyClippedSprite(void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param,int src_y_offset,int src_stride);
 
-// Original: cockpit_ckptutil.c_FUN_00436020
+// Original: cockpit_ckptutil.c_blitVerticalColumn_FUN_00436020
 // Address: 00436020
-int FUN_00436020(void);
+void __cdecl blitVerticalColumn(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y);
 
 // Original: cockpit_ckptutil.c_blitFullScreen_FUN_00436140
 // Address: 00436140

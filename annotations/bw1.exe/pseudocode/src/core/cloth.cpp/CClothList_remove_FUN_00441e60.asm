@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_0043e620
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
         ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_0043e620(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00441eb5
     PUSH EAX                            ; 00441eb8
-    CALL crt_unknown.c_FUN_005c0344     ; 00441eb9
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 00441eb9
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 00441ebe
     MOV EAX,dword ptr [ESP + 0x10]      ; 00441ec1
         ;   Label: LAB_00441ec1

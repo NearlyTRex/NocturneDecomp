@@ -11,7 +11,7 @@ CAmmoMana * __cdecl core_ammo_cpp_factoryFuncAmmoMana_FUN_0040e0c0(void)
 {
   CAmmoMana *pCVar1;
   
-  pCVar1 = (CAmmoMana *)operator_new(800);
+  pCVar1 = operator_new(800);
   if (pCVar1 == (CAmmoMana *)0x0) {
     return (CAmmoMana *)0x0;
   }

@@ -11,43 +11,42 @@
 void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00548580(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count)
 
 {
-  uint uVar1;
-  SVert *pSVar2;
-  SInputFace *pSVar3;
-  int *piVar4;
+  void *array_memory;
+  SVert *pSVar1;
+  SInputFace *pSVar2;
+  int *piVar3;
+  int element_count;
+  WatcomTypeInfo *type_info;
   
   if ((lod_index < 0) || (this_ptr->num_lods <= lod_index)) {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0x29a;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDeformableModel::allocLOD - invalid lod number %d");
   }
-  FUN_005a30b6(this_ptr->vertex_data_ptr[lod_index]);
-  FUN_005a30b6(this_ptr->tri_data_ptr[lod_index]);
-  FUN_005a30b6(this_ptr->index_data_ptr[lod_index]);
-  FUN_005a30b6(this_ptr->cap_index_ptr[lod_index]);
+  free(this_ptr->vertex_data_ptr[lod_index]);
+  free(this_ptr->tri_data_ptr[lod_index]);
+  free(this_ptr->index_data_ptr[lod_index]);
+  free(this_ptr->cap_index_ptr[lod_index]);
+  type_info = &g_SVertTypeInfo;
   this_ptr->vertex_count[lod_index] = vertex_count;
+  element_count = this_ptr->vertex_count[lod_index];
   this_ptr->tri_count[lod_index] = tri_count;
   this_ptr->cap_tri_count[lod_index] = cap_tri_count;
-  uVar1 = operator_new_array
-                    (this_ptr->vertex_count[lod_index] * 0x34,this_ptr->vertex_count[lod_index],
-                     &g_SVertTypeInfo);
-  pSVar2 = (SVert *)FUN_005a556a(uVar1);
-  this_ptr->vertex_data_ptr[lod_index] = pSVar2;
-  pSVar3 = (SInputFace *)
-           operator_new_array
+  array_memory = operator_new_array(element_count * 0x34);
+  pSVar1 = (SVert *)__vec_new(array_memory,element_count,type_info);
+  this_ptr->vertex_data_ptr[lod_index] = pSVar1;
+  pSVar2 = operator_new_array
                      ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) * 0x12);
-  this_ptr->tri_data_ptr[lod_index] = pSVar3;
-  piVar4 = (int *)operator_new_array
-                            ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) *
-                             4);
-  this_ptr->index_data_ptr[lod_index] = piVar4;
+  this_ptr->tri_data_ptr[lod_index] = pSVar2;
+  piVar3 = operator_new_array
+                     ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) * 4);
+  this_ptr->index_data_ptr[lod_index] = piVar3;
   if (this_ptr->cap_tri_count[lod_index] < 1) {
     this_ptr->cap_index_ptr[lod_index] = (int *)0x0;
   }
   else {
-    piVar4 = (int *)operator_new_array
-                              (this_ptr->cap_tri_count[lod_index] * 4);
-    this_ptr->cap_index_ptr[lod_index] = piVar4;
+    piVar3 = operator_new_array(this_ptr->cap_tri_count[lod_index] * 4);
+    this_ptr->cap_index_ptr[lod_index] = piVar3;
   }
   if ((((this_ptr->vertex_data_ptr[lod_index] != (SVert *)0x0) &&
        (this_ptr->tri_data_ptr[lod_index] != (SInputFace *)0x0)) &&

@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_00509cb0
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_0054dac0
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_0054da70
@@ -93,8 +93,8 @@ section .text
         ;   XREF to: 00509cb0 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00509cb0(CMP3Decoder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054da60
     PUSH EAX                            ; 0054da63
-    CALL crt_unknown.c_FUN_005b7fdc     ; 0054da64
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 0054da64
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 0054da69
     JMP 0x0054da08                      ; 0054da6c
         ;   XREF to: 0054da08 (UNCONDITIONAL_JUMP)  ; LAB_0054da08

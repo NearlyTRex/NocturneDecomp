@@ -50,7 +50,7 @@ LAB_0054c832:
      (iVar4 = _stricmp(local_118,&DAT_005e7ef6), iVar4 == 0)) {
     iVar4 = engine_dosio_cpp_getFileSize_FUN_00460aa0("sound",filename);
     if (iVar4 < 1) goto LAB_0054cb48;
-    this_ptr = (CMP3Decoder *)operator_new(0x8630);
+    this_ptr = operator_new(0x8630);
     pCVar3 = (CMP3Decoder *)0x0;
     if (this_ptr != (CMP3Decoder *)0x0) {
       pCVar3 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_00509c70(this_ptr);

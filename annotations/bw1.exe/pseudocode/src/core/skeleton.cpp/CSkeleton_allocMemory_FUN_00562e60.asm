@@ -59,7 +59,7 @@ section .text
     SHL EAX,0x4                         ; 00562ebd
     PUSH EAX                            ; 00562ec0
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00562ec1
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     MOV EDX,dword ptr [EBX + 0x1ec8c]   ; 00562ec6
     MOV dword ptr [EBX + 0x1ec90],EAX   ; 00562ecc
     LEA EAX,[EDX*0x4 + 0x0]             ; 00562ed2
@@ -68,7 +68,7 @@ section .text
     SHL EAX,0x2                         ; 00562ede
     PUSH EAX                            ; 00562ee1
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00562ee2
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     MOV EDX,dword ptr [EBX + 0x1ec8c]   ; 00562ee7
     MOV dword ptr [EBX + 0x1ec94],EAX   ; 00562eed
     LEA EAX,[EDX*0x4 + 0x0]             ; 00562ef3
@@ -77,7 +77,7 @@ section .text
     SHL EAX,0x2                         ; 00562eff
     PUSH EAX                            ; 00562f02
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00562f03
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 00562f08
     MOV EBP,dword ptr [EBX + 0x1ec90]   ; 00562f0b
     MOV dword ptr [EBX + 0x1ec98],EAX   ; 00562f11

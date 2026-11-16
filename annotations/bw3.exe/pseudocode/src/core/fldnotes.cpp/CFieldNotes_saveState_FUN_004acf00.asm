@@ -42,7 +42,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
-;   crt_unknown.c_FUN_005a3140
+;   crt_stdio.c_fprintf_FUN_005a3140
 ;
 ; *****************************************************************************
 
@@ -57,32 +57,32 @@ section .text
     MOV EBP,dword ptr [ESP + 0x44]      ; 004acf07
     PUSH 0x5c19c6                       ; 004acf0b | = "//-- BEGIN FIELD NOTES --------------..."
     PUSH EBP                            ; 004acf10
-    CALL crt_unknown.c_FUN_005a3140     ; 004acf11
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004acf11
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004acf16
     PUSH 0x5c19fd                       ; 004acf19 | = "// field notes file version\n"
     PUSH EBP                            ; 004acf1e
-    CALL crt_unknown.c_FUN_005a3140     ; 004acf1f
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004acf1f
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004acf24
     PUSH 0x2                            ; 004acf27
     PUSH 0x5c1a1a                       ; 004acf29 | DAT_005c1a1a
     PUSH EBP                            ; 004acf2e
-    CALL crt_unknown.c_FUN_005a3140     ; 004acf2f
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004acf2f
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004acf34
     PUSH 0x5c1a1e                       ; 004acf37 | = "// filename\n"
     PUSH EBP                            ; 004acf3c
-    CALL crt_unknown.c_FUN_005a3140     ; 004acf3d
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004acf3d
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004acf42
     MOV EDX,dword ptr [ESP + 0x40]      ; 004acf45
     PUSH EDX                            ; 004acf49
     PUSH 0x5c1a2b                       ; 004acf4a | = "\"%s\"\n"
     PUSH EBP                            ; 004acf4f
     XOR ESI,ESI                         ; 004acf50
-    CALL crt_unknown.c_FUN_005a3140     ; 004acf52
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004acf52
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004acf57
     MOV EBX,dword ptr [0x01d0d210]      ; 004acf5a | DAT_01d0d210
     MOV dword ptr [ESP],ESI             ; 004acf60
@@ -129,14 +129,14 @@ section .text
     PUSH 0x5c1a5e                       ; 004acfce | = "// entry count, list(\"name\", type)\n"
         ;   Label: LAB_004acfce
     PUSH EBP                            ; 004acfd3
-    CALL crt_unknown.c_FUN_005a3140     ; 004acfd4
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004acfd4
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004acfd9
     PUSH ESI                            ; 004acfdc
     PUSH 0x5c1a82                       ; 004acfdd | DAT_005c1a82
     PUSH EBP                            ; 004acfe2
-    CALL crt_unknown.c_FUN_005a3140     ; 004acfe3
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004acfe3
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004acfe8
     XOR ECX,ECX                         ; 004acfeb
     MOV EBX,dword ptr [0x01d0d210]      ; 004acfed | DAT_01d0d210
@@ -219,16 +219,16 @@ section .text
     PUSH 0x5c1add                       ; 004ad0bf | = "// map coverage count\n"
         ;   Label: LAB_004ad0bf
     PUSH EBP                            ; 004ad0c4
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad0c5
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad0c5
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004ad0ca
     MOV ECX,dword ptr [ESP + 0x14]      ; 004ad0cd
     PUSH ECX                            ; 004ad0d1
     PUSH 0x5c1af4                       ; 004ad0d2 | DAT_005c1af4
     PUSH EBP                            ; 004ad0d7
     XOR EBX,EBX                         ; 004ad0d8
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad0da
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad0da
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ad0df
     MOV ESI,dword ptr [0x01d0e36c]      ; 004ad0e2 | DAT_01d0e36c
     MOV dword ptr [ESP + 0x4],EBX       ; 004ad0e8
@@ -260,8 +260,8 @@ section .text
     PUSH 0x5c1bd2                       ; 004ad137 | = "//-- END FIELD NOTES ----------------..."
         ;   Label: LAB_004ad137
     PUSH EBP                            ; 004ad13c
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad13d
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad13d
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004ad142
     ADD ESP,0x2c                        ; 004ad145
     POP EBP                             ; 004ad148
@@ -292,8 +292,8 @@ section .text
     PUSH 0x5c1a86                       ; 004ad188 | = "\"%s\", %d\n"
     PUSH EBP                            ; 004ad18d
     DEC ESI                             ; 004ad18e
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad18f
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad18f
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004ad194
     JMP 0x004ad031                      ; 004ad197
         ;   XREF to: 004ad031 (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -317,8 +317,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 004ad1d3
     PUSH EBP                            ; 004ad1d7
     DEC ESI                             ; 004ad1d8
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad1d9
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad1d9
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     MOV dword ptr [ESP + 0x1c],ESI      ; 004ad1de
     ADD ESP,0x8                         ; 004ad1e2
     MOV EAX,dword ptr [EDI + 0x98]      ; 004ad1e5 | SNotesMap_ARRAY_01d0e370[1].reveal_mask.height
@@ -328,13 +328,13 @@ section .text
     PUSH EBX                            ; 004ad1f3
     PUSH 0x5c1b39                       ; 004ad1f4 | = "%s, %d, %d\n"
     PUSH EBP                            ; 004ad1f9
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad1fa
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad1fa
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004ad1ff
     PUSH 0x5c1b45                       ; 004ad202 | = "\t// map coverage data\n"
     PUSH EBP                            ; 004ad207
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad208
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad208
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004ad20d
     XOR ECX,ECX                         ; 004ad210
     MOV EBX,dword ptr [EDI + 0x98]      ; 004ad212 | SNotesMap_ARRAY_01d0e370[1].reveal_mask.height
@@ -345,8 +345,8 @@ section .text
     PUSH 0x5c1b5c                       ; 004ad220 | DAT_005c1b5c
         ;   Label: LAB_004ad220
     PUSH EBP                            ; 004ad225
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad226
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad226
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004ad22b
     MOV EBX,dword ptr [EDI + 0x94]      ; 004ad22e | SNotesMap_ARRAY_01d0e370[1].reveal_mask.width
     MOV EAX,dword ptr [ESP + 0x28]      ; 004ad234
@@ -366,8 +366,8 @@ section .text
     PUSH EBP                            ; 004ad259
     INC EBX                             ; 004ad25a
     INC ESI                             ; 004ad25b
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad25c
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad25c
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     MOV ECX,dword ptr [EDI + 0x94]      ; 004ad261 | SNotesMap_ARRAY_01d0e370[1].reveal_mask.width
     ADD ESP,0xc                         ; 004ad267
     CMP ESI,ECX                         ; 004ad26a
@@ -376,8 +376,8 @@ section .text
     PUSH 0x5c1b64                       ; 004ad26e | DAT_005c1b64
         ;   Label: LAB_004ad26e
     PUSH EBP                            ; 004ad273
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad274
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad274
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004ad279
     MOV ESI,dword ptr [ESP + 0x28]      ; 004ad27c
     INC ESI                             ; 004ad280
@@ -409,15 +409,15 @@ section .text
     PUSH 0x5c1b66                       ; 004ad2b9 | = "\t// map annotation count, list\n"
         ;   Label: LAB_004ad2b9
     PUSH EBP                            ; 004ad2be
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad2bf
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad2bf
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004ad2c4
     PUSH ESI                            ; 004ad2c7
     PUSH 0x5c1b86                       ; 004ad2c8 | DAT_005c1b86
     PUSH EBP                            ; 004ad2cd
     XOR EBX,EBX                         ; 004ad2ce
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad2d0
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad2d0
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     MOV ECX,dword ptr [EDI + 0x5f0]     ; 004ad2d5 | SNotesMap_ARRAY_01d0e370[1].annotation_count
     ADD ESP,0xc                         ; 004ad2db
     TEST ECX,ECX                        ; 004ad2de
@@ -437,8 +437,8 @@ section .text
     PUSH 0x5c1b8b                       ; 004ad308 | = "\t\t%s\n"
     PUSH EBP                            ; 004ad30d
     DEC ESI                             ; 004ad30e
-    CALL crt_unknown.c_FUN_005a3140     ; 004ad30f
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004ad30f
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ad314
     MOV ECX,dword ptr [ESP + 0x24]      ; 004ad317
         ;   Label: LAB_004ad317

@@ -11,7 +11,7 @@ CConstructRed * __cdecl core_construc_cpp_factoryFuncConstructRed_FUN_004445d0(v
 {
   CConstructRed *pCVar1;
   
-  pCVar1 = (CConstructRed *)operator_new(0xd860);
+  pCVar1 = operator_new(0xd860);
   if (pCVar1 == (CConstructRed *)0x0) {
     return (CConstructRed *)0x0;
   }

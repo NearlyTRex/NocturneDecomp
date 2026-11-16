@@ -11,7 +11,7 @@ CLadder * __cdecl core_ladder_cpp_factoryFuncLadder_FUN_004dff30(void)
 {
   CLadder *pCVar1;
   
-  pCVar1 = (CLadder *)operator_new(0x45c);
+  pCVar1 = operator_new(0x45c);
   if (pCVar1 == (CLadder *)0x0) {
     return (CLadder *)0x0;
   }

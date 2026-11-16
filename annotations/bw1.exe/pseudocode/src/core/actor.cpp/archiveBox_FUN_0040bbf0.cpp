@@ -12,11 +12,11 @@ void __cdecl core_actor_cpp_archiveBox_FUN_0040bbf0(CBox *box_ptr,char *property
   int iVar1;
   
   if (DAT_007c3038 != 1) {
-    FUN_005c03c0(DAT_007c3034,"%s{ // %s\n",&DAT_006106c0,property_name);
+    _fprintf(DAT_007c3034,"%s{ // %s\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(1);
     core_box_cpp_CBox_saveToFile_FUN_004202f0(box_ptr,DAT_007c3034,&DAT_006106c0);
     core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(-1);
-    FUN_005c03c0(DAT_007c3034,&DAT_005d2bfc,&DAT_006106c0);
+    _fprintf(DAT_007c3034,&DAT_005d2bfc);
     return;
   }
   do {

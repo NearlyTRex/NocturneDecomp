@@ -16,7 +16,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0054b
   
   core_skeleton_cpp_CDeformableModelInstance_free_FUN_0054c060(this_ptr);
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr);
-  pCVar2 = (CVector3i *)operator_new_array(pCVar1->vertex_count[0] * 0xc);
+  pCVar2 = operator_new_array(pCVar1->vertex_count[0] * 0xc);
   this_ptr->skinned_vertices_buffer = pCVar2;
   if (pCVar2 != (CVector3i *)0x0) {
     this_ptr->cached_skinned_lod_index = -1;

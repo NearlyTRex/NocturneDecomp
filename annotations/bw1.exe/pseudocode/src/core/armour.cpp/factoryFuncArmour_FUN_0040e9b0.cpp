@@ -11,7 +11,7 @@ CArmour * __cdecl core_armour_cpp_factoryFuncArmour_FUN_0040e9b0(void)
 {
   CArmour *pCVar1;
   
-  pCVar1 = (CArmour *)operator_new(0xc2cc);
+  pCVar1 = operator_new(0xc2cc);
   if (pCVar1 == (CArmour *)0x0) {
     return (CArmour *)0x0;
   }

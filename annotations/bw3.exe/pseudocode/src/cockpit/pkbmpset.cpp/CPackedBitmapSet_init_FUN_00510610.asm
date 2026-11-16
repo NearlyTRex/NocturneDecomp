@@ -7,8 +7,8 @@
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   FUN_00510d20 at 00510d5d
-;   cockpit_pkbmpset.cpp_FUN_00510c70 at 00510d01
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00510d20 at 00510d5d
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70 at 00510d01
 ;
 ; *****************************************************************************
 

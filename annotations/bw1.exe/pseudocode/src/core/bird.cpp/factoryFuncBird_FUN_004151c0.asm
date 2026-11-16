@@ -15,7 +15,7 @@ section .text
     PUSH 0x1fac0                        ; 004151c0
         ;   Label: core_bird.cpp_factoryFuncBird_FUN_004151c0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004151c5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004151ca
     TEST EAX,EAX                        ; 004151cd
     JNZ 0x004151d2                      ; 004151cf

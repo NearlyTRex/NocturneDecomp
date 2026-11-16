@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00404620 at 00404627
 ;   engine_3d.c_drawLineStrip2D_FUN_00404590 at 00404597
+;   engine_3d.c_drawLineStrip3D_FUN_00404620 at 00404627
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006094d0

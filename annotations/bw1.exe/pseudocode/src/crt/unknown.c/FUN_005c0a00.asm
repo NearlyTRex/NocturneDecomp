@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   crt_unknown.c_FUN_005c09f0 at 005c09f5
 ;   crt_unknown.c_FUN_005c10e8 at 005c110b
 ;   crt_unknown.c_FUN_005c68f8 at 005c6996
 ;   crt_unknown.c_FUN_005c7018 at 005c71c0
+;   crt_unknown.c_debugFree_FUN_005c09f0 at 005c09f5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00626220

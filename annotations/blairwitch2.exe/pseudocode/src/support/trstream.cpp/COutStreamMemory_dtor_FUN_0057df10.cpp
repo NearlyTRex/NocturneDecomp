@@ -9,20 +9,20 @@
 COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_dtor_FUN_0057df10(COutStreamMemory *this_ptr,uint flags)
 
 {
-  COutStreamMemory *pCVar1;
-  void *ptr;
+  COutStreamMemory *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_COutStreamMemoryTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_COutStreamMemoryTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).vtable = &g_COutStreamMemoryVTable;
   support_trstream_cpp_COutStreamMemory_close_FUN_0057e0d0(this_ptr);
-  pCVar1 = (COutStreamMemory *)support_trstream_cpp_COutStream_dtor_FUN_0057d860(&this_ptr->base,1);
+  ptr = (COutStreamMemory *)support_trstream_cpp_COutStream_dtor_FUN_0057d860(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

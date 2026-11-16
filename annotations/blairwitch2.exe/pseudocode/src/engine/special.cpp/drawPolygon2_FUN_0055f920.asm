@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[7]:
-;   engine_clipper.c_FUN_00432880 at 004329be
+;   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880 at 004329be
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330 at 00431490
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00433000 at 00433144
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004625f0 at 0046266d

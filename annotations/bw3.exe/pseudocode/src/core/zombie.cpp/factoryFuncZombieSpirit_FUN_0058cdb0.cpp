@@ -11,7 +11,7 @@ CZombieSpirit * __cdecl core_zombie_cpp_factoryFuncZombieSpirit_FUN_0058cdb0(voi
 {
   CZombieSpirit *pCVar1;
   
-  pCVar1 = (CZombieSpirit *)operator_new(0xd14c);
+  pCVar1 = operator_new(0xd14c);
   if (pCVar1 == (CZombieSpirit *)0x0) {
     return (CZombieSpirit *)0x0;
   }

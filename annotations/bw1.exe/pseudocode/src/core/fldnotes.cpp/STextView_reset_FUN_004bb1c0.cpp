@@ -25,7 +25,7 @@ void __cdecl core_fldnotes_cpp_STextView_reset_FUN_004bb1c0(STextView *this_ptr)
         iVar1 = iVar1 + 0x144;
       } while (iVar2 < this_ptr->page_count);
     }
-    FUN_005c09f0(this_ptr->pages);
+    debugFree(this_ptr->pages);
     this_ptr->pages = (STextPage *)0x0;
   }
   this_ptr->page_index = 0;

@@ -11,7 +11,7 @@
 void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00570020(CSfxSample *this_ptr)
 
 {
-  CMP3Decoder *pCVar1;
+  CMP3Decoder *ptr;
   
   if (this_ptr->ref_count != 0) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
@@ -22,8 +22,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00570020(CSfxSample *th
   sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_00570130(this_ptr);
   sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_005700e0(this_ptr);
   if (this_ptr->mp3_data != (CMP3Decoder *)0x0) {
-    pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_0052ae80(this_ptr->mp3_data,0);
-    FUN_005c0344(pCVar1);
+    ptr = sound_mp3_cpp_CMP3Decoder_dtor_FUN_0052ae80(this_ptr->mp3_data,0);
+    debugFreeChecked(ptr);
   }
   this_ptr->mp3_data = (CMP3Decoder *)0x0;
   support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&this_ptr->file_stream);

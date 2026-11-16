@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b2d0
 ;   crt_stdio.c_fgetc_FUN_005a32b0
-;   crt_unknown.c_FUN_005a3140
+;   crt_stdio.c_fprintf_FUN_005a3140
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     PUSH 0x5b5a6b                       ; 0040b3a8 | = "    // %s\n"
     MOV EBX,dword ptr [0x007df9b4]      ; 0040b3ad | DAT_007df9b4
     PUSH EBX                            ; 0040b3b3
-    CALL crt_unknown.c_FUN_005a3140     ; 0040b3b4
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0040b3b4
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b3b9
     MOV EAX,[0x007df9b4]                ; 0040b3bc | DAT_007df9b4
     TEST byte ptr [EAX + 0xc],0x20      ; 0040b3c1
@@ -102,8 +102,8 @@ section .text
         ;   Label: LAB_0040b3cc
     MOV EBP,dword ptr [0x007df9b4]      ; 0040b3d1 | DAT_007df9b4
     PUSH EBP                            ; 0040b3d7
-    CALL crt_unknown.c_FUN_005a3140     ; 0040b3d8
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0040b3d8
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0040b3dd
     MOV EAX,[0x007df9b4]                ; 0040b3e0 | DAT_007df9b4
     TEST byte ptr [EAX + 0xc],0x20      ; 0040b3e5

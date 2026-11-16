@@ -475,6 +475,37 @@
     "variadic":false
   },
   {
+    "addr":"00405400",
+    "calls":[
+      "00403920",
+      "004039d0",
+      "0043cbf0",
+      "00508700"
+    ],
+    "conv":"__cdecl",
+    "instructions":64,
+    "method":"renderPolygonTexturedNormalizedUVLit",
+    "name":"engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400",
+    "params":[
+      {
+        "name":"prim",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
+    },
+    "tu":"engine/3d.c",
+    "variadic":false
+  },
+  {
     "addr":"00405600",
     "callers":[
       "00406d70"
@@ -4558,6 +4589,24 @@
     "variadic":false
   },
   {
+    "addr":"00437280",
+    "callers":[
+      "00537aa0"
+    ],
+    "conv":"__cdecl",
+    "instructions":2,
+    "method":"getRGBConvertersionFunction",
+    "name":"cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00437280",
+    "receiver":false,
+    "ret":{
+      "kind":"funcdef",
+      "name":"ColorConversionFunc",
+      "ptr":1
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"00437380",
     "callers":[
       "0043a040"
@@ -6110,6 +6159,34 @@
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00455600",
+    "calls":[
+      "00455460"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonAgainstMaxY",
+    "name":"core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00455600",
+    "params":[
+      {
+        "name":"max_y_plane",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcube.cpp",
     "variadic":false
   },
   {
@@ -11781,14 +11858,32 @@
   },
   {
     "addr":"004c4c00",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":107,
-    "method":"FUN_004c4c00",
-    "name":"engine_font.cpp_FUN_004c4c00",
+    "method":"addPolygonEdge",
+    "name":"engine_font.cpp_addPolygonEdge_FUN_004c4c00",
+    "params":[
+      {
+        "name":"vertex1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"vertex2",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/font.cpp",
@@ -16810,6 +16905,25 @@
       "kind":"class",
       "name":"CPackedBitmap",
       "ptr":1
+    },
+    "tu":"cockpit/pkbitmap.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00537580",
+    "calls":[
+      "005c09f0"
+    ],
+    "cls":"CPackedBitmap",
+    "conv":"__cdecl",
+    "instructions":13,
+    "method":"freePackedData",
+    "name":"cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_00537580",
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
     },
     "tu":"cockpit/pkbitmap.cpp",
     "variadic":false

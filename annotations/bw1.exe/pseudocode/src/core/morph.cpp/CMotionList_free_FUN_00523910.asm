@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     JZ 0x00523939                       ; 0052392e
         ;   XREF to: 00523939 (CONDITIONAL_JUMP)  ; LAB_00523939
     PUSH EBP                            ; 00523930
-    CALL crt_unknown.c_FUN_005c09f0     ; 00523931
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 00523931
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 00523936
     INC ESI                             ; 00523939
         ;   Label: LAB_00523939

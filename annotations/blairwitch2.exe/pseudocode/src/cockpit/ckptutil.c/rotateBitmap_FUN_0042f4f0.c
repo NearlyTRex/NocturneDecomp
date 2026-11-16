@@ -101,6 +101,6 @@ void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_0042f4f0(uchar *source_data,int
     puVar2 = puVar2 + (uint)bVar8 * -2 + 1;
     source_data = source_data + (uint)bVar8 * -2 + 1;
   }
-  FUN_005b86a0(puStack_24);
+  debugFree(puStack_24);
   return;
 }

@@ -12035,13 +12035,20 @@
         "start":"004372b0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_004372b0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"cockpit_ckptutil.c_get16BitConversionFunction_FUN_004372b0",
+    "ret":"ColorConversionFunc*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -12468,15 +12475,10 @@
         "start":"0043d630"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0043d630",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"engine_clipper.c_perspectiveDivideVertices_FUN_0043d630",
+    "ret":"void"
   },
   {
     "addr":"004414b0",
@@ -50700,13 +50702,45 @@
         "start":"0055f630"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_shadow.cpp_FUN_0055f630",
-    "ret":"undefined1",
+    "name":"core_shadow.cpp_CShadow_renderDebugMarker_FUN_0055f630",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CShadow*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ]
     }
   },
   {
@@ -62997,15 +63031,10 @@
         "start":"005b9ab0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_005b9ab0",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"core_xform.cpp_clipPolygonStage2_FUN_005b9ab0",
+    "ret":"void"
   },
   {
     "addr":"005b9c30",
@@ -63407,13 +63436,54 @@
         "start":"005c1cb0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_memory.c_calloc_FUN_005c1cb0",
-    "ret":"undefined1",
-    "sig":"default",
+    "ret":"void*",
     "vars":{
+      "params":[
+        {
+          "name":"count",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

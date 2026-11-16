@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;   engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0
 ;
 ; *****************************************************************************
@@ -101,8 +101,8 @@ section .text
         ;   XREF to: 0047e790 (UNCONDITIONAL_JUMP)  ; LAB_0047e790
     PUSH EDI                            ; 0047e84f
         ;   Label: LAB_0047e84f
-    CALL crt_unknown.c_FUN_005b86a0     ; 0047e850
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 0047e850
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 0047e855
     MOV dword ptr [EBX + 0x1d8],0x0     ; 0047e858
     JMP 0x0047e7bf                      ; 0047e862

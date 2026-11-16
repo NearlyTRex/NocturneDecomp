@@ -4805,14 +4805,80 @@
     "calls":[
       "0042c410"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":118,
-    "method":"FUN_0042d5c0",
-    "name":"cockpit_ckptutil.c_FUN_0042d5c0",
+    "method":"blitHorizontallyClippedSprite",
+    "name":"cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_0042d5c0",
+    "params":[
+      {
+        "name":"sprite_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"max_height",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"unused_param",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_y_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_stride",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -8165,6 +8231,22 @@
     "instructions":13,
     "method":"calculateBaseWidth",
     "name":"shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004855c0",
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "tu":"shape/edittool.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00485740",
+    "cls":"CEdCheck",
+    "conv":"__cdecl",
+    "instructions":74,
+    "method":"handleInput",
+    "name":"shape_edittool.cpp_CEdCheck_handleInput_FUN_00485740",
     "receiver":true,
     "ret":{
       "kind":"builtin",
@@ -15139,6 +15221,35 @@
     "variadic":false
   },
   {
+    "addr":"005044c0",
+    "calls":[
+      "004e4500",
+      "005b7ff0"
+    ],
+    "conv":"__cdecl",
+    "instructions":122,
+    "method":"validateLayer2AllocationTable",
+    "name":"sound_mp3.cpp_validateLayer2AllocationTable_FUN_005044c0",
+    "params":[
+      {
+        "name":"frame",
+        "type":{
+          "kind":"struct",
+          "name":"SMpegFrame",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "tu":"sound/mp3.cpp",
+    "variadic":false
+  },
+  {
     "addr":"00505fc0",
     "calls":[
       "005bada6"
@@ -15867,14 +15978,90 @@
       "00517670",
       "005b7790"
     ],
-    "conv":"unknown",
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
     "instructions":61,
-    "method":"FUN_00517c40",
-    "name":"cockpit_pkbmpset.cpp_FUN_00517c40",
-    "receiver":false,
+    "method":"loadPBMFileRange",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00517c40",
+    "params":[
+      {
+        "name":"filename_format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00517d40",
+    "callers":[
+      "00517d70"
+    ],
+    "calls":[
+      "00517640",
+      "00517cf0"
+    ],
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
+    "instructions":17,
+    "method":"reloadStoredPBGFile",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00517d40",
+    "params":[
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bitmap_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",

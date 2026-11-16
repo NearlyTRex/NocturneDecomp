@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 63,
+    "complexity_score": 51,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 4,
+    "pseudocode_lines": 16,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 79
+    "total_lines": 77
   },
   "cross_references": [
     {
@@ -64,14 +64,14 @@
       "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b2d0"
     },
     {
+      "addr": "005a3140",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005a3140"
+    },
+    {
       "addr": "005a3230",
       "is_variadic": false,
       "name": "crt_stdio.c_fscanf_FUN_005a3230"
-    },
-    {
-      "addr": "005a3140",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3140"
     }
   ],
   "globals": [
@@ -292,18 +292,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_007df9b4",
       "severity": "mild",
-      "text": "(DAT_007df9b4,\"%s%g,%g,%g\",&DAT_005f0990,(double)orient_ptr->pitch,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005f0990",
-      "severity": "mild",
-      "text": "(DAT_007df9b4,\"%s%g,%g,%g\",&DAT_005f0990,(double)orient_ptr->pitch,",
+      "text": "_fprintf(DAT_007df9b4,\"%s%g,%g,%g\");",
       "type": "undefined_data"
     }
   ]

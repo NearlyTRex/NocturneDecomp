@@ -11,7 +11,7 @@ CAmmoManaLarge * __cdecl core_ammo_cpp_factoryFuncAmmoManaLarge_FUN_0040e230(voi
 {
   CAmmoManaLarge *pCVar1;
   
-  pCVar1 = (CAmmoManaLarge *)operator_new(800);
+  pCVar1 = operator_new(800);
   if (pCVar1 == (CAmmoManaLarge *)0x0) {
     return (CAmmoManaLarge *)0x0;
   }

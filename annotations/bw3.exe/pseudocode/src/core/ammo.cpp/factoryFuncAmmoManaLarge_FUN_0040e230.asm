@@ -18,7 +18,7 @@ section .text
     PUSH 0x320                          ; 0040e230
         ;   Label: core_ammo.cpp_factoryFuncAmmoManaLarge_FUN_0040e230
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0040e235
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0040e23a
     TEST EAX,EAX                        ; 0040e23d
     JNZ 0x0040e242                      ; 0040e23f

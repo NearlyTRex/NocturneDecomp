@@ -12,24 +12,24 @@ CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_0040ecc0(CArmour *this_ptr,ui
   CFlame *pCVar1;
   CClothList *pCVar2;
   CDeformableModelInstance *pCVar3;
-  CArmour *pCVar4;
-  void *ptr;
+  CArmour *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CArmourTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CArmourTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_armour_cpp_CFlame_arrdtor50_FUN_0040ee30((this_ptr->base).base.flames,0);
   pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar1[-4].base.vtable,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[0] + 0x10),0);
-  pCVar4 = (CArmour *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730
-                     ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
+  ptr = (CArmour *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                  ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
-    return pCVar4;
+    return ptr;
   }
-  FUN_005c0344(pCVar4);
-  return pCVar4;
+  debugFreeChecked(ptr);
+  return ptr;
 }

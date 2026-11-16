@@ -183,7 +183,7 @@ void __cdecl core_shadow_cpp_CShadow_playDamageSound_FUN_0055f4f0(CShadow *this_
 void __cdecl core_shadow_cpp_CShadow_playDeathSound_FUN_0055f540(CShadow *this_ptr);
 void __cdecl core_shadow_cpp_CShadow_playHowlSound_FUN_0055f590(CShadow *this_ptr);
 void __cdecl core_shadow_cpp_CShadow_playEmergeSound_FUN_0055f5e0(CShadow *this_ptr);
-void core_shadow_cpp_FUN_0055f630(void);
+void __cdecl core_shadow_cpp_CShadow_renderDebugMarker_FUN_0055f630(CShadow *this_ptr,CVector3f *position);
 int __cdecl core_shadow_cpp_CShadow_renderOpaque_FUN_0055fbf0(CShadow *this_ptr);
 int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this_ptr);
 void __cdecl core_shadow_cpp_CShadow_archive_FUN_0055fe00(CShadow *this_ptr);

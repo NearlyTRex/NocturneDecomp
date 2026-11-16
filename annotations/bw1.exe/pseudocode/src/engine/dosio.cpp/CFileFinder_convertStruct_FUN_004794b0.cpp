@@ -34,7 +34,7 @@ void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_004794b0(CFileFinder
     core_main_c_displayErrorAndQuit_FUN_005030e0("CFileFinder::convertStruct - file too big!");
   }
   this_ptr->file_size = *(uint *)(param_2 + 0x20);
-  iVar1 = FUN_005c2106();
+  iVar1 = __I8D();
   this_ptr->timestamp = iVar1 + 0x49ef7d10;
   return;
 }

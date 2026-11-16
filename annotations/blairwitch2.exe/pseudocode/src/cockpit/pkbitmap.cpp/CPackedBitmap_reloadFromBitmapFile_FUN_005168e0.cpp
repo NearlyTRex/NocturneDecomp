@@ -20,7 +20,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e
                           (this_ptr->filename,(void *)0x0,in_stack_0000001c * width);
   cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_00516a60
             (this_ptr,bitmap_data,width,in_stack_0000001c,in_stack_00000020,width);
-  FUN_005b86a0();
+  debugFree(bitmap_data);
   if (in_stack_0000003c == 0) {
     return;
   }

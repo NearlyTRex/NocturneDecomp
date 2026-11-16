@@ -43,7 +43,7 @@ section .text
     PUSH 0x15c                          ; 004a9c99
         ;   Label: LAB_004a9c99
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004a9c9e
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004a9ca3
     TEST EAX,EAX                        ; 004a9ca6
     JZ 0x004a9cb3                       ; 004a9ca8

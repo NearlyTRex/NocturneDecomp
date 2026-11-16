@@ -14,12 +14,12 @@ CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint f
   SFollowFormation *pSVar3;
   CClothList *pCVar4;
   CDeformableModelInstance *pCVar5;
-  CHiram *pCVar6;
-  void *ptr;
+  CHiram *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CHiramTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CHiramTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).base.base.vtable._ub = &g_CHiramVTable._ub;
@@ -32,12 +32,12 @@ CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint f
                      ((CClothList *)&pSVar3[-1].slots[2].offset.y,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar4[-0x19].filenames[6] + 0x10),0);
-  pCVar6 = (CHiram *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930
-                     ((CDemonActor *)(pCVar5[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
+  ptr = (CHiram *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                  ((CDemonActor *)(pCVar5[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
   if ((flags & 2) == 0) {
-    return pCVar6;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar6);
-  return pCVar6;
+  debugFreeChecked(ptr);
+  return ptr;
 }

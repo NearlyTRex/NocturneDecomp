@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004725d3
     PUSH EAX                            ; 004725d6
-    CALL crt_unknown.c_FUN_005b7fce     ; 004725d7
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 004725d7
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     MOV dword ptr [EBX + 0x50],0x0      ; 004725dc
     MOV dword ptr [EBX + 0x48],0x0      ; 004725e3
     MOV EAX,dword ptr [EBX + 0x48]      ; 004725ea

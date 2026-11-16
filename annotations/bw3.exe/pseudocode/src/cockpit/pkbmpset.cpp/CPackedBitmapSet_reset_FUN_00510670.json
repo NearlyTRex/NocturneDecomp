@@ -14,18 +14,6 @@
   },
   "cross_references": [
     {
-      "addr": "00510d20",
-      "from_addr": "00510d28",
-      "name": "FUN_00510d20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00510d70",
-      "from_addr": "00510d76",
-      "name": "FUN_00510d70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005106a0",
       "from_addr": "005106b7",
       "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0",
@@ -44,9 +32,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00510d20",
+      "from_addr": "00510d28",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00510d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00510c70",
       "from_addr": "00510c8a",
-      "name": "cockpit_pkbmpset.cpp_FUN_00510c70",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00510d70",
+      "from_addr": "00510d76",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00510d70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -71,7 +71,7 @@
     {
       "addr": "005a30b6",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30b6"
+      "name": "crt_unknown.c_free_FUN_005a30b6"
     }
   ],
   "globals": [],
@@ -114,7 +114,7 @@
       {
         "call_addr": "00510c8a",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_00510c70",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,7 +125,7 @@
       {
         "call_addr": "00510d28",
         "call_type": "direct",
-        "caller": "FUN_00510d20",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00510d20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,7 +136,7 @@
       {
         "call_addr": "00510d76",
         "call_type": "direct",
-        "caller": "FUN_00510d70",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00510d70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

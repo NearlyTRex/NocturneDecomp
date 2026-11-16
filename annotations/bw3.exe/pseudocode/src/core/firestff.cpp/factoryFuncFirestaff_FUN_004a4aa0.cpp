@@ -11,7 +11,7 @@ CFirestaff * __cdecl core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void)
 {
   CFirestaff *pCVar1;
   
-  pCVar1 = (CFirestaff *)operator_new(0x25c8);
+  pCVar1 = operator_new(0x25c8);
   if (pCVar1 == (CFirestaff *)0x0) {
     return (CFirestaff *)0x0;
   }

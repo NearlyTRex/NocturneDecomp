@@ -24,7 +24,7 @@
 ; undefined2       Stack[-0x14]:2  local_14
 ;
 ; XREF[2]:
-;   crt_io.c_FUN_005c1da8 at 005c1da8
+;   crt_io.c_getFileStat_FUN_005c1da8 at 005c1da8
 ;   crt_unknown.c_FUN_005cc3e0 at 005cc454
 ;
 ; Referenced Globals:
@@ -36,10 +36,10 @@
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005c0820
 ;   crt_errno.c_setErrno_FUN_005c6450
+;   crt_io.c_chdir_FUN_005c26c0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_stdlib.c__fullpath_FUN_005c2500
 ;   crt_string.c__strncpy_FUN_005c20d0
-;   crt_unknown.c_FUN_005c26c0
 ;   crt_unknown.c_FUN_005c7f80
 ;   crt_unknown.c_FUN_005c862c
 ;   crt_unknown.c_FUN_005c90c0
@@ -145,8 +145,8 @@ section .text
         ;   XREF to: 005c81b9 (CONDITIONAL_JUMP)  ; LAB_005c81b9
     PUSH ESI                            ; 005c816e
         ;   Label: LAB_005c816e
-    CALL crt_unknown.c_FUN_005c26c0     ; 005c816f
-        ;   XREF to: 005c26c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005c26c0(char * path)
+    CALL crt_io.c_chdir_FUN_005c26c0    ; 005c816f
+        ;   XREF to: 005c26c0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_005c26c0(char * path)
     ADD ESP,0x4                         ; 005c8174
     TEST EAX,EAX                        ; 005c8177
     JZ 0x005c818b                       ; 005c8179
@@ -161,8 +161,8 @@ section .text
     LEA EAX,[ESP + 0x244]               ; 005c818b
         ;   Label: LAB_005c818b
     PUSH EAX                            ; 005c8192
-    CALL crt_unknown.c_FUN_005c26c0     ; 005c8193
-        ;   XREF to: 005c26c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005c26c0(char * path)
+    CALL crt_io.c_chdir_FUN_005c26c0    ; 005c8193
+        ;   XREF to: 005c26c0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_005c26c0(char * path)
     ADD ESP,0x4                         ; 005c8198
     PUSH 0x13e                          ; 005c819b
     PUSH 0x0                            ; 005c81a0

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 529,
-    "complexity_score": 372,
+    "complexity_score": 409,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 167,
-    "suspect_count": 19,
+    "pseudocode_lines": 164,
+    "suspect_count": 23,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 696
+    "total_lines": 693
   },
   "cross_references": [
     {
@@ -89,6 +89,16 @@
       "name": "crt_stdio.c_fopen_FUN_005b910c"
     },
     {
+      "addr": "005b8010",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005b8010"
+    },
+    {
+      "addr": "005ba1e0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_remove_FUN_005ba1e0"
+    },
+    {
       "addr": "005b8130",
       "is_variadic": false,
       "name": "crt_string.c__stricmp_FUN_005b8130"
@@ -97,16 +107,6 @@
       "addr": "005b9e58",
       "is_variadic": false,
       "name": "crt_string.c_splitpath_FUN_005b9e58"
-    },
-    {
-      "addr": "005b8010",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8010"
-    },
-    {
-      "addr": "005ba1e0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005ba1e0"
     },
     {
       "addr": "005b7790",
@@ -794,7 +794,7 @@
       "line": 81,
       "match": "DAT_005d844f",
       "severity": "mild",
-      "text": "file_handle = _fopen(\"save\\\\$$SAVE$$.TMP\",&DAT_005d844f);",
+      "text": "file = _fopen(\"save\\\\$$SAVE$$.TMP\",&DAT_005d844f);",
       "type": "undefined_data"
     },
     {
@@ -807,6 +807,22 @@
     },
     {
       "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_005d8491",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005d8491);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 98,
+      "match": "DAT_005d84c9",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005d84c9);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 105,
       "match": "DAT_01cb7c54",
       "severity": "mild",
@@ -815,7 +831,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 107,
+      "match": "DAT_005d84da",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005d84da);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_005d84de",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005d84de);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
       "match": "DAT_007bc040",
       "severity": "mild",
       "text": "DAT_007bc040 = 0;",
@@ -823,7 +855,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 134,
       "match": "DAT_005d8527",
       "severity": "mild",
       "text": "iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_0057dd90(&local_1c,local_288,&DAT_005d8527)",
@@ -831,7 +863,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 145,
+      "line": 142,
       "match": "DAT_006164dc",
       "severity": "mild",
       "text": "support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(&local_1c,&DAT_006164dc,4);",
@@ -839,7 +871,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 155,
       "match": "DAT_01cb7b50",
       "severity": "mild",
       "text": "pcVar3 = &DAT_01cb7b50;",
@@ -863,7 +895,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 159,
+      "line": 156,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

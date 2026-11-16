@@ -13,9 +13,21 @@ void __cdecl staticInit(void);
 // Address: 004515b0
 void __cdecl clipEdgeToPlane(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
+// Original: core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00451750
+// Address: 00451750
+void __cdecl clipPolygonAgainstMaxY(float max_y_plane);
+
+// Original: core_dcube.cpp_clipPolygonAgainstMinY_FUN_004518b0
+// Address: 004518b0
+void __cdecl clipPolygonAgainstMinY(float min_y_plane);
+
 // Original: core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00451a20
 // Address: 00451a20
 void __cdecl clipPolygonAgainstMaxX(float max_x_plane);
+
+// Original: core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00451ce0
+// Address: 00451ce0
+void __cdecl clipPolygonAgainstMinZ(float min_z_plane);
 
 // Original: core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00451e50
 // Address: 00451e50

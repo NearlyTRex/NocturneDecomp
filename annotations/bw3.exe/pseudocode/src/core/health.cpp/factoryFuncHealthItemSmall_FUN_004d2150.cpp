@@ -11,7 +11,7 @@ CHealthItemSmall * __cdecl core_health_cpp_factoryFuncHealthItemSmall_FUN_004d21
 {
   CHealthItemSmall *pCVar1;
   
-  pCVar1 = (CHealthItemSmall *)operator_new(0x2e4);
+  pCVar1 = operator_new(0x2e4);
   if (pCVar1 == (CHealthItemSmall *)0x0) {
     return (CHealthItemSmall *)0x0;
   }

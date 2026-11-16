@@ -185,7 +185,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bec20(CGame *this_p
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004ba490(this_ptr);
       core_game_cpp_CGame_saveClockTime_FUN_004b4430(this_ptr);
       this_ptr->bitmap_filename[0] = '\0';
-      FUN_005a3770(local_18);
+      debugFree(local_18);
       return;
     }
   }

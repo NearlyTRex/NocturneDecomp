@@ -15,7 +15,7 @@ section .text
     PUSH 0x22c                          ; 004e3f90
         ;   Label: core_litecone.cpp_factoryFuncLightCone_FUN_004e3f90
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004e3f95
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004e3f9a
     TEST EAX,EAX                        ; 004e3f9d
     JNZ 0x004e3fa2                      ; 004e3f9f

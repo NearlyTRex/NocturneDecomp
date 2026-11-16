@@ -14,17 +14,17 @@ void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_00552b30(void)
   int iVar1;
   int iVar2;
   
-  if (_DAT_02cf32c8 != 0) {
-    FUN_005a3770(_DAT_02cf32c8);
-    _DAT_02cf32c8 = 0;
+  if (_DAT_02cf32c8 != (void *)0x0) {
+    debugFree(_DAT_02cf32c8);
+    _DAT_02cf32c8 = (void *)0x0;
   }
-  if (_DAT_02cf32ec != 0) {
-    FUN_005a3770(_DAT_02cf32ec);
-    _DAT_02cf32ec = 0;
+  if (_DAT_02cf32ec != (void *)0x0) {
+    debugFree(_DAT_02cf32ec);
+    _DAT_02cf32ec = (void *)0x0;
   }
-  if (_DAT_02cf32a4 != 0) {
-    FUN_005a3770(_DAT_02cf32a4);
-    _DAT_02cf32a4 = 0;
+  if (_DAT_02cf32a4 != (void *)0x0) {
+    debugFree(_DAT_02cf32a4);
+    _DAT_02cf32a4 = (void *)0x0;
   }
   iVar2 = 0;
   do {

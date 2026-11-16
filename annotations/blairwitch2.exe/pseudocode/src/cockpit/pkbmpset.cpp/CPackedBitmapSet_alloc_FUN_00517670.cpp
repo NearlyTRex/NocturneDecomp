@@ -23,7 +23,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_00517670(CPackedBit
   }
   type_info = &g_CPackedBitmapTypeInfo;
   element_count = bitmap_count;
-  array_memory = (void *)operator_new_array(bitmap_count * 0x24 + 4);
+  array_memory = operator_new_array(bitmap_count * 0x24 + 4);
   pCVar1 = (CPackedBitmap *)__vec_new(array_memory,element_count,type_info);
   this_ptr->bitmap_array = pCVar1;
   if (pCVar1 == (CPackedBitmap *)0x0) {

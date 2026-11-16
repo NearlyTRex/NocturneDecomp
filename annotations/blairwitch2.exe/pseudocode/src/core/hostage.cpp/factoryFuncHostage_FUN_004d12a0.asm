@@ -15,7 +15,7 @@ section .text
     PUSH 0x24730                        ; 004d12a0
         ;   Label: core_hostage.cpp_factoryFuncHostage_FUN_004d12a0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004d12a5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004d12aa
     TEST EAX,EAX                        ; 004d12ad
     JNZ 0x004d12b2                      ; 004d12af

@@ -9,28 +9,28 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_00473530(CDemonRaytrace *this_ptr)
 
 {
-  CDemonPart *pCVar1;
-  uint *puVar2;
+  CDemonPart *ptr;
+  uint *puVar1;
+  int iVar2;
   int iVar3;
-  int iVar4;
   
   if (this_ptr->cube_list != (SVoxelCubeMetadata *)0x0) {
-    iVar4 = 0;
-    for (iVar3 = 0;
-        iVar3 < (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
-        iVar3 = iVar3 + 1) {
-      puVar2 = (uint *)((int)&this_ptr->cube_list->triangle_count + iVar4);
-      *puVar2 = 0;
-      puVar2[1] = 0;
-      puVar2[0x15] = 0;
-      if ((CDemonPart *)puVar2[3] != (CDemonPart *)0x0) {
-        pCVar1 = core_dpart_cpp_CDemonPart_dtor_FUN_00466290((CDemonPart *)puVar2[3],0);
-        FUN_005a30c4(pCVar1);
+    iVar3 = 0;
+    for (iVar2 = 0;
+        iVar2 < (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
+        iVar2 = iVar2 + 1) {
+      puVar1 = (uint *)((int)&this_ptr->cube_list->triangle_count + iVar3);
+      *puVar1 = 0;
+      puVar1[1] = 0;
+      puVar1[0x15] = 0;
+      if ((CDemonPart *)puVar1[3] != (CDemonPart *)0x0) {
+        ptr = core_dpart_cpp_CDemonPart_dtor_FUN_00466290((CDemonPart *)puVar1[3],0);
+        debugFreeChecked(ptr);
       }
-      iVar4 = iVar4 + 0x58;
-      puVar2[3] = 0;
+      iVar3 = iVar3 + 0x58;
+      puVar1[3] = 0;
     }
-    FUN_005a3770(this_ptr->cube_list);
+    debugFree(this_ptr->cube_list);
   }
   this_ptr->cube_list = (SVoxelCubeMetadata *)0x0;
   return;

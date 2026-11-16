@@ -41,7 +41,7 @@ void FUN_005cc8b0(void)
       _DAT_02c9ff90 = pcVar3;
       iVar6 = FUN_005cc8a0(iVar6 * 5 + 4);
       if (iVar6 == 0) {
-        FUN_005c09f0(pcVar3);
+        debugFree(pcVar3);
       }
       else {
         count = 0;

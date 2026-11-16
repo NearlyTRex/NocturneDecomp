@@ -45,6 +45,10 @@ int __cdecl clipPolygonLeftPlane(SRenderVertex **input_vertices,SRenderVertex **
 // Address: 004399a0
 int __cdecl clipPolygonBottomPlane(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 
+// Original: engine_clipper.c_clipPolygonFarPlane_FUN_00439ae0
+// Address: 00439ae0
+void __cdecl clipPolygonFarPlane(void);
+
 // Original: engine_clipper.c_normalizeClippedVertices_FUN_00439ce0
 // Address: 00439ce0
 void __cdecl normalizeClippedVertices(void);
@@ -81,6 +85,10 @@ void __cdecl clipPolygonRightPlaneGlobal(void);
 // Address: 0043aed0
 void __cdecl clipPolygonLeftPlaneGlobal(void);
 
+// Original: engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043b010
+// Address: 0043b010
+void __cdecl clipPolygonTopPlaneGlobal(void);
+
 // Original: engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043b150
 // Address: 0043b150
 void __cdecl clipPolygonBottomPlaneGlobal(void);
@@ -89,9 +97,9 @@ void __cdecl clipPolygonBottomPlaneGlobal(void);
 // Address: 0043b280
 void __cdecl perspectiveDivideVertices(void);
 
-// Original: engine_clipper.c_FUN_0043b330
+// Original: engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043b330
 // Address: 0043b330
-undefined4 FUN_0043b330(void);
+int __cdecl clipPolygonToViewFrustumAdvanced(int vertex_count,int *vertex_indices);
 
 // Original: engine_clipper.c_clipPolygonToViewport_FUN_0043bac0
 // Address: 0043bac0

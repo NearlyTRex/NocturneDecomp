@@ -18,6 +18,7 @@
 int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *time_remaining)
 
 {
+  float *inventory_ptr;
   float fVar1;
   char cVar2;
   SDialogEntry *pSVar3;
@@ -43,8 +44,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   char *pcVar14;
   char *pcVar15;
   char *pcVar16;
-  float *pfVar17;
-  byte bVar18;
+  byte bVar17;
   float y;
   float local_4938;
   float local_492c;
@@ -249,7 +249,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   uint local_18;
   float local_14;
   
-  bVar18 = 0;
+  bVar17 = 0;
   if ((this_ptr->next_cmd < 0) || (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
     _DAT_01d1d400 = "..\\core\\script.cpp";
     _DAT_01d1d404 = 0x47b;
@@ -729,7 +729,7 @@ LAB_0054630a:
                                         pcVar15 = pcVar14;
                                         if (iVar5 == 0) break;
                                         iVar5 = iVar5 + -1;
-                                        pcVar15 = pcVar14 + (uint)bVar18 * -2 + 1;
+                                        pcVar15 = pcVar14 + (uint)bVar17 * -2 + 1;
                                         cVar2 = *pcVar14;
                                         pcVar14 = pcVar15;
                                       } while (cVar2 != '\0');
@@ -1003,30 +1003,30 @@ joined_r0x0054a269:
                                                             (local_14,y,z,&local_1c0);
                                                   local_1a8.x = local_1c0.x;
                                                   *(uint *)
-                                                   ((int)&local_1a8 + (uint)bVar18 * -8 + 4) =
+                                                   ((int)&local_1a8 + (uint)bVar17 * -8 + 4) =
                                                        *(uint *)
-                                                        ((int)&local_1c0 + (uint)bVar18 * -8 + 4);
+                                                        ((int)&local_1c0 + (uint)bVar17 * -8 + 4);
                                                   *(uint *)
                                                    ((int)&local_1a8 +
-                                                   (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8) =
+                                                   (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8) =
                                                        *(uint *)
                                                         ((int)&local_1c0 +
-                                                        (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
+                                                        (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
                                                   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
                                                             (&local_20c,&local_1a8);
                                                   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690
                                                             (&local_20c,&local_19c,&local_1d8);
                                                   local_1b4.x = local_1d8.x;
                                                   *(uint *)
-                                                   ((int)&local_1b4 + (uint)bVar18 * -8 + 4) =
+                                                   ((int)&local_1b4 + (uint)bVar17 * -8 + 4) =
                                                        *(uint *)
-                                                        ((int)&local_1d8 + (uint)bVar18 * -8 + 4);
+                                                        ((int)&local_1d8 + (uint)bVar17 * -8 + 4);
                                                   *(uint *)
                                                    ((int)&local_1b4 +
-                                                   (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8) =
+                                                   (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8) =
                                                        *(uint *)
                                                         ((int)&local_1d8 +
-                                                        (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
+                                                        (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
                                                   core_actor_cpp_copyVector_FUN_0040cff0
                                                             (&local_19c,&local_1b4);
                                                 }
@@ -1513,27 +1513,10 @@ LAB_005445cf:
                                                     if (7 < this_ptr->call_stack_count) {
                                                       local_104 = _fopen("stack.txt",
                                                                              &DAT_005eef13);
-                                                      FUN_005c03c0
-                                                                (local_104,"line%6d: %s\n",
-                                                                 local_168,pcVar14);
-                                                      iVar5 = this_ptr->call_stack_count + -1;
-                                                      if (-1 < iVar5) {
-                                                        pfVar17 = (float *)(this_ptr->
-                                                                            current_message +
-                                                                           this_ptr->
-                                                                           call_stack_count * 4 +
-                                                                           -0x54);
-                                                        do {
-                                                          piVar7 = (int *)(pfVar17 + 0x117);
-                                                          pfVar17 = pfVar17 + -1;
-                                                          iVar5 = iVar5 + -1;
-                                                          FUN_005c03c0
-                                                                    (local_104,"line%6d: %s\n",
-                                                                     this_ptr->parsed_lines[*piVar7]
-                                                                     .line_number,
-                                                                     this_ptr->parsed_lines[*piVar7]
-                                                                     .text);
-                                                        } while (-1 < iVar5);
+                                                      _fprintf(local_104,"line%6d: %s\n");
+                                                      iVar5 = this_ptr->call_stack_count;
+                                                      while (iVar5 = iVar5 + -1, -1 < iVar5) {
+                                                        _fprintf(local_104,"line%6d: %s\n");
                                                       }
                                                       _fclose(local_104);
                                                       _sprintf(&DAT_01e810b0,
@@ -1635,7 +1618,7 @@ LAB_005445cf:
                                                       if (uVar12 == 0) break;
                                                       uVar12 = uVar12 - 1;
                                                       cVar2 = *pcVar14;
-                                                      pcVar14 = pcVar14 + (uint)bVar18 * -2 + 1;
+                                                      pcVar14 = pcVar14 + (uint)bVar17 * -2 + 1;
                                                     } while (cVar2 != '\0');
                                                     local_100 = ~uVar12 - 2;
                                                     if ((int)local_100 < 1) {
@@ -1650,14 +1633,14 @@ LAB_005445cf:
                                                         uVar13 = uVar13 - 1) {
                                                       *(uint *)pcVar16 =
                                                            *(uint *)pcVar14;
-                                                      pcVar14 = pcVar14 + (uint)bVar18 * -8 + 4;
-                                                      pcVar16 = pcVar16 + (uint)bVar18 * -8 + 4;
+                                                      pcVar14 = pcVar14 + (uint)bVar17 * -8 + 4;
+                                                      pcVar16 = pcVar16 + (uint)bVar17 * -8 + 4;
                                                     }
                                                     for (uVar13 = local_100 & 3; uVar13 != 0;
                                                         uVar13 = uVar13 - 1) {
                                                       *pcVar16 = *pcVar14;
-                                                      pcVar14 = pcVar14 + (uint)bVar18 * -2 + 1;
-                                                      pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
+                                                      pcVar14 = pcVar14 + (uint)bVar17 * -2 + 1;
+                                                      pcVar16 = pcVar16 + (uint)bVar17 * -2 + 1;
                                                     }
                                                     local_34 = local_34 + local_100;
                                                     acStack_23a6[~uVar12] = '\0';
@@ -2543,11 +2526,12 @@ LAB_00548d6a:
                                                   if (pCVar11 == (CDemonActor *)0x0)
                                                   goto joined_r0x00546052;
                                                   if (_DAT_01e810a8 == 0) {
-                                                    pfVar17 = &pCVar11[0x179].orient_matrix.m[1].z;
+                                                    inventory_ptr =
+                                                         &pCVar11[0x179].orient_matrix.m[1].z;
                                                     local_b4 = _DAT_01e810a8;
                                                     actor_ptr = 
                                                   core_doc_cpp_getSelectedWeapon_FUN_004766f0
-                                                            ((CInventory *)pfVar17);
+                                                            ((CInventory *)inventory_ptr);
                                                   local_b0 = actor_ptr;
                                                   if (actor_ptr != (CWeapon *)0x0) {
                                                     do {
@@ -2562,11 +2546,11 @@ LAB_00548d6a:
                                                                     (&actor_ptr->base,local_784);
                                                   if (iVar5 != 0) goto LAB_0054450b;
                                                   core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
-                                                            ((CInventory *)pfVar17,
+                                                            ((CInventory *)inventory_ptr,
                                                              (CDemonActor *)0x0,5,1);
                                                   actor_ptr = 
                                                   core_doc_cpp_getSelectedWeapon_FUN_004766f0
-                                                            ((CInventory *)pfVar17);
+                                                            ((CInventory *)inventory_ptr);
                                                   } while (actor_ptr != local_b0);
                                                   }
                                                   if (local_b4 == 0) {
@@ -3285,28 +3269,28 @@ LAB_00549af2:
                                                                &local_1e4);
                                                     local_190.x = local_1e4.x;
                                                     *(uint *)
-                                                     ((int)&local_190 + (uint)bVar18 * -8 + 4) =
+                                                     ((int)&local_190 + (uint)bVar17 * -8 + 4) =
                                                          *(uint *)
-                                                          ((int)&local_1e4 + (uint)bVar18 * -8 + 4);
+                                                          ((int)&local_1e4 + (uint)bVar17 * -8 + 4);
                                                     *(uint *)
                                                      ((int)&local_190 +
-                                                     (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8) =
+                                                     (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8) =
                                                          *(uint *)
                                                           ((int)&local_1e4 +
-                                                          (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8)
+                                                          (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8)
                                                     ;
                                                                                                         
                                                   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
                                                             (&local_190,&local_184);
                                                   local_1cc = local_184.x;
-                                                  local_1c8[(uint)bVar18 * -2] =
+                                                  local_1c8[(uint)bVar17 * -2] =
                                                        *(float *)((int)&local_184 +
-                                                                 (uint)bVar18 * -8 + 4);
-                                                  local_1c8[(uint)bVar18 * -2 +
-                                                            (uint)bVar18 * -2 + 1] =
+                                                                 (uint)bVar17 * -8 + 4);
+                                                  local_1c8[(uint)bVar17 * -2 +
+                                                            (uint)bVar17 * -2 + 1] =
                                                        *(float *)((int)&local_184 +
-                                                                 (uint)bVar18 * -8 +
-                                                                 (uint)bVar18 * -8 + 8);
+                                                                 (uint)bVar17 * -8 +
+                                                                 (uint)bVar17 * -8 + 8);
                                                   (local_4c->orient).vec.y = local_1c8[0];
                                                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
                                                             (local_4c);
@@ -3410,7 +3394,7 @@ LAB_0054a2ef:
                                                     pcVar16 = pcVar14;
                                                     if (iVar5 == 0) break;
                                                     iVar5 = iVar5 + -1;
-                                                    pcVar16 = pcVar14 + (uint)bVar18 * -2 + 1;
+                                                    pcVar16 = pcVar14 + (uint)bVar17 * -2 + 1;
                                                     cVar2 = *pcVar14;
                                                     pcVar14 = pcVar16;
                                                   } while (cVar2 != '\0');

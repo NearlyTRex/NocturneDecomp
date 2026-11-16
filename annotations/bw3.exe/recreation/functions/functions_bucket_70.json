@@ -3444,14 +3444,80 @@
     "calls":[
       "00434ea0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":49,
-    "method":"FUN_00435e70",
-    "name":"cockpit_ckptutil.c_FUN_00435e70",
+    "method":"copyBitmapRegion",
+    "name":"cockpit_ckptutil.c_copyBitmapRegion_FUN_00435e70",
+    "params":[
+      {
+        "name":"src_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src_stride",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"unused",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bytes_per_row",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"num_rows",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_x_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_y_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -7549,6 +7615,34 @@
         "type":{
           "kind":"builtin",
           "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dtri.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00479c70",
+    "calls":[
+      "00479970"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonToBottom",
+    "name":"core_dtri.cpp_clipPolygonToBottom_FUN_00479c70",
+    "params":[
+      {
+        "name":"y_min",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }
@@ -16238,14 +16332,90 @@
       "005106a0",
       "005a28c0"
     ],
-    "conv":"unknown",
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
     "instructions":61,
-    "method":"FUN_00510c70",
-    "name":"cockpit_pkbmpset.cpp_FUN_00510c70",
-    "receiver":false,
+    "method":"loadPBMFileRange",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70",
+    "params":[
+      {
+        "name":"filename_format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00510d70",
+    "callers":[
+      "00510da0"
+    ],
+    "calls":[
+      "00510670",
+      "00510d20"
+    ],
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
+    "instructions":17,
+    "method":"reloadStoredPBGFile",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00510d70",
+    "params":[
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bitmap_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",
@@ -24228,14 +24398,24 @@
     "calls":[
       "005a3780"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":5,
-    "method":"FUN_005a3770",
-    "name":"crt_unknown.c_FUN_005a3770",
+    "method":"debugFree",
+    "name":"crt_unknown.c_debugFree_FUN_005a3770",
+    "params":[
+      {
+        "name":"ptr",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"crt/unknown.c",
@@ -24246,17 +24426,27 @@
     "callers":[
       "00431000"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":16,
-    "method":"FUN_005a3ff0",
-    "name":"crt_unknown.c_FUN_005a3ff0",
+    "method":"_strlwr",
+    "name":"crt_string.c__strlwr_FUN_005a3ff0",
+    "params":[
+      {
+        "name":"str",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
-    "tu":"crt/unknown.c",
+    "tu":"crt/string.c",
     "variadic":false
   },
   {

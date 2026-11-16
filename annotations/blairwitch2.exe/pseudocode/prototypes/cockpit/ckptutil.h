@@ -25,6 +25,18 @@ void __cdecl basicIndexedTo16Bit(void *output_buffer,void *input_buffer,int pixe
 // Address: 0042c410
 ColorConversionFunc * __cdecl getColorConversionFunction(void);
 
+// Original: cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_0042c420
+// Address: 0042c420
+ColorConversionFunc * __cdecl getRGBConvertersionFunction(void);
+
+// Original: cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042c430
+// Address: 0042c430
+code * getOptimizedMemcpyFunction(void);
+
+// Original: cockpit_ckptutil.c_get16BitConversionFunction_FUN_0042c450
+// Address: 0042c450
+ColorConversionFunc * __cdecl get16BitConversionFunction(void);
+
 // Original: cockpit_ckptutil.c_readBitmapFile_FUN_0042c520
 // Address: 0042c520
 void * __cdecl readBitmapFile(char *filename,void *buffer,int size);
@@ -69,17 +81,17 @@ void __cdecl blitSimpleSprite(void *sprite_data,int dest_x,int dest_y,int width,
 // Address: 0042d390
 void __cdecl blitDualModeSprite(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
 
-// Original: cockpit_ckptutil.c_FUN_0042d550
+// Original: cockpit_ckptutil.c_copyBitmapRegion_FUN_0042d550
 // Address: 0042d550
-void FUN_0042d550(void);
+void __cdecl copyBitmapRegion(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset);
 
-// Original: cockpit_ckptutil.c_FUN_0042d5c0
+// Original: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_0042d5c0
 // Address: 0042d5c0
-undefined8 FUN_0042d5c0(void);
+void __cdecl blitHorizontallyClippedSprite(void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param,int src_y_offset,int src_stride);
 
-// Original: cockpit_ckptutil.c_FUN_0042d700
+// Original: cockpit_ckptutil.c_blitVerticalColumn_FUN_0042d700
 // Address: 0042d700
-int FUN_0042d700(void);
+void __cdecl blitVerticalColumn(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y);
 
 // Original: cockpit_ckptutil.c_blitFullScreen_FUN_0042d820
 // Address: 0042d820

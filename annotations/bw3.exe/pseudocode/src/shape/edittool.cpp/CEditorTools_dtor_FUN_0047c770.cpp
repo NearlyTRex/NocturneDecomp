@@ -14,10 +14,10 @@ CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0047c770(CEditor
   while (0 < _DAT_01c5b104) {
     shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047f990(this_ptr);
   }
-  if (_DAT_01c5b0e8 == 0) {
+  if (_DAT_01c5b0e8 == (void *)0x0) {
     return this_ptr;
   }
-  FUN_005a3770(_DAT_01c5b0e8);
-  _DAT_01c5b0e8 = 0;
+  debugFree(_DAT_01c5b0e8);
+  _DAT_01c5b0e8 = (void *)0x0;
   return this_ptr;
 }

@@ -32,12 +32,12 @@ uint __cdecl _fclose(_FILE *param_1,int param_2)
       uVar1 = uVar1 | uVar3;
     }
     if ((param_1->_flag & 8) != 0) {
-      FUN_005b86a0(param_1->_link->__reserve_end);
+      debugFree(param_1->_link->__reserve_end);
       param_1->_link->__reserve_end = (char *)0x0;
     }
     if ((param_1->_flag & 0x800) != 0) {
       FUN_005b8a3c(acStack_124,*(byte *)&param_1->_link->__get_ptr);
-      FUN_005ba1e0(acStack_124);
+      _remove(acStack_124);
     }
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1->_handle);
     if (param_2 != 0) {

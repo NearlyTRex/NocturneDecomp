@@ -9,6 +9,10 @@
 // Address: 005a2898
 int __cdecl vsprintf(char *buffer,char *format,va_list_t args);
 
+// Original: crt_stdio.c_fprintf_FUN_005a3140
+// Address: 005a3140
+int __cdecl fprintf(_FILE *file,char *format);
+
 // Original: crt_stdio.c_fscanf_FUN_005a3230
 // Address: 005a3230
 int __cdecl fscanf(_FILE *file,char *format);
@@ -52,6 +56,10 @@ int __cdecl fseek(_FILE *file,long offset,int whence);
 // Original: crt_stdio.c_fwrite_FUN_005a48e0
 // Address: 005a48e0
 SIZE_T __cdecl fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
+
+// Original: crt_stdio.c_remove_FUN_005a54b0
+// Address: 005a54b0
+int __cdecl remove(char *filename);
 
 // Original: crt_stdio.c_sscanf_FUN_005a5b9c
 // Address: 005a5b9c

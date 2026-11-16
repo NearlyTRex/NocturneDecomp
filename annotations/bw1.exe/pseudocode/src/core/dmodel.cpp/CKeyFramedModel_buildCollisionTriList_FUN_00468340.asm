@@ -21,7 +21,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
-;   crt_unknown.c_FUN_005c0336
+;   crt_unknown.c_free_FUN_005c0336
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00468342
     MOV EDX,dword ptr [EBX + 0x358]     ; 00468346
     PUSH EDX                            ; 0046834c
-    CALL crt_unknown.c_FUN_005c0336     ; 0046834d
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 0046834d
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     MOV dword ptr [EBX + 0x358],0x0     ; 00468352
     ADD ESP,0x4                         ; 0046835c
     MOV ECX,dword ptr [EBX + 0x110]     ; 0046835f
@@ -74,7 +74,7 @@ section .text
     SUB EAX,EDX                         ; 004683d5
     PUSH EAX                            ; 004683d7
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 004683d8
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 004683dd
     MOV dword ptr [EBX + 0x358],EAX     ; 004683e0
     TEST EAX,EAX                        ; 004683e6

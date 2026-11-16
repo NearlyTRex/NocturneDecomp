@@ -119,7 +119,7 @@ int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00486780(CEdChe
 int __cdecl shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004867c0(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004867f0(CEdCheck *this_ptr);
 void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_00486810(CEdCheck *this_ptr);
-undefined4 FUN_00486940(int *param_1);
+int __cdecl shape_edittool_cpp_CEdCheck_handleInput_FUN_00486940(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_00486a40(char *pattern,char *target_string,int case_sensitive);
 int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00486af0(CStrList *this_ptr);
 void __cdecl core_elephant_cpp_staticInit_FUN_00486b40(void);

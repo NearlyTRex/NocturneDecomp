@@ -33,7 +33,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_0052af80(CMP3Decoder *this
   }
   pcVar3 = (this_ptr->file_bitstream).buffer;
   if (pcVar3 != (char *)0x0) {
-    FUN_005c09f0(pcVar3);
+    debugFree(pcVar3);
     (this_ptr->file_bitstream).buffer = (char *)0x0;
   }
   pCVar1->file_handle = local_14;

@@ -34,7 +34,7 @@
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fseek_FUN_005c170c
 ;   crt_stdio.c_ftell_FUN_005c2e90
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;   sound_mp3.cpp_calculateMpegFrame_FUN_00525840
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340
 ;   sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00525e70
@@ -75,8 +75,8 @@ section .text
     JZ 0x0052afd8                       ; 0052afc6
         ;   XREF to: 0052afd8 (CONDITIONAL_JUMP)  ; LAB_0052afd8
     PUSH EDX                            ; 0052afc8
-    CALL crt_unknown.c_FUN_005c09f0     ; 0052afc9
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0052afc9
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0052afce
     MOV dword ptr [EBP + 0x4],0x0       ; 0052afd1
     MOV EAX,dword ptr [ESP + 0x54]      ; 0052afd8

@@ -11,7 +11,7 @@ CDemnfolk * __cdecl core_demnfolk_cpp_factoryFuncDemnfolk_FUN_004589e0(void)
 {
   CDemnfolk *pCVar1;
   
-  pCVar1 = (CDemnfolk *)operator_new(0xc370);
+  pCVar1 = operator_new(0xc370);
   if (pCVar1 == (CDemnfolk *)0x0) {
     return (CDemnfolk *)0x0;
   }

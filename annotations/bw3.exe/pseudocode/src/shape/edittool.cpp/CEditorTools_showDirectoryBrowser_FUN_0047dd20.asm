@@ -11,6 +11,7 @@
 ; uint             Stack[0x14]:4   flags
 ;
 ; Called Functions:
+;   crt_io.c_chdir_FUN_005a55b0
 ;   crt_string.c__strcmp_FUN_005a3d00
 ;   crt_string.c__stricmp_FUN_005a3260
 ;   crt_string.c_memmove_FUN_005a54c0
@@ -18,7 +19,6 @@
 ;   crt_time.c__localtime_FUN_005a5628
 ;   crt_time.c__strftime_FUN_005a5674
 ;   crt_unknown.c__getcwd_FUN_005a559e
-;   crt_unknown.c_FUN_005a55b0
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_CFileFinder_ctor_FUN_00465b60
 ;   engine_dosio.cpp_CFileFinder_dtor_FUN_00465b80
@@ -325,8 +325,8 @@ section .text
     ADD ESP,0x14                        ; 0047e085
     LEA EAX,[ESP + 0xb1c]               ; 0047e088
     PUSH EAX                            ; 0047e08f
-    CALL crt_unknown.c_FUN_005a55b0     ; 0047e090
-        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005a55b0(char * path)
+    CALL crt_io.c_chdir_FUN_005a55b0    ; 0047e090
+        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_005a55b0(char * path)
     ADD ESP,0x4                         ; 0047e095
     LEA EAX,[ESP + 0x1b24]              ; 0047e098
     PUSH EAX                            ; 0047e09f
@@ -341,8 +341,8 @@ section .text
     ADD ESP,0x14                        ; 0047e0b9
     LEA EAX,[ESP + 0xc20]               ; 0047e0bc
     PUSH EAX                            ; 0047e0c3
-    CALL crt_unknown.c_FUN_005a55b0     ; 0047e0c4
-        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005a55b0(char * path)
+    CALL crt_io.c_chdir_FUN_005a55b0    ; 0047e0c4
+        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_005a55b0(char * path)
     ADD ESP,0x4                         ; 0047e0c9
     JMP 0x0047dd71                      ; 0047e0cc
         ;   XREF to: 0047dd71 (UNCONDITIONAL_JUMP)  ; LAB_0047dd71
@@ -501,8 +501,8 @@ section .text
     ADD ESP,0x8                         ; 0047e297
     LEA EAX,[ESP + 0xa18]               ; 0047e29a
     PUSH EAX                            ; 0047e2a1
-    CALL crt_unknown.c_FUN_005a55b0     ; 0047e2a2
-        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005a55b0(char * path)
+    CALL crt_io.c_chdir_FUN_005a55b0    ; 0047e2a2
+        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_005a55b0(char * path)
     ADD ESP,0x4                         ; 0047e2a7
     MOV EAX,dword ptr [ESP + 0x1ed4]    ; 0047e2aa
     POP ESI                             ; 0047e2b1
@@ -514,8 +514,8 @@ section .text
     LEA EAX,[ESP + 0x810]               ; 0047e2bc
         ;   Label: LAB_0047e2bc
     PUSH EAX                            ; 0047e2c3
-    CALL crt_unknown.c_FUN_005a55b0     ; 0047e2c4
-        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005a55b0(char * path)
+    CALL crt_io.c_chdir_FUN_005a55b0    ; 0047e2c4
+        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_005a55b0(char * path)
     ADD ESP,0x4                         ; 0047e2c9
     TEST EAX,EAX                        ; 0047e2cc
     JZ 0x0047dff5                       ; 0047e2ce
@@ -529,8 +529,8 @@ section .text
     ADD ESP,0xc                         ; 0047e2e7
     LEA EAX,[ESP + 0x70c]               ; 0047e2ea
     PUSH EAX                            ; 0047e2f1
-    CALL crt_unknown.c_FUN_005a55b0     ; 0047e2f2
-        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005a55b0(char * path)
+    CALL crt_io.c_chdir_FUN_005a55b0    ; 0047e2f2
+        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_005a55b0(char * path)
     ADD ESP,0x4                         ; 0047e2f7
     JMP 0x0047dfd0                      ; 0047e2fa
         ;   XREF to: 0047dfd0 (UNCONDITIONAL_JUMP)  ; LAB_0047dfd0
@@ -569,8 +569,8 @@ section .text
     ADD ESP,0x14                        ; 0047e358
     LEA EAX,[ESP + 0xf24]               ; 0047e35b
     PUSH EAX                            ; 0047e362
-    CALL crt_unknown.c_FUN_005a55b0     ; 0047e363
-        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005a55b0(char * path)
+    CALL crt_io.c_chdir_FUN_005a55b0    ; 0047e363
+        ;   XREF to: 005a55b0 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_005a55b0(char * path)
     ADD ESP,0x4                         ; 0047e368
     PUSH 0x0                            ; 0047e36b
     LEA EAX,[ESP + 0x5fc]               ; 0047e36d

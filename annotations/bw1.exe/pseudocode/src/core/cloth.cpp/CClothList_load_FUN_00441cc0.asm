@@ -22,7 +22,7 @@
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;
 ; *****************************************************************************
 
@@ -49,7 +49,7 @@ section .text
     PUSH 0x3ab30                        ; 00441ce4
         ;   Label: LAB_00441ce4
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00441ce9
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 00441cee
     TEST EAX,EAX                        ; 00441cf1
     JZ 0x00441cfe                       ; 00441cf3
@@ -98,8 +98,8 @@ section .text
         ;   XREF to: 0043e620 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_0043e620(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00441d55
     PUSH EAX                            ; 00441d58
-    CALL crt_unknown.c_FUN_005c0344     ; 00441d59
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 00441d59
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 00441d5e
     JMP 0x00441ce4                      ; 00441d61
         ;   XREF to: 00441ce4 (UNCONDITIONAL_JUMP)  ; LAB_00441ce4

@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_gore.cpp_CBloodPool_save_FUN_004e5660
 ;   core_gore.cpp_CBloodSplat_save_FUN_004e5030
-;   crt_unknown.c_FUN_005c03c0
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -34,16 +34,16 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 004e6734
     PUSH 0x5e4175                       ; 004e6738 | = "--- Gore ---\n"
     PUSH EDI                            ; 004e673d
-    CALL crt_unknown.c_FUN_005c03c0     ; 004e673e
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004e673e
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004e6743
     MOV EDX,dword ptr [0x01cf69f8]      ; 004e6746 | DAT_01cf69f8
     PUSH EDX                            ; 004e674c
     PUSH 0x5e4183                       ; 004e674d | DAT_005e4183
     PUSH EDI                            ; 004e6752
     XOR ESI,ESI                         ; 004e6753
-    CALL crt_unknown.c_FUN_005c03c0     ; 004e6755
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004e6755
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     MOV ECX,dword ptr [0x01cf69f8]      ; 004e675a | DAT_01cf69f8
     ADD ESP,0xc                         ; 004e6760
     TEST ECX,ECX                        ; 004e6763
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5e4187                       ; 004e6796 | DAT_005e4187
     PUSH EDI                            ; 004e679b
     XOR EBX,EBX                         ; 004e679c
-    CALL crt_unknown.c_FUN_005c03c0     ; 004e679e
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004e679e
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     MOV EDX,dword ptr [0x01cd56b0]      ; 004e67a3 | DAT_01cd56b0
     ADD ESP,0xc                         ; 004e67a9
     TEST EDX,EDX                        ; 004e67ac

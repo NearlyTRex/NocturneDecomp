@@ -6655,13 +6655,20 @@
         "start":"00434ec0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00434ec0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"cockpit_ckptutil.c_get16BitConversionFunction_FUN_00434ec0",
+    "ret":"ColorConversionFunc*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -17974,13 +17981,38 @@
         "start":"00486940"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00486940",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"shape_edittool.cpp_CEdCheck_handleInput_FUN_00486940",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CEdCheck*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -52493,13 +52525,45 @@
         "start":"005849c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_xform.cpp_FUN_005849c0",
-    "ret":"undefined1",
+    "name":"core_xform.cpp_orthonormalizeMatrix3x3_FUN_005849c0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"matrix",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x3f*"
+        },
+        {
+          "name":"preserve_scale",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -52823,15 +52887,10 @@
         "start":"005877c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_005877c0",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"core_xform.cpp_clipPolygonStage2_FUN_005877c0",
+    "ret":"void"
   },
   {
     "addr":"00587940",
@@ -54364,10 +54423,10 @@
         "start":"005a3140"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_005a3140",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"crt_stdio.c_fprintf_FUN_005a3140",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -54387,8 +54446,49 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"file",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        },
+        {
+          "name":"format",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

@@ -79,10 +79,10 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_00495180(CE
               (initial_path,acStack_c,acStack_bc4,acStack_ec4,acStack_3c4);
     engine_dosio_cpp_makePath_FUN_004795b0
               (acStack_13cc,acStack_c,acStack_bc4,(char *)0x0,(char *)0x0);
-    FUN_005c26c0(acStack_13cc);
+    chdir(acStack_13cc);
     engine_dosio_cpp_makePath_FUN_004795b0
               (acStack_12c8,(char *)0x0,(char *)0x0,acStack_ec4,acStack_3c4);
-    FUN_005c26c0(acStack_12c8);
+    chdir(acStack_12c8);
   }
   uStack_14 = 0;
 LAB_004951da:
@@ -198,10 +198,10 @@ LAB_004953ae:
       }
       while ((iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00496150
                                 (this_ptr,"Enter new path",acStack_16cc,0x104,1),
-             iVar4 != 0 && (iVar4 = FUN_005c26c0(acStack_16cc), iVar4 != 0))) {
+             iVar4 != 0 && (iVar4 = chdir(acStack_16cc), iVar4 != 0))) {
         shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
                   (this_ptr,"Can't change to %s");
-        FUN_005c26c0(acStack_17d0);
+        chdir(acStack_17d0);
       }
       engine_dosio_cpp_CFileFinder_dtor_FUN_00479340((CFileFinder *)(auStack_18f0 + 0xc),0);
       in_stack_ffffe120 = 0;
@@ -223,7 +223,7 @@ LAB_004953ae:
 LAB_004956e3:
       engine_dosio_cpp_CFileFinder_dtor_FUN_00479340((CFileFinder *)(auStack_18f0 + 0xc),0);
       shape_edittool_cpp_CPickList_dtor_FUN_0049a710((CPickList *)aUStack_1ed4,0);
-      FUN_005c26c0(acStack_14c4);
+      chdir(acStack_14c4);
       return unaff_EBP;
     }
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0
@@ -232,7 +232,7 @@ LAB_004956e3:
               ((CStrList *)aUStack_1ed4,acStack_11b8,iVar4,1);
     engine_dosio_cpp_makePath_FUN_004795b0
               (acStack_fb8,(char *)0x0,(char *)0x0,acStack_10b8,acStack_11b8);
-    FUN_005c26c0(acStack_fb8);
+    chdir(acStack_fb8);
     engine_dosio_cpp_CFileFinder_dtor_FUN_00479340((CFileFinder *)(auStack_18f0 + 0xc),0);
     in_stack_ffffe120 = 0;
     shape_edittool_cpp_CPickList_dtor_FUN_0049a710((CPickList *)aUStack_1ed4,0);

@@ -47,11 +47,11 @@ int __cdecl FUN_005aaed4(char *filename,WatcomStat *file_info)
       pcVar4 = filename + 2;
     }
     if ((((*pcVar4 == '\\') || (*pcVar4 == '/')) && (pcVar4[1] == '\0')) || (bVar1)) {
-      iVar3 = FUN_005a55b0(filename);
+      iVar3 = chdir(filename);
       if (iVar3 != 0) {
         return -1;
       }
-      FUN_005a55b0((char *)local_124);
+      chdir((char *)local_124);
       memset(&local_368,0,0x13e);
       local_368.dwFileAttributes = 0x10;
     }

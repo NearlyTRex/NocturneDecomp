@@ -14,7 +14,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8530(CIni *this_ptr,c
   char cVar1;
   int iVar2;
   _FILE *stream;
-  _FILE *file_handle;
+  _FILE *file;
   char *pcVar3;
   uint uVar4;
   char *pcVar5;
@@ -57,8 +57,8 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8530(CIni *this_ptr,c
     pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   acStack_216[~uVar4] = 'x';
-  file_handle = _fopen(acStack_216 + 2,&DAT_005dac1e);
-  if (file_handle == (_FILE *)0x0) {
+  file = _fopen(acStack_216 + 2,&DAT_005dac1e);
+  if (file == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\engine\\ini.cpp";
     _DAT_01d046a4 = 399;
     core_main_c_displayErrorAndQuit_FUN_004e4500("cIni::writeProfileString: Unable to open output");
@@ -69,37 +69,37 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8530(CIni *this_ptr,c
     while (((bVar6 & 0x10) == 0 &&
            (pcVar3 = _fgets(local_314,0xff,stream), pcVar3 != (char *)0x0)))
     {
-      FUN_005b8010(file_handle,local_314);
+      _fprintf(file,local_314);
       iVar2 = _strcmp(local_114,local_314);
       if (iVar2 == 0) {
-        FUN_005b8010(file_handle,"%s=%s\n",key,value);
+        _fprintf(file,"%s=%s\n");
         local_14 = 1;
       }
       bVar6 = (byte)stream->_flag;
     }
     if (local_14 == 0) {
-      FUN_005b8010(file_handle,local_114);
-      FUN_005b8010(file_handle,"%s=%s\n",key,value);
+      _fprintf(file,local_114);
+      _fprintf(file,"%s=%s\n");
     }
   }
   else {
     for (; -1 < iVar2; iVar2 = iVar2 + -1) {
       _fgets(local_314,0xff,stream);
-      FUN_005b8010(file_handle,local_314);
+      _fprintf(file,local_314);
     }
-    FUN_005b8010(file_handle,"%s=%s\n",key,value);
+    _fprintf(file,"%s=%s\n");
     _fgets(local_314,0xff,stream);
     bVar6 = (byte)stream->_flag;
     while (((bVar6 & 0x10) == 0 &&
            (pcVar3 = _fgets(local_314,0xff,stream), pcVar3 != (char *)0x0)))
     {
-      FUN_005b8010(file_handle,local_314);
+      _fprintf(file,local_314);
       bVar6 = (byte)stream->_flag;
     }
   }
   _fclose(stream);
-  _fclose(file_handle);
-  FUN_005ba1e0(filename);
+  _fclose(file);
+  _remove(filename);
   _rename(acStack_216 + 2,filename);
   return 1;
 }

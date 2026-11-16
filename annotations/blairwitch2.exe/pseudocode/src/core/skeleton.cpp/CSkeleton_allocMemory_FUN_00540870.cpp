@@ -22,13 +22,12 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00540870(CSkeleton *thi
   }
   this_ptr->bone_count = bone_count;
   this_ptr->frame_count = frame_count;
-  pCVar1 = (CQuaternion4f *)
-           operator_new_array
+  pCVar1 = operator_new_array
                      (this_ptr->bone_count * this_ptr->frame_count * 0x10);
   this_ptr->bone_angle_frames = pCVar1;
-  pCVar2 = (CVector3f *)operator_new_array(this_ptr->frame_count * 0xc);
+  pCVar2 = operator_new_array(this_ptr->frame_count * 0xc);
   this_ptr->frame_positions_1 = pCVar2;
-  pCVar2 = (CVector3f *)operator_new_array(this_ptr->frame_count * 0xc);
+  pCVar2 = operator_new_array(this_ptr->frame_count * 0xc);
   this_ptr->frame_positions_2 = pCVar2;
   if (((this_ptr->bone_angle_frames != (CQuaternion4f *)0x0) &&
       (this_ptr->frame_positions_1 != (CVector3f *)0x0)) &&

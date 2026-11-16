@@ -15,12 +15,12 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0050f1b0(CMimic *this_ptr,uint f
   CFlame *pCVar3;
   CClothList *pCVar4;
   CDeformableModelInstance *pCVar5;
-  CMimic *pCVar6;
-  void *ptr;
+  CMimic *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CMimicTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CMimicTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   this_ptr_00 = this_ptr->morph_target_actor;
@@ -37,12 +37,12 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0050f1b0(CMimic *this_ptr,uint f
   pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar3[-4].base.vtable,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar4[-0x19].filenames[0] + 0x10),0);
-  pCVar6 = (CMimic *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730
-                     ((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);
+  ptr = (CMimic *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                  ((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
-    return pCVar6;
+    return ptr;
   }
-  FUN_005c0344(pCVar6);
-  return pCVar6;
+  debugFreeChecked(ptr);
+  return ptr;
 }

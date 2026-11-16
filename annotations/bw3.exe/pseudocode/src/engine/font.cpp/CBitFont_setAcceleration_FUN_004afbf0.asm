@@ -20,7 +20,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_memory.c_memset_FUN_005a28f0
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   engine_dosio.cpp_makePath_FUN_00465e80
 ;   engine_dosio.cpp_splitPath_FUN_00465e50
 ;   engine_font.cpp_CBitFont_setAccelScale_FUN_004b0170
@@ -54,8 +54,8 @@ section .text
     JZ 0x004afc56                       ; 004afc3a
         ;   XREF to: 004afc56 (CONDITIONAL_JUMP)  ; LAB_004afc56
     PUSH EBX                            ; 004afc3c
-    CALL crt_unknown.c_FUN_005a3770     ; 004afc3d
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 004afc3d
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 004afc42
     MOV EAX,dword ptr [ESP + 0x45c]     ; 004afc45
     MOV dword ptr [EAX + 0x1dd4],0x0    ; 004afc4c
@@ -299,8 +299,8 @@ section .text
     RET                                 ; 004aff76
     PUSH EDX                            ; 004aff77
         ;   Label: LAB_004aff77
-    CALL crt_unknown.c_FUN_005a3770     ; 004aff78
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 004aff78
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 004aff7d
     MOV EAX,dword ptr [ESP + 0x45c]     ; 004aff80
     MOV dword ptr [EAX + 0x1dcc],0x0    ; 004aff87

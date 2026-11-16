@@ -15,7 +15,7 @@ section .text
     PUSH 0x594                          ; 004ae7b0
         ;   Label: core_flintlck.cpp_factoryFuncFlintlock_FUN_004ae7b0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004ae7b5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004ae7ba
     TEST EAX,EAX                        ; 004ae7bd
     JNZ 0x004ae7c2                      ; 004ae7bf

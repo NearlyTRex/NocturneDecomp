@@ -13,8 +13,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00472470(CDemonRay
 {
   SVoxelCubeMetadata *pSVar1;
   
-  pSVar1 = (SVoxelCubeMetadata *)
-           calloc
+  pSVar1 = (SVoxelCubeMetadata *)calloc
                      (0x58,(this_ptr->grid_coord).x * (this_ptr->grid_coord).y *
                            (this_ptr->grid_coord).z);
   this_ptr->cube_list = pSVar1;

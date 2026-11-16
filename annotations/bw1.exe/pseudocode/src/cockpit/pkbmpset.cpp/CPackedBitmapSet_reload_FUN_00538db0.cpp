@@ -62,7 +62,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00538db0(CPackedBi
       iVar3 = iVar3 + 0x24;
     } while (iVar2 < this_ptr->bitmap_count);
   }
-  FUN_005c09f0(puStack_18);
+  debugFree(puStack_18);
   _fclose(p_Stack_14);
   if (apply_palette_flag == 0) {
     return;

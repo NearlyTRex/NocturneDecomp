@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d2ad74
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;   engine_mini3d.cpp_free32_FUN_00514cf0
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     PUSH EBX                            ; 00511087
         ;   Label: LAB_00511087
     PUSH EDX                            ; 00511088
-    CALL crt_unknown.c_FUN_005c09f0     ; 00511089
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 00511089
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR EBX,EBX                         ; 0051108e
     ADD ESP,0x4                         ; 00511090
     MOV dword ptr [0x01d227dc],EBX      ; 00511093 | DAT_01d227dc
@@ -60,13 +60,13 @@ section .text
     RET                                 ; 005110b1
     PUSH EBP                            ; 005110b2
         ;   Label: LAB_005110b2
-    CALL crt_unknown.c_FUN_005c09f0     ; 005110b3
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 005110b3
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 005110b8
     MOV EDX,dword ptr [0x01d25f30]      ; 005110bb | DAT_01d25f30
     PUSH EDX                            ; 005110c1
-    CALL crt_unknown.c_FUN_005c09f0     ; 005110c2
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 005110c2
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR ECX,ECX                         ; 005110c7
     ADD ESP,0x4                         ; 005110c9
     MOV dword ptr [0x01d25f2c],ECX      ; 005110cc | DAT_01d25f2c

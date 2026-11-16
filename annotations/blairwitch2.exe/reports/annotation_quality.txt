@@ -12,18 +12,18 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          5,710
-  Unnamed functions (FUN_):          14 ( 0.2%)
+  Unnamed functions (FUN_):          6 ( 0.1%)
   Functions with unnamed params:     33 ( 0.6%)
-  Functions with type issues:        1,345 (23.6%)
+  Functions with type issues:        1,337 (23.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   4
     Missing register params:           4
-    Wrong calling convention:          166
+    Wrong calling convention:          165
     Undefined types in variables:      1077
-    Unresolved stack params:           258
+    Unresolved stack params:           251
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -36,9 +36,8 @@ UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 
 Sorted by caller count (most-referenced first = highest priority to name).
 
-  wincore/winrun.cpp (2 unnamed)
+  wincore/winrun.cpp (1 unnamed)
     0x00590910  unknown       1 callers
-    0x00590c90  unknown       0 callers
 
   core/muzzle.cpp (1 unnamed)
     0x0059d940  unknown       1 callers
@@ -49,28 +48,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/charactr.cpp (1 unnamed)
     0x00422c10  unknown       0 callers
 
-  cockpit/ckptutil.c (3 unnamed)
-    0x0042d550  unknown       0 callers
-    0x0042d5c0  unknown       0 callers
-    0x0042d700  unknown       0 callers
-
-  engine/clipper.c (1 unnamed)
-    0x00432880  unknown       0 callers
-
   core/doc.cpp (1 unnamed)
     0x00458e80  unknown       0 callers
 
-  engine/drender.cpp (1 unnamed)
-    0x0046a170  unknown       0 callers
-
   core/game.cpp (1 unnamed)
     0x004b2930  unknown       0 callers
-
-  cockpit/pkbmpset.cpp (1 unnamed)
-    0x00517c40  unknown       0 callers
-
-  core/xform.cpp (1 unnamed)
-    0x00592c90  unknown       0 callers
 
 ====================================================================================================
 UNNAMED PARAMETERS (still using param_N)
@@ -303,14 +285,14 @@ Missing register parameters (likely wrong calling convention) (4)
     Signature: void __cdecl core_mmx_c_detectIntelProcessor_FUN_004fd4cc(void)
     Suggested: Likely register-based calling convention
 
-  FUN_0055d6dd
-    Address: 0x0055d6dd  File: .
+  renderScanlineSwapped
+    Address: 0x0055d6dd  File: engine/special.cpp
     Evidence: in_EAX, in_ECX, in_EDX, in_EAX, in_ECX, in_EDX
-    Signature: undefined8 FUN_0055d6dd(void)
+    Signature: void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_0055d6dd(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (166)
+Wrong calling convention (unaffected register usage) (165)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -611,12 +593,6 @@ Wrong calling convention (unaffected register usage) (166)
     Address: 0x0046d610  File: core/drip.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI
     Signature: CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_0046d610(CDrip *this_ptr,CBoundingBox3D *out_box)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0046e8f0
-    Address: 0x0046e8f0  File: .
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI
-    Signature: uint FUN_0046e8f0(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonRaytrace_cylinderGroundCheck
@@ -1015,10 +991,10 @@ Wrong calling convention (unaffected register usage) (166)
     Signature: uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_0055af30(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,float delay)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_0055d6dd
-    Address: 0x0055d6dd  File: .
+  renderScanlineSwapped
+    Address: 0x0055d6dd  File: engine/special.cpp
     Evidence: unaff_EBX, unaff_EBX
-    Signature: undefined8 FUN_0055d6dd(void)
+    Signature: void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_0055d6dd(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CStranger_updateWeaponPosition
@@ -1310,7 +1286,7 @@ Wrong calling convention (unaffected register usage) (166)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (258)
+Unresolved stack parameters (missing from signature) (251)
 --------------------------------------------------------------------------------
 
   clipAndDrawLine
@@ -1325,10 +1301,10 @@ Unresolved stack parameters (missing from signature) (258)
     Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404590(SLineStrip *line_strip)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00404620
-    Address: 0x00404620  File: .
+  drawLineStrip3D
+    Address: 0x00404620  File: engine/3d.c
     Evidence: in_stack_ffffff30, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff30
-    Signature: int FUN_00404620(int param_1)
+    Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00404620(SLineStrip *line_strip)
     Suggested: Signature is missing stack parameters entirely
 
   drawLine2DFromIndices
@@ -1517,34 +1493,10 @@ Unresolved stack parameters (missing from signature) (258)
     Signature: void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042c6f0(char *filename,uchar *output_palette)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_0042d550
-    Address: 0x0042d550  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c, in_stack_00000020, in_stack_00000010, in_stack_00000004, in_stack_00000004, in_stack_00000020, in_stack_00000008, in_stack_0000001c, in_stack_00000018, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000014, in_stack_00000008, in_stack_00000018
-    Signature: void cockpit_ckptutil_c_FUN_0042d550(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0042d5c0
-    Address: 0x0042d5c0  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c, in_stack_00000020, in_stack_00000010, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000020, in_stack_00000004, in_stack_00000008, in_stack_00000014, in_stack_0000001c, in_stack_0000000c, in_stack_0000001c, in_stack_00000008, in_stack_0000000c, in_stack_00000018, in_stack_0000000c, in_stack_0000000c, in_stack_00000020, in_stack_0000000c, in_stack_00000020, in_stack_00000008, in_stack_0000000c, in_stack_00000018, in_stack_0000000c, in_stack_0000000c, in_stack_00000020, in_stack_0000000c, in_stack_00000020
-    Signature: undefined8 cockpit_ckptutil_c_FUN_0042d5c0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0042d700
-    Address: 0x0042d700  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000004, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000014, in_stack_0000000c, in_stack_00000004, in_stack_00000010, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000010, in_stack_00000018
-    Signature: int cockpit_ckptutil_c_FUN_0042d700(void)
-    Suggested: Signature is missing stack parameters entirely
-
   drawLineAA
     Address: 0x0042e930  File: cockpit/ckptutil.c
     Evidence: in_stack_ffffffcc, in_stack_ffffffcc, in_stack_ffffffcc, in_stack_ffffffcc, in_stack_ffffffcc, in_stack_ffffffcc
     Signature: void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042e930(int x0,int y0,int x1,int y1,int color)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00432880
-    Address: 0x00432880  File: engine/clipper.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004
-    Signature: undefined4 engine_clipper_c_FUN_00432880(void)
     Suggested: Signature is missing stack parameters entirely
 
   CCheesyCipher_ctor
@@ -1737,12 +1689,6 @@ Unresolved stack parameters (missing from signature) (258)
     Address: 0x00468b80  File: cockpit/drawsurf.cpp
     Evidence: in_stack_00000228, in_stack_00000288, in_stack_00000290, in_stack_000002a0, in_stack_0000030c, in_stack_0000032c, in_stack_00000394, in_stack_00000228, in_stack_00000228, in_stack_00000290, in_stack_00000288, in_stack_000002a0, in_stack_0000030c, in_stack_0000030c, in_stack_0000032c, in_stack_0000032c, in_stack_0000032c, in_stack_0000032c, in_stack_00000394, in_stack_00000394, in_stack_0000032c
     Signature: void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00468b80(CBitFont *test_font)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0046a170
-    Address: 0x0046a170  File: engine/drender.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: void engine_drender_cpp_FUN_0046a170(void)
     Suggested: Signature is missing stack parameters entirely
 
   CDrip_process
@@ -2315,16 +2261,16 @@ Unresolved stack parameters (missing from signature) (258)
     Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00517c40
+  CPackedBitmapSet_loadPBMFileRange
     Address: 0x00517c40  File: cockpit/pkbmpset.cpp
-    Evidence: in_stack_00000004, in_stack_0000000c, in_stack_00000010, in_stack_00000018, in_stack_00000024, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_00000010, in_stack_00000018, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000024, in_stack_0000000c, in_stack_00000010, in_stack_00000004
-    Signature: void cockpit_pkbmpset_cpp_FUN_00517c40(void)
+    Evidence: in_stack_00000018, in_stack_00000024, in_stack_00000018, in_stack_00000024
+    Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00517c40(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,int apply_palette_flag)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00517cf0
-    Address: 0x00517cf0  File: .
-    Evidence: in_stack_00000038, in_stack_00000038
-    Signature: void FUN_00517cf0(CPackedBitmapSet *param_1,undefined4 param_2,char *param_3,int param_4,int param_5 ,int param_6)
+  CPackedBitmapSet_loadPBGFileComplete
+    Address: 0x00517cf0  File: cockpit/pkbmpset.cpp
+    Evidence: in_stack_00000018, in_stack_00000038, in_stack_00000018, in_stack_00000038
+    Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00517cf0(CPackedBitmapSet *this_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load)
     Suggested: Signature is missing stack parameters entirely
 
   CPackedBitmapSet_loadACTAndApplyToBitmapSet
@@ -2763,18 +2709,6 @@ Unresolved stack parameters (missing from signature) (258)
     Address: 0x00590680  File: wincore/winrun.cpp
     Evidence: in_stack_00000010, in_stack_00000010, in_stack_00000010
     Signature: void __cdecl wincore_winrun_cpp_initController_FUN_00590680(int controller_index,int controller_type,uint pc_port)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00590c90
-    Address: 0x00590c90  File: wincore/winrun.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void wincore_winrun_cpp_FUN_00590c90(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00592c90
-    Address: 0x00592c90  File: core/xform.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void core_xform_cpp_FUN_00592c90(void)
     Suggested: Signature is missing stack parameters entirely
 
   getObjectGrabPointLocal
@@ -8257,16 +8191,11 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (7 groups)
+DUPLICATE FUNCTION NAMES (5 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
 Some are legitimate overloads, others may need disambiguating names.
-
-  cockpit_ckptutil.c  (3 functions)
-    0x0042d550  (void)
-    0x0042d5c0  (void)
-    0x0042d700  (void)
 
   core_bwgrndma.cpp_staticInit  (2 functions)
     0x005a7ab0  (void)
@@ -8287,7 +8216,3 @@ Some are legitimate overloads, others may need disambiguating names.
   sound_sndmain.cpp_staticInit  (2 functions)
     0x0054ae20  (void)
     0x00554ac0  (void)
-
-  wincore_winrun.cpp  (2 functions)
-    0x00590910  (int param_1)
-    0x00590c90  (void)

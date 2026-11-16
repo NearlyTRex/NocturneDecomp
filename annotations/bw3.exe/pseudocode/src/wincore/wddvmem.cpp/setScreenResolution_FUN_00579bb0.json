@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 447,
-    "complexity_score": 743,
+    "complexity_score": 753,
     "cross_reference_count": 7,
     "function_call_count": 7,
     "global_count": 32,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 183,
-    "suspect_count": 53,
+    "suspect_count": 54,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -94,7 +94,7 @@
     {
       "addr": "005a3770",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3770"
+      "name": "crt_unknown.c_debugFree_FUN_005a3770"
     },
     {
       "addr": "00401810",
@@ -462,6 +462,14 @@
       "match": "DAT_0060b010",
       "severity": "mild",
       "text": "if (DAT_0060b010 != (void *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_0060b010",
+      "severity": "mild",
+      "text": "debugFree(DAT_0060b010);",
       "type": "undefined_data"
     },
     {

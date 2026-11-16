@@ -247,7 +247,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0(C
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0046ba70(CDemonRenderer *this_ptr,SInputFace *face,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0046bb90(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
-void engine_drender_cpp_FUN_0046bd60(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0046bd60(CDemonRenderer *this_ptr,SInputFace *face);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046be60(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046bf90(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046c090(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
@@ -332,7 +332,7 @@ void __cdecl core_dskybox_cpp_staticInit_FUN_0046f2d0(void);
 SMRGLSkyTexture * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_0046f300(SMRGLSkyTexture *texture);
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046f340(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index);
 void __cdecl core_dskybox_cpp_renderSkyDome_FUN_0046f480(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor);
-uint FUN_0046f960(void);
+void __edi_esi_ebx core_dstrendr_cpp_renderDepthOnlyReversed_FUN_0046f960(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __edi_esi_ebx core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __edi_esi_ebx core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046f9f4(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __edi_esi_ebx core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_0046fa57(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);

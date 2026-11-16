@@ -11,7 +11,7 @@ CDemonShadow * __cdecl core_shadow_cpp_factoryFuncDemonShadow_FUN_00545f90(void)
 {
   CDemonShadow *pCVar1;
   
-  pCVar1 = (CDemonShadow *)operator_new(0xd0e8);
+  pCVar1 = operator_new(0xd0e8);
   if (pCVar1 == (CDemonShadow *)0x0) {
     return (CDemonShadow *)0x0;
   }

@@ -19,7 +19,7 @@ void __cdecl core_actor_cpp_archiveFloat_FUN_0040b830(float *float_ptr,char *pro
     }
   }
   else {
-    FUN_005a3140(DAT_007df9b4,&DAT_005b5af0,&DAT_005f0990,(double)*float_ptr);
+    _fprintf(DAT_007df9b4,&DAT_005b5af0);
   }
   core_actor_cpp_archiveDescription_FUN_0040b350("Floating point value",property_name);
   return;

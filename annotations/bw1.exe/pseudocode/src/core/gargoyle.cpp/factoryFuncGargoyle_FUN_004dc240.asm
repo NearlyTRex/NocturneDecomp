@@ -15,7 +15,7 @@ section .text
     PUSH 0xc2c4                         ; 004dc240
         ;   Label: core_gargoyle.cpp_factoryFuncGargoyle_FUN_004dc240
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004dc245
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004dc24a
     TEST EAX,EAX                        ; 004dc24d
     JNZ 0x004dc252                      ; 004dc24f

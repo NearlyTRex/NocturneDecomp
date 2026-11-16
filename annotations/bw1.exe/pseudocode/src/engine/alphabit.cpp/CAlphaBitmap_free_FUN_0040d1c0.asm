@@ -20,7 +20,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     JZ 0x0040d1e4                       ; 0040d1d2
         ;   XREF to: 0040d1e4 (CONDITIONAL_JUMP)  ; LAB_0040d1e4
     PUSH ESI                            ; 0040d1d4
-    CALL crt_unknown.c_FUN_005c09f0     ; 0040d1d5
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0040d1d5
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0040d1da
     MOV dword ptr [EBX + 0x4],0x0       ; 0040d1dd
     MOV EBP,dword ptr [EBX + 0x8]       ; 0040d1e4
@@ -56,16 +56,16 @@ section .text
     RET                                 ; 0040d1ee
     PUSH EDX                            ; 0040d1ef
         ;   Label: LAB_0040d1ef
-    CALL crt_unknown.c_FUN_005c09f0     ; 0040d1f0
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0040d1f0
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0040d1f5
     MOV dword ptr [EBX],0x0             ; 0040d1f8
     JMP 0x0040d1cd                      ; 0040d1fe
         ;   XREF to: 0040d1cd (UNCONDITIONAL_JUMP)  ; LAB_0040d1cd
     PUSH EBP                            ; 0040d200
         ;   Label: LAB_0040d200
-    CALL crt_unknown.c_FUN_005c09f0     ; 0040d201
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0040d201
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0040d206
     MOV dword ptr [EBX + 0x8],0x0       ; 0040d209
     POP EBP                             ; 0040d210

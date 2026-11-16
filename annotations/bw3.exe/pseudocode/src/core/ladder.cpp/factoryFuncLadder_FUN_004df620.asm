@@ -15,7 +15,7 @@ section .text
     PUSH 0x300                          ; 004df620
         ;   Label: core_ladder.cpp_factoryFuncLadder_FUN_004df620
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004df625
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004df62a
     TEST EAX,EAX                        ; 004df62d
     JNZ 0x004df632                      ; 004df62f

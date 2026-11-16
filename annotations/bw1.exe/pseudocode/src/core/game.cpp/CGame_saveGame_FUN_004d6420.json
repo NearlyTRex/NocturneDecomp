@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 507,
-    "complexity_score": 346,
+    "complexity_score": 383,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 45,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 161,
-    "suspect_count": 17,
+    "pseudocode_lines": 158,
+    "suspect_count": 21,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 668
+    "total_lines": 665
   },
   "cross_references": [
     {
@@ -89,6 +89,16 @@
       "name": "crt_stdio.c_fopen_FUN_005c157c"
     },
     {
+      "addr": "005c03c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
+    },
+    {
+      "addr": "005c25c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_remove_FUN_005c25c0"
+    },
+    {
       "addr": "005c04e0",
       "is_variadic": false,
       "name": "crt_string.c__stricmp_FUN_005c04e0"
@@ -97,16 +107,6 @@
       "addr": "005c2238",
       "is_variadic": false,
       "name": "crt_string.c_splitpath_FUN_005c2238"
-    },
-    {
-      "addr": "005c03c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
-    },
-    {
-      "addr": "005c25c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c25c0"
     },
     {
       "addr": "005bfb40",
@@ -809,7 +809,23 @@
       "line": 80,
       "match": "DAT_007c3040",
       "severity": "mild",
-      "text": "DAT_007c3040 = file_handle;",
+      "text": "DAT_007c3040 = file;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_005e2f16",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005e2f16);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 92,
+      "match": "DAT_005e2f4e",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005e2f4e);",
       "type": "undefined_data"
     },
     {
@@ -822,7 +838,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 101,
+      "match": "DAT_005e2f5f",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005e2f5f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_005e2f63",
+      "severity": "mild",
+      "text": "_fprintf(file,&DAT_005e2f63);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 113,
       "match": "DAT_007c3040",
       "severity": "mild",
       "text": "DAT_007c3040 = (_FILE *)0x0;",
@@ -830,7 +862,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 128,
       "match": "DAT_005e2fac",
       "severity": "mild",
       "text": "iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(&local_1c,local_390,&DAT_005e2fac)",
@@ -838,7 +870,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 136,
       "match": "DAT_0061d98c",
       "severity": "mild",
       "text": "support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_1c,&DAT_0061d98c,4);",
@@ -846,7 +878,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 152,
+      "line": 149,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "pcVar3 = &DAT_01cd05c0;",
@@ -870,7 +902,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 153,
+      "line": 150,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

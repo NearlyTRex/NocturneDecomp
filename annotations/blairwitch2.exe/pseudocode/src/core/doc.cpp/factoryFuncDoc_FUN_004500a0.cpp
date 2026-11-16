@@ -11,7 +11,7 @@ CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_004500a0(void)
 {
   CDoc *pCVar1;
   
-  pCVar1 = (CDoc *)operator_new(0x26188);
+  pCVar1 = operator_new(0x26188);
   if (pCVar1 == (CDoc *)0x0) {
     return (CDoc *)0x0;
   }

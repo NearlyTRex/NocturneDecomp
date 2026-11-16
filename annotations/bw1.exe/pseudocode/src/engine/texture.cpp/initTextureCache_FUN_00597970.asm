@@ -26,7 +26,7 @@ section .text
     PUSH 0x1800c                        ; 00597970
         ;   Label: engine_texture.cpp_initTextureCache_FUN_00597970
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00597975
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0059797a
     TEST EAX,EAX                        ; 0059797d
     JNZ 0x0059798b                      ; 0059797f

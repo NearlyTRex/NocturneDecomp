@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520 at 0055355d
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     RET                                 ; 00553640
     PUSH EDX                            ; 00553641
         ;   Label: LAB_00553641
-    CALL crt_unknown.c_FUN_005a3770     ; 00553642
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00553642
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 00553647
     MOV dword ptr [EBX + 0x120],0x0     ; 0055364a
     POP EBX                             ; 00553654

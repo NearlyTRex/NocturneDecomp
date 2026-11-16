@@ -11,6 +11,7 @@
 ; XREF[25]:
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_004698a0 at 00469940
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_00469fa0 at 00469fdb
+;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0046a170 at 0046a1f1
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046a030 at 0046a0b0
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50 at 0046abc4
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0046ac20 at 0046acbe
@@ -18,7 +19,6 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0 at 00469a07
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0046a6f0 at 0046a769
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046a7d0 at 0046a87e
-;   engine_drender.cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046a4a0 at 0046a519
 ;   ... and 15 more
 ;
 ; Referenced Globals:

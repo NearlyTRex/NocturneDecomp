@@ -13,7 +13,7 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_004254d0(CCameraView
   
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CCameraViewTypeInfo);
-    FUN_005a30b6(ptr);
+    free(ptr);
     return this_ptr;
   }
   this_ptr->vtable =
@@ -21,6 +21,6 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_004254d0(CCameraView
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_005a30c4(this_ptr);
+  debugFreeChecked(this_ptr);
   return this_ptr;
 }

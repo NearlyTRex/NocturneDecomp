@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   bitmap_index
 ;
 ; XREF[1]:
-;   FUN_00510da0 at 00510e5d
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_00510da0 at 00510e5d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
@@ -23,7 +23,7 @@
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
 ;   crt_stdio.c_fseek_FUN_005a457c
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_getFile_FUN_004659c0
 ;
@@ -110,8 +110,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x130]     ; 00510b5c
         ;   Label: LAB_00510b5c
     PUSH EBX                            ; 00510b63
-    CALL crt_unknown.c_FUN_005a3770     ; 00510b64
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00510b64
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 00510b69
     MOV EDI,dword ptr [ESP + 0x134]     ; 00510b6c
     PUSH EDI                            ; 00510b73

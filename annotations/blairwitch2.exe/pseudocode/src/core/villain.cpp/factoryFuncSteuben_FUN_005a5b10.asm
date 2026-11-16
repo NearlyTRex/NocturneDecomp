@@ -15,7 +15,7 @@ section .text
     PUSH 0x11850                        ; 005a5b10
         ;   Label: core_villain.cpp_factoryFuncSteuben_FUN_005a5b10
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005a5b15
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005a5b1a
     TEST EAX,EAX                        ; 005a5b1d
     JNZ 0x005a5b22                      ; 005a5b1f

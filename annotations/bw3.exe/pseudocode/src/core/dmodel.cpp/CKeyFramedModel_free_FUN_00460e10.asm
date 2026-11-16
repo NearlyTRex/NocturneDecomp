@@ -15,7 +15,7 @@
 ;   core_set.cpp_CDemonSet_clear_FUN_00532b30 at 00532b37
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a30b6
+;   crt_unknown.c_free_FUN_005a30b6
 ;
 ; *****************************************************************************
 
@@ -29,44 +29,44 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00460e14
     MOV EDX,dword ptr [EBX + 0x10c]     ; 00460e18
     PUSH EDX                            ; 00460e1e
-    CALL crt_unknown.c_FUN_005a30b6     ; 00460e1f
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00460e1f
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00460e24
     MOV ECX,dword ptr [EBX + 0x108]     ; 00460e27
     PUSH ECX                            ; 00460e2d
     MOV dword ptr [EBX + 0x10c],0x0     ; 00460e2e
-    CALL crt_unknown.c_FUN_005a30b6     ; 00460e38
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00460e38
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00460e3d
     MOV ESI,dword ptr [EBX + 0x114]     ; 00460e40
     PUSH ESI                            ; 00460e46
     MOV dword ptr [EBX + 0x108],0x0     ; 00460e47
-    CALL crt_unknown.c_FUN_005a30b6     ; 00460e51
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00460e51
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00460e56
     MOV EDI,dword ptr [EBX + 0x118]     ; 00460e59
     PUSH EDI                            ; 00460e5f
     MOV dword ptr [EBX + 0x114],0x0     ; 00460e60
-    CALL crt_unknown.c_FUN_005a30b6     ; 00460e6a
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00460e6a
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00460e6f
     MOV EBP,dword ptr [EBX + 0x11c]     ; 00460e72
     PUSH EBP                            ; 00460e78
     MOV dword ptr [EBX + 0x118],0x0     ; 00460e79
-    CALL crt_unknown.c_FUN_005a30b6     ; 00460e83
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00460e83
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00460e88
     MOV EAX,dword ptr [EBX + 0x350]     ; 00460e8b
     PUSH EAX                            ; 00460e91
     MOV dword ptr [EBX + 0x11c],0x0     ; 00460e92
-    CALL crt_unknown.c_FUN_005a30b6     ; 00460e9c
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00460e9c
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00460ea1
     MOV EDX,dword ptr [EBX + 0x358]     ; 00460ea4
     PUSH EDX                            ; 00460eaa
     MOV dword ptr [EBX + 0x350],0x0     ; 00460eab
-    CALL crt_unknown.c_FUN_005a30b6     ; 00460eb5
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00460eb5
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     MOV dword ptr [EBX + 0x358],0x0     ; 00460eba
     MOV dword ptr [EBX + 0x104],0x0     ; 00460ec4
     MOV dword ptr [EBX + 0x110],0x0     ; 00460ece

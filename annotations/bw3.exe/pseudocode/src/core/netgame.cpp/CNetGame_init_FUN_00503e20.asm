@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_005043b0
 ;   crt_env.c_getenv_FUN_005a5ec0
-;   crt_unknown.c_FUN_005a54b0
+;   crt_stdio.c_remove_FUN_005a54b0
 ;   support_trisock.cpp_startupWinsock_FUN_00571ea0
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
@@ -37,8 +37,8 @@ section .text
         ;   Label: core_netgame.cpp_CNetGame_init_FUN_00503e20
     PUSH EDI                            ; 00503e21
     PUSH 0x5ca480                       ; 00503e22 | = "netlog.txt"
-    CALL crt_unknown.c_FUN_005a54b0     ; 00503e27
-        ;   XREF to: 005a54b0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005a54b0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005a54b0 ; 00503e27
+        ;   XREF to: 005a54b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005a54b0(char * filename)
     MOV EDX,0x1                         ; 00503e2c
     ADD ESP,0x4                         ; 00503e31
     MOV dword ptr [0x01da6478],EDX      ; 00503e34 | DAT_01da6478

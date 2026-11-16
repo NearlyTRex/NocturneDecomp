@@ -57,7 +57,7 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_00500210(CMobster *thi
 ECollisionType __cdecl core_mobster_cpp_CMobster_getCollisionType_FUN_00500350(CMobster *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_00500370(CMobster *this_ptr,int taunt_category);
 CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_005004f0(CMobster *this_ptr,uint flags);
-void FUN_005006a0(SMRGLHeaderExtended *param_1,int param_2);
+void __cdecl engine_model_c_byteswapMRGLData_FUN_005006a0(SMRGLHeaderExtended *mrgl_data,int data_size);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00500720(char *filename);
 void __cdecl engine_model_c_freeMRGLData_FUN_005008f0(SMRGLHeaderExtended *mrgl_data);
 SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00500970(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
@@ -119,8 +119,8 @@ void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_005
 void __cdecl core_motion_cpp_CMotionController_load_FUN_005041b0(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_00504250(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_CMotionController_render_FUN_005042e0(CMotionController *this_ptr,CDemonActor *actor);
-int FUN_005044c0(int *param_1);
-undefined4 FUN_00504600(int param_1,int param_2);
+int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_005044c0(SMpegFrame *frame);
+void * __cdecl sound_mp3_cpp_getMpegLayer2AllocationTable_FUN_00504600(int layer,int mode_extension);
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_00504670(SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_005048e0(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_00504a10(CFileBitStream *this_ptr);

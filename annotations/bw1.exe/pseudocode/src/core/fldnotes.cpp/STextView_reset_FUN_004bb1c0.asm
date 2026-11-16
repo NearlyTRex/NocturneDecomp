@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_STextPage_clear_FUN_004bb080
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x3c]      ; 004bb1f6
         ;   Label: LAB_004bb1f6
     PUSH EAX                            ; 004bb1f9
-    CALL crt_unknown.c_FUN_005c09f0     ; 004bb1fa
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 004bb1fa
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 004bb1ff
     MOV dword ptr [EBX + 0x3c],0x0      ; 004bb202
     POP EDI                             ; 004bb209

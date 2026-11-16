@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "00432880",
-      "from_addr": "00432e0c",
-      "name": "engine_clipper.c_FUN_00432880",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00432420",
       "from_addr": "004324e0",
       "name": "engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00432420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432880",
+      "from_addr": "00432e0c",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -99,7 +99,7 @@
       {
         "call_addr": "00432e0c",
         "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_00432880",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +110,7 @@
       {
         "call_addr": "00432e62",
         "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_00432880",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

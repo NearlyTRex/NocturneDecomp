@@ -258,7 +258,7 @@ LAB_0048c367:
           iVar5 = 0;
           if (0 < (this_ptr->events).count) {
             do {
-              FUN_005a3140(local_168,&DAT_005bdfb4);
+              _fprintf(local_168,&DAT_005bdfb4);
               iVar5 = iVar5 + 1;
             } while (iVar5 < (this_ptr->events).count);
           }

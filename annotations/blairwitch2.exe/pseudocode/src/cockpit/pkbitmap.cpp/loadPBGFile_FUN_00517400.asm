@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   selected_bitmap_index
 ;
 ; XREF[1]:
-;   FUN_00517cf0 at 00517d17
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00517cf0 at 00517d17
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

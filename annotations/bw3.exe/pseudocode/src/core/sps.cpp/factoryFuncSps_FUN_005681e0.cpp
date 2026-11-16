@@ -11,7 +11,7 @@ CSps * __cdecl core_sps_cpp_factoryFuncSps_FUN_005681e0(void)
 {
   CSps *pCVar1;
   
-  pCVar1 = (CSps *)operator_new(0x594);
+  pCVar1 = operator_new(0x594);
   if (pCVar1 == (CSps *)0x0) {
     return (CSps *)0x0;
   }

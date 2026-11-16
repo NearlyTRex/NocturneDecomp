@@ -11,7 +11,7 @@ CMimic * __cdecl core_mimic_cpp_factoryFuncMimic_FUN_0050f090(void)
 {
   CMimic *pCVar1;
   
-  pCVar1 = (CMimic *)operator_new(0x47ac4);
+  pCVar1 = operator_new(0x47ac4);
   if (pCVar1 == (CMimic *)0x0) {
     return (CMimic *)0x0;
   }

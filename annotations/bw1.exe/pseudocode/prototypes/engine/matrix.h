@@ -97,6 +97,10 @@ void __cdecl pushViewport(int x,int y,int width,int height);
 // Address: 00509210
 void __cdecl popViewport(void);
 
+// Original: engine_matrix.c_projectToScreen_FUN_00509340
+// Address: 00509340
+int __cdecl projectToScreen(int input_value);
+
 // Original: engine_matrix.c_pushMatrixRelativeOffset_FUN_005093d0
 // Address: 005093d0
 void __cdecl pushMatrixRelativeOffset(int offset_x,int offset_y,int offset_z);

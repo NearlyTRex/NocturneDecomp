@@ -293,7 +293,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044ee
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044ef30(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
-void FUN_0044fb10(int param_1,float *param_2,CMatrix3x3f *param_3);
+void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044fb10(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix);
 void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044fea0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044fff0(CDemonCamera *this_ptr,char *filename);

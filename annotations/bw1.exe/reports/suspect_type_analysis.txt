@@ -4,32 +4,32 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    9745 ( 21.8%)
-  undefined_data                  9263 ( 20.7%)
-  pointer_truncation              8539 ( 19.1%)
-  warning_overlapping_globals     2230 (  5.0%)
-  stack_param                     1837 (  4.1%)
+  pointer_cast                    9731 ( 22.1%)
+  undefined_data                  9229 ( 20.9%)
+  pointer_truncation              8521 ( 19.3%)
+  warning_overlapping_globals     2230 (  5.1%)
   unrolled_memcpy                 1814 (  4.1%)
-  stack_ref                       1657 (  3.7%)
-  unknown_field                   1218 (  2.7%)
-  concat_reconstruction            819 (  1.8%)
-  unaffected_reg                   785 (  1.8%)
-  unresolved_funcptr               750 (  1.7%)
+  stack_ref                       1657 (  3.8%)
+  stack_param                     1641 (  3.7%)
+  unknown_field                   1218 (  2.8%)
+  concat_reconstruction            815 (  1.8%)
+  unaffected_reg                   774 (  1.8%)
+  unresolved_funcptr               744 (  1.7%)
   stack_alignment_array            701 (  1.6%)
-  shadow_pointer_walk              595 (  1.3%)
+  shadow_pointer_walk              589 (  1.3%)
   unrolled_strcpy                  581 (  1.3%)
-  unnamed_param                    507 (  1.1%)
   negative_offset                  505 (  1.1%)
   nonstandard_int                  313 (  0.7%)
   unrolled_strlen                  302 (  0.7%)
+  raw_address_pointer_store        283 (  0.6%)
   unrolled_memset                  283 (  0.6%)
-  raw_address_pointer_store        281 (  0.6%)
   raw_address_constant             271 (  0.6%)
   suspect_float                    229 (  0.5%)
+  unnamed_param                    213 (  0.5%)
   warning_type_propagation         189 (  0.4%)
-  warning_unreachable              156 (  0.3%)
+  warning_unreachable              156 (  0.4%)
   extra_output                     127 (  0.3%)
-  unrolled_strcat                  111 (  0.2%)
+  unrolled_strcat                  111 (  0.3%)
   bit_int_float_compare             77 (  0.2%)
   carry_arith_idiom                 77 (  0.2%)
   sub84_truncation                  70 (  0.2%)
@@ -77,11 +77,11 @@ SUSPECT TYPE COUNTS
   bitcast_double                     1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (9745 occurrences)
+TYPE: pointer_cast (9731 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  6700x  (int)&NAME used in byte-offset arithmetic
+  6681x  (int)&NAME used in byte-offset arithmetic
    100x  (code **)((int)(this_ptr->base).vtable
     96x  (uint *)((int)pvVar4
     86x  (uint *)((int)pvVar5
@@ -103,23 +103,16 @@ Unique patterns:
     33x  (SRenderVertex *)((int)pSVar3
 
 Functions:
-  FUN_00405400
-  FUN_0043bed0
-  FUN_0043d3c0
-  FUN_0044fb10
-  FUN_00509340
-  FUN_0051f650
-  FUN_005b9ab0
-  FUN_005b9da0
-  cockpit_ckptutil.c_FUN_004382d0
   cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00437240
   cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0
+  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004382d0
   cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90
   cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40
   cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00437940
   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560
   cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00437700
   cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437d00
+  cockpit_ckptutil.c_blitVerticalColumn_FUN_00438410
   cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00438700
   cockpit_ckptutil.c_buildHardwarePalettes_FUN_00437600
   cockpit_ckptutil.c_copyScreenRegion_FUN_00438790
@@ -135,6 +128,7 @@ Functions:
   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a460
   cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0047e9d0
   cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00538050
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_00537aa0
   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_00537d00
   cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_005375e0
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0
@@ -361,6 +355,7 @@ Functions:
   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360
   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004545b0
   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610
+  core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044fb10
   core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00455100
   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00453560
   core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044e0d0
@@ -710,7 +705,6 @@ Functions:
   core_mirror.cpp_computePlaneIntersection_FUN_00518560
   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610
   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0
-  core_mission.cpp_CDemonMission_writeFile_FUN_0051ac40
   core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0
   core_mobster.cpp_CMobster_dismountVehicle_FUN_0051cd10
   core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_0051e2f0
@@ -736,7 +730,6 @@ Functions:
   core_morph.cpp_CMorph_getReady_FUN_00523310
   core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70
   core_motion.cpp_CMotionList_load_FUN_00523980
-  core_motion.cpp_CMotionList_save_FUN_00523db0
   core_netgame.cpp_CNetGame_addPlayer_FUN_0052e040
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0052f200
   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_005305a0
@@ -1005,7 +998,9 @@ Functions:
   core_werewolf.cpp_CWerewolf_processDamage_FUN_005b1470
   core_werewolf.cpp_CWerewolf_process_FUN_005af4a0
   core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005b11c0
+  core_xform.cpp_clipPolygonStage2_FUN_005b9ab0
   core_xform.cpp_clipPolygonStage3_FUN_005b9c30
+  core_xform.cpp_clipPolygonStage4_FUN_005b9da0
   core_xform.cpp_eulerToQuaternionIndirect_FUN_005b7ff0
   core_xform.cpp_eulerToQuaternion_FUN_005b7ed0
   core_xform.cpp_inverse_FUN_005b6380
@@ -1049,6 +1044,7 @@ Functions:
   engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0
   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280
   engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70
+  engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400
   engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00404fc0
   engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00403f70
   engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0
@@ -1057,12 +1053,14 @@ Functions:
   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040d910
   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
   engine_boss.c_modelStructNotSupported4_FUN_0041d980
-  engine_clipper.c_FUN_0043d6e0
   engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043d500
+  engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0
   engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280
   engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043d140
+  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
+  engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043d3c0
   engine_console.cpp_CConsole_render_FUN_00445690
   engine_dosio.cpp_reopenFileStream_FUN_00479240
   engine_drender.cpp_CDemonRenderer_captureFace_FUN_00484c20
@@ -1090,6 +1088,7 @@ Functions:
   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004fd120
   engine_light.cpp_calculatePhongLighting_FUN_004ffaf0
   engine_matrix.c_normalizeVector3DFixed_FUN_00508700
+  engine_matrix.c_projectToScreen_FUN_00509340
   engine_mini3d.cpp_allocVertexBuffer_FUN_00514c90
   engine_mini3d.cpp_free32_FUN_00514cf0
   engine_mini3d.cpp_polyListD3DL_FUN_005129d0
@@ -1100,6 +1099,7 @@ Functions:
   engine_mini3d.cpp_setCameraMatrix_FUN_00511240
   engine_mini3d.cpp_setRenderSurface_FUN_00514b70
   engine_mini3d.cpp_userClipPolyList_FUN_00517660
+  engine_model.c_byteswapMRGLData_FUN_0051f650
   engine_model.c_getMRGLBounds_FUN_0051f920
   engine_model.c_loadModelChunk_FUN_00520150
   engine_ncursfx.cpp_CMouse_ctor_FUN_00531220
@@ -1250,7 +1250,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_005b2e00
 
 ====================================================================================================
-TYPE: undefined_data (9263 occurrences)
+TYPE: undefined_data (9229 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1276,34 +1276,18 @@ Unique patterns:
     58x  DAT_01c50950
 
 Functions:
-  FUN_004044d0
-  FUN_00405400
-  FUN_0043bed0
-  FUN_0043d3c0
-  FUN_0043d630
-  FUN_00452d70
-  FUN_00455600
-  FUN_00486de0
-  FUN_00490f90
-  FUN_004910f0
-  FUN_00491520
-  FUN_0049dda0
-  FUN_00509340
-  FUN_00525690
-  FUN_005b9ab0
-  FUN_005b9da0
-  cockpit_ckptutil.c_FUN_004382d0
-  cockpit_ckptutil.c_FUN_00438410
   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00439900
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_00439ca0
   cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0
   cockpit_ckptutil.c_blitFullScreen_FUN_00438530
+  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004382d0
   cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90
   cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40
   cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00437940
   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560
   cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00437700
   cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437d00
+  cockpit_ckptutil.c_blitVerticalColumn_FUN_00438410
   cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00438700
   cockpit_ckptutil.c_buildHardwarePalettes_FUN_00437600
   cockpit_ckptutil.c_copyScreenRegion_FUN_00438790
@@ -1532,12 +1516,14 @@ Functions:
   core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004513a0
   core_dcamera.cpp_renderFlatColorScanline_FUN_004511e0
   core_dcamera.cpp_renderVolumetricLightScanline_FUN_00451040
+  core_dcamera.cpp_transformAndStoreVertex_FUN_00452d70
   core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00455e60
   core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455ee0
   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00458210
   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457f70
   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_004583d0
   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004584a0
+  core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00455600
   core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455d00
   core_dcube.cpp_clipTriangleToAABB_FUN_004570e0
   core_dcube.cpp_staticInit_FUN_004553b0
@@ -1619,6 +1605,7 @@ Functions:
   core_dstrendr.cpp_blur3x3MMXStride128_FUN_004889b8
   core_dstrendr.cpp_renderDepth16BitConditional_FUN_00486e74
   core_dstrendr.cpp_renderDepthInterlacedProfiled_FUN_00487327
+  core_dstrendr.cpp_renderDepthOnlyReversed_FUN_00486de0
   core_dstrendr.cpp_renderDepthOnlyStandard_FUN_00486e26
   core_dstrendr.cpp_renderDepthTestStatistics16xUnrolled_FUN_00487425
   core_dstrendr.cpp_renderPerspectiveTexturedScanline_FUN_0048a7d9
@@ -1641,8 +1628,11 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0048f040
   core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0048e9b0
   core_dtrace.cpp_staticInit_FUN_0048a8d0
+  core_dtri.cpp_clipPolygonToBottom_FUN_004910f0
   core_dtri.cpp_clipPolygonToFar_FUN_00491690
+  core_dtri.cpp_clipPolygonToNear_FUN_00491520
   core_dtri.cpp_clipPolygonToRight_FUN_00491260
+  core_dtri.cpp_clipPolygonToTop_FUN_00490f90
   core_dtri.cpp_clipTriangleToBounds_FUN_00491850
   core_dtri.cpp_getClippedVertices_FUN_004922f0
   core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40
@@ -1860,8 +1850,6 @@ Functions:
   core_inv.cpp_CInventory_renderAllItems_FUN_004fae10
   core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0
   core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0
-  core_inv.cpp_CInventory_saveItems_FUN_004f9750
-  core_inv.cpp_CInventory_save_FUN_004f95b0
   core_inv.cpp_CInventory_select_FUN_004f9bd0
   core_inv.cpp_CInventory_updateInventory_FUN_004f9f10
   core_inv.cpp_drawItemIconBackground_FUN_004fa930
@@ -2046,9 +2034,9 @@ Functions:
   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_0055d720
   core_setutil.cpp_generateSphereVertex_FUN_0055d610
   core_shadow.cpp_CShadow_process_FUN_0055de50
+  core_shadow.cpp_CShadow_renderDebugMarker_FUN_0055f630
   core_shadow.cpp_CShadow_renderOpaque_FUN_0055fbf0
   core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60
-  core_shadow.cpp_FUN_0055f630
   core_shadowsc.cpp_CShadowsc_process_FUN_00560630
   core_shadowsc.cpp_CShadowsc_renderOpaque_FUN_00561120
   core_shadowsc.cpp_CShadowsc_renderTransparent_FUN_005611a0
@@ -2136,7 +2124,9 @@ Functions:
   core_xform.cpp_clipInterpolateLeftPlane_FUN_005b96f0
   core_xform.cpp_clipInterpolateRightPlane_FUN_005b9630
   core_xform.cpp_clipInterpolateTopPlane_FUN_005b97b0
+  core_xform.cpp_clipPolygonStage2_FUN_005b9ab0
   core_xform.cpp_clipPolygonStage3_FUN_005b9c30
+  core_xform.cpp_clipPolygonStage4_FUN_005b9da0
   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
   core_yow.cpp_CYow_process_FUN_005b8440
   core_yow.cpp_CYow_setup_FUN_005b81d0
@@ -2182,6 +2172,7 @@ Functions:
   engine_3d.c_drawLine2DFromIndices_FUN_00407a70
   engine_3d.c_drawLine3DFromIndices_FUN_00407d70
   engine_3d.c_drawLineStrip2D_FUN_00404440
+  engine_3d.c_drawLineStrip3D_FUN_004044d0
   engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10
   engine_3d.c_flushRenderQueue_FUN_004077b0
   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -2236,6 +2227,7 @@ Functions:
   engine_3d.c_renderPolygonTexturedNormalizedOp50_FUN_00406040
   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280
   engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70
+  engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400
   engine_3d.c_renderPolygonTexturedOp45_FUN_00405d10
   engine_3d.c_renderPolygonTexturedOp46_FUN_00405db0
   engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00404fc0
@@ -2254,19 +2246,22 @@ Functions:
   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040d910
   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660
-  engine_clipper.c_FUN_0043d6e0
   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
   engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043d500
   engine_clipper.c_clipPolygonBottomPlane_FUN_0043bd90
+  engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0
   engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280
   engine_clipper.c_clipPolygonLeftPlane_FUN_0043bb10
   engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043d140
   engine_clipper.c_clipPolygonRightPlane_FUN_0043b9d0
+  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
+  engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043d3c0
   engine_clipper.c_getFarPlaneDistance_FUN_0043b4a0
   engine_clipper.c_interpolateVertexFarClip_FUN_0043b8b0
   engine_clipper.c_normalizeClippedVertices_FUN_0043c0d0
+  engine_clipper.c_perspectiveDivideVertices_FUN_0043d630
   engine_clipper.c_setFarPlaneDistance_FUN_0043b480
   engine_console.cpp_CConsole_printf_FUN_00445430
   engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_00483bf0
@@ -2321,7 +2316,7 @@ Functions:
   engine_font.cpp_CBitFont_remapPalette_FUN_004c45e0
   engine_font.cpp_CBitFont_wrapLine_FUN_004c4030
   engine_font.cpp_CBitFont_wrapText_FUN_004c4310
-  engine_font.cpp_FUN_004c4c00
+  engine_font.cpp_addPolygonEdge_FUN_004c4c00
   engine_font.cpp_drawAlphaBlendedPixels_FUN_004c26c0
   engine_font.cpp_findHardwareEdgeByYMin_FUN_004c4d40
   engine_font.cpp_getDefaultTextColor_FUN_004c2690
@@ -2348,6 +2343,7 @@ Functions:
   engine_matrix.c_popViewport_FUN_00509210
   engine_matrix.c_projectCachedPointUnchecked_FUN_00507bf0
   engine_matrix.c_projectCachedPoint_FUN_00507b30
+  engine_matrix.c_projectToScreen_FUN_00509340
   engine_matrix.c_pushViewport_FUN_005090b0
   engine_matrix.c_transformToCache_FUN_00507b00
   engine_mini3d.cpp_CMini3D_ctor_FUN_00510f60
@@ -2389,10 +2385,10 @@ Functions:
   engine_pcx.c_saveScreenshotGeneral_FUN_00535d80
   engine_pcx.c_writePCXScanline_FUN_00535940
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250
-  engine_prim.c_FUN_0053df10
   engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0053de20
   engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60
   engine_prim.c_findEdgeInBuffer_FUN_0053db80
+  engine_prim.c_getTriangleWindingFromIndices2_FUN_0053df10
   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000
   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720
   engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650
@@ -2443,6 +2439,7 @@ Functions:
   shape_edittool.cpp_CEdButton_paint_FUN_0049d580
   shape_edittool.cpp_CEdButton_wasClicked_FUN_0049d8a0
   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0
+  shape_edittool.cpp_CEdCheck_handleInput_FUN_0049dda0
   shape_edittool.cpp_CEdCheck_render_FUN_0049dc70
   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_0049cf60
   shape_edittool.cpp_CEdScrollBar_render_FUN_0049caa0
@@ -2515,6 +2512,7 @@ Functions:
   sound_mp3.cpp_reorderShortBlockSamples_FUN_00528f90
   sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_00526c70
   sound_mp3.cpp_requantizeLayer3Samples_FUN_00528ae0
+  sound_mp3.cpp_validateLayer2AllocationTable_FUN_00525690
   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_00578710
   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00578cc0
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_00577f90
@@ -2629,7 +2627,7 @@ Functions:
   wincore_winvideo.cpp_playMovie_FUN_005b4cd0
 
 ====================================================================================================
-TYPE: pointer_truncation (8539 occurrences)
+TYPE: pointer_truncation (8521 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -2655,15 +2653,8 @@ Unique patterns:
     55x  (int)pvVar1
 
 Functions:
-  FUN_00405400
-  FUN_0043bed0
-  FUN_0043d3c0
-  FUN_0044fb10
-  FUN_00537aa0
-  FUN_005b9ab0
-  FUN_005b9da0
-  cockpit_ckptutil.c_FUN_004382d0
   cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0
+  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004382d0
   cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40
   cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00437940
   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560
@@ -2676,6 +2667,7 @@ Functions:
   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a460
   cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0047e9d0
   cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00538050
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_00537aa0
   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_00537d00
   cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_005375e0
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0
@@ -2735,7 +2727,6 @@ Functions:
   core_bmppuzzl.cpp_restorePuzzleGraphics_FUN_00415c50
   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ab20
   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200
-  core_bodypart.cpp_CBodyPart_archive_FUN_004193c0
   core_bodypart.cpp_CBodyPart_ctor_FUN_00418b40
   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041a700
@@ -2880,6 +2871,7 @@ Functions:
   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360
   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004545b0
   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610
+  core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044fb10
   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00453560
   core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044e0d0
   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004551a0
@@ -3184,7 +3176,6 @@ Functions:
   core_mirror.cpp_CMirror_ctor_FUN_005187f0
   core_mirror.cpp_computePlaneIntersection_FUN_00518560
   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0
-  core_mission.cpp_CDemonMission_writeFile_FUN_0051ac40
   core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0
   core_mobster.cpp_CMobster_dismountVehicle_FUN_0051cd10
   core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_0051e2f0
@@ -3205,7 +3196,6 @@ Functions:
   core_morph.cpp_CMorph_getReady_FUN_00523310
   core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70
   core_motion.cpp_CMotionList_load_FUN_00523980
-  core_motion.cpp_CMotionList_save_FUN_00523db0
   core_netgame.cpp_CNetGame_addPlayer_FUN_0052e040
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0052f200
   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_005305a0
@@ -3456,7 +3446,9 @@ Functions:
   core_werewolf.cpp_CWerewolf_processDamage_FUN_005b1470
   core_werewolf.cpp_CWerewolf_process_FUN_005af4a0
   core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005b11c0
+  core_xform.cpp_clipPolygonStage2_FUN_005b9ab0
   core_xform.cpp_clipPolygonStage3_FUN_005b9c30
+  core_xform.cpp_clipPolygonStage4_FUN_005b9da0
   core_xform.cpp_eulerToQuaternionIndirect_FUN_005b7ff0
   core_xform.cpp_eulerToQuaternion_FUN_005b7ed0
   core_xform.cpp_inverse_FUN_005b6380
@@ -3498,17 +3490,20 @@ Functions:
   engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0
   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280
   engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70
+  engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400
   engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00404fc0
   engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00403f70
   engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0
   engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407570
   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040d910
-  engine_clipper.c_FUN_0043d6e0
   engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043d500
+  engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0
   engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280
   engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043d140
+  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
+  engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043d3c0
   engine_console.cpp_CConsole_render_FUN_00445690
   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70
   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0
@@ -3617,29 +3612,10 @@ Unique patterns:
   2230x  WARNING: Globals starting with
 
 Functions:
-  FUN_00405400
-  FUN_00437290
-  FUN_0044fb10
-  FUN_00452d70
-  FUN_00455600
-  FUN_00455760
-  FUN_00455b90
-  FUN_00490f90
-  FUN_004910f0
-  FUN_00491520
-  FUN_0049dda0
-  FUN_00509340
-  FUN_0051f650
-  FUN_00525690
-  FUN_005257d0
-  FUN_00537aa0
-  FUN_0058012d
-  FUN_005b9ab0
-  FUN_005b9da0
-  cockpit_ckptutil.c_FUN_004382d0
   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00439900
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_00439ca0
   cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0
+  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004382d0
   cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90
   cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40
   cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00437940
@@ -3653,6 +3629,7 @@ Functions:
   cockpit_ckptutil.c_generateScrollHeightMap_FUN_004387f0
   cockpit_ckptutil.c_generateTransparencySpans_FUN_0043b090
   cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
+  cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00437290
   cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0043a000
   cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043a010
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490
@@ -3688,6 +3665,7 @@ Functions:
   cockpit_drawsurf.cpp_setDashAnimationThreshold_FUN_0047fe20
   cockpit_drawsurf.cpp_setDashLength_FUN_0047fe10
   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_00537aa0
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0
   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280
@@ -3935,6 +3913,7 @@ Functions:
   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360
   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004545b0
   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610
+  core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044fb10
   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00453560
   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00453540
   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430
@@ -3950,6 +3929,7 @@ Functions:
   core_dcamera.cpp_renderFlatColorScanline_FUN_004511e0
   core_dcamera.cpp_renderVolumetricLightScanline_FUN_00451040
   core_dcamera.cpp_testCoronaVisibility_FUN_00451eb0
+  core_dcamera.cpp_transformAndStoreVertex_FUN_00452d70
   core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00455e60
   core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455ee0
   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00457c40
@@ -3960,7 +3940,10 @@ Functions:
   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004584a0
   core_dcube.cpp_clipEdgeToPlane_FUN_00455460
   core_dcube.cpp_clipPolygonAgainstMaxX_FUN_004558d0
+  core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00455600
   core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455d00
+  core_dcube.cpp_clipPolygonAgainstMinY_FUN_00455760
+  core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00455b90
   core_dcube.cpp_clipTriangleToAABB_FUN_004570e0
   core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00456b60
   core_dcube.cpp_intersectXZCylinder_FUN_00456340
@@ -4144,8 +4127,11 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0048e9b0
   core_dtri.cpp_CDemonTriangle_render_FUN_00492300
   core_dtri.cpp_clipLineToPlane_FUN_00490df0
+  core_dtri.cpp_clipPolygonToBottom_FUN_004910f0
   core_dtri.cpp_clipPolygonToFar_FUN_00491690
+  core_dtri.cpp_clipPolygonToNear_FUN_00491520
   core_dtri.cpp_clipPolygonToRight_FUN_00491260
+  core_dtri.cpp_clipPolygonToTop_FUN_00490f90
   core_dtri.cpp_clipTriangleToBounds_FUN_00491850
   core_dtri.cpp_cylinderEdgeIntersection_FUN_00490150
   core_dtri.cpp_getClippedVertexCount_FUN_004922e0
@@ -4853,8 +4839,8 @@ Functions:
   core_shadow.cpp_CShadow_processChainConstraint_FUN_005601c0
   core_shadow.cpp_CShadow_processDamage_FUN_0055fea0
   core_shadow.cpp_CShadow_process_FUN_0055de50
+  core_shadow.cpp_CShadow_renderDebugMarker_FUN_0055f630
   core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60
-  core_shadow.cpp_FUN_0055f630
   core_shadow.cpp_staticInit_FUN_0055da40
   core_shadowsc.cpp_CShadowsc_ctor_FUN_005604a0
   core_shadowsc.cpp_CShadowsc_process_FUN_00560630
@@ -5032,18 +5018,20 @@ Functions:
   core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005b0c00
   core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005b11c0
   core_werewolf.cpp_staticInit_FUN_005af240
-  core_xform.cpp_FUN_005b67e0
   core_xform.cpp_angleFromSinCos_FUN_005b5860
   core_xform.cpp_buildXFlipMatrix_FUN_005b7030
   core_xform.cpp_buildYFlipMatrix_FUN_005b7090
   core_xform.cpp_buildZFlipMatrix_FUN_005b70f0
+  core_xform.cpp_clipPolygonStage2_FUN_005b9ab0
   core_xform.cpp_clipPolygonStage3_FUN_005b9c30
+  core_xform.cpp_clipPolygonStage4_FUN_005b9da0
   core_xform.cpp_eulerToQuaternionIndirect_FUN_005b7ff0
   core_xform.cpp_eulerToQuaternion_FUN_005b7ed0
   core_xform.cpp_inverse_FUN_005b6380
   core_xform.cpp_matrixToEulerAnglesZYX_FUN_005b5dd0
   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
   core_xform.cpp_matrixToQuaternion_FUN_005b75a0
+  core_xform.cpp_orthonormalizeMatrix3x3_FUN_005b67e0
   core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
   core_xform.cpp_quaternionFromAngleY_FUN_005b7b30
   core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70
@@ -5153,6 +5141,7 @@ Functions:
   engine_3d.c_renderPolygonTexturedNormalizedOp50_FUN_00406040
   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280
   engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70
+  engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400
   engine_3d.c_renderPolygonTexturedOp45_FUN_00405d10
   engine_3d.c_renderPolygonTexturedOp46_FUN_00405db0
   engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00404fc0
@@ -5176,10 +5165,10 @@ Functions:
   engine_boss.c_modelStructNotSupported2_FUN_0041d920
   engine_boss.c_modelStructNotSupported3_FUN_0041d950
   engine_boss.c_modelStructNotSupported4_FUN_0041d980
-  engine_clipper.c_FUN_0043d6e0
   engine_clipper.c_clipPolygonBottomPlane_FUN_0043bd90
   engine_clipper.c_clipPolygonLeftPlane_FUN_0043bb10
   engine_clipper.c_clipPolygonRightPlane_FUN_0043b9d0
+  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
   engine_console.cpp_CConsole_render_FUN_00445690
@@ -5247,7 +5236,7 @@ Functions:
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004c18c0
   engine_font.cpp_CBitFont_remapPalette_FUN_004c45e0
   engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0
-  engine_font.cpp_FUN_004c4c00
+  engine_font.cpp_addPolygonEdge_FUN_004c4c00
   engine_font.cpp_clipCharacter_FUN_004c0a80
   engine_font.cpp_findHardwareEdgeByYMin_FUN_004c4d40
   engine_font.cpp_getAlpha_FUN_004c4bf0
@@ -5282,6 +5271,7 @@ Functions:
   engine_matrix.c_popViewport_FUN_00509210
   engine_matrix.c_pop_FUN_005084b0
   engine_matrix.c_projectCachedPointUnchecked_FUN_00507bf0
+  engine_matrix.c_projectToScreen_FUN_00509340
   engine_matrix.c_projectTransformedPoint_FUN_00507b50
   engine_matrix.c_pushMatrixRelativeOffset_FUN_005093d0
   engine_matrix.c_pushViewport_FUN_005090b0
@@ -5400,6 +5390,7 @@ Functions:
   engine_mini3d.cpp_updateTransform_FUN_005124f0
   engine_mini3d.cpp_useTexture_FUN_005121b0
   engine_mini3d.cpp_userClipPolyList_FUN_00517660
+  engine_model.c_byteswapMRGLData_FUN_0051f650
   engine_model.c_getMRGLBounds_FUN_0051f920
   engine_model.c_getMRGLSize_FUN_0051fee0
   engine_model.c_loadModelChunk_FUN_00520150
@@ -5470,6 +5461,7 @@ Functions:
   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0057eeac
   engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39
   engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03
+  engine_special.cpp_renderScanlineSwapped_FUN_0058012d
   engine_special.cpp_renderScanline_FUN_00580127
   engine_special.cpp_restoreVideoMode_FUN_00582310
   engine_special.cpp_restoreZBuffer_FUN_00582aa0
@@ -5521,6 +5513,7 @@ Functions:
   shape_edittool.cpp_CEdButton_paint_FUN_0049d580
   shape_edittool.cpp_CEdButton_wasClicked_FUN_0049d8a0
   shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_0049dbc0
+  shape_edittool.cpp_CEdCheck_handleInput_FUN_0049dda0
   shape_edittool.cpp_CEdCheck_render_FUN_0049dc70
   shape_edittool.cpp_CEdCheck_setupWithText_FUN_0049dad0
   shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_0049c9d0
@@ -5614,9 +5607,11 @@ Functions:
   sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_00527280
   sound_mp3.cpp_applyPolyphaseWindow_FUN_0052a2c0
   sound_mp3.cpp_calculateMpegFrame_FUN_00525840
+  sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_005257d0
   sound_mp3.cpp_initializeSynthesisDctTable_FUN_00527190
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_00529370
   sound_mp3.cpp_requantizeLayer3Samples_FUN_00528ae0
+  sound_mp3.cpp_validateLayer2AllocationTable_FUN_00525690
   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_00578710
   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00578cc0
   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80
@@ -5813,7 +5808,6 @@ Functions:
   wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0
   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
   wincore_wddvmem.cpp_videoRestore_FUN_005ad2c0
-  wincore_winrun.cpp_FUN_005b47d0
   wincore_winrun.cpp_calibrateCPUSpeed_FUN_005b21e0
   wincore_winrun.cpp_calibrateControllerCenter_FUN_005b4460
   wincore_winrun.cpp_clearKeypresses_FUN_005b24f0
@@ -5833,6 +5827,7 @@ Functions:
   wincore_winrun.cpp_plotClippedPixel_FUN_005b2610
   wincore_winrun.cpp_pollAllControllers_FUN_005b4190
   wincore_winrun.cpp_pollController_FUN_005b3d70
+  wincore_winrun.cpp_positionMovieWindow_FUN_005b47d0
   wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0
   wincore_winrun.cpp_resetControllerCalibration_FUN_005b4400
   wincore_winrun.cpp_resetInputIdleTimers_FUN_005b42f0
@@ -5849,311 +5844,19 @@ Functions:
   wincore_winvideo.cpp_toggleMoviePlayback_FUN_005b4c60
 
 ====================================================================================================
-TYPE: stack_param (1837 occurrences)
-====================================================================================================
-
-Unique patterns:
-    86x  in_stack_00000004
-    74x  in_stack_0000000c
-    73x  in_stack_00000010
-    59x  in_stack_0000001c
-    57x  in_stack_00000008
-    54x  in_stack_00000018
-    44x  in_stack_00000014
-    42x  in_stack_fffff9d8
-    41x  in_stack_fffffb24
-    40x  in_stack_fffffac0
-    36x  in_stack_ffffffc8
-    28x  in_stack_fffffb34
-    28x  in_stack_ffffff88
-    23x  in_stack_fffffe5c
-    21x  in_stack_fffffdd4
-    20x  in_stack_0000002c
-    20x  in_stack_00000020
-    20x  in_stack_ffffff94
-    19x  in_stack_ffffff90
-    18x  in_stack_fffffe64
-
-Functions:
-  FUN_004044d0
-  FUN_00539040
-  cockpit_ckptutil.c_FUN_00438260
-  cockpit_ckptutil.c_FUN_004382d0
-  cockpit_ckptutil.c_FUN_00438410
-  cockpit_ckptutil.c_drawLineAA_FUN_00439640
-  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00437400
-  cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0047f7a0
-  cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_0047ead0
-  cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0047ed30
-  cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0047ec80
-  cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090
-  cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000
-  cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_005374b0
-  cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0
-  cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280
-  cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30
-  cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750
-  cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30
-  cockpit_pkbmpset.cpp_FUN_00538f90
-  core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70
-  core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
-  core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
-  core_ammo.cpp_CAmmo_renderOpaque_FUN_0040dc80
-  core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e320
-  core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040ef70
-  core_baron.cpp_CBaron_updateMountedPosition_FUN_0040fc00
-  core_bat.cpp_CBat_renderOpaque_FUN_00410f70
-  core_batman.cpp_CBatman_renderOpaque_FUN_00413970
-  core_battery.cpp_CBattery_renderOpaque_FUN_00414500
-  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041c720
-  core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40
-  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0
-  core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_0041b1e0
-  core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b2a0
-  core_boxactor.cpp_CBoxActor_process_FUN_00422000
-  core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0
-  core_boxactor.cpp_CLightActor_process_FUN_00422f90
-  core_boxactor.cpp_CLightActor_setupLightModel_FUN_004232c0
-  core_bugs.cpp_CBugs_renderOpaque_FUN_00425480
-  core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_0042a4f0
-  core_carved.cpp_CCarved_processPickup_FUN_0042a930
-  core_carved.cpp_CCarved_process_FUN_00428ae0
-  core_carved.cpp_getObjectGrabPointLocal_FUN_00428390
-  core_carved.cpp_getObjectGrabPointWorld_FUN_00428450
-  core_chain.cpp_CChain_process_FUN_00435c70
-  core_chain.cpp_CChain_renderTransparent_FUN_00436600
-  core_charactr.cpp_CCharacter_archive_FUN_0042c7f0
-  core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210
-  core_charactr.cpp_CCharacter_explode_FUN_00430c90
-  core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
-  core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0
-  core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0
-  core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0
-  core_construc.cpp_CConstruct_process_FUN_00445cb0
-  core_course.cpp_CCourse_evaluate_FUN_00447f00
-  core_crate.cpp_CCrate_getTargetPoints_FUN_00449530
-  core_crate.cpp_CCrate_renderOpaque_FUN_004493e0
-  core_crate.cpp_CCrate_setup_FUN_00449070
-  core_crossbow.cpp_CCrossbow_process_FUN_00449830
-  core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00449920
-  core_curtain.cpp_CCurtain_renderMesh_FUN_0044bf20
-  core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_0045b120
-  core_demnfolk.cpp_CDemnfolk_processPickup_FUN_0045b560
-  core_demnfolk.cpp_CDemnfolk_process_FUN_00459100
-  core_demnfolk.cpp_getObjectGrabPointLocal_FUN_004586d0
-  core_demnfolk.cpp_getObjectGrabPointWorld_FUN_00458790
-  core_dest.cpp_CActorDestination_getBoundingBox_FUN_0045d4c0
-  core_dimage.cpp_CDemonImage_load_FUN_0045f190
-  core_djien.cpp_CDjien_customRayIntersect_FUN_004610b0
-  core_doc.cpp_CDoc_canReachPickup_FUN_00475c20
-  core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740
-  core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0
-  core_doc.cpp_CDoc_processFrame_FUN_00469550
-  core_doc.cpp_CDoc_processMotionEvents_FUN_0046bde0
-  core_doc.cpp_CDoc_renderOpaque_FUN_00471af0
-  core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400
-  core_door.cpp_CDoor_process_FUN_00477ab0
-  core_door.cpp_CDoor_renderOpaque_FUN_00478220
-  core_door.cpp_CDoor_reposition_FUN_00477540
-  core_dpart.cpp_CDemonPart_loadFromFile_FUN_00479c70
-  core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0
-  core_drip.cpp_CDrip_process_FUN_00485610
-  core_drip.cpp_CDrip_renderOpaque_FUN_00485a70
-  core_drone.cpp_CDrone_process_FUN_00485d70
-  core_dynamite.cpp_CDynamite_process_FUN_004926d0
-  core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0
-  core_elephant.cpp_CElephantGun_process_FUN_0049e090
-  core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a02e0
-  core_emitter.cpp_CEmitter_process_FUN_0049f310
-  core_emitter.cpp_CEmitter_renderOpaque_FUN_0049fdf0
-  core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980
-  core_enemy.cpp_CEnemy_getTargetPoint_FUN_004a08b0
-  core_enemy.cpp_CEnemy_getTargetPoints_FUN_004a0680
-  core_event.cpp_CEventList_executeCommand_FUN_004a1d00
-  core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004ab8a0
-  core_filmreel.cpp_CFilmReel_renderOpaque_FUN_004ab440
-  core_filmreel.cpp_CFilmReel_setup_FUN_004ab340
-  core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420
-  core_flame.cpp_CFlame_renderBackground_FUN_004b8ac0
-  core_flame.cpp_CFlame_renderTransparent_FUN_004b8100
-  core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_004b9370
-  core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004b92a0
-  core_flamecan.cpp_CFlameCan_setup_FUN_004b9010
-  core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830
-  core_flies.cpp_CFlies_renderOpaque_FUN_004c0080
-  core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40
-  core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0
-  core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004c83b0
-  core_gabriela.cpp_CGabriella_process_FUN_004c65f0
-  core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0
-  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004ca450
-  core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20
-  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004c91b0
-  core_game.cpp_CGame_beginFadeOut_FUN_004d6070
-  core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260
-  core_game.cpp_calculateIrisFadeCenter_FUN_004d60b0
-  core_gasmask.cpp_CGasMask_renderOpaque_FUN_004ddb60
-  core_ghoul.cpp_CGhoul_process_FUN_004de330
-  core_glass.cpp_CGlass_renderBackground_FUN_004e1fb0
-  core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e1db0
-  core_glass.cpp_CGlass_renderOpaque_FUN_004e1a10
-  core_glass.cpp_CGlass_renderTransparent_FUN_004e1be0
-  core_glass.cpp_CGlass_setup_FUN_004e1150
-  core_goggles.cpp_CGoggles_renderOpaque_FUN_004e3bd0
-  core_gun.cpp_CGun_fire_FUN_004e8630
-  core_health.cpp_CHealthItem_renderOpaque_FUN_004ea3c0
-  core_hero.cpp_CHero_tryInteract_FUN_004eb090
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890
-  core_hostage.cpp_CHostage_process_FUN_004ed890
-  core_icepick.cpp_CIcePick_process_FUN_004f0e50
-  core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004fc630
-  core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004fd750
-  core_larva.cpp_CLarva_process_FUN_004fda40
-  core_lever.cpp_CLever_renderOpaque_FUN_004ff5d0
-  core_lightgun.cpp_CLightGun_fire_FUN_00500310
-  core_lightgun.cpp_CLightGun_process_FUN_00500d20
-  core_lightpis.cpp_CLightPis_fire_FUN_00501a70
-  core_lightpis.cpp_CLightPis_process_FUN_00502480
-  core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_00504cb0
-  core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0
-  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90
-  core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0
-  core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0
-  core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_00509870
-  core_melee.cpp_CMelee_process_FUN_005099a0
-  core_mimic.cpp_CMimic_renderMirrored_FUN_00510620
-  core_mimic.cpp_CMimic_updatePose_FUN_0050f7e0
-  core_minecar.cpp_CMineCar_setup_FUN_00510e00
-  core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0
-  core_mobster.cpp_CMobster_process_FUN_0051ce40
-  core_mobster.cpp_getObjectGrabPointLocal_FUN_0051c5e0
-  core_mobster.cpp_getObjectGrabPointWorld_FUN_0051c6a0
-  core_motion.cpp_CMotionController_render_FUN_005254b0
-  core_pendulum.cpp_CPendulum_renderOpaque_FUN_00537190
-  core_pendulum.cpp_CPendulum_setup_FUN_00536130
-  core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_00536290
-  core_platfrm.cpp_CPlatform_process_FUN_00539810
-  core_platfrm.cpp_CPlatform_renderOpaque_FUN_0053a3d0
-  core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0053aef0
-  core_rifle.cpp_CRifle_fire_FUN_00540080
-  core_scat.cpp_CScat_process_FUN_00540df0
-  core_scat.cpp_CScat_scoreAimTarget_FUN_00542b90
-  core_scat.cpp_CScat_updateAiming_FUN_005424f0
-  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00542f20
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0
-  core_set.cpp_CDemonSet_buildMirrorList_FUN_00555610
-  core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0
-  core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170
-  core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0
-  core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00559440
-  core_setcolid.cpp_CDemonSet_isPointInWater_FUN_005595a0
-  core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0
-  core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
-  core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005594e0
-  core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80
-  core_setdir.cpp_FUN_00559730
-  core_shadow.cpp_CShadow_process_FUN_0055de50
-  core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60
-  core_shadow.cpp_FUN_0055f630
-  core_shotgun.cpp_CShotgun_fire_FUN_00561760
-  core_shotgun.cpp_CShotgun_process_FUN_00561650
-  core_simbox.cpp_CSimBox_renderOpaque_FUN_00562980
-  core_simbox.cpp_CSimBox_setup_FUN_00562660
-  core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_00569fb0
-  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00564b20
-  core_spike.cpp_CSpike_renderOpaque_FUN_005834e0
-  core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00583700
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0058afe0
-  core_stranger.cpp_CStranger_processFrame_FUN_00585b00
-  core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0
-  core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0
-  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0058d3c0
-  core_stranger.cpp_CStranger_tryPickupObject_FUN_0058c260
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0
-  core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0
-  core_teleport.cpp_CTeleport_process_FUN_00594f60
-  core_tommygun.cpp_CTommyGun_fire_FUN_00598420
-  core_trap.cpp_CTrap_process_FUN_00599df0
-  core_trap.cpp_CTrap_renderOpaque_FUN_0059a010
-  core_trash.cpp_CTrash_renderOpaque_FUN_0059ad40
-  core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0
-  core_trigger.cpp_CTrigger_containsActor_FUN_0059c090
-  core_trigger.cpp_CTrigger_evaluateTriggerCondition_FUN_0059bc70
-  core_trigger.cpp_CTrigger_process_FUN_0059b240
-  core_turret.cpp_CTurret_renderOpaque_FUN_005a2280
-  core_turret.cpp_CTurret_updatePatrol_FUN_005a3650
-  core_turret.cpp_CTurret_updateTargeting_FUN_005a2d00
-  core_vampboss.cpp_CVampireBoss_getTargetPoints_FUN_005a7020
-  core_vehicle.cpp_CVehicle_process_FUN_005a7b50
-  core_vehicle.cpp_CVehicle_renderOpaque_FUN_005a8670
-  core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440
-  core_vessel.cpp_CCryptVessel_setup_FUN_005a8c60
-  core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005ab530
-  core_weapon.cpp_CWeapon_onDropped_FUN_005ada60
-  core_weapon.cpp_CWeapon_renderAimBeam_FUN_005adf90
-  core_weapon.cpp_CWeapon_renderOpaque_FUN_005ad680
-  core_weapon.cpp_CWeapon_updateLighting_FUN_005adb20
-  core_werewolf.cpp_CWerewolf_process_FUN_005af4a0
-  core_xform.cpp_FUN_005b67e0
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005bd120
-  core_zombie.cpp_CZombie_processPickup_FUN_005bd560
-  core_zombie.cpp_CZombie_process_FUN_005bafb0
-  core_zombie.cpp_getObjectGrabPointLocal_FUN_005ba7d0
-  core_zombie.cpp_getObjectGrabPointWorld_FUN_005ba890
-  engine_2d.c_clipAndDrawLine_FUN_00402cf0
-  engine_3d.c_drawLine2DFromIndices_FUN_00407a70
-  engine_3d.c_drawLine3DFromIndices_FUN_00407d70
-  engine_3d.c_drawLineStrip2D_FUN_00404440
-  engine_clipper.c_FUN_0043d6e0
-  engine_dosio.cpp_reopenFileStream_FUN_00479240
-  engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0
-  engine_font.cpp_FUN_004c4c00
-  engine_mini3d.cpp_polyListL_FUN_00512c60
-  engine_mini3d.cpp_userClipPolyList_FUN_00517660
-  engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0
-  engine_prim.c_FUN_0053df10
-  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360
-  shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0
-  shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180
-  shape_edittool.cpp_CStrList_populateRecursive_FUN_0049a300
-  shape_edittool.cpp_draw3DInterpolatedLine_FUN_00498660
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450
-  sound_snddx.cpp_CDirectSoundDevice_start_FUN_00577b60
-  sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
-  sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_0057ae70
-  sound_sndwav.cpp_getWavInDevice_FUN_0057b500
-  support_codec.cpp_CCheesyCipher_ctor_FUN_00443a00
-  support_trisock.cpp_copyHostent_FUN_0059efd0
-  support_trisock.cpp_httpReceiveResponse_FUN_0059d4b0
-  support_trisock.cpp_lookupHostByAddr_FUN_0059f230
-  wincore_winrun.cpp_FUN_005b47d0
-  wincore_winrun.cpp_initController_FUN_005b41c0
-  wincore_winrun.cpp_pollController_FUN_005b3d70
-
-====================================================================================================
 TYPE: unrolled_memcpy (1814 occurrences)
 ====================================================================================================
 
 Unique patterns:
    860x  for (...; != 0; ... + -1)
-   580x  field-by-field struct copy
+   583x  field-by-field struct copy
    363x  MOVSD.REP
      4x  MOVSB.REP
-     4x  raw-offset struct copy
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
+     1x  raw-offset struct copy
      1x  for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }
 
 Functions:
-  FUN_004044d0
-  FUN_0043d3c0
-  FUN_0044fb10
   cockpit_ckptutil.c_copyScreenRegion_FUN_00438790
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490
   cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00437132
@@ -6309,6 +6012,7 @@ Functions:
   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044d8c0
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0
   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004516c0
+  core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044fb10
   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20
   core_dcube.cpp_CDemonCube_load_FUN_00457e50
   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00458210
@@ -6760,16 +6464,18 @@ Functions:
   engine_3d.c_drawLine2DFromIndices_FUN_00407a70
   engine_3d.c_drawLine3DFromIndices_FUN_00407d70
   engine_3d.c_drawLineStrip2D_FUN_00404440
+  engine_3d.c_drawLineStrip3D_FUN_004044d0
   engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10
   engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0
   engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_004072c0
   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040d910
   engine_boss.c_modelStructNotSupported4_FUN_0041d980
-  engine_clipper.c_FUN_0043d6e0
   engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043d500
   engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280
   engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043d140
+  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0
   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
+  engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043d3c0
   engine_console.cpp_CConsole_scrollUp_FUN_00445610
   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70
   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483780
@@ -6858,7 +6564,6 @@ Unique patterns:
     26x  &stack0xffffffac
 
 Functions:
-  FUN_004044d0
   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00437400
   cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00480af0
@@ -7226,6 +6931,7 @@ Functions:
   engine_3d.c_drawLine2DFromIndices_FUN_00407a70
   engine_3d.c_drawLine3DFromIndices_FUN_00407d70
   engine_3d.c_drawLineStrip2D_FUN_00404440
+  engine_3d.c_drawLineStrip3D_FUN_004044d0
   engine_console.cpp_CConsole_printf_FUN_00445430
   engine_dosio.cpp_resolveRelativePath_FUN_00479770
   engine_font.cpp_CBitFont_drawTextCenterF_FUN_004c2290
@@ -7271,6 +6977,286 @@ Functions:
   wincore_winrun.cpp_pollController_FUN_005b3d70
 
 ====================================================================================================
+TYPE: stack_param (1641 occurrences)
+====================================================================================================
+
+Unique patterns:
+    54x  in_stack_0000001c
+    51x  in_stack_0000000c
+    50x  in_stack_00000010
+    45x  in_stack_00000018
+    42x  in_stack_fffff9d8
+    41x  in_stack_fffffb24
+    40x  in_stack_fffffac0
+    38x  in_stack_00000014
+    36x  in_stack_ffffffc8
+    28x  in_stack_fffffb34
+    28x  in_stack_ffffff88
+    23x  in_stack_fffffe5c
+    21x  in_stack_fffffdd4
+    20x  in_stack_0000002c
+    20x  in_stack_ffffff94
+    19x  in_stack_ffffff90
+    18x  in_stack_fffffe64
+    17x  in_stack_00000034
+    17x  in_stack_ffffff60
+    17x  in_stack_ffffff78
+
+Functions:
+  cockpit_ckptutil.c_drawLineAA_FUN_00439640
+  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00437400
+  cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0047f7a0
+  cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_0047ead0
+  cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0047ed30
+  cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0047ec80
+  cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090
+  cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000
+  cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_005374b0
+  cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0
+  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0
+  cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280
+  cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30
+  cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750
+  cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00539040
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00538f90
+  core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70
+  core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
+  core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
+  core_ammo.cpp_CAmmo_renderOpaque_FUN_0040dc80
+  core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e320
+  core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040ef70
+  core_baron.cpp_CBaron_updateMountedPosition_FUN_0040fc00
+  core_bat.cpp_CBat_renderOpaque_FUN_00410f70
+  core_batman.cpp_CBatman_renderOpaque_FUN_00413970
+  core_battery.cpp_CBattery_renderOpaque_FUN_00414500
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041c720
+  core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40
+  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0
+  core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_0041b1e0
+  core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b2a0
+  core_boxactor.cpp_CBoxActor_process_FUN_00422000
+  core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0
+  core_boxactor.cpp_CLightActor_process_FUN_00422f90
+  core_boxactor.cpp_CLightActor_setupLightModel_FUN_004232c0
+  core_bugs.cpp_CBugs_renderOpaque_FUN_00425480
+  core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_0042a4f0
+  core_carved.cpp_CCarved_processPickup_FUN_0042a930
+  core_carved.cpp_CCarved_process_FUN_00428ae0
+  core_carved.cpp_getObjectGrabPointLocal_FUN_00428390
+  core_carved.cpp_getObjectGrabPointWorld_FUN_00428450
+  core_chain.cpp_CChain_process_FUN_00435c70
+  core_chain.cpp_CChain_renderTransparent_FUN_00436600
+  core_charactr.cpp_CCharacter_archive_FUN_0042c7f0
+  core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210
+  core_charactr.cpp_CCharacter_explode_FUN_00430c90
+  core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
+  core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0
+  core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0
+  core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0
+  core_construc.cpp_CConstruct_process_FUN_00445cb0
+  core_course.cpp_CCourse_evaluate_FUN_00447f00
+  core_crate.cpp_CCrate_getTargetPoints_FUN_00449530
+  core_crate.cpp_CCrate_renderOpaque_FUN_004493e0
+  core_crate.cpp_CCrate_setup_FUN_00449070
+  core_crossbow.cpp_CCrossbow_process_FUN_00449830
+  core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00449920
+  core_curtain.cpp_CCurtain_renderMesh_FUN_0044bf20
+  core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_0045b120
+  core_demnfolk.cpp_CDemnfolk_processPickup_FUN_0045b560
+  core_demnfolk.cpp_CDemnfolk_process_FUN_00459100
+  core_demnfolk.cpp_getObjectGrabPointLocal_FUN_004586d0
+  core_demnfolk.cpp_getObjectGrabPointWorld_FUN_00458790
+  core_dest.cpp_CActorDestination_getBoundingBox_FUN_0045d4c0
+  core_dimage.cpp_CDemonImage_load_FUN_0045f190
+  core_djien.cpp_CDjien_customRayIntersect_FUN_004610b0
+  core_doc.cpp_CDoc_canReachPickup_FUN_00475c20
+  core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740
+  core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0
+  core_doc.cpp_CDoc_processFrame_FUN_00469550
+  core_doc.cpp_CDoc_processMotionEvents_FUN_0046bde0
+  core_doc.cpp_CDoc_renderOpaque_FUN_00471af0
+  core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400
+  core_door.cpp_CDoor_process_FUN_00477ab0
+  core_door.cpp_CDoor_renderOpaque_FUN_00478220
+  core_door.cpp_CDoor_reposition_FUN_00477540
+  core_dpart.cpp_CDemonPart_loadFromFile_FUN_00479c70
+  core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0
+  core_drip.cpp_CDrip_process_FUN_00485610
+  core_drip.cpp_CDrip_renderOpaque_FUN_00485a70
+  core_drone.cpp_CDrone_process_FUN_00485d70
+  core_dynamite.cpp_CDynamite_process_FUN_004926d0
+  core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0
+  core_elephant.cpp_CElephantGun_process_FUN_0049e090
+  core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a02e0
+  core_emitter.cpp_CEmitter_process_FUN_0049f310
+  core_emitter.cpp_CEmitter_renderOpaque_FUN_0049fdf0
+  core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a0980
+  core_enemy.cpp_CEnemy_getTargetPoint_FUN_004a08b0
+  core_enemy.cpp_CEnemy_getTargetPoints_FUN_004a0680
+  core_event.cpp_CEventList_executeCommand_FUN_004a1d00
+  core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004ab8a0
+  core_filmreel.cpp_CFilmReel_renderOpaque_FUN_004ab440
+  core_filmreel.cpp_CFilmReel_setup_FUN_004ab340
+  core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420
+  core_flame.cpp_CFlame_renderBackground_FUN_004b8ac0
+  core_flame.cpp_CFlame_renderTransparent_FUN_004b8100
+  core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_004b9370
+  core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004b92a0
+  core_flamecan.cpp_CFlameCan_setup_FUN_004b9010
+  core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830
+  core_flies.cpp_CFlies_renderOpaque_FUN_004c0080
+  core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40
+  core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0
+  core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004c83b0
+  core_gabriela.cpp_CGabriella_process_FUN_004c65f0
+  core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0
+  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004ca450
+  core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20
+  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004c91b0
+  core_game.cpp_CGame_beginFadeOut_FUN_004d6070
+  core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260
+  core_game.cpp_calculateIrisFadeCenter_FUN_004d60b0
+  core_gasmask.cpp_CGasMask_renderOpaque_FUN_004ddb60
+  core_ghoul.cpp_CGhoul_process_FUN_004de330
+  core_glass.cpp_CGlass_renderBackground_FUN_004e1fb0
+  core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e1db0
+  core_glass.cpp_CGlass_renderOpaque_FUN_004e1a10
+  core_glass.cpp_CGlass_renderTransparent_FUN_004e1be0
+  core_glass.cpp_CGlass_setup_FUN_004e1150
+  core_goggles.cpp_CGoggles_renderOpaque_FUN_004e3bd0
+  core_gun.cpp_CGun_fire_FUN_004e8630
+  core_health.cpp_CHealthItem_renderOpaque_FUN_004ea3c0
+  core_hero.cpp_CHero_tryInteract_FUN_004eb090
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890
+  core_hostage.cpp_CHostage_process_FUN_004ed890
+  core_icepick.cpp_CIcePick_process_FUN_004f0e50
+  core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004fc630
+  core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004fd750
+  core_larva.cpp_CLarva_process_FUN_004fda40
+  core_lever.cpp_CLever_renderOpaque_FUN_004ff5d0
+  core_lightgun.cpp_CLightGun_fire_FUN_00500310
+  core_lightgun.cpp_CLightGun_process_FUN_00500d20
+  core_lightpis.cpp_CLightPis_fire_FUN_00501a70
+  core_lightpis.cpp_CLightPis_process_FUN_00502480
+  core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_00504cb0
+  core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90
+  core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0
+  core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0
+  core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_00509870
+  core_melee.cpp_CMelee_process_FUN_005099a0
+  core_mimic.cpp_CMimic_renderMirrored_FUN_00510620
+  core_mimic.cpp_CMimic_updatePose_FUN_0050f7e0
+  core_minecar.cpp_CMineCar_setup_FUN_00510e00
+  core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0
+  core_mobster.cpp_CMobster_process_FUN_0051ce40
+  core_mobster.cpp_getObjectGrabPointLocal_FUN_0051c5e0
+  core_mobster.cpp_getObjectGrabPointWorld_FUN_0051c6a0
+  core_motion.cpp_CMotionController_render_FUN_005254b0
+  core_pendulum.cpp_CPendulum_renderOpaque_FUN_00537190
+  core_pendulum.cpp_CPendulum_setup_FUN_00536130
+  core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_00536290
+  core_platfrm.cpp_CPlatform_process_FUN_00539810
+  core_platfrm.cpp_CPlatform_renderOpaque_FUN_0053a3d0
+  core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0053aef0
+  core_rifle.cpp_CRifle_fire_FUN_00540080
+  core_scat.cpp_CScat_process_FUN_00540df0
+  core_scat.cpp_CScat_scoreAimTarget_FUN_00542b90
+  core_scat.cpp_CScat_updateAiming_FUN_005424f0
+  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00542f20
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0
+  core_set.cpp_CDemonSet_buildMirrorList_FUN_00555610
+  core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0
+  core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170
+  core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0
+  core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00559440
+  core_setcolid.cpp_CDemonSet_isPointInWater_FUN_005595a0
+  core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0
+  core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
+  core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005594e0
+  core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80
+  core_setdir.cpp_FUN_00559730
+  core_shadow.cpp_CShadow_process_FUN_0055de50
+  core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60
+  core_shotgun.cpp_CShotgun_fire_FUN_00561760
+  core_shotgun.cpp_CShotgun_process_FUN_00561650
+  core_simbox.cpp_CSimBox_renderOpaque_FUN_00562980
+  core_simbox.cpp_CSimBox_setup_FUN_00562660
+  core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_00569fb0
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00564b20
+  core_spike.cpp_CSpike_renderOpaque_FUN_005834e0
+  core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00583700
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0058afe0
+  core_stranger.cpp_CStranger_processFrame_FUN_00585b00
+  core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0
+  core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0058d3c0
+  core_stranger.cpp_CStranger_tryPickupObject_FUN_0058c260
+  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0
+  core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0
+  core_teleport.cpp_CTeleport_process_FUN_00594f60
+  core_tommygun.cpp_CTommyGun_fire_FUN_00598420
+  core_trap.cpp_CTrap_process_FUN_00599df0
+  core_trap.cpp_CTrap_renderOpaque_FUN_0059a010
+  core_trash.cpp_CTrash_renderOpaque_FUN_0059ad40
+  core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0
+  core_trigger.cpp_CTrigger_containsActor_FUN_0059c090
+  core_trigger.cpp_CTrigger_evaluateTriggerCondition_FUN_0059bc70
+  core_trigger.cpp_CTrigger_process_FUN_0059b240
+  core_turret.cpp_CTurret_renderOpaque_FUN_005a2280
+  core_turret.cpp_CTurret_updatePatrol_FUN_005a3650
+  core_turret.cpp_CTurret_updateTargeting_FUN_005a2d00
+  core_vampboss.cpp_CVampireBoss_getTargetPoints_FUN_005a7020
+  core_vehicle.cpp_CVehicle_process_FUN_005a7b50
+  core_vehicle.cpp_CVehicle_renderOpaque_FUN_005a8670
+  core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440
+  core_vessel.cpp_CCryptVessel_setup_FUN_005a8c60
+  core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005ab530
+  core_weapon.cpp_CWeapon_onDropped_FUN_005ada60
+  core_weapon.cpp_CWeapon_renderAimBeam_FUN_005adf90
+  core_weapon.cpp_CWeapon_renderOpaque_FUN_005ad680
+  core_weapon.cpp_CWeapon_updateLighting_FUN_005adb20
+  core_werewolf.cpp_CWerewolf_process_FUN_005af4a0
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005bd120
+  core_zombie.cpp_CZombie_processPickup_FUN_005bd560
+  core_zombie.cpp_CZombie_process_FUN_005bafb0
+  core_zombie.cpp_getObjectGrabPointLocal_FUN_005ba7d0
+  core_zombie.cpp_getObjectGrabPointWorld_FUN_005ba890
+  engine_2d.c_clipAndDrawLine_FUN_00402cf0
+  engine_3d.c_drawLine2DFromIndices_FUN_00407a70
+  engine_3d.c_drawLine3DFromIndices_FUN_00407d70
+  engine_3d.c_drawLineStrip2D_FUN_00404440
+  engine_3d.c_drawLineStrip3D_FUN_004044d0
+  engine_dosio.cpp_reopenFileStream_FUN_00479240
+  engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0
+  engine_mini3d.cpp_polyListL_FUN_00512c60
+  engine_mini3d.cpp_userClipPolyList_FUN_00517660
+  engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0
+  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0
+  shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180
+  shape_edittool.cpp_CStrList_populateRecursive_FUN_0049a300
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_00498660
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450
+  sound_snddx.cpp_CDirectSoundDevice_start_FUN_00577b60
+  sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_0057ae70
+  sound_sndwav.cpp_getWavInDevice_FUN_0057b500
+  support_codec.cpp_CCheesyCipher_ctor_FUN_00443a00
+  support_trisock.cpp_copyHostent_FUN_0059efd0
+  support_trisock.cpp_httpReceiveResponse_FUN_0059d4b0
+  support_trisock.cpp_lookupHostByAddr_FUN_0059f230
+  wincore_winrun.cpp_initController_FUN_005b41c0
+  wincore_winrun.cpp_pollController_FUN_005b3d70
+
+====================================================================================================
 TYPE: unknown_field (1218 occurrences)
 ====================================================================================================
 
@@ -7297,10 +7283,6 @@ Unique patterns:
      5x  ._84_4_
 
 Functions:
-  FUN_004044d0
-  FUN_0043bed0
-  FUN_005b9ab0
-  FUN_005b9da0
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170
   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200
@@ -7382,10 +7364,14 @@ Functions:
   core_vehicle.cpp_CVehicle_process_FUN_005a7b50
   core_weapon.cpp_CWeapon_renderAimBeam_FUN_005adf90
   core_werewolf.cpp_CWerewolf_process_FUN_005af4a0
+  core_xform.cpp_clipPolygonStage2_FUN_005b9ab0
   core_xform.cpp_clipPolygonStage3_FUN_005b9c30
+  core_xform.cpp_clipPolygonStage4_FUN_005b9da0
   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
   engine_2d.c_getInputWithPrompt_FUN_00403310
   engine_3d.c_drawLineStrip2D_FUN_00404440
+  engine_3d.c_drawLineStrip3D_FUN_004044d0
+  engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
   engine_model.c_getMRGLBounds_FUN_0051f920
   engine_special.cpp_CExternalRenderer_validate_FUN_00582d60
@@ -7410,14 +7396,14 @@ Functions:
   support_trisock.cpp_CSocket_bindSocket_FUN_0059c980
 
 ====================================================================================================
-TYPE: concat_reconstruction (819 occurrences)
+TYPE: concat_reconstruction (815 occurrences)
 ====================================================================================================
 
 Unique patterns:
     91x  CONCAT26
     87x  CONCAT11
     80x  CONCAT24
-    73x  CONCAT44
+    69x  CONCAT44
     69x  CONCAT13
     65x  CONCAT14
     57x  CONCAT22
@@ -7436,8 +7422,6 @@ Unique patterns:
      1x  CONCAT51
 
 Functions:
-  FUN_0058012d
-  cockpit_ckptutil.c_FUN_004382d0
   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427b40
   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610
   core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450
@@ -7497,18 +7481,16 @@ Functions:
   wincore_winrun.cpp_getNextKeypress_FUN_005b2510
 
 ====================================================================================================
-TYPE: unaffected_reg (785 occurrences)
+TYPE: unaffected_reg (774 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   251x  unaff_ESI
-   250x  unaff_EDI
+   247x  unaff_ESI
+   245x  unaff_EDI
    158x  unaff_EBP
-   126x  unaff_EBX
+   124x  unaff_EBX
 
 Functions:
-  FUN_00486de0
-  FUN_0058012d
   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0047ee70
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30
@@ -7664,6 +7646,7 @@ Functions:
   engine_mini3d.cpp_polyList_FUN_005126d0
   engine_mini3d.cpp_userClipPolyList_FUN_00517660
   engine_palette.cpp_CFont_queueText_FUN_00531ee0
+  engine_special.cpp_renderScanlineSwapped_FUN_0058012d
   shape_edittool.cpp_CEdCheck_render_FUN_0049dc70
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0
@@ -7677,18 +7660,15 @@ Functions:
   wincore_winrun.cpp_pollController_FUN_005b3d70
 
 ====================================================================================================
-TYPE: unresolved_funcptr (750 occurrences)
+TYPE: unresolved_funcptr (744 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   750x  code *
+   744x  code *
 
 Functions:
-  FUN_00437280
-  FUN_00437290
-  FUN_004372b0
-  FUN_00537aa0
-  cockpit_ckptutil.c_FUN_00438260
+  cockpit_ckptutil.c_copyBitmapRegion_FUN_00438260
+  cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00437290
   core_anvil.cpp_CAnvil_process_FUN_0040e680
   core_baron.cpp_CBaron_process_FUN_0040f4d0
   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0
@@ -7984,9 +7964,6 @@ Unique patterns:
      8x  afStackY_1100
 
 Functions:
-  FUN_00405400
-  FUN_0044fb10
-  FUN_00509340
   core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70
   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0
   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
@@ -8131,6 +8108,7 @@ Functions:
   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550
   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004516c0
+  core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044fb10
   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00453560
   core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044e0d0
   core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044e6a0
@@ -8439,7 +8417,7 @@ Functions:
   core_shadow.cpp_CShadow_processChainConstraint_FUN_005601c0
   core_shadow.cpp_CShadow_processDamage_FUN_0055fea0
   core_shadow.cpp_CShadow_process_FUN_0055de50
-  core_shadow.cpp_FUN_0055f630
+  core_shadow.cpp_CShadow_renderDebugMarker_FUN_0055f630
   core_shadowsc.cpp_CShadowsc_getTargetPoints_FUN_00561460
   core_shadowsc.cpp_CShadowsc_process_FUN_00560630
   core_shotgun.cpp_CShotgun_fire_FUN_00561760
@@ -8578,10 +8556,12 @@ Functions:
   core_zombie.cpp_getObjectGrabPointWorld_FUN_005ba890
   core_zombie.cpp_getObjectHeightScale_FUN_005ba730
   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280
+  engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400
   engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0
   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560
   engine_light.cpp_calculatePhongLighting_FUN_004ffaf0
   engine_matrix.c_normalizeVector3DFixed_FUN_00508700
+  engine_matrix.c_projectToScreen_FUN_00509340
   engine_mini3d.cpp_setCameraMatrix_FUN_00511240
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0
   shape_edittool.cpp_draw3DInterpolatedLine_FUN_00498660
@@ -8591,35 +8571,32 @@ Functions:
   support_trisock.cpp_buildSockaddrIn_FUN_0059c7d0
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (595 occurrences)
+TYPE: shadow_pointer_walk (589 occurrences)
 ====================================================================================================
 
 Unique patterns:
     22x  pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD
     18x  pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD
-    18x  pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD
+    17x  pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD
     11x  pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD
+    11x  pCVar1 = (T *)pCVar1->ARRAY
     10x  pCVar10 = (T *)&pCVar10->FIELD
-    10x  pCVar3 = (T *)pCVar3->ARRAY
-    10x  pCVar1 = (T *)pCVar1->ARRAY
-     9x  pCVar2 = (T *)&pCVar2->FIELD
+     8x  pCVar2 = (T *)&pCVar2->FIELD
      8x  pCVar3 = (T *)&pCVar3->FIELD
      8x  pCVar2 = (T *)&(pCVar2->FIELD).SUBFIELD
-     8x  pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD
      8x  pCVar4 = (T *)pCVar4->ARRAY
+     7x  pCVar3 = (T *)pCVar3->ARRAY
+     7x  pCVar2 = (T *)pCVar2->ARRAY
      7x  this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD
      6x  pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD
      6x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
-     6x  pCVar2 = (T *)pCVar2->ARRAY
      6x  pCVar1 = (T *)((int)(pCVar1 + N) + M)
      6x  pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD
      6x  pCVar5 = (T *)&pCVar5->FIELD[N].SUBFIELD
+     6x  pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD
      6x  pSVar18 = (T *)&(pSVar18->FIELD).SUBFIELD
 
 Functions:
-  FUN_0043bed0
-  FUN_005b9ab0
-  FUN_005b9da0
   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a460
   core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408910
   core_actor.cpp_archivePartStatus_FUN_0040b960
@@ -8773,7 +8750,6 @@ Functions:
   core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70
   core_motion.cpp_CMotionController_advanceTween_FUN_00524f40
   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
-  core_motion.cpp_CMotionList_save_FUN_00523db0
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0052f200
   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_005305a0
   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0
@@ -8807,7 +8783,6 @@ Functions:
   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0
   core_set.cpp_CDemonSet_renderScene_FUN_00550580
   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260
-  core_set.cpp_CDemonSet_saveStateInfo_FUN_00555d20
   core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00555970
   core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_005559d0
   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0
@@ -8863,7 +8838,6 @@ Functions:
   core_teleport.cpp_CTeleportDest_getBoundingBox_FUN_00594e90
   core_teleport.cpp_CTeleport_getBoundingBox_FUN_00595040
   core_texlist.cpp_CTextureList_load_FUN_005960d0
-  core_texlist.cpp_CTextureList_save_FUN_00596390
   core_trigger.cpp_CTrigger_getBoundingBox_FUN_0059b8d0
   core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005a72e0
   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550
@@ -8878,9 +8852,12 @@ Functions:
   core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005aacd0
   core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005abb80
   core_waypoint.cpp_CWayPoint_setup_FUN_005aba00
+  core_xform.cpp_clipPolygonStage2_FUN_005b9ab0
   core_xform.cpp_clipPolygonStage3_FUN_005b9c30
+  core_xform.cpp_clipPolygonStage4_FUN_005b9da0
   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
   engine_3d.c_drawLineStrip2D_FUN_00404440
+  engine_3d.c_drawLineStrip3D_FUN_004044d0
   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406280
   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0
   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0
@@ -8896,6 +8873,7 @@ Functions:
   engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00403f70
   engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407570
   engine_3d.c_setVertexTextureU_FUN_004050c0
+  engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70
   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db0
@@ -9209,73 +9187,6 @@ Functions:
   support_trisock.cpp_lookupHostByName_FUN_0059f1a0
   wincore_winrun.cpp_getComputerAndUserName_FUN_005b38c0
   wincore_winrun.cpp_winMain_FUN_005b2e00
-
-====================================================================================================
-TYPE: unnamed_param (507 occurrences)
-====================================================================================================
-
-Unique patterns:
-   208x  param_1
-   164x  param_2
-    77x  param_3
-    19x  param_4
-    14x  param_5
-    11x  param_6
-     7x  param_7
-     7x  param_8
-
-Functions:
-  FUN_004044d0
-  FUN_00405400
-  FUN_0044fb10
-  FUN_00452d70
-  FUN_00455600
-  FUN_00455760
-  FUN_00455b90
-  FUN_00490f90
-  FUN_004910f0
-  FUN_00491520
-  FUN_0049dda0
-  FUN_00509340
-  FUN_0051f650
-  FUN_00525690
-  FUN_005257d0
-  FUN_00537580
-  FUN_00537aa0
-  FUN_00539040
-  FUN_00539090
-  FUN_005390c0
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00480e10
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60
-  core_charactr.cpp_FUN_0042c7d0
-  core_construc.cpp_CConstruct_getCollisionType_FUN_00447630
-  core_course.cpp_CCourse_allocMemory_FUN_00447d50
-  core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00454520
-  core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0
-  core_fire.cpp_CFireEffect_createBulletTrail_FUN_004b5db0
-  core_fldnotes.cpp_SPageResource_setLink_FUN_004ba790
-  core_mission.cpp_CDemonMission_changeSetName_FUN_0051b500
-  core_moon.cpp_CMoon_update_FUN_00521dd0
-  core_morph.cpp_CMorph_addQuadPartToModel_FUN_00523190
-  core_morph.cpp_CMorph_addTriPartToModel_FUN_00523140
-  core_yow.cpp_CYow_getTargetPoints_FUN_005b9290
-  core_yow.cpp_CYow_processDamage_FUN_005b9170
-  core_yow.cpp_CYow_process_FUN_005b8440
-  engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0
-  engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0
-  engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004820f0
-  shape_edittool.cpp_CStrList_insertRange_FUN_004996b0
-  support_codec.cpp_CCheesyCipher_setKey_FUN_00443a50
-  support_codec.cpp_CCheesyCipher_transformByte_FUN_00443a80
-  support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0
-  support_trstream.cpp_CInStreamMemory_openOwned_FUN_005a1480
-  support_trstream.cpp_CInStreamMemory_open_FUN_005a1450
-  support_trstream.cpp_CInStreamMemory_seek_FUN_005a1360
-  support_trstream.cpp_COutStreamFile_attach_FUN_005a1a70
-  support_trstream.cpp_COutStreamFile_putChar_FUN_005a18c0
-  support_trstream.cpp_COutStreamMemory_detachBuffer_FUN_005a1da0
-  support_trstream.cpp_COutStreamMemory_open_FUN_005a1d60
-  wincore_winrun.cpp_FUN_005b4450
 
 ====================================================================================================
 TYPE: negative_offset (505 occurrences)
@@ -9592,6 +9503,166 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_005b2e00
 
 ====================================================================================================
+TYPE: raw_address_pointer_store (283 occurrences)
+====================================================================================================
+
+Unique patterns:
+   113x  *(code **)(*0x01D1BCA0
+    33x  *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4
+    22x  *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4
+     7x  *(int **)(iVar1 * 0x24 + 0x2c823e0
+     5x  *(CEnemy **)(_DAT_01d06ab4 * 4 + 0x1d06aa4
+     3x  *(CPathMap **)(iVar1 + 0x1e6be4c
+     3x  *(void **)(iVar2 + 0x2c80698
+     2x  *(uint **)(iVar6 * 4 + 0x7c7b54
+     2x  *(CDemonActor **)(&stack0xfffffde4
+     2x  *(uint **)(iVar1 + 0x1c3ed38
+     2x  *(void **)(iVar1 + 0x1c3ed38
+     2x  *(char **)(iVar1 * 4 + 0x1d7f1c4
+     2x  *(char **)(iVar1 * 4 + 0x1d7f994
+     2x  *(CPodFile **)(&stack0xfffff554
+     2x  *(CDemonGlobe **)(iVar5 + 0x1fe55d4
+     2x  *(CDemonCamera **)(iVar5 + 0x1fe55c0
+     2x  *(CDemonLight **)(iVar8 + 0x1fe55c0
+     2x  *(CDemonActor **)(iVar2 + 0x20af660
+     2x  *(void **)(iVar3 + 0x2c80698
+     2x  *(int **)(iVar5 + 0x2c823e0
+
+Functions:
+  core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790
+  core_bmppuzzl.cpp_CChemPuzzle_process_FUN_00418220
+  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0
+  core_carved.cpp_CCarved_process_FUN_00428ae0
+  core_charactr.cpp_CCharacter_processDamage_FUN_004319e0
+  core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060
+  core_colonel.cpp_CColonel_processAI_FUN_00444b50
+  core_construc.cpp_CConstruct_process_FUN_00445cb0
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550
+  core_demnfolk.cpp_CDemnfolk_processPickup_FUN_0045b560
+  core_demnfolk.cpp_CDemnfolk_process_FUN_00459100
+  core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0
+  core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_0048e770
+  core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0048e640
+  core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0048e4e0
+  core_emitter.cpp_CEmitter_process_FUN_0049f310
+  core_emitter.cpp_CEmitter_setup_FUN_0049f010
+  core_event.cpp_resolveActorByName_FUN_004a1370
+  core_flame.cpp_CFlame_process_FUN_004b7b90
+  core_fldnotes.cpp_CFieldNotes_process_FUN_004be970
+  core_game.cpp_CGame_loadGame_FUN_004d6990
+  core_game.cpp_CGame_processCheatCodes_FUN_004d27b0
+  core_game.cpp_CGame_processFrame_FUN_004ce580
+  core_game.cpp_CGame_processFudge_FUN_004cc9c0
+  core_game.cpp_CGame_processHotkeys_FUN_004d1a80
+  core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0
+  core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260
+  core_game.cpp_captureDebugMovieFrame_FUN_004cb950
+  core_game.cpp_giveHeroWeapon_FUN_004d2540
+  core_ghoul.cpp_CGhoul_process_FUN_004de330
+  core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0
+  core_hero.cpp_CHero_dtor_FUN_004ea980
+  core_hero.cpp_closestHeroToPoint_FUN_004ea640
+  core_hostage.cpp_CHostage_process_FUN_004ed890
+  core_icepick.cpp_CIcePick_processAI_FUN_004f1b50
+  core_icepick.cpp_CIcePick_setup_FUN_004f0c20
+  core_inv.cpp_CInventory_addItem_FUN_004f7690
+  core_inv.cpp_CInventory_renderAllItems_FUN_004fae10
+  core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0
+  core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004fa740
+  core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004fa710
+  core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0
+  core_inv.cpp_CInventory_select_FUN_004f9bd0
+  core_inv.cpp_CInventory_toggleDetailView_FUN_004fc370
+  core_lightgun.cpp_CLightGun_fire_FUN_00500310
+  core_lightpis.cpp_CLightPis_fire_FUN_00501a70
+  core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0
+  core_menu.cpp_calibrateGamepad_FUN_0050a2b0
+  core_menu.cpp_checkAndCalibrateGamepad_FUN_0050b410
+  core_menu.cpp_configureCustomKeys_FUN_0050b470
+  core_menu.cpp_configureGraphicsOptions_FUN_0050aa90
+  core_menu.cpp_configureSoundOptions_FUN_0050ba70
+  core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20
+  core_menu.cpp_showMainGameMenu_FUN_0050cc90
+  core_menu.cpp_showOptionsScreen_FUN_0050c990
+  core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0
+  core_mimic.cpp_CMimic_renderMirrored_FUN_00510620
+  core_mimic.cpp_CMimic_setupCloth_FUN_00510530
+  core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30
+  core_mission.cpp_CDemonMission_run_FUN_0051bad0
+  core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0
+  core_mobster.cpp_CMobster_process_FUN_0051ce40
+  core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0
+  core_netgame.cpp_CNetGame_runLobby_FUN_0052e120
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_0052cf90
+  core_path.cpp_CPathMap_ctor_FUN_00532fe0
+  core_path.cpp_CPathMap_dtor_FUN_00533060
+  core_path.cpp_renderAllPathMaps_FUN_005352e0
+  core_path.cpp_renderPathMapsAtPosition_FUN_00535370
+  core_scat.cpp_CScat_updateAI_FUN_005415c0
+  core_script.cpp_CScript_initRuntime_FUN_00544190
+  core_script.cpp_getActor_FUN_005433c0
+  core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0
+  core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00551a00
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0
+  core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00552490
+  core_set.cpp_CDemonSet_gatherVisibleLights_FUN_00551d50
+  core_set.cpp_CDemonSet_processActors_FUN_0054fc20
+  core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00551990
+  core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0
+  core_set.cpp_CDemonSet_renderScene_FUN_00550580
+  core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260
+  core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00559060
+  core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00558eb0
+  core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0
+  core_thehand.cpp_CTheHand_process_FUN_00599150
+  core_trigger.cpp_CTrigger_process_FUN_0059b240
+  core_tvbat.cpp_CTVBat_process_FUN_005a4260
+  core_weapon.cpp_CWeapon_process_FUN_005ad770
+  core_werewolf.cpp_CWerewolf_process_FUN_005af4a0
+  core_zombie.cpp_CZombie_processPickup_FUN_005bd560
+  core_zombie.cpp_CZombie_process_FUN_005bafb0
+  engine_3d.c_dispatchMRGLToRenderer_FUN_00407820
+  engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10
+  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
+  engine_clipper.c_clipPolygonToViewport_FUN_0043de60
+  engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40
+  engine_dosio.cpp_findFile_FUN_00478e90
+  engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
+  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_0053cfa0
+  engine_zraster.c_rasterizeTriangle_FUN_005bf120
+  shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00496920
+  shape_edittool.cpp_CEditorTools_popWindowState_FUN_00496df0
+  shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_004931b0
+  shape_edittool.cpp_paintWindowBackground_FUN_004941e0
+  shape_spotview.cpp_CSpotView_handleInput_FUN_00584440
+  sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005799b0
+  sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_00579900
+  sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_00578a80
+  sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_00579ad0
+  sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_00578be0
+  sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00577880
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
+  sound_sndmain.cpp_allocMixBuffers_FUN_0056f470
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_00576590
+  sound_sndmain.cpp_getChannelLevels_FUN_00576b20
+  sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
+  sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_00572810
+  sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
+  sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880
+  sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005728b0
+  sound_sndmain.cpp_setNextSfxUserData_FUN_00572920
+  sound_sndwav.cpp_CWavInDevice_start_FUN_0057ad20
+  sound_sndwav.cpp_CWavOutDevice_start_FUN_0057a7f0
+  support_newmsg.cpp_findLocalizedString_FUN_00531010
+  support_newmsg.cpp_getLocalizedString_FUN_00531090
+  support_newmsg.cpp_readMessageFile_FUN_00530bf0
+  wincore_winrun.cpp_mainWindowProc_FUN_005b27d0
+  wincore_winrun.cpp_winMain_FUN_005b2e00
+
+====================================================================================================
 TYPE: unrolled_memset (283 occurrences)
 ====================================================================================================
 
@@ -9712,165 +9783,6 @@ Functions:
   shape_spotview.cpp_CSpotView_ctor_FUN_00584390
 
 ====================================================================================================
-TYPE: raw_address_pointer_store (281 occurrences)
-====================================================================================================
-
-Unique patterns:
-   113x  *(code **)(*0x01D1BCA0
-    33x  *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4
-    22x  *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4
-     7x  *(int **)(iVar1 * 0x24 + 0x2c823e0
-     5x  *(CEnemy **)(_DAT_01d06ab4 * 4 + 0x1d06aa4
-     3x  *(CPathMap **)(iVar1 + 0x1e6be4c
-     3x  *(void **)(iVar2 + 0x2c80698
-     2x  *(uint **)(iVar6 * 4 + 0x7c7b54
-     2x  *(CDemonActor **)(&stack0xfffffde4
-     2x  *(uint **)(iVar1 + 0x1c3ed38
-     2x  *(char **)(iVar1 * 4 + 0x1d7f1c4
-     2x  *(char **)(iVar1 * 4 + 0x1d7f994
-     2x  *(CPodFile **)(&stack0xfffff554
-     2x  *(CDemonGlobe **)(iVar5 + 0x1fe55d4
-     2x  *(CDemonCamera **)(iVar5 + 0x1fe55c0
-     2x  *(CDemonLight **)(iVar8 + 0x1fe55c0
-     2x  *(CDemonActor **)(iVar2 + 0x20af660
-     2x  *(void **)(iVar3 + 0x2c80698
-     2x  *(int **)(iVar5 + 0x2c823e0
-     2x  *(CDemonActor **)(iVar10 + 0x1d06aa4
-
-Functions:
-  core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790
-  core_bmppuzzl.cpp_CChemPuzzle_process_FUN_00418220
-  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0
-  core_carved.cpp_CCarved_process_FUN_00428ae0
-  core_charactr.cpp_CCharacter_processDamage_FUN_004319e0
-  core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060
-  core_colonel.cpp_CColonel_processAI_FUN_00444b50
-  core_construc.cpp_CConstruct_process_FUN_00445cb0
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550
-  core_demnfolk.cpp_CDemnfolk_processPickup_FUN_0045b560
-  core_demnfolk.cpp_CDemnfolk_process_FUN_00459100
-  core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0
-  core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_0048e770
-  core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0048e640
-  core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0048e4e0
-  core_emitter.cpp_CEmitter_process_FUN_0049f310
-  core_emitter.cpp_CEmitter_setup_FUN_0049f010
-  core_event.cpp_resolveActorByName_FUN_004a1370
-  core_flame.cpp_CFlame_process_FUN_004b7b90
-  core_fldnotes.cpp_CFieldNotes_process_FUN_004be970
-  core_game.cpp_CGame_loadGame_FUN_004d6990
-  core_game.cpp_CGame_processCheatCodes_FUN_004d27b0
-  core_game.cpp_CGame_processFrame_FUN_004ce580
-  core_game.cpp_CGame_processFudge_FUN_004cc9c0
-  core_game.cpp_CGame_processHotkeys_FUN_004d1a80
-  core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0
-  core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260
-  core_game.cpp_captureDebugMovieFrame_FUN_004cb950
-  core_game.cpp_giveHeroWeapon_FUN_004d2540
-  core_ghoul.cpp_CGhoul_process_FUN_004de330
-  core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0
-  core_hero.cpp_CHero_dtor_FUN_004ea980
-  core_hero.cpp_closestHeroToPoint_FUN_004ea640
-  core_hostage.cpp_CHostage_process_FUN_004ed890
-  core_icepick.cpp_CIcePick_processAI_FUN_004f1b50
-  core_icepick.cpp_CIcePick_setup_FUN_004f0c20
-  core_inv.cpp_CInventory_addItem_FUN_004f7690
-  core_inv.cpp_CInventory_renderAllItems_FUN_004fae10
-  core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0
-  core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004fa740
-  core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004fa710
-  core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0
-  core_inv.cpp_CInventory_select_FUN_004f9bd0
-  core_inv.cpp_CInventory_toggleDetailView_FUN_004fc370
-  core_lightgun.cpp_CLightGun_fire_FUN_00500310
-  core_lightpis.cpp_CLightPis_fire_FUN_00501a70
-  core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0
-  core_menu.cpp_calibrateGamepad_FUN_0050a2b0
-  core_menu.cpp_checkAndCalibrateGamepad_FUN_0050b410
-  core_menu.cpp_configureCustomKeys_FUN_0050b470
-  core_menu.cpp_configureGraphicsOptions_FUN_0050aa90
-  core_menu.cpp_configureSoundOptions_FUN_0050ba70
-  core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20
-  core_menu.cpp_showMainGameMenu_FUN_0050cc90
-  core_menu.cpp_showOptionsScreen_FUN_0050c990
-  core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0
-  core_mimic.cpp_CMimic_renderMirrored_FUN_00510620
-  core_mimic.cpp_CMimic_setupCloth_FUN_00510530
-  core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30
-  core_mission.cpp_CDemonMission_run_FUN_0051bad0
-  core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0
-  core_mobster.cpp_CMobster_process_FUN_0051ce40
-  core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0
-  core_netgame.cpp_CNetGame_runLobby_FUN_0052e120
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_0052cf90
-  core_path.cpp_CPathMap_ctor_FUN_00532fe0
-  core_path.cpp_CPathMap_dtor_FUN_00533060
-  core_path.cpp_renderAllPathMaps_FUN_005352e0
-  core_path.cpp_renderPathMapsAtPosition_FUN_00535370
-  core_scat.cpp_CScat_updateAI_FUN_005415c0
-  core_script.cpp_CScript_initRuntime_FUN_00544190
-  core_script.cpp_getActor_FUN_005433c0
-  core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0
-  core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00551a00
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0
-  core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00552490
-  core_set.cpp_CDemonSet_gatherVisibleLights_FUN_00551d50
-  core_set.cpp_CDemonSet_processActors_FUN_0054fc20
-  core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00551990
-  core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0
-  core_set.cpp_CDemonSet_renderScene_FUN_00550580
-  core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260
-  core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00559060
-  core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00558eb0
-  core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0
-  core_thehand.cpp_CTheHand_process_FUN_00599150
-  core_trigger.cpp_CTrigger_process_FUN_0059b240
-  core_tvbat.cpp_CTVBat_process_FUN_005a4260
-  core_weapon.cpp_CWeapon_process_FUN_005ad770
-  core_werewolf.cpp_CWerewolf_process_FUN_005af4a0
-  core_zombie.cpp_CZombie_processPickup_FUN_005bd560
-  core_zombie.cpp_CZombie_process_FUN_005bafb0
-  engine_3d.c_dispatchMRGLToRenderer_FUN_00407820
-  engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10
-  engine_clipper.c_FUN_0043d6e0
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
-  engine_clipper.c_clipPolygonToViewport_FUN_0043de60
-  engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40
-  engine_dosio.cpp_findFile_FUN_00478e90
-  engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
-  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_0053cfa0
-  engine_zraster.c_rasterizeTriangle_FUN_005bf120
-  shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00496920
-  shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_004931b0
-  shape_edittool.cpp_paintWindowBackground_FUN_004941e0
-  shape_spotview.cpp_CSpotView_handleInput_FUN_00584440
-  sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80
-  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005799b0
-  sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_00579900
-  sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_00578a80
-  sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_00579ad0
-  sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_00578be0
-  sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00577880
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
-  sound_sndmain.cpp_allocMixBuffers_FUN_0056f470
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_00576590
-  sound_sndmain.cpp_getChannelLevels_FUN_00576b20
-  sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
-  sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
-  sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_00572810
-  sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
-  sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880
-  sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005728b0
-  sound_sndmain.cpp_setNextSfxUserData_FUN_00572920
-  sound_sndwav.cpp_CWavInDevice_start_FUN_0057ad20
-  sound_sndwav.cpp_CWavOutDevice_start_FUN_0057a7f0
-  support_newmsg.cpp_findLocalizedString_FUN_00531010
-  support_newmsg.cpp_getLocalizedString_FUN_00531090
-  support_newmsg.cpp_readMessageFile_FUN_00530bf0
-  wincore_winrun.cpp_mainWindowProc_FUN_005b27d0
-  wincore_winrun.cpp_winMain_FUN_005b2e00
-
-====================================================================================================
 TYPE: raw_address_constant (271 occurrences)
 ====================================================================================================
 
@@ -9897,7 +9809,6 @@ Unique patterns:
      1x  0x41a859
 
 Functions:
-  FUN_004044d0
   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090
   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
@@ -10006,6 +9917,7 @@ Functions:
   core_yow.cpp_CYow_process_FUN_005b8440
   core_zombie.cpp_CZombie_process_FUN_005bafb0
   engine_3d.c_drawLineStrip2D_FUN_00404440
+  engine_3d.c_drawLineStrip3D_FUN_004044d0
   engine_console.cpp_staticInit_FUN_00445370
   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
   engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00483a40
@@ -10146,6 +10058,53 @@ Functions:
   engine_matrix.c_invertTransformMatrix_FUN_005073d0
   engine_mini3d.cpp_polyListSurface_FUN_00516cc0
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0
+
+====================================================================================================
+TYPE: unnamed_param (213 occurrences)
+====================================================================================================
+
+Unique patterns:
+   133x  param_2
+    33x  param_3
+    12x  param_5
+     9x  param_6
+     7x  param_4
+     7x  param_7
+     7x  param_8
+     5x  param_1
+
+Functions:
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00480e10
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60
+  core_charactr.cpp_FUN_0042c7d0
+  core_construc.cpp_CConstruct_getCollisionType_FUN_00447630
+  core_course.cpp_CCourse_allocMemory_FUN_00447d50
+  core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00454520
+  core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0
+  core_fire.cpp_CFireEffect_createBulletTrail_FUN_004b5db0
+  core_fldnotes.cpp_SPageResource_setLink_FUN_004ba790
+  core_mission.cpp_CDemonMission_changeSetName_FUN_0051b500
+  core_moon.cpp_CMoon_update_FUN_00521dd0
+  core_morph.cpp_CMorph_addQuadPartToModel_FUN_00523190
+  core_morph.cpp_CMorph_addTriPartToModel_FUN_00523140
+  core_yow.cpp_CYow_getTargetPoints_FUN_005b9290
+  core_yow.cpp_CYow_processDamage_FUN_005b9170
+  core_yow.cpp_CYow_process_FUN_005b8440
+  engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0
+  engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0
+  engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004820f0
+  shape_edittool.cpp_CStrList_insertRange_FUN_004996b0
+  support_codec.cpp_CCheesyCipher_setKey_FUN_00443a50
+  support_codec.cpp_CCheesyCipher_transformByte_FUN_00443a80
+  support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0
+  support_trstream.cpp_CInStreamMemory_openOwned_FUN_005a1480
+  support_trstream.cpp_CInStreamMemory_open_FUN_005a1450
+  support_trstream.cpp_CInStreamMemory_seek_FUN_005a1360
+  support_trstream.cpp_COutStreamFile_attach_FUN_005a1a70
+  support_trstream.cpp_COutStreamFile_putChar_FUN_005a18c0
+  support_trstream.cpp_COutStreamMemory_detachBuffer_FUN_005a1da0
+  support_trstream.cpp_COutStreamMemory_open_FUN_005a1d60
+  wincore_winrun.cpp_FUN_005b4450
 
 ====================================================================================================
 TYPE: warning_type_propagation (189 occurrences)
@@ -10353,9 +10312,6 @@ Unique patterns:
    156x  WARNING: Removing unreachable block
 
 Functions:
-  FUN_0043bed0
-  FUN_005b9ab0
-  FUN_005b9da0
   cockpit_ckptutil.c_buildHardwarePalettes_FUN_00437600
   cockpit_drawsurf.cpp_setColorRGB_FUN_0047e5c0
   cockpit_drawsurf.cpp_setColor_FUN_0047e3b0
@@ -10378,10 +10334,13 @@ Functions:
   core_script.cpp_CScript_step_FUN_00544460
   core_skeleton.cpp_CSkeleton_loadStream_FUN_00563090
   core_succubus.cpp_CSuccubus_process_FUN_00592320
+  core_xform.cpp_clipPolygonStage2_FUN_005b9ab0
   core_xform.cpp_clipPolygonStage3_FUN_005b9c30
+  core_xform.cpp_clipPolygonStage4_FUN_005b9da0
   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
   core_zombie.cpp_CZombie_process_FUN_005bafb0
   engine_2d.c_clipAndDrawLine_FUN_00402cf0
+  engine_clipper.c_clipPolygonFarPlane_FUN_0043bed0
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
   engine_font.cpp_CBitFont_remapPalette_FUN_004c45e0
   engine_font.cpp_setShadowColor_FUN_004c2560
@@ -10719,9 +10678,9 @@ Unique patterns:
      2x  in_ECX
 
 Functions:
-  FUN_0058012d
   cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0047f1b0
   core_mmx.c_detectIntelProcessor_FUN_0051c48c
+  engine_special.cpp_renderScanlineSwapped_FUN_0058012d
 
 ====================================================================================================
 TYPE: pointer_stride_bytecount (45 occurrences)
@@ -10811,8 +10770,8 @@ Unique patterns:
     28x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
 
 Functions:
-  FUN_005390c0
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_005390c0
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0
   core_dimage.cpp_CDemonImage_load_FUN_0045f190
   core_event.cpp_CEventList_executeCommand_FUN_004a1d00
@@ -10911,9 +10870,9 @@ Functions:
   core_water.cpp_CWater_calculateVisibleTiles_FUN_005a9a40
   engine_3d.c_isVisiblePlane_FUN_00403920
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250
-  engine_prim.c_FUN_0053df10
   engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0053de20
   engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60
+  engine_prim.c_getTriangleWindingFromIndices2_FUN_0053df10
   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000
   engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650
   engine_prim.c_renderPolygonSoftware_FUN_0053e120

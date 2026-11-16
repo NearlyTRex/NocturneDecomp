@@ -106,7 +106,7 @@ void crt_unknown_c_FUN_005c28cc(void);
 void crt_unknown_c_FUN_005c28dc(void);
 void crt_unknown_c_FUN_005c28ec(void);
 LPVOID crt_unknown_c_FUN_005c28fc(void);
-int crt_unknown_c_FUN_005c293c(int param_1);
+void * crt_unknown_c_FUN_005c293c(void *param_1);
 bool crt_unknown_c_FUN_005c297c(void);
 undefined4 crt_unknown_c_FUN_005c29d8(undefined4 param_1);
 void crt_unknown_c_FUN_005c2a34(int param_1);

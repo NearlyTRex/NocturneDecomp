@@ -15,7 +15,7 @@ section .text
     PUSH 0xd088                         ; 004d63e0
         ;   Label: core_hotdemon.cpp_factoryFuncAngelDemon_FUN_004d63e0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004d63e5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004d63ea
     TEST EAX,EAX                        ; 004d63ed
     JNZ 0x004d63f2                      ; 004d63ef

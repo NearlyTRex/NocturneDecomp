@@ -15,7 +15,7 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_0052c520(CNetGame *this_ptr)
   char *pcVar2;
   char *pcVar3;
   
-  FUN_005c25c0("netlog.txt");
+  _remove("netlog.txt");
   _DAT_01d51da0 = 1;
   _DAT_01d51d9c = wincore_winrun_cpp_getTime_FUN_005b2420();
   _DAT_01d51d9c = _DAT_01d51d9c / 0x12;

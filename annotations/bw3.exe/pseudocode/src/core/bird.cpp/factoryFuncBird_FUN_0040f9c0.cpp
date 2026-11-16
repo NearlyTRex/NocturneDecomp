@@ -11,7 +11,7 @@ CBird * __cdecl core_bird_cpp_factoryFuncBird_FUN_0040f9c0(void)
 {
   CBird *pCVar1;
   
-  pCVar1 = (CBird *)operator_new(0x206bc);
+  pCVar1 = operator_new(0x206bc);
   if (pCVar1 == (CBird *)0x0) {
     return (CBird *)0x0;
   }

@@ -11,7 +11,7 @@ CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_00531640(void)
 {
   CNPC *pCVar1;
   
-  pCVar1 = (CNPC *)operator_new(0x1fab8);
+  pCVar1 = operator_new(0x1fab8);
   if (pCVar1 == (CNPC *)0x0) {
     return (CNPC *)0x0;
   }

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 315,
-    "complexity_score": 280,
+    "complexity_score": 225,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
-    "suspect_count": 16,
+    "pseudocode_lines": 80,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,7 +16,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 410
+    "total_lines": 395
   },
   "cross_references": [
     {
@@ -88,7 +88,7 @@
     {
       "addr": "005a3140",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3140"
+      "name": "crt_stdio.c_fprintf_FUN_005a3140"
     }
   ],
   "globals": [
@@ -389,47 +389,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 17,
       "match": "DAT_005c87f9",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c87f9,this_ptr->mission_name);",
+      "text": "_fprintf(file_handle,&DAT_005c87f9);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005c8809",
+      "severity": "mild",
+      "text": "_fprintf(file_handle,&DAT_005c8809);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 24,
-      "match": "DAT_005c8809",
-      "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c8809,this_ptr->num_sets);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
       "match": "DAT_005c880d",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c880d,pacVar5);",
+      "text": "_fprintf(file_handle,&DAT_005c880d);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 28,
       "match": "DAT_005c8823",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c8823,DAT_007df9c4);",
+      "text": "_fprintf(file_handle,&DAT_005c8823);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_007df9c4",
-      "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c8823,DAT_007df9c4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
+      "line": 31,
       "match": "DAT_007df9c4",
       "severity": "mild",
       "text": "if (0 < DAT_007df9c4) {",
@@ -437,74 +429,50 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_007df9c8",
-      "severity": "mild",
-      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
+      "line": 35,
       "match": "DAT_007df9c4",
       "severity": "mild",
-      "text": "} while (iVar7 < DAT_007df9c4);",
+      "text": "} while (iVar4 < DAT_007df9c4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 39,
       "match": "DAT_005c883e",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c883e,iVar7);",
+      "text": "_fprintf(file_handle,&DAT_005c883e);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 44,
       "match": "DAT_005c885c",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c885c,iVar7);",
+      "text": "_fprintf(file_handle,&DAT_005c885c);",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `&DAT_007df9c8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
-      "match": "(int)&DAT_007df9c8",
+      "description": "Pointer value `&pCVar2[0x182].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)&pCVar2[0x182].orient",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar8);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar3[0x182].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 77,
-      "match": "(int)&pCVar3[0x182].orient",
-      "severity": "moderate",
-      "text": "this_ptr_00 = (CInventory *)((int)&pCVar3[0x182].orient + 8);",
+      "text": "this_ptr_00 = (CInventory *)((int)&pCVar2[0x182].orient + 8);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 40,
+      "line": 62,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar8);",
+      "text": "this_ptr_00 = (CInventory *)((int)&pCVar2[0x182].orient + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 77,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 71,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
       "severity": "moderate",
-      "text": "this_ptr_00 = (CInventory *)((int)&pCVar3[0x182].orient + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 86,
-      "match": "pCVar6 = (T *)&pCVar6->FIELD",
-      "severity": "moderate",
-      "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
+      "text": "pCVar3 = (CInventory *)&pCVar3->owner;",
       "type": "shadow_pointer_walk"
     }
   ]

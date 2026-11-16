@@ -80,8 +80,8 @@ section .text
     PUSH EBP                            ; 004bbf73
     SUB ESP,0x55c                       ; 004bbf74
     PUSH 0x6164c8                       ; 004bbf7a | = "save\\$$SAVE$$.TMP"
-    CALL crt_unknown.c_FUN_005ba1e0     ; 004bbf7f
-        ;   XREF to: 005ba1e0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005ba1e0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ba1e0 ; 004bbf7f
+        ;   XREF to: 005ba1e0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ba1e0(char * filename)
     ADD ESP,0x4                         ; 004bbf84
     MOV EAX,dword ptr [ESP + 0x570]     ; 004bbf87
     MOV dword ptr [EAX + 0x250],0x1     ; 004bbf8e
@@ -491,8 +491,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x570]     ; 004bc430
     PUSH 0x6164c8                       ; 004bc437 | = "save\\$$SAVE$$.TMP"
     MOV dword ptr [EAX + 0x250],0x0     ; 004bc43c
-    CALL crt_unknown.c_FUN_005ba1e0     ; 004bc446
-        ;   XREF to: 005ba1e0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005ba1e0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005ba1e0 ; 004bc446
+        ;   XREF to: 005ba1e0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ba1e0(char * filename)
     ADD ESP,0x4                         ; 004bc44b
     ADD ESP,0x55c                       ; 004bc44e
         ;   Label: LAB_004bc44e

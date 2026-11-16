@@ -15,19 +15,19 @@ void __cdecl engine_font_cpp_CBitFont_free_FUN_004c1830(CBitFont *this_ptr)
   pCVar1 = this_ptr;
   do {
     pacVar2 = pCVar1->bitmap_files;
-    FUN_005c0336(pCVar1->bitmap_data[0]);
+    free(pCVar1->bitmap_data[0]);
     pCVar1->bitmap_data[0] = (void *)0x0;
     pCVar1 = (CBitFont *)pacVar2;
   } while (pacVar2 != (char (*) [80])(this_ptr->bitmap_files[0] + 0xc));
   if (this_ptr->accel_vertex_alloc != (void *)0x0) {
-    FUN_005c09f0(this_ptr->accel_vertex_alloc);
+    debugFree(this_ptr->accel_vertex_alloc);
     this_ptr->accel_vertex_alloc = (void *)0x0;
   }
   if (this_ptr->accel_indices == (void *)0x0) {
     engine_font_cpp_CBitFont_reset_FUN_004c0b80(this_ptr);
     return;
   }
-  FUN_005c09f0(this_ptr->accel_indices);
+  debugFree(this_ptr->accel_indices);
   engine_font_cpp_CBitFont_reset_FUN_004c0b80(this_ptr);
   return;
 }

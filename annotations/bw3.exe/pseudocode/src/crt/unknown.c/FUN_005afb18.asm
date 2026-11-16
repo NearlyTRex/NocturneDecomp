@@ -76,7 +76,7 @@ section .text
     PUSH ESI                            ; 005afb74
     PUSH 0x1                            ; 005afb75
     CALL crt_memory.c_calloc_FUN_005a4b20 ; 005afb77
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005a4b20(uint count, uint size)
     ADD ESP,0x8                         ; 005afb7c
     MOV EBP,EAX                         ; 005afb7f
     TEST EAX,EAX                        ; 005afb81

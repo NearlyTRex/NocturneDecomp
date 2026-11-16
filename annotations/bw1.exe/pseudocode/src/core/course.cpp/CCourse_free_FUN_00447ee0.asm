@@ -12,7 +12,7 @@
 ;   core_course.cpp_CCourse_load_FUN_00447db0 at 00447dc0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c0336
+;   crt_unknown.c_free_FUN_005c0336
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00447ee1
     MOV EDX,dword ptr [EBX + 0x4]       ; 00447ee5
     PUSH EDX                            ; 00447ee8
-    CALL crt_unknown.c_FUN_005c0336     ; 00447ee9
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 00447ee9
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     MOV dword ptr [EBX + 0x4],0x0       ; 00447eee
     ADD ESP,0x4                         ; 00447ef5
     MOV dword ptr [EBX],0x0             ; 00447ef8

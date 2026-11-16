@@ -26,7 +26,7 @@
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041d480
 ;   core_box.cpp_CBox_saveToFile_FUN_0041d630
 ;   crt_stdio.c_fgetc_FUN_005a32b0
-;   crt_unknown.c_FUN_005a3140
+;   crt_stdio.c_fprintf_FUN_005a3140
 ;
 ; *****************************************************************************
 
@@ -106,8 +106,8 @@ section .text
     PUSH 0x5b5c3d                       ; 0040bebd | = "%s{ // %s\n"
     MOV ECX,dword ptr [0x007df9b4]      ; 0040bec2 | DAT_007df9b4
     PUSH ECX                            ; 0040bec8
-    CALL crt_unknown.c_FUN_005a3140     ; 0040bec9
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0040bec9
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040bece
     PUSH 0x1                            ; 0040bed1
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040afa0 ; 0040bed3
@@ -129,8 +129,8 @@ section .text
     PUSH 0x5b5c48                       ; 0040bf03 | DAT_005b5c48
     MOV EDI,dword ptr [0x007df9b4]      ; 0040bf08 | DAT_007df9b4
     PUSH EDI                            ; 0040bf0e
-    CALL crt_unknown.c_FUN_005a3140     ; 0040bf0f
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 0040bf0f
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040bf14
     POP EDI                             ; 0040bf17
     POP EBP                             ; 0040bf18

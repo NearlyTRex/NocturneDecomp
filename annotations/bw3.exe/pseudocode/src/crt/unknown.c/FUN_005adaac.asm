@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_005adaac(int param_1)
+; void * crt_unknown_c_FUN_005adaac(void *param_1)
 ;
 ;
 ; XREF[2]:
@@ -29,7 +29,7 @@ section .text
     PUSH EDX                            ; 005adabb
     PUSH 0x1                            ; 005adabc
     CALL crt_memory.c_calloc_FUN_005a4b20 ; 005adabe
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005a4b20(uint count, uint size)
     ADD ESP,0x8                         ; 005adac3
     MOV EBX,EAX                         ; 005adac6
     TEST EAX,EAX                        ; 005adac8

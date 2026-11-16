@@ -197,6 +197,6 @@ void __cdecl saveControllerSettings(CIniFile *ini);
 // Address: 005b4650
 void __cdecl loadControllerSettings(CIniFile *ini);
 
-// Original: wincore_winrun.cpp_FUN_005b47d0
+// Original: wincore_winrun.cpp_positionMovieWindow_FUN_005b47d0
 // Address: 005b47d0
-void FUN_005b47d0(void);
+void __cdecl positionMovieWindow(HWND parent_window);

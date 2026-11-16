@@ -12,7 +12,7 @@ CMineCar * __cdecl core_minecar_cpp_factoryFuncMineCar_FUN_00510dc0(void)
   CPlatform *this_ptr;
   CMineCar *pCVar1;
   
-  this_ptr = (CPlatform *)operator_new(0x72c);
+  this_ptr = operator_new(0x72c);
   if (this_ptr == (CPlatform *)0x0) {
     return (CMineCar *)0x0;
   }

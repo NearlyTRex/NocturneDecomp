@@ -15,7 +15,7 @@ section .text
     PUSH 0x33c                          ; 00485340
         ;   Label: core_drip.cpp_factoryFuncDrip_FUN_00485340
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00485345
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0048534a
     TEST EAX,EAX                        ; 0048534d
     JNZ 0x00485352                      ; 0048534f

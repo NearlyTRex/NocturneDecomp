@@ -19,15 +19,15 @@ void FUN_005ca9f4(void)
   if (0 < _DAT_02c9ff64) {
     iVar2 = 0;
     do {
-      DeleteCriticalSection(*(LPCRITICAL_SECTION *)(iVar2 + _DAT_02c9ff68));
-      puVar1 = (uint *)(iVar2 + _DAT_02c9ff68);
+      DeleteCriticalSection(*(LPCRITICAL_SECTION *)(iVar2 + (int)_DAT_02c9ff68));
+      puVar1 = (uint *)(iVar2 + (int)_DAT_02c9ff68);
       iVar2 = iVar2 + 4;
       iVar3 = iVar3 + 1;
-      FUN_005c09f0(*puVar1);
+      debugFree((void *)*puVar1);
     } while (iVar3 < _DAT_02c9ff64);
   }
-  if (_DAT_02c9ff68 != 0) {
-    FUN_005c09f0(_DAT_02c9ff68);
+  if (_DAT_02c9ff68 != (void *)0x0) {
+    debugFree(_DAT_02c9ff68);
   }
   return;
 }

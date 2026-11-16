@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c03c0
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x5dbbb0                       ; 0048fcc4
     MOV EDX,dword ptr [ESP + 0x54]      ; 0048fcc9
     PUSH EDX                            ; 0048fccd
-    CALL crt_unknown.c_FUN_005c03c0     ; 0048fcce
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0048fcce
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x50                        ; 0048fcd3
     RET                                 ; 0048fcd6
 

@@ -11,7 +11,7 @@ CSmiley * __cdecl core_smiley_cpp_factoryFuncSmiley_FUN_005497a0(void)
 {
   CSmiley *pCVar1;
   
-  pCVar1 = (CSmiley *)operator_new(0x10b3c);
+  pCVar1 = operator_new(0x10b3c);
   if (pCVar1 == (CSmiley *)0x0) {
     return (CSmiley *)0x0;
   }

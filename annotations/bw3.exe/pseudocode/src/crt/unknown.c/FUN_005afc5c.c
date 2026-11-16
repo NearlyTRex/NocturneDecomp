@@ -12,26 +12,26 @@ void FUN_005afc5c(int param_1)
 
 {
   uint *puVar1;
-  uint *puVar2;
+  uint *ptr;
   
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079cc)();
   puVar1 = (uint *)&DAT_02d261f0;
-  puVar2 = _DAT_02d261f0;
+  ptr = _DAT_02d261f0;
   do {
-    if (puVar2 == (uint *)0x0) {
+    if (ptr == (uint *)0x0) {
 LAB_005afca6:
       (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079d0)();
       return;
     }
-    if (param_1 == puVar2[1]) {
-      if (puVar2[3] != 0) {
-        FUN_005a3770(puVar2[2]);
+    if (param_1 == ptr[1]) {
+      if (ptr[3] != 0) {
+        debugFree((void *)ptr[2]);
       }
-      *puVar1 = *puVar2;
-      FUN_005a3770(puVar2);
+      *puVar1 = *ptr;
+      debugFree(ptr);
       goto LAB_005afca6;
     }
-    puVar1 = puVar2;
-    puVar2 = (uint *)*puVar2;
+    puVar1 = ptr;
+    ptr = (uint *)*ptr;
   } while( true );
 }

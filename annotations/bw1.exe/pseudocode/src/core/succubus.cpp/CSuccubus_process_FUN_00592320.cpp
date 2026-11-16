@@ -268,7 +268,7 @@ LAB_0059247c:
   if ((this_ptr->morph_started != 0) &&
      (fVar19 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar19,
      _DAT_00606278 < fVar19)) {
-    this_ptr_00 = (CHotDemon *)operator_new(0xc29c);
+    this_ptr_00 = operator_new(0xc29c);
     pCVar11 = (CHotDemon *)0x0;
     if (this_ptr_00 != (CHotDemon *)0x0) {
       pCVar11 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004efa10(this_ptr_00);

@@ -11,7 +11,7 @@ CTheHand * __cdecl core_toxhand_cpp_factoryFuncTheHand_FUN_0056c030(void)
 {
   CTheHand *pCVar1;
   
-  pCVar1 = (CTheHand *)operator_new(0xd0cc);
+  pCVar1 = operator_new(0xd0cc);
   if (pCVar1 == (CTheHand *)0x0) {
     return (CTheHand *)0x0;
   }

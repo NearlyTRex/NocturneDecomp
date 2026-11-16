@@ -20,7 +20,7 @@ void __cdecl core_fldnotes_cpp_SNotesMap_reset_FUN_004bc250(SNotesMap *this_ptr)
   if (this_ptr->saved_alpha == (void *)0x0) {
     return;
   }
-  FUN_005c09f0(this_ptr->saved_alpha);
+  debugFree(this_ptr->saved_alpha);
   this_ptr->saved_alpha = (void *)0x0;
   return;
 }

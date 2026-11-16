@@ -14,7 +14,7 @@
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0050fd90
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 0050f9e0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0(CPackedBitmap * this_ptr, uchar * raw_bitmap_data, int row_stride)
     ADD ESP,0xc                         ; 0050f9bd
     PUSH ESI                            ; 0050f9c0
-    CALL crt_unknown.c_FUN_005a3770     ; 0050f9c1
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 0050f9c1
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 0050f9c6
     CMP dword ptr [ESP + 0x10],0x0      ; 0050f9c9
     JZ 0x0050f9af                       ; 0050f9ce

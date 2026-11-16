@@ -201,9 +201,9 @@ uint __cdecl packPixelNative(int red,int green,int blue);
 // Address: 004c4bf0
 int __cdecl getAlpha(void);
 
-// Original: engine_font.cpp_FUN_004c4c00
+// Original: engine_font.cpp_addPolygonEdge_FUN_004c4c00
 // Address: 004c4c00
-void FUN_004c4c00(void);
+void __cdecl addPolygonEdge(SRenderVertex *vertex1,SRenderVertex *vertex2);
 
 // Original: engine_font.cpp_findHardwareEdgeByYMin_FUN_004c4d40
 // Address: 004c4d40

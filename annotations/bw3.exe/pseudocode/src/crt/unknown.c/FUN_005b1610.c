@@ -11,15 +11,16 @@
 int FUN_005b1610(byte *param_1,int param_2)
 
 {
-  int *piVar1;
+  uint *puVar1;
   byte *pbVar2;
   byte bVar3;
-  int iVar4;
+  void *ptr;
+  void *pvVar4;
   int iVar5;
   int iVar6;
   byte *puVar7;
   byte *pbVar8;
-  int *dest;
+  uint *dest;
   byte *pbVar9;
   SIZE_T n;
   
@@ -40,17 +41,17 @@ int FUN_005b1610(byte *param_1,int param_2)
         if (param_2 == 0) {
           return iVar5 + 1;
         }
-        iVar6 = *dest;
-        iVar4 = iVar6;
-        while (iVar4 != 0) {
+        ptr = (void *)*dest;
+        pvVar4 = ptr;
+        while (pvVar4 != (void *)0x0) {
           *dest = dest[1];
-          piVar1 = dest + 1;
+          puVar1 = dest + 1;
           dest = dest + 1;
-          iVar4 = *piVar1;
+          pvVar4 = (void *)*puVar1;
         }
-        if (_DAT_02d25920 != (int *)0x0) {
+        if (_DAT_02d25920 != (uint *)0x0) {
           if (*(char *)(iVar5 + (int)_DAT_02d25920) != '\0') {
-            FUN_005a3770(iVar6);
+            debugFree(ptr);
           }
           n = (int)dest - (int)_DAT_02d25924 >> 2;
           memmove(dest,_DAT_02d25920,n);

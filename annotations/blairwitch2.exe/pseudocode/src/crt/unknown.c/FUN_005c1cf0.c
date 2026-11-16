@@ -16,7 +16,7 @@ void FUN_005c1cf0(void)
   FUN_005c1d0c(0);
   while (_DAT_02680164 != (uint *)0x0) {
     puVar1 = (uint *)*_DAT_02680164;
-    FUN_005b86a0(_DAT_02680164);
+    debugFree(_DAT_02680164);
     _DAT_02680164 = puVar1;
   }
   return;

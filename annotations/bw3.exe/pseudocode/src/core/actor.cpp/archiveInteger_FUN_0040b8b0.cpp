@@ -19,7 +19,7 @@ void __cdecl core_actor_cpp_archiveInteger_FUN_0040b8b0(int *int_ptr,char *prope
     }
   }
   else {
-    FUN_005a3140(DAT_007df9b4,&DAT_005b5af8,&DAT_005f0990,*int_ptr);
+    _fprintf(DAT_007df9b4,&DAT_005b5af8);
   }
   core_actor_cpp_archiveDescription_FUN_0040b350("Integer value",property_name);
   return;

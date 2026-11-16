@@ -32,17 +32,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00467650(CKeyFramedMod
     _DAT_01d1d404 = 0x2c1;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Too many parts!");
   }
-  pCVar1 = (CVector3i *)
-           operator_new_array
+  pCVar1 = operator_new_array
                      (this_ptr->frame_count * this_ptr->vertex_count * 0xc);
   this_ptr->vertex_list = pCVar1;
-  pSVar2 = (SMRGLPrimitiveQuad *)
-           operator_new_array(this_ptr->poly_count * 0x48);
+  pSVar2 = operator_new_array(this_ptr->poly_count * 0x48);
   this_ptr->poly_vert_list = pSVar2;
-  piVar3 = (int *)operator_new_array(this_ptr->poly_count << 2);
+  piVar3 = operator_new_array(this_ptr->poly_count << 2);
   this_ptr->poly_texture_index_list = piVar3;
-  pCVar4 = (CBoundingBox3D *)
-           operator_new_array(this_ptr->frame_count * 0x18);
+  pCVar4 = operator_new_array(this_ptr->frame_count * 0x18);
   this_ptr->frame_bounds = pCVar4;
   if ((((this_ptr->vertex_list == (CVector3i *)0x0) ||
        ((0 < this_ptr->poly_count && (this_ptr->poly_vert_list == (SMRGLPrimitiveQuad *)0x0)))) ||
@@ -59,7 +56,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00467650(CKeyFramedMod
   else if (this_ptr->frame_count != 1) {
     return;
   }
-  pCVar1 = (CVector3i *)operator_new_array(this_ptr->vertex_count * 0xc);
+  pCVar1 = operator_new_array(this_ptr->vertex_count * 0xc);
   this_ptr->vertex_normal_list = pCVar1;
   if (pCVar1 != (CVector3i *)0x0) {
     return;

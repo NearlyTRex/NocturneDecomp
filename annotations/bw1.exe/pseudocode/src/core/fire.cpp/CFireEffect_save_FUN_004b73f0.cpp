@@ -11,9 +11,9 @@ void __cdecl core_fire_cpp_CFireEffect_save_FUN_004b73f0(CFireEffect *this_ptr,_
 {
   CCrater *this_ptr_00;
   
-  FUN_005c03c0(file_handle,"Fire state\n");
+  _fprintf(file_handle,"Fire state\n");
   this_ptr_00 = (CCrater *)0x1cb4f60;
-  FUN_005c03c0(file_handle,&DAT_005df684);
+  _fprintf(file_handle,&DAT_005df684);
   do {
     core_fire_cpp_CCrater_save_FUN_004b2740(this_ptr_00,file_handle);
     this_ptr_00 = this_ptr_00 + 1;

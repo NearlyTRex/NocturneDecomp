@@ -494,8 +494,8 @@ section .text
     PUSH 0x5dcdc0                       ; 004a1ea8 | DAT_005dcdc0
     MOV EAX,dword ptr [EBP + -0x76]     ; 004a1ead
     PUSH EAX                            ; 004a1eb0
-    CALL crt_unknown.c_FUN_005c03c0     ; 004a1eb1
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004a1eb1
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     MOV EAX,dword ptr [EBP + 0xe2]      ; 004a1eb6
     INC ESI                             ; 004a1ebc
     ADD EDI,0x20                        ; 004a1ebd

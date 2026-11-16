@@ -14,8 +14,9 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004c0cd0(CBitFont *this_ptr
   char cVar1;
   int iVar2;
   void *pvVar3;
-  char *pcVar4;
-  int iVar5;
+  int iVar4;
+  char *pcVar5;
+  uint size;
   char (*pacVar6) [80];
   char local_468 [300];
   char local_33c [256];
@@ -29,27 +30,27 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004c0cd0(CBitFont *this_ptr
     core_main_c_displayErrorAndQuit_FUN_005030e0("Too many bitmaps");
   }
   pacVar6 = this_ptr->bitmap_files + this_ptr->bitmap_count;
-  pcVar4 = filename;
+  pcVar5 = filename;
   do {
-    cVar1 = *pcVar4;
+    cVar1 = *pcVar5;
     (*pacVar6)[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
     (*pacVar6)[1] = cVar1;
     pacVar6 = (char (*) [80])(*pacVar6 + 2);
   } while (cVar1 != '\0');
   strupr(this_ptr->bitmap_files[this_ptr->bitmap_count]);
-  iVar5 = width * height;
+  size = width * height;
   this_ptr->bitmap_widths[this_ptr->bitmap_count] = width;
   iVar2 = engine_dosio_cpp_getFileSize_FUN_00478fb0(&DAT_005e07ca,filename);
-  if (iVar2 < iVar5) {
+  if (iVar2 < (int)size) {
     _sprintf(local_468,"Invalid font file size (%s).");
     _DAT_01d1d400 = "..\\engine\\font.cpp";
     _DAT_01d1d404 = 0x10f;
     core_main_c_displayErrorAndQuit_FUN_005030e0(local_468);
   }
-  pvVar3 = (void *)operator_new_array(iVar5);
+  pvVar3 = operator_new_array(size);
   this_ptr->bitmap_data[this_ptr->bitmap_count] = pvVar3;
   if (this_ptr->bitmap_data[this_ptr->bitmap_count] == (void *)0x0) {
     _sprintf(local_468,"Unable to allocate memory for font bitmap (%s).");
@@ -58,7 +59,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004c0cd0(CBitFont *this_ptr
     core_main_c_displayErrorAndQuit_FUN_005030e0(local_468);
   }
   cockpit_ckptutil_c_readBitmapFile_FUN_0043b2e0
-            (filename,this_ptr->bitmap_data[this_ptr->bitmap_count],iVar5);
+            (filename,this_ptr->bitmap_data[this_ptr->bitmap_count],size);
   engine_dosio_cpp_splitPath_FUN_00479580(filename,(char *)0x0,local_23c,local_13c,(char *)0x0);
   engine_dosio_cpp_makePath_FUN_004795b0(local_33c,(char *)0x0,local_23c,local_13c,&DAT_005e0841);
   support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_3c);
@@ -72,13 +73,13 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004c0cd0(CBitFont *this_ptr
   else {
     iVar2 = 0;
     do {
-      iVar5 = support_trstream_cpp_CInStreamFile_getChar_FUN_005a0ab0(&local_3c);
-      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300] = (char)iVar5;
-      iVar5 = support_trstream_cpp_CInStreamFile_getChar_FUN_005a0ab0(&local_3c);
-      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300 + 1] = (char)iVar5;
-      iVar5 = support_trstream_cpp_CInStreamFile_getChar_FUN_005a0ab0(&local_3c);
+      iVar4 = support_trstream_cpp_CInStreamFile_getChar_FUN_005a0ab0(&local_3c);
+      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300] = (char)iVar4;
+      iVar4 = support_trstream_cpp_CInStreamFile_getChar_FUN_005a0ab0(&local_3c);
+      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300 + 1] = (char)iVar4;
+      iVar4 = support_trstream_cpp_CInStreamFile_getChar_FUN_005a0ab0(&local_3c);
       iVar2 = iVar2 + 3;
-      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300 + -1] = (char)iVar5;
+      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300 + -1] = (char)iVar4;
     } while (iVar2 != 0x300);
     support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_3c);
   }

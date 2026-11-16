@@ -31,7 +31,7 @@
     {
       "addr": "005a3770",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3770"
+      "name": "crt_unknown.c_debugFree_FUN_005a3770"
     }
   ],
   "globals": [
@@ -107,7 +107,7 @@
       "line": 5,
       "match": "DAT_00607bdc",
       "severity": "mild",
-      "text": "if (DAT_00607bdc != 0) {",
+      "text": "if (DAT_00607bdc != (void *)0x0) {",
       "type": "undefined_data"
     },
     {
@@ -115,7 +115,7 @@
       "line": 6,
       "match": "DAT_00607bdc",
       "severity": "mild",
-      "text": "FUN_005a3770(DAT_00607bdc);",
+      "text": "debugFree(DAT_00607bdc);",
       "type": "undefined_data"
     },
     {
@@ -123,7 +123,7 @@
       "line": 7,
       "match": "DAT_00607bdc",
       "severity": "mild",
-      "text": "DAT_00607bdc = 0;",
+      "text": "DAT_00607bdc = (void *)0x0;",
       "type": "undefined_data"
     }
   ]

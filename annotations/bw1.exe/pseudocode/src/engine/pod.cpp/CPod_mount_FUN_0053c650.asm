@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_operator_new_FUN_005c0f32
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0053b1a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0053b210
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250
@@ -33,7 +33,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0053c658
     PUSH 0x42c                          ; 0053c65c
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0053c661
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0053c666
     TEST EAX,EAX                        ; 0053c669
     JNZ 0x0053c6a4                      ; 0053c66b
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 0053b210 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0053b210(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0053c691
     PUSH EAX                            ; 0053c694
-    CALL crt_unknown.c_FUN_005c0344     ; 0053c695
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0053c695
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0053c69a
     XOR EAX,EAX                         ; 0053c69d
         ;   Label: LAB_0053c69d
@@ -123,8 +123,8 @@ section .text
         ;   XREF to: 0053b210 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0053b210(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0053c6ff
     PUSH EAX                            ; 0053c702
-    CALL crt_unknown.c_FUN_005c0344     ; 0053c703
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0053c703
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0053c708
     PUSH 0x5ed9e9                       ; 0053c70b | = "Too many PODs already mounted"
         ;   Label: LAB_0053c70b

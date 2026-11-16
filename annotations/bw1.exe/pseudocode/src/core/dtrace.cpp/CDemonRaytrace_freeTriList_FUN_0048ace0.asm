@@ -11,7 +11,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_0048a930 at 0048a93f
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c0336
+;   crt_unknown.c_free_FUN_005c0336
 ;
 ; *****************************************************************************
 
@@ -39,15 +39,15 @@ section .text
     RET                                 ; 0048ad0b
     PUSH EDX                            ; 0048ad0c
         ;   Label: LAB_0048ad0c
-    CALL crt_unknown.c_FUN_005c0336     ; 0048ad0d
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 0048ad0d
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 0048ad12
     JMP 0x0048aced                      ; 0048ad15
         ;   XREF to: 0048aced (UNCONDITIONAL_JUMP)  ; LAB_0048aced
     PUSH ESI                            ; 0048ad17
         ;   Label: LAB_0048ad17
-    CALL crt_unknown.c_FUN_005c0336     ; 0048ad18
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 0048ad18
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 0048ad1d
     JMP 0x0048acf4                      ; 0048ad20
         ;   XREF to: 0048acf4 (UNCONDITIONAL_JUMP)  ; LAB_0048acf4

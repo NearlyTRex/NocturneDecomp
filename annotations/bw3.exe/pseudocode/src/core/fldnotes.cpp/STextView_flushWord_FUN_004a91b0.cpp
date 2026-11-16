@@ -17,7 +17,7 @@ void __cdecl core_fldnotes_cpp_STextView_flushWord_FUN_004a91b0(STextView *this_
   if (this_ptr->word[0] == '\0') {
     return;
   }
-  this_ptr_00 = (SPageResourceText *)operator_new(0x120);
+  this_ptr_00 = operator_new(0x120);
   resource = (SPageResourceText *)0x0;
   if (this_ptr_00 != (SPageResourceText *)0x0) {
     resource = core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a8490

@@ -81,9 +81,9 @@ CMatrix3x4f * __stack_esi inverse(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out
 // Address: 005b65b0
 float __cdecl computeOrthogonalityError(CMatrix3x4f *matrix);
 
-// Original: core_xform.cpp_FUN_005b67e0
+// Original: core_xform.cpp_orthonormalizeMatrix3x3_FUN_005b67e0
 // Address: 005b67e0
-void FUN_005b67e0(void);
+void __cdecl orthonormalizeMatrix3x3(CMatrix3x3f *matrix,int preserve_scale);
 
 // Original: core_xform.cpp_buildRotationX_FUN_005b6d90
 // Address: 005b6d90
@@ -189,9 +189,17 @@ void __cdecl clipInterpolateTopPlane(SRenderVertex *vertex_a,SRenderVertex *vert
 // Address: 005b9870
 void __cdecl clipInterpolateBottomPlane(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 
+// Original: core_xform.cpp_clipPolygonStage2_FUN_005b9ab0
+// Address: 005b9ab0
+void __cdecl clipPolygonStage2(void);
+
 // Original: core_xform.cpp_clipPolygonStage3_FUN_005b9c30
 // Address: 005b9c30
 void __cdecl clipPolygonStage3(void);
+
+// Original: core_xform.cpp_clipPolygonStage4_FUN_005b9da0
+// Address: 005b9da0
+void __cdecl clipPolygonStage4(void);
 
 // Original: core_xform.cpp_clampClippedVertices_FUN_005b9f10
 // Address: 005b9f10

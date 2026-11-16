@@ -11,7 +11,7 @@ CBaal * __cdecl core_baal_cpp_factoryFuncBaal_FUN_00596630(void)
 {
   CBaal *pCVar1;
   
-  pCVar1 = (CBaal *)operator_new(0xd0bc);
+  pCVar1 = operator_new(0xd0bc);
   if (pCVar1 == (CBaal *)0x0) {
     return (CBaal *)0x0;
   }

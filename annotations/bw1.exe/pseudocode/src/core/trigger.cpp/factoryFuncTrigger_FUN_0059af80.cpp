@@ -11,7 +11,7 @@ CTrigger * __cdecl core_trigger_cpp_factoryFuncTrigger_FUN_0059af80(void)
 {
   CTrigger *pCVar1;
   
-  pCVar1 = (CTrigger *)operator_new(0x374);
+  pCVar1 = operator_new(0x374);
   if (pCVar1 == (CTrigger *)0x0) {
     return (CTrigger *)0x0;
   }

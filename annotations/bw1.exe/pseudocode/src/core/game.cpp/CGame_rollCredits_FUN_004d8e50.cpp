@@ -152,7 +152,7 @@ LAB_004d91eb:
           do {
             iVar7 = iVar6 + -4;
             iVar6 = iVar6 + 4;
-            FUN_005c09f0(*(uint *)((int)local_1134 + iVar7));
+            debugFree(*(void **)((int)local_1134 + iVar7));
           } while (iVar6 < iVar2);
         }
         engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)auStack_38,0);

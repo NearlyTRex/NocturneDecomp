@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
-;   crt_unknown.c_FUN_005b7fce
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -36,27 +36,27 @@ section .text
     MOV ECX,dword ptr [EBX + 0x40]      ; 00541176
         ;   Label: LAB_00541176
     PUSH ECX                            ; 00541179
-    CALL crt_unknown.c_FUN_005b7fce     ; 0054117a
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 0054117a
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 0054117f
     MOV EBP,dword ptr [EBX + 0x7c]      ; 00541182
     PUSH EBP                            ; 00541185
     MOV dword ptr [EBX + 0x40],0x0      ; 00541186
-    CALL crt_unknown.c_FUN_005b7fce     ; 0054118d
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 0054118d
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 00541192
     MOV EAX,dword ptr [EBX + 0x90]      ; 00541195
     PUSH EAX                            ; 0054119b
     MOV dword ptr [EBX + 0x7c],0x0      ; 0054119c
-    CALL crt_unknown.c_FUN_005b7fce     ; 005411a3
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 005411a3
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 005411a8
     MOV EDX,dword ptr [EBX + 0xa4]      ; 005411ab
     ADD EBX,0x4                         ; 005411b1
     PUSH EDX                            ; 005411b4
     MOV dword ptr [EBX + 0x8c],0x0      ; 005411b5
-    CALL crt_unknown.c_FUN_005b7fce     ; 005411bf
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 005411bf
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     MOV dword ptr [EBX + 0xa0],0x0      ; 005411c4
     MOV dword ptr [EBX + 0x28],0x0      ; 005411ce
     MOV dword ptr [EBX + 0x50],0x0      ; 005411d5

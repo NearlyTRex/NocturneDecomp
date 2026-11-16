@@ -121,7 +121,7 @@ section .text
     PUSH 0x22b4                         ; 005443e2
     MOV dword ptr [ESP + 0x234],EAX     ; 005443e7
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005443ee
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005443f3
     TEST EAX,EAX                        ; 005443f6
     JZ 0x00544403                       ; 005443f8

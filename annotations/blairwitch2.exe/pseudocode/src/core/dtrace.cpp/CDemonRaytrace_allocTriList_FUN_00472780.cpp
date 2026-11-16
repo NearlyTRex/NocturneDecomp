@@ -14,10 +14,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00472780(CDemonRayt
   CDemonTriangle *pCVar1;
   uchar *puVar2;
   
-  pCVar1 = (CDemonTriangle *)
-           operator_new_array(this_ptr->triangle_count * 0x38);
+  pCVar1 = operator_new_array(this_ptr->triangle_count * 0x38);
   this_ptr->triangle_list = pCVar1;
-  puVar2 = (uchar *)operator_new_array(this_ptr->triangle_count);
+  puVar2 = operator_new_array(this_ptr->triangle_count);
   this_ptr->triangle_flags = puVar2;
   if ((this_ptr->triangle_list != (CDemonTriangle *)0x0) && (puVar2 != (uchar *)0x0)) {
     return;

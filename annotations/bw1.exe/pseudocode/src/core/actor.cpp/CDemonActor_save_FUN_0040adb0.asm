@@ -33,7 +33,7 @@
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c630
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
-;   crt_unknown.c_FUN_005c03c0
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     PUSH 0x6106c0                       ; 0040adfb | DAT_006106c0
     PUSH 0x5d2854                       ; 0040ae00 | = "%s{ %s \"%s\"\n"
     PUSH EDI                            ; 0040ae05
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040ae06
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040ae06
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040ae0b
     MOV EAX,[0x007c3034]                ; 0040ae0e | DAT_007c3034
     MOV EBP,dword ptr [0x007c303c]      ; 0040ae13 | DAT_007c303c
@@ -102,8 +102,8 @@ section .text
     PUSH 0x6106c0                       ; 0040ae62 | DAT_006106c0
     PUSH 0x5d2861                       ; 0040ae67 | = "%s} %s \"%s\"\n"
     PUSH EDI                            ; 0040ae6c
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040ae6d
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040ae6d
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     MOV DH,byte ptr [EDI + 0xc]         ; 0040ae72
     ADD ESP,0x14                        ; 0040ae75
     TEST DH,0x20                        ; 0040ae78

@@ -9,21 +9,21 @@
 void __cdecl core_fldnotes_cpp_SNotesSection_clear_FUN_004a9bc0(SNotesSection *this_ptr)
 
 {
-  char ***pppcVar1;
-  int iVar2;
-  SNotesSection *pSVar3;
+  char ***ptr;
+  int iVar1;
+  SNotesSection *pSVar2;
   
-  iVar2 = 0;
-  pSVar3 = this_ptr;
+  iVar1 = 0;
+  pSVar2 = this_ptr;
   if (0 < this_ptr->entry_count) {
     do {
-      if (pSVar3->entries[0] != (SNotesEntry *)0x0) {
-        pppcVar1 = core_fldnotes_cpp_SNotesEntry_dtor_FUN_004a9930(pSVar3->entries[0]);
-        FUN_005a30c4(pppcVar1);
+      if (pSVar2->entries[0] != (SNotesEntry *)0x0) {
+        ptr = core_fldnotes_cpp_SNotesEntry_dtor_FUN_004a9930(pSVar2->entries[0]);
+        debugFreeChecked(ptr);
       }
-      iVar2 = iVar2 + 1;
-      pSVar3 = (SNotesSection *)(pSVar3->name + 4);
-    } while (iVar2 < this_ptr->entry_count);
+      iVar1 = iVar1 + 1;
+      pSVar2 = (SNotesSection *)(pSVar2->name + 4);
+    } while (iVar1 < this_ptr->entry_count);
   }
   this_ptr->first_page = 0;
   this_ptr->page_count = 0;

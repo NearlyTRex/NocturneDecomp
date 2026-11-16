@@ -177,7 +177,7 @@ LAB_004be71e:
     do {
       iVar7 = iVar2 + 4;
       iVar2 = iVar2 + 4;
-      FUN_005b86a0(*(uint *)((int)local_1158 + iVar7));
+      debugFree(*(void **)((int)local_1158 + iVar7));
     } while (iVar2 < iVar5 * 4);
   }
   goto LAB_004be772;

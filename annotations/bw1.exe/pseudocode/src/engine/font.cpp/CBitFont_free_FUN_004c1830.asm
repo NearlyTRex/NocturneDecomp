@@ -11,8 +11,8 @@
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004c1540 at 004c1548
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
+;   crt_unknown.c_free_FUN_005c0336
 ;   engine_font.cpp_CBitFont_reset_FUN_004c0b80
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
         ;   Label: LAB_004c183c
     PUSH EDX                            ; 004c1842
     ADD EBX,0x4                         ; 004c1843
-    CALL crt_unknown.c_FUN_005c0336     ; 004c1846
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 004c1846
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 004c184b
     MOV dword ptr [EBX + 0x190],0x0     ; 004c184e
     CMP EBX,ESI                         ; 004c1858
@@ -56,16 +56,16 @@ section .text
     RET                                 ; 004c187c
     PUSH ECX                            ; 004c187d
         ;   Label: LAB_004c187d
-    CALL crt_unknown.c_FUN_005c09f0     ; 004c187e
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 004c187e
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 004c1883
     MOV dword ptr [EDI + 0x1dcc],0x0    ; 004c1886
     JMP 0x004c1866                      ; 004c1890
         ;   XREF to: 004c1866 (UNCONDITIONAL_JUMP)  ; LAB_004c1866
     PUSH ESI                            ; 004c1892
         ;   Label: LAB_004c1892
-    CALL crt_unknown.c_FUN_005c09f0     ; 004c1893
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 004c1893
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 004c1898
     PUSH EDI                            ; 004c189b
     CALL engine_font.cpp_CBitFont_reset_FUN_004c0b80 ; 004c189c

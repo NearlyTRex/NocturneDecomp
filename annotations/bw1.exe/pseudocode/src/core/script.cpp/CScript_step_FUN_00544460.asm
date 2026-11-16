@@ -4811,8 +4811,8 @@ section .text
     PUSH 0x5eef20                       ; 005477c5 | = "line%6d: %s\n"
     PUSH EAX                            ; 005477ca
     MOV dword ptr [ESP + 0x4864],EAX    ; 005477cb
-    CALL crt_unknown.c_FUN_005c03c0     ; 005477d2
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 005477d2
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     MOV ESI,dword ptr [EBX + 0x458]     ; 005477d7
     DEC ESI                             ; 005477dd
     ADD ESP,0x10                        ; 005477de
@@ -4833,8 +4833,8 @@ section .text
     PUSH EAX                            ; 0054780c
     SUB EDI,0x4                         ; 0054780d
     DEC ESI                             ; 00547810
-    CALL crt_unknown.c_FUN_005c03c0     ; 00547811
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 00547811
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 00547816
     TEST ESI,ESI                        ; 00547819
     JGE 0x005477ee                      ; 0054781b

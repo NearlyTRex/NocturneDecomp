@@ -11,7 +11,7 @@ CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_
 {
   CFrankenstienMachine *pCVar1;
   
-  pCVar1 = (CFrankenstienMachine *)operator_new(0x49c);
+  pCVar1 = operator_new(0x49c);
   if (pCVar1 == (CFrankenstienMachine *)0x0) {
     return (CFrankenstienMachine *)0x0;
   }

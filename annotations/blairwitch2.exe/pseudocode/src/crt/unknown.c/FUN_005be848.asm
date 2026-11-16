@@ -11,7 +11,7 @@
 ;   undefined4 DAT_02680164
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   Label: LAB_005be852
     PUSH EAX                            ; 005be857
     MOV EBX,dword ptr [EAX]             ; 005be858
-    CALL crt_unknown.c_FUN_005b86a0     ; 005be85a
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 005be85a
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 005be85f
     MOV dword ptr [0x02680164],EBX      ; 005be862 | DAT_02680164
     TEST EBX,EBX                        ; 005be868

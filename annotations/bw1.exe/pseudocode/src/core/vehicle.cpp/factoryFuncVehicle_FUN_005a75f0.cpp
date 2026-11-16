@@ -11,7 +11,7 @@ CVehicle * __cdecl core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void)
 {
   CVehicle *pCVar1;
   
-  pCVar1 = (CVehicle *)operator_new(0x1078);
+  pCVar1 = operator_new(0x1078);
   if (pCVar1 == (CVehicle *)0x0) {
     return (CVehicle *)0x0;
   }

@@ -15,12 +15,12 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_0050a530(CPassenger *t
   CFlame *pCVar3;
   CClothList *pCVar4;
   CDeformableModelInstance *pCVar5;
-  CPassenger *pCVar6;
-  void *ptr;
+  CPassenger *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CPassengerTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CPassengerTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   this_ptr_00 = this_ptr->werewolf_actor;
@@ -38,12 +38,12 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_0050a530(CPassenger *t
                       ,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
                      ((CDeformableModelInstance *)(pCVar4[-0x1b].filenames[7] + 8),0);
-  pCVar6 = (CPassenger *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770
-                     ((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);
+  ptr = (CPassenger *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                  ((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) != 0) {
-    FUN_005a30c4(pCVar6);
-    return pCVar6;
+    debugFreeChecked(ptr);
+    return ptr;
   }
-  return pCVar6;
+  return ptr;
 }

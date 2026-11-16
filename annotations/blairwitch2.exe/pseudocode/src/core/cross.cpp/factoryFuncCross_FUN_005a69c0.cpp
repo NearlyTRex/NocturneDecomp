@@ -11,7 +11,7 @@ CCross * __cdecl core_cross_cpp_factoryFuncCross_FUN_005a69c0(void)
 {
   CCross *pCVar1;
   
-  pCVar1 = (CCross *)operator_new(0x848);
+  pCVar1 = operator_new(0x848);
   if (pCVar1 == (CCross *)0x0) {
     return (CCross *)0x0;
   }

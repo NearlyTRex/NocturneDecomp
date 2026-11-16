@@ -10,22 +10,22 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(CWeapon *this_ptr,ui
 
 {
   CBox *pCVar1;
-  CWeapon *pCVar2;
-  void *ptr;
+  CWeapon *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CWeaponTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CWeaponTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).vtable._ub = &g_CWeaponVTable._ub;
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041adf0(&this_ptr->physics_box,0);
-  pCVar2 = (CWeapon *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770
-                     ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_intersection,1);
+  ptr = (CWeapon *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                  ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_intersection,1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_005a30c4(pCVar2);
-  return pCVar2;
+  debugFreeChecked(ptr);
+  return ptr;
 }

@@ -475,6 +475,37 @@
     "variadic":false
   },
   {
+    "addr":"00405400",
+    "calls":[
+      "00403920",
+      "004039d0",
+      "0043a840",
+      "004e6140"
+    ],
+    "conv":"__cdecl",
+    "instructions":64,
+    "method":"renderPolygonTexturedNormalizedUVLit",
+    "name":"engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400",
+    "params":[
+      {
+        "name":"prim",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
+    },
+    "tu":"engine/3d.c",
+    "variadic":false
+  },
+  {
     "addr":"00405600",
     "callers":[
       "00406d90"
@@ -13966,6 +13997,35 @@
     "variadic":false
   },
   {
+    "addr":"004e6d80",
+    "calls":[
+      "004e5410",
+      "005a3120"
+    ],
+    "conv":"__cdecl",
+    "instructions":53,
+    "method":"projectToScreen",
+    "name":"engine_matrix.c_projectToScreen_FUN_004e6d80",
+    "params":[
+      {
+        "name":"input_value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "tu":"engine/matrix.c",
+    "variadic":false
+  },
+  {
     "addr":"004e6f80",
     "cls":"CMelee",
     "conv":"__cdecl",
@@ -16106,6 +16166,54 @@
     "ret":{
       "kind":"builtin",
       "name":"int",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbitmap.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"0050f780",
+    "calls":[
+      "00434e90",
+      "00434ea0",
+      "00434ec0",
+      "004e4330"
+    ],
+    "cls":"CPackedBitmap",
+    "conv":"__cdecl",
+    "instructions":98,
+    "method":"copyNoClip",
+    "name":"cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0050f780",
+    "params":[
+      {
+        "name":"dest_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bits_per_pixel",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"row_stride",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/pkbitmap.cpp",

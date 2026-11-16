@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     AND EAX,0xff                        ; 004f5f7c
     SUB EBX,EAX                         ; 004f5f81
     PUSH EBX                            ; 004f5f83
-    CALL crt_unknown.c_FUN_005b86a0     ; 004f5f84
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 004f5f84
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 004f5f89
     POP EBX                             ; 004f5f8c
     RET                                 ; 004f5f8d

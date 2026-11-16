@@ -49,16 +49,16 @@ int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00569670(CTextureC
   }
   dest = this_ptr->entries + iVar5;
   if (dest->texture_data != (uchar *)0x0) {
-    FUN_005a3770(dest->texture_data);
+    debugFree(dest->texture_data);
   }
   if (dest->opacity_data != (uchar *)0x0) {
-    FUN_005a3770(dest->opacity_data);
+    debugFree(dest->opacity_data);
   }
   if (dest->palette_data != (uchar *)0x0) {
-    FUN_005a3770(dest->palette_data);
+    debugFree(dest->palette_data);
   }
   if (dest->true_color_data != (uchar *)0x0) {
-    FUN_005a3770(dest->true_color_data);
+    debugFree(dest->true_color_data);
     memset(dest,0,0x60);
     return iVar5;
   }

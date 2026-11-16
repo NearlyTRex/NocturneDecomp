@@ -562,7 +562,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x110]     ; 0044e4bf
     PUSH ESI                            ; 0044e4c5
     CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 0044e4c6
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005b8df8(uint size)
     ADD ESP,0x4                         ; 0044e4cb
     MOV EBX,dword ptr [ESP + 0x4c]      ; 0044e4ce
     MOV dword ptr [EBX + 0x11c],EAX     ; 0044e4d2

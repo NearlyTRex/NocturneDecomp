@@ -15,7 +15,7 @@ section .text
     PUSH 0x2e0                          ; 0040f470
         ;   Label: core_battery.cpp_factoryFuncBattery_FUN_0040f470
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0040f475
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0040f47a
     TEST EAX,EAX                        ; 0040f47d
     JNZ 0x0040f482                      ; 0040f47f

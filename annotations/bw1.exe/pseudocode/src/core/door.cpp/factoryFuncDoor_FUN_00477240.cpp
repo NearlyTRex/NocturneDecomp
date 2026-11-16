@@ -11,7 +11,7 @@ CDoor * __cdecl core_door_cpp_factoryFuncDoor_FUN_00477240(void)
 {
   CDoor *pCVar1;
   
-  pCVar1 = (CDoor *)operator_new(0xa4c);
+  pCVar1 = operator_new(0xa4c);
   if (pCVar1 == (CDoor *)0x0) {
     return (CDoor *)0x0;
   }

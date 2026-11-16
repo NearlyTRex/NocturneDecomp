@@ -11,7 +11,7 @@
 ;   core_script.cpp_CScript_clear_FUN_00528d50 at 00528d62
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     JZ 0x00528dce                       ; 00528dc3
         ;   XREF to: 00528dce (CONDITIONAL_JUMP)  ; LAB_00528dce
     PUSH EDX                            ; 00528dc5
-    CALL crt_unknown.c_FUN_005a3770     ; 00528dc6
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00528dc6
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 00528dcb
     INC EBX                             ; 00528dce
         ;   Label: LAB_00528dce
@@ -53,8 +53,8 @@ section .text
     MOV EAX,dword ptr [EDI + 0x30]      ; 00528dd9
         ;   Label: LAB_00528dd9
     PUSH EAX                            ; 00528ddc
-    CALL crt_unknown.c_FUN_005a3770     ; 00528ddd
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00528ddd
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 00528de2
     MOV dword ptr [EDI + 0x30],0x0      ; 00528de5
     POP EBX                             ; 00528dec

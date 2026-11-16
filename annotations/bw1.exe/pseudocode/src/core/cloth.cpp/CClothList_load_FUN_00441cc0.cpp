@@ -25,9 +25,9 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_00441cc0(CClothList *this_ptr)
     do {
       if (pCVar3->cloths[0] != (CCloth *)0x0) {
         pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_0043e620(pCVar3->cloths[0],0);
-        FUN_005c0344(pCVar2);
+        debugFreeChecked(pCVar2);
       }
-      this_ptr_00 = (CCloth *)operator_new(0x3ab30);
+      this_ptr_00 = operator_new(0x3ab30);
       pCVar2 = (CCloth *)0x0;
       if (this_ptr_00 != (CCloth *)0x0) {
         pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_0043e5c0(this_ptr_00);

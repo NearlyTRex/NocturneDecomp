@@ -9,21 +9,21 @@
 void __cdecl core_moon_cpp_CMotionList_free_FUN_005027b0(CMotionList *this_ptr)
 
 {
-  SMotionTransition *pSVar1;
-  CMotionList *pCVar2;
-  int iVar3;
+  SMotionTransition *ptr;
+  CMotionList *pCVar1;
+  int iVar2;
   
-  iVar3 = 0;
-  pCVar2 = this_ptr;
+  iVar2 = 0;
+  pCVar1 = this_ptr;
   if (0 < this_ptr->motion_count) {
     do {
-      pSVar1 = pCVar2->motions[0].transitions;
-      if (pSVar1 != (SMotionTransition *)0x0) {
-        FUN_005b86a0(pSVar1);
+      ptr = pCVar1->motions[0].transitions;
+      if (ptr != (SMotionTransition *)0x0) {
+        debugFree(ptr);
       }
-      iVar3 = iVar3 + 1;
-      pCVar2 = (CMotionList *)(pCVar2->state_names[9] + 6);
-    } while (iVar3 < this_ptr->motion_count);
+      iVar2 = iVar2 + 1;
+      pCVar1 = (CMotionList *)(pCVar1->state_names[9] + 6);
+    } while (iVar2 < this_ptr->motion_count);
   }
   this_ptr->state_count = 0;
   this_ptr->motion_count = 0;

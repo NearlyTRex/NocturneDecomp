@@ -13,10 +13,10 @@ Current type breakdown:
   undefined8                     20
   undefined2                     4
 
-DAT_ globals with type hints: 1411 / 3587
+DAT_ globals with type hints: 1412 / 3587
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1157)
+HIGH CONFIDENCE INFERENCES (1158)
 --------------------------------------------------------------------------------
   DAT_005d27fd                    addr=005d27fd    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005d2801 (TerminatedCString) at offset -4
@@ -1207,6 +1207,8 @@ HIGH CONFIDENCE INFERENCES (1157)
   DAT_00713a90                    addr=00713a90    current=undefined4      likely=float           refs=2
   DAT_00713a98                    addr=00713a98    current=undefined4      likely=int             refs=11
   DAT_00713afc                    addr=00713afc    current=undefined4      likely=int             refs=4
+  DAT_007c3034                    addr=007c3034    current=undefined4      likely=char *          refs=18
+    nearby: g_CDemonActorClassInfo.name_hash (undefined4) at offset +4
   DAT_007c3048                    addr=007c3048    current=undefined4      likely=int             refs=5
     nearby: g_CDemonActorClassInfo.name_hash (undefined4) at offset +24
   DAT_007c34dc                    addr=007c34dc    current=undefined4      likely=float           refs=2
@@ -2194,7 +2196,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (2176)
+NO TYPE HINTS (2175)
 --------------------------------------------------------------------------------
   DAT_005d82cf                    addr=005d82cf    type=undefined1      refs=1  nearby: s_chase_wav_2_005d82d3 at -4
   DAT_005d82d0                    addr=005d82d0    type=undefined1      refs=1  nearby: s_chase_wav_2_005d82d3 at -3
@@ -2682,7 +2684,6 @@ NO TYPE HINTS (2176)
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_007c1070                    addr=007c1070    type=undefined4      refs=2
   DAT_007c2ff4                    addr=007c2ff4    type=undefined4      refs=3  nearby: g_CDemonActorClassInfo at -4
-  DAT_007c3034                    addr=007c3034    type=undefined4      refs=18  nearby: g_CDemonActorClassInfo.name_hash at +4
   DAT_007c3038                    addr=007c3038    type=undefined4      refs=27  nearby: g_CDemonActorClassInfo.name_hash at +8
   DAT_007c303c                    addr=007c303c    type=undefined4      refs=4  nearby: g_CDemonActorClassInfo.name_hash at +12
   DAT_007c3040                    addr=007c3040    type=undefined4      refs=2  nearby: g_CDemonActorClassInfo.name_hash at +16
@@ -4413,10 +4414,10 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01c51cac                    addr=01c51cac    refs=30    type=undefined4    
   DAT_01d1bca0                    addr=01d1bca0    refs=29    type=undefined4      nearby: g_CKeyActorClassInfo.name_hash(+4)
   DAT_01c4480c                    addr=01c4480c    refs=29    type=undefined4    
-  DAT_01c4353c                    addr=01c4353c    refs=27    type=undefined4    
-  DAT_01c4effc                    addr=01c4effc    refs=27    type=undefined4      likely=float
   DAT_01c43530                    addr=01c43530    refs=27    type=undefined4      likely=float
   DAT_007c3038                    addr=007c3038    refs=27    type=undefined4      nearby: g_CDemonActorClassInfo.name_hash(+8)
+  DAT_01c4353c                    addr=01c4353c    refs=27    type=undefined4    
+  DAT_01c4effc                    addr=01c4effc    refs=27    type=undefined4      likely=float
   DAT_01c43540                    addr=01c43540    refs=25    type=undefined4    
   DAT_01c4eff8                    addr=01c4eff8    refs=25    type=undefined4      likely=float
   DAT_01c3f544                    addr=01c3f544    refs=25    type=undefined4      nearby: g_CElephantGunClassInfo.name_hash(-228)
@@ -4435,11 +4436,11 @@ They appear only as inline constant values.
 
   DAT_0078a123                    value=0x78A123        refs=5
   DAT_006225f0                    value=0x6225F0        refs=5
-  DAT_007c7bdc                    value=0x7C7BDC        refs=4
   DAT_007c6180                    value=0x7C6180        refs=4
   DAT_007c9c30                    value=0x7C9C30        refs=4
   DAT_00600000                    value=0x600000        refs=4
   DAT_00713a84                    value=0x713A84        refs=4
+  DAT_007c7bdc                    value=0x7C7BDC        refs=4
   DAT_007c61c4                    value=0x7C61C4        refs=3
   DAT_006122c0                    value=0x6122C0        refs=3
   DAT_006081e0                    value=0x6081E0        refs=3

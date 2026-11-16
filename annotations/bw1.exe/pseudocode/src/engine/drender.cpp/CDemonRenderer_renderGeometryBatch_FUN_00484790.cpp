@@ -29,7 +29,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790(
   }
   if (this_ptr->shadow_pass_active == 0) {
     if (render_mode == 0xc0) {
-      _DAT_01c4f02c = FUN_00486de0;
+      _DAT_01c4f02c = core_dstrendr_cpp_renderDepthOnlyReversed_FUN_00486de0;
     }
     else if (DAT_0061b4a0 == 0x20) {
       _DAT_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;

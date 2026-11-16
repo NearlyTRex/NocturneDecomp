@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5974
+Functions with parameter estimates: 5975
 Functions with no callers: 2843
-Parameter mismatches detected: 300
-Signature accuracy rate: 90.4%
+Parameter mismatches detected: 294
+Signature accuracy rate: 90.6%
 
 Mismatches by confidence:
-  High confidence:   16 (multiple call sites agree)
-  Medium confidence: 64 (some agreement)
-  Low confidence:    220 (limited data)
+  High confidence:   15 (multiple call sites agree)
+  Medium confidence: 65 (some agreement)
+  Low confidence:    214 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -116,16 +116,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_memory.c___vec_delete_FUN_ at 005b7fc2: 0 reg [], 3 stack (12 bytes, via add_esp)
       core_fldnotes.cpp_CAlphaBitmap at 004a66fc: 0 reg [], 2 stack (8 bytes, via push_count)
       core_actor.cpp_CVector3f_arrdt at 0040d40c: 0 reg [], 2 stack (8 bytes, via push_count)
-
-  crt_unknown.c_FUN_005b7fdc
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 50, Confidence: high
-    File: crt/unknown.c
-    Signature: void crt_unknown_c_FUN_005b7fdc(int param_1)
-    Sample call sites:
-      shape_edittool.cpp_CPickList_d at 00482137: 0 reg [], 1 stack (4 bytes, via add_esp)
-      shape_edittool.cpp_CStrList_dt at 00480d83: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_fldnotes.cpp_SNotesSectio at 004a35cb: 0 reg [], 1 stack (4 bytes, via add_esp)
 
   crt_unknown.c_FUN_005bbf9c
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
@@ -241,13 +231,13 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   core_actor.cpp_crc32ProcessBuffer_FUN_0040d260     declared:3 est:2 (-1) [2 calls]
 
-  ... and 14 more
+  ... and 15 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  220 functions with low-confidence mismatches
+  214 functions with low-confidence mismatches
   Sample:
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
     core_actor.cpp_checkNameHash_FUN_0040c870     declared:2 est:1 (-1)
@@ -264,10 +254,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 40
+Functions where declaration has MORE params than estimated: 41
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 260
+Functions where declaration has FEWER params than estimated: 253
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -276,14 +266,14 @@ Distribution of differences (estimated - declared):
   -4 params: 1 functions
   -3 params: 4 functions
   -2 params: 6 functions
-  -1 params: 27 functions
-  +1 params: 72 functions
-  +2 params: 63 functions
-  +3 params: 43 functions
+  -1 params: 28 functions
+  +1 params: 70 functions
+  +2 params: 62 functions
+  +3 params: 41 functions
   +4 params: 33 functions
-  +5 params: 23 functions
+  +5 params: 22 functions
   +6 params: 14 functions
   +7 params: 7 functions
-  +8 params: 3 functions
+  +8 params: 2 functions
   +9 params: 1 functions
   +10 params: 1 functions

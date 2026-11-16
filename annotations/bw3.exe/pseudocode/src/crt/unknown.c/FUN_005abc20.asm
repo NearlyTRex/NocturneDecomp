@@ -8,7 +8,7 @@
 ;   undefined4 DAT_00607bdc
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     JZ 0x005abc3b                       ; 005abc28
         ;   XREF to: 005abc3b (CONDITIONAL_JUMP)  ; LAB_005abc3b
     PUSH EDX                            ; 005abc2a
-    CALL crt_unknown.c_FUN_005a3770     ; 005abc2b
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005abc2b
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     XOR ECX,ECX                         ; 005abc30
     ADD ESP,0x4                         ; 005abc32
     MOV dword ptr [0x00607bdc],ECX      ; 005abc35 | DAT_00607bdc

@@ -11,7 +11,7 @@ CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_005baae0(void)
 {
   CZombie *pCVar1;
   
-  pCVar1 = (CZombie *)operator_new(0xc358);
+  pCVar1 = operator_new(0xc358);
   if (pCVar1 == (CZombie *)0x0) {
     return (CZombie *)0x0;
   }

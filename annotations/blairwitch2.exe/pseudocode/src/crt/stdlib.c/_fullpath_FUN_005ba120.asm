@@ -22,7 +22,7 @@
 ;   crt_errno.c_setErrno_FUN_005be180
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_string.c__stricmp_FUN_005b8130
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;   crt_unknown.c_FUN_005c036c
 ;   crt_unknown.c_FUN_005c0f10
 ;   GetFullPathNameA
@@ -93,8 +93,8 @@ section .text
     JNC 0x005ba1ad                      ; 005ba18e
         ;   XREF to: 005ba1ad (CONDITIONAL_JUMP)  ; LAB_005ba1ad
     PUSH EBP                            ; 005ba190
-    CALL crt_unknown.c_FUN_005b86a0     ; 005ba191
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 005ba191
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 005ba196
     PUSH 0xe                            ; 005ba199
     CALL crt_errno.c_setErrno_FUN_005be180 ; 005ba19b

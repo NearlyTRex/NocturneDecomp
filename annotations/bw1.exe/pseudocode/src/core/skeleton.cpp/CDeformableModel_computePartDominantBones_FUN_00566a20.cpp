@@ -89,7 +89,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
     core_skeleton_cpp_CDeformableModel_captureTextures_FUN_00563bb0(this_ptr);
     pCVar5 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40(this_ptr);
     local_28 = pCVar5->bone_count;
-    pCVar6 = (CDeformableModelInstance *)operator_new(0x23a4);
+    pCVar6 = operator_new(0x23a4);
     local_24 = (CDeformableModelInstance *)0x0;
     if (pCVar6 != (CDeformableModelInstance *)0x0) {
       local_24 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00567370(pCVar6);

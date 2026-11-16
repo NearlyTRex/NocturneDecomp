@@ -10,20 +10,20 @@ CBurncross * __cdecl core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *
 
 {
   CFlame *pCVar1;
-  CBurncross *pCVar2;
-  void *ptr;
+  CBurncross *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CBurncrossTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CBurncrossTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_burncrss_cpp_CFlame_arrdtor8_FUN_00425490(this_ptr->flames,0);
-  pCVar2 = (CBurncross *)
-           core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)(pCVar1[-3].off_event + 0x28),1);
+  ptr = (CBurncross *)
+        core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)(pCVar1[-3].off_event + 0x28),1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_005a30c4(pCVar2);
-  return pCVar2;
+  debugFreeChecked(ptr);
+  return ptr;
 }

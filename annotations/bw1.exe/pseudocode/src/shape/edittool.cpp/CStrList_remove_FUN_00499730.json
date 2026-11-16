@@ -50,7 +50,7 @@
     {
       "addr": "005c09f0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c09f0"
+      "name": "crt_unknown.c_debugFree_FUN_005c09f0"
     }
   ],
   "globals": [
@@ -179,13 +179,13 @@
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(int *)((int)this_ptr",
+      "match": "(void **)((int)this_ptr",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)this_ptr->data_array + iVar2);",
+      "text": "ptr = *(void **)((int)this_ptr->data_array + iVar1);",
       "type": "pointer_cast"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((iVar2 - start_index) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride ((iVar1 - start_index) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 27,
       "match": "memmove",
       "severity": "moderate",

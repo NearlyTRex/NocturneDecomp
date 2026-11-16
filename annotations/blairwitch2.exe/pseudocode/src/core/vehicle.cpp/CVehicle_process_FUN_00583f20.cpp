@@ -268,12 +268,12 @@ joined_r0x005847f3:
     EVar12 = (*(((pCVar8->base).vtable._uc)->_uc).getDeathState)(pCVar8);
     goto joined_r0x005847f3;
   }
-  this_ptr_00 = (CMobster *)operator_new(0x10bd0);
+  this_ptr_00 = operator_new(0x10bd0);
   this_ptr_01 = (CMobster *)0x0;
   if (this_ptr_00 != (CMobster *)0x0) {
     this_ptr_01 = core_mobster_cpp_CMobster_ctor_FUN_004fd810(this_ptr_00);
   }
-  this_ptr_02 = (CTommyGun *)operator_new(0x6e0);
+  this_ptr_02 = operator_new(0x6e0);
   actor = (CTommyGun *)0x0;
   if (this_ptr_02 != (CTommyGun *)0x0) {
     actor = core_tommygun_cpp_CTommyGun_ctor_FUN_00575760(this_ptr_02);

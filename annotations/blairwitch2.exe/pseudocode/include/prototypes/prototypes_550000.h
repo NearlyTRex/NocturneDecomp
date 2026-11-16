@@ -20,6 +20,7 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWavInDevice.h"
 #include "types/classes/CWavOutDevice.h"
+#include "types/structs/SHardwareEdge.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -278,7 +279,7 @@ void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_0055d523(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0055d5be(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_0055d6d7(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
-undefined8 FUN_0055d6dd(void);
+void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_0055d6dd(int scanline_y,SHardwareEdge *right,SHardwareEdge *left);
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_transformPoint_FUN_0055d9ec(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_0055dcf0(void);

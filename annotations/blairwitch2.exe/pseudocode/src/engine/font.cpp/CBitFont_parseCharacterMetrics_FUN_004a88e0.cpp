@@ -32,7 +32,7 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004a88e0(CBitFon
   int local_18;
   byte *local_14;
   
-  local_40 = (int *)operator_new_array(bitmap_height * 4);
+  local_40 = operator_new_array(bitmap_height * 4);
   if (local_40 == (int *)0x0) {
     _DAT_01d046a0 = "..\\engine\\font.cpp";
     _DAT_01d046a4 = 0x2c6;
@@ -153,6 +153,6 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004a88e0(CBitFon
     } while (first_char < iVar3);
   }
   this_ptr->current_line_height = this_ptr->max_char_height;
-  FUN_005b7fce(local_40);
+  free(local_40);
   return;
 }

@@ -6355,14 +6355,32 @@
       "00515ac0",
       "00565c40"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":468,
-    "method":"FUN_0043b330",
-    "name":"engine_clipper.c_FUN_0043b330",
+    "method":"clipPolygonToViewFrustumAdvanced",
+    "name":"engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043b330",
+    "params":[
+      {
+        "name":"vertex_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vertex_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -7176,6 +7194,58 @@
     "variadic":false
   },
   {
+    "addr":"0044eeb0",
+    "calls":[
+      "005632a3"
+    ],
+    "conv":"__cdecl",
+    "instructions":34,
+    "method":"transformAndStoreVertex",
+    "name":"core_dcamera.cpp_transformAndStoreVertex_FUN_0044eeb0",
+    "params":[
+      {
+        "name":"vertex_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcamera.cpp",
+    "variadic":false
+  },
+  {
     "addr":"004504b0",
     "calls":[
       "00448980",
@@ -7292,6 +7362,34 @@
         "type":{
           "kind":"builtin",
           "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcube.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"004518b0",
+    "calls":[
+      "004515b0"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonAgainstMinY",
+    "name":"core_dcube.cpp_clipPolygonAgainstMinY_FUN_004518b0",
+    "params":[
+      {
+        "name":"min_y_plane",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }
@@ -25462,14 +25560,25 @@
   },
   {
     "addr":"005829b0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":131,
-    "method":"FUN_005829b0",
-    "name":"wincore_winrun.cpp_FUN_005829b0",
+    "method":"positionMovieWindow",
+    "name":"wincore_winrun.cpp_positionMovieWindow_FUN_005829b0",
+    "params":[
+      {
+        "name":"parent_window",
+        "type":{
+          "header":"winuser",
+          "kind":"system",
+          "name":"HWND",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/winrun.cpp",
@@ -25829,6 +25938,24 @@
       "ptr":1
     },
     "tu":"core/yow.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00587ab0",
+    "calls":[
+      "00587580"
+    ],
+    "conv":"__cdecl",
+    "instructions":120,
+    "method":"clipPolygonStage4",
+    "name":"core_xform.cpp_clipPolygonStage4_FUN_00587ab0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/xform.cpp",
     "variadic":false
   },
   {
@@ -27029,10 +27156,10 @@
     "calls":[
       "005acbc0"
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "instructions":5,
-    "method":"FUN_005a54b0",
-    "name":"crt_unknown.c_FUN_005a54b0",
+    "method":"remove",
+    "name":"crt_stdio.c_remove_FUN_005a54b0",
     "params":[
       {
         "name":"filename",
@@ -27049,7 +27176,7 @@
       "name":"int",
       "ptr":0
     },
-    "tu":"crt/unknown.c",
+    "tu":"crt/stdio.c",
     "variadic":false
   },
   {
@@ -27063,8 +27190,8 @@
     ],
     "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_005a55b0",
-    "name":"crt_unknown.c_FUN_005a55b0",
+    "method":"chdir",
+    "name":"crt_io.c_chdir_FUN_005a55b0",
     "params":[
       {
         "name":"path",
@@ -27081,7 +27208,7 @@
       "name":"int",
       "ptr":0
     },
-    "tu":"crt/unknown.c",
+    "tu":"crt/io.c",
     "variadic":false
   },
   {

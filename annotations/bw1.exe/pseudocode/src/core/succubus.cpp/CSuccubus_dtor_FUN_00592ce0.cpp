@@ -13,12 +13,12 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *thi
   CClothList *pCVar2;
   CDeformableModelInstance *pCVar3;
   CFlame *pCVar4;
-  CSuccubus *pCVar5;
-  void *ptr;
+  CSuccubus *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CSuccubusTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CSuccubusTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0(&this_ptr->morph,0);
@@ -31,12 +31,12 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *thi
   pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar4[-4].base.vtable,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[0] + 0x10),0);
-  pCVar5 = (CSuccubus *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730
-                     ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
+  ptr = (CSuccubus *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                  ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
-    return pCVar5;
+    return ptr;
   }
-  FUN_005c0344(pCVar5);
-  return pCVar5;
+  debugFreeChecked(ptr);
+  return ptr;
 }

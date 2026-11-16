@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60 at 00538a83
-;   cockpit_pkbmpset.cpp_FUN_00538f90 at 00538fb3
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00538f90 at 00538fb3
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70

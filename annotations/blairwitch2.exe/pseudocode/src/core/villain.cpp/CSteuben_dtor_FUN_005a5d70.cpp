@@ -13,12 +13,12 @@ CSteuben * __cdecl core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_pt
   SFollowFormation *pSVar2;
   CClothList *pCVar3;
   CDeformableModelInstance *pCVar4;
-  CDemonActor *pCVar5;
-  void *ptr;
+  CDemonActor *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CSteubenTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CSteubenTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_armour_cpp_CFlame_arrdtor50_FUN_0040f2b0((this_ptr->base).base.base.base.flames,0);
@@ -28,11 +28,11 @@ CSteuben * __cdecl core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_pt
                      ((CClothList *)&pSVar2[-1].slots[2].offset.y,0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);
-  pCVar5 = core_actor_cpp_CDemonActor_dtor_FUN_00408930
-                     ((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
+  ptr = core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                  ((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);
   if ((flags & 2) == 0) {
-    return (CSteuben *)pCVar5;
+    return (CSteuben *)ptr;
   }
-  FUN_005b7fdc(pCVar5);
-  return (CSteuben *)pCVar5;
+  debugFreeChecked(ptr);
+  return (CSteuben *)ptr;
 }

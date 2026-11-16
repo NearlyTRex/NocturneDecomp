@@ -11,7 +11,7 @@ CStairs * __cdecl core_stairs_cpp_factoryFuncStairs_FUN_00584910(void)
 {
   CStairs *pCVar1;
   
-  pCVar1 = (CStairs *)operator_new(0xa34);
+  pCVar1 = operator_new(0xa34);
   if (pCVar1 == (CStairs *)0x0) {
     return (CStairs *)0x0;
   }

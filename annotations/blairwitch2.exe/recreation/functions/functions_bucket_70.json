@@ -5358,6 +5358,24 @@
     "variadic":false
   },
   {
+    "addr":"00431070",
+    "calls":[
+      "00430a50"
+    ],
+    "conv":"__cdecl",
+    "instructions":165,
+    "method":"clipPolygonFarPlane",
+    "name":"engine_clipper.c_clipPolygonFarPlane_FUN_00431070",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"engine/clipper.c",
+    "variadic":false
+  },
+  {
     "addr":"00431270",
     "conv":"__cdecl",
     "instructions":47,
@@ -8791,14 +8809,25 @@
     "calls":[
       "00469590"
     ],
-    "conv":"unknown",
+    "cls":"CDemonRenderer",
+    "conv":"__cdecl",
     "instructions":69,
-    "method":"FUN_0046a170",
-    "name":"engine_drender.cpp_FUN_0046a170",
-    "receiver":false,
+    "method":"renderAlphaBlendedFace",
+    "name":"engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0046a170",
+    "params":[
+      {
+        "name":"face",
+        "type":{
+          "kind":"struct",
+          "name":"SInputFace",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/drender.cpp",
@@ -9403,6 +9432,47 @@
       "ptr":0
     },
     "tu":"core/drone.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"0046e8f0",
+    "conv":"__edi_esi_ebx",
+    "instructions":29,
+    "method":"renderDepthOnlyReversed",
+    "name":"core_dstrendr.cpp_renderDepthOnlyReversed_FUN_0046e8f0",
+    "params":[
+      {
+        "name":"left_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dstrendr.cpp",
     "variadic":false
   },
   {
@@ -18259,6 +18329,105 @@
     "params":[
       {
         "name":"bitmap_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00517cf0",
+    "callers":[
+      "00517d40"
+    ],
+    "calls":[
+      "00517400",
+      "005175e0",
+      "00517640",
+      "00517f60"
+    ],
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
+    "instructions":33,
+    "method":"loadPBGFileComplete",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00517cf0",
+    "params":[
+      {
+        "name":"pbg_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frames_per_bitmap",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"skip_data_load",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00517d70",
+    "calls":[
+      "00516d70",
+      "00517a60",
+      "00517d40",
+      "005b8130"
+    ],
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
+    "instructions":96,
+    "method":"loadByFilenameAndIndex",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_00517d70",
+    "params":[
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bitmap_index",
         "type":{
           "kind":"builtin",
           "name":"int",

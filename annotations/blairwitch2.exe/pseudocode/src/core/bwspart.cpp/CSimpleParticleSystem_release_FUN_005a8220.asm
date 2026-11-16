@@ -18,7 +18,7 @@
 ;   core_weaver.cpp_CRobin_dtor_FUN_005a5f50 at 005a5f7d
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     RET                                 ; 005a8239
     PUSH EDX                            ; 005a823a
         ;   Label: LAB_005a823a
-    CALL crt_unknown.c_FUN_005b86a0     ; 005a823b
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 005a823b
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 005a8240
     RET                                 ; 005a8243
 

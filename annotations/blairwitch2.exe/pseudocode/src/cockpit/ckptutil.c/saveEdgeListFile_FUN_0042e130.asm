@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
-;   crt_unknown.c_FUN_005b8010
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_0042e196
     PUSH 0x5cd683                       ; 0042e197
     PUSH EDI                            ; 0042e19c
-    CALL crt_unknown.c_FUN_005b8010     ; 0042e19d
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0042e19d
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0042e1a2
     TEST EBX,EBX                        ; 0042e1a5
     JLE 0x0042e27e                      ; 0042e1a7
@@ -84,8 +84,8 @@ section .text
     PUSH 0x5cd687                       ; 0042e1ca
     PUSH EDI                            ; 0042e1cf
     XOR EBX,EBX                         ; 0042e1d0
-    CALL crt_unknown.c_FUN_005b8010     ; 0042e1d2
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0042e1d2
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0042e1d7
     XOR ESI,ESI                         ; 0042e1da
     MOV EBP,dword ptr [ESP + 0x58]      ; 0042e1dc
@@ -118,8 +118,8 @@ section .text
     PUSH EDI                            ; 0042e225
     ADD ESI,0x8                         ; 0042e226
     INC EBX                             ; 0042e229
-    CALL crt_unknown.c_FUN_005b8010     ; 0042e22a
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0042e22a
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0x1c                        ; 0042e22f
     JMP 0x0042e1e0                      ; 0042e232
         ;   XREF to: 0042e1e0 (UNCONDITIONAL_JUMP)  ; LAB_0042e1e0

@@ -15,7 +15,7 @@ section .text
     PUSH 0x7d8                          ; 005ac770
         ;   Label: core_hpbox.cpp_factoryFuncParticleBox_FUN_005ac770
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005ac775
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005ac77a
     TEST EAX,EAX                        ; 005ac77d
     JNZ 0x005ac782                      ; 005ac77f

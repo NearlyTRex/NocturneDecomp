@@ -11,7 +11,7 @@ CSpiritShadow * __cdecl core_shadow_cpp_factoryFuncSpiritShadow_FUN_00545f00(voi
 {
   CSpiritShadow *pCVar1;
   
-  pCVar1 = (CSpiritShadow *)operator_new(0xd0e8);
+  pCVar1 = operator_new(0xd0e8);
   if (pCVar1 == (CSpiritShadow *)0x0) {
     return (CSpiritShadow *)0x0;
   }

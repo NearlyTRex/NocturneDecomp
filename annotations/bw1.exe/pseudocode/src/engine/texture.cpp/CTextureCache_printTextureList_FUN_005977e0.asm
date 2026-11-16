@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   dimension
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c03c0
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5f7c1b                       ; 0059781e
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00597823
     PUSH EBX                            ; 00597827
-    CALL crt_unknown.c_FUN_005c03c0     ; 00597828
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 00597828
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0059782d
     MOV EDI,dword ptr [ESI + 0x18004]   ; 00597830
     XOR EBX,EBX                         ; 00597836
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5f7c2e                       ; 00597869
     MOV EAX,dword ptr [ESP + 0x24]      ; 0059786e
     PUSH EAX                            ; 00597872
-    CALL crt_unknown.c_FUN_005c03c0     ; 00597873
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 00597873
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00597878
     JMP 0x0059784c                      ; 0059787b
         ;   XREF to: 0059784c (UNCONDITIONAL_JUMP)  ; LAB_0059784c
@@ -144,8 +144,8 @@ section .text
     PUSH 0x5f7c32                       ; 005978d7
     MOV EBP,dword ptr [ESP + 0x24]      ; 005978dc
     PUSH EBP                            ; 005978e0
-    CALL crt_unknown.c_FUN_005c03c0     ; 005978e1
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 005978e1
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005978e6
     ADD ESP,0x4                         ; 005978e9
     POP EBP                             ; 005978ec

@@ -69,8 +69,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_00473670(CDem
         puVar6 = puVar6 + (uint)bVar11 * -2 + 1;
         puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
       }
-      FUN_005a30b6((void *)puVar7[1]);
-      FUN_005a30b6((void *)puVar7[0x15]);
+      free((void *)puVar7[1]);
+      free((void *)puVar7[0x15]);
       puVar7[1] = (uint)(this_ptr->triangle_list + iVar2);
       puVar6 = this_ptr->triangle_flags + iVar2;
       iVar2 = iVar2 + *puVar7;

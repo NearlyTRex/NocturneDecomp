@@ -15,7 +15,7 @@ section .text
     PUSH 0x58c                          ; 004924b0
         ;   Label: core_dynamite.cpp_factoryFuncDynamite_FUN_004924b0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004924b5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004924ba
     TEST EAX,EAX                        ; 004924bd
     JNZ 0x004924c2                      ; 004924bf

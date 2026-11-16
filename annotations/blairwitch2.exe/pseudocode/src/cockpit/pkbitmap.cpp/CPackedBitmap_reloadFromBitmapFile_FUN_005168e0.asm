@@ -21,7 +21,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00516a60
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_00516270
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
         ;   XREF to: 00516a60 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00516a60(CPackedBitmap * this_ptr, uchar * bitmap_data, int width, int height, ...)
     ADD ESP,0x18                        ; 0051692b
     PUSH ESI                            ; 0051692e
-    CALL crt_unknown.c_FUN_005b86a0     ; 0051692f
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 0051692f
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 00516934
     CMP dword ptr [ESP + 0x28],0x0      ; 00516937
     JNZ 0x00516943                      ; 0051693c

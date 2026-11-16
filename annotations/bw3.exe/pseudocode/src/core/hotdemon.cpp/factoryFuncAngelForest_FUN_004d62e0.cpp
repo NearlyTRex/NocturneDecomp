@@ -11,7 +11,7 @@ CAngelForest * __cdecl core_hotdemon_cpp_factoryFuncAngelForest_FUN_004d62e0(voi
 {
   CAngelForest *pCVar1;
   
-  pCVar1 = (CAngelForest *)operator_new(0xd088);
+  pCVar1 = operator_new(0xd088);
   if (pCVar1 == (CAngelForest *)0x0) {
     return (CAngelForest *)0x0;
   }

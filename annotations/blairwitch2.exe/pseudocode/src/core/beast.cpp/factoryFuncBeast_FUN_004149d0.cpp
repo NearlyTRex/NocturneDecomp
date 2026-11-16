@@ -11,7 +11,7 @@ CBeast * __cdecl core_beast_cpp_factoryFuncBeast_FUN_004149d0(void)
 {
   CBeast *pCVar1;
   
-  pCVar1 = (CBeast *)operator_new(0x10af8);
+  pCVar1 = operator_new(0x10af8);
   if (pCVar1 == (CBeast *)0x0) {
     return (CBeast *)0x0;
   }

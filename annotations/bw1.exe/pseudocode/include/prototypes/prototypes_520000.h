@@ -156,8 +156,8 @@ void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_005
 void __cdecl core_motion_cpp_CMotionController_load_FUN_00525380(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_00525420(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_CMotionController_render_FUN_005254b0(CMotionController *this_ptr,CDemonActor *actor);
-int FUN_00525690(int *param_1);
-undefined4 FUN_005257d0(int param_1,int param_2);
+int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_00525690(SMpegFrame *frame);
+void * __cdecl sound_mp3_cpp_getMpegLayer2AllocationTable_FUN_005257d0(int layer,int mode_extension);
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_00525840(SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_00525ab0(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_00525be0(CFileBitStream *this_ptr);

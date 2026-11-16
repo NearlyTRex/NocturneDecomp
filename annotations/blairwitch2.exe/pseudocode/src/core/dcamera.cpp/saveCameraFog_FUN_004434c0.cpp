@@ -9,14 +9,11 @@
 void __cdecl core_dcamera_cpp_saveCameraFog_FUN_004434c0(SFog *fog,_FILE *file_handle)
 
 {
-  FUN_005b8010(file_handle,0x5ce77d);
-  FUN_005b8010();
-  FUN_005b8010(file_handle,0x5ce797);
-  FUN_005b8010
-            (file_handle,0x5ce79f,(double)(fog->scroll).x,(double)(fog->scroll).y,
-             (double)(fog->scroll).z);
-  FUN_005b8010
-            (file_handle,0x5ce7a9,(double)fog->height_threshold,(double)fog->density_multiplier);
-  FUN_005b8010(file_handle,0x5ce7b0,(double)fog->temperature);
+  _fprintf(file_handle,(char *)0x5ce77d);
+  _fprintf(file_handle,(char *)0x5ce78d);
+  _fprintf(file_handle,(char *)0x5ce797);
+  _fprintf(file_handle,(char *)0x5ce79f);
+  _fprintf(file_handle,(char *)0x5ce7a9);
+  _fprintf(file_handle,(char *)0x5ce7b0);
   return;
 }

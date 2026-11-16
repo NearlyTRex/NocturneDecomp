@@ -16,7 +16,7 @@ CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004ced40(CGore *this_ptr,CVe
   CFlies *this_ptr_00;
   CFlies *this_ptr_01;
   
-  this_ptr_00 = (CFlies *)operator_new(0x2a20);
+  this_ptr_00 = operator_new(0x2a20);
   this_ptr_01 = (CFlies *)0x0;
   if (this_ptr_00 != (CFlies *)0x0) {
     this_ptr_01 = core_flies_cpp_CFlies_ctor_FUN_004ad7b0(this_ptr_00);

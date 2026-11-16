@@ -17,6 +17,10 @@ int __cdecl ::strcmp(char *str1,char *str2);
 // Address: 005a3f90
 int __cdecl ::strnicmp(char *str1,char *str2,int count);
 
+// Original: crt_string.c__strlwr_FUN_005a3ff0
+// Address: 005a3ff0
+char * __cdecl ::strlwr(char *str);
+
 // Original: crt_string.c_strstr_FUN_005a4010
 // Address: 005a4010
 char * __cdecl strstr(char *haystack_str,char *needle_str);

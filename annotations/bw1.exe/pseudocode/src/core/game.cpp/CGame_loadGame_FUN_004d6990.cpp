@@ -47,7 +47,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004d6990(CGame *this_ptr,char *sav
   int local_14;
   
   bVar12 = 0;
-  FUN_005c25c0("save\\$$SAVE$$.TMP");
+  _remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
   splitpath(&DAT_01cd05c0,(char *)0x0,(char *)0x0,(char *)0x0,local_368);
   iVar2 = _stricmp(local_368,&DAT_005e2faf);
@@ -94,7 +94,7 @@ LAB_004d6e32:
         _DAT_01c3eb50 = local_30;
         core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(g_CFieldNotesPtr);
         this_ptr->is_loading = 0;
-        FUN_005c25c0("save\\$$SAVE$$.TMP");
+        _remove("save\\$$SAVE$$.TMP");
         return;
       }
     }

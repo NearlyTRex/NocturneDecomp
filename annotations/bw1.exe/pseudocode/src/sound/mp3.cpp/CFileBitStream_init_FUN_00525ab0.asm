@@ -19,7 +19,7 @@
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fseek_FUN_005c170c
 ;   crt_stdio.c_ftell_FUN_005c2e90
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     JZ 0x00525adb                       ; 00525ac9
         ;   XREF to: 00525adb (CONDITIONAL_JUMP)  ; LAB_00525adb
     PUSH EDI                            ; 00525acb
-    CALL crt_unknown.c_FUN_005c09f0     ; 00525acc
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 00525acc
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 00525ad1
     MOV dword ptr [ESI + 0x4],0x0       ; 00525ad4
     MOV EAX,dword ptr [ESP + 0x18]      ; 00525adb

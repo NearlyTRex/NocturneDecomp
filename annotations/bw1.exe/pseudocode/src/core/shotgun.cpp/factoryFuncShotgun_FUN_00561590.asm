@@ -15,7 +15,7 @@ section .text
     PUSH 0x584                          ; 00561590
         ;   Label: core_shotgun.cpp_factoryFuncShotgun_FUN_00561590
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00561595
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0056159a
     TEST EAX,EAX                        ; 0056159d
     JNZ 0x005615a2                      ; 0056159f

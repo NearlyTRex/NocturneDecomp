@@ -14,16 +14,15 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040adb0(CDemonActor *this_ptr,
   uint uVar1;
   uint uVar2;
   uint uVar3;
-  char *pcVar4;
   
   core_actor_cpp_syncActorTypeIDs_FUN_0040c630();
-  pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(this_ptr);
+  core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(this_ptr);
   if (this_ptr->actor_name[0] == '\0') {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 1999;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonActor::save - tried to save actor of class %s with no name");
   }
-  FUN_005c03c0(file_handle,"%s{ %s \"%s\"\n",&DAT_006106c0,pcVar4,this_ptr);
+  _fprintf(file_handle,"%s{ %s \"%s\"\n");
   uVar3 = DAT_007c303c;
   uVar2 = DAT_007c3038;
   uVar1 = DAT_007c3034;
@@ -33,7 +32,7 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040adb0(CDemonActor *this_ptr,
   core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(1);
   (*((this_ptr->vtable)._ub)->archive)(this_ptr);
   core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(-1);
-  FUN_005c03c0(file_handle,"%s} %s \"%s\"\n",&DAT_006106c0,pcVar4,this_ptr);
+  _fprintf(file_handle,"%s} %s \"%s\"\n");
   if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 0x7f1;

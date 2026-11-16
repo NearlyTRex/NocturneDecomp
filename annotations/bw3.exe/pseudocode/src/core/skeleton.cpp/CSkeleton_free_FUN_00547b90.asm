@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMotionList_free_FUN_004fb210
-;   crt_unknown.c_FUN_005a30b6
+;   crt_unknown.c_free_FUN_005a30b6
 ;
 ; *****************************************************************************
 
@@ -35,18 +35,18 @@ section .text
     MOV dword ptr [EBX + 0x1de78],0x0   ; 00547ba4
     PUSH ECX                            ; 00547bae
     MOV dword ptr [EBX + 0x1ec8c],0x0   ; 00547baf
-    CALL crt_unknown.c_FUN_005a30b6     ; 00547bb9
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00547bb9
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00547bbe
     MOV ESI,dword ptr [EBX + 0x1ec94]   ; 00547bc1
     PUSH ESI                            ; 00547bc7
-    CALL crt_unknown.c_FUN_005a30b6     ; 00547bc8
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00547bc8
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 00547bcd
     MOV EDI,dword ptr [EBX + 0x1ec98]   ; 00547bd0
     PUSH EDI                            ; 00547bd6
-    CALL crt_unknown.c_FUN_005a30b6     ; 00547bd7
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 00547bd7
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     MOV dword ptr [EBX + 0x1ec90],0x0   ; 00547bdc
     MOV dword ptr [EBX + 0x1ec94],0x0   ; 00547be6
     MOV dword ptr [EBX + 0x1ec98],0x0   ; 00547bf0

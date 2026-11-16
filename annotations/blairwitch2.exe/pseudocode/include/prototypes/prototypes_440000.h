@@ -49,7 +49,7 @@ int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_004407f0(int start_x,int s
 void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00440a50(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00440e90(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
-void FUN_004416b0(int param_1,float param_2,float param_3,float param_4);
+void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_004416b0(int vertex_index,float x,float y,float z);
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);
 int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00441cd0(CDemonCamera *this_ptr,CVector3f *position,float radius);
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00441e80(CDemonCamera *this_ptr,float intensity);
@@ -78,10 +78,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_00443aa0(
 int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_00443af0(CDemonCamera *this_ptr,CVector3i *corners);
 void __cdecl core_dcube_cpp_staticInit_FUN_00443d00(void);
 void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_00443db0(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d);
-void FUN_00443f50(float param_1);
-void FUN_004440b0(float param_1);
+void __cdecl core_dcube_cpp_clipPolygonAgainstMaxY_FUN_00443f50(float max_y_plane);
+void __cdecl core_dcube_cpp_clipPolygonAgainstMinY_FUN_004440b0(float min_y_plane);
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxX_FUN_00444220(float max_x_plane);
-void FUN_004444e0(float param_1);
+void __cdecl core_dcube_cpp_clipPolygonAgainstMinZ_FUN_004444e0(float min_z_plane);
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00444650(float max_z_plane);
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004447b0(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00444830(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);

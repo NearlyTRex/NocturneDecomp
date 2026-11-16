@@ -60,12 +60,12 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int h
   _DAT_02d0bd04 = height;
   if (DAT_0060b010 != (void *)0x0) {
     iStack_f8 = 0x579c72;
-    FUN_005a3770();
+    debugFree(DAT_0060b010);
     DAT_0060b010 = (void *)0x0;
   }
   if (_DAT_02d0bcf0 != (void *)0x0) {
     iStack_f8 = 0x579c8c;
-    FUN_005a3770();
+    debugFree(_DAT_02d0bcf0);
     DAT_0072ffac = 0;
   }
   iStack_f8 = 0x579cbf;

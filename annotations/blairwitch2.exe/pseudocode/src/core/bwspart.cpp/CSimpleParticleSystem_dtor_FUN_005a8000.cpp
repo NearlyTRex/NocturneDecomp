@@ -13,6 +13,6 @@ CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_dtor_FUN_
   if (this_ptr->standalone == 0) {
     return this_ptr;
   }
-  FUN_005b86a0(this_ptr->particles);
+  debugFree(this_ptr->particles);
   return this_ptr;
 }

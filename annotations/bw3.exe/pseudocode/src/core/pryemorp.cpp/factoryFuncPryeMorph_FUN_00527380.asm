@@ -15,7 +15,7 @@ section .text
     PUSH 0x21448                        ; 00527380
         ;   Label: core_pryemorp.cpp_factoryFuncPryeMorph_FUN_00527380
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00527385
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0052738a
     TEST EAX,EAX                        ; 0052738d
     JNZ 0x00527392                      ; 0052738f

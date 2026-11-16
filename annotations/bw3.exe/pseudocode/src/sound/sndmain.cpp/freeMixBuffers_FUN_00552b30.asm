@@ -17,7 +17,7 @@
 ;   undefined4 DAT_02cf32ec
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     JZ 0x00552b58                       ; 00552b45
         ;   XREF to: 00552b58 (CONDITIONAL_JUMP)  ; LAB_00552b58
     PUSH ESI                            ; 00552b47
-    CALL crt_unknown.c_FUN_005a3770     ; 00552b48
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00552b48
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     XOR EBP,EBP                         ; 00552b4d
     ADD ESP,0x4                         ; 00552b4f
     MOV dword ptr [0x02cf32ec],EBP      ; 00552b52 | DAT_02cf32ec
@@ -70,8 +70,8 @@ section .text
     RET                                 ; 00552ba2
     PUSH EDX                            ; 00552ba3
         ;   Label: LAB_00552ba3
-    CALL crt_unknown.c_FUN_005a3770     ; 00552ba4
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00552ba4
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     XOR EBX,EBX                         ; 00552ba9
     ADD ESP,0x4                         ; 00552bab
     MOV dword ptr [0x02cf32c8],EBX      ; 00552bae | DAT_02cf32c8
@@ -79,8 +79,8 @@ section .text
         ;   XREF to: 00552b3c (UNCONDITIONAL_JUMP)  ; LAB_00552b3c
     PUSH EAX                            ; 00552bb6
         ;   Label: LAB_00552bb6
-    CALL crt_unknown.c_FUN_005a3770     ; 00552bb7
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00552bb7
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     XOR ECX,ECX                         ; 00552bbc
     ADD ESP,0x4                         ; 00552bbe
     MOV dword ptr [0x02cf32a4],ECX      ; 00552bc1 | DAT_02cf32a4

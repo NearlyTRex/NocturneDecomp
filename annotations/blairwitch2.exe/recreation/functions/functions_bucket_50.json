@@ -408,6 +408,37 @@
     "variadic":false
   },
   {
+    "addr":"004055d0",
+    "calls":[
+      "00403970",
+      "00403a20",
+      "00431d90",
+      "004e9a60"
+    ],
+    "conv":"__cdecl",
+    "instructions":64,
+    "method":"renderPolygonTexturedNormalizedUVLit",
+    "name":"engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_004055d0",
+    "params":[
+      {
+        "name":"prim",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
+    },
+    "tu":"engine/3d.c",
+    "variadic":false
+  },
+  {
     "addr":"004057d0",
     "callers":[
       "00406f40"
@@ -4286,18 +4317,105 @@
     "variadic":false
   },
   {
+    "addr":"0042c450",
+    "callers":[
+      "00516750"
+    ],
+    "conv":"__cdecl",
+    "data_refs":[
+      "0042c41e"
+    ],
+    "instructions":2,
+    "method":"get16BitConversionFunction",
+    "name":"cockpit_ckptutil.c_get16BitConversionFunction_FUN_0042c450",
+    "receiver":false,
+    "ret":{
+      "kind":"funcdef",
+      "name":"ColorConversionFunc",
+      "ptr":1
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"0042d550",
     "calls":[
       "0042c430"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":49,
-    "method":"FUN_0042d550",
-    "name":"cockpit_ckptutil.c_FUN_0042d550",
+    "method":"copyBitmapRegion",
+    "name":"cockpit_ckptutil.c_copyBitmapRegion_FUN_0042d550",
+    "params":[
+      {
+        "name":"src_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src_stride",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"unused",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dest_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bytes_per_row",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"num_rows",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_x_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"src_y_offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -5529,6 +5647,52 @@
     "variadic":false
   },
   {
+    "addr":"0043e450",
+    "calls":[
+      "004495a0",
+      "005b7ff0"
+    ],
+    "cls":"CDemonCamera",
+    "conv":"__cdecl",
+    "instructions":195,
+    "method":"saveCameraTransform",
+    "name":"core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0043e450",
+    "params":[
+      {
+        "name":"new_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"rotation_matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"transform_matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcamera.cpp",
+    "variadic":false
+  },
+  {
     "addr":"0043ffd0",
     "conv":"__cdecl",
     "instructions":11,
@@ -5752,6 +5916,34 @@
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00443f50",
+    "calls":[
+      "00443db0"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonAgainstMaxY",
+    "name":"core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00443f50",
+    "params":[
+      {
+        "name":"max_y_plane",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcube.cpp",
     "variadic":false
   },
   {
@@ -16946,6 +17138,54 @@
     "variadic":false
   },
   {
+    "addr":"00516750",
+    "calls":[
+      "0042c420",
+      "0042c430",
+      "0042c450",
+      "004e4500"
+    ],
+    "cls":"CPackedBitmap",
+    "conv":"__cdecl",
+    "instructions":98,
+    "method":"copyNoClip",
+    "name":"cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_00516750",
+    "params":[
+      {
+        "name":"dest_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"uchar",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bits_per_pixel",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"row_stride",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbitmap.cpp",
+    "variadic":false
+  },
+  {
     "addr":"00518050",
     "calls":[
       "0040c450"
@@ -26137,15 +26377,33 @@
       "005b77c0",
       "005b8580"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":15,
     "method":"calloc",
     "name":"crt_memory.c_calloc_FUN_005b98d0",
+    "params":[
+      {
+        "name":"count",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"void",
+      "ptr":1
     },
     "tu":"crt/memory.c",
     "variadic":false

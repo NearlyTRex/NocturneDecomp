@@ -57,6 +57,10 @@ void __cdecl renderAlphaRow16(ushort *destPixels,uchar *srcIndices,uchar *srcAlp
 // Address: 00580127
 void __edi_esi_ebx renderScanline(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
 
+// Original: engine_special.cpp_renderScanlineSwapped_FUN_0058012d
+// Address: 0058012d
+void __cdecl renderScanlineSwapped(int scanline_y,SHardwareEdge *right,SHardwareEdge *left);
+
 // Original: engine_special.cpp_transformAndProjectPoint_FUN_00580173
 // Address: 00580173
 void __cdecl transformAndProjectPoint(SProjectedVertex *output,CVector3i *input);

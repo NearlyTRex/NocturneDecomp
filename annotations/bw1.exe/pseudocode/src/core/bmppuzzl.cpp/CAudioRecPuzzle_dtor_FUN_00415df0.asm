@@ -15,8 +15,8 @@
 ;   core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00415bc0
 ;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004188b0
 ;   crt_memory.c___vec_delete_FUN_005c030f
-;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
+;   crt_unknown.c_free_FUN_005c0336
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d0c0
 ;
 ; *****************************************************************************
@@ -63,16 +63,16 @@ section .text
         ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00415e46
     PUSH EAX                            ; 00415e49
-    CALL crt_unknown.c_FUN_005c0336     ; 00415e4a
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 00415e4a
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 00415e4f
     MOV EAX,EBX                         ; 00415e52
     POP EBX                             ; 00415e54
     RET                                 ; 00415e55
     PUSH EAX                            ; 00415e56
         ;   Label: LAB_00415e56
-    CALL crt_unknown.c_FUN_005c0344     ; 00415e57
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 00415e57
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 00415e5c
     MOV EAX,EBX                         ; 00415e5f
     POP EBX                             ; 00415e61

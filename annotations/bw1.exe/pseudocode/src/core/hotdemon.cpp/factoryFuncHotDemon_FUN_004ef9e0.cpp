@@ -11,7 +11,7 @@ CHotDemon * __cdecl core_hotdemon_cpp_factoryFuncHotDemon_FUN_004ef9e0(void)
 {
   CHotDemon *pCVar1;
   
-  pCVar1 = (CHotDemon *)operator_new(0xc29c);
+  pCVar1 = operator_new(0xc29c);
   if (pCVar1 == (CHotDemon *)0x0) {
     return (CHotDemon *)0x0;
   }

@@ -41,12 +41,12 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004c0fa0(CBitFont *thi
   this_ptr->accel_index_count = 0;
   this_ptr->accel_vertex_count = 0;
   if (this_ptr->accel_vertex_alloc != (void *)0x0) {
-    FUN_005c09f0(this_ptr->accel_vertex_alloc);
+    debugFree(this_ptr->accel_vertex_alloc);
     this_ptr->accel_vertex_alloc = (void *)0x0;
   }
   this_ptr->accel_vertices = (void *)0x0;
   if (this_ptr->accel_indices != (void *)0x0) {
-    FUN_005c09f0(this_ptr->accel_indices);
+    debugFree(this_ptr->accel_indices);
     this_ptr->accel_indices = (void *)0x0;
   }
   if (_DAT_01c50948 != 0) {

@@ -11,6 +11,6 @@ int __cdecl engine_dosio_cpp_deleteFile_FUN_00466220(char *filename)
 {
   int iVar1;
   
-  iVar1 = FUN_005a54b0(filename);
+  iVar1 = _remove(filename);
   return (uint)(iVar1 == 0);
 }

@@ -17,7 +17,7 @@ void __cdecl core_actor_cpp_archiveActor_FUN_0040b930(CDemonActor **actor_ptr,ch
     *actor_ptr = pCVar1;
     return;
   }
-  FUN_005a3140(DAT_007df9b4,&DAT_005b5afd,&DAT_005f0990);
+  _fprintf(DAT_007df9b4,&DAT_005b5afd);
   core_mission_cpp_CDemonMission_saveActor_FUN_004f68d0
             (0x01D81080,*actor_ptr,DAT_007df9b4,DAT_007df9bc,property_name);
   return;

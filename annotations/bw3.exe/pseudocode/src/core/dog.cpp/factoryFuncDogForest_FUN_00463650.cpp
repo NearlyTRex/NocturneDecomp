@@ -11,7 +11,7 @@ CDogForest * __cdecl core_dog_cpp_factoryFuncDogForest_FUN_00463650(void)
 {
   CDogForest *pCVar1;
   
-  pCVar1 = (CDogForest *)operator_new(0xd064);
+  pCVar1 = operator_new(0xd064);
   if (pCVar1 == (CDogForest *)0x0) {
     return (CDogForest *)0x0;
   }

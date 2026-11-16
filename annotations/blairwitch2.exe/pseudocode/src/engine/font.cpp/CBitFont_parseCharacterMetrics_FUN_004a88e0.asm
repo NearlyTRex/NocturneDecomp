@@ -40,7 +40,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
-;   crt_unknown.c_FUN_005b7fce
+;   crt_unknown.c_free_FUN_005b7fce
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90
 ;
@@ -61,7 +61,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 004a8902
     PUSH EAX                            ; 004a8909
     CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 004a890a
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005b8df8(uint size)
     ADD ESP,0x4                         ; 004a890f
     MOV dword ptr [ESP + 0x12c],EAX     ; 004a8912
     TEST EAX,EAX                        ; 004a8919
@@ -389,8 +389,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x41ec]    ; 004a8d67
     PUSH EBX                            ; 004a8d6d
     MOV dword ptr [ESI + 0x41f0],EAX    ; 004a8d6e
-    CALL crt_unknown.c_FUN_005b7fce     ; 004a8d74
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 004a8d74
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 004a8d79
     ADD ESP,0x15c                       ; 004a8d7c
     POP EBP                             ; 004a8d82

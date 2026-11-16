@@ -101,6 +101,10 @@ void __cdecl setActiveRenderColor(void);
 // Address: 00404440
 SMRGLHeaderExtended * __cdecl drawLineStrip2D(SLineStrip *line_strip);
 
+// Original: engine_3d.c_drawLineStrip3D_FUN_004044d0
+// Address: 004044d0
+SMRGLHeaderExtended * __cdecl drawLineStrip3D(SLineStrip *line_strip);
+
 // Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560
 // Address: 00404560
 SMRGLHeaderExtended * __cdecl renderPolygonLitAlphaPlaneMaskedUVOp24(SMRGLHeaderPrimitive *primitive);
@@ -168,6 +172,10 @@ SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLit2(SMRGLHeaderP
 // Original: engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405360
 // Address: 00405360
 SMRGLHeaderExtended * __cdecl renderPolygonAlphaTexturedNormalizedLit(SMRGLHeaderPrimitive *prim);
+
+// Original: engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400
+// Address: 00405400
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLit(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0
 // Address: 004054e0

@@ -11,7 +11,7 @@ CSkeletonForest * __cdecl core_boneguy_cpp_factoryFuncSkeletonForest_FUN_004198b
 {
   CSkeletonForest *pCVar1;
   
-  pCVar1 = (CSkeletonForest *)operator_new(0xd698);
+  pCVar1 = operator_new(0xd698);
   if (pCVar1 == (CSkeletonForest *)0x0) {
     return (CSkeletonForest *)0x0;
   }

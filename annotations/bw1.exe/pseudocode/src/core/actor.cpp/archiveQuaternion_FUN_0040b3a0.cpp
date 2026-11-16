@@ -19,9 +19,7 @@ void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b3a0(CQuaternion4f *quat_p
     }
   }
   else {
-    FUN_005c03c0
-              (DAT_007c3034,"%s%g,%g,%g,%g",&DAT_006106c0,(double)quat_ptr->w,
-               (double)quat_ptr->x,(double)quat_ptr->y,(double)quat_ptr->z);
+    _fprintf(DAT_007c3034,"%s%g,%g,%g,%g");
   }
   core_actor_cpp_archiveDescription_FUN_0040b110("Quaternion",property_type);
   return;

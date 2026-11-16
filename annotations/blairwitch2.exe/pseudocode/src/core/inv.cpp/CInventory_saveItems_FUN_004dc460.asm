@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
-;   crt_unknown.c_FUN_005b8010
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH EBP                            ; 004dc48f
     ADD EBX,0x4                         ; 004dc490
     INC ESI                             ; 004dc493
-    CALL crt_unknown.c_FUN_005b8010     ; 004dc494
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 004dc494
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     MOV EDX,dword ptr [EDI + 0x10]      ; 004dc499
     ADD ESP,0x14                        ; 004dc49c
     CMP ESI,EDX                         ; 004dc49f

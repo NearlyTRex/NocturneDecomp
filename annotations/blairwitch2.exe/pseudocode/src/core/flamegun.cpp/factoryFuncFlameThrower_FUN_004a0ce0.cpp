@@ -11,7 +11,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_factoryFuncFlameThrower_FUN_004a0ce0(v
 {
   CFlameThrower *pCVar1;
   
-  pCVar1 = (CFlameThrower *)operator_new(0x6e4);
+  pCVar1 = operator_new(0x6e4);
   if (pCVar1 == (CFlameThrower *)0x0) {
     return (CFlameThrower *)0x0;
   }

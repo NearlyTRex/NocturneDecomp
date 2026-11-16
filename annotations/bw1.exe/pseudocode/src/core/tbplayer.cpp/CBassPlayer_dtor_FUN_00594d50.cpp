@@ -13,12 +13,12 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlaye
   CFlame *pCVar2;
   CClothList *pCVar3;
   CDeformableModelInstance *pCVar4;
-  CBassPlayer *pCVar5;
-  void *ptr;
+  CBassPlayer *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CBassPlayerTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CBassPlayerTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_00533060(&(this_ptr->base).path_map,0);
@@ -27,12 +27,12 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlaye
   pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)&pCVar2[-4].base.vtable,0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[0] + 0x10),0);
-  pCVar5 = (CBassPlayer *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730
-                     ((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);
+  ptr = (CBassPlayer *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                  ((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
-    return pCVar5;
+    return ptr;
   }
-  FUN_005c0344(pCVar5);
-  return pCVar5;
+  debugFreeChecked(ptr);
+  return ptr;
 }

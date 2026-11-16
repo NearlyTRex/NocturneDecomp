@@ -60,7 +60,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x48]      ; 004154ff
     PUSH 0x1344                         ; 00415503
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00415508
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0041550d
     TEST EAX,EAX                        ; 00415510
     JNZ 0x004155f1                      ; 00415512

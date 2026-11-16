@@ -9,18 +9,18 @@
 CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_00410bb0(CBaronWeapon *this_ptr,uint flags)
 
 {
-  CBaronWeapon *pCVar1;
-  void *ptr;
+  CBaronWeapon *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CBaronWeaponTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CBaronWeaponTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CBaronWeapon *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0(&this_ptr->base,1);
+  ptr = (CBaronWeapon *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

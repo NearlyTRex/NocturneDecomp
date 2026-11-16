@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 147,
+    "complexity_score": 127,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 11,
+    "suspect_count": 9,
     "suspect_types": [
       "undefined_data"
     ],
@@ -69,7 +69,7 @@
     {
       "addr": "005c03c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
     }
   ],
   "globals": [
@@ -237,15 +237,7 @@
       "line": 8,
       "match": "DAT_007c3034",
       "severity": "mild",
-      "text": "FUN_005c03c0(DAT_007c3034,\"%s{ // %s\\n\",&DAT_006106c0,property_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_006106c0",
-      "severity": "mild",
-      "text": "FUN_005c03c0(DAT_007c3034,\"%s{ // %s\\n\",&DAT_006106c0,property_name);",
+      "text": "_fprintf(DAT_007c3034,\"%s{ // %s\\n\");",
       "type": "undefined_data"
     },
     {
@@ -269,7 +261,7 @@
       "line": 12,
       "match": "DAT_007c3034",
       "severity": "mild",
-      "text": "FUN_005c03c0(DAT_007c3034,&DAT_005d2bfc,&DAT_006106c0);",
+      "text": "_fprintf(DAT_007c3034,&DAT_005d2bfc);",
       "type": "undefined_data"
     },
     {
@@ -277,15 +269,7 @@
       "line": 12,
       "match": "DAT_005d2bfc",
       "severity": "mild",
-      "text": "FUN_005c03c0(DAT_007c3034,&DAT_005d2bfc,&DAT_006106c0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_006106c0",
-      "severity": "mild",
-      "text": "FUN_005c03c0(DAT_007c3034,&DAT_005d2bfc,&DAT_006106c0);",
+      "text": "_fprintf(DAT_007c3034,&DAT_005d2bfc);",
       "type": "undefined_data"
     },
     {

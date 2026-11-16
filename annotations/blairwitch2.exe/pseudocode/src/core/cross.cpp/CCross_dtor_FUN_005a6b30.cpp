@@ -9,19 +9,19 @@
 CCross * __cdecl core_cross_cpp_CCross_dtor_FUN_005a6b30(CCross *this_ptr,uint flags)
 
 {
-  CCross *pCVar1;
-  void *ptr;
+  CCross *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CCrossTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CCrossTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).base.base.vtable._ub = &g_CCrossVTable._ub;
-  pCVar1 = (CCross *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0((CWeapon *)this_ptr,1);
+  ptr = (CCross *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0((CWeapon *)this_ptr,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

@@ -15,7 +15,7 @@ CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_00597970(void)
   CTextureCache *this_ptr;
   CTextureCache *extraout_EAX;
   
-  this_ptr = (CTextureCache *)operator_new(0x1800c);
+  this_ptr = operator_new(0x1800c);
   if (this_ptr == (CTextureCache *)0x0) {
     _DAT_02c8a680 = (CTextureCache *)0x0;
   }

@@ -11,10 +11,10 @@
 ; uint             Stack[0x14]:4   window_flags
 ;
 ; XREF[10]:
-;   FUN_0047c060 at 0047c0af
 ;   core_menu.cpp_adjustFixedPointSlider_FUN_004eba50 at 004eba88
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb7f8
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ec98e
+;   shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0047c060 at 0047c0af
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047db40 at 0047dbc4
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d300
 ;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00482a00 at 00482f06

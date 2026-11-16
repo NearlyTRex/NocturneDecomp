@@ -58,7 +58,7 @@
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_memory.c___vec_new_FUN_005c2694
 ;   crt_memory.c_operator_new_array_FUN_005c1268
-;   crt_unknown.c_FUN_005c0336
+;   crt_unknown.c_free_FUN_005c0336
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
@@ -120,7 +120,7 @@ section .text
     ADD EAX,0x4                         ; 0049471a
     PUSH EAX                            ; 0049471d
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 0049471e
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 00494723
     PUSH EAX                            ; 00494726
     XOR EDI,EDI                         ; 00494727
@@ -577,8 +577,8 @@ section .text
         ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00494c3f
     PUSH EAX                            ; 00494c42
-    CALL crt_unknown.c_FUN_005c0336     ; 00494c43
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 00494c43
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 00494c48
     MOV EAX,dword ptr [ESP + 0x104]     ; 00494c4b
     MOV [0x0061b4ac],EAX                ; 00494c52 | DAT_0061b4ac

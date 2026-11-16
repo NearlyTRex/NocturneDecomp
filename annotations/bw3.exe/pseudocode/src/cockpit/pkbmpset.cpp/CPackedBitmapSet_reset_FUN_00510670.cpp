@@ -12,7 +12,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00510670(CPackedBit
   void *ptr;
   
   ptr = __vec_delete(this_ptr->bitmap_array,&g_CPackedBitmapTypeInfo);
-  FUN_005a30b6(ptr);
+  free(ptr);
   this_ptr->bitmap_count = 0;
   this_ptr->bitmap_array = (CPackedBitmap *)0x0;
   return;

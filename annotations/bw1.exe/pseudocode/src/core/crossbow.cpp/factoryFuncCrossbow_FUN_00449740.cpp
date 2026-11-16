@@ -11,7 +11,7 @@ CCrossbow * __cdecl core_crossbow_cpp_factoryFuncCrossbow_FUN_00449740(void)
 {
   CCrossbow *pCVar1;
   
-  pCVar1 = (CCrossbow *)operator_new(0x820);
+  pCVar1 = operator_new(0x820);
   if (pCVar1 == (CCrossbow *)0x0) {
     return (CCrossbow *)0x0;
   }

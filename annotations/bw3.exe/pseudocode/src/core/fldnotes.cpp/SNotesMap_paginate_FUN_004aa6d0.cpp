@@ -15,7 +15,7 @@ int __cdecl core_fldnotes_cpp_SNotesMap_paginate_FUN_004aa6d0(SNotesMap *this_pt
   int iVar1;
   SPageResourceMap *resource;
   
-  this_ptr_00 = (SPageResourceMap *)operator_new(0x1c);
+  this_ptr_00 = operator_new(0x1c);
   resource = (SPageResourceMap *)0x0;
   if (this_ptr_00 != (SPageResourceMap *)0x0) {
     resource = core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004aa780(this_ptr_00,this_ptr);

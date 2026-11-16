@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 158,
+    "complexity_score": 157,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 72,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_stride_bytecount",
@@ -16,7 +16,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 239
+    "total_lines": 238
   },
   "cross_references": [
     {
@@ -72,6 +72,11 @@
       "name": "crt_stdio.c_fopen_FUN_005c157c"
     },
     {
+      "addr": "005c03c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005c03c0"
+    },
+    {
       "addr": "005c25d0",
       "is_variadic": false,
       "name": "crt_string.c_memmove_FUN_005c25d0"
@@ -80,11 +85,6 @@
       "addr": "005c2c20",
       "is_variadic": false,
       "name": "crt_string.c_strupr_FUN_005c2c20"
-    },
-    {
-      "addr": "005c03c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c03c0"
     }
   ],
   "globals": [
@@ -311,7 +311,7 @@
       "line": 31,
       "match": "DAT_005deab4",
       "severity": "mild",
-      "text": "file_handle = _fopen(\"events.txt\",&DAT_005deab4);",
+      "text": "file = _fopen(\"events.txt\",&DAT_005deab4);",
       "type": "undefined_data"
     },
     {
@@ -319,12 +319,12 @@
       "line": 37,
       "match": "DAT_005deac2",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005deac2,pacVar4);",
+      "text": "_fprintf(file,&DAT_005deac2);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -332,7 +332,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 49,
+      "line": 48,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -340,7 +340,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((iVar6 - iVar2) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 24,
+      "line": 23,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

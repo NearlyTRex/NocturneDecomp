@@ -5,6 +5,10 @@
 // Function prototypes for engine/model.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_model.c_byteswapMRGLData_FUN_0051f650
+// Address: 0051f650
+void __cdecl byteswapMRGLData(SMRGLHeaderExtended *mrgl_data,int data_size);
+
 // Original: engine_model.c_loadModelFile_FUN_0051f6d0
 // Address: 0051f6d0
 SMRGLHeaderExtended * __cdecl loadModelFile(char *filename);

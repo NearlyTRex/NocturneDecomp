@@ -13,13 +13,13 @@ CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,
   
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CIniFileTypeInfo);
-    FUN_005c0336(ptr);
+    free(ptr);
     return this_ptr;
   }
   this_ptr->vtable = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004f4b30_00602964;
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_005c0344(this_ptr);
+  debugFreeChecked(this_ptr);
   return this_ptr;
 }

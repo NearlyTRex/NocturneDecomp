@@ -35,8 +35,8 @@
 ;   core_actor.cpp_archiveDescription_FUN_0040b110
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b090
 ;   crt_stdio.c_fgetc_FUN_005c0530
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;   crt_stdio.c_fscanf_FUN_005c04b0
-;   crt_unknown.c_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -162,8 +162,8 @@ section .text
     PUSH 0x5d2c6c                       ; 0040bddc | = "%s{ // %s\n"
     MOV ECX,dword ptr [0x007c3034]      ; 0040bde1 | DAT_007c3034
     PUSH ECX                            ; 0040bde7
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040bde8
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040bde8
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040bded
     PUSH 0x1                            ; 0040bdf0
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040ad60 ; 0040bdf2
@@ -176,8 +176,8 @@ section .text
     MOV ESI,dword ptr [0x007c3034]      ; 0040be08 | DAT_007c3034
     PUSH ESI                            ; 0040be0e
     XOR EBX,EBX                         ; 0040be0f
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040be11
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040be11
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     MOV EDI,dword ptr [EBP]             ; 0040be16
     ADD ESP,0x10                        ; 0040be19
     TEST EDI,EDI                        ; 0040be1c
@@ -192,8 +192,8 @@ section .text
     PUSH EAX                            ; 0040be33
     INC EBX                             ; 0040be34
     ADD ESI,0x28                        ; 0040be35
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040be38
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040be38
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP]             ; 0040be3d
     ADD ESP,0x10                        ; 0040be40
     CMP EBX,EDX                         ; 0040be43
@@ -210,8 +210,8 @@ section .text
     PUSH 0x5d2c93                       ; 0040be5f | DAT_005d2c93
     MOV ECX,dword ptr [0x007c3034]      ; 0040be64 | DAT_007c3034
     PUSH ECX                            ; 0040be6a
-    CALL crt_unknown.c_FUN_005c03c0     ; 0040be6b
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 0040be6b
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040be70
     POP EBP                             ; 0040be73
     POP EDI                             ; 0040be74

@@ -754,7 +754,7 @@ LAB_004b9228:
         core_game_cpp_giveHeroWeapon_FUN_004b8e10("CMeleeAxe",(char *)0x0);
         core_game_cpp_giveHeroWeapon_FUN_004b8e10("CCross",(char *)0x0);
         core_game_cpp_giveHeroWeapon_FUN_004b8e10("CBoxActor","Lantern");
-        pCVar11 = (CAmmo *)operator_new(0x47c);
+        pCVar11 = operator_new(0x47c);
         if (pCVar11 == (CAmmo *)0x0) {
           pCVar11 = (CAmmo *)0x0;
         }

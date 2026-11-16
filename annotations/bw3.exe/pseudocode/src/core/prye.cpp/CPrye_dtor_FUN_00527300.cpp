@@ -9,18 +9,18 @@
 CPrye * __cdecl core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags)
 
 {
-  CPrye *pCVar1;
-  void *ptr;
+  CPrye *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CPryeTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CPryeTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CPrye *)core_hero_cpp_CHero_dtor_FUN_004d2620(&this_ptr->base,1);
+  ptr = (CPrye *)core_hero_cpp_CHero_dtor_FUN_004d2620(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

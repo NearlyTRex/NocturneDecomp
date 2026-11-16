@@ -44,8 +44,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00529a70(CScript *this_ptr,float *t
   char *pcVar14;
   char *pcVar15;
   char *pcVar16;
-  float *pfVar17;
-  byte bVar18;
+  byte bVar17;
   float y;
   float local_4938;
   float local_4934;
@@ -250,7 +249,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00529a70(CScript *this_ptr,float *t
   uint local_18;
   float local_14;
   
-  bVar18 = 0;
+  bVar17 = 0;
   if ((this_ptr->next_cmd < 0) || (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
     _DAT_01d71de0 = "..\\core\\script.cpp";
     _DAT_01d71de4 = 0x47c;
@@ -741,7 +740,7 @@ LAB_0052b9f1:
                                         pcVar15 = pcVar14;
                                         if (iVar5 == 0) break;
                                         iVar5 = iVar5 + -1;
-                                        pcVar15 = pcVar14 + (uint)bVar18 * -2 + 1;
+                                        pcVar15 = pcVar14 + (uint)bVar17 * -2 + 1;
                                         cVar2 = *pcVar14;
                                         pcVar14 = pcVar15;
                                       } while (cVar2 != '\0');
@@ -1016,30 +1015,30 @@ joined_r0x0052f950:
                                                             (local_14,y,z,&local_190);
                                                   local_1c0.x = local_190.x;
                                                   *(uint *)
-                                                   ((int)&local_1c0 + (uint)bVar18 * -8 + 4) =
+                                                   ((int)&local_1c0 + (uint)bVar17 * -8 + 4) =
                                                        *(uint *)
-                                                        ((int)&local_190 + (uint)bVar18 * -8 + 4);
+                                                        ((int)&local_190 + (uint)bVar17 * -8 + 4);
                                                   *(uint *)
                                                    ((int)&local_1c0 +
-                                                   (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8) =
+                                                   (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8) =
                                                        *(uint *)
                                                         ((int)&local_190 +
-                                                        (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
+                                                        (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
                                                   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
                                                             (&local_20c,&local_1c0);
                                                   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800
                                                             (&local_20c,&local_1a8,&local_1d8);
                                                   local_184.x = local_1d8.x;
                                                   *(uint *)
-                                                   ((int)&local_184 + (uint)bVar18 * -8 + 4) =
+                                                   ((int)&local_184 + (uint)bVar17 * -8 + 4) =
                                                        *(uint *)
-                                                        ((int)&local_1d8 + (uint)bVar18 * -8 + 4);
+                                                        ((int)&local_1d8 + (uint)bVar17 * -8 + 4);
                                                   *(uint *)
                                                    ((int)&local_184 +
-                                                   (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8) =
+                                                   (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8) =
                                                        *(uint *)
                                                         ((int)&local_1d8 +
-                                                        (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
+                                                        (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
                                                   core_actor_cpp_copyVector_FUN_0040d230
                                                             (&local_1a8,&local_184);
                                                 }
@@ -1525,27 +1524,10 @@ LAB_00529bdf:
                                                     if (7 < this_ptr->call_stack_count) {
                                                       local_104 = _fopen("stack.txt",
                                                                              &DAT_005cebad);
-                                                      FUN_005a3140
-                                                                (local_104,"line%6d: %s\n",
-                                                                 local_164,pcVar14);
-                                                      iVar5 = this_ptr->call_stack_count + -1;
-                                                      if (-1 < iVar5) {
-                                                        pfVar17 = (float *)(this_ptr->
-                                                                            current_message +
-                                                                           this_ptr->
-                                                                           call_stack_count * 4 +
-                                                                           -0x54);
-                                                        do {
-                                                          piVar7 = (int *)(pfVar17 + 0x117);
-                                                          pfVar17 = pfVar17 + -1;
-                                                          iVar5 = iVar5 + -1;
-                                                          FUN_005a3140
-                                                                    (local_104,"line%6d: %s\n",
-                                                                     this_ptr->parsed_lines[*piVar7]
-                                                                     .line_number,
-                                                                     this_ptr->parsed_lines[*piVar7]
-                                                                     .text);
-                                                        } while (-1 < iVar5);
+                                                      _fprintf(local_104,"line%6d: %s\n");
+                                                      iVar5 = this_ptr->call_stack_count;
+                                                      while (iVar5 = iVar5 + -1, -1 < iVar5) {
+                                                        _fprintf(local_104,"line%6d: %s\n");
                                                       }
                                                       _fclose(local_104);
                                                       _sprintf(&DAT_01ed6810,
@@ -1647,7 +1629,7 @@ LAB_00529bdf:
                                                       if (uVar12 == 0) break;
                                                       uVar12 = uVar12 - 1;
                                                       cVar2 = *pcVar14;
-                                                      pcVar14 = pcVar14 + (uint)bVar18 * -2 + 1;
+                                                      pcVar14 = pcVar14 + (uint)bVar17 * -2 + 1;
                                                     } while (cVar2 != '\0');
                                                     local_100 = ~uVar12 - 2;
                                                     if ((int)local_100 < 1) {
@@ -1662,14 +1644,14 @@ LAB_00529bdf:
                                                         uVar13 = uVar13 - 1) {
                                                       *(uint *)pcVar16 =
                                                            *(uint *)pcVar14;
-                                                      pcVar14 = pcVar14 + (uint)bVar18 * -8 + 4;
-                                                      pcVar16 = pcVar16 + (uint)bVar18 * -8 + 4;
+                                                      pcVar14 = pcVar14 + (uint)bVar17 * -8 + 4;
+                                                      pcVar16 = pcVar16 + (uint)bVar17 * -8 + 4;
                                                     }
                                                     for (uVar13 = local_100 & 3; uVar13 != 0;
                                                         uVar13 = uVar13 - 1) {
                                                       *pcVar16 = *pcVar14;
-                                                      pcVar14 = pcVar14 + (uint)bVar18 * -2 + 1;
-                                                      pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
+                                                      pcVar14 = pcVar14 + (uint)bVar17 * -2 + 1;
+                                                      pcVar16 = pcVar16 + (uint)bVar17 * -2 + 1;
                                                     }
                                                     acStack_18b6[~uVar12] = '\0';
                                                     local_160 = local_160 + local_100;
@@ -3296,28 +3278,28 @@ LAB_0052f1d9:
                                                                &local_1e4);
                                                     local_1cc.x = local_1e4.x;
                                                     *(uint *)
-                                                     ((int)&local_1cc + (uint)bVar18 * -8 + 4) =
+                                                     ((int)&local_1cc + (uint)bVar17 * -8 + 4) =
                                                          *(uint *)
-                                                          ((int)&local_1e4 + (uint)bVar18 * -8 + 4);
+                                                          ((int)&local_1e4 + (uint)bVar17 * -8 + 4);
                                                     *(uint *)
                                                      ((int)&local_1cc +
-                                                     (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8) =
+                                                     (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8) =
                                                          *(uint *)
                                                           ((int)&local_1e4 +
-                                                          (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8)
+                                                          (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8)
                                                     ;
                                                                                                         
                                                   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
                                                             (&local_1cc,&local_1b4);
                                                   local_19c = local_1b4.x;
-                                                  local_198[(uint)bVar18 * -2] =
+                                                  local_198[(uint)bVar17 * -2] =
                                                        *(float *)((int)&local_1b4 +
-                                                                 (uint)bVar18 * -8 + 4);
-                                                  local_198[(uint)bVar18 * -2 +
-                                                            (uint)bVar18 * -2 + 1] =
+                                                                 (uint)bVar17 * -8 + 4);
+                                                  local_198[(uint)bVar17 * -2 +
+                                                            (uint)bVar17 * -2 + 1] =
                                                        *(float *)((int)&local_1b4 +
-                                                                 (uint)bVar18 * -8 +
-                                                                 (uint)bVar18 * -8 + 8);
+                                                                 (uint)bVar17 * -8 +
+                                                                 (uint)bVar17 * -8 + 8);
                                                   (local_40->orient).vec.y = local_198[0];
                                                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
                                                             (local_40);
@@ -3420,7 +3402,7 @@ LAB_0052f9d6:
                                                     pcVar16 = pcVar14;
                                                     if (iVar5 == 0) break;
                                                     iVar5 = iVar5 + -1;
-                                                    pcVar16 = pcVar14 + (uint)bVar18 * -2 + 1;
+                                                    pcVar16 = pcVar14 + (uint)bVar17 * -2 + 1;
                                                     cVar2 = *pcVar14;
                                                     pcVar14 = pcVar16;
                                                   } while (cVar2 != '\0');

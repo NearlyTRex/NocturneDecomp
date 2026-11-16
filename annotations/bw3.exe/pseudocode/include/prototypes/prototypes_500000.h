@@ -207,14 +207,14 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0050f190(CPa
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_0050f1e0(CPackedBitmap *this_ptr,uint flags);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_0050f200(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0050f230(CPackedBitmap *this_ptr);
-void FUN_0050f260(int param_1);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_0050f260(CPackedBitmap *this_ptr);
 int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_0050f280(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_0050f2a0(CPackedBitmap *this_ptr,char *filename);
 int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_0050f2c0(CPackedBitmap *this_ptr,int x_coordinate,int row_index);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440(CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right,int end_row);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0050f5c0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0050f6c0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right,int rect_bottom);
-void FUN_0050f780(int param_1,int param_2,int param_3,uint param_4);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0050f780(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0(CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride);

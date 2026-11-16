@@ -16,7 +16,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   CWinFont *pCVar3;
   CWinFont *pCVar4;
   
-  pCVar1 = (CBitFont *)operator_new(0x4220);
+  pCVar1 = operator_new(0x4220);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_004c0b40(pCVar1);
@@ -38,7 +38,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   _DAT_0152d23c->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(pCVar2,1);
-  pCVar1 = (CBitFont *)operator_new(0x4220);
+  pCVar1 = operator_new(0x4220);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_004c0b40(pCVar1);
@@ -59,7 +59,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   _DAT_0152d240->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(pCVar2,1);
-  pCVar1 = (CBitFont *)operator_new(0x4220);
+  pCVar1 = operator_new(0x4220);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_004c0b40(pCVar1);
@@ -82,7 +82,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   _DAT_0152d244->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(pCVar2,1);
-  pCVar1 = (CBitFont *)operator_new(0x4220);
+  pCVar1 = operator_new(0x4220);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_004c0b40(pCVar1);
@@ -104,7 +104,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(pCVar2,1);
   _DAT_01c3eb50 = _DAT_0152d248;
-  pCVar1 = (CBitFont *)operator_new(0x4220);
+  pCVar1 = operator_new(0x4220);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_004c0b40(pCVar1);
@@ -125,7 +125,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(pCVar2,1);
   _DAT_01c3eb50 = _DAT_0152d248;
-  pCVar1 = (CBitFont *)operator_new(0x4220);
+  pCVar1 = operator_new(0x4220);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_004c0b40(pCVar1);
@@ -146,7 +146,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   _DAT_0152d250->shadow_offset_x = 1;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(pCVar2,1);
-  pCVar1 = (CBitFont *)operator_new(0x4220);
+  pCVar1 = operator_new(0x4220);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_004c0b40(pCVar1);
@@ -172,7 +172,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   if (_DAT_01d7f1b8 == 0) {
     return;
   }
-  pCVar3 = (CWinFont *)operator_new(0x6b80);
+  pCVar3 = operator_new(0x6b80);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005b1ad0(pCVar3,&DAT_006225f0,0xe,2,2);
@@ -187,7 +187,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   pCVar2 = _DAT_0152d23c;
   _DAT_0152d23c->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
-  pCVar3 = (CWinFont *)operator_new(0x6b80);
+  pCVar3 = operator_new(0x6b80);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005b1ad0(pCVar3,&DAT_006225f0,0x12,0,0);
@@ -202,7 +202,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   pCVar2 = _DAT_0152d244;
   _DAT_0152d244->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
-  pCVar3 = (CWinFont *)operator_new(0x6b80);
+  pCVar3 = operator_new(0x6b80);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005b1ad0(pCVar3,&DAT_006225f0,0xc,0,0);
@@ -217,7 +217,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0045e000(void)
   pCVar2 = _DAT_0152d240;
   _DAT_0152d240->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
-  pCVar3 = (CWinFont *)operator_new(0x6b80);
+  pCVar3 = operator_new(0x6b80);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005b1ad0(pCVar3,&DAT_006225f0,10,0,0);

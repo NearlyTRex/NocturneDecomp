@@ -11,7 +11,7 @@ CAmmo * __cdecl core_ammo_cpp_factoryFuncAmmo_FUN_0040de30(void)
 {
   CAmmo *pCVar1;
   
-  pCVar1 = (CAmmo *)operator_new(800);
+  pCVar1 = operator_new(800);
   if (pCVar1 == (CAmmo *)0x0) {
     return (CAmmo *)0x0;
   }

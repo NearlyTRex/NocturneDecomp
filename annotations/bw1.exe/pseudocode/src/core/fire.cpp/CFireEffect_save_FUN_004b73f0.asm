@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CCrater_save_FUN_004b2740
-;   crt_unknown.c_FUN_005c03c0
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;
 ; *****************************************************************************
 
@@ -29,15 +29,15 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 004b73f3
     PUSH 0x5df678                       ; 004b73f7 | = "Fire state\n"
     PUSH ESI                            ; 004b73fc
-    CALL crt_unknown.c_FUN_005c03c0     ; 004b73fd
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004b73fd
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004b7402
     PUSH 0x5df684                       ; 004b7405 | DAT_005df684
     MOV EBX,0x1cb4f60                   ; 004b740a
     PUSH ESI                            ; 004b740f
     LEA EDI,[EBX + 0x8c0]               ; 004b7410
-    CALL crt_unknown.c_FUN_005c03c0     ; 004b7416
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004b7416
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004b741b
     PUSH ESI                            ; 004b741e
         ;   Label: LAB_004b741e

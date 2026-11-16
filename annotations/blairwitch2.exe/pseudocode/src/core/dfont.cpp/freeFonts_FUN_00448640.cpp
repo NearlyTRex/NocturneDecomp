@@ -15,38 +15,38 @@ void __cdecl core_dfont_cpp_freeFonts_FUN_00448640(void)
   
   if (_DAT_01511cb8 != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004a7b90(_DAT_01511cb8,0);
-    FUN_005b7fdc(pCVar1);
+    debugFreeChecked(pCVar1);
   }
   _DAT_01511cb8 = (CBitFont *)0x0;
   if (_DAT_01511cbc != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004a7b90(_DAT_01511cbc,0);
-    FUN_005b7fdc(pCVar1);
+    debugFreeChecked(pCVar1);
   }
   _DAT_01511cbc = (CBitFont *)0x0;
   if (_DAT_01511cc0 != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004a7b90(_DAT_01511cc0,0);
-    FUN_005b7fdc(pCVar1);
+    debugFreeChecked(pCVar1);
   }
   _DAT_01511cc0 = (CBitFont *)0x0;
   if (_DAT_01511cc4 != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004a7b90(_DAT_01511cc4,0);
-    FUN_005b7fdc(pCVar1);
+    debugFreeChecked(pCVar1);
   }
   _DAT_01511cc4 = (CBitFont *)0x0;
   if (_DAT_01511cc8 != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004a7b90(_DAT_01511cc8,0);
-    FUN_005b7fdc(pCVar1);
+    debugFreeChecked(pCVar1);
   }
   _DAT_01c25590 = 0;
   _DAT_01511cc8 = (CBitFont *)0x0;
   if (_DAT_01511ccc != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004a7b90(_DAT_01511ccc,0);
-    FUN_005b7fdc(pCVar1);
+    debugFreeChecked(pCVar1);
   }
   _DAT_01511ccc = (CBitFont *)0x0;
   if (_DAT_01511cd0 != (CBitFont *)0x0) {
     pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004a7b90(_DAT_01511cd0,0);
-    FUN_005b7fdc(pCVar1);
+    debugFreeChecked(pCVar1);
   }
   _DAT_01511cd0 = (CBitFont *)0x0;
   if (_DAT_01d63250 != 0) {

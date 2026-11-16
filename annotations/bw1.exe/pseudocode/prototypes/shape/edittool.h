@@ -585,6 +585,10 @@ int __cdecl CEdCheck::calculateSpacing(CEdCheck *this_ptr);
 // Address: 0049dc70
 void __cdecl CEdCheck::render(CEdCheck *this_ptr);
 
+// Original: shape_edittool.cpp_CEdCheck_handleInput_FUN_0049dda0
+// Address: 0049dda0
+int __cdecl CEdCheck::handleInput(CEdCheck *this_ptr);
+
 // Original: shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0
 // Address: 0049dea0
 int __cdecl wildcardStringMatch(char *pattern,char *target_string,int case_sensitive);

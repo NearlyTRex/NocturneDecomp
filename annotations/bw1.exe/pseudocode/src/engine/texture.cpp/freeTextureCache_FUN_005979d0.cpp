@@ -11,16 +11,16 @@
 void __cdecl engine_texture_cpp_freeTextureCache_FUN_005979d0(void)
 
 {
-  CTextureCache *pCVar1;
+  CTextureCache *ptr;
   
   engine_texture_cpp_CTextureCache_reset_FUN_005965c0(_DAT_02c8a680);
-  pCVar1 = _DAT_02c8a680;
+  ptr = _DAT_02c8a680;
   if (_DAT_02c8a680 == (CTextureCache *)0x0) {
     _DAT_02c8a680 = (CTextureCache *)0x0;
     return;
   }
   engine_texture_cpp_CTextureCache_freeTextures_FUN_005965d0(_DAT_02c8a680);
-  FUN_005c0344(pCVar1);
+  debugFreeChecked(ptr);
   _DAT_02c8a680 = (CTextureCache *)0x0;
   return;
 }

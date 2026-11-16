@@ -145,6 +145,10 @@ void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,c
 // Address: 0047bf80
 void __cdecl CEditorTools::drawWindowStatusMessage(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
+// Original: shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0047c060
+// Address: 0047c060
+void __cdecl CEditorTools::createCenteredDialog(CEditorTools *this_ptr,char *dialog_text);
+
 // Original: shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0
 // Address: 0047c0f0
 int __cdecl showMultiChoiceDialog(CStrList *str_list,char *dialog_title,int dialog_mode);
@@ -584,6 +588,10 @@ int __cdecl CEdCheck::calculateSpacing(CEdCheck *this_ptr);
 // Original: shape_edittool.cpp_CEdCheck_render_FUN_00485610
 // Address: 00485610
 void __cdecl CEdCheck::render(CEdCheck *this_ptr);
+
+// Original: shape_edittool.cpp_CEdCheck_handleInput_FUN_00485740
+// Address: 00485740
+int __cdecl CEdCheck::handleInput(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_wildcardStringMatch_FUN_00485840
 // Address: 00485840

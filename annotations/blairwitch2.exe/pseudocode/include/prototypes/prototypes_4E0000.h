@@ -205,7 +205,7 @@ void __esi engine_matrix_c_getCameraOrigin_FUN_004ea3b0(CVector3i *output);
 void __esi engine_matrix_c_getCameraRotation_FUN_004ea3e0(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_004ea410(int x,int y,int width,int height);
 void __cdecl engine_matrix_c_popViewport_FUN_004ea570(void);
-int FUN_004ea6a0(int param_1);
+int __cdecl engine_matrix_c_projectToScreen_FUN_004ea6a0(int input_value);
 void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ea730(int offset_x,int offset_y,int offset_z);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_004ea7e0(void);
 void __cdecl core_melee_cpp_staticInit_FUN_004ea850(void);

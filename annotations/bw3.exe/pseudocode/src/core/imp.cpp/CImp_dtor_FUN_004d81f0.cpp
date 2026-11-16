@@ -12,12 +12,12 @@ CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004d81f0(CImp *this_ptr,uint flags)
   CFlame *pCVar1;
   CClothList *pCVar2;
   CDeformableModelInstance *pCVar3;
-  CImp *pCVar4;
-  void *ptr;
+  CImp *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CImpTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CImpTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_armour_cpp_CFlame_arrdtor50_FUN_00410370((this_ptr->base).base.flames,0);
@@ -26,11 +26,11 @@ CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004d81f0(CImp *this_ptr,uint flags)
                       ,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
                      ((CDeformableModelInstance *)(pCVar2[-0x1b].filenames[7] + 8),0);
-  pCVar4 = (CImp *)core_actor_cpp_CDemonActor_dtor_FUN_00408770
-                             ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
+  ptr = (CImp *)core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                          ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
-    return pCVar4;
+    return ptr;
   }
-  FUN_005a30c4(pCVar4);
-  return pCVar4;
+  debugFreeChecked(ptr);
+  return ptr;
 }

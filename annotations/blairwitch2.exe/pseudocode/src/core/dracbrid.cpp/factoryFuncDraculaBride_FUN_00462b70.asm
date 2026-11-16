@@ -15,7 +15,7 @@ section .text
     PUSH 0x10c28                        ; 00462b70
         ;   Label: core_dracbrid.cpp_factoryFuncDraculaBride_FUN_00462b70
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00462b75
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 00462b7a
     TEST EAX,EAX                        ; 00462b7d
     JNZ 0x00462b82                      ; 00462b7f

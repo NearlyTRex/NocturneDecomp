@@ -12,7 +12,7 @@
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00480d40 at 00480d54
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     JZ 0x00480e3c                       ; 00480e31
         ;   XREF to: 00480e3c (CONDITIONAL_JUMP)  ; LAB_00480e3c
     PUSH EDX                            ; 00480e33
-    CALL crt_unknown.c_FUN_005b86a0     ; 00480e34
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 00480e34
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 00480e39
     INC EBX                             ; 00480e3c
         ;   Label: LAB_00480e3c
@@ -54,8 +54,8 @@ section .text
     MOV EAX,dword ptr [EDI + 0x8]       ; 00480e46
         ;   Label: LAB_00480e46
     PUSH EAX                            ; 00480e49
-    CALL crt_unknown.c_FUN_005b86a0     ; 00480e4a
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 00480e4a
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 00480e4f
     POP EBX                             ; 00480e52
     POP ESI                             ; 00480e53

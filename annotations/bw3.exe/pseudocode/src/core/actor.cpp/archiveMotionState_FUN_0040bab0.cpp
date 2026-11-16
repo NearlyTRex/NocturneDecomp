@@ -12,12 +12,12 @@ void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bab0(CMotionController *m
   int iVar1;
   
   if (DAT_007df9b8 != 1) {
-    FUN_005a3140(DAT_007df9b4,"%s{ // %s\n",&DAT_005f0990,property_name);
+    _fprintf(DAT_007df9b4,"%s{ // %s\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(1);
     core_motion_cpp_CMotionController_save_FUN_004fcd30
               (motion_controller,DAT_007df9b4,&DAT_005f0990);
     core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(-1);
-    FUN_005a3140(DAT_007df9b4,&DAT_005b5b4b,&DAT_005f0990);
+    _fprintf(DAT_007df9b4,&DAT_005b5b4b);
     return;
   }
   do {

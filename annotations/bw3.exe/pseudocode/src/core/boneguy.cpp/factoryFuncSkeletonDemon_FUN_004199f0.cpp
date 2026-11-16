@@ -11,7 +11,7 @@ CSkeletonDemon * __cdecl core_boneguy_cpp_factoryFuncSkeletonDemon_FUN_004199f0(
 {
   CSkeletonDemon *pCVar1;
   
-  pCVar1 = (CSkeletonDemon *)operator_new(0xd698);
+  pCVar1 = operator_new(0xd698);
   if (pCVar1 == (CSkeletonDemon *)0x0) {
     return (CSkeletonDemon *)0x0;
   }

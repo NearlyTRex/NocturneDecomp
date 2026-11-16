@@ -11,7 +11,7 @@ CMattanntote * __cdecl core_mattnntt_cpp_factoryFuncMattanntote_FUN_00591b70(voi
 {
   CMattanntote *pCVar1;
   
-  pCVar1 = (CMattanntote *)operator_new(0xf09c);
+  pCVar1 = operator_new(0xf09c);
   if (pCVar1 == (CMattanntote *)0x0) {
     return (CMattanntote *)0x0;
   }

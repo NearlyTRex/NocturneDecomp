@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_archiveString_FUN_0040b680(char *string_buffer,char 
   int iVar1;
   
   if (DAT_007df9b8 != 1) {
-    FUN_005a3140(DAT_007df9b4,"%s\"%s\"",&DAT_005f0990,string_buffer);
+    _fprintf(DAT_007df9b4,"%s\"%s\"");
     core_actor_cpp_archiveDescription_FUN_0040b350("String",property_type);
     return;
   }

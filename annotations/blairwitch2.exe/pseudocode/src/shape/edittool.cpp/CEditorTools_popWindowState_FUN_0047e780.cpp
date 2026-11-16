@@ -20,8 +20,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047e780(CEditor
   }
   _DAT_01c2559c = _DAT_01c2559c + -1;
   iVar1 = _DAT_01c2559c * 0x1f8;
-  if (*(int *)(iVar1 + 0x1c25778) != 0) {
-    FUN_005b86a0(*(int *)(iVar1 + 0x1c25778));
+  if (*(void **)(iVar1 + 0x1c25778) != (void *)0x0) {
+    debugFree(*(void **)(iVar1 + 0x1c25778));
     *(uint *)(iVar1 + 0x1c25778) = 0;
   }
   engine_mini3d_cpp_setRenderViewport_FUN_004f2ac0

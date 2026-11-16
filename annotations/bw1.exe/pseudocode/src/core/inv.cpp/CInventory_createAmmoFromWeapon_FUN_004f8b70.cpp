@@ -19,7 +19,7 @@ void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70(CInventor
   if (weapon->ammo_type == AMMO_TYPE_NONE) {
     return;
   }
-  pCVar2 = (CAmmo *)operator_new(0x31c);
+  pCVar2 = operator_new(0x31c);
   this_ptr_00 = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_0040dbc0(pCVar2);

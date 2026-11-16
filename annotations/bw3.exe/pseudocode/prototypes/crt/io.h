@@ -5,10 +5,14 @@
 // Function prototypes for crt/io.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_io.c_FUN_005a4bc4
+// Original: crt_io.c_getFileStat_FUN_005a4bc4
 // Address: 005a4bc4
-int __cdecl FUN_005a4bc4(char *filename,WatcomStat *file_info);
+int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__chmod_FUN_005a4bd0
 // Address: 005a4bd0
 int __cdecl ::chmod(char *path,int mode);
+
+// Original: crt_io.c_chdir_FUN_005a55b0
+// Address: 005a55b0
+int __cdecl chdir(char *path);

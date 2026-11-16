@@ -33,7 +33,7 @@ section .text
     PUSH 0x1                            ; 00457bc6
     PUSH 0x40                           ; 00457bc8
     CALL crt_memory.c_calloc_FUN_005c1cb0 ; 00457bca
-        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005c1cb0()
+        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005c1cb0(uint count, uint size)
     ADD ESP,0x8                         ; 00457bcf
     MOV dword ptr [EBX],EAX             ; 00457bd2
     TEST EAX,EAX                        ; 00457bd4
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_00457bfd
     PUSH 0x40                           ; 00457bff
     CALL crt_memory.c_calloc_FUN_005c1cb0 ; 00457c01
-        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005c1cb0()
+        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005c1cb0(uint count, uint size)
     ADD ESP,0x8                         ; 00457c06
     MOV dword ptr [EBX + 0x4],EAX       ; 00457c09
     TEST EAX,EAX                        ; 00457c0c

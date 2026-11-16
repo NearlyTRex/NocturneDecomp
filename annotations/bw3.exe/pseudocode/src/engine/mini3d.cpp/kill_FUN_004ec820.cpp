@@ -13,23 +13,23 @@ void __cdecl engine_mini3d_cpp_kill_FUN_004ec820(void)
 {
   engine_mini3d_cpp_free32_FUN_004f04c0(_DAT_01d7f4f4);
   _DAT_01d7f4f4 = (void *)0x0;
-  if (_DAT_01d76f5c == 0) {
-    if (_DAT_01d7a6ac == 0) {
+  if (_DAT_01d76f5c == (void *)0x0) {
+    if (_DAT_01d7a6ac == (void *)0x0) {
       return;
     }
   }
   else {
-    FUN_005a3770(_DAT_01d76f5c);
-    _DAT_01d76f5c = 0;
+    debugFree(_DAT_01d76f5c);
+    _DAT_01d76f5c = (void *)0x0;
     _DAT_01d76f60 = 0;
     _DAT_01d76f64 = 0;
-    if (_DAT_01d7a6ac == 0) {
+    if (_DAT_01d7a6ac == (void *)0x0) {
       return;
     }
   }
-  FUN_005a3770(_DAT_01d7a6ac);
-  FUN_005a3770(_DAT_01d7a6b0);
-  _DAT_01d7a6ac = 0;
-  _DAT_01d7a6b0 = 0;
+  debugFree(_DAT_01d7a6ac);
+  debugFree(_DAT_01d7a6b0);
+  _DAT_01d7a6ac = (void *)0x0;
+  _DAT_01d7a6b0 = (void *)0x0;
   return;
 }

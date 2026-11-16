@@ -15,7 +15,7 @@ section .text
     PUSH 0x2b23c                        ; 00578ff0
         ;   Label: core_wateract.cpp_factoryFuncLava_FUN_00578ff0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00578ff5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 00578ffa
     TEST EAX,EAX                        ; 00578ffd
     JNZ 0x00579002                      ; 00578fff

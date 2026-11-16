@@ -13,12 +13,12 @@ CDarkwolf * __cdecl core_darkwolf_cpp_CDarkwolf_dtor_FUN_005990d0(CDarkwolf *thi
   CFlame *pCVar2;
   CClothList *pCVar3;
   CDeformableModelInstance *pCVar4;
-  CDarkwolf *pCVar5;
-  void *ptr;
+  CDarkwolf *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CDarkwolfTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CDarkwolfTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004fa8c0(&this_ptr->morph,0);
@@ -29,12 +29,12 @@ CDarkwolf * __cdecl core_darkwolf_cpp_CDarkwolf_dtor_FUN_005990d0(CDarkwolf *thi
                       ,0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
                      ((CDeformableModelInstance *)(pCVar3[-0x1b].filenames[7] + 8),0);
-  pCVar5 = (CDarkwolf *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770
-                     ((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);
+  ptr = (CDarkwolf *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                  ((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
-    return pCVar5;
+    return ptr;
   }
-  FUN_005a30c4(pCVar5);
-  return pCVar5;
+  debugFreeChecked(ptr);
+  return ptr;
 }

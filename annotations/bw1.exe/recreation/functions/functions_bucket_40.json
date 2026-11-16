@@ -5669,6 +5669,24 @@
     "variadic":false
   },
   {
+    "addr":"0043d3c0",
+    "calls":[
+      "0043ced0"
+    ],
+    "conv":"__cdecl",
+    "instructions":97,
+    "method":"clipPolygonTopPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043d3c0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"engine/clipper.c",
+    "variadic":false
+  },
+  {
     "addr":"0043e5c0",
     "callers":[
       "00441cc0",
@@ -15160,6 +15178,35 @@
     "variadic":false
   },
   {
+    "addr":"00509340",
+    "calls":[
+      "005079d0",
+      "005c03a0"
+    ],
+    "conv":"__cdecl",
+    "instructions":53,
+    "method":"projectToScreen",
+    "name":"engine_matrix.c_projectToScreen_FUN_00509340",
+    "params":[
+      {
+        "name":"input_value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "tu":"engine/matrix.c",
+    "variadic":false
+  },
+  {
     "addr":"00509540",
     "cls":"CMelee",
     "conv":"__cdecl",
@@ -18422,6 +18469,105 @@
     "params":[
       {
         "name":"bitmap_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00539040",
+    "callers":[
+      "00539090"
+    ],
+    "calls":[
+      "00538750",
+      "00538930",
+      "00538990",
+      "005392b0"
+    ],
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
+    "instructions":33,
+    "method":"loadPBGFileComplete",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00539040",
+    "params":[
+      {
+        "name":"pbg_filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frames_per_bitmap",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"skip_data_load",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"005390c0",
+    "calls":[
+      "005380c0",
+      "00538db0",
+      "00539090",
+      "005c04e0"
+    ],
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
+    "instructions":96,
+    "method":"loadByFilenameAndIndex",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_005390c0",
+    "params":[
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bitmap_index",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -26122,17 +26268,36 @@
     "calls":[
       "005c4fe0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":15,
-    "method":"FUN_005c03c0",
-    "name":"crt_unknown.c_FUN_005c03c0",
+    "method":"fprintf",
+    "name":"crt_stdio.c_fprintf_FUN_005c03c0",
+    "params":[
+      {
+        "name":"file",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      },
+      {
+        "name":"format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
-    "tu":"crt/unknown.c",
+    "tu":"crt/stdio.c",
     "variadic":false
   },
   {
@@ -26242,10 +26407,10 @@
     "calls":[
       "005c9280"
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "instructions":5,
-    "method":"FUN_005c25c0",
-    "name":"crt_unknown.c_FUN_005c25c0",
+    "method":"remove",
+    "name":"crt_stdio.c_remove_FUN_005c25c0",
     "params":[
       {
         "name":"filename",
@@ -26262,7 +26427,7 @@
       "name":"int",
       "ptr":0
     },
-    "tu":"crt/unknown.c",
+    "tu":"crt/stdio.c",
     "variadic":false
   },
   {
@@ -26276,8 +26441,8 @@
     ],
     "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_005c26c0",
-    "name":"crt_unknown.c_FUN_005c26c0",
+    "method":"chdir",
+    "name":"crt_io.c_chdir_FUN_005c26c0",
     "params":[
       {
         "name":"path",
@@ -26294,7 +26459,7 @@
       "name":"int",
       "ptr":0
     },
-    "tu":"crt/unknown.c",
+    "tu":"crt/io.c",
     "variadic":false
   },
   {

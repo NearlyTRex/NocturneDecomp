@@ -11,7 +11,7 @@ CBugs * __cdecl core_bugs_cpp_factoryFuncBugs_FUN_0041ef20(void)
 {
   CBugs *pCVar1;
   
-  pCVar1 = (CBugs *)operator_new(0x1e634);
+  pCVar1 = operator_new(0x1e634);
   if (pCVar1 == (CBugs *)0x0) {
     return (CBugs *)0x0;
   }

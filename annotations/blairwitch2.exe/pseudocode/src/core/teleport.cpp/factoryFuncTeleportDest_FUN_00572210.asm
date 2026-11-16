@@ -15,7 +15,7 @@ section .text
     PUSH 0x2b4                          ; 00572210
         ;   Label: core_teleport.cpp_factoryFuncTeleportDest_FUN_00572210
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00572215
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0057221a
     TEST EAX,EAX                        ; 0057221d
     JNZ 0x00572222                      ; 0057221f

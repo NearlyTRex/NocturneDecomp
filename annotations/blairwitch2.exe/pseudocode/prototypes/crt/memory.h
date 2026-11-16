@@ -27,7 +27,7 @@ void * __cdecl malloc(ulong size);
 
 // Original: crt_memory.c_operator_new_FUN_005b8be2
 // Address: 005b8be2
-void * operator::new(ulong param_1);
+void * __cdecl operator::new(uint size);
 
 // Original: crt_memory.c_realloc_FUN_005b8ce0
 // Address: 005b8ce0
@@ -35,11 +35,15 @@ void * __cdecl realloc(void *ptr,ulong new_size);
 
 // Original: crt_memory.c_operator_new_array_FUN_005b8df8
 // Address: 005b8df8
-void operator::new_array(undefined4 param_1);
+void * __cdecl operator::new_array(uint size);
 
 // Original: crt_memory.c_calloc_FUN_005b98d0
 // Address: 005b98d0
-void calloc(int param_1,int param_2);
+void * __cdecl calloc(uint count,uint size);
+
+// Original: crt_memory.c___vec_new_FUN_005ba29a
+// Address: 005ba29a
+void * __cdecl ::_vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___vec_new_FUN_005ba2b4
 // Address: 005ba2b4

@@ -11,7 +11,7 @@
 ;   support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0 at 005a0de2
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     RET                                 ; 005a0ea9
     PUSH EDX                            ; 005a0eaa
         ;   Label: LAB_005a0eaa
-    CALL crt_unknown.c_FUN_005c09f0     ; 005a0eab
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 005a0eab
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 005a0eb0
     MOV dword ptr [EBX + 0x14],0x0      ; 005a0eb3
     JMP 0x005a0e8c                      ; 005a0eba

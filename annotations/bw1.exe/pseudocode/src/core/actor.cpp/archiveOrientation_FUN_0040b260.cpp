@@ -19,9 +19,7 @@ void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b260(COrientation *orient
     }
   }
   else {
-    FUN_005c03c0
-              (DAT_007c3034,"%s%g,%g,%g",&DAT_006106c0,(double)orient_ptr->pitch,
-               (double)orient_ptr->heading,(double)orient_ptr->bank);
+    _fprintf(DAT_007c3034,"%s%g,%g,%g");
   }
   core_actor_cpp_archiveDescription_FUN_0040b110("Euler PBH orientation",property_name);
   return;

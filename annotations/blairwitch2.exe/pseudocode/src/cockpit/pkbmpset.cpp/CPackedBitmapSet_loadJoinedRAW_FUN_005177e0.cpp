@@ -69,7 +69,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0(CP
       iVar2 = iVar2 + 0x24;
     } while (iVar1 < this_ptr->bitmap_count);
   }
-  FUN_005b86a0();
+  debugFree(bitmap_data);
   _fclose(unaff_EDI);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00517f60
             (this_ptr,(char *)transparency_color);

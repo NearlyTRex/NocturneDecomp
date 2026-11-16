@@ -15,7 +15,7 @@ section .text
     PUSH 0xc280                         ; 00485c20
         ;   Label: core_drone.cpp_factoryFuncDrone_FUN_00485c20
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00485c25
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 00485c2a
     TEST EAX,EAX                        ; 00485c2d
     JNZ 0x00485c32                      ; 00485c2f

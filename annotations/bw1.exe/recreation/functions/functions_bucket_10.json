@@ -4538,6 +4538,28 @@
     "variadic":false
   },
   {
+    "addr":"00437290",
+    "callers":[
+      "00438260",
+      "00537aa0"
+    ],
+    "conv":"unknown",
+    "data_refs":[
+      "00437279"
+    ],
+    "instructions":6,
+    "method":"getOptimizedMemcpyFunction",
+    "name":"cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00437290",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"00437490",
     "callers":[
       "00437400"
@@ -4647,14 +4669,64 @@
     "calls":[
       "00437270"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":86,
-    "method":"FUN_00438410",
-    "name":"cockpit_ckptutil.c_FUN_00438410",
+    "method":"blitVerticalColumn",
+    "name":"cockpit_ckptutil.c_blitVerticalColumn_FUN_00438410",
+    "params":[
+      {
+        "name":"sprite_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"unused_param",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"start_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -6306,6 +6378,52 @@
     "variadic":false
   },
   {
+    "addr":"0044fb10",
+    "calls":[
+      "0045f700",
+      "005c03a0"
+    ],
+    "cls":"CDemonCamera",
+    "conv":"__cdecl",
+    "instructions":195,
+    "method":"saveCameraTransform",
+    "name":"core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044fb10",
+    "params":[
+      {
+        "name":"new_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"rotation_matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"transform_matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcamera.cpp",
+    "variadic":false
+  },
+  {
     "addr":"00451690",
     "conv":"__cdecl",
     "instructions":11,
@@ -6555,6 +6673,34 @@
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00455b90",
+    "calls":[
+      "00455460"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonAgainstMinZ",
+    "name":"core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00455b90",
+    "params":[
+      {
+        "name":"min_z_plane",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dcube.cpp",
     "variadic":false
   },
   {
@@ -8822,6 +8968,34 @@
       "ptr":1
     },
     "tu":"core/dtrace.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00490f90",
+    "calls":[
+      "00490df0"
+    ],
+    "conv":"__cdecl",
+    "instructions":116,
+    "method":"clipPolygonToTop",
+    "name":"core_dtri.cpp_clipPolygonToTop_FUN_00490f90",
+    "params":[
+      {
+        "name":"y_max",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/dtri.cpp",
     "variadic":false
   },
   {
@@ -17067,6 +17241,35 @@
     "variadic":false
   },
   {
+    "addr":"00525690",
+    "calls":[
+      "005030e0",
+      "005c03a0"
+    ],
+    "conv":"__cdecl",
+    "instructions":122,
+    "method":"validateLayer2AllocationTable",
+    "name":"sound_mp3.cpp_validateLayer2AllocationTable_FUN_00525690",
+    "params":[
+      {
+        "name":"frame",
+        "type":{
+          "kind":"struct",
+          "name":"SMpegFrame",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "tu":"sound/mp3.cpp",
+    "variadic":false
+  },
+  {
     "addr":"00527190",
     "calls":[
       "005c3166"
@@ -17948,14 +18151,90 @@
       "005389c0",
       "005bfb40"
     ],
-    "conv":"unknown",
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
     "instructions":61,
-    "method":"FUN_00538f90",
-    "name":"cockpit_pkbmpset.cpp_FUN_00538f90",
-    "receiver":false,
+    "method":"loadPBMFileRange",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00538f90",
+    "params":[
+      {
+        "name":"filename_format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00539090",
+    "callers":[
+      "005390c0"
+    ],
+    "calls":[
+      "00538990",
+      "00539040"
+    ],
+    "cls":"CPackedBitmapSet",
+    "conv":"__cdecl",
+    "instructions":17,
+    "method":"reloadStoredPBGFile",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00539090",
+    "params":[
+      {
+        "name":"apply_palette_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bitmap_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",
@@ -18273,14 +18552,24 @@
   },
   {
     "addr":"0053df10",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":78,
-    "method":"FUN_0053df10",
-    "name":"engine_prim.c_FUN_0053df10",
+    "method":"getTriangleWindingFromIndices2",
+    "name":"engine_prim.c_getTriangleWindingFromIndices2_FUN_0053df10",
+    "params":[
+      {
+        "name":"triangle_indices",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLPrimitiveTriangle",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/prim.c",
