@@ -329,6 +329,7 @@
       "004051a0",
       "00405280",
       "00405360",
+      "00405400",
       "00405ef0",
       "00405fa0",
       "004065f0",
@@ -3643,6 +3644,24 @@
     "variadic":false
   },
   {
+    "addr":"004382d0",
+    "calls":[
+      "00437270"
+    ],
+    "conv":"unknown",
+    "instructions":118,
+    "method":"FUN_004382d0",
+    "name":"cockpit_ckptutil.c_FUN_004382d0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"00438bd0",
     "calls":[
       "00479180",
@@ -3756,15 +3775,11 @@
   {
     "addr":"0043ced0",
     "callers":[
+      "0043d3c0",
+      "0043d6e0",
       "0043de60"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0043d47b",
-      "0043d4ce",
-      "0043dceb",
-      "0043dd41"
-    ],
     "instructions":126,
     "method":"interpolateVertexTopClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_0043ced0",
@@ -4242,18 +4257,29 @@
   },
   {
     "addr":"004474d0",
-    "conv":"unknown",
+    "cls":"CConstruct",
+    "conv":"__stack_esi",
     "data_refs":[
       "005fdf1c"
     ],
     "instructions":56,
-    "method":"FUN_004474d0",
-    "name":"core_construc.cpp_FUN_004474d0",
-    "receiver":false,
+    "method":"getEffectivePosition",
+    "name":"core_construc.cpp_CConstruct_getEffectivePosition_FUN_004474d0",
+    "params":[
+      {
+        "name":"out_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/construc.cpp",
     "variadic":false
@@ -6416,6 +6442,7 @@
       "00505060",
       "005054c0",
       "00510620",
+      "00559730",
       "00559f80",
       "00564b20",
       "0058e3c0",
@@ -6580,7 +6607,7 @@
       "00554ac0",
       "00554d30",
       "0055d720",
-      "0055f9c0",
+      "0055f630",
       "0055fc60",
       "005611a0",
       "00594340",
@@ -7814,14 +7841,14 @@
   },
   {
     "addr":"00499350",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_00499350",
-    "name":"shape_edittool.cpp_FUN_00499350",
+    "method":"isEditorMini3DMode",
+    "name":"shape_edittool.cpp_isEditorMini3DMode_FUN_00499350",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -13367,6 +13394,9 @@
   },
   {
     "addr":"005079d0",
+    "callers":[
+      "00509340"
+    ],
     "conv":"__stack_esi",
     "instructions":74,
     "method":"transformWorldToView",
@@ -13403,6 +13433,7 @@
     "callers":[
       "004b8100",
       "00507b30",
+      "00559730",
       "00559f80"
     ],
     "conv":"__cdecl",
@@ -16516,6 +16547,9 @@
   },
   {
     "addr":"00538750",
+    "callers":[
+      "00539040"
+    ],
     "calls":[
       "00437400",
       "00479180",
@@ -17008,21 +17042,6 @@
       "ptr":0
     },
     "tu":"core/podmain.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0053df50",
-    "conv":"unknown",
-    "instructions":58,
-    "method":"FUN_0053df50",
-    "name":"engine_prim.c_FUN_0053df50",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/prim.c",
     "variadic":false
   },
   {
@@ -23170,6 +23189,21 @@
     "variadic":false
   },
   {
+    "addr":"005b47d0",
+    "conv":"unknown",
+    "instructions":131,
+    "method":"FUN_005b47d0",
+    "name":"wincore_winrun.cpp_FUN_005b47d0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"wincore/winrun.cpp",
+    "variadic":false
+  },
+  {
     "addr":"005b49d0",
     "calls":[
       "005b4980",
@@ -23744,7 +23778,6 @@
       "005221d0",
       "00522340",
       "00537db0",
-      "00537fd8",
       "0053b250",
       "00543fd0",
       "0054af20",

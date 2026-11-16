@@ -14,7 +14,10 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
-; XREF[3]:
+; XREF[6]:
+;   FUN_00490f90 at 0049106c
+;   FUN_004910f0 at 004911d2
+;   FUN_00491520 at 00491602
 ;   core_dtri.cpp_clipPolygonToFar_FUN_00491690 at 00491772
 ;   core_dtri.cpp_clipPolygonToRight_FUN_00491260 at 0049133a
 ;   core_dtri.cpp_clipTriangleToBounds_FUN_00491850 at 00491e63

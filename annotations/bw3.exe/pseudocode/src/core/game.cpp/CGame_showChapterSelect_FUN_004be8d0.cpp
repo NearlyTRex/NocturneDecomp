@@ -33,7 +33,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004be8d0(CGame *this_ptr,
   this_ptr->total_game_time = 0.0;
   this_ptr->total_play_time = 0.0;
   this_ptr->end_timer = -1.0;
-  core_game_cpp_FUN_004c4d10(this_ptr);
+  core_game_cpp_CGame_resetMusic_FUN_004c4d10(this_ptr);
   uVar2 = _DAT_01c5b0e0;
   _DAT_01c5b0e0 = _DAT_01549aa8;
   this_ptr->is_loading = 0;

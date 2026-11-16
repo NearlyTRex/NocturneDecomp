@@ -5,6 +5,7 @@
 ;
 ;
 ; XREF[76]:
+;   FUN_0050f260 at 0050f26f
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0 at 0043693d
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_00437e10 at 00437eec
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0050f230 at 0050f256
@@ -14,7 +15,6 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00510a90 at 00510b64
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_00448f30 at 00448f80
 ;   core_dcube.cpp_CDemonCube_freeMemory_FUN_00453ec0 at 00453eed
-;   core_dfilter.cpp_CDemonFilter_freeMemory_FUN_00459960 at 0045996f
 ;   ... and 66 more
 ;
 ; Called Functions:

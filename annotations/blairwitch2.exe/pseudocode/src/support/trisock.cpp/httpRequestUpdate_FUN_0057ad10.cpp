@@ -194,7 +194,7 @@ LAB_0057b03d:
           while( true ) {
             do {
               *(byte *)(iVar6 + 0x810) = 0;
-              iVar5 = support_trisock_cpp_FUN_0057b680(request,0);
+              iVar5 = support_trisock_cpp_httpRequestGetByte_FUN_0057b680(request,0);
               if (iVar5 < 0) goto switchD_0057ad33_default;
             } while (iVar5 == 0xd);
             if (iVar5 == 10) break;
@@ -264,8 +264,8 @@ joined_r0x0057b476:
             iVar6 = *(int *)((int)request + 0xd28);
             goto joined_r0x0057b476;
           }
-          uVar7 = support_trisock_cpp_FUN_0057b680
-                            (request,0x7fffffff < *(uint *)((int)request + 0x60c));
+          uVar7 = support_trisock_cpp_httpRequestGetByte_FUN_0057b680
+                            (request,(uint)(0x7fffffff < *(uint *)((int)request + 0x60c)));
           if (uVar7 == 0xfffffffe) {
             *(uint *)((int)request + 0xd28) = 5;
             support_trisock_cpp_CSocket_closeSocket_FUN_00579360(pCStack_2c);

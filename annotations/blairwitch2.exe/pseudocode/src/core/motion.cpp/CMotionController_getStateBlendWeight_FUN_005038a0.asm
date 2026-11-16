@@ -10,7 +10,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[26]:
+; XREF[27]:
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00429ce0 at 00429d3c
 ;   core_doc.cpp_CDoc_canDoHeroAction_FUN_0045d0c0 at 0045d0f4
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455665
@@ -19,9 +19,9 @@
 ;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 00453d9b
 ;   core_doc.cpp_CDoc_updateTurnBlending_FUN_00455270 at 004552a0
 ;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0 at 0045be58
+;   core_doc.cpp_FUN_00458e80 at 00458ee6
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410 at 004af5bc
-;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004add01
-;   ... and 16 more
+;   ... and 17 more
 ;
 ; *****************************************************************************
 

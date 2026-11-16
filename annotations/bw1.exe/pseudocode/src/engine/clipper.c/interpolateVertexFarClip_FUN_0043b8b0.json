@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 117,
     "complexity_score": 157,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -17,6 +17,12 @@
     "total_lines": 169
   },
   "cross_references": [
+    {
+      "addr": "0043bed0",
+      "from_addr": "0043c03f",
+      "name": "FUN_0043bed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0043c190",
       "from_addr": "0043cb2b",
@@ -46,7 +52,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "0043cb2b",
@@ -63,6 +69,17 @@
         "call_addr": "0043cb99",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043c03f",
+        "call_type": "direct",
+        "caller": "FUN_0043bed0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

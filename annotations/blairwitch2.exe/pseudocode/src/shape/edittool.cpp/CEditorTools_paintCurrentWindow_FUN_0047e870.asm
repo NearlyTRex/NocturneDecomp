@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
-;   core_menu.cpp_FUN_004eba50 at 004ebaef
+;   core_menu.cpp_adjustFixedPointSlider_FUN_004eba50 at 004ebaef
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb85f
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ec9f1
 ;   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047bf80 at 0047bfdc

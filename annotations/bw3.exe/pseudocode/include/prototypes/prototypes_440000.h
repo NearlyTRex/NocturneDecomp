@@ -26,6 +26,7 @@
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/COutStream.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRect.h"
@@ -138,7 +139,7 @@ void __cdecl core_construc_cpp_CConstruct_archive_FUN_00443ca0(CConstruct *this_
 void __cdecl core_construc_cpp_CConstruct_processDamage_FUN_00443f00(CConstruct *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_construc_cpp_CConstruct_getTargetPoints_FUN_00444010(CConstruct *this_ptr,CVector3f *out_points_array);
 void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_ptr);
-void core_construc_cpp_FUN_00444340(int param_1);
+CVector3f * __stack_esi core_construc_cpp_CConstruct_getEffectivePosition_FUN_00444340(CConstruct *this_ptr,CVector3f *out_position);
 void __cdecl core_construc_cpp_CConstruct_startRecombine_FUN_004443d0(CConstruct *this_ptr);
 ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_004444c0(CConstruct *this_ptr,SCollisionInfo *param_2);
 EDeathState __cdecl core_construc_cpp_CConstruct_getDeathState_FUN_004444f0(CConstruct *this_ptr);
@@ -241,6 +242,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044af
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044b4a0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
+void FUN_0044bc50(int param_1,float *param_2,CMatrix3x3f *param_3);
 void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044bfe0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044c060(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044c130(CDemonCamera *this_ptr,char *filename);
@@ -262,6 +264,7 @@ int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_0044dff0(int start_x,int s
 void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_0044e250(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
+void FUN_0044eeb0(int param_1,float param_2,float param_3,float param_4);
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);
 int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_0044f4d0(CDemonCamera *this_ptr,CVector3f *position,float radius);
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_0044f680(CDemonCamera *this_ptr,float intensity);

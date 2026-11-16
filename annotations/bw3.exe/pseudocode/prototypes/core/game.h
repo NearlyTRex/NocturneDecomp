@@ -293,9 +293,9 @@ void __cdecl CGame::updateMusic(CGame *this_ptr);
 // Address: 004c4cc0
 void __cdecl CGame::saveMusicPosition(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004c4d10
+// Original: core_game.cpp_CGame_resetMusic_FUN_004c4d10
 // Address: 004c4d10
-void FUN_004c4d10(int param_1);
+void __cdecl CGame::resetMusic(CGame *this_ptr);
 
 // Original: core_game.cpp_getSelectedWeapon_FUN_004c4d50
 // Address: 004c4d50

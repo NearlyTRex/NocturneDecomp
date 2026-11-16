@@ -8,8 +8,9 @@
 ; char *           Stack[0x8]:4   filename
 ; int              Stack[0xc]:4   apply_palette_flag
 ;
-; XREF[1]:
+; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_00538530 at 0053853b
+;   cockpit_pkbmpset.cpp_FUN_00538f90 at 0053900c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d1d400

@@ -81,9 +81,9 @@ CMatrix3x4f * __stack_esi inverse(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out
 // Address: 00592a60
 float __cdecl computeOrthogonalityError(CMatrix3x4f *matrix);
 
-// Original: core_xform.cpp_FUN_00592dd0
-// Address: 00592dd0
-void FUN_00592dd0(void);
+// Original: core_xform.cpp_FUN_00592c90
+// Address: 00592c90
+void FUN_00592c90(void);
 
 // Original: core_xform.cpp_buildRotationX_FUN_00593240
 // Address: 00593240

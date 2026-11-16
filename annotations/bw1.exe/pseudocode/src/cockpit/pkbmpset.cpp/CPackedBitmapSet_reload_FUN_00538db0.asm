@@ -8,6 +8,9 @@
 ; int              Stack[0x8]:4   apply_palette_flag
 ; int              Stack[0xc]:4   bitmap_index
 ;
+; XREF[1]:
+;   FUN_005390c0 at 0053917d
+;
 ; Referenced Globals:
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404

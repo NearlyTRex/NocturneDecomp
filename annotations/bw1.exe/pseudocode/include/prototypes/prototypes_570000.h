@@ -288,7 +288,6 @@ void __cdecl engine_special_cpp_clearZBufferNative_FUN_0057dca4(void);
 void __cdecl engine_special_cpp_clearScreenRegion_FUN_0057dd07(int color);
 void __cdecl engine_special_cpp_fillDepthRegion_FUN_0057dd92(int left,int right,int top,int bottom);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
-void engine_special_cpp_FUN_0057e570(void);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0057eeac(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0057f473(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);

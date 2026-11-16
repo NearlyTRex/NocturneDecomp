@@ -29,6 +29,7 @@
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/COutStream.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CQuaternion4f.h"
@@ -173,7 +174,7 @@ void __cdecl core_construc_cpp_CConstruct_archive_FUN_00446e30(CConstruct *this_
 void __cdecl core_construc_cpp_CConstruct_processDamage_FUN_00447090(CConstruct *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_construc_cpp_CConstruct_getTargetPoints_FUN_004471a0(CConstruct *this_ptr,CVector3f *out_points_array);
 void __cdecl core_construc_cpp_CConstruct_explode_FUN_004472a0(CConstruct *this_ptr);
-void core_construc_cpp_FUN_004474d0(int param_1);
+CVector3f * __stack_esi core_construc_cpp_CConstruct_getEffectivePosition_FUN_004474d0(CConstruct *this_ptr,CVector3f *out_position);
 void __cdecl core_construc_cpp_CConstruct_startRecombine_FUN_00447560(CConstruct *this_ptr);
 ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_00447630(CConstruct *this_ptr,SCollisionInfo *param_2);
 CConstruct * __cdecl core_construc_cpp_CConstruct_dtor_FUN_00447660(CConstruct *this_ptr,uint flags);
@@ -292,6 +293,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044ee
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044ef30(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
+void FUN_0044fb10(int param_1,float *param_2,CMatrix3x3f *param_3);
 void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044fea0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044fff0(CDemonCamera *this_ptr,char *filename);

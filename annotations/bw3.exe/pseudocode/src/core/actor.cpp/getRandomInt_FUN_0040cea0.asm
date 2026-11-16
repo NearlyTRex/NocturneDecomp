@@ -15,9 +15,9 @@
 ; XREF[73]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cd9f
 ;   core_baal.cpp_CBaal_chooseAttack_FUN_00597700 at 005977a9
+;   core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0 at 00597bff
 ;   core_baal.cpp_CBaal_processDamage_FUN_00597af0 at 00597b40
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00597184
-;   core_baal.cpp_FUN_00597be0 at 00597bff
 ;   core_bird.cpp_CBird_renderOpaque_FUN_0040fe90 at 0040ff09
 ;   core_bird.cpp_setRandomMotionVariant_FUN_00410030 at 0041008b
 ;   core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004133c0 at 00413b62

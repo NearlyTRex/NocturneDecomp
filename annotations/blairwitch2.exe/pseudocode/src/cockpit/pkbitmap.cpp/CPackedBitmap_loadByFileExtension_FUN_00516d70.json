@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 69,
     "complexity_score": 31,
-    "cross_reference_count": 0,
+    "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -12,7 +12,14 @@
     "suspect_types": [],
     "total_lines": 100
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "00517d70",
+      "from_addr": "00517d9c",
+      "name": "FUN_00517d70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "00516d70",
     "address_range": [
@@ -44,9 +51,32 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00517d9c",
+        "call_type": "direct",
+        "caller": "FUN_00517d70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00517dc8",
+        "call_type": "direct",
+        "caller": "FUN_00517d70",
+        "estimated_params": 2,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
     "estimated_params": 2,

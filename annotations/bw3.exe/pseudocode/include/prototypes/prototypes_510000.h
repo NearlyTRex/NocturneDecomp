@@ -48,7 +48,10 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_005106a0(CPackedBit
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740(CPackedBitmapSet *this_ptr,char *filename_format,int width,int height,int start_index,int end_index,int transparency_color,int apply_palette_flag);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00510a90(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
-void cockpit_pkbmpset_cpp_FUN_00510de0(void);
+void cockpit_pkbmpset_cpp_FUN_00510c70(void);
+void FUN_00510d20(CPackedBitmapSet *param_1,undefined4 param_2,char *param_3,int param_4,int param_5 ,int param_6);
+void FUN_00510d70(CPackedBitmapSet *param_1,undefined4 param_2,undefined4 param_3);
+void FUN_00510da0(CPackedBitmapSet *param_1,int param_2,int param_3);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00510e70(CPackedBitmapSet *this_ptr,char *act_filename);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00510ec0(CPackedBitmapSet *this_ptr,char *palette_data);
 int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_00510f40(CPackedBitmapSet *this_ptr);

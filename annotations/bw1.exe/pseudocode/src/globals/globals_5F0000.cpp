@@ -355,7 +355,7 @@ CConstruct_full_vtable g_CConstructVTable = {
         .isWalkComplete = (CCharacter_isWalkComplete *)core_charactr_cpp_CCharacter_isWalkComplete_FUN_00432200
     },
     ._ue = {.getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a08b0, .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0},
-    ._uconstruct = {.vfunc82 = (CConstruct_vfunc82 *)core_construc_cpp_FUN_004474d0}
+    ._uconstruct = {.vfunc82 = (CConstruct_vfunc82 *)core_construc_cpp_CConstruct_getEffectivePosition_FUN_004474d0}
 };
 
 // CDemnfolk_full_vtable

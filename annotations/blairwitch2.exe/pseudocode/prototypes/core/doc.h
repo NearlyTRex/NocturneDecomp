@@ -113,9 +113,9 @@ void __cdecl CDoc::dropRightHandObject(CDoc *this_ptr);
 // Address: 004583f0
 int __cdecl CDoc::tryClimbLadder(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_00459555
-// Address: 00459555
-undefined4 FUN_00459555(float param_1,float param_2,float param_3);
+// Original: core_doc.cpp_FUN_00458e80
+// Address: 00458e80
+undefined4 FUN_00458e80(void);
 
 // Original: core_doc.cpp_CDoc_archive_FUN_004597a0
 // Address: 004597a0

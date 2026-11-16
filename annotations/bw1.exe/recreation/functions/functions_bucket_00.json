@@ -4832,21 +4832,6 @@
     "variadic":false
   },
   {
-    "addr":"00438280",
-    "conv":"unknown",
-    "instructions":6,
-    "method":"FUN_00438280",
-    "name":"cockpit_ckptutil.c_FUN_00438280",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
     "addr":"00438700",
     "conv":"__cdecl",
     "instructions":56,
@@ -5065,12 +5050,10 @@
     "addr":"0043d000",
     "callers":[
       "0043d500",
+      "0043d6e0",
       "0043de60"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0043dd6a"
-    ],
     "instructions":126,
     "method":"interpolateVertexBottomClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_0043d000",
@@ -5140,21 +5123,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"engine/clipper.c",
-    "variadic":false
-  },
-  {
-    "addr":"0043d880",
-    "conv":"unknown",
-    "instructions":7,
-    "method":"FUN_0043d880",
-    "name":"engine_clipper.c_FUN_0043d880",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -6488,6 +6456,7 @@
       "00440640",
       "004421d0",
       "0044ab20",
+      "0044fb10",
       "00454cc0",
       "0045edf0",
       "00463460",
@@ -8226,6 +8195,7 @@
       "00519ba0",
       "00519c20",
       "00555360",
+      "00559730",
       "00559f80"
     ],
     "calls":[
@@ -8262,7 +8232,7 @@
       "0048c510",
       "00492300",
       "005553e0",
-      "00559c10",
+      "00559730",
       "00559f80",
       "005640d0",
       "005a9f10"
@@ -8497,7 +8467,7 @@
       "004fae10",
       "00519cb0",
       "00522dd0",
-      "00559c10",
+      "00559730",
       "00559f80",
       "0055d720",
       "005640d0",
@@ -8761,7 +8731,7 @@
       "00554ac0",
       "00554d30",
       "0055d720",
-      "0055f9c0",
+      "0055f630",
       "00563bb0",
       "005640d0",
       "005964f0",
@@ -11475,14 +11445,24 @@
   },
   {
     "addr":"004bf780",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_004bf780",
-    "name":"core_flattn.cpp_FUN_004bf780",
+    "method":"setFlattenMatrix",
+    "name":"core_flattn.cpp_setFlattenMatrix_FUN_004bf780",
+    "params":[
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -11490,14 +11470,32 @@
   },
   {
     "addr":"004bf800",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":35,
-    "method":"FUN_004bf800",
-    "name":"core_flattn.cpp_FUN_004bf800",
+    "method":"setFlattenMatrixAndOffset",
+    "name":"core_flattn.cpp_setFlattenMatrixAndOffset_FUN_004bf800",
+    "params":[
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -11776,6 +11774,21 @@
     "ret":{
       "kind":"builtin",
       "name":"int",
+      "ptr":0
+    },
+    "tu":"engine/font.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"004c4c00",
+    "conv":"unknown",
+    "instructions":107,
+    "method":"FUN_004c4c00",
+    "name":"engine_font.cpp_FUN_004c4c00",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
       "ptr":0
     },
     "tu":"engine/font.cpp",
@@ -14379,7 +14392,8 @@
     "addr":"00508700",
     "callers":[
       "004051a0",
-      "00405280"
+      "00405280",
+      "00405400"
     ],
     "calls":[
       "00508620"
@@ -16921,7 +16935,8 @@
   {
     "addr":"00538480",
     "callers":[
-      "00538530"
+      "00538530",
+      "00538f90"
     ],
     "calls":[
       "00479180",
@@ -16968,7 +16983,8 @@
   {
     "addr":"00538900",
     "callers":[
-      "00538a60"
+      "00538a60",
+      "00538f90"
     ],
     "calls":[
       "005bfb70"
@@ -16982,21 +16998,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"cockpit/pkbmpset.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"00539100",
-    "conv":"unknown",
-    "instructions":5,
-    "method":"FUN_00539100",
-    "name":"cockpit_pkbmpset.cpp_FUN_00539100",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",

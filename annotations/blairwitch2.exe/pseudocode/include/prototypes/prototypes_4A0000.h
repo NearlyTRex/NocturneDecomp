@@ -21,6 +21,7 @@
 #include "types/classes/CFrankenstienMachine.h"
 #include "types/classes/CGabriella.h"
 #include "types/classes/CLocation.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -181,11 +182,11 @@ SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_arrdtor4_FUN_004a6730(SNotesMap 
 SNotesSection * __cdecl core_fldnotes_cpp_SNotesSection_arrdtor6_FUN_004a6750(SNotesSection *this_ptr,uint flags);
 void __cdecl core_flattn_cpp_staticInit_FUN_004a6770(void);
 void __cdecl core_flattn_cpp_doNothing_FUN_004a67a0(void);
-void core_flattn_cpp_FUN_004a67b0(undefined4 *param_1);
-void core_flattn_cpp_FUN_004a6830(undefined4 *param_1,undefined4 *param_2);
-void core_flattn_cpp_FUN_004a68c0(undefined4 *param_1);
-void core_flattn_cpp_FUN_004a6940(float *param_1,float *param_2);
-void core_flattn_cpp_FUN_004a69c0(float *param_1,float *param_2);
+void __cdecl core_flattn_cpp_setFlattenMatrix_FUN_004a67b0(CMatrix3x3f *matrix);
+void __cdecl core_flattn_cpp_setFlattenMatrixAndOffset_FUN_004a6830(CMatrix3x3f *matrix,CVector3f *offset);
+void __cdecl core_flattn_cpp_setFlattenMatrixTransposed_FUN_004a68c0(CMatrix3x3f *matrix);
+void __cdecl core_flattn_cpp_flattenTransformPoint_FUN_004a6940(CVector3f *point_out,CVector3f *point_in);
+void __cdecl core_flattn_cpp_flattenTransformVector_FUN_004a69c0(CVector3f *vector_out,CVector3f *vector_in);
 void __cdecl core_flies_cpp_staticInit_FUN_004a6a30(void);
 CFlies * __cdecl core_flies_cpp_factoryFuncFlies_FUN_004a6a60(void);
 CDemonActorType * __cdecl core_flies_cpp_CFlies_getActorType_FUN_004a6a80(CFlies *this_ptr);

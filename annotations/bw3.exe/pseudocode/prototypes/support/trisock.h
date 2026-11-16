@@ -237,6 +237,6 @@ SIpAddr * __cdecl IpAddr::ctor(SIpAddr *this_ptr);
 // Address: 00572310
 void * __cdecl initHostInfo(void *host_info);
 
-// Original: support_trisock.cpp_FUN_00572330
+// Original: support_trisock.cpp_copyNetworkAddr_FUN_00572330
 // Address: 00572330
-void FUN_00572330(undefined4 *param_1,undefined4 *param_2);
+SNetworkAddr * __cdecl copyNetworkAddr(SNetworkAddr *dest,SNetworkAddr *src);

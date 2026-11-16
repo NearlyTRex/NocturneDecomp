@@ -9,7 +9,7 @@
 ; XREF[12]:
 ;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00472600 at 00472768
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b66b0
-;   core_menu.cpp_FUN_004eba50 at 004ebc8c
+;   core_menu.cpp_adjustFixedPointSlider_FUN_004eba50 at 004ebc8c
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb9fc
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ecb8d
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 at 0050ba48

@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 176,
     "complexity_score": 166,
-    "cross_reference_count": 3,
+    "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
@@ -17,6 +17,24 @@
     "total_lines": 217
   },
   "cross_references": [
+    {
+      "addr": "00490f90",
+      "from_addr": "0049106c",
+      "name": "FUN_00490f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004910f0",
+      "from_addr": "004911d2",
+      "name": "FUN_004910f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00491520",
+      "from_addr": "00491602",
+      "name": "FUN_00491520",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00491690",
       "from_addr": "00491772",
@@ -83,8 +101,52 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 16,
+    "call_site_count": 22,
     "call_sites": [
+      {
+        "call_addr": "0049106c",
+        "call_type": "direct",
+        "caller": "FUN_00490f90",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "004910ca",
+        "call_type": "direct",
+        "caller": "FUN_00490f90",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "004911d2",
+        "call_type": "direct",
+        "caller": "FUN_004910f0",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "0049122e",
+        "call_type": "direct",
+        "caller": "FUN_004910f0",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
       {
         "call_addr": "0049133a",
         "call_type": "direct",
@@ -108,6 +170,28 @@
         "stack_params": 11
       },
       {
+        "call_addr": "00491602",
+        "call_type": "direct",
+        "caller": "FUN_00491520",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "0049165e",
+        "call_type": "direct",
+        "caller": "FUN_00491520",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
         "call_addr": "00491772",
         "call_type": "direct",
         "caller": "core_dtri.cpp_clipPolygonToFar_FUN_00491690",
@@ -122,72 +206,6 @@
         "call_addr": "004917ce",
         "call_type": "direct",
         "caller": "core_dtri.cpp_clipPolygonToFar_FUN_00491690",
-        "estimated_params": 11,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 44,
-        "stack_params": 11
-      },
-      {
-        "call_addr": "00491e63",
-        "call_type": "direct",
-        "caller": "core_dtri.cpp_clipTriangleToBounds_FUN_00491850",
-        "estimated_params": 11,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 44,
-        "stack_params": 11
-      },
-      {
-        "call_addr": "00491ed2",
-        "call_type": "direct",
-        "caller": "core_dtri.cpp_clipTriangleToBounds_FUN_00491850",
-        "estimated_params": 11,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 44,
-        "stack_params": 11
-      },
-      {
-        "call_addr": "00491f15",
-        "call_type": "direct",
-        "caller": "core_dtri.cpp_clipTriangleToBounds_FUN_00491850",
-        "estimated_params": 11,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 44,
-        "stack_params": 11
-      },
-      {
-        "call_addr": "00491f82",
-        "call_type": "direct",
-        "caller": "core_dtri.cpp_clipTriangleToBounds_FUN_00491850",
-        "estimated_params": 11,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 44,
-        "stack_params": 11
-      },
-      {
-        "call_addr": "00491fc7",
-        "call_type": "direct",
-        "caller": "core_dtri.cpp_clipTriangleToBounds_FUN_00491850",
-        "estimated_params": 11,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 44,
-        "stack_params": 11
-      },
-      {
-        "call_addr": "00492036",
-        "call_type": "direct",
-        "caller": "core_dtri.cpp_clipTriangleToBounds_FUN_00491850",
         "estimated_params": 11,
         "instructions_analyzed": 0,
         "method": "add_esp",

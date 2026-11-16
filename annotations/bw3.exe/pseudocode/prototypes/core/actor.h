@@ -421,9 +421,9 @@ void __cdecl crc32ProcessVector(uint *crc_state,CVector3f *vector);
 // Address: 0040d1c0
 void __cdecl crc32ProcessString(uint *crc_state,char *string);
 
-// Original: core_actor.cpp_FUN_0040d200
+// Original: core_actor.cpp_sqrtFloatRef_FUN_0040d200
 // Address: 0040d200
-float FUN_0040d200(float *param_1);
+float __cdecl sqrtFloatRef(float *value);
 
 // Original: core_actor.cpp_CVector3f_ctor_FUN_0040d220
 // Address: 0040d220

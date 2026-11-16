@@ -25,10 +25,6 @@ void __cdecl fillDepthRegion(int left,int right,int top,int bottom);
 // Address: 0057de01
 void __edi_esi_ebx renderMMXPerspectiveScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
-// Original: engine_special.cpp_FUN_0057e570
-// Address: 0057e570
-void FUN_0057e570(void);
-
 // Original: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3
 // Address: 0057e5e3
 void __edi_esi_ebx renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);

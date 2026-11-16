@@ -11,6 +11,9 @@
 ; int              Stack[0x14]:4   skip_data_load
 ; int              Stack[0x18]:4   selected_bitmap_index
 ;
+; XREF[1]:
+;   FUN_00510d20 at 00510d47
+;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4

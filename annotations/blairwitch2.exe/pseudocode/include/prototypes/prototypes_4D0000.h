@@ -170,7 +170,7 @@ void __cdecl core_inv_cpp_staticInit_FUN_004d9c00(void);
 CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004d9db0(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9f10(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *actor_ptr);
-void core_inv_cpp_FUN_004d9ff0(float param_1,float param_2);
+CVector3i * __stack2_esi core_inv_cpp_screenToWorldPoint_FUN_004d9ff0(float screen_x,float screen_y,CVector3i *out_point);
 void __cdecl core_inv_cpp_renderCompass_FUN_004da130(void);
 int __cdecl core_inv_cpp_loadItem_FUN_004da720(SInventoryItemInfo *item_info,_FILE *file_handle);
 CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004da760(CInventory *this_ptr);

@@ -263,7 +263,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
             if (EVar2 == WALK_STATE_WALKING) {
 LAB_00596aff:
               if (iVar3 != 2) {
-                core_baal_cpp_FUN_00597be0(this_ptr,0);
+                core_baal_cpp_CBaal_chooseRandomMotion_FUN_00597be0(this_ptr,0);
               }
             }
             else {
@@ -311,7 +311,7 @@ LAB_00596f96:
           core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0((CDemonActor *)this_ptr);
           if ((this_ptr->base).attack_cooldown <= 0.0) {
             if ((float)_DAT_005d9679 < fStack_24) {
-              core_baal_cpp_FUN_00597be0(this_ptr,0);
+              core_baal_cpp_CBaal_chooseRandomMotion_FUN_00597be0(this_ptr,0);
             }
             iVar3 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
             iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x10c))(iVar3);
@@ -449,7 +449,7 @@ LAB_005974b3:
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
           ;
           if ((this_ptr->base).victim == (CCharacter *)0x0) {
-            core_baal_cpp_FUN_00597be0(this_ptr,1);
+            core_baal_cpp_CBaal_chooseRandomMotion_FUN_00597be0(this_ptr,1);
           }
           else if ((fStack_24 <= 0x40A00000 + (float)_DAT_005d9669) ||
                   (fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
@@ -507,7 +507,7 @@ LAB_005974b3:
             }
           }
           else {
-            core_baal_cpp_FUN_00597be0(this_ptr,1);
+            core_baal_cpp_CBaal_chooseRandomMotion_FUN_00597be0(this_ptr,1);
           }
           break;
         case 9:

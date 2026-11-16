@@ -756,6 +756,7 @@
       "0053a3d0",
       "0053a520",
       "00555610",
+      "00559730",
       "00559f80",
       "0055fc60",
       "005611a0",
@@ -4033,12 +4034,10 @@
   {
     "addr":"0043b8b0",
     "callers":[
+      "0043bed0",
       "0043c190"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0043c03f"
-    ],
     "instructions":109,
     "method":"interpolateVertexFarClip",
     "name":"engine_clipper.c_interpolateVertexFarClip_FUN_0043b8b0",
@@ -7438,7 +7437,7 @@
   {
     "addr":"00481db0",
     "callers":[
-      "00559c10",
+      "00559730",
       "00559f80"
     ],
     "calls":[
@@ -7617,7 +7616,7 @@
       "004b4370",
       "004b46e0",
       "004b8100",
-      "0055f9c0",
+      "0055f630",
       "005b0c00"
     ],
     "calls":[
@@ -7661,6 +7660,7 @@
       "00521e40",
       "00550da0",
       "00555590",
+      "00559730",
       "00559f80",
       "0055b330",
       "005847e0",
@@ -7702,6 +7702,7 @@
       "004fe9c0",
       "00550da0",
       "00555590",
+      "00559730",
       "00559f80",
       "0055b330",
       "005847e0"
@@ -7790,6 +7791,7 @@
       "00521e40",
       "00534ca0",
       "0054e3c0",
+      "00559730",
       "00559f80",
       "0055d720",
       "0055d9c0",
@@ -7842,6 +7844,7 @@
       "00521e40",
       "00550da0",
       "00555590",
+      "00559730",
       "00559f80",
       "0055b330",
       "005847e0"
@@ -16544,7 +16547,7 @@
     ],
     "cls":"CPackedBitmap",
     "conv":"__cdecl",
-    "instructions":147,
+    "instructions":159,
     "method":"load",
     "name":"cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0",
     "params":[
@@ -16723,6 +16726,10 @@
   },
   {
     "addr":"00538930",
+    "callers":[
+      "00538f90",
+      "00539040"
+    ],
     "cls":"CPackedBitmapSet",
     "conv":"__cdecl",
     "instructions":34,
@@ -16812,6 +16819,9 @@
   },
   {
     "addr":"00538db0",
+    "callers":[
+      "005390c0"
+    ],
     "calls":[
       "00479180",
       "005030e0",
@@ -16859,7 +16869,8 @@
   {
     "addr":"005392b0",
     "callers":[
-      "00538b30"
+      "00538b30",
+      "00539040"
     ],
     "calls":[
       "005c20d0"
@@ -18066,6 +18077,39 @@
     "variadic":false
   },
   {
+    "addr":"00559730",
+    "calls":[
+      "004087b0",
+      "004087f0",
+      "00420570",
+      "00481b80",
+      "00481c00",
+      "00481db0",
+      "004834b0",
+      "00483530",
+      "004837b0",
+      "00483850",
+      "004839b0",
+      "00483d80",
+      "00483e20",
+      "00507b50",
+      "0055c6f0",
+      "00580173"
+    ],
+    "conv":"unknown",
+    "instructions":570,
+    "method":"FUN_00559730",
+    "name":"core_setdir.cpp_FUN_00559730",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"core/setdir.cpp",
+    "variadic":false
+  },
+  {
     "addr":"0055b330",
     "callers":[
       "0055b220"
@@ -18193,6 +18237,27 @@
       "ptr":0
     },
     "tu":"core/setutil.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"0055f630",
+    "calls":[
+      "00482e30",
+      "00483dd0",
+      "00484f00",
+      "00580173"
+    ],
+    "conv":"unknown",
+    "instructions":350,
+    "method":"FUN_0055f630",
+    "name":"core_shadow.cpp_FUN_0055f630",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"core/shadow.cpp",
     "variadic":false
   },
   {

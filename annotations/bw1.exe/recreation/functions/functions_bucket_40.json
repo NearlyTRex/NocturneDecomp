@@ -2489,14 +2489,24 @@
   },
   {
     "addr":"0040cfc0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":8,
-    "method":"FUN_0040cfc0",
-    "name":"core_actor.cpp_FUN_0040cfc0",
+    "method":"sqrtFloatRef",
+    "name":"core_actor.cpp_sqrtFloatRef_FUN_0040cfc0",
+    "params":[
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/actor.cpp",
@@ -5327,21 +5337,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
-    "addr":"00438440",
-    "conv":"unknown",
-    "instructions":6,
-    "method":"FUN_00438440",
-    "name":"cockpit_ckptutil.c_FUN_00438440",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"cockpit/ckptutil.c",
@@ -13853,15 +13848,41 @@
     "calls":[
       "005c03a0"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":95,
-    "method":"FUN_004f63c0",
-    "name":"core_inv.cpp_FUN_004f63c0",
+    "method":"screenToWorldPoint",
+    "name":"core_inv.cpp_screenToWorldPoint_FUN_004f63c0",
+    "params":[
+      {
+        "name":"screen_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"screen_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3i",
+      "ptr":1
     },
     "tu":"core/inv.cpp",
     "variadic":false
@@ -18347,6 +18368,9 @@
   },
   {
     "addr":"005380c0",
+    "callers":[
+      "005390c0"
+    ],
     "calls":[
       "00537cb0",
       "00538530",
@@ -18380,7 +18404,8 @@
     "addr":"005389c0",
     "callers":[
       "00538a60",
-      "00538b30"
+      "00538b30",
+      "00538f90"
     ],
     "calls":[
       "005030e0",
@@ -20236,27 +20261,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"core/shadow.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0055f9c0",
-    "calls":[
-      "00482e30",
-      "00483dd0",
-      "00484f00",
-      "00580173"
-    ],
-    "conv":"unknown",
-    "instructions":132,
-    "method":"FUN_0055f9c0",
-    "name":"core_shadow.cpp_FUN_0055f9c0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"core/shadow.cpp",
@@ -23852,15 +23856,33 @@
   },
   {
     "addr":"0059f340",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":10,
-    "method":"FUN_0059f340",
-    "name":"support_trisock.cpp_FUN_0059f340",
+    "method":"copyNetworkAddr",
+    "name":"support_trisock.cpp_copyNetworkAddr_FUN_0059f340",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"struct",
+          "name":"SNetworkAddr",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"struct",
+          "name":"SNetworkAddr",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SNetworkAddr",
+      "ptr":1
     },
     "tu":"support/trisock.cpp",
     "variadic":false
@@ -25490,21 +25512,6 @@
     "variadic":false
   },
   {
-    "addr":"005b48c0",
-    "conv":"unknown",
-    "instructions":51,
-    "method":"FUN_005b48c0",
-    "name":"wincore_winrun.cpp_FUN_005b48c0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"wincore/winrun.cpp",
-    "variadic":false
-  },
-  {
     "addr":"005b72c0",
     "callers":[
       "004328f0",
@@ -25949,6 +25956,7 @@
       "00538a60",
       "00538b30",
       "00538db0",
+      "00538f90",
       "0053b250",
       "00543100",
       "005433c0",

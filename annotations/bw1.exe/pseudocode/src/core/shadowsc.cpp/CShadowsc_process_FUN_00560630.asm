@@ -617,8 +617,8 @@ section .text
         ;   XREF to: 005247c0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00560c71
     PUSH EBX                            ; 00560c74
-    CALL core_shadowsc.cpp_FUN_00560fe0 ; 00560c75
-        ;   XREF to: 00560fe0 (UNCONDITIONAL_CALL)  ; undefined core_shadowsc.cpp_FUN_00560fe0()
+    CALL core_shadowsc.cpp_CShadowsc_playGiantAttackSound_FUN_00560fe0 ; 00560c75
+        ;   XREF to: 00560fe0 (UNCONDITIONAL_CALL)  ; void core_shadowsc.cpp_CShadowsc_playGiantAttackSound_FUN_00560fe0(CShadowsc * this_ptr)
     ADD ESP,0x4                         ; 00560c7a
     JMP 0x005607c1                      ; 00560c7d
         ;   XREF to: 005607c1 (UNCONDITIONAL_JUMP)  ; caseD_5

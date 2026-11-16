@@ -89,13 +89,9 @@ void __cdecl clipPolygonBottomPlaneGlobal(void);
 // Address: 0043b280
 void __cdecl perspectiveDivideVertices(void);
 
-// Original: engine_clipper.c_FUN_0043b3c0
-// Address: 0043b3c0
-undefined4 FUN_0043b3c0(void);
-
-// Original: engine_clipper.c_FUN_0043b4e0
-// Address: 0043b4e0
-undefined4 FUN_0043b4e0(void);
+// Original: engine_clipper.c_FUN_0043b330
+// Address: 0043b330
+undefined4 FUN_0043b330(void);
 
 // Original: engine_clipper.c_clipPolygonToViewport_FUN_0043bac0
 // Address: 0043bac0

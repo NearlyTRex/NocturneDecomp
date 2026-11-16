@@ -4,10 +4,901 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 
 SUMMARY
 --------------------------------------------------
-Total functions analyzed: 5440
-Clean: 2018 (37.1%)
-With suspects: 3422
-Total suspects: 43788
+Total functions analyzed: 5467
+Clean: 2016 (36.9%)
+With suspects: 3451
+Total suspects: 44641
+
+====================================================================================================
+FUN_004044d0 (35 suspects)
+  File: .
+====================================================================================================
+  Line 2 [unnamed_param]: int FUN_004044d0(int param_1)
+  Line 12 [stack_param]: SRenderVertex in_stack_ffffff30;
+  Line 14 [stack_param]: byte in_stack_ffffff60 [44];
+  Line 20 [raw_address_constant]: iVar8 = 0x4044dc;
+  Line 23 [unnamed_param]: piVar2 = (int *)(param_1 + 8);
+  Line 25 [unnamed_param]: if (*(int *)(param_1 + 4) + -1 <= iVar3) break;
+  Line 26 [undefined_data]: puVar4 = &DAT_00629014 + *piVar2 * 0xc;
+  Line 28 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 33 [undefined_data]: puVar4 = &DAT_00629014 + piVar2[1] * 0xc;
+  Line 35 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 41 [stack_ref]: puVar5 = (uint *)&stack0xffffff60;
+  Line 42 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 50 [stack_ref]: puVar5 = (uint *)&stack0xffffff30;
+  Line 51 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 57 [stack_param]: auVar7 = in_stack_ffffff60._0_24_;
+  Line 57 [unknown_field]: auVar7 = in_stack_ffffff60._0_24_;
+  Line 58 [unknown_field]: vertex2.projected_vertex.transformed_x = auVar7._0_4_;
+  Line 59 [unknown_field]: vertex2.projected_vertex.transformed_y = auVar7._4_4_;
+  Line 60 [unknown_field]: vertex2.projected_vertex.transformed_z = auVar7._8_4_;
+  Line 61 [unknown_field]: vertex2.projected_vertex.inv_z = auVar7._12_4_;
+  Line 62 [unknown_field]: vertex2.projected_vertex.screen_x = auVar7._16_4_;
+  Line 63 [unknown_field]: vertex2.projected_vertex.screen_y = auVar7._20_4_;
+  Line 64 [stack_param]: vertex2.u = in_stack_ffffff60._24_4_;
+  Line 64 [unknown_field]: vertex2.u = in_stack_ffffff60._24_4_;
+  Line 65 [stack_param]: vertex2.v = in_stack_ffffff60._28_4_;
+  Line 65 [unknown_field]: vertex2.v = in_stack_ffffff60._28_4_;
+  Line 66 [stack_param]: vertex2.r = in_stack_ffffff60._32_4_;
+  Line 66 [unknown_field]: vertex2.r = in_stack_ffffff60._32_4_;
+  Line 67 [stack_param]: vertex2.g = in_stack_ffffff60._36_4_;
+  Line 67 [unknown_field]: vertex2.g = in_stack_ffffff60._36_4_;
+  Line 68 [stack_param]: vertex2.b = in_stack_ffffff60._40_4_;
+  Line 68 [unknown_field]: vertex2.b = in_stack_ffffff60._40_4_;
+  Line 69 [stack_param]: engine_3d_c_clipAndDrawLine3D_FUN_00407df0(in_stack_ffffff30,vertex2);
+  Line 71 [unnamed_param]: return *(int *)(param_1 + 4) * 4 + param_1 + 8;
+  Line 71 [unnamed_param]: return *(int *)(param_1 + 4) * 4 + param_1 + 8;
+
+====================================================================================================
+FUN_00405400 (22 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: int * FUN_00405400(SMRGLHeaderPrimitive *param_1)
+  Line 9 [stack_alignment_array]: UIntegerFloat aUStackY_1010 [1016];
+  Line 14 [unnamed_param]: CStack_28.x = *(int *)&(param_1->surface_normal).A;
+  Line 15 [unnamed_param]: CStack_28.y = *(int *)&(param_1->surface_normal).B;
+  Line 16 [unnamed_param]: CStack_28.z = *(int *)&(param_1->surface_normal).C;
+  Line 19 [pointer_truncation]: *(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + 4) =
+  Line 19 [pointer_cast]: *(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + 4) =
+  Line 20 [pointer_truncation]: *(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + 4);
+  Line 20 [pointer_cast]: *(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + 4);
+  Line 21 [pointer_truncation]: *(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+  Line 21 [pointer_cast]: *(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+  Line 22 [pointer_truncation]: *(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  Line 22 [pointer_cast]: *(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  Line 23 [unnamed_param]: iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&param_1->surface_normal);
+  Line 26 [undefined_data]: if (DAT_0061b4a0 == 0x20) {
+  Line 33 [undefined_data]: else if (DAT_0061b4a0 == 0x20) {
+  Line 41 [unnamed_param]: engine_3d_c_calculatePolygonLighting_FUN_004039d0(param_1);
+  Line 42 [unnamed_param]: engine_clipper_c_clipAndRasterize_FUN_0043cbf0((param_1->base).count,(int *)(param_1 + 1));
+  Line 42 [unnamed_param]: engine_clipper_c_clipAndRasterize_FUN_0043cbf0((param_1->base).count,(int *)(param_1 + 1));
+  Line 44 [unnamed_param]: return &param_1[1].base.type + (param_1->base).count;
+  Line 44 [unnamed_param]: return &param_1[1].base.type + (param_1->base).count;
+
+====================================================================================================
+FUN_00437280 (1 suspect)
+  File: .
+====================================================================================================
+  Line 2 [unresolved_funcptr]: code * FUN_00437280(void)
+
+====================================================================================================
+FUN_00437290 (2 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unresolved_funcptr]: code * FUN_00437290(void)
+
+====================================================================================================
+FUN_004372b0 (1 suspect)
+  File: .
+====================================================================================================
+  Line 2 [unresolved_funcptr]: code * FUN_004372b0(void)
+
+====================================================================================================
+FUN_0043bed0 (67 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0043c072) */
+  Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0043bfec) */
+  Line 22 [undefined_data]: if (DAT_00610d44 != 0) {
+  Line 23 [undefined_data]: if (0 < (int)DAT_007c7554) {
+  Line 26 [undefined_data]: if (iVar6 < *(int *)((int)&DAT_007c7560 + iVar4)) {
+  Line 26 [pointer_truncation]: if (iVar6 < *(int *)((int)&DAT_007c7560 + iVar4)) {
+  Line 26 [pointer_cast]: if (iVar6 < *(int *)((int)&DAT_007c7560 + iVar4)) {
+  Line 27 [undefined_data]: iVar6 = *(int *)((int)&DAT_007c7560 + iVar4);
+  Line 27 [pointer_truncation]: iVar6 = *(int *)((int)&DAT_007c7560 + iVar4);
+  Line 27 [pointer_cast]: iVar6 = *(int *)((int)&DAT_007c7560 + iVar4);
+  Line 30 [undefined_data]: } while (iVar4 < (int)(DAT_007c7554 * 0x30));
+  Line 32 [undefined_data]: if (DAT_00610d44 <= iVar6) {
+  Line 33 [undefined_data]: DAT_007c7bd8 = DAT_007c7554;
+  Line 33 [undefined_data]: DAT_007c7bd8 = DAT_007c7554;
+  Line 35 [undefined_data]: plVar9 = &DAT_007c7be0;
+  Line 36 [undefined_data]: plVar7 = (longlong *)&DAT_007c755c;
+  Line 37 [undefined_data]: DAT_007c7bdc = DAT_007c7558;
+  Line 37 [undefined_data]: DAT_007c7bdc = DAT_007c7558;
+  Line 38 [undefined_data]: iVar6 = DAT_007c7554 * 0x30 + -4;
+  Line 39 [undefined_data]: if (iVar6 != 0 && 3 < (int)(DAT_007c7554 * 0x30)) {
+  Line 50 [pointer_cast]: *(uint *)((int)plVar9 + 4) = *(uint *)((int)plVar7 + 4);
+  Line 50 [pointer_cast]: *(uint *)((int)plVar9 + 4) = *(uint *)((int)plVar7 + 4);
+  Line 50 [pointer_truncation]: *(uint *)((int)plVar9 + 4) = *(uint *)((int)plVar7 + 4);
+  Line 50 [pointer_truncation]: *(uint *)((int)plVar9 + 4) = *(uint *)((int)plVar7 + 4);
+  Line 54 [undefined_data]: DAT_007c7554 = 0;
+  Line 55 [undefined_data]: if (0 < (int)DAT_007c7bd8) {
+  Line 56 [undefined_data]: v1 = (SRenderVertex *)&DAT_007c7bdc;
+  Line 59 [undefined_data]: if (uVar5 == DAT_007c7bd8) {
+  Line 60 [undefined_data]: uVar5 = uVar5 ^ DAT_007c7bd8;
+  Line 62 [undefined_data]: bVar3 = DAT_00610d44 <= (v1->projected_vertex).transformed_z;
+  Line 63 [undefined_data]: if (DAT_00610d44 <= *(int *)((int)&DAT_007c7be0 + uVar5 * 0x30 + 4)) {
+  Line 63 [undefined_data]: if (DAT_00610d44 <= *(int *)((int)&DAT_007c7be0 + uVar5 * 0x30 + 4)) {
+  Line 63 [pointer_truncation]: if (DAT_00610d44 <= *(int *)((int)&DAT_007c7be0 + uVar5 * 0x30 + 4)) {
+  Line 63 [pointer_cast]: if (DAT_00610d44 <= *(int *)((int)&DAT_007c7be0 + uVar5 * 0x30 + 4)) {
+  Line 68 [undefined_data]: plVar7 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
+  Line 68 [undefined_data]: plVar7 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
+  Line 72 [unknown_field]: lVar2._0_4_ = (pSVar8->projected_vertex).transformed_x;
+  Line 73 [unknown_field]: lVar2._4_4_ = (pSVar8->projected_vertex).transformed_y;
+  Line 74 [shadow_pointer_walk]: pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
+  Line 82 [pointer_cast]: *(uint *)((int)plVar7 + (uint)bVar10 * -8 + 4) =
+  Line 82 [pointer_truncation]: *(uint *)((int)plVar7 + (uint)bVar10 * -8 + 4) =
+  Line 83 [pointer_cast]: *(uint *)((int)pSVar8 + (uint)bVar10 * -8 + 4);
+  Line 83 [pointer_truncation]: *(uint *)((int)pSVar8 + (uint)bVar10 * -8 + 4);
+  Line 86 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 86 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 90 [undefined_data]: ((SRenderVertex *)(&DAT_007c7bdc + uVar5 * 0xc),v1,
+  Line 91 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 91 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 92 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 92 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 95 [undefined_data]: plVar7 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
+  Line 95 [undefined_data]: plVar7 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
+  Line 99 [unknown_field]: lVar1._0_4_ = (pSVar8->projected_vertex).transformed_x;
+  Line 100 [unknown_field]: lVar1._4_4_ = (pSVar8->projected_vertex).transformed_y;
+  Line 101 [shadow_pointer_walk]: pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
+  Line 109 [pointer_cast]: *(uint *)((int)plVar7 + (uint)bVar10 * -8 + 4) =
+  Line 109 [pointer_truncation]: *(uint *)((int)plVar7 + (uint)bVar10 * -8 + 4) =
+  Line 110 [pointer_cast]: *(uint *)((int)pSVar8 + (uint)bVar10 * -8 + 4);
+  Line 110 [pointer_truncation]: *(uint *)((int)pSVar8 + (uint)bVar10 * -8 + 4);
+  Line 113 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 113 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 115 [undefined_data]: (v1,(SRenderVertex *)(&DAT_007c7bdc + uVar5 * 0xc),
+  Line 116 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 116 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 117 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 117 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 121 [undefined_data]: } while (iVar4 < (int)DAT_007c7bd8);
+
+====================================================================================================
+FUN_0043d3c0 (43 suspects)
+  File: .
+====================================================================================================
+  Line 16 [undefined_data]: if (0 < (int)DAT_007c8428) {
+  Line 17 [undefined_data]: v1 = (SRenderVertex *)&DAT_007c9030;
+  Line 20 [undefined_data]: if (uVar2 == DAT_007c8428) {
+  Line 21 [undefined_data]: uVar2 = uVar2 ^ DAT_007c8428;
+  Line 24 [undefined_data]: if ((int)(&DAT_007c9038)[uVar2 * 0xc] <= (int)(&DAT_007c9034)[uVar2 * 0xc]) {
+  Line 24 [undefined_data]: if ((int)(&DAT_007c9038)[uVar2 * 0xc] <= (int)(&DAT_007c9034)[uVar2 * 0xc]) {
+  Line 30 [undefined_data]: piVar5 = &DAT_007c9630 + DAT_007c842c * 0xc;
+  Line 30 [undefined_data]: piVar5 = &DAT_007c9630 + DAT_007c842c * 0xc;
+  Line 31 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 33 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+  Line 33 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+  Line 36 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 38 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
+  Line 38 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
+  Line 39 [pointer_cast]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
+  Line 39 [pointer_truncation]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
+  Line 41 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 41 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 45 [undefined_data]: ((SRenderVertex *)(&DAT_007c9030 + uVar2 * 0xc),v1,
+  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_007c9630 + DAT_007c842c * 0xc));
+  Line 46 [undefined_data]: (SRenderVertex *)(&DAT_007c9630 + DAT_007c842c * 0xc));
+  Line 47 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 47 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 51 [undefined_data]: piVar5 = &DAT_007c9630 + DAT_007c842c * 0xc;
+  Line 51 [undefined_data]: piVar5 = &DAT_007c9630 + DAT_007c842c * 0xc;
+  Line 52 [unrolled_memcpy]: for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 54 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+  Line 54 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+  Line 54 [unrolled_memcpy]: // 0043d43c: MOVSD.REP ES:EDI,ESI  ; DAT_007c9630 | DAT_007c9634
+  Line 57 [unrolled_memcpy]: for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 59 [pointer_cast]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
+  Line 59 [pointer_truncation]: pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
+  Line 60 [pointer_cast]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
+  Line 60 [pointer_truncation]: piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
+  Line 62 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 62 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 64 [undefined_data]: (v1,(SRenderVertex *)(&DAT_007c9030 + uVar2 * 0xc),
+  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_007c9630 + DAT_007c842c * 0xc));
+  Line 65 [undefined_data]: (SRenderVertex *)(&DAT_007c9630 + DAT_007c842c * 0xc));
+  Line 66 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 66 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 70 [undefined_data]: } while (iStack_14 < (int)DAT_007c8428);
+  Line 98 [unrolled_memcpy]: // 0043d4ac: MOVSD.REP ES:EDI,ESI  ; DAT_007c9630 | DAT_007c9634
+
+====================================================================================================
+FUN_0043d630 (3 suspects)
+  File: .
+====================================================================================================
+  Line 11 [undefined_data]: piVar3 = &DAT_007c7558;
+  Line 13 [undefined_data]: if (0 < DAT_007c7554) {
+  Line 43 [undefined_data]: } while (iVar4 < DAT_007c7554);
+
+====================================================================================================
+FUN_0044fb10 (122 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_0044fb10(int param_1,float *param_2,CMatrix3x3f *param_3)
+  Line 4 [unnamed_param]: void FUN_0044fb10(int param_1,float *param_2,CMatrix3x3f *param_3)
+  Line 4 [unnamed_param]: void FUN_0044fb10(int param_1,float *param_2,CMatrix3x3f *param_3)
+  Line 12 [stack_alignment_array]: float afStackY_1010 [1010];
+  Line 20 [unnamed_param]: *(uint *)(param_1 + 0x148c) = *(uint *)(param_1 + 0x16c);
+  Line 20 [unnamed_param]: *(uint *)(param_1 + 0x148c) = *(uint *)(param_1 + 0x16c);
+  Line 20 [unrolled_memcpy]: *(uint *)(param_1 + 0x148c) = *(uint *)(param_1 + 0x16c);
+  Line 21 [unnamed_param]: *(uint *)(param_1 + 0x1490) = *(uint *)(param_1 + 0x170);
+  Line 21 [unnamed_param]: *(uint *)(param_1 + 0x1490) = *(uint *)(param_1 + 0x170);
+  Line 22 [unnamed_param]: *(uint *)(param_1 + 0x1494) = *(uint *)(param_1 + 0x174);
+  Line 22 [unnamed_param]: *(uint *)(param_1 + 0x1494) = *(uint *)(param_1 + 0x174);
+  Line 23 [unnamed_param]: if ((uint *)(param_1 + 0x1498) != (uint *)(param_1 + 4)) {
+  Line 23 [unnamed_param]: if ((uint *)(param_1 + 0x1498) != (uint *)(param_1 + 4)) {
+  Line 24 [unnamed_param]: *(uint *)(param_1 + 0x1498) = *(uint *)(param_1 + 4);
+  Line 24 [unnamed_param]: *(uint *)(param_1 + 0x1498) = *(uint *)(param_1 + 4);
+  Line 24 [unrolled_memcpy]: *(uint *)(param_1 + 0x1498) = *(uint *)(param_1 + 4);
+  Line 25 [unnamed_param]: *(uint *)(param_1 + 0x149c) = *(uint *)(param_1 + 8);
+  Line 25 [unnamed_param]: *(uint *)(param_1 + 0x149c) = *(uint *)(param_1 + 8);
+  Line 26 [unnamed_param]: *(uint *)(param_1 + 0x14a0) = *(uint *)(param_1 + 0xc);
+  Line 26 [unnamed_param]: *(uint *)(param_1 + 0x14a0) = *(uint *)(param_1 + 0xc);
+  Line 28 [unnamed_param]: *(uint *)(param_1 + 0x14a4) = *(uint *)(param_1 + 0x178);
+  Line 28 [unnamed_param]: *(uint *)(param_1 + 0x14a4) = *(uint *)(param_1 + 0x178);
+  Line 28 [unrolled_memcpy]: *(uint *)(param_1 + 0x14a4) = *(uint *)(param_1 + 0x178);
+  Line 29 [unnamed_param]: *(uint *)(param_1 + 0x14a8) = *(uint *)(param_1 + 0x17c);
+  Line 29 [unnamed_param]: *(uint *)(param_1 + 0x14a8) = *(uint *)(param_1 + 0x17c);
+  Line 30 [unnamed_param]: *(uint *)(param_1 + 0x14ac) = *(uint *)(param_1 + 0x180);
+  Line 30 [unnamed_param]: *(uint *)(param_1 + 0x14ac) = *(uint *)(param_1 + 0x180);
+  Line 31 [unnamed_param]: *(uint *)(param_1 + 0x14b0) = *(uint *)(param_1 + 0x184);
+  Line 31 [unnamed_param]: *(uint *)(param_1 + 0x14b0) = *(uint *)(param_1 + 0x184);
+  Line 32 [unnamed_param]: *(uint *)(param_1 + 0x14b4) = *(uint *)(param_1 + 0x188);
+  Line 32 [unnamed_param]: *(uint *)(param_1 + 0x14b4) = *(uint *)(param_1 + 0x188);
+  Line 33 [unnamed_param]: *(uint *)(param_1 + 0x14b8) = *(uint *)(param_1 + 0x18c);
+  Line 33 [unnamed_param]: *(uint *)(param_1 + 0x14b8) = *(uint *)(param_1 + 0x18c);
+  Line 34 [unnamed_param]: *(uint *)(param_1 + 0x14bc) = *(uint *)(param_1 + 400);
+  Line 34 [unnamed_param]: *(uint *)(param_1 + 0x14bc) = *(uint *)(param_1 + 400);
+  Line 35 [unnamed_param]: *(uint *)(param_1 + 0x14c0) = *(uint *)(param_1 + 0x194);
+  Line 35 [unnamed_param]: *(uint *)(param_1 + 0x14c0) = *(uint *)(param_1 + 0x194);
+  Line 36 [unnamed_param]: *(uint *)(param_1 + 0x14c4) = *(uint *)(param_1 + 0x198);
+  Line 36 [unnamed_param]: *(uint *)(param_1 + 0x14c4) = *(uint *)(param_1 + 0x198);
+  Line 37 [unnamed_param]: pfVar1 = (float *)(param_1 + 4);
+  Line 38 [unnamed_param]: CStack_34.x = *param_2 - *pfVar1;
+  Line 39 [unnamed_param]: CStack_34.y = param_2[1] - *(float *)(param_1 + 8);
+  Line 39 [unnamed_param]: CStack_34.y = param_2[1] - *(float *)(param_1 + 8);
+  Line 40 [unnamed_param]: CStack_34.z = param_2[2] - *(float *)(param_1 + 0xc);
+  Line 40 [unnamed_param]: CStack_34.z = param_2[2] - *(float *)(param_1 + 0xc);
+  Line 44 [unnamed_param]: core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(param_3,&CStack_34,&CStack_10);
+  Line 46 [pointer_truncation]: afStack_24[(uint)bVar4 * -2] = *(float *)((int)&CStack_10 + (uint)bVar4 * -8 + 4);
+  Line 46 [pointer_cast]: afStack_24[(uint)bVar4 * -2] = *(float *)((int)&CStack_10 + (uint)bVar4 * -8 + 4);
+  Line 48 [pointer_truncation]: *(float *)((int)&CStack_10 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 48 [pointer_cast]: *(float *)((int)&CStack_10 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 51 [unnamed_param]: *(float *)(param_1 + 8) = afStack_24[0];
+  Line 52 [unnamed_param]: *(float *)(param_1 + 0xc) = afStack_24[1];
+  Line 54 [unnamed_param]: *(int *)(param_1 + 0x16c) = (int)ROUND(*(float *)(param_1 + 4) * _DAT_005fe5fc);
+  Line 54 [unnamed_param]: *(int *)(param_1 + 0x16c) = (int)ROUND(*(float *)(param_1 + 4) * _DAT_005fe5fc);
+  Line 55 [unnamed_param]: *(int *)(param_1 + 0x170) = (int)ROUND(*(float *)(param_1 + 8) * _DAT_005fe5fc);
+  Line 55 [unnamed_param]: *(int *)(param_1 + 0x170) = (int)ROUND(*(float *)(param_1 + 8) * _DAT_005fe5fc);
+  Line 56 [unnamed_param]: *(int *)(param_1 + 0x174) = (int)ROUND(*(float *)(param_1 + 0xc) * _DAT_005fe5fc);
+  Line 56 [unnamed_param]: *(int *)(param_1 + 0x174) = (int)ROUND(*(float *)(param_1 + 0xc) * _DAT_005fe5fc);
+  Line 57 [unnamed_param]: iVar2 = *(int *)(param_1 + 0x14a4);
+  Line 59 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14ac) * param_3->m[2].x +
+  Line 59 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14ac) * param_3->m[2].x +
+  Line 60 [unnamed_param]: (float)*(int *)(param_1 + 0x14a4) * param_3->m[0].x +
+  Line 60 [unnamed_param]: (float)*(int *)(param_1 + 0x14a4) * param_3->m[0].x +
+  Line 61 [unnamed_param]: (float)*(int *)(param_1 + 0x14a8) * param_3->m[1].x));
+  Line 61 [unnamed_param]: (float)*(int *)(param_1 + 0x14a8) * param_3->m[1].x));
+  Line 62 [unnamed_param]: *(int *)(param_1 + 0x178) = (int)ROUND(dVar5);
+  Line 63 [unnamed_param]: iVar3 = *(int *)(param_1 + 0x14a4);
+  Line 65 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14ac) * param_3->m[2].y +
+  Line 65 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14ac) * param_3->m[2].y +
+  Line 66 [unnamed_param]: (float)*(int *)(param_1 + 0x14a8) * param_3->m[1].y +
+  Line 66 [unnamed_param]: (float)*(int *)(param_1 + 0x14a8) * param_3->m[1].y +
+  Line 67 [unnamed_param]: (float)iVar2 * param_3->m[0].y));
+  Line 68 [unnamed_param]: *(int *)(param_1 + 0x17c) = (int)ROUND(dVar5);
+  Line 69 [unnamed_param]: iVar2 = *(int *)(param_1 + 0x14b4);
+  Line 71 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14ac) * param_3->m[2].z +
+  Line 71 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14ac) * param_3->m[2].z +
+  Line 72 [unnamed_param]: (float)*(int *)(param_1 + 0x14a8) * param_3->m[1].z +
+  Line 72 [unnamed_param]: (float)*(int *)(param_1 + 0x14a8) * param_3->m[1].z +
+  Line 73 [unnamed_param]: (float)iVar3 * param_3->m[0].z));
+  Line 74 [unnamed_param]: *(int *)(param_1 + 0x180) = (int)ROUND(dVar5);
+  Line 75 [unnamed_param]: iVar3 = *(int *)(param_1 + 0x14b0);
+  Line 77 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14b8) * param_3->m[2].x +
+  Line 77 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14b8) * param_3->m[2].x +
+  Line 78 [unnamed_param]: (float)*(int *)(param_1 + 0x14b0) * param_3->m[0].x +
+  Line 78 [unnamed_param]: (float)*(int *)(param_1 + 0x14b0) * param_3->m[0].x +
+  Line 79 [unnamed_param]: (float)iVar2 * param_3->m[1].x));
+  Line 80 [unnamed_param]: *(int *)(param_1 + 0x184) = (int)ROUND(dVar5);
+  Line 81 [unnamed_param]: iVar2 = *(int *)(param_1 + 0x14b0);
+  Line 83 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14b8) * param_3->m[2].y +
+  Line 83 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14b8) * param_3->m[2].y +
+  Line 84 [unnamed_param]: (float)*(int *)(param_1 + 0x14b4) * param_3->m[1].y +
+  Line 84 [unnamed_param]: (float)*(int *)(param_1 + 0x14b4) * param_3->m[1].y +
+  Line 85 [unnamed_param]: (float)iVar3 * param_3->m[0].y));
+  Line 86 [unnamed_param]: *(int *)(param_1 + 0x188) = (int)ROUND(dVar5);
+  Line 87 [unnamed_param]: iVar3 = *(int *)(param_1 + 0x14c0);
+  Line 89 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14b8) * param_3->m[2].z +
+  Line 89 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14b8) * param_3->m[2].z +
+  Line 90 [unnamed_param]: (float)*(int *)(param_1 + 0x14b4) * param_3->m[1].z +
+  Line 90 [unnamed_param]: (float)*(int *)(param_1 + 0x14b4) * param_3->m[1].z +
+  Line 91 [unnamed_param]: (float)iVar2 * param_3->m[0].z));
+  Line 92 [unnamed_param]: *(int *)(param_1 + 0x18c) = (int)ROUND(dVar5);
+  Line 93 [unnamed_param]: iVar2 = *(int *)(param_1 + 0x14bc);
+  Line 95 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14c4) * param_3->m[2].x +
+  Line 95 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14c4) * param_3->m[2].x +
+  Line 96 [unnamed_param]: (float)*(int *)(param_1 + 0x14bc) * param_3->m[0].x +
+  Line 96 [unnamed_param]: (float)*(int *)(param_1 + 0x14bc) * param_3->m[0].x +
+  Line 97 [unnamed_param]: (float)iVar3 * param_3->m[1].x));
+  Line 98 [unnamed_param]: *(int *)(param_1 + 400) = (int)ROUND(dVar5);
+  Line 99 [unnamed_param]: iVar3 = *(int *)(param_1 + 0x14bc);
+  Line 101 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14c4) * param_3->m[2].y +
+  Line 101 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14c4) * param_3->m[2].y +
+  Line 102 [unnamed_param]: (float)*(int *)(param_1 + 0x14c0) * param_3->m[1].y +
+  Line 102 [unnamed_param]: (float)*(int *)(param_1 + 0x14c0) * param_3->m[1].y +
+  Line 103 [unnamed_param]: (float)iVar2 * param_3->m[0].y));
+  Line 104 [unnamed_param]: *(int *)(param_1 + 0x194) = (int)ROUND(dVar5);
+  Line 106 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14c4) * param_3->m[2].z +
+  Line 106 [unnamed_param]: ((double)((float)*(int *)(param_1 + 0x14c4) * param_3->m[2].z +
+  Line 107 [unnamed_param]: (float)*(int *)(param_1 + 0x14c0) * param_3->m[1].z +
+  Line 107 [unnamed_param]: (float)*(int *)(param_1 + 0x14c0) * param_3->m[1].z +
+  Line 108 [unnamed_param]: (float)iVar3 * param_3->m[0].z));
+  Line 109 [unnamed_param]: *(int *)(param_1 + 0x198) = (int)ROUND(dVar5);
+
+====================================================================================================
+FUN_00452d70 (13 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_00452d70(int param_1,float param_2,float param_3,float param_4)
+  Line 4 [unnamed_param]: void FUN_00452d70(int param_1,float param_2,float param_3,float param_4)
+  Line 4 [unnamed_param]: void FUN_00452d70(int param_1,float param_2,float param_3,float param_4)
+  Line 4 [unnamed_param]: void FUN_00452d70(int param_1,float param_2,float param_3,float param_4)
+  Line 12 [unnamed_param]: fStack_10 = param_2;
+  Line 13 [unnamed_param]: fStack_c = param_3;
+  Line 14 [unnamed_param]: fStack_8 = param_4;
+  Line 15 [unnamed_param]: CStack_1c.x = (int)ROUND(param_2 * _DAT_005fe5fc);
+  Line 16 [unnamed_param]: CStack_1c.y = (int)ROUND(param_3 * _DAT_005fe5fc);
+  Line 17 [unnamed_param]: CStack_1c.z = (int)ROUND(param_4 * _DAT_005fe5fc);
+  Line 19 [unnamed_param]: ((SProjectedVertex *)(param_1 * 0x30 + *DAT_00612560),&CStack_1c);
+  Line 19 [undefined_data]: ((SProjectedVertex *)(param_1 * 0x30 + *DAT_00612560),&CStack_1c);
+
+====================================================================================================
+FUN_00455600 (10 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_00455600(float param_1)
+  Line 15 [undefined_data]: vertex1 = (CVector3f *)&DAT_0152bd50;
+  Line 21 [unnamed_param]: bVar1 = param_1 < vertex1->y;
+  Line 22 [unnamed_param]: if (param_1 < *(float *)(&DAT_0152bd54 + uVar2 * 0xc)) {
+  Line 22 [undefined_data]: if (param_1 < *(float *)(&DAT_0152bd54 + uVar2 * 0xc)) {
+  Line 36 [undefined_data]: ((CVector3f *)(&DAT_0152bd50 + uVar2 * 0xc),vertex1,
+  Line 37 [unnamed_param]: (CVector3f *)(_DAT_0152be10 * 0xc + 0x152be14),0.0,1.0,0.0,(double)-param_1);
+  Line 48 [undefined_data]: (vertex1,(CVector3f *)(&DAT_0152bd50 + uVar2 * 0xc),
+  Line 49 [unnamed_param]: (CVector3f *)(_DAT_0152be10 * 0xc + 0x152be14),0.0,1.0,0.0,(double)-param_1);
+
+====================================================================================================
+FUN_00455760 (6 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_00455760(float param_1)
+  Line 23 [unnamed_param]: bVar1 = vertex1->y < param_1;
+  Line 24 [unnamed_param]: if (*(float *)(uVar2 * 0xc + 0x152be18) < param_1) {
+  Line 39 [unnamed_param]: (double)param_1);
+  Line 51 [unnamed_param]: (double)param_1);
+
+====================================================================================================
+FUN_00455b90 (6 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_00455b90(float param_1)
+  Line 23 [unnamed_param]: bVar1 = vertex1->z < param_1;
+  Line 24 [unnamed_param]: if (*(float *)(uVar2 * 0xc + 0x152c068) < param_1) {
+  Line 39 [unnamed_param]: (double)param_1);
+  Line 51 [unnamed_param]: (double)param_1);
+
+====================================================================================================
+FUN_00486de0 (13 suspects)
+  File: .
+====================================================================================================
+  Line 12 [unaffected_reg]: int unaff_EBX;
+  Line 14 [unaffected_reg]: int unaff_ESI;
+  Line 16 [unaffected_reg]: int unaff_EDI;
+  Line 18 [unaffected_reg]: uVar1 = *(uint *)(unaff_ESI + 8);
+  Line 19 [unaffected_reg]: uVar5 = *(uint *)(unaff_EDI + 8);
+  Line 21 [unaffected_reg]: iVar9 = unaff_ESI;
+  Line 25 [unaffected_reg]: iVar9 = unaff_EDI;
+  Line 26 [unaffected_reg]: unaff_EDI = unaff_ESI;
+  Line 26 [unaffected_reg]: unaff_EDI = unaff_ESI;
+  Line 31 [unaffected_reg]: piVar8 = (int *)(*(int *)(&DAT_01c4480c + unaff_EBX * 4) + uVar4 * 4);
+  Line 31 [undefined_data]: piVar8 = (int *)(*(int *)(&DAT_01c4480c + unaff_EBX * 4) + uVar4 * 4);
+  Line 32 [unaffected_reg]: lVar3 = (longlong)(*(int *)(unaff_EDI + 0x28) - *(int *)(iVar9 + 0x28)) *
+  Line 33 [undefined_data]: (longlong)*(int *)(&DAT_01c4f034 + iVar6 * 4);
+
+====================================================================================================
+FUN_00490f90 (20 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_00490f90(float param_1)
+  Line 15 [undefined_data]: point1_ptr = (CVector3f *)&DAT_01c3d444;
+  Line 21 [unnamed_param]: bVar1 = param_1 < point1_ptr->y;
+  Line 22 [unnamed_param]: if (param_1 < *(float *)(&DAT_01c3d448 + uVar2 * 0xc)) {
+  Line 22 [undefined_data]: if (param_1 < *(float *)(&DAT_01c3d448 + uVar2 * 0xc)) {
+  Line 28 [undefined_data]: if ((CVector3f *)(&DAT_01c3d508 + iVar3) != point1_ptr) {
+  Line 29 [undefined_data]: ((CVector3f *)(&DAT_01c3d508 + iVar3))->x = point1_ptr->x;
+  Line 30 [undefined_data]: *(float *)(&DAT_01c3d50c + iVar3) = point1_ptr->y;
+  Line 31 [undefined_data]: *(float *)(&DAT_01c3d510 + iVar3) = point1_ptr->z;
+  Line 36 [undefined_data]: ((CVector3f *)(&DAT_01c3d444 + uVar2 * 0xc),point1_ptr,
+  Line 37 [unnamed_param]: (CVector3f *)(&DAT_01c3d508 + _DAT_01c3d504 * 0xc),0.0,1.0,0.0,(double)-param_1);
+  Line 37 [undefined_data]: (CVector3f *)(&DAT_01c3d508 + _DAT_01c3d504 * 0xc),0.0,1.0,0.0,(double)-param_1);
+  Line 41 [undefined_data]: if ((CVector3f *)(&DAT_01c3d508 + iVar3) != point1_ptr) {
+  Line 42 [undefined_data]: ((CVector3f *)(&DAT_01c3d508 + iVar3))->x = point1_ptr->x;
+  Line 43 [undefined_data]: *(float *)(&DAT_01c3d50c + iVar3) = point1_ptr->y;
+  Line 44 [undefined_data]: *(float *)(&DAT_01c3d510 + iVar3) = point1_ptr->z;
+  Line 48 [undefined_data]: (point1_ptr,(CVector3f *)(&DAT_01c3d444 + uVar2 * 0xc),
+  Line 49 [unnamed_param]: (CVector3f *)(&DAT_01c3d508 + _DAT_01c3d504 * 0xc),0.0,1.0,0.0,(double)-param_1);
+  Line 49 [undefined_data]: (CVector3f *)(&DAT_01c3d508 + _DAT_01c3d504 * 0xc),0.0,1.0,0.0,(double)-param_1);
+
+====================================================================================================
+FUN_004910f0 (20 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_004910f0(float param_1)
+  Line 15 [undefined_data]: point1_ptr = (CVector3f *)&DAT_01c3d508;
+  Line 21 [unnamed_param]: bVar1 = point1_ptr->y < param_1;
+  Line 22 [unnamed_param]: if (*(float *)(&DAT_01c3d50c + uVar2 * 0xc) < param_1) {
+  Line 22 [undefined_data]: if (*(float *)(&DAT_01c3d50c + uVar2 * 0xc) < param_1) {
+  Line 28 [undefined_data]: if ((CVector3f *)(&DAT_01c3d5cc + iVar3) != point1_ptr) {
+  Line 29 [undefined_data]: ((CVector3f *)(&DAT_01c3d5cc + iVar3))->x = point1_ptr->x;
+  Line 30 [undefined_data]: *(float *)(&DAT_01c3d5d0 + iVar3) = point1_ptr->y;
+  Line 31 [undefined_data]: *(float *)(&DAT_01c3d5d4 + iVar3) = point1_ptr->z;
+  Line 36 [undefined_data]: ((CVector3f *)(&DAT_01c3d508 + uVar2 * 0xc),point1_ptr,
+  Line 37 [unnamed_param]: (CVector3f *)(&DAT_01c3d5cc + _DAT_01c3d5c8 * 0xc),0.0,-1.0,0.0,(double)param_1);
+  Line 37 [undefined_data]: (CVector3f *)(&DAT_01c3d5cc + _DAT_01c3d5c8 * 0xc),0.0,-1.0,0.0,(double)param_1);
+  Line 41 [undefined_data]: if ((CVector3f *)(&DAT_01c3d5cc + iVar3) != point1_ptr) {
+  Line 42 [undefined_data]: ((CVector3f *)(&DAT_01c3d5cc + iVar3))->x = point1_ptr->x;
+  Line 43 [undefined_data]: *(float *)(&DAT_01c3d5d0 + iVar3) = point1_ptr->y;
+  Line 44 [undefined_data]: *(float *)(&DAT_01c3d5d4 + iVar3) = point1_ptr->z;
+  Line 48 [undefined_data]: (point1_ptr,(CVector3f *)(&DAT_01c3d508 + uVar2 * 0xc),
+  Line 49 [unnamed_param]: (CVector3f *)(&DAT_01c3d5cc + _DAT_01c3d5c8 * 0xc),0.0,-1.0,0.0,(double)param_1);
+  Line 49 [undefined_data]: (CVector3f *)(&DAT_01c3d5cc + _DAT_01c3d5c8 * 0xc),0.0,-1.0,0.0,(double)param_1);
+
+====================================================================================================
+FUN_00491520 (20 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_00491520(float param_1)
+  Line 15 [undefined_data]: point1_ptr = (CVector3f *)&DAT_01c3d754;
+  Line 21 [unnamed_param]: bVar1 = point1_ptr->z < param_1;
+  Line 22 [unnamed_param]: if (*(float *)(&DAT_01c3d75c + uVar2 * 0xc) < param_1) {
+  Line 22 [undefined_data]: if (*(float *)(&DAT_01c3d75c + uVar2 * 0xc) < param_1) {
+  Line 28 [undefined_data]: if ((CVector3f *)(&DAT_01c3d818 + iVar3) != point1_ptr) {
+  Line 29 [undefined_data]: ((CVector3f *)(&DAT_01c3d818 + iVar3))->x = point1_ptr->x;
+  Line 30 [undefined_data]: *(float *)(&DAT_01c3d81c + iVar3) = point1_ptr->y;
+  Line 31 [undefined_data]: *(float *)(&DAT_01c3d820 + iVar3) = point1_ptr->z;
+  Line 36 [undefined_data]: ((CVector3f *)(&DAT_01c3d754 + uVar2 * 0xc),point1_ptr,
+  Line 37 [unnamed_param]: (CVector3f *)(&DAT_01c3d818 + _DAT_01c3d814 * 0xc),0.0,0.0,-1.0,(double)param_1);
+  Line 37 [undefined_data]: (CVector3f *)(&DAT_01c3d818 + _DAT_01c3d814 * 0xc),0.0,0.0,-1.0,(double)param_1);
+  Line 41 [undefined_data]: if ((CVector3f *)(&DAT_01c3d818 + iVar3) != point1_ptr) {
+  Line 42 [undefined_data]: ((CVector3f *)(&DAT_01c3d818 + iVar3))->x = point1_ptr->x;
+  Line 43 [undefined_data]: *(float *)(&DAT_01c3d81c + iVar3) = point1_ptr->y;
+  Line 44 [undefined_data]: *(float *)(&DAT_01c3d820 + iVar3) = point1_ptr->z;
+  Line 48 [undefined_data]: (point1_ptr,(CVector3f *)(&DAT_01c3d754 + uVar2 * 0xc),
+  Line 49 [unnamed_param]: (CVector3f *)(&DAT_01c3d818 + _DAT_01c3d814 * 0xc),0.0,0.0,-1.0,(double)param_1);
+  Line 49 [undefined_data]: (CVector3f *)(&DAT_01c3d818 + _DAT_01c3d814 * 0xc),0.0,0.0,-1.0,(double)param_1);
+
+====================================================================================================
+FUN_0049dda0 (21 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: uint FUN_0049dda0(int *param_1)
+  Line 10 [undefined_data]: bVar1 = DAT_01c43544;
+  Line 11 [unnamed_param]: if ((((param_1[2] == 0) && (param_1[4] <= _DAT_01c4353c)) && (param_1[5] <= _DAT_01c43540)) &&
+  Line 11 [unnamed_param]: if ((((param_1[2] == 0) && (param_1[4] <= _DAT_01c4353c)) && (param_1[5] <= _DAT_01c43540)) &&
+  Line 11 [unnamed_param]: if ((((param_1[2] == 0) && (param_1[4] <= _DAT_01c4353c)) && (param_1[5] <= _DAT_01c43540)) &&
+  Line 12 [unnamed_param]: ((_DAT_01c4353c < param_1[6] && (_DAT_01c43540 < param_1[7])))) {
+  Line 12 [unnamed_param]: ((_DAT_01c4353c < param_1[6] && (_DAT_01c43540 < param_1[7])))) {
+  Line 18 [unnamed_param]: if (_DAT_01c3f5d0 == param_1) {
+  Line 19 [unnamed_param]: param_1[8] = iVar2;
+  Line 21 [unnamed_param]: (_DAT_01c3f5d0 = (int *)((uint)_DAT_01c3f5d0 ^ (uint)param_1), iVar2 != 0)) {
+  Line 22 [unnamed_param]: param_1[8] = 0;
+  Line 23 [unnamed_param]: if (*param_1 == 1) {
+  Line 24 [unnamed_param]: iVar2 = param_1[1];
+  Line 25 [unnamed_param]: param_1[1] = iVar2 + 1;
+  Line 27 [unnamed_param]: param_1[1] = 0;
+  Line 32 [unnamed_param]: param_1[1] = (uint)(param_1[1] == 0);
+  Line 32 [unnamed_param]: param_1[1] = (uint)(param_1[1] == 0);
+  Line 38 [undefined_data]: if (((_DAT_01c3f5d0 == (int *)0x0) && ((DAT_01c43544 & 1) != 0)) && (iVar2 != 0)) {
+  Line 39 [unnamed_param]: param_1[8] = 1;
+  Line 40 [unnamed_param]: _DAT_01c3f5d0 = param_1;
+
+====================================================================================================
+FUN_00509340 (11 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: int FUN_00509340(int param_1)
+  Line 9 [stack_alignment_array]: int aiStackY_1038 [1017];
+  Line 16 [unnamed_param]: CStack_50.y = param_1;
+  Line 21 [pointer_cast]: *(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + -8) =
+  Line 22 [pointer_cast]: *(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + 4);
+  Line 23 [pointer_cast]: *(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + -4) =
+  Line 24 [pointer_cast]: *(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+  Line 26 [unnamed_param]: iStack_1c = param_1;
+  Line 29 [unnamed_param]: (((-(double)param_1 * (double)_DAT_01c4effc) / (double)CStack_50.z) /
+  Line 30 [undefined_data]: (double)DAT_0061b4c4);
+
+====================================================================================================
+FUN_0051f650 (17 suspects)
+  File: engine/model.c
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_0051f650(SMRGLHeaderExtended *param_1,int param_2)
+  Line 4 [unnamed_param]: void FUN_0051f650(SMRGLHeaderExtended *param_1,int param_2)
+  Line 11 [unnamed_param]: if (param_2 < 1) {
+  Line 15 [unnamed_param]: uVar1 = engine_model_c_getMRGLSize_FUN_0051fee0(param_1);
+  Line 16 [unnamed_param]: switch((param_1->base).type) {
+  Line 89 [unnamed_param]: param_2 = param_2 - uVar1;
+  Line 89 [unnamed_param]: param_2 = param_2 - uVar1;
+  Line 90 [unnamed_param]: param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + uVar1);
+  Line 90 [unnamed_param]: param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + uVar1);
+  Line 90 [pointer_cast]: param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + uVar1);
+  Line 91 [unnamed_param]: if (param_2 < 1) {
+  Line 97 [unnamed_param]: param_2 = param_2 - uVar1;
+  Line 97 [unnamed_param]: param_2 = param_2 - uVar1;
+  Line 98 [unnamed_param]: param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + uVar1);
+  Line 98 [unnamed_param]: param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + uVar1);
+  Line 98 [pointer_cast]: param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + uVar1);
+
+====================================================================================================
+FUN_00525690 (12 suspects)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: int FUN_00525690(int *param_1)
+  Line 14 [unnamed_param]: piVar2 = (int *)*param_1;
+  Line 16 [undefined_data]: iVar5 = *(int *)(&DAT_00620328 + piVar2[3] * 4 + iVar3 * 0xb4 + (piVar2[1] + -1) * 0x3c) /
+  Line 17 [unnamed_param]: param_1[4];
+  Line 18 [unnamed_param]: iVar4 = param_1[6];
+  Line 19 [undefined_data]: dVar6 = round(*(double *)(&DAT_006202e8 + piVar2[4] * 8 + iVar3 * 0x20));
+  Line 23 [unnamed_param]: if (param_1[3] == 0) {
+  Line 29 [unnamed_param]: if (param_1[3] == 3) {
+  Line 33 [unnamed_param]: else if (param_1[3] == 2) {
+  Line 37 [unnamed_param]: else if (param_1[3] == 1) {
+  Line 41 [unnamed_param]: else if (param_1[3] == 4) {
+
+====================================================================================================
+FUN_005257d0 (11 suspects)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: uint FUN_005257d0(int param_1,int param_2)
+  Line 4 [unnamed_param]: uint FUN_005257d0(int param_1,int param_2)
+  Line 7 [unnamed_param]: if ((((0 < param_1) && (param_1 < 4)) && (-1 < param_2)) && (param_2 < 4)) {
+  Line 7 [unnamed_param]: if ((((0 < param_1) && (param_1 < 4)) && (-1 < param_2)) && (param_2 < 4)) {
+  Line 7 [unnamed_param]: if ((((0 < param_1) && (param_1 < 4)) && (-1 < param_2)) && (param_2 < 4)) {
+  Line 7 [unnamed_param]: if ((((0 < param_1) && (param_1 < 4)) && (-1 < param_2)) && (param_2 < 4)) {
+  Line 8 [unnamed_param]: return *(uint *)("$CMotionController$$" + param_1 * 0x10 + param_2 * 4 + 0xb);
+  Line 8 [unnamed_param]: return *(uint *)("$CMotionController$$" + param_1 * 0x10 + param_2 * 4 + 0xb);
+  Line 13 [unnamed_param]: return *(uint *)("$CMotionController$$" + param_1 * 0x10 + param_2 * 4 + 0xb);
+  Line 13 [unnamed_param]: return *(uint *)("$CMotionController$$" + param_1 * 0x10 + param_2 * 4 + 0xb);
+
+====================================================================================================
+FUN_00537580 (4 suspects)
+  File: .
+====================================================================================================
+  Line 2 [unnamed_param]: void FUN_00537580(int param_1)
+  Line 5 [unnamed_param]: if (*(int *)(param_1 + 0x14) == 0) {
+  Line 8 [unnamed_param]: FUN_005c09f0(*(int *)(param_1 + 0x14));
+  Line 9 [unnamed_param]: *(uint *)(param_1 + 0x14) = 0;
+
+====================================================================================================
+FUN_00537aa0 (28 suspects)
+  File: cockpit/pkbitmap.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 4 [unnamed_param]: void FUN_00537aa0(int param_1,int param_2,int param_3,uint param_4)
+  Line 4 [unnamed_param]: void FUN_00537aa0(int param_1,int param_2,int param_3,uint param_4)
+  Line 4 [unnamed_param]: void FUN_00537aa0(int param_1,int param_2,int param_3,uint param_4)
+  Line 4 [unnamed_param]: void FUN_00537aa0(int param_1,int param_2,int param_3,uint param_4)
+  Line 14 [unresolved_funcptr]: code *pcStack_14;
+  Line 16 [unnamed_param]: if (*(int *)(param_1 + 0x20) == 0) {
+  Line 19 [unnamed_param]: if (*(int *)(param_1 + 0x14) == 0) {
+  Line 22 [unnamed_param]: if (param_2 == 0) {
+  Line 26 [unnamed_param]: if (param_4 < 0x10) {
+  Line 27 [unnamed_param]: if (param_4 == 8) {
+  Line 28 [unresolved_funcptr]: pcStack_14 = (code *)FUN_00437290();
+  Line 33 [unnamed_param]: if (param_4 < 0x11) {
+  Line 34 [unresolved_funcptr]: pcStack_14 = (code *)FUN_004372b0();
+  Line 37 [unnamed_param]: if (param_4 == 0x20) {
+  Line 38 [unresolved_funcptr]: pcStack_14 = (code *)FUN_00437280();
+  Line 47 [unnamed_param]: puVar5 = (ushort *)(*(int *)(param_1 + 0x14) + **(int **)(param_1 + 0x20));
+  Line 47 [unnamed_param]: puVar5 = (ushort *)(*(int *)(param_1 + 0x14) + **(int **)(param_1 + 0x20));
+  Line 49 [unnamed_param]: iVar2 = *(int *)(param_1 + 0x14);
+  Line 50 [unnamed_param]: iVar3 = *(int *)(*(int *)(param_1 + 0x20) + iStack_1c + 4);
+  Line 52 [pointer_truncation]: puVar5 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)(puVar5 + 2))) {
+  Line 53 [unnamed_param]: iVar4 = (int)(*puVar5 * param_4) >> 0x1f;
+  Line 55 [unnamed_param]: (*pcStack_14)(((int)((*puVar5 * param_4 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3) +
+  Line 56 [unnamed_param]: param_2,puVar5 + 2,(uint)uVar1);
+  Line 60 [unnamed_param]: param_2 = param_2 + param_3;
+  Line 60 [unnamed_param]: param_2 = param_2 + param_3;
+  Line 60 [unnamed_param]: param_2 = param_2 + param_3;
+  Line 61 [unnamed_param]: } while (iStack_18 < *(int *)(param_1 + 0x1c));
+
+====================================================================================================
+FUN_00539040 (19 suspects)
+  File: .
+====================================================================================================
+  Line 2 [unnamed_param]: void FUN_00539040(CPackedBitmapSet *param_1,uint param_2,char *param_3,int param_4,int param_5 ,int param_6)
+  Line 2 [unnamed_param]: void FUN_00539040(CPackedBitmapSet *param_1,uint param_2,char *param_3,int param_4,int param_5 ,int param_6)
+  Line 2 [unnamed_param]: void FUN_00539040(CPackedBitmapSet *param_1,uint param_2,char *param_3,int param_4,int param_5 ,int param_6)
+  Line 2 [unnamed_param]: void FUN_00539040(CPackedBitmapSet *param_1,uint param_2,char *param_3,int param_4,int param_5 ,int param_6)
+  Line 2 [unnamed_param]: void FUN_00539040(CPackedBitmapSet *param_1,uint param_2,char *param_3,int param_4,int param_5 ,int param_6)
+  Line 2 [unnamed_param]: void FUN_00539040(CPackedBitmapSet *param_1,uint param_2,char *param_3,int param_4,int param_5 ,int param_6)
+  Line 6 [stack_param]: int in_stack_00000038;
+  Line 8 [unnamed_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00538990(param_1);
+  Line 9 [unnamed_param]: pCVar1 = cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(param_1,param_3,param_4,param_5,param_6,-1)
+  Line 9 [unnamed_param]: pCVar1 = cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(param_1,param_3,param_4,param_5,param_6,-1)
+  Line 9 [unnamed_param]: pCVar1 = cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(param_1,param_3,param_4,param_5,param_6,-1)
+  Line 9 [unnamed_param]: pCVar1 = cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(param_1,param_3,param_4,param_5,param_6,-1)
+  Line 9 [unnamed_param]: pCVar1 = cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(param_1,param_3,param_4,param_5,param_6,-1)
+  Line 11 [unnamed_param]: param_1->bitmap_array = pCVar1;
+  Line 12 [unnamed_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_005392b0(param_1,param_3);
+  Line 12 [unnamed_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_005392b0(param_1,param_3);
+  Line 13 [unnamed_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_00538930(param_1);
+  Line 14 [stack_param]: param_1->frames_per_bitmap = in_stack_00000038;
+  Line 14 [unnamed_param]: param_1->frames_per_bitmap = in_stack_00000038;
+
+====================================================================================================
+FUN_00539090 (8 suspects)
+  File: .
+====================================================================================================
+  Line 2 [unnamed_param]: void FUN_00539090(CPackedBitmapSet *param_1,uint param_2,uint param_3)
+  Line 2 [unnamed_param]: void FUN_00539090(CPackedBitmapSet *param_1,uint param_2,uint param_3)
+  Line 2 [unnamed_param]: void FUN_00539090(CPackedBitmapSet *param_1,uint param_2,uint param_3)
+  Line 5 [unnamed_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00538990(param_1);
+  Line 6 [unnamed_param]: FUN_00539040(param_1,param_1->filename,param_3,param_1->frames_per_bitmap,0);
+  Line 6 [unnamed_param]: FUN_00539040(param_1,param_1->filename,param_3,param_1->frames_per_bitmap,0);
+  Line 6 [unnamed_param]: FUN_00539040(param_1,param_1->filename,param_3,param_1->frames_per_bitmap,0);
+  Line 6 [unnamed_param]: FUN_00539040(param_1,param_1->filename,param_3,param_1->frames_per_bitmap,0);
+
+====================================================================================================
+FUN_005390c0 (20 suspects)
+  File: .
+====================================================================================================
+  Line 2 [unnamed_param]: void FUN_005390c0(CPackedBitmapSet *param_1,int param_2,int param_3)
+  Line 2 [unnamed_param]: void FUN_005390c0(CPackedBitmapSet *param_1,int param_2,int param_3)
+  Line 2 [unnamed_param]: void FUN_005390c0(CPackedBitmapSet *param_1,int param_2,int param_3)
+  Line 10 [unnamed_param]: if (param_1->filename[0] == '\0') {
+  Line 11 [unnamed_param]: if (-1 < param_3) {
+  Line 13 [unnamed_param]: (param_1->bitmap_array + param_3,param_2);
+  Line 13 [unnamed_param]: (param_1->bitmap_array + param_3,param_2);
+  Line 13 [unnamed_param]: (param_1->bitmap_array + param_3,param_2);
+  Line 17 [unnamed_param]: if (0 < param_1->bitmap_count) {
+  Line 22 [unnamed_param]: ((CPackedBitmap *)(param_1->bitmap_array->filename + iVar2),param_2);
+  Line 22 [unnamed_param]: ((CPackedBitmap *)(param_1->bitmap_array->filename + iVar2),param_2);
+  Line 24 [unnamed_param]: } while (iVar1 < param_1->bitmap_count);
+  Line 28 [unnamed_param]: pcVar3 = param_1->filename;
+  Line 29 [unrolled_strchr]: do {
+  Line 42 [unnamed_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00538db0(param_1,param_2,param_3);
+  Line 42 [unnamed_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00538db0(param_1,param_2,param_3);
+  Line 42 [unnamed_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00538db0(param_1,param_2,param_3);
+  Line 47 [unnamed_param]: FUN_00539090(param_1,param_2,param_3);
+  Line 47 [unnamed_param]: FUN_00539090(param_1,param_2,param_3);
+  Line 47 [unnamed_param]: FUN_00539090(param_1,param_2,param_3);
+
+====================================================================================================
+FUN_0058012d (10 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 7 [register_param]: uint in_EAX;
+  Line 8 [register_param]: uint in_ECX;
+  Line 9 [register_param]: uint in_EDX;
+  Line 10 [unaffected_reg]: uint unaff_EBX;
+  Line 12 [register_param]: _DAT_00623df4 = in_EAX;
+  Line 13 [unaffected_reg]: _DAT_00623df8 = unaff_EBX;
+  Line 14 [register_param]: _DAT_00623dfc = in_ECX;
+  Line 15 [register_param]: _DAT_00623e00 = in_EDX;
+  Line 17 [concat_reconstruction]: return CONCAT44(_DAT_00623e00,_DAT_00623df4);
+
+====================================================================================================
+FUN_005b9ab0 (20 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005b9bbe) */
+  Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005b9b33) */
+  Line 4 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 24 [undefined_data]: vertex_a = (SRenderVertex *)&DAT_02c9d2f8;
+  Line 30 [undefined_data]: pSVar6 = (SRenderVertex *)(&DAT_02c9d2f8 + uVar4 * 0x30);
+  Line 33 [undefined_data]: if ((pSVar6->projected_vertex).transformed_x <= -*(int *)(&DAT_02c9d300 + uVar4 * 0x30)) {
+  Line 42 [unknown_field]: lVar1._0_4_ = (pSVar6->projected_vertex).transformed_x;
+  Line 43 [unknown_field]: lVar1._4_4_ = (pSVar6->projected_vertex).transformed_y;
+  Line 44 [shadow_pointer_walk]: pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;
+  Line 52 [pointer_cast]: *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
+  Line 52 [pointer_truncation]: *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
+  Line 53 [pointer_cast]: *(uint *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
+  Line 53 [pointer_truncation]: *(uint *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
+  Line 68 [unknown_field]: lVar2._0_4_ = (pSVar7->projected_vertex).transformed_x;
+  Line 69 [unknown_field]: lVar2._4_4_ = (pSVar7->projected_vertex).transformed_y;
+  Line 70 [shadow_pointer_walk]: pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
+  Line 78 [pointer_cast]: *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
+  Line 78 [pointer_truncation]: *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
+  Line 79 [pointer_cast]: *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
+  Line 79 [pointer_truncation]: *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
+
+====================================================================================================
+FUN_005b9da0 (38 suspects)
+  File: .
+====================================================================================================
+  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005b9eaf) */
+  Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005b9e24) */
+  Line 4 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 24 [undefined_data]: vertex_a = (SRenderVertex *)&DAT_02c9e4f8;
+  Line 33 [undefined_data]: if (*(int *)(&DAT_02c9e4fc + iVar5) <= -*(int *)(&DAT_02c9e500 + iVar5)) {
+  Line 33 [undefined_data]: if (*(int *)(&DAT_02c9e4fc + iVar5) <= -*(int *)(&DAT_02c9e500 + iVar5)) {
+  Line 38 [undefined_data]: plVar8 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
+  Line 38 [undefined_data]: plVar8 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
+  Line 42 [unknown_field]: lVar1._0_4_ = (pSVar7->projected_vertex).transformed_x;
+  Line 43 [unknown_field]: lVar1._4_4_ = (pSVar7->projected_vertex).transformed_y;
+  Line 44 [shadow_pointer_walk]: pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
+  Line 52 [pointer_cast]: *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
+  Line 52 [pointer_truncation]: *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
+  Line 53 [pointer_cast]: *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
+  Line 53 [pointer_truncation]: *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
+  Line 56 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 56 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 60 [undefined_data]: ((SRenderVertex *)(&DAT_02c9e4f8 + iVar5),vertex_a,
+  Line 61 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 61 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 62 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 62 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 65 [undefined_data]: plVar8 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
+  Line 65 [undefined_data]: plVar8 = (longlong *)(&DAT_007c7558 + DAT_007c7554 * 0xc);
+  Line 69 [unknown_field]: lVar2._0_4_ = (pSVar7->projected_vertex).transformed_x;
+  Line 70 [unknown_field]: lVar2._4_4_ = (pSVar7->projected_vertex).transformed_y;
+  Line 71 [shadow_pointer_walk]: pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
+  Line 79 [pointer_cast]: *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
+  Line 79 [pointer_truncation]: *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
+  Line 80 [pointer_cast]: *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
+  Line 80 [pointer_truncation]: *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
+  Line 83 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 83 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 85 [undefined_data]: (vertex_a,(SRenderVertex *)(&DAT_02c9e4f8 + iVar5),
+  Line 86 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 86 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 87 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 87 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+
+====================================================================================================
+cockpit_ckptutil.c_FUN_00438260 (22 suspects)
+  File: cockpit/ckptutil.c
+====================================================================================================
+  Line 7 [unresolved_funcptr]: code *pcVar1;
+  Line 10 [stack_param]: int in_stack_00000004;
+  Line 11 [stack_param]: int in_stack_00000008;
+  Line 12 [stack_param]: int in_stack_00000010;
+  Line 13 [stack_param]: int in_stack_00000014;
+  Line 14 [stack_param]: int in_stack_00000018;
+  Line 15 [stack_param]: int in_stack_0000001c;
+  Line 16 [stack_param]: int in_stack_00000020;
+  Line 18 [stack_param]: if ((in_stack_00000010 != 0) && (in_stack_00000004 != 0)) {
+  Line 18 [stack_param]: if ((in_stack_00000010 != 0) && (in_stack_00000004 != 0)) {
+  Line 19 [unresolved_funcptr]: pcVar1 = (code *)FUN_00437290();
+  Line 20 [stack_param]: iVar2 = in_stack_00000004 + in_stack_00000020 * in_stack_00000008 + in_stack_0000001c;
+  Line 20 [stack_param]: iVar2 = in_stack_00000004 + in_stack_00000020 * in_stack_00000008 + in_stack_0000001c;
+  Line 20 [stack_param]: iVar2 = in_stack_00000004 + in_stack_00000020 * in_stack_00000008 + in_stack_0000001c;
+  Line 20 [stack_param]: iVar2 = in_stack_00000004 + in_stack_00000020 * in_stack_00000008 + in_stack_0000001c;
+  Line 22 [stack_param]: if (0 < in_stack_00000018) {
+  Line 25 [stack_param]: (*pcVar1)(iVar2,in_stack_00000010);
+  Line 26 [stack_param]: in_stack_00000010 = in_stack_00000010 + in_stack_00000014;
+  Line 26 [stack_param]: in_stack_00000010 = in_stack_00000010 + in_stack_00000014;
+  Line 26 [stack_param]: in_stack_00000010 = in_stack_00000010 + in_stack_00000014;
+  Line 27 [stack_param]: iVar2 = iVar2 + in_stack_00000008;
+  Line 28 [stack_param]: } while (iVar3 < in_stack_00000018);
+
+====================================================================================================
+cockpit_ckptutil.c_FUN_004382d0 (47 suspects)
+  File: cockpit/ckptutil.c
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 16 [stack_param]: int in_stack_00000004;
+  Line 17 [stack_param]: int in_stack_00000008;
+  Line 18 [stack_param]: int in_stack_0000000c;
+  Line 19 [stack_param]: int in_stack_00000010;
+  Line 20 [stack_param]: int in_stack_00000014;
+  Line 21 [stack_param]: int in_stack_00000018;
+  Line 22 [stack_param]: int in_stack_0000001c;
+  Line 23 [stack_param]: int in_stack_00000020;
+  Line 25 [stack_param]: count = (in_stack_00000010 - in_stack_00000008) + 1;
+  Line 25 [stack_param]: count = (in_stack_00000010 - in_stack_00000008) + 1;
+  Line 29 [stack_param]: if (in_stack_00000004 != 0) {
+  Line 31 [undefined_data]: src_buffer = (void *)(DAT_0061b498 / 2 +
+  Line 32 [stack_param]: in_stack_0000000c * in_stack_00000020 + in_stack_00000004 +
+  Line 32 [stack_param]: in_stack_0000000c * in_stack_00000020 + in_stack_00000004 +
+  Line 32 [stack_param]: in_stack_0000000c * in_stack_00000020 + in_stack_00000004 +
+  Line 33 [stack_param]: in_stack_00000008);
+  Line 34 [stack_param]: iVar4 = in_stack_00000014 - in_stack_0000001c;
+  Line 34 [stack_param]: iVar4 = in_stack_00000014 - in_stack_0000001c;
+  Line 35 [stack_param]: iVar3 = (in_stack_0000000c + in_stack_0000001c) * 4;
+  Line 35 [stack_param]: iVar3 = (in_stack_0000000c + in_stack_0000001c) * 4;
+  Line 36 [undefined_data]: if (DAT_0061b4a0 == 8) {
+  Line 37 [stack_param]: iVar6 = *(int *)(&DAT_01c4354c + iVar3) + in_stack_00000008;
+  Line 37 [undefined_data]: iVar6 = *(int *)(&DAT_01c4354c + iVar3) + in_stack_00000008;
+  Line 39 [stack_param]: if (in_stack_0000000c < iVar4) {
+  Line 41 [stack_param]: (*pCVar2)((void *)(iVar6 - in_stack_00000018),src_buffer,count);
+  Line 42 [stack_param]: in_stack_0000000c = in_stack_0000000c + 1;
+  Line 42 [stack_param]: in_stack_0000000c = in_stack_0000000c + 1;
+  Line 44 [stack_param]: src_buffer = (void *)((int)src_buffer + in_stack_00000020);
+  Line 44 [pointer_cast]: src_buffer = (void *)((int)src_buffer + in_stack_00000020);
+  Line 44 [pointer_truncation]: src_buffer = (void *)((int)src_buffer + in_stack_00000020);
+  Line 45 [stack_param]: } while (in_stack_0000000c < iVar4);
+  Line 46 [stack_param]: return CONCAT44(iVar4,in_stack_00000020);
+  Line 46 [concat_reconstruction]: return CONCAT44(iVar4,in_stack_00000020);
+  Line 50 [stack_param]: iVar6 = *(int *)(&DAT_01c4354c + iVar3) + in_stack_00000008 * 2;
+  Line 50 [undefined_data]: iVar6 = *(int *)(&DAT_01c4354c + iVar3) + in_stack_00000008 * 2;
+  Line 53 [stack_param]: if (in_stack_0000000c < iVar4) {
+  Line 55 [stack_param]: (*pCVar2)((void *)(iVar6 + in_stack_00000018 * -2),src_buffer,count);
+  Line 56 [stack_param]: in_stack_0000000c = in_stack_0000000c + 1;
+  Line 56 [stack_param]: in_stack_0000000c = in_stack_0000000c + 1;
+  Line 58 [stack_param]: src_buffer = (void *)((int)src_buffer + in_stack_00000020);
+  Line 58 [pointer_cast]: src_buffer = (void *)((int)src_buffer + in_stack_00000020);
+  Line 58 [pointer_truncation]: src_buffer = (void *)((int)src_buffer + in_stack_00000020);
+  Line 59 [stack_param]: } while (in_stack_0000000c < iVar4);
+  Line 60 [stack_param]: return CONCAT44(iVar4,in_stack_00000020);
+  Line 60 [concat_reconstruction]: return CONCAT44(iVar4,in_stack_00000020);
+  Line 64 [concat_reconstruction]: return CONCAT44(iVar5,iVar3);
+
+====================================================================================================
+cockpit_ckptutil.c_FUN_00438410 (34 suspects)
+  File: cockpit/ckptutil.c
+====================================================================================================
+  Line 12 [stack_param]: int in_stack_00000004;
+  Line 13 [stack_param]: int in_stack_0000000c;
+  Line 14 [stack_param]: int in_stack_00000010;
+  Line 15 [stack_param]: int in_stack_00000014;
+  Line 16 [stack_param]: int in_stack_00000018;
+  Line 18 [stack_param]: count = (in_stack_00000014 - in_stack_0000000c) + 1;
+  Line 18 [stack_param]: count = (in_stack_00000014 - in_stack_0000000c) + 1;
+  Line 20 [stack_param]: if (in_stack_00000004 != 0) {
+  Line 22 [stack_param]: iVar4 = in_stack_00000010 * 4;
+  Line 23 [undefined_data]: if (DAT_0061b4a0 == 8) {
+  Line 24 [stack_param]: if (in_stack_00000010 < in_stack_00000018) {
+  Line 24 [stack_param]: if (in_stack_00000010 < in_stack_00000018) {
+  Line 26 [stack_param]: iVar3 = DAT_0061b498 * in_stack_00000010;
+  Line 26 [undefined_data]: iVar3 = DAT_0061b498 * in_stack_00000010;
+  Line 27 [undefined_data]: piVar1 = (int *)(&DAT_01c4354c + iVar4);
+  Line 29 [stack_param]: in_stack_00000010 = in_stack_00000010 + 1;
+  Line 29 [stack_param]: in_stack_00000010 = in_stack_00000010 + 1;
+  Line 30 [stack_param]: iVar3 = (*pCVar2)((void *)(*piVar1 + in_stack_0000000c),
+  Line 31 [stack_param]: (void *)(in_stack_00000004 + iVar3 + in_stack_0000000c),count);
+  Line 31 [stack_param]: (void *)(in_stack_00000004 + iVar3 + in_stack_0000000c),count);
+  Line 32 [stack_param]: } while (in_stack_00000010 < in_stack_00000018);
+  Line 32 [stack_param]: } while (in_stack_00000010 < in_stack_00000018);
+  Line 36 [stack_param]: else if (in_stack_00000010 < in_stack_00000018) {
+  Line 36 [stack_param]: else if (in_stack_00000010 < in_stack_00000018) {
+  Line 38 [stack_param]: iVar3 = DAT_0061b498 * in_stack_00000010;
+  Line 38 [undefined_data]: iVar3 = DAT_0061b498 * in_stack_00000010;
+  Line 39 [undefined_data]: piVar1 = (int *)(&DAT_01c4354c + iVar4);
+  Line 41 [stack_param]: in_stack_00000010 = in_stack_00000010 + 1;
+  Line 41 [stack_param]: in_stack_00000010 = in_stack_00000010 + 1;
+  Line 42 [stack_param]: iVar3 = (*pCVar2)((void *)(*piVar1 + in_stack_0000000c * 2),
+  Line 43 [stack_param]: (void *)(iVar3 + in_stack_0000000c + in_stack_00000004),count);
+  Line 43 [stack_param]: (void *)(iVar3 + in_stack_0000000c + in_stack_00000004),count);
+  Line 44 [stack_param]: } while (in_stack_00000010 < in_stack_00000018);
+  Line 44 [stack_param]: } while (in_stack_00000010 < in_stack_00000018);
 
 ====================================================================================================
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00437240 (2 suspects)
@@ -1301,16 +2192,6 @@ cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_005381b0 (6 suspects)
   Line 23 [pointer_truncation]: piVar3 = (uint *)((int)piVar3 + 1);
 
 ====================================================================================================
-cockpit_pkbitmap.cpp_FUN_00537fd8 (5 suspects)
-  File: cockpit/pkbitmap.cpp
-====================================================================================================
-  Line 6 [unaffected_reg]: int unaff_EBP;
-  Line 7 [unaffected_reg]: ulong unaff_ESI;
-  Line 9 [unaffected_reg]: pvVar1 = realloc(*(void **)(unaff_EBP + 0x14),unaff_ESI);
-  Line 9 [unaffected_reg]: pvVar1 = realloc(*(void **)(unaff_EBP + 0x14),unaff_ESI);
-  Line 10 [unaffected_reg]: *(void **)(unaff_EBP + 0x14) = pvVar1;
-
-====================================================================================================
 cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750 (9 suspects)
   File: cockpit/pkbitmap.cpp
 ====================================================================================================
@@ -1411,6 +2292,31 @@ cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00538db0 (1 suspect)
   File: cockpit/pkbmpset.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+====================================================================================================
+cockpit_pkbmpset.cpp_FUN_00538f90 (20 suspects)
+  File: cockpit/pkbmpset.cpp
+====================================================================================================
+  Line 8 [stack_param]: CPackedBitmapSet *in_stack_00000004;
+  Line 9 [stack_param]: int in_stack_0000000c;
+  Line 10 [stack_param]: int in_stack_00000010;
+  Line 11 [stack_param]: char *in_stack_00000018;
+  Line 12 [stack_param]: int in_stack_00000024;
+  Line 15 [stack_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00538990(in_stack_00000004);
+  Line 16 [stack_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_00538900(in_stack_00000004);
+  Line 18 [stack_param]: (in_stack_00000004,(in_stack_00000010 - in_stack_0000000c) + 1);
+  Line 18 [stack_param]: (in_stack_00000004,(in_stack_00000010 - in_stack_0000000c) + 1);
+  Line 18 [stack_param]: (in_stack_00000004,(in_stack_00000010 - in_stack_0000000c) + 1);
+  Line 19 [stack_param]: if (in_stack_0000000c <= in_stack_00000010) {
+  Line 19 [stack_param]: if (in_stack_0000000c <= in_stack_00000010) {
+  Line 22 [stack_param]: _sprintf(acStack_64,in_stack_00000018);
+  Line 23 [stack_param]: in_stack_0000000c = in_stack_0000000c + 1;
+  Line 23 [stack_param]: in_stack_0000000c = in_stack_0000000c + 1;
+  Line 25 [stack_param]: ((CPackedBitmap *)(in_stack_00000004->bitmap_array->filename + iVar1),acStack_64,
+  Line 26 [stack_param]: in_stack_00000024);
+  Line 28 [stack_param]: } while (in_stack_0000000c <= in_stack_00000010);
+  Line 28 [stack_param]: } while (in_stack_0000000c <= in_stack_00000010);
+  Line 30 [stack_param]: cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_00538930(in_stack_00000004);
 
 ====================================================================================================
 core_actor.cpp_CDemonActor_archive_FUN_0040c040 (1 suspect)
@@ -1944,13 +2850,6 @@ core_actor.cpp_CVector3f_toFixed8_FUN_0040d060 (1 suspect)
   File: core/actor.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-core_actor.cpp_FUN_0040cfc0 (2 suspects)
-  File: core/actor.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: float core_actor_cpp_FUN_0040cfc0(float *param_1)
-  Line 5 [unnamed_param]: return SQRT(*param_1);
 
 ====================================================================================================
 core_actor.cpp_adjustIndentationLevel_FUN_0040ad60 (4 suspects)
@@ -9457,6 +10356,12 @@ core_construc.cpp_CConstruct_getCollisionType_FUN_00447630 (3 suspects)
   Line 13 [unnamed_param]: EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_004310b0((CCharacter *)this_ptr,param_2)
 
 ====================================================================================================
+core_construc.cpp_CConstruct_getEffectivePosition_FUN_004474d0 (1 suspect)
+  File: core/construc.cpp
+====================================================================================================
+  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+
+====================================================================================================
 core_construc.cpp_CConstruct_getTargetPoints_FUN_004471a0 (31 suspects)
   File: core/construc.cpp
 ====================================================================================================
@@ -9643,28 +10548,6 @@ core_construc.cpp_CConstruct_startRecombine_FUN_00447560 (11 suspects)
   Line 38 [unrolled_memcpy]: pCVar4->x = (pCVar2->position).x;
   Line 43 [shadow_pointer_walk]: pCVar4 = pCVar4 + 6;
   Line 44 [shadow_pointer_walk]: pCVar3 = (CConstruct *)((pCVar3->base).base.base.orient_matrix.m + 1);
-
-====================================================================================================
-core_construc.cpp_FUN_004474d0 (17 suspects)
-  File: core/construc.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void core_construc_cpp_FUN_004474d0(int param_1)
-  Line 8 [unaffected_reg]: uint *unaff_ESI;
-  Line 13 [unnamed_param]: if (*(int *)(param_1 + 0xca58) != 0) {
-  Line 14 [unnamed_param]: iVar3 = *(int *)(param_1 + 0xc3dc + *(int *)(param_1 + 0xca60) * 0x48);
-  Line 14 [unnamed_param]: iVar3 = *(int *)(param_1 + 0xc3dc + *(int *)(param_1 + 0xca60) * 0x48);
-  Line 15 [unnamed_param]: uStack_1c = *(uint *)(param_1 + 0x20);
-  Line 16 [unnamed_param]: uStack_18 = *(uint *)(param_1 + 0x24);
-  Line 17 [unnamed_param]: uStack_14 = *(uint *)(param_1 + 0x28);
-  Line 23 [unaffected_reg]: *unaff_ESI = uStack_1c;
-  Line 24 [unaffected_reg]: unaff_ESI[1] = uStack_18;
-  Line 25 [unaffected_reg]: unaff_ESI[2] = uStack_14;
-  Line 28 [unnamed_param]: uVar1 = *(uint *)(param_1 + 0x24);
-  Line 29 [unnamed_param]: uVar2 = *(uint *)(param_1 + 0x28);
-  Line 30 [unaffected_reg]: *unaff_ESI = *(uint *)(param_1 + 0x20);
-  Line 30 [unnamed_param]: *unaff_ESI = *(uint *)(param_1 + 0x20);
-  Line 31 [unaffected_reg]: unaff_ESI[1] = uVar1;
-  Line 32 [unaffected_reg]: unaff_ESI[2] = uVar2;
 
 ====================================================================================================
 core_conveyor.cpp_CConveyor_archive_FUN_00447a40 (1 suspect)
@@ -15769,13 +16652,6 @@ core_dpart.cpp_CDemonPart_save_FUN_00479b70 (1 suspect)
   File: core/dpart.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-core_dpart.cpp_FUN_00479b22 (2 suspects)
-  File: core/dpart.cpp
-====================================================================================================
-  Line 5 [unaffected_reg]: int unaff_EBX;
-  Line 8 [unaffected_reg]: *(uint *)(unaff_EBX + 0x30) = 0;
 
 ====================================================================================================
 core_dpart.cpp_findEdgeByYStart_FUN_0047a440 (2 suspects)
@@ -22066,96 +22942,34 @@ core_flashlit.cpp_updateTooltip_FUN_004b9e30 (13 suspects)
   Line 53 [undefined_data]: _DAT_01cc7f2c = ((DAT_0061d310 + _DAT_01cc7f24) - iVar2) / 2;
 
 ====================================================================================================
-core_flattn.cpp_FUN_004bf780 (11 suspects)
+core_flattn.cpp_flattenTransformPoint_FUN_004bf910 (1 suspect)
   File: core/flattn.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: void core_flattn_cpp_FUN_004bf780(uint *param_1)
-  Line 7 [unnamed_param]: _DAT_01cc8058 = param_1[1];
-  Line 8 [unnamed_param]: _DAT_01cc805c = param_1[2];
-  Line 9 [unnamed_param]: _DAT_01cc8060 = param_1[3];
-  Line 10 [unnamed_param]: _DAT_01cc8064 = param_1[4];
-  Line 11 [unnamed_param]: _DAT_01cc8068 = param_1[5];
-  Line 12 [unnamed_param]: _DAT_01cc806c = param_1[6];
-  Line 13 [unnamed_param]: _DAT_01cc8070 = param_1[7];
-  Line 14 [unnamed_param]: _DAT_01cc8074 = param_1[8];
-  Line 15 [unnamed_param]: _DAT_01cc8054 = *param_1;
 
 ====================================================================================================
-core_flattn.cpp_FUN_004bf800 (15 suspects)
+core_flattn.cpp_flattenTransformVector_FUN_004bf990 (1 suspect)
   File: core/flattn.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: void core_flattn_cpp_FUN_004bf800(uint *param_1,uint *param_2)
-  Line 4 [unnamed_param]: void core_flattn_cpp_FUN_004bf800(uint *param_1,uint *param_2)
-  Line 7 [unnamed_param]: _DAT_01cc8058 = param_1[1];
-  Line 8 [unnamed_param]: _DAT_01cc805c = param_1[2];
-  Line 9 [unnamed_param]: _DAT_01cc8060 = param_1[3];
-  Line 10 [unnamed_param]: _DAT_01cc8064 = param_1[4];
-  Line 11 [unnamed_param]: _DAT_01cc8068 = param_1[5];
-  Line 12 [unnamed_param]: _DAT_01cc806c = param_1[6];
-  Line 13 [unnamed_param]: _DAT_01cc8070 = param_1[7];
-  Line 14 [unnamed_param]: _DAT_01cc8074 = param_1[8];
-  Line 15 [unnamed_param]: _DAT_01cc8078 = *param_2;
-  Line 16 [unnamed_param]: _DAT_01cc807c = param_2[1];
-  Line 17 [unnamed_param]: _DAT_01cc8080 = param_2[2];
-  Line 18 [unnamed_param]: _DAT_01cc8054 = *param_1;
 
 ====================================================================================================
-core_flattn.cpp_FUN_004bf890 (11 suspects)
+core_flattn.cpp_setFlattenMatrixAndOffset_FUN_004bf800 (1 suspect)
   File: core/flattn.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: void core_flattn_cpp_FUN_004bf890(uint *param_1)
-  Line 7 [unnamed_param]: _DAT_01cc8060 = param_1[1];
-  Line 8 [unnamed_param]: _DAT_01cc806c = param_1[2];
-  Line 9 [unnamed_param]: _DAT_01cc8058 = param_1[3];
-  Line 10 [unnamed_param]: _DAT_01cc8064 = param_1[4];
-  Line 11 [unnamed_param]: _DAT_01cc8070 = param_1[5];
-  Line 12 [unnamed_param]: _DAT_01cc805c = param_1[6];
-  Line 13 [unnamed_param]: _DAT_01cc8068 = param_1[7];
-  Line 14 [unnamed_param]: _DAT_01cc8074 = param_1[8];
-  Line 15 [unnamed_param]: _DAT_01cc8054 = *param_1;
 
 ====================================================================================================
-core_flattn.cpp_FUN_004bf910 (15 suspects)
+core_flattn.cpp_setFlattenMatrixTransposed_FUN_004bf890 (1 suspect)
   File: core/flattn.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: void core_flattn_cpp_FUN_004bf910(float *param_1,float *param_2)
-  Line 4 [unnamed_param]: void core_flattn_cpp_FUN_004bf910(float *param_1,float *param_2)
-  Line 7 [unnamed_param]: *param_1 = param_2[2] * _DAT_01cc805c + *param_2 * _DAT_01cc8054 + param_2[1] * _DAT_01cc8058 +
-  Line 7 [unnamed_param]: *param_1 = param_2[2] * _DAT_01cc805c + *param_2 * _DAT_01cc8054 + param_2[1] * _DAT_01cc8058 +
-  Line 7 [unnamed_param]: *param_1 = param_2[2] * _DAT_01cc805c + *param_2 * _DAT_01cc8054 + param_2[1] * _DAT_01cc8058 +
-  Line 7 [unnamed_param]: *param_1 = param_2[2] * _DAT_01cc805c + *param_2 * _DAT_01cc8054 + param_2[1] * _DAT_01cc8058 +
-  Line 9 [unnamed_param]: param_1[1] = param_2[2] * _DAT_01cc8068 + *param_2 * _DAT_01cc8060 + param_2[1] * _DAT_01cc8064 +
-  Line 9 [unnamed_param]: param_1[1] = param_2[2] * _DAT_01cc8068 + *param_2 * _DAT_01cc8060 + param_2[1] * _DAT_01cc8064 +
-  Line 9 [unnamed_param]: param_1[1] = param_2[2] * _DAT_01cc8068 + *param_2 * _DAT_01cc8060 + param_2[1] * _DAT_01cc8064 +
-  Line 9 [unnamed_param]: param_1[1] = param_2[2] * _DAT_01cc8068 + *param_2 * _DAT_01cc8060 + param_2[1] * _DAT_01cc8064 +
-  Line 11 [unnamed_param]: param_1[2] = param_2[2] * _DAT_01cc8074 + *param_2 * _DAT_01cc806c + param_2[1] * _DAT_01cc8070 +
-  Line 11 [unnamed_param]: param_1[2] = param_2[2] * _DAT_01cc8074 + *param_2 * _DAT_01cc806c + param_2[1] * _DAT_01cc8070 +
-  Line 11 [unnamed_param]: param_1[2] = param_2[2] * _DAT_01cc8074 + *param_2 * _DAT_01cc806c + param_2[1] * _DAT_01cc8070 +
-  Line 11 [unnamed_param]: param_1[2] = param_2[2] * _DAT_01cc8074 + *param_2 * _DAT_01cc806c + param_2[1] * _DAT_01cc8070 +
 
 ====================================================================================================
-core_flattn.cpp_FUN_004bf990 (15 suspects)
+core_flattn.cpp_setFlattenMatrix_FUN_004bf780 (1 suspect)
   File: core/flattn.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: void core_flattn_cpp_FUN_004bf990(float *param_1,float *param_2)
-  Line 4 [unnamed_param]: void core_flattn_cpp_FUN_004bf990(float *param_1,float *param_2)
-  Line 7 [unnamed_param]: *param_1 = param_2[2] * _DAT_01cc805c + *param_2 * _DAT_01cc8054 + param_2[1] * _DAT_01cc8058;
-  Line 7 [unnamed_param]: *param_1 = param_2[2] * _DAT_01cc805c + *param_2 * _DAT_01cc8054 + param_2[1] * _DAT_01cc8058;
-  Line 7 [unnamed_param]: *param_1 = param_2[2] * _DAT_01cc805c + *param_2 * _DAT_01cc8054 + param_2[1] * _DAT_01cc8058;
-  Line 7 [unnamed_param]: *param_1 = param_2[2] * _DAT_01cc805c + *param_2 * _DAT_01cc8054 + param_2[1] * _DAT_01cc8058;
-  Line 8 [unnamed_param]: param_1[1] = param_2[2] * _DAT_01cc8068 + *param_2 * _DAT_01cc8060 + param_2[1] * _DAT_01cc8064;
-  Line 8 [unnamed_param]: param_1[1] = param_2[2] * _DAT_01cc8068 + *param_2 * _DAT_01cc8060 + param_2[1] * _DAT_01cc8064;
-  Line 8 [unnamed_param]: param_1[1] = param_2[2] * _DAT_01cc8068 + *param_2 * _DAT_01cc8060 + param_2[1] * _DAT_01cc8064;
-  Line 8 [unnamed_param]: param_1[1] = param_2[2] * _DAT_01cc8068 + *param_2 * _DAT_01cc8060 + param_2[1] * _DAT_01cc8064;
-  Line 9 [unnamed_param]: param_1[2] = param_2[2] * _DAT_01cc8074 + *param_2 * _DAT_01cc806c + param_2[1] * _DAT_01cc8070;
-  Line 9 [unnamed_param]: param_1[2] = param_2[2] * _DAT_01cc8074 + *param_2 * _DAT_01cc806c + param_2[1] * _DAT_01cc8070;
-  Line 9 [unnamed_param]: param_1[2] = param_2[2] * _DAT_01cc8074 + *param_2 * _DAT_01cc806c + param_2[1] * _DAT_01cc8070;
-  Line 9 [unnamed_param]: param_1[2] = param_2[2] * _DAT_01cc8074 + *param_2 * _DAT_01cc806c + param_2[1] * _DAT_01cc8070;
 
 ====================================================================================================
 core_flattn.cpp_staticInit_FUN_004bf740 (1 suspect)
@@ -28662,7 +29476,7 @@ core_inv.cpp_CInventory_removeMatchingKeys_FUN_004fc310 (1 suspect)
   Line 18 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
 
 ====================================================================================================
-core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 (103 suspects)
+core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 (123 suspects)
   File: core/inv.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -28717,57 +29531,77 @@ core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 (103 suspects)
   Line 448 [pointer_cast]: local_104[(uint)bVar11 * -2] = *(float *)((int)&CStack_114 + (uint)bVar11 * -8 + 4);
   Line 450 [pointer_truncation]: *(float *)((int)&CStack_114 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
   Line 450 [pointer_cast]: *(float *)((int)&CStack_114 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  Line 458 [pointer_truncation]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + 4) = local_134[(uint)bVar11 * -2];
-  Line 458 [pointer_cast]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + 4) = local_134[(uint)bVar11 * -2];
-  Line 459 [pointer_truncation]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-  Line 459 [pointer_cast]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-  Line 462 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_d8);
-  Line 470 [pointer_truncation]: local_170[(uint)bVar11 * -2 + 3] = *(float *)((int)&CStack_cc + (uint)bVar11 * -8 + 4);
-  Line 470 [pointer_cast]: local_170[(uint)bVar11 * -2 + 3] = *(float *)((int)&CStack_cc + (uint)bVar11 * -8 + 4);
-  Line 472 [pointer_truncation]: *(float *)((int)&CStack_cc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  Line 472 [pointer_cast]: *(float *)((int)&CStack_cc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  Line 480 [pointer_truncation]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + 4) = local_11c[(uint)bVar11 * -2];
-  Line 480 [pointer_cast]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + 4) = local_11c[(uint)bVar11 * -2];
-  Line 481 [pointer_truncation]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-  Line 481 [pointer_cast]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-  Line 484 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_d8);
-  Line 491 [pointer_truncation]: local_b0[(uint)bVar11 * -2] = *(float *)((int)&local_f0 + (uint)bVar11 * -8 + 4);
-  Line 491 [pointer_cast]: local_b0[(uint)bVar11 * -2] = *(float *)((int)&local_f0 + (uint)bVar11 * -8 + 4);
-  Line 493 [pointer_truncation]: *(float *)((int)&local_f0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  Line 493 [pointer_cast]: *(float *)((int)&local_f0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  Line 501 [pointer_truncation]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + 4) = local_170[(uint)bVar11 * -2];
-  Line 501 [pointer_cast]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + 4) = local_170[(uint)bVar11 * -2];
-  Line 502 [pointer_truncation]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-  Line 502 [pointer_cast]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-  Line 505 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_d8);
-  Line 512 [pointer_truncation]: local_e0[(uint)bVar11 * -2] = *(float *)((int)&local_15c + (uint)bVar11 * -8 + 4);
-  Line 512 [pointer_cast]: local_e0[(uint)bVar11 * -2] = *(float *)((int)&local_15c + (uint)bVar11 * -8 + 4);
-  Line 514 [pointer_truncation]: *(float *)((int)&local_15c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  Line 514 [pointer_cast]: *(float *)((int)&local_15c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  Line 522 [pointer_truncation]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + 4) = local_b0[(uint)bVar11 * -2 + 3];
-  Line 522 [pointer_cast]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + 4) = local_b0[(uint)bVar11 * -2 + 3];
-  Line 523 [pointer_truncation]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-  Line 523 [pointer_cast]: *(float *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-  Line 526 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_d8);
-  Line 527 [unknown_field]: auStack_1e4._4_4_ = 4;
-  Line 528 [unknown_field]: auStack_1e4._24_4_ = 0;
-  Line 529 [unknown_field]: auStack_1e4._28_4_ = 0;
-  Line 530 [unknown_field]: auStack_1e4._32_4_ = 0;
-  Line 531 [unknown_field]: auStack_1e4._36_4_ = 1;
-  Line 532 [unknown_field]: auStack_1e4._40_4_ = 0x1000000;
-  Line 533 [unknown_field]: auStack_1e4._44_4_ = 0;
-  Line 534 [unknown_field]: auStack_1e4._52_4_ = 0x1000000;
-  Line 535 [unknown_field]: auStack_1e4._56_4_ = 0x1000000;
-  Line 536 [unknown_field]: auStack_1e4._48_4_ = 2;
-  Line 537 [unknown_field]: auStack_1e4._68_4_ = 0x1000000;
-  Line 538 [unknown_field]: auStack_1e4._60_4_ = 3;
-  Line 539 [unknown_field]: auStack_1e4._64_4_ = 0;
-  Line 540 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
-  Line 541 [undefined_data]: engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
-  Line 542 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
-  Line 544 [undefined_data]: (DAT_00612560,(SMRGLTextureBasic *)0x1d1baac);
-  Line 546 [undefined_data]: (DAT_00612560,(SMRGLPrimitivePoly *)auStack_1e4,0x23);
-  Line 547 [undefined_data]: engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);
+  Line 451 [self_copy_guard]: if (&fStack_12c != &fStack_108) {
+  Line 459 [pointer_truncation]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + 4) =
+  Line 459 [pointer_cast]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + 4) =
+  Line 460 [pointer_truncation]: *(uint *)((int)&CStack_138 + (uint)bVar11 * -8 + 4);
+  Line 460 [pointer_cast]: *(uint *)((int)&CStack_138 + (uint)bVar11 * -8 + 4);
+  Line 461 [pointer_truncation]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+  Line 461 [pointer_cast]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+  Line 462 [pointer_truncation]: *(uint *)((int)&CStack_138 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 462 [pointer_cast]: *(uint *)((int)&CStack_138 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 464 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_d8);
+  Line 472 [pointer_truncation]: local_164[(uint)bVar11 * -2] = *(float *)((int)&CStack_cc + (uint)bVar11 * -8 + 4);
+  Line 472 [pointer_cast]: local_164[(uint)bVar11 * -2] = *(float *)((int)&CStack_cc + (uint)bVar11 * -8 + 4);
+  Line 474 [pointer_truncation]: *(float *)((int)&CStack_cc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 474 [pointer_cast]: *(float *)((int)&CStack_cc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 475 [self_copy_guard]: if (&fStack_12c != &fStack_168) {
+  Line 483 [pointer_truncation]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + 4) =
+  Line 483 [pointer_cast]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + 4) =
+  Line 484 [pointer_truncation]: *(uint *)((int)&local_120 + (uint)bVar11 * -8 + 4);
+  Line 484 [pointer_cast]: *(uint *)((int)&local_120 + (uint)bVar11 * -8 + 4);
+  Line 485 [pointer_truncation]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+  Line 485 [pointer_cast]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+  Line 486 [pointer_truncation]: *(uint *)((int)&local_120 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 486 [pointer_cast]: *(uint *)((int)&local_120 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 488 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_d8);
+  Line 495 [pointer_truncation]: local_b0[(uint)bVar11 * -2] = *(float *)((int)&local_f0 + (uint)bVar11 * -8 + 4);
+  Line 495 [pointer_cast]: local_b0[(uint)bVar11 * -2] = *(float *)((int)&local_f0 + (uint)bVar11 * -8 + 4);
+  Line 497 [pointer_truncation]: *(float *)((int)&local_f0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 497 [pointer_cast]: *(float *)((int)&local_f0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 498 [self_copy_guard]: if (&fStack_12c != &local_b4) {
+  Line 506 [pointer_truncation]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + 4) =
+  Line 506 [pointer_cast]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + 4) =
+  Line 507 [pointer_truncation]: *(uint *)((int)&CStack_174 + (uint)bVar11 * -8 + 4);
+  Line 507 [pointer_cast]: *(uint *)((int)&CStack_174 + (uint)bVar11 * -8 + 4);
+  Line 508 [pointer_truncation]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+  Line 508 [pointer_cast]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+  Line 509 [pointer_truncation]: *(uint *)((int)&CStack_174 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 509 [pointer_cast]: *(uint *)((int)&CStack_174 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 511 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_d8);
+  Line 518 [pointer_truncation]: local_e0[(uint)bVar11 * -2] = *(float *)((int)&local_15c + (uint)bVar11 * -8 + 4);
+  Line 518 [pointer_cast]: local_e0[(uint)bVar11 * -2] = *(float *)((int)&local_15c + (uint)bVar11 * -8 + 4);
+  Line 520 [pointer_truncation]: *(float *)((int)&local_15c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 520 [pointer_cast]: *(float *)((int)&local_15c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 521 [self_copy_guard]: if (&fStack_12c != &fStack_e4) {
+  Line 529 [pointer_truncation]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + 4) =
+  Line 529 [pointer_cast]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + 4) =
+  Line 530 [pointer_truncation]: *(uint *)((int)&local_a8 + (uint)bVar11 * -8 + 4);
+  Line 530 [pointer_cast]: *(uint *)((int)&local_a8 + (uint)bVar11 * -8 + 4);
+  Line 531 [pointer_truncation]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+  Line 531 [pointer_cast]: *(uint *)((int)&local_d8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+  Line 532 [pointer_truncation]: *(uint *)((int)&local_a8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 532 [pointer_cast]: *(uint *)((int)&local_a8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+  Line 534 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_d8);
+  Line 535 [unknown_field]: auStack_1e4._4_4_ = 4;
+  Line 536 [unknown_field]: auStack_1e4._24_4_ = 0;
+  Line 537 [unknown_field]: auStack_1e4._28_4_ = 0;
+  Line 538 [unknown_field]: auStack_1e4._32_4_ = 0;
+  Line 539 [unknown_field]: auStack_1e4._36_4_ = 1;
+  Line 540 [unknown_field]: auStack_1e4._40_4_ = 0x1000000;
+  Line 541 [unknown_field]: auStack_1e4._44_4_ = 0;
+  Line 542 [unknown_field]: auStack_1e4._52_4_ = 0x1000000;
+  Line 543 [unknown_field]: auStack_1e4._56_4_ = 0x1000000;
+  Line 544 [unknown_field]: auStack_1e4._48_4_ = 2;
+  Line 545 [unknown_field]: auStack_1e4._68_4_ = 0x1000000;
+  Line 546 [unknown_field]: auStack_1e4._60_4_ = 3;
+  Line 547 [unknown_field]: auStack_1e4._64_4_ = 0;
+  Line 548 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
+  Line 549 [undefined_data]: engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
+  Line 550 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
+  Line 552 [undefined_data]: (DAT_00612560,(SMRGLTextureBasic *)0x1d1baac);
+  Line 554 [undefined_data]: (DAT_00612560,(SMRGLPrimitivePoly *)auStack_1e4,0x23);
+  Line 555 [undefined_data]: engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);
 
 ====================================================================================================
 core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0 (34 suspects)
@@ -28930,25 +29764,6 @@ core_inv.cpp_CInventory_updateInventory_FUN_004f9f10 (6 suspects)
   Line 89 [pointer_cast]: pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar10);
 
 ====================================================================================================
-core_inv.cpp_FUN_004f63c0 (14 suspects)
-  File: core/inv.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 4 (4 missing)
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: void core_inv_cpp_FUN_004f63c0(float param_1,float param_2)
-  Line 4 [unnamed_param]: void core_inv_cpp_FUN_004f63c0(float param_1,float param_2)
-  Line 14 [unaffected_reg]: int *unaff_ESI;
-  Line 25 [unnamed_param]: dVar10 = (double)param_2 * _DAT_005e5fb8;
-  Line 26 [unnamed_param]: dVar9 = round((double)param_1 * _DAT_005e5fb8);
-  Line 47 [unaffected_reg]: *unaff_ESI = _DAT_01c51d2c +
-  Line 52 [stack_ref]: unaff_ESI[(uint)bVar8 * -2 + 1] = *(int *)(&stack0xffffffe0 + (uint)bVar8 * -8);
-  Line 52 [unaffected_reg]: unaff_ESI[(uint)bVar8 * -2 + 1] = *(int *)(&stack0xffffffe0 + (uint)bVar8 * -8);
-  Line 53 [unaffected_reg]: (unaff_ESI + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =
-  Line 54 [stack_ref]: *(int *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-  Line 54 [pointer_truncation]: *(int *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-  Line 54 [pointer_cast]: *(int *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-
-====================================================================================================
 core_inv.cpp_clampWeaponAmmoCount_FUN_004f7660 (1 suspect)
   File: core/inv.cpp
 ====================================================================================================
@@ -29012,77 +29827,107 @@ core_inv.cpp_loadAssets_FUN_004f70e0 (8 suspects)
   Line 114 [undefined_data]: (&DAT_005e61d6,"itemlist.txt",&DAT_005e61c6);
 
 ====================================================================================================
-core_inv.cpp_renderCompass_FUN_004f6560 (62 suspects)
+core_inv.cpp_renderCompass_FUN_004f6560 (81 suspects)
   File: core/inv.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 13 [stack_alignment_array]: float afStackY_10fc [986];
-  Line 51 [undefined_data]: iVar4 = DAT_0061b49c + -2;
-  Line 69 [pointer_truncation]: *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2 + 3];
-  Line 69 [pointer_cast]: *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2 + 3];
-  Line 70 [pointer_truncation]: *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 70 [pointer_cast]: *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 81 [pointer_truncation]: afStack_68[(uint)bVar5 * -2] = *(float *)((int)&CStack_9c + (uint)bVar5 * -8 + 4);
-  Line 81 [pointer_cast]: afStack_68[(uint)bVar5 * -2] = *(float *)((int)&CStack_9c + (uint)bVar5 * -8 + 4);
-  Line 83 [pointer_truncation]: *(float *)((int)&CStack_9c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  Line 83 [pointer_cast]: *(float *)((int)&CStack_9c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  Line 91 [pointer_truncation]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_8c[(uint)bVar5 * -2];
-  Line 91 [pointer_cast]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_8c[(uint)bVar5 * -2];
-  Line 92 [pointer_truncation]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 92 [pointer_cast]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 49 [undefined_data]: iVar4 = DAT_0061b49c + -2;
+  Line 67 [pointer_truncation]: *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + 4) = afStack_2c[(uint)bVar5 * -2];
+  Line 67 [pointer_cast]: *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + 4) = afStack_2c[(uint)bVar5 * -2];
+  Line 68 [pointer_truncation]: *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 68 [pointer_cast]: *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 79 [pointer_truncation]: afStack_68[(uint)bVar5 * -2] = *(float *)((int)&CStack_9c + (uint)bVar5 * -8 + 4);
+  Line 79 [pointer_cast]: afStack_68[(uint)bVar5 * -2] = *(float *)((int)&CStack_9c + (uint)bVar5 * -8 + 4);
+  Line 81 [pointer_truncation]: *(float *)((int)&CStack_9c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 81 [pointer_cast]: *(float *)((int)&CStack_9c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 82 [self_copy_guard]: if (&fStack_e4 != &fStack_6c) {
+  Line 90 [pointer_truncation]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) =
+  Line 90 [pointer_cast]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) =
+  Line 91 [pointer_truncation]: *(uint *)((int)&CStack_90 + (uint)bVar5 * -8 + 4);
+  Line 91 [pointer_cast]: *(uint *)((int)&CStack_90 + (uint)bVar5 * -8 + 4);
+  Line 92 [pointer_truncation]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 92 [pointer_cast]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 93 [pointer_truncation]: *(uint *)((int)&CStack_90 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 93 [pointer_cast]: *(uint *)((int)&CStack_90 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   Line 95 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_c0);
   Line 103 [pointer_truncation]: afStack_110[(uint)bVar5 * -2] = *(float *)((int)&CStack_78 + (uint)bVar5 * -8 + 4);
   Line 103 [pointer_cast]: afStack_110[(uint)bVar5 * -2] = *(float *)((int)&CStack_78 + (uint)bVar5 * -8 + 4);
   Line 105 [pointer_truncation]: *(float *)((int)&CStack_78 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   Line 105 [pointer_cast]: *(float *)((int)&CStack_78 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  Line 113 [pointer_truncation]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2];
-  Line 113 [pointer_cast]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2];
-  Line 114 [pointer_truncation]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 114 [pointer_cast]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 117 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
-  Line 124 [pointer_truncation]: afStack_68[(uint)bVar5 * -2 + 3] = *(float *)((int)&CStack_108 + (uint)bVar5 * -8 + 4);
-  Line 124 [pointer_cast]: afStack_68[(uint)bVar5 * -2 + 3] = *(float *)((int)&CStack_108 + (uint)bVar5 * -8 + 4);
-  Line 126 [pointer_truncation]: *(float *)((int)&CStack_108 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  Line 126 [pointer_cast]: *(float *)((int)&CStack_108 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  Line 134 [pointer_truncation]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_ec[(uint)bVar5 * -2];
-  Line 134 [pointer_cast]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_ec[(uint)bVar5 * -2];
-  Line 135 [pointer_truncation]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 135 [pointer_cast]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 138 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_c0);
-  Line 145 [pointer_truncation]: afStack_d4[(uint)bVar5 * -2] = *(float *)((int)&CStack_cc + (uint)bVar5 * -8 + 4);
-  Line 145 [pointer_cast]: afStack_d4[(uint)bVar5 * -2] = *(float *)((int)&CStack_cc + (uint)bVar5 * -8 + 4);
-  Line 147 [pointer_truncation]: *(float *)((int)&CStack_cc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  Line 147 [pointer_cast]: *(float *)((int)&CStack_cc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  Line 155 [pointer_truncation]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_a4[(uint)bVar5 * -2];
-  Line 155 [pointer_cast]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_a4[(uint)bVar5 * -2];
-  Line 156 [pointer_truncation]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 156 [pointer_cast]: *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-  Line 159 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);
-  Line 160 [unknown_field]: auStack_184._4_4_ = 4;
-  Line 161 [unknown_field]: auStack_184._24_4_ = 0;
-  Line 162 [unknown_field]: auStack_184._28_4_ = 0;
-  Line 163 [unknown_field]: auStack_184._32_4_ = 0;
-  Line 164 [unknown_field]: auStack_184._36_4_ = 1;
-  Line 165 [unknown_field]: auStack_184._40_4_ = 0x1000000;
-  Line 166 [unknown_field]: auStack_184._44_4_ = 0;
-  Line 167 [unknown_field]: auStack_184._52_4_ = 0x1000000;
-  Line 168 [unknown_field]: auStack_184._56_4_ = 0x1000000;
-  Line 169 [unknown_field]: auStack_184._48_4_ = 2;
-  Line 170 [unknown_field]: auStack_184._68_4_ = 0x1000000;
-  Line 171 [unknown_field]: auStack_184._60_4_ = 3;
-  Line 172 [unknown_field]: auStack_184._64_4_ = 0;
-  Line 173 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
-  Line 174 [undefined_data]: engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
-  Line 175 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
-  Line 177 [undefined_data]: (DAT_00612560,(SMRGLTextureBasic *)0x1d1baac);
-  Line 179 [undefined_data]: (DAT_00612560,(SMRGLPrimitivePoly *)auStack_184,0x23);
-  Line 180 [undefined_data]: engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);
+  Line 106 [self_copy_guard]: if (&fStack_e4 != &fStack_114) {
+  Line 114 [pointer_truncation]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) =
+  Line 114 [pointer_cast]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) =
+  Line 115 [pointer_truncation]: *(uint *)((int)&CStack_3c + (uint)bVar5 * -8 + 4);
+  Line 115 [pointer_cast]: *(uint *)((int)&CStack_3c + (uint)bVar5 * -8 + 4);
+  Line 116 [pointer_truncation]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 116 [pointer_cast]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 117 [pointer_truncation]: *(uint *)((int)&CStack_3c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 117 [pointer_cast]: *(uint *)((int)&CStack_3c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 119 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
+  Line 126 [pointer_truncation]: afStack_68[(uint)bVar5 * -2 + 3] = *(float *)((int)&CStack_108 + (uint)bVar5 * -8 + 4);
+  Line 126 [pointer_cast]: afStack_68[(uint)bVar5 * -2 + 3] = *(float *)((int)&CStack_108 + (uint)bVar5 * -8 + 4);
+  Line 128 [pointer_truncation]: *(float *)((int)&CStack_108 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 128 [pointer_cast]: *(float *)((int)&CStack_108 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 137 [pointer_truncation]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) =
+  Line 137 [pointer_cast]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) =
+  Line 138 [pointer_truncation]: *(uint *)((int)&CStack_f0 + (uint)bVar5 * -8 + 4);
+  Line 138 [pointer_cast]: *(uint *)((int)&CStack_f0 + (uint)bVar5 * -8 + 4);
+  Line 139 [pointer_truncation]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 139 [pointer_cast]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 140 [pointer_truncation]: *(uint *)((int)&CStack_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 140 [pointer_cast]: *(uint *)((int)&CStack_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 142 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_c0);
+  Line 149 [pointer_truncation]: afStack_d4[(uint)bVar5 * -2] = *(float *)((int)&CStack_cc + (uint)bVar5 * -8 + 4);
+  Line 149 [pointer_cast]: afStack_d4[(uint)bVar5 * -2] = *(float *)((int)&CStack_cc + (uint)bVar5 * -8 + 4);
+  Line 151 [pointer_truncation]: *(float *)((int)&CStack_cc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 151 [pointer_cast]: *(float *)((int)&CStack_cc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 152 [self_copy_guard]: if (&fStack_e4 != &fStack_d8) {
+  Line 160 [pointer_truncation]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) =
+  Line 160 [pointer_cast]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) =
+  Line 161 [pointer_truncation]: *(uint *)((int)&CStack_a8 + (uint)bVar5 * -8 + 4);
+  Line 161 [pointer_cast]: *(uint *)((int)&CStack_a8 + (uint)bVar5 * -8 + 4);
+  Line 162 [pointer_truncation]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 162 [pointer_cast]: *(uint *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  Line 163 [pointer_truncation]: *(uint *)((int)&CStack_a8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 163 [pointer_cast]: *(uint *)((int)&CStack_a8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  Line 165 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);
+  Line 166 [unknown_field]: auStack_184._4_4_ = 4;
+  Line 167 [unknown_field]: auStack_184._24_4_ = 0;
+  Line 168 [unknown_field]: auStack_184._28_4_ = 0;
+  Line 169 [unknown_field]: auStack_184._32_4_ = 0;
+  Line 170 [unknown_field]: auStack_184._36_4_ = 1;
+  Line 171 [unknown_field]: auStack_184._40_4_ = 0x1000000;
+  Line 172 [unknown_field]: auStack_184._44_4_ = 0;
+  Line 173 [unknown_field]: auStack_184._52_4_ = 0x1000000;
+  Line 174 [unknown_field]: auStack_184._56_4_ = 0x1000000;
+  Line 175 [unknown_field]: auStack_184._48_4_ = 2;
+  Line 176 [unknown_field]: auStack_184._68_4_ = 0x1000000;
+  Line 177 [unknown_field]: auStack_184._60_4_ = 3;
+  Line 178 [unknown_field]: auStack_184._64_4_ = 0;
+  Line 179 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
+  Line 180 [undefined_data]: engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
+  Line 181 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
+  Line 183 [undefined_data]: (DAT_00612560,(SMRGLTextureBasic *)0x1d1baac);
+  Line 185 [undefined_data]: (DAT_00612560,(SMRGLPrimitivePoly *)auStack_184,0x23);
+  Line 186 [undefined_data]: engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);
 
 ====================================================================================================
 core_inv.cpp_renderSps_FUN_004f64f0 (1 suspect)
   File: core/inv.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+====================================================================================================
+core_inv.cpp_screenToWorldPoint_FUN_004f63c0 (6 suspects)
+  File: core/inv.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 47 [pointer_cast]: puVar8 = (uint *)((int)out_point + (uint)bVar9 * -8 + 4);
+  Line 53 [stack_ref]: *puVar8 = *(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8);
+  Line 55 [stack_ref]: *(uint *)((int)&stack0xffffffe4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+  Line 55 [pointer_truncation]: *(uint *)((int)&stack0xffffffe4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+  Line 55 [pointer_cast]: *(uint *)((int)&stack0xffffffe4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
 
 ====================================================================================================
 core_inv.cpp_setupItems_FUN_004f9b20 (2 suspects)
@@ -29651,19 +30496,6 @@ core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090 (10 suspects)
   Line 27 [pointer_truncation]: *(float *)((int)&CStack_2c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   Line 27 [pointer_cast]: *(float *)((int)&CStack_2c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   Line 28 [stack_ref]: if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
-
-====================================================================================================
-core_lightgun.cpp_FUN_004ffff0 (8 suspects)
-  File: core/lightgun.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: uint core_lightgun_cpp_FUN_004ffff0(CCharacter *param_1)
-  Line 7 [unnamed_param]: iVar1 = (*(((param_1->base).vtable._uc)->_uc).isInvulnerable)(param_1);
-  Line 7 [unnamed_param]: iVar1 = (*(((param_1->base).vtable._uc)->_uc).isInvulnerable)(param_1);
-  Line 9 [unnamed_param]: iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(&param_1->base,"CGhoul");
-  Line 13 [unnamed_param]: iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(&param_1->base,"CTVBat");
-  Line 17 [unnamed_param]: iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(&param_1->base,"CBatCreature");
-  Line 21 [unnamed_param]: iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(&param_1->base,"CWerewolf");
-  Line 25 [unnamed_param]: iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(&param_1->base,"CSvetlana");
 
 ====================================================================================================
 core_lightpis.cpp_CLightPis_ctor_FUN_00501610 (2 suspects)
@@ -37929,44 +38761,111 @@ core_setdir.cpp_CDemonSet_writeThumbs_FUN_0055b280 (4 suspects)
   Line 15 [undefined_data]: _fwrite(&DAT_020b28f4,0x3000,this_ptr->camera_count,file);
 
 ====================================================================================================
-core_setdir.cpp_FUN_00559c10 (35 suspects)
+core_setdir.cpp_FUN_00559730 (102 suspects)
   File: core/setdir.cpp
 ====================================================================================================
-  Line 8 [unaffected_reg]: int unaff_EBP;
-  Line 15 [stack_param]: uint in_stack_00000094;
-  Line 16 [stack_param]: uint in_stack_000000a0;
-  Line 17 [stack_param]: int in_stack_000000a4;
-  Line 18 [stack_param]: int in_stack_000000c0;
-  Line 19 [stack_param]: uint in_stack_000000d4;
-  Line 22 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);
-  Line 24 [stack_param]: (DAT_00612560,(uint)((in_stack_000000a0._3_1_ & 0x80) != 0));
-  Line 24 [unknown_field]: (DAT_00612560,(uint)((in_stack_000000a0._3_1_ & 0x80) != 0));
-  Line 24 [undefined_data]: (DAT_00612560,(uint)((in_stack_000000a0._3_1_ & 0x80) != 0));
-  Line 26 [stack_param]: in_stack_000000a4 = 0;
-  Line 27 [stack_param]: if (0 < in_stack_000000c0) {
-  Line 28 [stack_param]: iVar4 = in_stack_000000c0 * 4;
-  Line 31 [stack_ref]: (DAT_00612560,*(SMRGLPrimitivePoly **)(&stack0x0000002c + iVar3));
-  Line 31 [raw_address_pointer_store]: (DAT_00612560,*(SMRGLPrimitivePoly **)(&stack0x0000002c + iVar3));
-  Line 31 [undefined_data]: (DAT_00612560,*(SMRGLPrimitivePoly **)(&stack0x0000002c + iVar3));
-  Line 33 [stack_param]: in_stack_000000a4 = in_stack_000000a4 + iVar1;
-  Line 33 [stack_param]: in_stack_000000a4 = in_stack_000000a4 + iVar1;
-  Line 37 [unaffected_reg]: puVar2 = (uint *)(*(int *)(unaff_EBP + 0x20) * 0x3000 + 0x23a08f4);
-  Line 41 [undefined_data]: puVar5 = *(uint **)(&DAT_01c4480c + iVar3);
-  Line 43 [unrolled_memcpy]: for (iVar4 = 0x40; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 48 [unrolled_memcpy]: for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 50 [pointer_cast]: puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);
-  Line 50 [pointer_truncation]: puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);
-  Line 51 [pointer_cast]: puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);
-  Line 51 [pointer_truncation]: puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);
-  Line 53 [undefined_data]: *(uint **)(&DAT_01c4480c + iVar3) = puVar2;
-  Line 58 [stack_param]: if (0 < in_stack_000000c0) {
-  Line 59 [unaffected_reg]: poly = *(SMRGLPrimitivePoly **)(unaff_EBP + 0x1c);
-  Line 61 [undefined_data]: engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,poly);
-  Line 62 [unrolled_memcpy]: // 00559cd0: MOVSD.REP ES:EDI,ESI
-  Line 64 [stack_param]: } while (iVar3 < in_stack_000000c0);
-  Line 67 [undefined_data]: engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);
-  Line 68 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
-  Line 69 [stack_param]: return (float)in_stack_000000a4 * unaff_retaddr;
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 23 [stack_param]: CDemonActor *in_stack_00000004;
+  Line 24 [stack_param]: CVector3i *in_stack_00000008;
+  Line 25 [stack_param]: SMRGLPrimitivePoly *in_stack_0000000c;
+  Line 26 [stack_param]: int in_stack_00000010;
+  Line 27 [stack_param]: C3DSCamera *in_stack_00000014;
+  Line 28 [stack_param]: float in_stack_00000018;
+  Line 29 [stack_alignment_array]: float afStackY_1080 [995];
+  Line 61 [stack_param]: if (in_stack_00000014->enabled != 0) {
+  Line 62 [stack_param]: fVar2 = (in_stack_00000014->position).x - (in_stack_00000004->location).position.x;
+  Line 62 [stack_param]: fVar2 = (in_stack_00000014->position).x - (in_stack_00000004->location).position.x;
+  Line 63 [stack_param]: fVar4 = (in_stack_00000014->position).y - (in_stack_00000004->location).position.y;
+  Line 63 [stack_param]: fVar4 = (in_stack_00000014->position).y - (in_stack_00000004->location).position.y;
+  Line 64 [stack_param]: fVar3 = (in_stack_00000014->position).z - (in_stack_00000004->location).position.z;
+  Line 64 [stack_param]: fVar3 = (in_stack_00000014->position).z - (in_stack_00000004->location).position.z;
+  Line 67 [stack_param]: (in_stack_00000014,&(in_stack_00000004->location).position,in_stack_00000018
+  Line 67 [stack_param]: (in_stack_00000014,&(in_stack_00000004->location).position,in_stack_00000018
+  Line 67 [stack_param]: (in_stack_00000014,&(in_stack_00000004->location).position,in_stack_00000018
+  Line 73 [stack_param]: (DAT_00612560,&in_stack_00000014->position);
+  Line 73 [undefined_data]: (DAT_00612560,&in_stack_00000014->position);
+  Line 75 [stack_param]: (DAT_00612560,in_stack_00000014->projection_scale);
+  Line 75 [undefined_data]: (DAT_00612560,in_stack_00000014->projection_scale);
+  Line 77 [stack_param]: (DAT_00612560,&in_stack_00000014->orientation);
+  Line 77 [undefined_data]: (DAT_00612560,&in_stack_00000014->orientation);
+  Line 81 [stack_param]: (DAT_00612560,&(in_stack_00000004->location).position);
+  Line 81 [undefined_data]: (DAT_00612560,&(in_stack_00000004->location).position);
+  Line 82 [stack_param]: CStack_a4.x = (in_stack_00000004->orient).vec.x;
+  Line 83 [stack_param]: CStack_a4.z = (in_stack_00000004->orient).vec.z;
+  Line 84 [stack_param]: CStack_a4.y = (in_stack_00000014->orientation).y;
+  Line 86 [undefined_data]: (DAT_00612560,&CStack_a4,(CVector3f *)0x0);
+  Line 91 [undefined_data]: ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6)
+  Line 91 [pointer_cast]: ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6)
+  Line 92 [stack_param]: ,in_stack_00000008);
+  Line 94 [stack_param]: in_stack_00000008 = in_stack_00000008 + 1;
+  Line 94 [stack_param]: in_stack_00000008 = in_stack_00000008 + 1;
+  Line 95 [undefined_data]: uVar1 = *(uint *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar6
+  Line 95 [pointer_cast]: uVar1 = *(uint *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar6
+  Line 102 [stack_param]: core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(in_stack_00000004);
+  Line 107 [stack_param]: pSVar7 = in_stack_0000000c;
+  Line 109 [pointer_cast]: *(SMRGLPrimitivePoly **)((int)aiStack_bc + iVar6) = pSVar7;
+  Line 113 [stack_param]: } while (pSVar7 != (SMRGLPrimitivePoly *)(in_stack_0000000c[3].vertices + 4));
+  Line 115 [stack_param]: core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(in_stack_00000004);
+  Line 118 [undefined_data]: ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6);
+  Line 118 [pointer_cast]: ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6);
+  Line 135 [undefined_data]: if ((*(byte *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x +
+  Line 135 [pointer_cast]: if ((*(byte *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x +
+  Line 138 [undefined_data]: if (0 < *(int *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_z +
+  Line 138 [pointer_cast]: if (0 < *(int *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_z +
+  Line 151 [stack_param]: puStack_4c = (uint *)(&DAT_020b28f4 + in_stack_00000010 * 0x3000);
+  Line 151 [undefined_data]: puStack_4c = (uint *)(&DAT_020b28f4 + in_stack_00000010 * 0x3000);
+  Line 152 [stack_param]: pCStack_38 = &in_stack_00000014->position;
+  Line 155 [undefined_data]: pCStack_24 = *(CDemonActor **)(&DAT_0268ecec + iStack_30);
+  Line 169 [pointer_truncation]: afStack_88[(uint)bVar14 * -2] = *(float *)((int)&CStack_98 + (uint)bVar14 * -8 + 4);
+  Line 169 [pointer_cast]: afStack_88[(uint)bVar14 * -2] = *(float *)((int)&CStack_98 + (uint)bVar14 * -8 + 4);
+  Line 172 [pointer_truncation]: *(float *)((int)&CStack_98 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
+  Line 172 [pointer_cast]: *(float *)((int)&CStack_98 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
+  Line 178 [undefined_data]: ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x +
+  Line 178 [pointer_cast]: ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x +
+  Line 181 [undefined_data]: uVar1 = *(uint *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x +
+  Line 181 [pointer_cast]: uVar1 = *(uint *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x +
+  Line 191 [undefined_data]: puVar12 = (uint *)&DAT_020af8ec;
+  Line 192 [unrolled_memcpy]: for (iVar6 = 0xc00; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 197 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 199 [pointer_cast]: puVar10 = (uint *)((int)puVar10 + (uint)bVar14 * -2 + 1);
+  Line 199 [pointer_truncation]: puVar10 = (uint *)((int)puVar10 + (uint)bVar14 * -2 + 1);
+  Line 200 [pointer_cast]: puVar12 = (uint *)((int)puVar12 + (uint)bVar14 * -2 + 1);
+  Line 200 [pointer_truncation]: puVar12 = (uint *)((int)puVar12 + (uint)bVar14 * -2 + 1);
+  Line 202 [undefined_data]: puVar9 = &DAT_020af8ec;
+  Line 206 [undefined_data]: *(byte **)(&DAT_01c4480c + iVar6) = puVar9;
+  Line 210 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);
+  Line 214 [undefined_data]: (DAT_00612560,(uint)((uStack_20 & 0x80000000) != 0));
+  Line 220 [undefined_data]: (DAT_00612560,&SStack_e4);
+  Line 226 [undefined_data]: (DAT_00612560,&SStack_e4);
+  Line 232 [undefined_data]: (DAT_00612560,&SStack_e4);
+  Line 238 [undefined_data]: (DAT_00612560,&SStack_e4);
+  Line 244 [undefined_data]: (DAT_00612560,&SStack_e4);
+  Line 250 [undefined_data]: (DAT_00612560,&SStack_e4);
+  Line 258 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
+  Line 260 [stack_param]: puVar9 = &DAT_020b28f4 + in_stack_00000010 * 0x3000;
+  Line 260 [undefined_data]: puVar9 = &DAT_020b28f4 + in_stack_00000010 * 0x3000;
+  Line 263 [undefined_data]: *(byte **)(&DAT_01c4480c + iVar6) = puVar9;
+  Line 268 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);
+  Line 270 [undefined_data]: (DAT_00612560,(uint)((uStack_48 & 0x80000000) != 0));
+  Line 277 [pointer_cast]: (DAT_00612560,*(SMRGLPrimitivePoly **)((int)aiStack_bc + iVar6));
+  Line 277 [undefined_data]: (DAT_00612560,*(SMRGLPrimitivePoly **)((int)aiStack_bc + iVar6));
+  Line 283 [stack_param]: puVar10 = (uint *)(in_stack_00000010 * 0x3000 + 0x23a08f4);
+  Line 287 [undefined_data]: puVar12 = *(uint **)(&DAT_01c4480c + iVar6);
+  Line 289 [unrolled_memcpy]: for (iVar11 = 0x40; iVar11 != 0; iVar11 = iVar11 + -1) {
+  Line 294 [unrolled_memcpy]: for (iVar11 = 0; iVar11 != 0; iVar11 = iVar11 + -1) {
+  Line 296 [pointer_cast]: puVar12 = (uint *)((int)puVar12 + (uint)bVar14 * -2 + 1);
+  Line 296 [pointer_truncation]: puVar12 = (uint *)((int)puVar12 + (uint)bVar14 * -2 + 1);
+  Line 297 [pointer_cast]: puVar13 = (uint *)((int)puVar13 + (uint)bVar14 * -2 + 1);
+  Line 297 [pointer_truncation]: puVar13 = (uint *)((int)puVar13 + (uint)bVar14 * -2 + 1);
+  Line 299 [undefined_data]: *(uint **)(&DAT_01c4480c + iVar6) = puVar10;
+  Line 307 [stack_param]: (DAT_00612560,in_stack_0000000c);
+  Line 307 [undefined_data]: (DAT_00612560,in_stack_0000000c);
+  Line 309 [stack_param]: in_stack_0000000c = (SMRGLPrimitivePoly *)(in_stack_0000000c->vertices + 4);
+  Line 309 [stack_param]: in_stack_0000000c = (SMRGLPrimitivePoly *)(in_stack_0000000c->vertices + 4);
+  Line 313 [undefined_data]: engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);
+  Line 314 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
+  Line 450 [unrolled_memcpy]: // 00559cd0: MOVSD.REP ES:EDI,ESI
+  Line 536 [unrolled_memcpy]: // 00559dc6: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
 core_setdir.cpp_setPixelGrayscale_FUN_0055b4c0 (1 suspect)
@@ -38418,40 +39317,49 @@ core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60 (11 suspects)
   Line 71 [undefined_data]: engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,65000);
 
 ====================================================================================================
-core_shadow.cpp_FUN_0055f9c0 (31 suspects)
+core_shadow.cpp_FUN_0055f630 (40 suspects)
   File: core/shadow.cpp
 ====================================================================================================
-  Line 2 [warning_spacebase]: /* WARNING: Unable to track spacebase fully for stack */
-  Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 10 [register_param]: char *in_EAX;
-  Line 11 [unaffected_reg]: int unaff_EBX;
-  Line 12 [fpu_register_input]: float10 in_ST0;
-  Line 13 [fpu_register_input]: float10 in_ST1;
-  Line 14 [fpu_register_input]: float10 in_ST2;
-  Line 17 [register_param]: *in_EAX = *in_EAX + (char)in_EAX;
-  Line 17 [register_param]: *in_EAX = *in_EAX + (char)in_EAX;
-  Line 17 [register_param]: *in_EAX = *in_EAX + (char)in_EAX;
-  Line 17 [pointer_truncation]: *in_EAX = *in_EAX + (char)in_EAX;
-  Line 18 [register_param]: *(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =
-  Line 18 [register_param]: *(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =
-  Line 18 [unaffected_reg]: *(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =
-  Line 18 [nonstandard_int]: *(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =
-  Line 18 [pointer_truncation]: *(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =
-  Line 18 [pointer_truncation]: *(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =
-  Line 18 [concat_reconstruction]: *(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =
-  Line 19 [unaffected_reg]: (char)((uint)unaff_EBX >> 8);
-  Line 20 [fpu_register_input]: *(float *)(unaff_retaddr + 0xd0) = (float)in_ST2;
-  Line 21 [fpu_register_input]: *(float *)(unaff_retaddr + 0xd4) = (float)in_ST1;
-  Line 22 [fpu_register_input]: *(float *)(unaff_retaddr + 0xd8) = (float)in_ST0;
-  Line 23 [unrolled_memcpy]: *(uint *)(unaff_retaddr + 0x100) = *(uint *)(unaff_retaddr + 0xd0);
-  Line 26 [unaffected_reg]: if (unaff_EBX != unaff_retaddr + 0x100) {
-  Line 27 [unrolled_memcpy]: *(uint *)(unaff_retaddr + 0x4c) = *(uint *)(unaff_retaddr + 0x100);
-  Line 31 [undefined_data]: piVar2 = DAT_00612560;
-  Line 40 [undefined_data]: piVar2 = DAT_00612560;
-  Line 41 [undefined_data]: *(uint *)(*DAT_00612560 + 0x20) = 0xffff;
-  Line 81 [undefined_data]: *(int **)(unaff_retaddr + -8) = DAT_00612560;
-  Line 86 [undefined_data]: *(int **)(unaff_retaddr + -8) = DAT_00612560;
-  Line 92 [undefined_data]: *(int **)(unaff_retaddr + -8) = DAT_00612560;
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 10 [stack_param]: int in_stack_00000004;
+  Line 11 [stack_param]: float *in_stack_00000008;
+  Line 12 [stack_alignment_array]: float afStackY_1104 [1006];
+  Line 63 [stack_param]: fStack_50 = *in_stack_00000008 + _DAT_006051a4;
+  Line 65 [stack_param]: fStack_48 = in_stack_00000008[2];
+  Line 66 [stack_param]: fStack_4c = in_stack_00000008[1] + _DAT_006051a8;
+  Line 67 [stack_param]: afStack_dc[2] = fStack_50 * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 68 [stack_param]: afStack_dc[3] = fStack_4c * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 69 [stack_param]: fStack_cc = fStack_48 * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 85 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_110);
+  Line 87 [stack_param]: fStack_11c = -_DAT_006051a4 + *in_stack_00000008;
+  Line 88 [stack_param]: afStack_118[1] = in_stack_00000008[2];
+  Line 89 [stack_param]: afStack_118[0] = in_stack_00000008[1] + _DAT_006051a8;
+  Line 90 [stack_param]: fStack_104 = -_DAT_006051a4 + *in_stack_00000008;
+  Line 94 [stack_param]: fStack_8c = fStack_104 * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 95 [stack_param]: afStack_88[0] = afStack_100[0] * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 96 [stack_param]: afStack_88[1] = afStack_100[1] * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 110 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_2c);
+  Line 111 [stack_param]: fStack_a8 = in_stack_00000008[2];
+  Line 112 [stack_param]: afStack_b8[2] = -_DAT_006051a4 + *in_stack_00000008;
+  Line 113 [stack_param]: afStack_b8[3] = in_stack_00000008[1] + -_DAT_006051a8;
+  Line 114 [stack_param]: afStack_88[2] = -_DAT_006051a4 + *in_stack_00000008;
+  Line 118 [stack_param]: fStack_68 = afStack_88[2] * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 119 [stack_param]: fStack_64 = afStack_88[3] * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 120 [stack_param]: fStack_60 = fStack_78 * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 134 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_ec);
+  Line 135 [stack_param]: afStack_dc[1] = in_stack_00000008[2];
+  Line 136 [stack_param]: fStack_e0 = _DAT_006051a4 + *in_stack_00000008;
+  Line 137 [stack_param]: afStack_dc[0] = in_stack_00000008[1] + -_DAT_006051a8;
+  Line 138 [stack_param]: fStack_bc = _DAT_006051a4 + *in_stack_00000008;
+  Line 142 [stack_param]: fStack_74 = fStack_bc * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 143 [stack_param]: fStack_70 = afStack_b8[0] * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 144 [stack_param]: fStack_6c = afStack_b8[1] * *(float *)(in_stack_00000004 + 0x27b8);
+  Line 158 [undefined_data]: (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_98);
+  Line 159 [undefined_data]: this_ptr = DAT_00612560;
+  Line 160 [undefined_data]: DAT_00612560->vertex_buffer_ptr->r = 0xffff;
+  Line 195 [undefined_data]: engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);
+  Line 196 [undefined_data]: engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30(DAT_00612560,&SStack_144);
+  Line 197 [undefined_data]: engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
 
 ====================================================================================================
 core_shadow.cpp_staticInit_FUN_0055da40 (1 suspect)
@@ -38553,19 +39461,6 @@ core_shadowsc.cpp_CShadowsc_setup_FUN_00560510 (1 suspect)
   File: core/shadowsc.cpp
 ====================================================================================================
   Line 31 [unknown_param]: this_ptr->unknown_0xc290 = 0;
-
-====================================================================================================
-core_shadowsc.cpp_FUN_00560fe0 (8 suspects)
-  File: core/shadowsc.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
-  Line 2 [unnamed_param]: void core_shadowsc_cpp_FUN_00560fe0(int param_1)
-  Line 8 [unnamed_param]: iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(*(uint *)(param_1 + 0xc27c));
-  Line 12 [unresolved_funcptr]: uVar2 = (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))
-  Line 12 [unnamed_param]: uVar2 = (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))
-  Line 13 [unnamed_param]: (param_1,"Gscorp-attack?.wav @ 4" + 1);
-  Line 14 [unnamed_param]: *(uint *)(param_1 + 0xc284) = 0x41700000;
-  Line 15 [unnamed_param]: *(uint *)(param_1 + 0xc27c) = uVar2;
 
 ====================================================================================================
 core_shotgun.cpp_CShotgun_ctor_FUN_005615c0 (1 suspect)
@@ -45666,92 +46561,31 @@ core_werewolf.cpp_staticInit_FUN_005af240 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_xform.cpp_FUN_005b6920 (83 suspects)
+core_xform.cpp_FUN_005b67e0 (22 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 13 [register_param]: float *in_ECX;
-  Line 15 [unaffected_reg]: int unaff_EBP;
-  Line 16 [fpu_register_input]: float10 in_ST0;
-  Line 17 [fpu_register_input]: float10 in_ST1;
-  Line 18 [fpu_register_input]: float10 in_ST2;
-  Line 19 [fpu_register_input]: float10 in_ST3;
-  Line 20 [fpu_register_input]: float10 in_ST4;
-  Line 21 [fpu_register_input]: float10 in_ST5;
-  Line 22 [stack_param]: double in_stack_00000000;
-  Line 25 [stack_param]: double in_stack_00000018;
-  Line 26 [stack_param]: double in_stack_00000020;
-  Line 30 [stack_param]: double in_stack_00000040;
-  Line 35 [stack_param]: double in_stack_00000068;
-  Line 36 [stack_param]: double in_stack_00000070;
-  Line 37 [stack_param]: double in_stack_000000b8;
-  Line 39 [fpu_register_input]: dStack00000060 = (double)in_ST0;
-  Line 40 [stack_param]: in_stack_00000018 = in_stack_00000018 * in_stack_000000b8;
-  Line 40 [stack_param]: in_stack_00000018 = in_stack_00000018 * in_stack_000000b8;
-  Line 40 [stack_param]: in_stack_00000018 = in_stack_00000018 * in_stack_000000b8;
-  Line 41 [fpu_register_input]: dStack00000008 = (double)in_ST5;
-  Line 42 [stack_param]: in_stack_00000020 = in_stack_00000020 * in_stack_000000b8;
-  Line 42 [stack_param]: in_stack_00000020 = in_stack_00000020 * in_stack_000000b8;
-  Line 42 [stack_param]: in_stack_00000020 = in_stack_00000020 * in_stack_000000b8;
-  Line 44 [fpu_register_input]: dStack00000038 = (double)in_ST2;
-  Line 45 [fpu_register_input]: dStack00000010 = (double)in_ST1;
-  Line 46 [fpu_register_input]: dStack00000028 = (double)in_ST3;
-  Line 47 [fpu_register_input]: dStack00000030 = (double)in_ST4;
-  Line 49 [stack_param]: dVar1 = in_stack_00000000 * _DAT_005fa150 +
-  Line 50 [stack_param]: (dStack00000010 * in_stack_00000020 - dStack00000028 * in_stack_00000018);
-  Line 50 [stack_param]: (dStack00000010 * in_stack_00000020 - dStack00000028 * in_stack_00000018);
-  Line 52 [stack_param]: (dStack00000028 * dStack00000030 - dStack00000038 * in_stack_00000020);
-  Line 54 [stack_param]: (dStack00000038 * in_stack_00000018 - dStack00000030 * dStack00000010);
-  Line 56 [stack_param]: (in_stack_00000018 * dStack00000008 - in_stack_00000020 * dStack00000060);
-  Line 56 [stack_param]: (in_stack_00000018 * dStack00000008 - in_stack_00000020 * dStack00000060);
-  Line 58 [stack_param]: (in_stack_00000020 * in_stack_00000000 - dStack00000030 * dStack00000008);
-  Line 58 [stack_param]: (in_stack_00000020 * in_stack_00000000 - dStack00000030 * dStack00000008);
-  Line 60 [stack_param]: (dStack00000030 * dStack00000060 - in_stack_00000018 * in_stack_00000000);
-  Line 60 [stack_param]: (dStack00000030 * dStack00000060 - in_stack_00000018 * in_stack_00000000);
-  Line 64 [stack_param]: in_stack_00000018 =
-  Line 65 [stack_param]: in_stack_00000018 * _DAT_005fa150 +
-  Line 66 [stack_param]: (dStack00000008 * dStack00000038 - in_stack_00000000 * dStack00000028);
-  Line 67 [stack_param]: in_stack_00000020 =
-  Line 68 [stack_param]: in_stack_00000020 * _DAT_005fa150 +
-  Line 69 [stack_param]: (in_stack_00000000 * dStack00000010 - dStack00000060 * dStack00000038);
-  Line 72 [stack_param]: in_stack_00000000 = dVar1 * dStack00000008;
-  Line 78 [stack_param]: dVar1 = 1.0 / SQRT(in_stack_00000020 * in_stack_00000020 +
-  Line 78 [stack_param]: dVar1 = 1.0 / SQRT(in_stack_00000020 * in_stack_00000020 +
-  Line 79 [stack_param]: in_stack_00000018 * in_stack_00000018 + dStack00000030 * dStack00000030);
-  Line 79 [stack_param]: in_stack_00000018 * in_stack_00000018 + dStack00000030 * dStack00000030);
-  Line 81 [stack_param]: in_stack_00000018 = in_stack_00000018 * dVar1;
-  Line 81 [stack_param]: in_stack_00000018 = in_stack_00000018 * dVar1;
-  Line 82 [stack_param]: in_stack_00000020 = in_stack_00000020 * dVar1;
-  Line 82 [stack_param]: in_stack_00000020 = in_stack_00000020 * dVar1;
-  Line 85 [stack_param]: dStack00000048 = dStack00000010 * in_stack_00000020 - dStack00000028 * in_stack_00000018;
-  Line 85 [stack_param]: dStack00000048 = dStack00000010 * in_stack_00000020 - dStack00000028 * in_stack_00000018;
-  Line 86 [stack_param]: dStack00000050 = dStack00000028 * dStack00000030 - dStack00000038 * in_stack_00000020;
-  Line 87 [stack_param]: dStack00000058 = dStack00000038 * in_stack_00000018 - dStack00000030 * dStack00000010;
-  Line 88 [unaffected_reg]: if (*(int *)(unaff_EBP + 0x18) != 0) {
-  Line 89 [stack_param]: dStack00000048 = dStack00000048 * in_stack_00000040;
-  Line 90 [stack_param]: dStack00000050 = dStack00000050 * in_stack_00000040;
-  Line 91 [stack_param]: dStack00000058 = dStack00000058 * in_stack_00000040;
-  Line 92 [stack_param]: dStack00000038 = dStack00000038 * in_stack_00000070;
-  Line 93 [stack_param]: dStack00000010 = dStack00000010 * in_stack_00000070;
-  Line 94 [stack_param]: dStack00000028 = dStack00000028 * in_stack_00000070;
-  Line 95 [stack_param]: dStack00000030 = dStack00000030 * in_stack_00000068;
-  Line 96 [stack_param]: in_stack_00000018 = in_stack_00000018 * in_stack_00000068;
-  Line 96 [stack_param]: in_stack_00000018 = in_stack_00000018 * in_stack_00000068;
-  Line 96 [stack_param]: in_stack_00000018 = in_stack_00000018 * in_stack_00000068;
-  Line 97 [stack_param]: in_stack_00000020 = in_stack_00000020 * in_stack_00000068;
-  Line 97 [stack_param]: in_stack_00000020 = in_stack_00000020 * in_stack_00000068;
-  Line 97 [stack_param]: in_stack_00000020 = in_stack_00000020 * in_stack_00000068;
-  Line 99 [register_param]: in_ECX[1] = (float)dStack00000050;
-  Line 100 [register_param]: in_ECX[2] = (float)dStack00000058;
-  Line 101 [register_param]: in_ECX[4] = (float)dStack00000038;
-  Line 102 [register_param]: in_ECX[5] = (float)dStack00000010;
-  Line 103 [register_param]: in_ECX[6] = (float)dStack00000028;
-  Line 104 [register_param]: in_ECX[8] = (float)dStack00000030;
-  Line 105 [stack_param]: in_ECX[9] = (float)in_stack_00000018;
-  Line 105 [register_param]: in_ECX[9] = (float)in_stack_00000018;
-  Line 106 [stack_param]: in_ECX[10] = (float)in_stack_00000020;
-  Line 106 [register_param]: in_ECX[10] = (float)in_stack_00000020;
-  Line 107 [register_param]: *in_ECX = (float)dStack00000048;
+  Line 24 [stack_param]: float *in_stack_00000004;
+  Line 25 [stack_param]: int in_stack_00000008;
+  Line 42 [stack_param]: fVar1 = *in_stack_00000004;
+  Line 43 [stack_param]: fVar2 = in_stack_00000004[1];
+  Line 44 [stack_param]: fVar3 = in_stack_00000004[2];
+  Line 45 [stack_param]: fVar4 = in_stack_00000004[4];
+  Line 46 [stack_param]: fVar5 = in_stack_00000004[5];
+  Line 47 [stack_param]: fVar6 = in_stack_00000004[6];
+  Line 48 [stack_param]: fVar7 = in_stack_00000004[8];
+  Line 49 [stack_param]: fVar8 = in_stack_00000004[9];
+  Line 50 [stack_param]: fVar9 = in_stack_00000004[10];
+  Line 103 [stack_param]: if (in_stack_00000008 != 0) {
+  Line 114 [stack_param]: in_stack_00000004[1] = (float)dStack_a0;
+  Line 115 [stack_param]: in_stack_00000004[2] = (float)dStack_98;
+  Line 116 [stack_param]: in_stack_00000004[4] = (float)dStack_b8;
+  Line 117 [stack_param]: in_stack_00000004[5] = (float)dStack_e0;
+  Line 118 [stack_param]: in_stack_00000004[6] = (float)dStack_c8;
+  Line 119 [stack_param]: in_stack_00000004[8] = (float)dStack_c0;
+  Line 120 [stack_param]: in_stack_00000004[9] = (float)dStack_d8;
+  Line 121 [stack_param]: in_stack_00000004[10] = (float)dStack_d0;
+  Line 122 [stack_param]: *in_stack_00000004 = (float)dStack_a8;
 
 ====================================================================================================
 core_xform.cpp_angleFromSinCos_FUN_005b5860 (2 suspects)
@@ -48831,6 +49665,252 @@ engine_boss.c_modelStructNotSupported4_FUN_0041d980 (4 suspects)
   Line 24 [unrolled_memcpy]: // 0041d9c6: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
+engine_clipper.c_FUN_0043d6e0 (241 suspects)
+  File: engine/clipper.c
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 23 [stack_param]: uint in_stack_00000004;
+  Line 24 [stack_param]: int *in_stack_00000008;
+  Line 38 [stack_param]: piVar3 = in_stack_00000008;
+  Line 39 [stack_param]: if (0 < (int)in_stack_00000004) {
+  Line 41 [undefined_data]: if (((&DAT_00629024)[*piVar3 * 0xc] & 0x80000000) != 0) {
+  Line 45 [undefined_data]: uVar5 = uVar5 & (&DAT_00629024)[*piVar3 * 0xc];
+  Line 48 [stack_param]: } while (iVar6 < (int)in_stack_00000004);
+  Line 50 [stack_param]: if ((uVar10 == in_stack_00000004) && (cVar4 != '\0')) {
+  Line 51 [undefined_data]: DAT_007c7554 = 0;
+  Line 55 [stack_param]: DAT_007c8420 = in_stack_00000004;
+  Line 55 [undefined_data]: DAT_007c8420 = in_stack_00000004;
+  Line 56 [undefined_data]: DAT_007c8424 = 0;
+  Line 57 [undefined_data]: DAT_007c8428 = 0;
+  Line 58 [undefined_data]: DAT_007c842c = 0;
+  Line 59 [undefined_data]: DAT_007c7554 = 0;
+  Line 61 [stack_param]: if (0 < (int)in_stack_00000004) {
+  Line 62 [undefined_data]: puVar7 = &DAT_007c8a30;
+  Line 64 [stack_param]: puVar12 = &DAT_00629014 + *in_stack_00000008 * 0xc;
+  Line 64 [undefined_data]: puVar12 = &DAT_00629014 + *in_stack_00000008 * 0xc;
+  Line 66 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 73 [pointer_cast]: puVar12 = (uint *)((int)puVar12 + 1);
+  Line 73 [pointer_truncation]: puVar12 = (uint *)((int)puVar12 + 1);
+  Line 74 [pointer_cast]: puVar15 = (uint *)((int)puVar15 + 1);
+  Line 74 [pointer_truncation]: puVar15 = (uint *)((int)puVar15 + 1);
+  Line 76 [stack_param]: in_stack_00000008 = in_stack_00000008 + 1;
+  Line 76 [stack_param]: in_stack_00000008 = in_stack_00000008 + 1;
+  Line 79 [stack_param]: } while (iStack_28 < (int)in_stack_00000004);
+  Line 82 [undefined_data]: if (0 < (int)DAT_007c8420) {
+  Line 83 [undefined_data]: pSVar9 = (SRenderVertex *)&DAT_007c8a30;
+  Line 86 [undefined_data]: if (uVar5 == DAT_007c8420) {
+  Line 87 [undefined_data]: uVar5 = uVar5 ^ DAT_007c8420;
+  Line 89 [undefined_data]: pSVar14 = (SRenderVertex *)(&DAT_007c8a30 + uVar5 * 0xc);
+  Line 92 [undefined_data]: if ((int)(&DAT_007c8a38)[uVar5 * 0xc] <= (pSVar14->projected_vertex).transformed_x) {
+  Line 98 [undefined_data]: piVar3 = &DAT_007c8430 + DAT_007c8424 * 0xc;
+  Line 98 [undefined_data]: piVar3 = &DAT_007c8430 + DAT_007c8424 * 0xc;
+  Line 99 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 101 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 101 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 104 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 106 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 106 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 107 [pointer_cast]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 107 [pointer_truncation]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 109 [undefined_data]: DAT_007c8424 = DAT_007c8424 + 1;
+  Line 109 [undefined_data]: DAT_007c8424 = DAT_007c8424 + 1;
+  Line 113 [undefined_data]: (pSVar14,pSVar9,(SRenderVertex *)(&DAT_007c8430 + DAT_007c8424 * 0xc));
+  Line 113 [undefined_data]: (pSVar14,pSVar9,(SRenderVertex *)(&DAT_007c8430 + DAT_007c8424 * 0xc));
+  Line 114 [undefined_data]: DAT_007c8424 = DAT_007c8424 + 1;
+  Line 114 [undefined_data]: DAT_007c8424 = DAT_007c8424 + 1;
+  Line 118 [undefined_data]: piVar3 = &DAT_007c8430 + DAT_007c8424 * 0xc;
+  Line 118 [undefined_data]: piVar3 = &DAT_007c8430 + DAT_007c8424 * 0xc;
+  Line 119 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 121 [pointer_cast]: pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -8 + 4);
+  Line 121 [pointer_truncation]: pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -8 + 4);
+  Line 124 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 126 [pointer_cast]: pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);
+  Line 126 [pointer_truncation]: pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);
+  Line 127 [pointer_cast]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 127 [pointer_truncation]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 129 [undefined_data]: DAT_007c8424 = DAT_007c8424 + 1;
+  Line 129 [undefined_data]: DAT_007c8424 = DAT_007c8424 + 1;
+  Line 131 [undefined_data]: (pSVar9,pSVar14,(SRenderVertex *)(&DAT_007c8430 + DAT_007c8424 * 0xc));
+  Line 131 [undefined_data]: (pSVar9,pSVar14,(SRenderVertex *)(&DAT_007c8430 + DAT_007c8424 * 0xc));
+  Line 132 [undefined_data]: DAT_007c8424 = DAT_007c8424 + 1;
+  Line 132 [undefined_data]: DAT_007c8424 = DAT_007c8424 + 1;
+  Line 136 [undefined_data]: } while (iStack_20 < (int)DAT_007c8420);
+  Line 138 [undefined_data]: if (2 < (int)DAT_007c8424) {
+  Line 140 [undefined_data]: if (0 < (int)DAT_007c8424) {
+  Line 141 [undefined_data]: pSVar9 = (SRenderVertex *)&DAT_007c8430;
+  Line 144 [undefined_data]: if (uVar5 == DAT_007c8424) {
+  Line 145 [undefined_data]: uVar5 = uVar5 ^ DAT_007c8424;
+  Line 147 [undefined_data]: pSVar14 = (SRenderVertex *)(&DAT_007c8430 + uVar5 * 0xc);
+  Line 150 [undefined_data]: if ((pSVar14->projected_vertex).transformed_x <= (int)-(&DAT_007c8438)[uVar5 * 0xc]) {
+  Line 156 [undefined_data]: piVar3 = &DAT_007c9030 + DAT_007c8428 * 0xc;
+  Line 156 [undefined_data]: piVar3 = &DAT_007c9030 + DAT_007c8428 * 0xc;
+  Line 157 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 159 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 159 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 162 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 164 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 164 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 165 [pointer_cast]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 165 [pointer_truncation]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 167 [undefined_data]: DAT_007c8428 = DAT_007c8428 + 1;
+  Line 167 [undefined_data]: DAT_007c8428 = DAT_007c8428 + 1;
+  Line 168 [unrolled_memcpy]: // 0043d860: MOVSD.REP ES:EDI,ESI
+  Line 171 [undefined_data]: (pSVar14,pSVar9,(SRenderVertex *)(&DAT_007c9030 + DAT_007c8428 * 0xc));
+  Line 171 [undefined_data]: (pSVar14,pSVar9,(SRenderVertex *)(&DAT_007c9030 + DAT_007c8428 * 0xc));
+  Line 172 [undefined_data]: DAT_007c8428 = DAT_007c8428 + 1;
+  Line 172 [undefined_data]: DAT_007c8428 = DAT_007c8428 + 1;
+  Line 176 [undefined_data]: piVar3 = &DAT_007c9030 + DAT_007c8428 * 0xc;
+  Line 176 [undefined_data]: piVar3 = &DAT_007c9030 + DAT_007c8428 * 0xc;
+  Line 177 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 179 [pointer_cast]: pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -8 + 4);
+  Line 179 [pointer_truncation]: pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -8 + 4);
+  Line 182 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 184 [pointer_cast]: pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);
+  Line 184 [pointer_truncation]: pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);
+  Line 185 [pointer_cast]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 185 [pointer_truncation]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 187 [undefined_data]: DAT_007c8428 = DAT_007c8428 + 1;
+  Line 187 [undefined_data]: DAT_007c8428 = DAT_007c8428 + 1;
+  Line 189 [undefined_data]: (pSVar9,pSVar14,(SRenderVertex *)(&DAT_007c9030 + DAT_007c8428 * 0xc));
+  Line 189 [undefined_data]: (pSVar9,pSVar14,(SRenderVertex *)(&DAT_007c9030 + DAT_007c8428 * 0xc));
+  Line 190 [undefined_data]: DAT_007c8428 = DAT_007c8428 + 1;
+  Line 190 [undefined_data]: DAT_007c8428 = DAT_007c8428 + 1;
+  Line 194 [undefined_data]: } while (iStack_1c < (int)DAT_007c8424);
+  Line 196 [undefined_data]: if (2 < (int)DAT_007c8428) {
+  Line 198 [undefined_data]: if (0 < (int)DAT_007c8428) {
+  Line 199 [undefined_data]: pSVar9 = (SRenderVertex *)&DAT_007c9030;
+  Line 202 [undefined_data]: if (uVar5 == DAT_007c8428) {
+  Line 203 [undefined_data]: uVar5 = uVar5 ^ DAT_007c8428;
+  Line 207 [undefined_data]: if ((int)(&DAT_007c9038)[uVar5 * 0xc] <= (int)(&DAT_007c9034)[uVar5 * 0xc]) {
+  Line 207 [undefined_data]: if ((int)(&DAT_007c9038)[uVar5 * 0xc] <= (int)(&DAT_007c9034)[uVar5 * 0xc]) {
+  Line 211 [unrolled_memcpy]: // 0043d8d1: MOVSD.REP ES:EDI,ESI
+  Line 213 [undefined_data]: piVar3 = &DAT_007c9630 + DAT_007c842c * 0xc;
+  Line 213 [undefined_data]: piVar3 = &DAT_007c9630 + DAT_007c842c * 0xc;
+  Line 214 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 216 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 216 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 219 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 221 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 221 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 222 [pointer_cast]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 222 [pointer_truncation]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 224 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 224 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 228 [undefined_data]: ((SRenderVertex *)(&DAT_007c9030 + uVar5 * 0xc),pSVar9,
+  Line 229 [undefined_data]: (SRenderVertex *)(&DAT_007c9630 + DAT_007c842c * 0xc));
+  Line 229 [undefined_data]: (SRenderVertex *)(&DAT_007c9630 + DAT_007c842c * 0xc));
+  Line 230 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 230 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 234 [undefined_data]: piVar3 = &DAT_007c9630 + DAT_007c842c * 0xc;
+  Line 234 [undefined_data]: piVar3 = &DAT_007c9630 + DAT_007c842c * 0xc;
+  Line 235 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 237 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 237 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 240 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 242 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 242 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 243 [pointer_cast]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 243 [pointer_truncation]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 245 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 245 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 247 [undefined_data]: (pSVar9,(SRenderVertex *)(&DAT_007c9030 + uVar5 * 0xc),
+  Line 248 [undefined_data]: (SRenderVertex *)(&DAT_007c9630 + DAT_007c842c * 0xc));
+  Line 248 [undefined_data]: (SRenderVertex *)(&DAT_007c9630 + DAT_007c842c * 0xc));
+  Line 249 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 249 [undefined_data]: DAT_007c842c = DAT_007c842c + 1;
+  Line 253 [undefined_data]: } while (iStack_14 < (int)DAT_007c8428);
+  Line 255 [undefined_data]: if (2 < (int)DAT_007c842c) {
+  Line 257 [undefined_data]: if (0 < (int)DAT_007c842c) {
+  Line 258 [undefined_data]: pSVar9 = (SRenderVertex *)&DAT_007c9630;
+  Line 261 [undefined_data]: if (uVar5 == DAT_007c842c) {
+  Line 262 [undefined_data]: uVar5 = uVar5 ^ DAT_007c842c;
+  Line 266 [undefined_data]: if ((int)(&DAT_007c9634)[uVar5 * 0xc] <= (int)-(&DAT_007c9638)[uVar5 * 0xc]) {
+  Line 266 [undefined_data]: if ((int)(&DAT_007c9634)[uVar5 * 0xc] <= (int)-(&DAT_007c9638)[uVar5 * 0xc]) {
+  Line 272 [undefined_data]: piVar3 = &DAT_007c7558 + DAT_007c7554 * 0xc;
+  Line 272 [undefined_data]: piVar3 = &DAT_007c7558 + DAT_007c7554 * 0xc;
+  Line 273 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 273 [unrolled_memcpy]: // 0043d966: MOVSD.REP ES:EDI,ESI  ; DAT_007c8430 | DAT_007c8434
+  Line 275 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 275 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 278 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 280 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 280 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 281 [pointer_cast]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 281 [pointer_truncation]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 283 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 283 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 287 [undefined_data]: ((SRenderVertex *)(&DAT_007c9630 + uVar5 * 0xc),pSVar9,
+  Line 288 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 288 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 289 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 289 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 293 [undefined_data]: piVar3 = &DAT_007c7558 + DAT_007c7554 * 0xc;
+  Line 293 [undefined_data]: piVar3 = &DAT_007c7558 + DAT_007c7554 * 0xc;
+  Line 294 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 296 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 296 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);
+  Line 299 [unrolled_memcpy]: for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 301 [pointer_cast]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 301 [pointer_truncation]: pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);
+  Line 302 [pointer_cast]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 302 [pointer_truncation]: piVar3 = (int *)((int)piVar3 + (uint)bVar16 * -2 + 1);
+  Line 304 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 304 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 306 [undefined_data]: (pSVar9,(SRenderVertex *)(&DAT_007c9630 + uVar5 * 0xc),
+  Line 307 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 307 [undefined_data]: (SRenderVertex *)(&DAT_007c7558 + DAT_007c7554 * 0xc));
+  Line 308 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 308 [undefined_data]: DAT_007c7554 = DAT_007c7554 + 1;
+  Line 312 [undefined_data]: } while (iStack_18 < (int)DAT_007c842c);
+  Line 314 [undefined_data]: if (2 < (int)DAT_007c7554) {
+  Line 315 [undefined_data]: piVar3 = &DAT_007c7558;
+  Line 317 [undefined_data]: if (0 < (int)DAT_007c7554) {
+  Line 342 [unrolled_memcpy]: // 0043da15: MOVSD.REP ES:EDI,ESI  ; DAT_007c8430 | DAT_007c9030 | DAT_007c8434
+  Line 345 [undefined_data]: } while (iVar6 < (int)DAT_007c7554);
+  Line 355 [stack_param]: if (0 < (int)in_stack_00000004) {
+  Line 357 [stack_param]: iVar8 = *in_stack_00000008;
+  Line 359 [stack_param]: in_stack_00000008 = in_stack_00000008 + 1;
+  Line 359 [stack_param]: in_stack_00000008 = in_stack_00000008 + 1;
+  Line 360 [raw_address_pointer_store]: *(uint **)(iVar6 * 4 + 0x7c7b54) = &DAT_00629014 + iVar8 * 0xc;
+  Line 360 [undefined_data]: *(uint **)(iVar6 * 4 + 0x7c7b54) = &DAT_00629014 + iVar8 * 0xc;
+  Line 361 [stack_param]: } while (iVar6 < (int)in_stack_00000004);
+  Line 363 [undefined_data]: if (DAT_00713a7c != 0) {
+  Line 364 [stack_param]: if ((int)in_stack_00000004 < 4) {
+  Line 366 [undefined_data]: (DAT_007c7b58,DAT_007c7b5c,DAT_007c7b60);
+  Line 366 [undefined_data]: (DAT_007c7b58,DAT_007c7b5c,DAT_007c7b60);
+  Line 366 [undefined_data]: (DAT_007c7b58,DAT_007c7b5c,DAT_007c7b60);
+  Line 373 [stack_param]: iVar6 = (in_stack_00000004 - 2) * 4;
+  Line 378 [undefined_data]: (DAT_007c7b58,*(SRenderVertex **)((int)&DAT_007c7b5c + iVar8),
+  Line 378 [undefined_data]: (DAT_007c7b58,*(SRenderVertex **)((int)&DAT_007c7b5c + iVar8),
+  Line 378 [pointer_truncation]: (DAT_007c7b58,*(SRenderVertex **)((int)&DAT_007c7b5c + iVar8),
+  Line 378 [pointer_cast]: (DAT_007c7b58,*(SRenderVertex **)((int)&DAT_007c7b5c + iVar8),
+  Line 379 [undefined_data]: *(SRenderVertex **)((int)&DAT_007c7b60 + iVar8));
+  Line 379 [pointer_truncation]: *(SRenderVertex **)((int)&DAT_007c7b60 + iVar8));
+  Line 379 [pointer_cast]: *(SRenderVertex **)((int)&DAT_007c7b60 + iVar8));
+  Line 386 [stack_param]: if (iVar11 == in_stack_00000004 - 2) {
+  Line 391 [stack_param]: _DAT_01e7dac8 = _DAT_01e7dac8 + (in_stack_00000004 - 2);
+  Line 392 [stack_param]: engine_special_cpp_drawPolygon2_FUN_00582370(&DAT_007c7b58,in_stack_00000004,_DAT_01c51d14);
+  Line 392 [undefined_data]: engine_special_cpp_drawPolygon2_FUN_00582370(&DAT_007c7b58,in_stack_00000004,_DAT_01c51d14);
+  Line 395 [stack_param]: DAT_007c7554 = in_stack_00000004;
+  Line 395 [undefined_data]: DAT_007c7554 = in_stack_00000004;
+  Line 396 [stack_param]: if (0 < (int)in_stack_00000004) {
+  Line 397 [undefined_data]: puVar7 = &DAT_007c7558;
+  Line 400 [stack_param]: puVar12 = &DAT_00629014 + *in_stack_00000008 * 0xc;
+  Line 400 [undefined_data]: puVar12 = &DAT_00629014 + *in_stack_00000008 * 0xc;
+  Line 402 [unrolled_memcpy]: for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  Line 408 [unrolled_memcpy]: // 0043dabf: MOVSD.REP ES:EDI,ESI  ; DAT_007c9060 | DAT_007c9630 | DAT_007c9064
+  Line 409 [pointer_cast]: puVar12 = (uint *)((int)puVar12 + 1);
+  Line 409 [pointer_truncation]: puVar12 = (uint *)((int)puVar12 + 1);
+  Line 410 [pointer_cast]: puVar15 = (uint *)((int)puVar15 + 1);
+  Line 410 [pointer_truncation]: puVar15 = (uint *)((int)puVar15 + 1);
+  Line 412 [stack_param]: in_stack_00000008 = in_stack_00000008 + 1;
+  Line 412 [stack_param]: in_stack_00000008 = in_stack_00000008 + 1;
+  Line 415 [stack_param]: } while (iStack_24 < (int)in_stack_00000004);
+  Line 533 [unrolled_memcpy]: // 0043dc21: MOVSD.REP ES:EDI,ESI  ; DAT_007c8430 | DAT_007c8434
+  Line 576 [unrolled_memcpy]: // 0043dca0: MOVSD.REP ES:EDI,ESI  ; DAT_007c8430 | DAT_007c9030 | DAT_007c8434
+  Line 619 [unrolled_memcpy]: // 0043dd1f: MOVSD.REP ES:EDI,ESI  ; DAT_007c9060 | DAT_007c9630 | DAT_007c9064
+
+====================================================================================================
 engine_clipper.c_clipAndRasterize_FUN_0043cbf0 (4 suspects)
   File: engine/clipper.c
 ====================================================================================================
@@ -50050,11 +51130,10 @@ engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_00482a90 (7 suspects
   Line 58 [undefined_data]: (this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);
 
 ====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790 (18 suspects)
+engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790 (17 suspects)
   File: engine/drender.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 25 [unresolved_funcptr]: _DAT_01c4f02c = (code *)&UNK_00486de0;
   Line 27 [undefined_data]: else if (DAT_0061b4a0 == 0x20) {
   Line 38 [undefined_data]: while ((DAT_00713a7c != 0 &&
   Line 44 [pointer_cast]: vertex_indices = (ushort *)((int)vertex_indices + iStack_14);
@@ -50685,49 +51764,25 @@ engine_font.cpp_CBitFont_wrapText_FUN_004c4310 (6 suspects)
   Line 103 [unrolled_memcpy]: // 004c43f8: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-engine_font.cpp_FUN_004c4c51 (40 suspects)
+engine_font.cpp_FUN_004c4c00 (16 suspects)
   File: engine/font.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 9 [register_param]: int in_EAX;
-  Line 10 [register_param]: int in_ECX;
-  Line 11 [unaffected_reg]: uint unaff_EBX;
-  Line 14 [unaffected_reg]: int unaff_ESI;
-  Line 15 [unaffected_reg]: int unaff_EDI;
-  Line 17 [register_param]: piVar1 = (int *)(in_ECX + -0x14c6fbbf);
-  Line 19 [register_param]: *piVar1 = *piVar1 + in_ECX;
-  Line 20 [register_param]: if (SCARRY4(iVar4,in_ECX) != *piVar1 < 0) {
-  Line 20 [sign_compare_idiom]: if (SCARRY4(iVar4,in_ECX) != *piVar1 < 0) {
-  Line 21 [unaffected_reg]: _DAT_01cc906c = unaff_EBX;
-  Line 23 [register_param]: if (_DAT_01cc9070 < in_EAX) {
-  Line 24 [register_param]: _DAT_01cc9070 = in_EAX;
-  Line 26 [register_param]: *(uint *)(in_ECX + 8) = *(uint *)(unaff_ESI + 0x10);
-  Line 26 [unaffected_reg]: *(uint *)(in_ECX + 8) = *(uint *)(unaff_ESI + 0x10);
-  Line 27 [register_param]: *(uint *)(in_ECX + 0x18) = *(uint *)(unaff_ESI + 0x18);
-  Line 27 [unaffected_reg]: *(uint *)(in_ECX + 0x18) = *(uint *)(unaff_ESI + 0x18);
-  Line 28 [register_param]: *(uint *)(in_ECX + 0x20) = *(uint *)(unaff_ESI + 0x1c);
-  Line 28 [unaffected_reg]: *(uint *)(in_ECX + 0x20) = *(uint *)(unaff_ESI + 0x1c);
-  Line 29 [unaffected_reg]: uVar3 = *(int *)(unaff_EDI + 0x14) - *(int *)(unaff_ESI + 0x14);
-  Line 29 [unaffected_reg]: uVar3 = *(int *)(unaff_EDI + 0x14) - *(int *)(unaff_ESI + 0x14);
-  Line 36 [unaffected_reg]: lVar2 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EDI + 0x10) - *(int *)(unaff_ESI + 0x10));
-  Line 36 [unaffected_reg]: lVar2 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EDI + 0x10) - *(int *)(unaff_ESI + 0x10));
-  Line 37 [register_param]: *(uint *)(in_ECX + 0xc) = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-  Line 38 [unaffected_reg]: lVar2 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EDI + 0x18) - *(int *)(unaff_ESI + 0x18));
-  Line 38 [unaffected_reg]: lVar2 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EDI + 0x18) - *(int *)(unaff_ESI + 0x18));
-  Line 39 [register_param]: *(uint *)(in_ECX + 0x1c) = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-  Line 40 [unaffected_reg]: lVar2 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EDI + 0x1c) - *(int *)(unaff_ESI + 0x1c));
-  Line 40 [unaffected_reg]: lVar2 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EDI + 0x1c) - *(int *)(unaff_ESI + 0x1c));
-  Line 41 [register_param]: *(uint *)(in_ECX + 0x24) = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-  Line 42 [unaffected_reg]: uVar3 = (uint)(ushort)((ushort)*(uint *)(unaff_ESI + 0x14) ^ 0xffff);
-  Line 43 [register_param]: lVar2 = (longlong)(int)uVar3 * (longlong)*(int *)(in_ECX + 0xc);
-  Line 44 [register_param]: *(uint *)(in_ECX + 8) =
-  Line 45 [register_param]: *(int *)(in_ECX + 8) + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-  Line 46 [register_param]: lVar2 = (longlong)(int)uVar3 * (longlong)*(int *)(in_ECX + 0x1c);
-  Line 47 [register_param]: *(uint *)(in_ECX + 0x18) =
-  Line 48 [register_param]: *(int *)(in_ECX + 0x18) + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-  Line 49 [register_param]: lVar2 = (longlong)(int)uVar3 * (longlong)*(int *)(in_ECX + 0x24);
-  Line 50 [register_param]: *(uint *)(in_ECX + 0x20) =
-  Line 51 [register_param]: *(int *)(in_ECX + 0x20) + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+  Line 15 [stack_param]: int in_stack_00000004;
+  Line 16 [stack_param]: int in_stack_00000008;
+  Line 18 [stack_param]: iVar3 = *(int *)(in_stack_00000008 + 0x14) >> 0x10;
+  Line 19 [stack_param]: iVar5 = *(int *)(in_stack_00000004 + 0x14) >> 0x10;
+  Line 22 [stack_param]: iVar7 = in_stack_00000004;
+  Line 23 [stack_param]: if (*(int *)(in_stack_00000008 + 0x14) < *(int *)(in_stack_00000004 + 0x14)) {
+  Line 23 [stack_param]: if (*(int *)(in_stack_00000008 + 0x14) < *(int *)(in_stack_00000004 + 0x14)) {
+  Line 26 [stack_param]: iVar7 = in_stack_00000008;
+  Line 27 [stack_param]: in_stack_00000008 = in_stack_00000004;
+  Line 27 [stack_param]: in_stack_00000008 = in_stack_00000004;
+  Line 30 [undefined_data]: *(int *)(&DAT_01cc8cec + iVar3) = iVar5;
+  Line 42 [stack_param]: uVar6 = *(int *)(in_stack_00000008 + 0x14) - *(int *)(iVar7 + 0x14);
+  Line 50 [stack_param]: (longlong)(*(int *)(in_stack_00000008 + 0x10) - *(int *)(iVar7 + 0x10));
+  Line 53 [stack_param]: (longlong)(*(int *)(in_stack_00000008 + 0x18) - *(int *)(iVar7 + 0x18));
+  Line 56 [stack_param]: (longlong)(*(int *)(in_stack_00000008 + 0x1c) - *(int *)(iVar7 + 0x1c));
 
 ====================================================================================================
 engine_font.cpp_clipCharacter_FUN_004c0a80 (1 suspect)
@@ -52809,50 +53864,32 @@ engine_pod.cpp_findFilesByExtension_FUN_0053c940 (5 suspects)
   Line 93 [shadow_pointer_walk]: pCVar8 = (CPod *)pCVar8->pod_files;
 
 ====================================================================================================
-engine_prim.c_FUN_0053df50 (41 suspects)
+engine_prim.c_FUN_0053df10 (23 suspects)
   File: engine/prim.c
 ====================================================================================================
-  Line 9 [register_param]: int in_EAX;
-  Line 10 [register_param]: int in_ECX;
-  Line 11 [register_param]: int in_EDX;
-  Line 14 [unaffected_reg]: int unaff_EBP;
-  Line 16 [undefined_data]: if (DAT_00713a7c == 1) {
-  Line 17 [register_param]: *(int *)(unaff_EBP + -0x14) = *(int *)(in_EAX + 0x10) - *(int *)(in_ECX + 0x10);
-  Line 17 [register_param]: *(int *)(unaff_EBP + -0x14) = *(int *)(in_EAX + 0x10) - *(int *)(in_ECX + 0x10);
-  Line 17 [unaffected_reg]: *(int *)(unaff_EBP + -0x14) = *(int *)(in_EAX + 0x10) - *(int *)(in_ECX + 0x10);
-  Line 18 [register_param]: *(int *)(unaff_EBP + -0x10) = *(int *)(in_EAX + 0x14) - *(int *)(in_ECX + 0x14);
-  Line 18 [register_param]: *(int *)(unaff_EBP + -0x10) = *(int *)(in_EAX + 0x14) - *(int *)(in_ECX + 0x14);
-  Line 18 [unaffected_reg]: *(int *)(unaff_EBP + -0x10) = *(int *)(in_EAX + 0x14) - *(int *)(in_ECX + 0x14);
-  Line 19 [register_param]: *(int *)(unaff_EBP + -0xc) = (&DAT_00629024)[in_EDX * 4] - *(int *)(in_EAX + 0x10);
-  Line 19 [register_param]: *(int *)(unaff_EBP + -0xc) = (&DAT_00629024)[in_EDX * 4] - *(int *)(in_EAX + 0x10);
-  Line 19 [unaffected_reg]: *(int *)(unaff_EBP + -0xc) = (&DAT_00629024)[in_EDX * 4] - *(int *)(in_EAX + 0x10);
-  Line 19 [undefined_data]: *(int *)(unaff_EBP + -0xc) = (&DAT_00629024)[in_EDX * 4] - *(int *)(in_EAX + 0x10);
-  Line 20 [register_param]: *(int *)(unaff_EBP + -8) = *(int *)(&DAT_00629028 + in_EDX * 0x10) - *(int *)(in_EAX + 0x14);
-  Line 20 [register_param]: *(int *)(unaff_EBP + -8) = *(int *)(&DAT_00629028 + in_EDX * 0x10) - *(int *)(in_EAX + 0x14);
-  Line 20 [unaffected_reg]: *(int *)(unaff_EBP + -8) = *(int *)(&DAT_00629028 + in_EDX * 0x10) - *(int *)(in_EAX + 0x14);
-  Line 20 [undefined_data]: *(int *)(unaff_EBP + -8) = *(int *)(&DAT_00629028 + in_EDX * 0x10) - *(int *)(in_EAX + 0x14);
-  Line 23 [register_param]: *(int *)(unaff_EBP + -0xc) = *(int *)(in_EAX + 0x10) - *(int *)(in_ECX + 0x10);
-  Line 23 [register_param]: *(int *)(unaff_EBP + -0xc) = *(int *)(in_EAX + 0x10) - *(int *)(in_ECX + 0x10);
-  Line 23 [unaffected_reg]: *(int *)(unaff_EBP + -0xc) = *(int *)(in_EAX + 0x10) - *(int *)(in_ECX + 0x10);
-  Line 24 [register_param]: *(int *)(unaff_EBP + -8) = *(int *)(in_EAX + 0x14) - *(int *)(in_ECX + 0x14);
-  Line 24 [register_param]: *(int *)(unaff_EBP + -8) = *(int *)(in_EAX + 0x14) - *(int *)(in_ECX + 0x14);
-  Line 24 [unaffected_reg]: *(int *)(unaff_EBP + -8) = *(int *)(in_EAX + 0x14) - *(int *)(in_ECX + 0x14);
-  Line 25 [register_param]: *(int *)(unaff_EBP + -0x14) = (&DAT_00629024)[in_EDX * 4] - *(int *)(in_EAX + 0x10);
-  Line 25 [register_param]: *(int *)(unaff_EBP + -0x14) = (&DAT_00629024)[in_EDX * 4] - *(int *)(in_EAX + 0x10);
-  Line 25 [unaffected_reg]: *(int *)(unaff_EBP + -0x14) = (&DAT_00629024)[in_EDX * 4] - *(int *)(in_EAX + 0x10);
-  Line 25 [undefined_data]: *(int *)(unaff_EBP + -0x14) = (&DAT_00629024)[in_EDX * 4] - *(int *)(in_EAX + 0x10);
-  Line 26 [register_param]: *(int *)(unaff_EBP + -0x10) = *(int *)(&DAT_00629028 + in_EDX * 0x10) - *(int *)(in_EAX + 0x14);
-  Line 26 [register_param]: *(int *)(unaff_EBP + -0x10) = *(int *)(&DAT_00629028 + in_EDX * 0x10) - *(int *)(in_EAX + 0x14);
-  Line 26 [unaffected_reg]: *(int *)(unaff_EBP + -0x10) = *(int *)(&DAT_00629028 + in_EDX * 0x10) - *(int *)(in_EAX + 0x14);
-  Line 26 [undefined_data]: *(int *)(unaff_EBP + -0x10) = *(int *)(&DAT_00629028 + in_EDX * 0x10) - *(int *)(in_EAX + 0x14);
-  Line 28 [unaffected_reg]: lVar3 = (longlong)*(int *)(unaff_EBP + -0x14) * (longlong)*(int *)(unaff_EBP + -8);
-  Line 28 [unaffected_reg]: lVar3 = (longlong)*(int *)(unaff_EBP + -0x14) * (longlong)*(int *)(unaff_EBP + -8);
-  Line 30 [unaffected_reg]: lVar4 = (longlong)*(int *)(unaff_EBP + -0x10) * (longlong)*(int *)(unaff_EBP + -0xc);
-  Line 30 [unaffected_reg]: lVar4 = (longlong)*(int *)(unaff_EBP + -0x10) * (longlong)*(int *)(unaff_EBP + -0xc);
-  Line 34 [unaffected_reg]: *(uint *)(unaff_EBP + -4) =
-  Line 35 [sign_compare_idiom]: (uint)((SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);
-  Line 35 [sign_compare_idiom]: (uint)((SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);
-  Line 36 [unaffected_reg]: return *(uint *)(unaff_EBP + -4);
+  Line 12 [stack_param]: int in_stack_00000004;
+  Line 18 [stack_param]: iVar1 = *(int *)(in_stack_00000004 + 0x18);
+  Line 19 [stack_param]: iVar4 = *(int *)(in_stack_00000004 + 0x24);
+  Line 20 [stack_param]: iVar5 = *(int *)(in_stack_00000004 + 0x30);
+  Line 22 [undefined_data]: if (DAT_00713a7c == 1) {
+  Line 23 [undefined_data]: iStack_24 = (&DAT_00629024)[iVar4 * 0xc] - (&DAT_00629024)[iVar1 * 0xc];
+  Line 23 [undefined_data]: iStack_24 = (&DAT_00629024)[iVar4 * 0xc] - (&DAT_00629024)[iVar1 * 0xc];
+  Line 24 [undefined_data]: iStack_20 = *(int *)(&DAT_00629028 + iVar3) - *(int *)(&DAT_00629028 + iVar1 * 0x30);
+  Line 24 [undefined_data]: iStack_20 = *(int *)(&DAT_00629028 + iVar3) - *(int *)(&DAT_00629028 + iVar1 * 0x30);
+  Line 25 [undefined_data]: iStack_1c = (&DAT_00629024)[iVar5 * 0xc] - (&DAT_00629024)[iVar4 * 0xc];
+  Line 25 [undefined_data]: iStack_1c = (&DAT_00629024)[iVar5 * 0xc] - (&DAT_00629024)[iVar4 * 0xc];
+  Line 26 [undefined_data]: iStack_18 = *(int *)(&DAT_00629028 + iVar5 * 0x30) - *(int *)(&DAT_00629028 + iVar3);
+  Line 26 [undefined_data]: iStack_18 = *(int *)(&DAT_00629028 + iVar5 * 0x30) - *(int *)(&DAT_00629028 + iVar3);
+  Line 29 [undefined_data]: iStack_1c = (&DAT_00629024)[iVar4 * 0xc] - (&DAT_00629024)[iVar1 * 0xc];
+  Line 29 [undefined_data]: iStack_1c = (&DAT_00629024)[iVar4 * 0xc] - (&DAT_00629024)[iVar1 * 0xc];
+  Line 30 [undefined_data]: iStack_18 = *(int *)(&DAT_00629028 + iVar3) - *(int *)(&DAT_00629028 + iVar1 * 0x30);
+  Line 30 [undefined_data]: iStack_18 = *(int *)(&DAT_00629028 + iVar3) - *(int *)(&DAT_00629028 + iVar1 * 0x30);
+  Line 31 [undefined_data]: iStack_24 = (&DAT_00629024)[iVar5 * 0xc] - (&DAT_00629024)[iVar4 * 0xc];
+  Line 31 [undefined_data]: iStack_24 = (&DAT_00629024)[iVar5 * 0xc] - (&DAT_00629024)[iVar4 * 0xc];
+  Line 32 [undefined_data]: iStack_20 = *(int *)(&DAT_00629028 + iVar5 * 0x30) - *(int *)(&DAT_00629028 + iVar3);
+  Line 32 [undefined_data]: iStack_20 = *(int *)(&DAT_00629028 + iVar5 * 0x30) - *(int *)(&DAT_00629028 + iVar3);
+  Line 39 [sign_compare_idiom]: return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;
+  Line 39 [sign_compare_idiom]: return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;
 
 ====================================================================================================
 engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0053de20 (19 suspects)
@@ -56064,12 +57101,6 @@ shape_edittool.cpp_CStrList_swap_FUN_00499b20 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-shape_edittool.cpp_FUN_00499350 (1 suspect)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
 shape_edittool.cpp_calculateButtonHeight_FUN_0049d9e0 (2 suspects)
   File: shape/edittool.cpp
 ====================================================================================================
@@ -56237,6 +57268,12 @@ shape_edittool.cpp_editorSetColor_FUN_00492bd0 (4 suspects)
 
 ====================================================================================================
 shape_edittool.cpp_initEditorFontMetrics_FUN_004929e0 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+====================================================================================================
+shape_edittool.cpp_isEditorMini3DMode_FUN_00499350 (1 suspect)
   File: shape/edittool.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -59241,17 +60278,6 @@ support_trisock.cpp_CSocket_sendSocketData_FUN_0059cbc0 (9 suspects)
   Line 24 [pointer_cast]: *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
 
 ====================================================================================================
-support_trisock.cpp_FUN_0059f340 (6 suspects)
-  File: support/trisock.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void support_trisock_cpp_FUN_0059f340(uint *param_1,uint *param_2)
-  Line 2 [unnamed_param]: void support_trisock_cpp_FUN_0059f340(uint *param_1,uint *param_2)
-  Line 5 [unnamed_param]: *param_1 = *param_2;
-  Line 5 [unnamed_param]: *param_1 = *param_2;
-  Line 6 [unnamed_param]: param_1[1] = param_2[1];
-  Line 6 [unnamed_param]: param_1[1] = param_2[1];
-
-====================================================================================================
 support_trisock.cpp_Socket_copy_FUN_0059c8b0 (1 suspect)
   File: support/trisock.cpp
 ====================================================================================================
@@ -60469,40 +61495,12 @@ wincore_winrun.cpp_FUN_005b4450 (2 suspects)
   Line 5 [unnamed_param]: wincore_winrun_cpp_pollController_FUN_005b3d70(param_1);
 
 ====================================================================================================
-wincore_winrun.cpp_FUN_005b48c0 (31 suspects)
+wincore_winrun.cpp_FUN_005b47d0 (3 suspects)
   File: wincore/winrun.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 7 [register_param]: int *in_EAX;
-  Line 8 [register_param]: char in_CL;
-  Line 9 [unaffected_reg]: int unaff_EBX;
-  Line 10 [unaffected_reg]: int unaff_EBP;
-  Line 11 [unaffected_reg]: char *unaff_EDI;
-  Line 12 [stack_param]: int in_stack_00000094;
-  Line 13 [stack_param]: int in_stack_00000098;
-  Line 17 [register_param]: *in_EAX = (int)(*in_EAX + (int)in_EAX);
-  Line 17 [register_param]: *in_EAX = (int)(*in_EAX + (int)in_EAX);
-  Line 17 [register_param]: *in_EAX = (int)(*in_EAX + (int)in_EAX);
-  Line 17 [pointer_truncation]: *in_EAX = (int)(*in_EAX + (int)in_EAX);
-  Line 18 [register_param]: *unaff_EDI = *unaff_EDI + in_CL;
-  Line 18 [unaffected_reg]: *unaff_EDI = *unaff_EDI + in_CL;
-  Line 18 [unaffected_reg]: *unaff_EDI = *unaff_EDI + in_CL;
-  Line 19 [register_param]: *(char *)in_EAX = (char)*in_EAX + (char)in_EAX;
-  Line 19 [register_param]: *(char *)in_EAX = (char)*in_EAX + (char)in_EAX;
-  Line 19 [register_param]: *(char *)in_EAX = (char)*in_EAX + (char)in_EAX;
-  Line 19 [pointer_truncation]: *(char *)in_EAX = (char)*in_EAX + (char)in_EAX;
-  Line 20 [register_param]: *(char *)(unaff_EBX + 0xa824ac) = *(char *)(unaff_EBX + 0xa824ac) + in_CL;
-  Line 20 [unaffected_reg]: *(char *)(unaff_EBX + 0xa824ac) = *(char *)(unaff_EBX + 0xa824ac) + in_CL;
-  Line 20 [unaffected_reg]: *(char *)(unaff_EBX + 0xa824ac) = *(char *)(unaff_EBX + 0xa824ac) + in_CL;
-  Line 21 [register_param]: *(char *)in_EAX = (char)*in_EAX + (char)in_EAX;
-  Line 21 [register_param]: *(char *)in_EAX = (char)*in_EAX + (char)in_EAX;
-  Line 21 [register_param]: *(char *)in_EAX = (char)*in_EAX + (char)in_EAX;
-  Line 21 [pointer_truncation]: *(char *)in_EAX = (char)*in_EAX + (char)in_EAX;
-  Line 22 [register_param]: iStack000000a4 = (int)in_EAX * 2;
-  Line 22 [pointer_truncation]: iStack000000a4 = (int)in_EAX * 2;
-  Line 23 [unaffected_reg]: iStack000000a8 = unaff_EBP * 2;
-  Line 24 [stack_param]: MoveWindow(_DAT_02c9d298,in_stack_00000094 / 2 - iStack000000a4 / 2,
-  Line 25 [stack_param]: in_stack_00000098 / 2 - iStack000000a8 / 2,iStack000000a4,iStack000000a8,1);
+  Line 11 [stack_param]: HWND in_stack_00000004;
+  Line 20 [stack_param]: GetClientRect(in_stack_00000004,&tStack_24);
 
 ====================================================================================================
 wincore_winrun.cpp_calibrateCPUSpeed_FUN_005b21e0 (3 suspects)

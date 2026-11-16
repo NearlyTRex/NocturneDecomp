@@ -1157,6 +1157,7 @@
   {
     "addr":"00407fc0",
     "callers":[
+      "00404620",
       "00407f40"
     ],
     "calls":[
@@ -4800,6 +4801,24 @@
     "variadic":false
   },
   {
+    "addr":"0042d5c0",
+    "calls":[
+      "0042c410"
+    ],
+    "conv":"unknown",
+    "instructions":118,
+    "method":"FUN_0042d5c0",
+    "name":"cockpit_ckptutil.c_FUN_0042d5c0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"0042dec0",
     "calls":[
       "00460c70",
@@ -4869,13 +4888,10 @@
     "addr":"00431f40",
     "callers":[
       "00432420",
+      "00432880",
       "00433000"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "00432e0c",
-      "00432e62"
-    ],
     "instructions":125,
     "method":"interpolateVertexLeftClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00431f40",
@@ -10020,14 +10036,24 @@
   },
   {
     "addr":"004a68c0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_004a68c0",
-    "name":"core_flattn.cpp_FUN_004a68c0",
+    "method":"setFlattenMatrixTransposed",
+    "name":"core_flattn.cpp_setFlattenMatrixTransposed_FUN_004a68c0",
+    "params":[
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -10035,14 +10061,32 @@
   },
   {
     "addr":"004a6940",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":33,
-    "method":"FUN_004a6940",
-    "name":"core_flattn.cpp_FUN_004a6940",
+    "method":"flattenTransformPoint",
+    "name":"core_flattn.cpp_flattenTransformPoint_FUN_004a6940",
+    "params":[
+      {
+        "name":"point_out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"point_in",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -10050,14 +10094,32 @@
   },
   {
     "addr":"004a69c0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":30,
-    "method":"FUN_004a69c0",
-    "name":"core_flattn.cpp_FUN_004a69c0",
+    "method":"flattenTransformVector",
+    "name":"core_flattn.cpp_flattenTransformVector_FUN_004a69c0",
+    "params":[
+      {
+        "name":"vector_out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"vector_in",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -15772,7 +15834,10 @@
     "callers":[
       "00517670",
       "00517710",
-      "005177e0"
+      "005177e0",
+      "00517c40",
+      "00517cf0",
+      "00517d40"
     ],
     "calls":[
       "005b7fa7",
@@ -15787,6 +15852,29 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00517c40",
+    "calls":[
+      "00517130",
+      "005175b0",
+      "005175e0",
+      "00517640",
+      "00517670",
+      "005b7790"
+    ],
+    "conv":"unknown",
+    "instructions":61,
+    "method":"FUN_00517c40",
+    "name":"cockpit_pkbmpset.cpp_FUN_00517c40",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",
@@ -21416,15 +21504,33 @@
   },
   {
     "addr":"0057b7c0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":10,
-    "method":"FUN_0057b7c0",
-    "name":"support_trisock.cpp_FUN_0057b7c0",
+    "method":"copyNetworkAddr",
+    "name":"support_trisock.cpp_copyNetworkAddr_FUN_0057b7c0",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"struct",
+          "name":"SNetworkAddr",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"struct",
+          "name":"SNetworkAddr",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SNetworkAddr",
+      "ptr":1
     },
     "tu":"support/trisock.cpp",
     "variadic":false

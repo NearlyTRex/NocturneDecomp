@@ -7,7 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   field_of_view
 ;
-; XREF[12]:
+; XREF[13]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412d8d
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_00449840 at 004499af
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0 at 004491e9
@@ -18,7 +18,7 @@
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 00536902
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20 at 0053af44
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 00540345
-;   ... and 2 more
+;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bc533

@@ -213,9 +213,9 @@ void __cdecl httpRequestStart(void *request,char *url);
 // Address: 0057ad10
 int __cdecl httpRequestUpdate(void *request,char *status_text);
 
-// Original: support_trisock.cpp_FUN_0057b680
+// Original: support_trisock.cpp_httpRequestGetByte_FUN_0057b680
 // Address: 0057b680
-uint FUN_0057b680(int param_1,int param_2);
+int __cdecl httpRequestGetByte(void *request,int non_blocking);
 
 // Original: support_trisock.cpp_IpAddr_ctor_FUN_0057b780
 // Address: 0057b780
@@ -225,6 +225,6 @@ SIpAddr * __cdecl IpAddr::ctor(SIpAddr *this_ptr);
 // Address: 0057b7a0
 void * __cdecl initHostInfo(void *host_info);
 
-// Original: support_trisock.cpp_FUN_0057b7c0
+// Original: support_trisock.cpp_copyNetworkAddr_FUN_0057b7c0
 // Address: 0057b7c0
-void FUN_0057b7c0(undefined4 *param_1,undefined4 *param_2);
+SNetworkAddr * __cdecl copyNetworkAddr(SNetworkAddr *dest,SNetworkAddr *src);

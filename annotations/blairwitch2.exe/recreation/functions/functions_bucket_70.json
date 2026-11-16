@@ -299,6 +299,7 @@
       "00405370",
       "00405450",
       "00405530",
+      "004055d0",
       "004056b0",
       "004057d0",
       "004058f0",
@@ -996,6 +997,7 @@
       "004385e0",
       "0043a7a0",
       "00450c60",
+      "00458e80",
       "004599a0",
       "0045ab40",
       "0045b510",
@@ -1121,6 +1123,7 @@
       "00450c60",
       "00453250",
       "004583f0",
+      "00458930",
       "00459ff0",
       "0045ab40",
       "0045b510",
@@ -2395,7 +2398,8 @@
       "004568e0",
       "00458320",
       "004583f0",
-      "00459555",
+      "00458930",
+      "00458e80",
       "00459ff0",
       "0045b190",
       "0045bdc0",
@@ -5119,21 +5123,6 @@
     "variadic":false
   },
   {
-    "addr":"0042d570",
-    "conv":"unknown",
-    "instructions":6,
-    "method":"FUN_0042d570",
-    "name":"cockpit_ckptutil.c_FUN_0042d570",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
     "addr":"0042d9f0",
     "conv":"__cdecl",
     "instructions":56,
@@ -5386,15 +5375,11 @@
   {
     "addr":"00432070",
     "callers":[
+      "00432560",
+      "00432880",
       "00433000"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0043261b",
-      "0043266e",
-      "00432e8b",
-      "00432ee1"
-    ],
     "instructions":126,
     "method":"interpolateVertexTopClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00432070",
@@ -7035,6 +7020,7 @@
     "addr":"004473f0",
     "callers":[
       "00447140",
+      "00458e80",
       "004cfb00",
       "0056acd0"
     ],
@@ -8801,6 +8787,24 @@
     "variadic":false
   },
   {
+    "addr":"0046a170",
+    "calls":[
+      "00469590"
+    ],
+    "conv":"unknown",
+    "instructions":69,
+    "method":"FUN_0046a170",
+    "name":"engine_drender.cpp_FUN_0046a170",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"engine/drender.cpp",
+    "variadic":false
+  },
+  {
     "addr":"0046a270",
     "callers":[
       "005862e0"
@@ -9956,6 +9960,7 @@
     "callers":[
       "00453250",
       "00458320",
+      "00458e80",
       "004a61b0",
       "004e46c0",
       "0052a0d0",
@@ -10432,14 +10437,14 @@
   },
   {
     "addr":"00480cf0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_00480cf0",
-    "name":"shape_edittool.cpp_FUN_00480cf0",
+    "method":"isEditorMini3DMode",
+    "name":"shape_edittool.cpp_isEditorMini3DMode_FUN_00480cf0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -14621,15 +14626,41 @@
     "calls":[
       "005b7ff0"
     ],
-    "conv":"unknown",
+    "conv":"__stack2_esi",
     "instructions":97,
-    "method":"FUN_004d9ff0",
-    "name":"core_inv.cpp_FUN_004d9ff0",
+    "method":"screenToWorldPoint",
+    "name":"core_inv.cpp_screenToWorldPoint_FUN_004d9ff0",
+    "params":[
+      {
+        "name":"screen_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"screen_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3i",
+      "ptr":1
     },
     "tu":"core/inv.cpp",
     "variadic":false
@@ -18174,6 +18205,9 @@
   },
   {
     "addr":"00516d70",
+    "callers":[
+      "00517d70"
+    ],
     "calls":[
       "00516960",
       "005171e0",
@@ -18207,7 +18241,8 @@
     "addr":"00517670",
     "callers":[
       "00517710",
-      "005177e0"
+      "005177e0",
+      "00517c40"
     ],
     "calls":[
       "004e4500",
@@ -23357,6 +23392,7 @@
       "00450c60",
       "00453d80",
       "004583f0",
+      "00458930",
       "00459ff0",
       "0045ab40",
       "0045d6d0",
@@ -24307,13 +24343,10 @@
   {
     "addr":"00594670",
     "callers":[
+      "00594a30",
       "00594f40"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "00594b0b",
-      "00594b79"
-    ],
     "instructions":79,
     "method":"clipInterpolateLeftPlane",
     "name":"core_xform.cpp_clipInterpolateLeftPlane_FUN_00594670",
@@ -24355,13 +24388,10 @@
   {
     "addr":"005947f0",
     "callers":[
+      "00594d20",
       "00594f40"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "00594dfc",
-      "00594e6a"
-    ],
     "instructions":81,
     "method":"clipInterpolateBottomPlane",
     "name":"core_xform.cpp_clipInterpolateBottomPlane_FUN_005947f0",
@@ -26625,6 +26655,7 @@
       "00438cf0",
       "0043c330",
       "0043d770",
+      "0043e450",
       "00440000",
       "00441720",
       "00441e80",
@@ -26744,6 +26775,7 @@
       "004e8730",
       "004e9920",
       "004e9bc0",
+      "004ea6a0",
       "004ed260",
       "004f24b0",
       "004f3570",
@@ -26755,6 +26787,7 @@
       "00502510",
       "00503f50",
       "00504080",
+      "005044c0",
       "00504670",
       "005096b0",
       "00509db0",

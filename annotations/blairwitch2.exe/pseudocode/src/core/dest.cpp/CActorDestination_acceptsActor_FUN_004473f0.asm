@@ -7,8 +7,9 @@
 ; CActorDestination * Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_dest.cpp_CActorDestination_process_FUN_00447140 at 0044720b
+;   core_doc.cpp_FUN_00458e80 at 00459042
 ;   core_hero.cpp_CHero_findItemUseTarget_FUN_004cfb00 at 004cfb87
 ;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0056acd0 at 0056ae92
 ;

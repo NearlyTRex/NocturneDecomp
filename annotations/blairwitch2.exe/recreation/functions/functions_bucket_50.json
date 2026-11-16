@@ -4286,6 +4286,24 @@
     "variadic":false
   },
   {
+    "addr":"0042d550",
+    "calls":[
+      "0042c430"
+    ],
+    "conv":"unknown",
+    "instructions":49,
+    "method":"FUN_0042d550",
+    "name":"cockpit_ckptutil.c_FUN_0042d550",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"0042d850",
     "calls":[
       "0042c410"
@@ -4613,13 +4631,10 @@
   {
     "addr":"00430a50",
     "callers":[
+      "00431070",
       "00431330"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "004311df",
-      "00431251"
-    ],
     "instructions":109,
     "method":"interpolateVertexFarClip",
     "name":"engine_clipper.c_interpolateVertexFarClip_FUN_00430a50",
@@ -6286,7 +6301,8 @@
     "addr":"0044ffd0",
     "callers":[
       "00453d80",
-      "004568e0"
+      "004568e0",
+      "00458e80"
     ],
     "calls":[
       "0040c8f0",
@@ -6810,7 +6826,7 @@
     ],
     "cls":"CDemonPart",
     "conv":"__cdecl",
-    "instructions":26,
+    "instructions":34,
     "method":"free",
     "name":"core_dpart.cpp_CDemonPart_free_FUN_004615d0",
     "receiver":true,
@@ -8372,6 +8388,7 @@
     "callers":[
       "0047b1f0",
       "0047b800",
+      "0047c060",
       "0047c0f0",
       "0047d270",
       "0047db40",
@@ -14519,14 +14536,32 @@
       "00589560",
       "0058ed10"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":200,
-    "method":"FUN_004eba50",
-    "name":"core_menu.cpp_FUN_004eba50",
+    "method":"adjustFixedPointSlider",
+    "name":"core_menu.cpp_adjustFixedPointSlider_FUN_004eba50",
+    "params":[
+      {
+        "name":"value_ptr",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"window_title",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/menu.cpp",
@@ -23361,21 +23396,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"core/xform.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"00592dd0",
-    "conv":"unknown",
-    "instructions":288,
-    "method":"FUN_00592dd0",
-    "name":"core_xform.cpp_FUN_00592dd0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"core/xform.cpp",

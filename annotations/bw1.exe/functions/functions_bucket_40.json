@@ -2741,13 +2741,38 @@
         "start":"0040cfc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_FUN_0040cfc0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_actor.cpp_sqrtFloatRef_FUN_0040cfc0",
+    "ret":"float",
     "vars":{
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -10759,24 +10784,6 @@
     }
   },
   {
-    "addr":"00438440",
-    "body":[
-      {
-        "end":"00438447",
-        "size":8,
-        "start":"00438440"
-      }
-    ],
-    "importable":true,
-    "name":"cockpit_ckptutil.c_FUN_00438440",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
     "addr":"00438b40",
     "body":[
       {
@@ -11289,6 +11296,25 @@
     "importable":true,
     "name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043d140",
     "ret":"void"
+  },
+  {
+    "addr":"0043d3c0",
+    "body":[
+      {
+        "end":"0043d4e7",
+        "size":296,
+        "start":"0043d3c0"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_0043d3c0",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
   },
   {
     "addr":"0043e5c0",
@@ -38223,10 +38249,10 @@
         "start":"004f63c0"
       }
     ],
+    "conv":"__stack2_esi",
     "importable":true,
-    "name":"core_inv.cpp_FUN_004f63c0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_inv.cpp_screenToWorldPoint_FUN_004f63c0",
+    "ret":"CVector3i*",
     "vars":{
       "locals":[
         {
@@ -38310,8 +38336,64 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"screen_x",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"screen_y",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"out_point",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -40898,6 +40980,25 @@
             "size":4
           }
         ]
+      }
+    }
+  },
+  {
+    "addr":"00509340",
+    "body":[
+      {
+        "end":"005093ca",
+        "size":139,
+        "start":"00509340"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00509340",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
       }
     }
   },
@@ -49113,6 +49214,44 @@
     }
   },
   {
+    "addr":"00539040",
+    "body":[
+      {
+        "end":"0053908f",
+        "size":80,
+        "start":"00539040"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00539040",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005390c0",
+    "body":[
+      {
+        "end":"00539189",
+        "size":202,
+        "start":"005390c0"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_005390c0",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"0053a340",
     "body":[
       {
@@ -55078,25 +55217,6 @@
           "type":"CShadow*"
         }
       ]
-    }
-  },
-  {
-    "addr":"0055f9c0",
-    "body":[
-      {
-        "end":"0055fbef",
-        "size":560,
-        "start":"0055f9c0"
-      }
-    ],
-    "importable":true,
-    "name":"core_shadow.cpp_FUN_0055f9c0",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
     }
   },
   {
@@ -62138,13 +62258,54 @@
         "start":"0059f340"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"support_trisock.cpp_FUN_0059f340",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"support_trisock.cpp_copyNetworkAddr_FUN_0059f340",
+    "ret":"SNetworkAddr*",
     "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetworkAddr*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetworkAddr*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -65658,25 +65819,6 @@
           "type":"uint"
         }
       ]
-    }
-  },
-  {
-    "addr":"005b48c0",
-    "body":[
-      {
-        "end":"005b495d",
-        "size":158,
-        "start":"005b48c0"
-      }
-    ],
-    "importable":true,
-    "name":"wincore_winrun.cpp_FUN_005b48c0",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
     }
   },
   {

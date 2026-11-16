@@ -130,10 +130,10 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540
-;   core_inv.cpp_FUN_004f63c0
 ;   core_inv.cpp_getItemDescription_FUN_004f6350
 ;   core_inv.cpp_getItemDisplayName_FUN_004f62e0
 ;   core_inv.cpp_loadAssets_FUN_004f70e0
+;   core_inv.cpp_screenToWorldPoint_FUN_004f63c0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
@@ -1026,8 +1026,8 @@ section .text
     SUB ESP,0x4                         ; 004fb9c9
     LEA EDI,[ESP + 0x824]               ; 004fb9cc
     FSTP float ptr [ESP]                ; 004fb9d3
-    CALL core_inv.cpp_FUN_004f63c0      ; 004fb9d6
-        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f63c0()
+    CALL core_inv.cpp_screenToWorldPoint_FUN_004f63c0 ; 004fb9d6
+        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; CVector3i * core_inv.cpp_screenToWorldPoint_FUN_004f63c0(float screen_x, float screen_y, CVector3i * out_point)
     LEA ESI,[ESP + 0x7c4]               ; 004fb9db
     LEA EDX,[ESP + 0x824]               ; 004fb9e2
     ADD ESP,0x8                         ; 004fb9e9
@@ -1086,8 +1086,8 @@ section .text
     SUB ESP,0x4                         ; 004fbacc
     LEA EDI,[ESP + 0x824]               ; 004fbacf
     FSTP float ptr [ESP]                ; 004fbad6
-    CALL core_inv.cpp_FUN_004f63c0      ; 004fbad9
-        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f63c0()
+    CALL core_inv.cpp_screenToWorldPoint_FUN_004f63c0 ; 004fbad9
+        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; CVector3i * core_inv.cpp_screenToWorldPoint_FUN_004f63c0(float screen_x, float screen_y, CVector3i * out_point)
     LEA ESI,[ESP + 0x7dc]               ; 004fbade
     ADD ESP,0x8                         ; 004fbae5
     MOV EAX,[0x00612560]                ; 004fbae8 | DAT_00612560
@@ -1144,8 +1144,8 @@ section .text
     SUB ESP,0x4                         ; 004fbbc2
     LEA EDI,[ESP + 0x824]               ; 004fbbc5
     FSTP float ptr [ESP]                ; 004fbbcc
-    CALL core_inv.cpp_FUN_004f63c0      ; 004fbbcf
-        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f63c0()
+    CALL core_inv.cpp_screenToWorldPoint_FUN_004f63c0 ; 004fbbcf
+        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; CVector3i * core_inv.cpp_screenToWorldPoint_FUN_004f63c0(float screen_x, float screen_y, CVector3i * out_point)
     LEA ESI,[ESP + 0x788]               ; 004fbbd4
     ADD ESP,0x8                         ; 004fbbdb
     MOV EAX,[0x00612560]                ; 004fbbde | DAT_00612560
@@ -1203,8 +1203,8 @@ section .text
     SUB ESP,0x4                         ; 004fbcba
     LEA EDI,[ESP + 0x824]               ; 004fbcbd
     FSTP float ptr [ESP]                ; 004fbcc4
-    CALL core_inv.cpp_FUN_004f63c0      ; 004fbcc7
-        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f63c0()
+    CALL core_inv.cpp_screenToWorldPoint_FUN_004f63c0 ; 004fbcc7
+        ;   XREF to: 004f63c0 (UNCONDITIONAL_CALL)  ; CVector3i * core_inv.cpp_screenToWorldPoint_FUN_004f63c0(float screen_x, float screen_y, CVector3i * out_point)
     LEA ESI,[ESP + 0x854]               ; 004fbccc
     LEA EAX,[ESP + 0x824]               ; 004fbcd3
     ADD ESP,0x8                         ; 004fbcda

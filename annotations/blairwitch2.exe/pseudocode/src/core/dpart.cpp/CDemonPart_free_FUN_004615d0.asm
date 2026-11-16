@@ -40,7 +40,7 @@ section .text
         ;   Label: LAB_004615f5
     TEST EBP,EBP                        ; 004615f8
     JNZ 0x00461612                      ; 004615fa
-        ;   XREF to: 00461612 (CONDITIONAL_JUMP)
+        ;   XREF to: 00461612 (CONDITIONAL_JUMP)  ; LAB_00461612
     POP EBP                             ; 004615fc
     POP ESI                             ; 004615fd
     POP EBX                             ; 004615fe
@@ -53,4 +53,14 @@ section .text
     MOV dword ptr [EBX + 0x2c],0x0      ; 00461609
     JMP 0x004615de                      ; 00461610
         ;   XREF to: 004615de (UNCONDITIONAL_JUMP)  ; LAB_004615de
+    PUSH EBP                            ; 00461612
+        ;   Label: LAB_00461612
+    CALL crt_unknown.c_FUN_005b86a0     ; 00461613
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    ADD ESP,0x4                         ; 00461618
+    MOV dword ptr [EBX + 0x30],0x0      ; 0046161b
+    POP EBP                             ; 00461622
+    POP ESI                             ; 00461623
+    POP EBX                             ; 00461624
+    RET                                 ; 00461625
 

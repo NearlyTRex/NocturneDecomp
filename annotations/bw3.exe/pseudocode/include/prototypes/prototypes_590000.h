@@ -79,7 +79,7 @@ CMatrix3x4f * __stack2_esi core_baal_cpp_CBaal_getCarryObjToBodyXForm_FUN_005978
 int __cdecl core_baal_cpp_CBaal_renderOpaque_FUN_00597940(CBaal *this_ptr);
 int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr);
 void __cdecl core_baal_cpp_CBaal_processDamage_FUN_00597af0(CBaal *this_ptr,SDamageInfo *damage_info);
-void core_baal_cpp_FUN_00597be0(int param_1,int param_2);
+void __cdecl core_baal_cpp_CBaal_chooseRandomMotion_FUN_00597be0(CBaal *this_ptr,int allow_stand);
 void __cdecl core_baal_cpp_CBaal_archive_FUN_00597c70(CBaal *this_ptr);
 CBaal * __cdecl core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags);
 void __cdecl core_hecaitmx_cpp_staticInit_FUN_00597d90(void);

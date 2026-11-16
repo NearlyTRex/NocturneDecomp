@@ -182,6 +182,7 @@ void __cdecl core_dskybox_cpp_staticInit_FUN_00486750(void);
 SMRGLSkyTexture * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00486780(SMRGLSkyTexture *texture);
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004867c0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index);
 void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00486900(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor);
+uint FUN_00486de0(void);
 void __edi_esi_ebx core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __edi_esi_ebx core_dstrendr_cpp_renderDepth16BitConditional_FUN_00486e74(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __edi_esi_ebx core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_00486ed7(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);

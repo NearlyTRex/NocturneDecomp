@@ -88,7 +88,7 @@ void wincore_winrun_cpp_FUN_00582630(int param_1);
 void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_00582640(int controller_index);
 void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_00582680(CIniFile *ini);
 void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_00582830(CIniFile *ini);
-void wincore_winrun_cpp_FUN_00582aa0(void);
+void wincore_winrun_cpp_FUN_005829b0(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_00582b60(HWND window_handle);
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_00582bb0(HWND parent_window,char *movie_filename);
 void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_00582e40(HWND notify_window,int play_state);
@@ -112,7 +112,7 @@ CVector3f * __stack_esi core_xform_cpp_invertAndGetTranslation_FUN_00584490(CMat
 double __cdecl core_xform_cpp_determinant_FUN_00584510(CMatrix3x4f *matrix);
 CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_00584560(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out);
 float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_00584790(CMatrix3x4f *matrix);
-void core_xform_cpp_FUN_00584b00(void);
+void core_xform_cpp_FUN_005849c0(void);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_00584f70(float angle_radians,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_00584ff0(float angle_radians,CMatrix3x4f *matrix_out);
 CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_00585210(float x_offset,CMatrix3x4f *matrix_out);
@@ -149,7 +149,9 @@ void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_00587340(SRenderVertex
 void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_00587400(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_005874c0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_00587580(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
+void FUN_005877c0(void);
 void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00587940(void);
+void FUN_00587ab0(void);
 void __cdecl core_xform_cpp_clampClippedVertices_FUN_00587c20(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00587cd0(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_00588410(void);

@@ -131,7 +131,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_005595a0(CDemonSet *t
 SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_ctor_FUN_005596f0(SRaytraceState *this_ptr);
 SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_00559700(SRaytraceState *this_ptr,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_00559710(void);
-float core_setdir_cpp_FUN_00559c10(void);
+float core_setdir_cpp_FUN_00559730(void);
 int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_0055b1e0(CDemonSet *this_ptr,int camera_index,float hold_time);
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_0055b200(CDemonSet *this_ptr);
@@ -183,7 +183,7 @@ void __cdecl core_shadow_cpp_CShadow_playDamageSound_FUN_0055f4f0(CShadow *this_
 void __cdecl core_shadow_cpp_CShadow_playDeathSound_FUN_0055f540(CShadow *this_ptr);
 void __cdecl core_shadow_cpp_CShadow_playHowlSound_FUN_0055f590(CShadow *this_ptr);
 void __cdecl core_shadow_cpp_CShadow_playEmergeSound_FUN_0055f5e0(CShadow *this_ptr);
-void core_shadow_cpp_FUN_0055f9c0(void);
+void core_shadow_cpp_FUN_0055f630(void);
 int __cdecl core_shadow_cpp_CShadow_renderOpaque_FUN_0055fbf0(CShadow *this_ptr);
 int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this_ptr);
 void __cdecl core_shadow_cpp_CShadow_archive_FUN_0055fe00(CShadow *this_ptr);

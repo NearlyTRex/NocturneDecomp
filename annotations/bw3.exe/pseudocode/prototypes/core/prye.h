@@ -229,9 +229,9 @@ void __cdecl CPrye::drop(CPrye *this_ptr,CDemonActor *carrier,CVector3f *drop_po
 // Address: 005270a0
 void __cdecl CPrye::toggleGoggles(CPrye *this_ptr);
 
-// Original: core_prye.cpp_FUN_00527110
+// Original: core_prye.cpp_CPrye_isPerformingAction_FUN_00527110
 // Address: 00527110
-undefined4 FUN_00527110(int param_1);
+int __cdecl CPrye::isPerformingAction(CPrye *this_ptr);
 
 // Original: core_prye.cpp_divideVectorByScalar_FUN_005271d0
 // Address: 005271d0

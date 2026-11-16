@@ -65,17 +65,17 @@ void __cdecl blitSimpleSprite(void *sprite_data,int dest_x,int dest_y,int width,
 // Address: 00435cb0
 void __cdecl blitDualModeSprite(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
 
-// Original: cockpit_ckptutil.c_FUN_00435e90
-// Address: 00435e90
-void FUN_00435e90(void);
+// Original: cockpit_ckptutil.c_FUN_00435e70
+// Address: 00435e70
+void FUN_00435e70(void);
 
-// Original: cockpit_ckptutil.c_FUN_00435f20
-// Address: 00435f20
-void FUN_00435f20(void);
+// Original: cockpit_ckptutil.c_FUN_00435ee0
+// Address: 00435ee0
+undefined8 FUN_00435ee0(void);
 
-// Original: cockpit_ckptutil.c_FUN_00436050
-// Address: 00436050
-void FUN_00436050(void);
+// Original: cockpit_ckptutil.c_FUN_00436020
+// Address: 00436020
+int FUN_00436020(void);
 
 // Original: cockpit_ckptutil.c_blitFullScreen_FUN_00436140
 // Address: 00436140

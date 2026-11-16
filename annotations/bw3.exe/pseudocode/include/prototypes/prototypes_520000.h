@@ -53,7 +53,7 @@ EDeathState __cdecl core_prye_cpp_CPrye_getDeathState_FUN_00526fc0(CPrye *this_p
 void __cdecl core_prye_cpp_CPrye_dropCarriedObject_FUN_00526ff0(CPrye *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_prye_cpp_CPrye_drop_FUN_00527050(CPrye *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 void __cdecl core_prye_cpp_CPrye_toggleGoggles_FUN_005270a0(CPrye *this_ptr);
-undefined4 core_prye_cpp_FUN_00527110(int param_1);
+int __cdecl core_prye_cpp_CPrye_isPerformingAction_FUN_00527110(CPrye *this_ptr);
 void __cdecl core_prye_cpp_divideVectorByScalar_FUN_005271d0(CVector3f *vector,float *divisor);
 CVector3f * __stack3_esi core_prye_cpp_makeVector_FUN_00527200(float x,float y,float z,CVector3f *out);
 CPrye * __cdecl core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags);

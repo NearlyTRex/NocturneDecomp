@@ -4,7 +4,8 @@
 ; void __cdecl engine_3d_c_setActiveRenderColor_FUN_00404410(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004044d0 at 004044d7
 ;   engine_3d.c_drawLineStrip2D_FUN_00404440 at 00404447
 ;
 ; Referenced Globals:

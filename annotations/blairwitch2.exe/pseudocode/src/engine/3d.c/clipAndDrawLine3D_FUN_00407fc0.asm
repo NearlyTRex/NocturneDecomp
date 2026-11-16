@@ -7,7 +7,8 @@
 ; SRenderVertex    Stack[0x4]:48   vertex1
 ; SRenderVertex    Stack[0x34]:48   vertex2
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00404620 at 004046a6
 ;   engine_3d.c_drawLine3DFromIndices_FUN_00407f40 at 00407fa5
 ;
 ; Referenced Globals:

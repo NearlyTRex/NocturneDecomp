@@ -905,6 +905,7 @@
       "005220d0",
       "00527970",
       "0053afa0",
+      "0053f0f0",
       "0053f940",
       "00545710",
       "005475a0",
@@ -3439,6 +3440,24 @@
     "variadic":false
   },
   {
+    "addr":"00435e70",
+    "calls":[
+      "00434ea0"
+    ],
+    "conv":"unknown",
+    "instructions":49,
+    "method":"FUN_00435e70",
+    "name":"cockpit_ckptutil.c_FUN_00435e70",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"00436170",
     "calls":[
       "00434e80"
@@ -3628,12 +3647,10 @@
     "addr":"0043a9f0",
     "callers":[
       "0043aed0",
+      "0043b330",
       "0043bac0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0043b8cb"
-    ],
     "instructions":125,
     "method":"interpolateVertexLeftClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_0043a9f0",
@@ -5600,6 +5617,7 @@
       "0041d790",
       "0043e2a0",
       "00446c60",
+      "0044bc50",
       "00450e10",
       "0045af60",
       "0045d170",
@@ -6699,7 +6717,7 @@
   {
     "addr":"0046b470",
     "callers":[
-      "0053f5d0",
+      "0053f0f0",
       "0053f940"
     ],
     "calls":[
@@ -7459,7 +7477,10 @@
   {
     "addr":"00479970",
     "callers":[
+      "00479b10",
+      "00479c70",
       "00479de0",
+      "0047a0a0",
       "0047a210",
       "0047a3d0"
     ],
@@ -7468,14 +7489,8 @@
     ],
     "conv":"__cdecl",
     "data_refs":[
-      "00479bec",
-      "00479c4a",
-      "00479d52",
-      "00479dae",
       "0047a020",
-      "0047a07c",
-      "0047a182",
-      "0047a1de"
+      "0047a07c"
     ],
     "instructions":145,
     "method":"clipLineToPlane",
@@ -8107,14 +8122,14 @@
   },
   {
     "addr":"00481ef0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_00481ef0",
-    "name":"shape_edittool.cpp_FUN_00481ef0",
+    "method":"isEditorMini3DMode",
+    "name":"shape_edittool.cpp_isEditorMini3DMode_FUN_00481ef0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -16190,7 +16205,10 @@
     "callers":[
       "005106a0",
       "00510740",
-      "00510810"
+      "00510810",
+      "00510c70",
+      "00510d20",
+      "00510d70"
     ],
     "calls":[
       "005a308f",
@@ -16205,6 +16223,29 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbmpset.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00510c70",
+    "calls":[
+      "00510160",
+      "005105e0",
+      "00510610",
+      "00510670",
+      "005106a0",
+      "005a28c0"
+    ],
+    "conv":"unknown",
+    "instructions":61,
+    "method":"FUN_00510c70",
+    "name":"cockpit_pkbmpset.cpp_FUN_00510c70",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",
@@ -17758,6 +17799,39 @@
       "ptr":0
     },
     "tu":"core/setcolid.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"0053f0f0",
+    "calls":[
+      "004087f0",
+      "00408830",
+      "0041d8b0",
+      "0046b240",
+      "0046b2c0",
+      "0046b470",
+      "0046cb90",
+      "0046cc10",
+      "0046ce90",
+      "0046cf30",
+      "0046d090",
+      "0046d460",
+      "0046d500",
+      "004e5590",
+      "005420b0",
+      "005632a3"
+    ],
+    "conv":"unknown",
+    "instructions":570,
+    "method":"FUN_0053f0f0",
+    "name":"core_setdir.cpp_FUN_0053f0f0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"core/setdir.cpp",
     "variadic":false
   },
   {
@@ -24086,7 +24160,6 @@
       "0045b270",
       "0045c380",
       "004663b0",
-      "004663f2",
       "00473530",
       "0047c770",
       "0047f990",
@@ -24111,6 +24184,7 @@
       "00502890",
       "00502a10",
       "0050f230",
+      "0050f260",
       "0050f910",
       "0050f990",
       "00510810",

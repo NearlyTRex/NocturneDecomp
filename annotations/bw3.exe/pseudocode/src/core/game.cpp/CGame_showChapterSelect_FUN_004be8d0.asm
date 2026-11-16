@@ -39,7 +39,7 @@
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_00494880
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0
 ;   core_game.cpp_CGame_loadGame_FUN_004bdfb0
-;   core_game.cpp_FUN_004c4d10
+;   core_game.cpp_CGame_resetMusic_FUN_004c4d10
 ;   core_level.cpp_CLevelLoader_show_FUN_004dfc50
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004f7880
 ;   core_mission.cpp_CDemonMission_load_FUN_004f5bc0
@@ -81,8 +81,8 @@ section .text
     MOV dword ptr [EBX + 0x278],0x0     ; 004be923
     PUSH EBX                            ; 004be92d
     MOV dword ptr [EBX + 0x294],0xbf800000 ; 004be92e
-    CALL core_game.cpp_FUN_004c4d10     ; 004be938
-        ;   XREF to: 004c4d10 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004c4d10()
+    CALL core_game.cpp_CGame_resetMusic_FUN_004c4d10 ; 004be938
+        ;   XREF to: 004c4d10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetMusic_FUN_004c4d10(CGame * this_ptr)
     ADD ESP,0x4                         ; 004be93d
     XOR ESI,ESI                         ; 004be940
     PUSH 0x5c37df                       ; 004be942 | DAT_005c37df

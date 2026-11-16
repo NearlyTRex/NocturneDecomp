@@ -138,7 +138,6 @@ int __cdecl engine_dosio_cpp_deleteFile_FUN_00479950(char *filename);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_004799c0(CDemonPart *this_ptr,uint flags);
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004799e0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_free_FUN_00479ae0(CDemonPart *this_ptr);
-void core_dpart_cpp_FUN_00479b22(void);
 void __cdecl core_dpart_cpp_CDemonPart_load_FUN_00479b40(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00479b70(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0(CDemonPart *this_ptr);

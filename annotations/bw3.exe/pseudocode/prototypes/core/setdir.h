@@ -9,9 +9,9 @@
 // Address: 0053f0d0
 void __cdecl staticInit(void);
 
-// Original: core_setdir.cpp_FUN_0053f5d0
-// Address: 0053f5d0
-float FUN_0053f5d0(void);
+// Original: core_setdir.cpp_FUN_0053f0f0
+// Address: 0053f0f0
+float FUN_0053f0f0(void);
 
 // Original: core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
 // Address: 0053f940

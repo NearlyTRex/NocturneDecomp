@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055ae07
-;   core_setdir.cpp_FUN_00559c10 at 00559c63
+;   core_setdir.cpp_FUN_00559730 at 00559c63
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db315

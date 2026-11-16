@@ -29,9 +29,9 @@ int __cdecl calibrateGamepad(void);
 // Address: 004eb7c0
 void __cdecl adjustMouseSensitivity(int *sensitivity_value_ptr,char *window_title);
 
-// Original: core_menu.cpp_FUN_004eba50
+// Original: core_menu.cpp_adjustFixedPointSlider_FUN_004eba50
 // Address: 004eba50
-void FUN_004eba50(int *param_1,char *param_2);
+void __cdecl adjustFixedPointSlider(int *value_ptr,char *window_title);
 
 // Original: core_menu.cpp_showCalibrationTestPattern_FUN_004ebce0
 // Address: 004ebce0

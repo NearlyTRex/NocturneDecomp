@@ -23,9 +23,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dd9b0(CInventory *thi
   char *pcVar9;
   byte bVar10;
   double dVar11;
-  float afStackY_117c [36];
-  int aiStackY_10ec [21];
-  float afStackY_1098 [472];
+  float afStackY_117c [529];
   int iVar12;
   int iVar13;
   CMatrix3x3f *this_ptr_01;
@@ -43,35 +41,34 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dd9b0(CInventory *thi
   char acStack_304 [256];
   byte auStack_204 [112];
   float fStack_194;
-  int local_190;
+  float local_190;
   char local_18c [4];
   char local_188 [4];
   float local_184 [2];
   CVector3f local_17c;
   float fStack_170;
-  int local_16c;
+  float local_16c;
   char local_168 [4];
   float local_164;
-  int local_160;
+  float local_160;
   char local_15c [4];
   CVector3f local_158;
   CVector3f CStack_14c;
-  int local_140;
-  float local_13c [2];
+  CVector3i local_140;
   CVector3f CStack_134;
   CVector3i local_128;
   CVector3f CStack_11c;
   float fStack_110;
-  int local_10c;
+  float local_10c;
   char local_108 [4];
-  int local_104;
-  int local_100 [5];
-  int iStack_ec;
+  CVector3i local_104;
+  CVector3i CStack_f8;
+  CVector3i CStack_ec;
   CVector3f CStack_e0;
   CVector3f local_d4;
   CVector3f CStack_c8;
   float local_bc;
-  int local_b8;
+  float local_b8;
   char local_b4 [4];
   CVector3f local_b0;
   int iStack_a4;
@@ -490,7 +487,7 @@ LAB_004ddd00:
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
               ((CMatrix3x3f *)(auStack_204 + 0x48),&CStack_134,&local_d4);
     local_164 = local_d4.x;
-    (&local_160)[(uint)bVar10 * -2] = *(int *)((int)&local_d4 + (uint)bVar10 * -8 + 4);
+    (&local_160)[(uint)bVar10 * -2] = *(float *)((int)&local_d4 + (uint)bVar10 * -8 + 4);
     *(uint *)(local_15c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
          *(uint *)((int)&local_d4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     if (&fStack_110 != &local_164) {
@@ -501,11 +498,13 @@ LAB_004ddd00:
       local_108[2] = local_15c[2];
       local_108[3] = local_15c[3];
     }
-    core_inv_cpp_FUN_004d9ff0(local_74 + fStack_110);
-    local_128.x = iStack_ec;
-    *(int *)((int)&local_128 + (uint)bVar10 * -8 + 4) = local_100[(uint)bVar10 * -2 + 6];
-    *(int *)((int)&local_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         local_100[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
+    core_inv_cpp_screenToWorldPoint_FUN_004d9ff0
+              (local_74 + fStack_110,local_78 + local_10c,&CStack_ec);
+    local_128.x = CStack_ec.x;
+    *(uint *)((int)&local_128 + (uint)bVar10 * -8 + 4) =
+         *(uint *)((int)&CStack_ec + (uint)bVar10 * -8 + 4);
+    *(uint *)((int)&local_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         *(uint *)((int)&CStack_ec + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_128);
     CStack_e0.y = -local_64;
@@ -515,7 +514,7 @@ LAB_004ddd00:
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
               ((CMatrix3x3f *)(auStack_204 + 0x48),&CStack_e0,&local_158);
     local_bc = local_158.x;
-    (&local_b8)[(uint)bVar10 * -2] = *(int *)((int)&local_158 + (uint)bVar10 * -8 + 4);
+    (&local_b8)[(uint)bVar10 * -2] = *(float *)((int)&local_158 + (uint)bVar10 * -8 + 4);
     *(uint *)(local_b4 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
          *(uint *)((int)&local_158 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     if (&fStack_110 != &local_bc) {
@@ -526,11 +525,13 @@ LAB_004ddd00:
       local_108[2] = local_b4[2];
       local_108[3] = local_b4[3];
     }
-    core_inv_cpp_FUN_004d9ff0(local_74 + fStack_110);
-    local_128.x = local_100[2];
-    *(int *)((int)&local_128 + (uint)bVar10 * -8 + 4) = local_100[(uint)bVar10 * -2 + 3];
-    *(int *)((int)&local_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         local_100[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+    core_inv_cpp_screenToWorldPoint_FUN_004d9ff0
+              (local_74 + fStack_110,local_78 + local_10c,&CStack_f8);
+    local_128.x = CStack_f8.x;
+    *(uint *)((int)&local_128 + (uint)bVar10 * -8 + 4) =
+         *(uint *)((int)&CStack_f8 + (uint)bVar10 * -8 + 4);
+    *(uint *)((int)&local_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         *(uint *)((int)&CStack_f8 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_128);
     CStack_14c.x = local_70;
@@ -539,7 +540,7 @@ LAB_004ddd00:
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
               ((CMatrix3x3f *)(auStack_204 + 0x48),&CStack_14c,&CStack_11c);
     fStack_194 = CStack_11c.x;
-    (&local_190)[(uint)bVar10 * -2] = *(int *)((int)&CStack_11c + (uint)bVar10 * -8 + 4);
+    (&local_190)[(uint)bVar10 * -2] = *(float *)((int)&CStack_11c + (uint)bVar10 * -8 + 4);
     *(uint *)(local_18c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
          *(uint *)((int)&CStack_11c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     if (&fStack_110 != &fStack_194) {
@@ -550,11 +551,13 @@ LAB_004ddd00:
       local_108[2] = local_18c[2];
       local_108[3] = local_18c[3];
     }
-    core_inv_cpp_FUN_004d9ff0(local_74 + fStack_110);
-    local_128.x = local_104;
-    *(int *)((int)&local_128 + (uint)bVar10 * -8 + 4) = local_100[(uint)bVar10 * -2];
-    *(int *)((int)&local_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         local_100[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+    core_inv_cpp_screenToWorldPoint_FUN_004d9ff0
+              (local_74 + fStack_110,local_78 + local_10c,&local_104);
+    local_128.x = local_104.x;
+    *(uint *)((int)&local_128 + (uint)bVar10 * -8 + 4) =
+         *(uint *)((int)&local_104 + (uint)bVar10 * -8 + 4);
+    *(uint *)((int)&local_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         *(uint *)((int)&local_104 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_128);
     CStack_c8.y = local_64;
@@ -563,7 +566,7 @@ LAB_004ddd00:
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00449530
               ((CMatrix3x3f *)(auStack_204 + 0x48),&CStack_c8,&local_17c);
     fStack_170 = local_17c.x;
-    (&local_16c)[(uint)bVar10 * -2] = *(int *)((int)&local_17c + (uint)bVar10 * -8 + 4);
+    (&local_16c)[(uint)bVar10 * -2] = *(float *)((int)&local_17c + (uint)bVar10 * -8 + 4);
     *(uint *)(local_168 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
          *(uint *)((int)&local_17c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     if (&fStack_110 != &fStack_170) {
@@ -574,11 +577,13 @@ LAB_004ddd00:
       local_108[2] = local_168[2];
       local_108[3] = local_168[3];
     }
-    core_inv_cpp_FUN_004d9ff0(local_74 + fStack_110);
-    local_128.x = local_140;
-    *(float *)((int)&local_128 + (uint)bVar10 * -8 + 4) = local_13c[(uint)bVar10 * -2];
-    *(float *)((int)&local_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         local_13c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+    core_inv_cpp_screenToWorldPoint_FUN_004d9ff0
+              (local_74 + fStack_110,local_78 + local_10c,&local_140);
+    local_128.x = local_140.x;
+    *(uint *)((int)&local_128 + (uint)bVar10 * -8 + 4) =
+         *(uint *)((int)&local_140 + (uint)bVar10 * -8 + 4);
+    *(uint *)((int)&local_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         *(uint *)((int)&local_140 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_128);
     auStack_204._4_4_ = 4;

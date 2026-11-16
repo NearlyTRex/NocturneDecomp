@@ -13,8 +13,8 @@
 ;   undefined4 DAT_01d225c8
 ;
 ; Called Functions:
+;   core_game.cpp_CGame_resetMusic_FUN_004c4d10
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_004b8e60
-;   core_game.cpp_FUN_004c4d10
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     MOV dword ptr [EBX + 0x294],0xbf800000 ; 004b43f6
     MOV byte ptr [0x01d225c8],AH        ; 004b4400 | DAT_01d225c8
     MOV byte ptr [EBX + 0xa7c],AH       ; 004b4406
-    CALL core_game.cpp_FUN_004c4d10     ; 004b440c
-        ;   XREF to: 004c4d10 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004c4d10()
+    CALL core_game.cpp_CGame_resetMusic_FUN_004c4d10 ; 004b440c
+        ;   XREF to: 004c4d10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetMusic_FUN_004c4d10(CGame * this_ptr)
     ADD ESP,0x4                         ; 004b4411
     MOV EAX,EBX                         ; 004b4414
     POP EBX                             ; 004b4416

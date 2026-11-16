@@ -281,9 +281,9 @@ void __cdecl CEditorTools::draw3DProjectedLine(CEditorTools *this_ptr,CVector3f 
 // Address: 00499250
 void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int cursor_type,int height,int width);
 
-// Original: shape_edittool.cpp_FUN_00499350
+// Original: shape_edittool.cpp_isEditorMini3DMode_FUN_00499350
 // Address: 00499350
-undefined4 FUN_00499350(void);
+int __cdecl isEditorMini3DMode(void);
 
 // Original: shape_edittool.cpp_CEditorTools_setMini3DMode_FUN_00499360
 // Address: 00499360

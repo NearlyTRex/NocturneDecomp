@@ -10,7 +10,8 @@
 ; undefined        Stack[-0x1014]:1  local_1014
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[95]:
+; XREF[97]:
+;   FUN_00458930 at 00458cdd
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 at 00408a62
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a6c1
 ;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e600 at 0040e625
@@ -20,8 +21,7 @@
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004131ff
 ;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 004150e5
 ;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00415cd0 at 00415de8
-;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 0041926c
-;   ... and 85 more
+;   ... and 87 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cdc35

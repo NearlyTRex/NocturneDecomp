@@ -41,9 +41,9 @@ int __cdecl calculateTriangleWindingOrder(SRenderVertex *v0,SRenderVertex *v1,SR
 // Address: 0053de20
 int __cdecl calculateTriangleWindingOrderFromIndices(SMRGLPrimitiveTriangle *triangle);
 
-// Original: engine_prim.c_FUN_0053df50
-// Address: 0053df50
-undefined4 FUN_0053df50(void);
+// Original: engine_prim.c_FUN_0053df10
+// Address: 0053df10
+bool FUN_0053df10(void);
 
 // Original: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000
 // Address: 0053e000

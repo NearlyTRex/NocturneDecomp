@@ -24,6 +24,7 @@
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/COutStream.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CQuaternion4f.h"
@@ -55,6 +56,7 @@ void __cdecl engine_clipper_c_interpolateVertexFarClip_FUN_00430a50(SRenderVerte
 int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00430b70(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 int __cdecl engine_clipper_c_clipPolygonLeftPlane_FUN_00430cb0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_00430f30(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
+void FUN_00431070(void);
 void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00431270(void);
 int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00431330(int vertex_count,int *vertex_indices);
 void __cdecl engine_clipper_c_clipAndRasterize_FUN_00431d90(int vertex_count,int *vertex_indices);
@@ -64,9 +66,10 @@ void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_00432070(SRen
 void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_004321a0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_clipPolygonRightPlaneGlobal_FUN_004322e0(void);
 void __cdecl engine_clipper_c_clipPolygonLeftPlaneGlobal_FUN_00432420(void);
+void FUN_00432560(void);
 void __cdecl engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_004326a0(void);
 void __cdecl engine_clipper_c_perspectiveDivideVertices_FUN_004327d0(void);
-undefined4 engine_clipper_c_FUN_00432a20(void);
+undefined4 engine_clipper_c_FUN_00432880(void);
 void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00433000(int vertex_count,int *vertex_indices);
 void __cdecl support_codec_cpp_resetBitBuffer_FUN_00433760(SBitBuffer *bit_buffer);
 int __cdecl support_codec_cpp_readBitsFromStream_FUN_00433780(SBitBuffer *bit_buffer,int bit_count,void *istream);
@@ -267,6 +270,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0043d7
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0043d870(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0043dca0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0043e300(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
+void FUN_0043e450(int param_1,float *param_2,CMatrix3x3f *param_3);
 void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0043e7e0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0043e860(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0043e930(CDemonCamera *this_ptr,char *filename);

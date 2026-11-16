@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 91,
     "complexity_score": 112,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -17,6 +17,12 @@
     "total_lines": 138
   },
   "cross_references": [
+    {
+      "addr": "005b9da0",
+      "from_addr": "005b9e7c",
+      "name": "FUN_005b9da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "005b9fc0",
       "from_addr": "005ba629",
@@ -46,7 +52,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "005ba629",
@@ -63,6 +69,17 @@
         "call_addr": "005ba69a",
         "call_type": "direct",
         "caller": "core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005b9e7c",
+        "call_type": "direct",
+        "caller": "FUN_005b9da0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

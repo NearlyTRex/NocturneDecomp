@@ -7,7 +7,8 @@
 ; int              Stack[0x4]:4   vertex_count
 ; int *            Stack[0x8]:4   vertex_indices
 ;
-; XREF[58]:
+; XREF[59]:
+;   FUN_004055d0 at 0040565c
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_004070e0 at 00407222
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404b00 at 00404b90
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450 at 004066bd
@@ -17,8 +18,7 @@
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004056b0 at 0040570d
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057d0 at 0040582d
 ;   engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e60 at 00404eb2
-;   engine_3d.c_renderPolygonAlphaTexturedNormalized2_FUN_00405040 at 00405092
-;   ... and 48 more
+;   ... and 49 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141e0

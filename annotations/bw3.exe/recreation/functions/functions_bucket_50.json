@@ -329,6 +329,7 @@
       "004051a0",
       "00405280",
       "00405360",
+      "00405400",
       "00405ef0",
       "00405fa0",
       "00406610",
@@ -4497,21 +4498,6 @@
     "variadic":false
   },
   {
-    "addr":"00436050",
-    "conv":"unknown",
-    "instructions":6,
-    "method":"FUN_00436050",
-    "name":"cockpit_ckptutil.c_FUN_00436050",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
     "addr":"00436750",
     "conv":"__cdecl",
     "instructions":61,
@@ -4823,13 +4809,10 @@
     "addr":"0043ac50",
     "callers":[
       "0043b150",
+      "0043b330",
       "0043bac0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0043b9c9",
-      "0043ba1f"
-    ],
     "instructions":126,
     "method":"interpolateVertexBottomClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_0043ac50",
@@ -11883,14 +11866,24 @@
   },
   {
     "addr":"004ad4d0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_004ad4d0",
-    "name":"core_flattn.cpp_FUN_004ad4d0",
+    "method":"setFlattenMatrix",
+    "name":"core_flattn.cpp_setFlattenMatrix_FUN_004ad4d0",
+    "params":[
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -11898,14 +11891,32 @@
   },
   {
     "addr":"004ad550",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":35,
-    "method":"FUN_004ad550",
-    "name":"core_flattn.cpp_FUN_004ad550",
+    "method":"setFlattenMatrixAndOffset",
+    "name":"core_flattn.cpp_setFlattenMatrixAndOffset_FUN_004ad550",
+    "params":[
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -18683,27 +18694,6 @@
     "variadic":false
   },
   {
-    "addr":"0053f5d0",
-    "calls":[
-      "0046b2c0",
-      "0046b470",
-      "0046d460",
-      "0046d500"
-    ],
-    "conv":"unknown",
-    "instructions":98,
-    "method":"FUN_0053f5d0",
-    "name":"core_setdir.cpp_FUN_0053f5d0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/setdir.cpp",
-    "variadic":false
-  },
-  {
     "addr":"00541350",
     "callers":[
       "00541410",
@@ -24324,7 +24314,6 @@
       "004f9ad0",
       "004f9c40",
       "0050fa90",
-      "0050fcb8",
       "00512fb0",
       "005295e0",
       "00530610",

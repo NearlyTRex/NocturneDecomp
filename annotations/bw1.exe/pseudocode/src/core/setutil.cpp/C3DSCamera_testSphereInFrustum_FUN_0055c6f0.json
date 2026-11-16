@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 94,
     "complexity_score": 164,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -22,6 +22,12 @@
       "addr": "00559f80",
       "from_addr": "0055a958",
       "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559730",
+      "from_addr": "005597b0",
+      "name": "core_setdir.cpp_FUN_00559730",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +52,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "0055a958",
@@ -58,9 +64,20 @@
         "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
+      },
+      {
+        "call_addr": "005597b0",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00559730",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 12,
     "estimated_params": 3,

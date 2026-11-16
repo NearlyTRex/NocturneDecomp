@@ -1,11 +1,11 @@
 {
   "compile_source": "c",
   "complexity": {
-    "assembly_lines": 22,
+    "assembly_lines": 8,
     "complexity_score": 54,
-    "cross_reference_count": 8,
+    "cross_reference_count": 10,
     "function_call_count": 0,
-    "global_count": 2,
+    "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
     "suspect_count": 3,
@@ -13,9 +13,21 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 36
+    "total_lines": 22
   },
   "cross_references": [
+    {
+      "addr": "00435ee0",
+      "from_addr": "00435f28",
+      "name": "cockpit_ckptutil.c_FUN_00435ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436020",
+      "from_addr": "00436058",
+      "name": "cockpit_ckptutil.c_FUN_00436020",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00435cb0",
       "from_addr": "00435cd8",
@@ -70,15 +82,7 @@
     "address_range": [
       [
         "00434e80",
-        "00434e95"
-      ],
-      [
-        "00434ea0",
-        "00434eb4"
-      ],
-      [
-        "00434ec0",
-        "00434ec5"
+        "00434e8f"
       ]
     ],
     "convention": "__cdecl",
@@ -92,16 +96,10 @@
       "name": "DAT_005fba20",
       "type": "undefined4",
       "value": null
-    },
-    {
-      "addr": "01c6e2a0",
-      "name": "DAT_01c6e2a0",
-      "type": "undefined4",
-      "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "0043617b",
@@ -190,6 +188,28 @@
         "reg_params": [],
         "stack_bytes": 0,
         "stack_params": 0
+      },
+      {
+        "call_addr": "00435f28",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_00435ee0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00436058",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_00436020",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
       }
     ],
     "confidence": "high",
@@ -199,23 +219,20 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.3333333333333335,
-    "instruction_count": 15,
+    "avg_pcode_per_instr": 4.6,
+    "instruction_count": 5,
     "opcode_distribution": {
-      "CBRANCH": 3,
-      "COPY": 8,
-      "INT_ADD": 4,
-      "INT_AND": 6,
-      "INT_EQUAL": 6,
-      "INT_LESS": 3,
-      "INT_SBORROW": 3,
-      "INT_SLESS": 3,
-      "INT_SUB": 3,
-      "LOAD": 4,
-      "POPCOUNT": 3,
-      "RETURN": 4
+      "CBRANCH": 2,
+      "COPY": 3,
+      "INT_AND": 4,
+      "INT_EQUAL": 4,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "POPCOUNT": 2
     },
-    "pcode_op_count": 50
+    "pcode_op_count": 23
   },
   "siblings": {
     "blairwitch2.exe": {
@@ -233,14 +250,14 @@
     "nocedit.exe": {
       "addr": "00431760",
       "by": "name",
-      "class": "logic-change",
-      "ratio": 0.5
+      "class": "identical",
+      "ratio": 1.0
     },
     "nocturne.exe": {
       "addr": "0042d130",
       "by": "name",
       "class": "logic-change",
-      "ratio": 0.6364
+      "ratio": 0.8333
     }
   },
   "stack_frame": {

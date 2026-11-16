@@ -86,7 +86,7 @@ void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004c45e0(CBitFont *this_p
 int __cdecl engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004c47f0(CBitFont *this_ptr,char *text,int x,int y,int color_mode);
 uint __cdecl engine_font_cpp_packPixelNative_FUN_004c4ba0(int red,int green,int blue);
 int __cdecl engine_font_cpp_getAlpha_FUN_004c4bf0(void);
-void engine_font_cpp_FUN_004c4c51(void);
+void engine_font_cpp_FUN_004c4c00(void);
 SHardwareEdge * __cdecl engine_font_cpp_findHardwareEdgeByYMin_FUN_004c4d40(int y_min,SHardwareEdge *exclude_edge);
 void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004c4d80(SRenderVertex **vertices,int vertex_count);
 void __cdecl core_frankgen_cpp_staticInit_FUN_004c50f0(void);

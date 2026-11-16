@@ -1,6 +1,6 @@
 // Name: core_dpart.cpp_CDemonPart_free_FUN_004615d0
 // Address: 004615d0
-// Address Range: [[004615d0, 00461611]]
+// Address Range: [[004615d0, 00461625]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dpart_cpp_CDemonPart_free_FUN_004615d0(CDemonPart *this_ptr)
 

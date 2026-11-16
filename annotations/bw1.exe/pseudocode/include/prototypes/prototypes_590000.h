@@ -297,7 +297,7 @@ int __cdecl support_trisock_cpp_lookupHostByAddr_FUN_0059f230(uint ip_address,vo
 int __cdecl support_trisock_cpp_getLocalHostInfo_FUN_0059f2a0(void *host_info_out);
 SIpAddr * __cdecl support_trisock_cpp_IpAddr_ctor_FUN_0059f300(SIpAddr *this_ptr);
 void * __cdecl support_trisock_cpp_initHostInfo_FUN_0059f320(void *host_info);
-void support_trisock_cpp_FUN_0059f340(undefined4 *param_1,undefined4 *param_2);
+SNetworkAddr * __cdecl support_trisock_cpp_copyNetworkAddr_FUN_0059f340(SNetworkAddr *dest,SNetworkAddr *src);
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_0059f380(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_free_FUN_0059f3c0(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_render_FUN_0059f3e0(CTerrain *this_ptr,int render_pass);

@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[47]:
+; XREF[48]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0 at 00408818
 ;   core_battery.cpp_CBattery_renderOpaque_FUN_0040f590 at 0040f5ba
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412e45
@@ -23,7 +23,7 @@
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0 at 0042e47d
 ;   core_cloth.cpp_CCloth_renderBone_FUN_0043f160 at 0043f1b2
 ;   core_crate.cpp_CCrate_renderOpaque_FUN_00445fa0 at 00445fca
-;   ... and 37 more
+;   ... and 38 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bc51b

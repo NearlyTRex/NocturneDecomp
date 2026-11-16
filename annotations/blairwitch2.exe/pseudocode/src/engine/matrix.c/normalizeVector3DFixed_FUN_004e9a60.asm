@@ -6,7 +6,8 @@
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   input_vector
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_004055d0 at 004055fa
 ;   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405450 at 0040547a
 ;   engine_3d.c_renderPolygonTexturedUVLit_FUN_00405370 at 0040539a
 ;

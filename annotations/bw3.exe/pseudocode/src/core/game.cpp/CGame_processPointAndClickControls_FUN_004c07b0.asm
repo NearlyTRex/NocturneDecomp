@@ -558,8 +558,8 @@ section .text
         ;   XREF to: 004c0837 (UNCONDITIONAL_JUMP)  ; LAB_004c0837
     PUSH ECX                            ; 004c0dfe
         ;   Label: LAB_004c0dfe
-    CALL core_prye.cpp_FUN_00527110     ; 004c0dff
-        ;   XREF to: 00527110 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00527110()
+    CALL core_prye.cpp_CPrye_isPerformingAction_FUN_00527110 ; 004c0dff
+        ;   XREF to: 00527110 (UNCONDITIONAL_CALL)  ; int core_prye.cpp_CPrye_isPerformingAction_FUN_00527110(CPrye * this_ptr)
     ADD ESP,0x4                         ; 004c0e04
     TEST EAX,EAX                        ; 004c0e07
     JNZ 0x004c0dcc                      ; 004c0e09

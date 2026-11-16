@@ -6,7 +6,8 @@
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
-; XREF[20]:
+; XREF[21]:
+;   FUN_004055d0 at 0040564f
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404860 at 00404964
 ;   engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405530 at 0040557e
 ;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00406ca0 at 00406cf8
@@ -16,8 +17,7 @@
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046e0 at 00404723
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406880 at 004068d7
 ;   engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00404a60 at 00404aae
-;   engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404240 at 0040429d
-;   ... and 10 more
+;   ... and 11 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c35e64

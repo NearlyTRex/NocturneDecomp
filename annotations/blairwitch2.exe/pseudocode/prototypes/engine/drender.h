@@ -73,9 +73,9 @@ void __cdecl CDemonRenderer::renderAlphaBlendedDirect(CDemonRenderer *this_ptr,S
 // Address: 0046a030
 void __cdecl CDemonRenderer::renderAlphaBlendedPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_0046a190
-// Address: 0046a190
-void FUN_0046a190(void);
+// Original: engine_drender.cpp_FUN_0046a170
+// Address: 0046a170
+void FUN_0046a170(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0046a270
 // Address: 0046a270

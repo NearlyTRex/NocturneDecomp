@@ -1,0 +1,301 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 141,
+    "complexity_score": 272,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 57,
+    "suspect_count": 20,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 198
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004910f0",
+    "address_range": [
+      [
+        "004910f0",
+        "00491240"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_004910f0",
+    "signature": "void FUN_004910f0(float param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00490df0",
+      "is_variadic": false,
+      "name": "core_dtri.cpp_clipLineToPlane_FUN_00490df0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004910e4",
+      "name": "PTR_caseD_1_004910e4",
+      "type": "undefined1*",
+      "value": "004911a4"
+    },
+    {
+      "addr": "004910ec",
+      "name": "PTR_caseD_3_004910ec",
+      "type": "undefined1*",
+      "value": "00491189"
+    },
+    {
+      "addr": "01c3d504",
+      "name": "DAT_01c3d504",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3d5c8",
+      "name": "DAT_01c3d5c8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.137931034482759,
+    "instruction_count": 116,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 4,
+      "BRANCH": 2,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 162,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 33,
+      "INT_AND": 62,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 50,
+      "INT_LEFT": 8,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 11,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 15,
+      "INT_SLESS": 25,
+      "INT_SUB": 32,
+      "INT_XOR": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 22,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 34,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 596
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004910f9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_004910f0(float param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_01c3d508",
+      "severity": "mild",
+      "text": "point1_ptr = (CVector3f *)&DAT_01c3d508;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "bVar1 = point1_ptr->y < param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(&DAT_01c3d50c + uVar2 * 0xc) < param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_01c3d50c",
+      "severity": "mild",
+      "text": "if (*(float *)(&DAT_01c3d50c + uVar2 * 0xc) < param_1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_01c3d5cc",
+      "severity": "mild",
+      "text": "if ((CVector3f *)(&DAT_01c3d5cc + iVar3) != point1_ptr) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_01c3d5cc",
+      "severity": "mild",
+      "text": "((CVector3f *)(&DAT_01c3d5cc + iVar3))->x = point1_ptr->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_01c3d5d0",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01c3d5d0 + iVar3) = point1_ptr->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_01c3d5d4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01c3d5d4 + iVar3) = point1_ptr->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_01c3d508",
+      "severity": "mild",
+      "text": "((CVector3f *)(&DAT_01c3d508 + uVar2 * 0xc),point1_ptr,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3f *)(&DAT_01c3d5cc + _DAT_01c3d5c8 * 0xc),0.0,-1.0,0.0,(double)param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_01c3d5cc",
+      "severity": "mild",
+      "text": "(CVector3f *)(&DAT_01c3d5cc + _DAT_01c3d5c8 * 0xc),0.0,-1.0,0.0,(double)param_1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01c3d5cc",
+      "severity": "mild",
+      "text": "if ((CVector3f *)(&DAT_01c3d5cc + iVar3) != point1_ptr) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_01c3d5cc",
+      "severity": "mild",
+      "text": "((CVector3f *)(&DAT_01c3d5cc + iVar3))->x = point1_ptr->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_01c3d5d0",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01c3d5d0 + iVar3) = point1_ptr->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_01c3d5d4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01c3d5d4 + iVar3) = point1_ptr->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_01c3d508",
+      "severity": "mild",
+      "text": "(point1_ptr,(CVector3f *)(&DAT_01c3d508 + uVar2 * 0xc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3f *)(&DAT_01c3d5cc + _DAT_01c3d5c8 * 0xc),0.0,-1.0,0.0,(double)param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_01c3d5cc",
+      "severity": "mild",
+      "text": "(CVector3f *)(&DAT_01c3d5cc + _DAT_01c3d5c8 * 0xc),0.0,-1.0,0.0,(double)param_1);",
+      "type": "undefined_data"
+    }
+  ]
+}

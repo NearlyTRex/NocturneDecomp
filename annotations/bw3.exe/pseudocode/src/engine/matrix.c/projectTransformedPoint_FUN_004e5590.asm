@@ -6,9 +6,10 @@
 ; Parameters:
 ; SProjectedVertex * Stack[0x4]:4   point
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004a6090 at 004a68ae
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 005404af
+;   core_setdir.cpp_FUN_0053f0f0 at 0053f306
 ;   engine_matrix.c_projectCachedPoint_FUN_004e5570 at 004e5586
 ;
 ; Referenced Globals:

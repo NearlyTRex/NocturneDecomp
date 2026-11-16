@@ -53,7 +53,7 @@ CDemonActorType * __cdecl core_shadowsc_cpp_CShadowsc_getActorType_FUN_00560490(
 CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_setup_FUN_00560510(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_ptr,float delta_time);
-void core_shadowsc_cpp_FUN_00560fe0(int param_1);
+void __cdecl core_shadowsc_cpp_CShadowsc_playGiantAttackSound_FUN_00560fe0(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_playAttackSound_FUN_00561020(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_playHurtSound_FUN_00561060(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_playDeathSound_FUN_005610a0(CShadowsc *this_ptr);

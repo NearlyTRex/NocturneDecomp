@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 3672
-Filtered out (inside named data): 2780
+Total DAT_ globals found: 3678
+Filtered out (inside named data): 2782
 Immediate constants (not real globals): 91
-Real globals remaining: 3581
+Real globals remaining: 3587
 Clusters detected: 325
-DAT_ globals in clusters: 3487
+DAT_ globals in clusters: 3493
 
 Classification summary:
   unknown              86 clusters
@@ -42,6 +42,12 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x6225f0                       ; 0045e5f9 | DAT_006225f0
     readMessageFile
       PUSH 0x6225f0                       ; 00530ccf | DAT_006225f0
+
+  DAT_007c7bdc  value=0x7C7BDC (8158172)  refs=4
+    FUN_0043bed0
+      MOV EDI,0x7c7bdc                    ; 0043bf94 | DAT_007c7bdc
+    clipPolygonToViewFrustum
+      MOV EDI,0x7c7bdc                    ; 0043ca11 | DAT_007c7bdc
 
   DAT_007c6180  value=0x7C6180 (8151424)  refs=4
     CCharacter_renderTransparent
@@ -96,10 +102,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0062716c  value=0x62716C (6451564)  refs=3
     FUN_005cb688
       MOV ESI,0x62716c                    ; 005cb68e | DAT_0062716c
-
-  DAT_007c7bdc  value=0x7C7BDC (8158172)  refs=3
-    clipPolygonToViewFrustum
-      MOV EDI,0x7c7bdc                    ; 0043ca11 | DAT_007c7bdc
 
   DAT_00610914  value=0x610914 (6359316)  refs=2
     CBaron_process
@@ -541,7 +543,7 @@ HIGH CONFIDENCE (31 clusters)
     Classification: array
     Likely type: int[17]
     Reason: 17 elements at stride 4
-    Referenced by: 208 functions
+    Referenced by: 211 functions
       0x01c4eff8  DAT_01c4eff8  undefined4 [float]
       0x01c4effc  DAT_01c4effc  undefined4 [float]
       0x01c4f000  DAT_01c4f000  undefined4
@@ -918,7 +920,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 12 groups of 3 consecutive ints found
-    Referenced by: 6 functions
+    Referenced by: 9 functions
       0x01c3d420  DAT_01c3d420  undefined4
       0x01c3d430  DAT_01c3d430  undefined4
       0x01c3d434  DAT_01c3d434  undefined4 [float]
@@ -931,7 +933,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 13 groups of 3 consecutive ints found
-    Referenced by: 16 functions
+    Referenced by: 19 functions
       0x0152bd2c  DAT_0152bd2c  undefined4
       0x0152bd30  DAT_0152bd30  undefined4 [float]
       0x0152bd34  DAT_0152bd34  undefined4
@@ -958,7 +960,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 15 groups of 3 consecutive ints found
-    Referenced by: 52 functions
+    Referenced by: 53 functions
      near: g_CElephantGunClassInfo.name_hash (undefined4) at -240
       0x01c3f538  DAT_01c3f538  undefined4
       0x01c3f53c  DAT_01c3f53c  undefined4
@@ -972,7 +974,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 13 groups of 3 consecutive ints found
-    Referenced by: 215 functions
+    Referenced by: 217 functions
       0x01c51cac  DAT_01c51cac  undefined4
       0x01c51cb0  DAT_01c51cb0  undefined4
       0x01c51cb4  DAT_01c51cb4  undefined4
@@ -1009,6 +1011,19 @@ MEDIUM CONFIDENCE (136 clusters)
       0x00629024  DAT_00629024  undefined4
       ... +35 more
 
+  0x00623dd0 - 0x00623fc8  (40 items, 504 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 4 groups of 3 consecutive ints found
+    Referenced by: 25 functions
+      0x00623dd0  DAT_00623dd0  undefined4
+      0x00623dd4  DAT_00623dd4  undefined4
+      0x00623dd8  DAT_00623dd8  undefined4
+      0x00623ddc  DAT_00623ddc  undefined8 [double]
+      0x00623de4  DAT_00623de4  undefined4 [double]
+      0x00623df4  DAT_00623df4  undefined4
+      ... +34 more
+
   0x01b687e0 - 0x01b6892c  (38 items, 332 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -1027,7 +1042,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 11 groups of 3 consecutive ints found
-    Referenced by: 54 functions
+    Referenced by: 55 functions
       0x00713a38  DAT_00713a38  undefined4
       0x00713a3c  DAT_00713a3c  undefined4
       0x00713a40  DAT_00713a40  undefined4
@@ -1035,19 +1050,6 @@ MEDIUM CONFIDENCE (136 clusters)
       0x00713a48  DAT_00713a48  undefined4
       0x00713a4c  DAT_00713a4c  undefined4
       ... +31 more
-
-  0x00623dd0 - 0x00623fc8  (36 items, 504 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 24 functions
-      0x00623dd0  DAT_00623dd0  undefined4
-      0x00623dd4  DAT_00623dd4  undefined4
-      0x00623dd8  DAT_00623dd8  undefined4
-      0x00623ddc  DAT_00623ddc  undefined8 [double]
-      0x00623de4  DAT_00623de4  undefined4 [double]
-      0x00623e28  DAT_00623e28  undefined4
-      ... +30 more
 
   0x00620690 - 0x00620830  (32 items, 416 bytes span)
     Classification: vector_groups
@@ -1383,7 +1385,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 10 functions
+    Referenced by: 12 functions
       0x02c9d294  DAT_02c9d294  undefined4
       0x02c9d298  DAT_02c9d298  undefined4
       0x02c9d29c  DAT_02c9d29c  undefined4
@@ -1396,7 +1398,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 4 groups of 3 consecutive ints found
-    Referenced by: 398 functions
+    Referenced by: 402 functions
      near: g_CEnemyClassVersion (int) at +24
       0x0061b498  DAT_0061b498  undefined4 [float]
       0x0061b49c  DAT_0061b49c  undefined4 [float]
@@ -1471,6 +1473,20 @@ MEDIUM CONFIDENCE (136 clusters)
       0x005d4ac8  DAT_005d4ac8  undefined4 [float]
       0x005d4acc  DAT_005d4acc  undefined4 [float]
       0x005d4ad0  DAT_005d4ad0  undefined4 [float]
+      ... +7 more
+
+  0x00605120 - 0x006051a8  (13 items, 136 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 7 functions
+     near: g_CSentinelTypeInfo (WatcomTypeInfo) at +368
+      0x00605120  DAT_00605120  undefined4 [float]
+      0x00605138  DAT_00605138  undefined4 [float]
+      0x0060513c  DAT_0060513c  undefined4 [float]
+      0x00605158  DAT_00605158  undefined4 [float]
+      0x00605170  DAT_00605170  undefined4 [float]
+      0x0060518c  DAT_0060518c  undefined4 [float]
       ... +7 more
 
   0x01d227dc - 0x01d22844  (13 items, 104 bytes span)
@@ -1580,20 +1596,6 @@ MEDIUM CONFIDENCE (136 clusters)
       0x02c82434  DAT_02c82434  undefined4
       ... +6 more
 
-  0x00605120 - 0x006051a0  (11 items, 128 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 6 functions
-     near: g_CSentinelTypeInfo (WatcomTypeInfo) at +368
-      0x00605120  DAT_00605120  undefined4 [float]
-      0x00605138  DAT_00605138  undefined4 [float]
-      0x0060513c  DAT_0060513c  undefined4 [float]
-      0x00605158  DAT_00605158  undefined4 [float]
-      0x00605170  DAT_00605170  undefined4 [float]
-      0x0060518c  DAT_0060518c  undefined4 [float]
-      ... +5 more
-
   0x006144d0 - 0x00614548  (11 items, 120 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -1626,7 +1628,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 2 functions
+    Referenced by: 4 functions
       0x007c7b58  DAT_007c7b58  undefined4
       0x007c7b5c  DAT_007c7b5c  undefined4
       0x007c7b60  DAT_007c7b60  undefined4
@@ -1680,7 +1682,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 8 functions
+    Referenced by: 10 functions
       0x007c841c  DAT_007c841c  undefined4
       0x007c8420  DAT_007c8420  undefined4
       0x007c8424  DAT_007c8424  undefined4
@@ -1761,7 +1763,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 13 functions
+    Referenced by: 17 functions
       0x007c7550  DAT_007c7550  undefined4
       0x007c7554  DAT_007c7554  undefined4
       0x007c7558  DAT_007c7558  undefined4 [double]
@@ -1854,7 +1856,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 261 functions
+    Referenced by: 262 functions
      near: g_CDocClassVersion (int) at -68
       0x00612488  DAT_00612488  undefined4
       0x00612550  DAT_00612550  undefined4
@@ -1962,7 +1964,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 9 functions
+    Referenced by: 11 functions
      near: g_CDemonCameraVTable (undefined1*) at -40
       0x005fe5fc  DAT_005fe5fc  undefined4 [float]
       0x005fe600  DAT_005fe600  undefined4 [float]
@@ -2097,7 +2099,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 1 functions
+    Referenced by: 2 functions
       0x007c8a30  DAT_007c8a30  undefined4
       0x007c8a34  DAT_007c8a34  undefined1
       0x007c8a38  DAT_007c8a38  undefined4
@@ -2109,7 +2111,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 2 functions
+    Referenced by: 4 functions
       0x007c9030  DAT_007c9030  undefined4
       0x007c9034  DAT_007c9034  undefined4
       0x007c9038  DAT_007c9038  undefined4
@@ -2121,7 +2123,7 @@ MEDIUM CONFIDENCE (136 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 1 functions
+    Referenced by: 3 functions
       0x007c9630  DAT_007c9630  undefined4
       0x007c9634  DAT_007c9634  undefined4
       0x007c9638  DAT_007c9638  undefined4
@@ -2839,8 +2841,8 @@ LOW CONFIDENCE (158 clusters)
   0x01c43530 - 0x01c43551  (8 items, 33 bytes span)
     Classification: struct
     Likely type: struct (33 bytes span, 8 fields)
-    Reason: mixed strides, shared by 123 functions
-    Referenced by: 123 functions
+    Reason: mixed strides, shared by 125 functions
+    Referenced by: 125 functions
       0x01c43530  DAT_01c43530  undefined4 [float]
       0x01c43534  DAT_01c43534  undefined4
       0x01c4353c  DAT_01c4353c  undefined4
@@ -2948,8 +2950,8 @@ LOW CONFIDENCE (158 clusters)
   0x01c50930 - 0x01c50954  (7 items, 36 bytes span)
     Classification: struct
     Likely type: struct (36 bytes span, 7 fields)
-    Reason: mixed strides, shared by 133 functions
-    Referenced by: 133 functions
+    Reason: mixed strides, shared by 134 functions
+    Referenced by: 134 functions
       0x01c50930  DAT_01c50930  undefined4
       0x01c50934  DAT_01c50934  undefined4
       0x01c50940  DAT_01c50940  undefined4
@@ -3064,8 +3066,8 @@ LOW CONFIDENCE (158 clusters)
   0x01e7dabc - 0x01e7db20  (6 items, 100 bytes span)
     Classification: struct
     Likely type: struct (100 bytes span, 6 fields)
-    Reason: mixed strides, shared by 25 functions
-    Referenced by: 25 functions
+    Reason: mixed strides, shared by 26 functions
+    Referenced by: 26 functions
       0x01e7dabc  DAT_01e7dabc  undefined4
       0x01e7dac0  DAT_01e7dac0  undefined4
       0x01e7dac8  DAT_01e7dac8  undefined4
@@ -3100,9 +3102,9 @@ LOW CONFIDENCE (158 clusters)
   0x02c9defc - 0x02c9df34  (6 items, 56 bytes span)
     Classification: struct
     Likely type: struct (56 bytes span, 6 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-      0x02c9defc  DAT_02c9defc  undefined4
+    Reason: mixed strides, shared by 3 functions
+    Referenced by: 3 functions
+      0x02c9defc  DAT_02c9defc  undefined4 [double]
       0x02c9df00  DAT_02c9df00  undefined4 [double]
       0x02c9df28  DAT_02c9df28  undefined4 [double]
       0x02c9df2c  DAT_02c9df2c  undefined4
@@ -3112,8 +3114,8 @@ LOW CONFIDENCE (158 clusters)
   0x02c9e4f8 - 0x02c9e530  (6 items, 56 bytes span)
     Classification: struct
     Likely type: struct (56 bytes span, 6 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
+    Reason: mixed strides, shared by 3 functions
+    Referenced by: 3 functions
       0x02c9e4f8  DAT_02c9e4f8  undefined4 [double]
       0x02c9e4fc  DAT_02c9e4fc  undefined4 [double]
       0x02c9e500  DAT_02c9e500  undefined4
@@ -3172,8 +3174,8 @@ LOW CONFIDENCE (158 clusters)
   0x00610cb0 - 0x00610eb8  (5 items, 520 bytes span)
     Classification: struct
     Likely type: struct (520 bytes span, 5 fields)
-    Reason: mixed strides, shared by 9 functions
-    Referenced by: 9 functions
+    Reason: mixed strides, shared by 10 functions
+    Referenced by: 10 functions
      near: g_CCharacterClassVersion (int) at -24
       0x00610cb0  DAT_00610cb0  undefined4 [float]
       0x00610d40  DAT_00610d40  undefined4
@@ -3803,7 +3805,7 @@ LOW CONFIDENCE (158 clusters)
     Classification: unknown
     Likely type: unknown grouping
     Reason: 3 items, span=8 bytes
-    Referenced by: 570 functions
+    Referenced by: 574 functions
       0x01d1d400  DAT_01d1d400  undefined4
       0x01d1d404  DAT_01d1d404  undefined4
       0x01d1d408  DAT_01d1d408  undefined4
@@ -4231,7 +4233,7 @@ LOW CONFIDENCE (158 clusters)
     Classification: unknown
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
-    Referenced by: 1 functions
+    Referenced by: 2 functions
       0x0268ece8  DAT_0268ece8  undefined4
       0x0268ecec  DAT_0268ecec  undefined4
 
@@ -4299,7 +4301,7 @@ ISOLATED DAT_ GLOBALS (94 - not part of any cluster)
   ... +44 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (2780)
+FILTERED OUT - INSIDE NAMED DATA (2782)
 --------------------------------------------------------------------------------
   DAT_005d2030                    inside s_default_act_005d2024
   DAT_005d2034                    inside s_default_act_005d2024
@@ -6313,6 +6315,8 @@ FILTERED OUT - INSIDE NAMED DATA (2780)
   DAT_005f0e2d                    inside s_Invalid_collision_type_005f0dfb
   DAT_005f0ec5                    inside s_Invalid_collision_type_005f0eab
   DAT_005f0fc9                    inside s_CDemonSet_setRayType_use_005f0f9d
+  DAT_005f0fcd                    inside s_CDemonSet_setRayType_use_005f0f9d
+  DAT_005f0fd5                    inside s_CDemonSet_setRayType_use_005f0f9d
   DAT_005f0fdd                    inside s_CDemonSet_setRayType_use_005f0f9d
   DAT_005f0fe5                    inside s_CDemonSet_setRayType_use_005f0f9d
   DAT_005f0fed                    inside s_CDemonSet_setRayType_use_005f0f9d

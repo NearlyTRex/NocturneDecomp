@@ -21,9 +21,9 @@ char * __cdecl getItemDisplayName(CDemonActor *actor_ptr);
 // Address: 004d9f80
 char * __cdecl getItemDescription(CDemonActor *actor_ptr);
 
-// Original: core_inv.cpp_FUN_004d9ff0
+// Original: core_inv.cpp_screenToWorldPoint_FUN_004d9ff0
 // Address: 004d9ff0
-void FUN_004d9ff0(float param_1,float param_2);
+CVector3i * __stack2_esi screenToWorldPoint(float screen_x,float screen_y,CVector3i *out_point);
 
 // Original: core_inv.cpp_renderCompass_FUN_004da130
 // Address: 004da130

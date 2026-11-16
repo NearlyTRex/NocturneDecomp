@@ -4,54 +4,54 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 1925 functions
-  1 suspects: 844 functions
+  0 suspects: 1923 functions
+  1 suspects: 852 functions
   2 suspects: 447 functions
-  3 suspects: 285 functions
-  4 suspects: 217 functions
-  5 suspects: 129 functions
-  6 suspects: 122 functions
-  7 suspects: 98 functions
+  3 suspects: 286 functions
+  4 suspects: 218 functions
+  5 suspects: 128 functions
+  6 suspects: 123 functions
+  7 suspects: 97 functions
   8 suspects: 89 functions
   9 suspects: 77 functions
-  10 suspects: 60 functions
-  11 suspects: 56 functions
-  12 suspects: 67 functions
-  13 suspects: 41 functions
+  10 suspects: 62 functions
+  11 suspects: 55 functions
+  12 suspects: 68 functions
+  13 suspects: 43 functions
   14 suspects: 37 functions
-  15 suspects: 39 functions
-  16 suspects: 28 functions
-  17 suspects: 39 functions
-  18 suspects: 32 functions
+  15 suspects: 37 functions
+  16 suspects: 29 functions
+  17 suspects: 40 functions
+  18 suspects: 31 functions
   19 suspects: 29 functions
-  20 suspects: 14 functions
-  21 suspects: 17 functions
-  22 suspects: 22 functions
+  20 suspects: 20 functions
+  21 suspects: 18 functions
+  22 suspects: 25 functions
   23 suspects: 9 functions
   24 suspects: 17 functions
   25 suspects: 16 functions
   26 suspects: 20 functions
   27 suspects: 19 functions
-  28 suspects: 12 functions
+  28 suspects: 13 functions
   29 suspects: 17 functions
   30 suspects: 14 functions
-  31 suspects: 10 functions
+  31 suspects: 9 functions
   32 suspects: 11 functions
   33 suspects: 16 functions
-  34 suspects: 17 functions
+  34 suspects: 18 functions
   35 suspects: 9 functions
   36 suspects: 7 functions
   37 suspects: 7 functions
   38 suspects: 6 functions
   39 suspects: 9 functions
   40 suspects: 9 functions
-  41 suspects: 10 functions
+  41 suspects: 11 functions
   42 suspects: 3 functions
   43 suspects: 6 functions
   44 suspects: 9 functions
   45 suspects: 6 functions
-  46 suspects: 9 functions
-  47 suspects: 7 functions
+  46 suspects: 10 functions
+  47 suspects: 8 functions
   48 suspects: 6 functions
   49 suspects: 2 functions
   50 suspects: 2 functions
@@ -74,7 +74,7 @@ SUSPECT COUNT DISTRIBUTION
   68 suspects: 1 functions
   69 suspects: 3 functions
   70 suspects: 1 functions
-  71 suspects: 2 functions
+  71 suspects: 3 functions
   72 suspects: 3 functions
   73 suspects: 2 functions
   74 suspects: 4 functions
@@ -84,7 +84,7 @@ SUSPECT COUNT DISTRIBUTION
   80 suspects: 4 functions
   81 suspects: 1 functions
   82 suspects: 1 functions
-  83 suspects: 2 functions
+  83 suspects: 1 functions
   84 suspects: 1 functions
   85 suspects: 2 functions
   86 suspects: 2 functions
@@ -98,6 +98,7 @@ SUSPECT COUNT DISTRIBUTION
   97 suspects: 2 functions
   100 suspects: 1 functions
   101 suspects: 4 functions
+  102 suspects: 1 functions
   106 suspects: 1 functions
   109 suspects: 1 functions
   113 suspects: 1 functions
@@ -105,6 +106,7 @@ SUSPECT COUNT DISTRIBUTION
   116 suspects: 2 functions
   118 suspects: 1 functions
   119 suspects: 1 functions
+  122 suspects: 1 functions
   125 suspects: 2 functions
   126 suspects: 1 functions
   127 suspects: 1 functions
@@ -129,6 +131,7 @@ SUSPECT COUNT DISTRIBUTION
   229 suspects: 1 functions
   232 suspects: 1 functions
   236 suspects: 1 functions
+  237 suspects: 1 functions
   241 suspects: 1 functions
   242 suspects: 2 functions
   276 suspects: 1 functions
@@ -136,13 +139,13 @@ SUSPECT COUNT DISTRIBUTION
   351 suspects: 1 functions
   354 suspects: 1 functions
   372 suspects: 1 functions
-  398 suspects: 1 functions
+  397 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [warning_overlapping_globals] (541 functions)
+  [warning_overlapping_globals] (546 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0043 (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -156,7 +159,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_dtri.cpp_getClippedVertexCount_FUN_0047ae80   (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
-    shape_edittool.cpp_FUN_00481ef0                    (  5 lines)
+    shape_edittool.cpp_isEditorMini3DMode_FUN_00481ef0 (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_font.cpp_getAlpha_FUN_004b37d0              (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -484,6 +487,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_dynamite.cpp_CDynamite_lightFuse_FUN_0047b1e0 ( 11 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_flattn.cpp_flattenTransformPoint_FUN_004ad660 ( 11 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_flattn.cpp_flattenTransformVector_FUN_004ad6e ( 11 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_ ( 11 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_lever.cpp_CLever_activate_FUN_004e0630        ( 11 lines)
@@ -717,6 +724,12 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_edittool.cpp_CPickList_getItemAtMousePositio ( 17 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_fire.cpp_safeAcos_FUN_00496c10                ( 17 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_flattn.cpp_setFlattenMatrix_FUN_004ad4d0      ( 17 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_flattn.cpp_setFlattenMatrixAndOffset_FUN_004a ( 17 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    core_flattn.cpp_setFlattenMatrixTransposed_FUN_004 ( 17 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     engine_ini.cpp_getProfileInteger_FUN_004d8950      ( 17 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -1673,8 +1686,12 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_weapon.cpp_CWeapon_dtor_FUN_0057aed0          ( 21 lines)
       ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_inters...
 
-  [unresolved_funcptr] (13 functions)
+  [unresolved_funcptr] (15 functions)
   ------------------------------------------------------------
+    FUN_00434e90                                       (  4 lines)
+      code * FUN_00434e90(void)...
+    FUN_00434ec0                                       (  4 lines)
+      code * FUN_00434ec0(void)...
     engine_dosio.cpp_callRelativeFilePathHook_FUN_0046 (  6 lines)
       (*(code *)PTR_engine_dosio_cpp_getRelativeFilePath_FUN_00465...
     engine_3d.c_renderPrim_FUN_00407760                ( 10 lines)
@@ -1773,6 +1790,25 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_edittool.cpp_CEditorTools_showYesAllNoCancel ( 31 lines)
       puStack_8 = &stack0x0000000c;...
 
+  [warning_type_propagation] (8 functions)
+  ------------------------------------------------------------
+    core_carved.cpp_CCarved_canPickupWithHand_FUN_0042 ( 11 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    core_demnfolk.cpp_CDemnfolk_canPickupWithHand_FUN_ ( 11 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    core_zombie.cpp_CZombie_canPickupWithHand_FUN_0058 ( 11 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    core_construc.cpp_CConstruct_getEffectivePosition_ ( 33 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    core_zombiepriest.cpp_CZombiePriest_processDamage_ ( 60 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    core_carved.cpp_CCarved_processDamage_FUN_00428a80 ( 76 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    core_zombie.cpp_CZombie_processDamage_FUN_0058c5a0 ( 84 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045 ( 88 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+
   [pointer_cast] (7 functions)
   ------------------------------------------------------------
     support_trisock.cpp_dnsRequestCancel_FUN_00570e80  (  6 lines)
@@ -1806,23 +1842,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       iVar3 = 0x01D81080;...
     core_bugs.cpp_CBugs_process_FUN_00421300           ( 87 lines)
       this_ptr_00 = 0x01D81080;...
-
-  [warning_type_propagation] (7 functions)
-  ------------------------------------------------------------
-    core_carved.cpp_CCarved_canPickupWithHand_FUN_0042 ( 11 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    core_demnfolk.cpp_CDemnfolk_canPickupWithHand_FUN_ ( 11 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    core_zombie.cpp_CZombie_canPickupWithHand_FUN_0058 ( 11 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    core_zombiepriest.cpp_CZombiePriest_processDamage_ ( 60 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    core_carved.cpp_CCarved_processDamage_FUN_00428a80 ( 76 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    core_zombie.cpp_CZombie_processDamage_FUN_0058c5a0 ( 84 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045 ( 88 lines)
-      /* WARNING: Type propagation algorithm not settling */...
 
   [param_count_too_few] (5 functions)
   ------------------------------------------------------------
@@ -1899,8 +1918,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS
 ========================================================================================================================
-  core_actor.cpp_FUN_0040d200
-    File: core/actor.cpp, Lines: 4, Types: ['unnamed_param']
   core_chain.cpp_fastSqrt_FUN_0042ab10
     File: core/chain.cpp, Lines: 5, Types: ['fast_sqrt_inline', 'warning_overlapping_globals']
   core_cloth.cpp_fastInvSqrt_FUN_0043ff90
@@ -1951,8 +1968,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: support/codec.cpp, Lines: 7, Types: ['unnamed_param']
   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00448fd0
     File: core/dcamera.cpp, Lines: 7, Types: ['undefined_data', 'warning_overlapping_globals']
-  core_dpart.cpp_FUN_004663f2
-    File: core/dpart.cpp, Lines: 7, Types: ['unaffected_reg']
   core_event.cpp_formatEventError_FUN_0048b7f0
     File: core/event.cpp, Lines: 7, Types: ['stack_ref', 'undefined_data']
   engine_ini.cpp_CIniFile_setDoubleValue_FUN_004d8e00
@@ -1965,6 +1980,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/actor.cpp, Lines: 8, Types: ['undefined_data']
   core_actor.cpp_plotPixelWithBoundsCheck_FUN_004096f0
     File: core/actor.cpp, Lines: 8, Types: ['undefined_data']
+  FUN_00434ea0
+    File: ., Lines: 8, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   core_fldnotes.cpp_SNotesMap_dtor_FUN_004a9e70
     File: core/fldnotes.cpp, Lines: 8, Types: ['negative_offset']
   engine_font.cpp_getDefaultTextColor_FUN_004b12e0
@@ -1981,6 +1998,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/edittool.cpp, Lines: 9, Types: ['undefined_data']
   core_flies.cpp_drawFlyPixelClipped_FUN_004add90
     File: core/flies.cpp, Lines: 9, Types: ['undefined_data']
+  core_game.cpp_CGame_resetMusic_FUN_004c4d10
+    File: core/game.cpp, Lines: 9, Types: ['pointer_cast', 'pointer_truncation']
   core_hero.cpp_CHero_toggleGoggles_FUN_004d48d0
     File: core/hero.cpp, Lines: 9, Types: ['unresolved_funcptr']
   core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004dd
@@ -3269,6 +3288,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/main.c, Lines: 47, Types: ['stack_ref', 'unrolled_strchr', 'warning_overlapping_globals']
   core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30
     File: core/sound.cpp, Lines: 48, Types: ['unrolled_strcpy', 'warning_overlapping_globals']
+  wincore_winrun.cpp_FUN_005829b0
+    File: wincore/winrun.cpp, Lines: 48, Types: ['stack_param', 'warning_overlapping_globals']
   support_codec.cpp_readBitsFromStream_FUN_004400f0
     File: support/codec.cpp, Lines: 49, Types: ['unknown_field', 'unresolved_funcptr']
   core_event.cpp_CEventList_setSfxHandle_FUN_00495150

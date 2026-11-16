@@ -4364,13 +4364,10 @@
   {
     "addr":"004394c0",
     "callers":[
+      "00439ae0",
       "00439da0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "00439c4f",
-      "00439cc1"
-    ],
     "instructions":109,
     "method":"interpolateVertexFarClip",
     "name":"engine_clipper.c_interpolateVertexFarClip_FUN_004394c0",
@@ -4436,6 +4433,7 @@
       "004051a0",
       "00405280",
       "00405360",
+      "00405400",
       "004054e0",
       "00405600",
       "00405720",
@@ -4511,12 +4509,10 @@
     "addr":"0043a8c0",
     "callers":[
       "0043ad90",
+      "0043b330",
       "0043bac0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0043b84c"
-    ],
     "instructions":126,
     "method":"interpolateVertexRightClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043a8c0",
@@ -4550,25 +4546,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"engine/clipper.c",
-    "variadic":false
-  },
-  {
-    "addr":"0043b3c0",
-    "calls":[
-      "00515ac0",
-      "00565c40"
-    ],
-    "conv":"unknown",
-    "instructions":69,
-    "method":"FUN_0043b3c0",
-    "name":"engine_clipper.c_FUN_0043b3c0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -4942,20 +4919,31 @@
   },
   {
     "addr":"00444340",
-    "conv":"unknown",
+    "cls":"CConstruct",
+    "conv":"__stack_esi",
     "data_refs":[
       "005dd850",
       "005dd9b0",
       "005ddb10"
     ],
     "instructions":56,
-    "method":"FUN_00444340",
-    "name":"core_construc.cpp_FUN_00444340",
-    "receiver":false,
+    "method":"getEffectivePosition",
+    "name":"core_construc.cpp_CConstruct_getEffectivePosition_FUN_00444340",
+    "params":[
+      {
+        "name":"out_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/construc.cpp",
     "variadic":false
@@ -6908,6 +6896,7 @@
       "004f5370",
       "004f53f0",
       "0053acf0",
+      "0053f0f0",
       "0053f940"
     ],
     "calls":[
@@ -6944,7 +6933,7 @@
       "00475090",
       "0047aea0",
       "0053ad70",
-      "0053f5d0",
+      "0053f0f0",
       "0053f940",
       "00548c70",
       "00577760"
@@ -12782,7 +12771,8 @@
     "addr":"004e6140",
     "callers":[
       "004051a0",
-      "00405280"
+      "00405280",
+      "00405400"
     ],
     "calls":[
       "004e6060"
@@ -15538,7 +15528,7 @@
     "addr":"00515ac0",
     "callers":[
       "00439da0",
-      "0043b3c0",
+      "0043b330",
       "0043bac0",
       "00466d50",
       "004673d0",
@@ -19151,7 +19141,7 @@
     "addr":"00565c40",
     "callers":[
       "00439da0",
-      "0043b3c0",
+      "0043b330",
       "0043bac0",
       "00466d50",
       "004673d0",
@@ -21559,6 +21549,21 @@
     "variadic":false
   },
   {
+    "addr":"005849c0",
+    "conv":"unknown",
+    "instructions":399,
+    "method":"FUN_005849c0",
+    "name":"core_xform.cpp_FUN_005849c0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"core/xform.cpp",
+    "variadic":false
+  },
+  {
     "addr":"00585740",
     "callers":[
       "00444ac0",
@@ -22754,6 +22759,7 @@
       "00510740",
       "00510810",
       "00510a90",
+      "00510c70",
       "00512fb0",
       "005286f0",
       "005289b0",

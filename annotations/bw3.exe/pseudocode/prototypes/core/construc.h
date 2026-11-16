@@ -49,9 +49,9 @@ int __cdecl CConstruct::getTargetPoints(CConstruct *this_ptr,CVector3f *out_poin
 // Address: 00444110
 void __cdecl CConstruct::explode(CConstruct *this_ptr);
 
-// Original: core_construc.cpp_FUN_00444340
+// Original: core_construc.cpp_CConstruct_getEffectivePosition_FUN_00444340
 // Address: 00444340
-void FUN_00444340(int param_1);
+CVector3f * __stack_esi CConstruct::getEffectivePosition(CConstruct *this_ptr,CVector3f *out_position);
 
 // Original: core_construc.cpp_CConstruct_startRecombine_FUN_004443d0
 // Address: 004443d0

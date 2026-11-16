@@ -77,7 +77,6 @@ void __cdecl engine_special_cpp_clearZBufferNative_FUN_00560dd4(void);
 void __cdecl engine_special_cpp_clearScreenRegion_FUN_00560e37(int color);
 void __cdecl engine_special_cpp_fillDepthRegion_FUN_00560ec2(int left,int right,int top,int bottom);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
-void engine_special_cpp_FUN_005616a0(void);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
@@ -86,6 +85,7 @@ void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_005630a3(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0056313e(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_00563257(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
+undefined8 FUN_0056325d(void);
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_transformPoint_FUN_0056356c(SProjectedVertex *output,CVector3i *input);
 void __cdecl core_spawner_cpp_staticInit_FUN_00563840(void);

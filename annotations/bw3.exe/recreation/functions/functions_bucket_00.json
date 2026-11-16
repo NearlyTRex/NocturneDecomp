@@ -2384,14 +2384,24 @@
   },
   {
     "addr":"0040d200",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":8,
-    "method":"FUN_0040d200",
-    "name":"core_actor.cpp_FUN_0040d200",
+    "method":"sqrtFloatRef",
+    "name":"core_actor.cpp_sqrtFloatRef_FUN_0040d200",
+    "params":[
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/actor.cpp",
@@ -4652,11 +4662,13 @@
       "00435910",
       "00435b50",
       "00435cb0",
+      "00435ee0",
+      "00436020",
       "00436170",
       "0050f440"
     ],
     "conv":"__cdecl",
-    "instructions":15,
+    "instructions":5,
     "method":"getColorConversionFunction",
     "name":"cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80",
     "receiver":false,
@@ -8109,24 +8121,6 @@
     "variadic":false
   },
   {
-    "addr":"0046bd80",
-    "calls":[
-      "0046b160"
-    ],
-    "conv":"unknown",
-    "instructions":37,
-    "method":"FUN_0046bd80",
-    "name":"engine_drender.cpp_FUN_0046bd80",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/drender.cpp",
-    "variadic":false
-  },
-  {
     "addr":"0046c800",
     "callers":[
       "00448060",
@@ -8288,7 +8282,7 @@
       "00536c90",
       "00536f90",
       "00538ad0",
-      "0053f5d0",
+      "0053f0f0",
       "0053f940",
       "00548c70",
       "00549620"
@@ -22479,21 +22473,6 @@
     "variadic":false
   },
   {
-    "addr":"00584b00",
-    "conv":"unknown",
-    "instructions":288,
-    "method":"FUN_00584b00",
-    "name":"core_xform.cpp_FUN_00584b00",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/xform.cpp",
-    "variadic":false
-  },
-  {
     "addr":"00585780",
     "callers":[
       "005854a0"
@@ -22639,13 +22618,10 @@
   {
     "addr":"00587400",
     "callers":[
+      "005877c0",
       "00587cd0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0058789b",
-      "00587909"
-    ],
     "instructions":79,
     "method":"clipInterpolateLeftPlane",
     "name":"core_xform.cpp_clipInterpolateLeftPlane_FUN_00587400",
@@ -22687,13 +22663,10 @@
   {
     "addr":"00587580",
     "callers":[
+      "00587ab0",
       "00587cd0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "00587b8c",
-      "00587bfa"
-    ],
     "instructions":81,
     "method":"clipInterpolateBottomPlane",
     "name":"core_xform.cpp_clipInterpolateBottomPlane_FUN_00587580",

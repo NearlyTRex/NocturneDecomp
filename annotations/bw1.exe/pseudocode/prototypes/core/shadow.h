@@ -61,9 +61,9 @@ void __cdecl CShadow::playHowlSound(CShadow *this_ptr);
 // Address: 0055f5e0
 void __cdecl CShadow::playEmergeSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_0055f9c0
-// Address: 0055f9c0
-void FUN_0055f9c0(void);
+// Original: core_shadow.cpp_FUN_0055f630
+// Address: 0055f630
+void FUN_0055f630(void);
 
 // Original: core_shadow.cpp_CShadow_renderOpaque_FUN_0055fbf0
 // Address: 0055fbf0

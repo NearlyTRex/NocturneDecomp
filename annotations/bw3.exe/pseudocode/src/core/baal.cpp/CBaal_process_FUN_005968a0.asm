@@ -32,7 +32,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_baal.cpp_CBaal_chooseAttack_FUN_00597700
-;   core_baal.cpp_FUN_00597be0
+;   core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0
 ;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_00419790
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
@@ -234,8 +234,8 @@ section .text
         ;   XREF to: 00596b0f (CONDITIONAL_JUMP)  ; LAB_00596b0f
     PUSH 0x0                            ; 00596b04
     PUSH EBX                            ; 00596b06
-    CALL core_baal.cpp_FUN_00597be0     ; 00596b07
-        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; undefined core_baal.cpp_FUN_00597be0()
+    CALL core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0 ; 00596b07
+        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; void core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0(CBaal * this_ptr, int allow_stand)
     ADD ESP,0x8                         ; 00596b0c
     MOV EAX,dword ptr [EBP + 0x72]      ; 00596b0f
         ;   Label: LAB_00596b0f
@@ -765,8 +765,8 @@ section .text
         ;   XREF to: 005970fb (CONDITIONAL_JUMP)  ; LAB_005970fb
     PUSH 0x0                            ; 005970f0
     PUSH EBX                            ; 005970f2
-    CALL core_baal.cpp_FUN_00597be0     ; 005970f3
-        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; undefined core_baal.cpp_FUN_00597be0()
+    CALL core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0 ; 005970f3
+        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; void core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0(CBaal * this_ptr, int allow_stand)
     ADD ESP,0x8                         ; 005970f8
     MOV EAX,[0x01d5ba14]                ; 005970fb | DAT_01d5ba14
         ;   Label: LAB_005970fb
@@ -1110,8 +1110,8 @@ section .text
         ;   XREF to: 00597513 (CONDITIONAL_JUMP)  ; LAB_00597513
     PUSH 0x1                            ; 005974d3
     PUSH EBX                            ; 005974d5
-    CALL core_baal.cpp_FUN_00597be0     ; 005974d6
-        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; undefined core_baal.cpp_FUN_00597be0()
+    CALL core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0 ; 005974d6
+        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; void core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0(CBaal * this_ptr, int allow_stand)
     ADD ESP,0x8                         ; 005974db
     JMP 0x00596b24                      ; 005974de
         ;   XREF to: 00596b24 (UNCONDITIONAL_JUMP)  ; caseD_8
@@ -1152,8 +1152,8 @@ section .text
         ;   XREF to: 00597556 (CONDITIONAL_JUMP)  ; LAB_00597556
     PUSH 0x1                            ; 00597546
     PUSH EBX                            ; 00597548
-    CALL core_baal.cpp_FUN_00597be0     ; 00597549
-        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; undefined core_baal.cpp_FUN_00597be0()
+    CALL core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0 ; 00597549
+        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; void core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0(CBaal * this_ptr, int allow_stand)
     ADD ESP,0x8                         ; 0059754e
     JMP 0x00596b24                      ; 00597551
         ;   XREF to: 00596b24 (UNCONDITIONAL_JUMP)  ; caseD_8

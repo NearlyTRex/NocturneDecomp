@@ -29,9 +29,9 @@ void __cdecl CShadowsc::setup(CShadowsc *this_ptr);
 // Address: 00560630
 void __cdecl CShadowsc::process(CShadowsc *this_ptr,float delta_time);
 
-// Original: core_shadowsc.cpp_FUN_00560fe0
+// Original: core_shadowsc.cpp_CShadowsc_playGiantAttackSound_FUN_00560fe0
 // Address: 00560fe0
-void FUN_00560fe0(int param_1);
+void __cdecl CShadowsc::playGiantAttackSound(CShadowsc *this_ptr);
 
 // Original: core_shadowsc.cpp_CShadowsc_playAttackSound_FUN_00561020
 // Address: 00561020

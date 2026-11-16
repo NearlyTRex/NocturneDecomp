@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 18,
     "complexity_score": 7,
-    "cross_reference_count": 8,
+    "cross_reference_count": 9,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -56,6 +56,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00559730",
+      "from_addr": "00559804",
+      "name": "core_setdir.cpp_FUN_00559730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005847e0",
       "from_addr": "005848c9",
       "name": "shape_spotview.cpp_CSpotView_applyCamera_FUN_005847e0",
@@ -88,7 +94,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "004fea78",
@@ -171,6 +177,17 @@
         "call_addr": "005848c9",
         "call_type": "direct",
         "caller": "shape_spotview.cpp_CSpotView_applyCamera_FUN_005847e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00559804",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00559730",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

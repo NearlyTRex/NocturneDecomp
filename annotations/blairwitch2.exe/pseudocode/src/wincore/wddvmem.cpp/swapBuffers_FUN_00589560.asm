@@ -21,7 +21,7 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e1b40
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4c96
 ;   core_main.c_showDeveloperToolsMenu_FUN_004e45e0 at 004e4627
-;   core_menu.cpp_FUN_004eba50 at 004ebc36
+;   core_menu.cpp_adjustFixedPointSlider_FUN_004eba50 at 004ebc36
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb9a6
 ;   ... and 31 more
 ;

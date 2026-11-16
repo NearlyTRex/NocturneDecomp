@@ -14,7 +14,7 @@
 ; XREF[9]:
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b35a8
 ;   core_game.cpp_drawHealthBar_FUN_004b3220 at 004b326c
-;   core_menu.cpp_FUN_004eba50 at 004ebb9a
+;   core_menu.cpp_adjustFixedPointSlider_FUN_004eba50 at 004ebb9a
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb90a
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ecaab
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440 at 004846b6

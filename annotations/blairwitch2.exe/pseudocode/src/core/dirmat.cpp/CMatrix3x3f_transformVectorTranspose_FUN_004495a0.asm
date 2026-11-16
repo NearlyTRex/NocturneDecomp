@@ -11,7 +11,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[25]:
+; XREF[26]:
+;   FUN_0043e450 at 0043e539
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30 at 00408d4a
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 at 00408e2a
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00416d70 at 0041708f
@@ -21,8 +22,7 @@
 ;   core_cloth.cpp_CCloth_applyRotation_FUN_005b19b0 at 005b1a62
 ;   core_cloth.cpp_CCloth_step_FUN_005afe20 at 005b0378
 ;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00443610 at 00443892
-;   core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00448c90 at 00448ce5
-;   ... and 15 more
+;   ... and 16 more
 ;
 ; *****************************************************************************
 

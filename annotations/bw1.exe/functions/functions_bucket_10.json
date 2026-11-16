@@ -9149,6 +9149,25 @@
     }
   },
   {
+    "addr":"00437290",
+    "body":[
+      {
+        "end":"004372a4",
+        "size":21,
+        "start":"00437290"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00437290",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"00437490",
     "body":[
       {
@@ -9297,18 +9316,17 @@
     }
   },
   {
-    "addr":"00438310",
+    "addr":"00438410",
     "body":[
       {
-        "end":"00438317",
-        "size":8,
-        "start":"00438310"
+        "end":"004384e7",
+        "size":216,
+        "start":"00438410"
       }
     ],
     "importable":true,
-    "name":"cockpit_ckptutil.c_FUN_00438310",
+    "name":"cockpit_ckptutil.c_FUN_00438410",
     "ret":"undefined1",
-    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -12724,6 +12742,25 @@
     }
   },
   {
+    "addr":"0044fb10",
+    "body":[
+      {
+        "end":"0044fde1",
+        "size":722,
+        "start":"0044fb10"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_0044fb10",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"00451690",
     "body":[
       {
@@ -13678,6 +13715,25 @@
           "type":"int"
         }
       ]
+    }
+  },
+  {
+    "addr":"00455b90",
+    "body":[
+      {
+        "end":"00455ce0",
+        "size":337,
+        "start":"00455b90"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00455b90",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
     }
   },
   {
@@ -20901,6 +20957,25 @@
     }
   },
   {
+    "addr":"00490f90",
+    "body":[
+      {
+        "end":"004910dc",
+        "size":333,
+        "start":"00490f90"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00490f90",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"00491690",
     "body":[
       {
@@ -25910,14 +25985,29 @@
         "start":"004bf890"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_flattn.cpp_FUN_004bf890",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_flattn.cpp_setFlattenMatrixTransposed_FUN_004bf890",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"matrix",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x3f*"
+        }
+      ]
     }
   },
   {
@@ -25929,14 +26019,45 @@
         "start":"004bf910"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_flattn.cpp_FUN_004bf910",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_flattn.cpp_flattenTransformPoint_FUN_004bf910",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"point_out",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"point_in",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ]
     }
   },
   {
@@ -25948,14 +26069,45 @@
         "start":"004bf990"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_flattn.cpp_FUN_004bf990",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_flattn.cpp_flattenTransformVector_FUN_004bf990",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"vector_out",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"vector_in",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ]
     }
   },
   {
@@ -40087,6 +40239,25 @@
     }
   },
   {
+    "addr":"00525690",
+    "body":[
+      {
+        "end":"005257cd",
+        "size":318,
+        "start":"00525690"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00525690",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"00527190",
     "body":[
       {
@@ -42622,6 +42793,43 @@
     }
   },
   {
+    "addr":"00538f90",
+    "body":[
+      {
+        "end":"00539030",
+        "size":161,
+        "start":"00538f90"
+      }
+    ],
+    "importable":true,
+    "name":"cockpit_pkbmpset.cpp_FUN_00538f90",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"00539090",
+    "body":[
+      {
+        "end":"005390b7",
+        "size":40,
+        "start":"00539090"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00539090",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"00539190",
     "body":[
       {
@@ -43184,6 +43392,24 @@
           "type":"int"
         }
       ]
+    }
+  },
+  {
+    "addr":"0053df10",
+    "body":[
+      {
+        "end":"0053dffb",
+        "size":236,
+        "start":"0053df10"
+      }
+    ],
+    "importable":true,
+    "name":"engine_prim.c_FUN_0053df10",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
     }
   },
   {
@@ -45258,25 +45484,6 @@
     "importable":true,
     "name":"core_setdir.cpp_staticInit_FUN_00559710",
     "ret":"void"
-  },
-  {
-    "addr":"00559c10",
-    "body":[
-      {
-        "end":"00559d6e",
-        "size":351,
-        "start":"00559c10"
-      }
-    ],
-    "importable":true,
-    "name":"core_setdir.cpp_FUN_00559c10",
-    "ret":"undefined1",
-    "sig":"default",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
   },
   {
     "addr":"0055b990",

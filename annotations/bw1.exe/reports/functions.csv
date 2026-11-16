@@ -77,6 +77,7 @@ engine_3d.c_setRelativeCoord_FUN_00404320,00404320,engine/3d.c,12,1,warning_over
 engine_3d.c_renderPolygonTexturedNormalizedOp21_FUN_00404370,00404370,engine/3d.c,26,3,undefined_data|warning_overlapping_globals,66
 engine_3d.c_setActiveRenderColor_FUN_00404410,00404410,engine/3d.c,10,5,undefined_data|warning_overlapping_globals,70
 engine_3d.c_drawLineStrip2D_FUN_00404440,00404440,engine/3d.c,68,31,raw_address_constant|shadow_pointer_walk|stack_param|stack_ref|undefined_data|unknown_field|unrolled_memcpy,413
+FUN_004044d0,004044d0,.,69,35,raw_address_constant|stack_param|stack_ref|undefined_data|unknown_field|unnamed_param|unrolled_memcpy,454
 engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560,00404560,engine/3d.c,51,15,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data|warning_overlapping_globals,226
 engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0,004046e0,engine/3d.c,87,19,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data|warning_overlapping_globals,302
 engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_004048e0,004048e0,engine/3d.c,27,3,undefined_data|warning_overlapping_globals,67
@@ -94,6 +95,7 @@ engine_3d.c_renderPolygonDestReadBlendOp33_FUN_00405100,00405100,engine/3d.c,26,
 engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0,004051a0,engine/3d.c,41,12,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|warning_overlapping_globals,186
 engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280,00405280,engine/3d.c,41,12,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|warning_overlapping_globals,186
 engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405360,00405360,engine/3d.c,27,3,undefined_data|warning_overlapping_globals,67
+FUN_00405400,00405400,.,41,22,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|unnamed_param|warning_overlapping_globals,291
 engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0,004054e0,engine/3d.c,46,5,undefined_data|warning_overlapping_globals,106
 engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600,00405600,engine/3d.c,46,5,undefined_data|warning_overlapping_globals,106
 engine_3d.c_renderPolygonFogTexturedPerspOp39_FUN_00405720,00405720,engine/3d.c,26,3,undefined_data|warning_overlapping_globals,66
@@ -244,7 +246,7 @@ core_actor.cpp_crc32ProcessBuffer_FUN_0040cf00,0040cf00,core/actor.cpp,10,0,,10
 core_actor.cpp_crc32ProcessInt_FUN_0040cf40,0040cf40,core/actor.cpp,5,0,,5
 core_actor.cpp_crc32ProcessVector_FUN_0040cf60,0040cf60,core/actor.cpp,5,0,,5
 core_actor.cpp_crc32ProcessString_FUN_0040cf80,0040cf80,core/actor.cpp,12,0,,12
-core_actor.cpp_FUN_0040cfc0,0040cfc0,core/actor.cpp,4,2,unnamed_param,29
+core_actor.cpp_sqrtFloatRef_FUN_0040cfc0,0040cfc0,core/actor.cpp,4,0,,4
 core_actor.cpp_CVector3f_ctor_FUN_0040cfe0,0040cfe0,core/actor.cpp,4,0,,4
 core_actor.cpp_copyVector_FUN_0040cff0,0040cff0,core/actor.cpp,10,1,unrolled_memcpy,25
 core_actor.cpp_CVector3f_length_FUN_0040d010,0040d010,core/actor.cpp,4,0,,4
@@ -833,6 +835,9 @@ cockpit_ckptutil.c_optimizedMemcpy_FUN_00437038,00437038,cockpit/ckptutil.c,83,2
 cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00437132,00437132,cockpit/ckptutil.c,82,22,pointer_cast|unrolled_memcpy,312
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00437240,00437240,cockpit/ckptutil.c,16,2,pointer_cast,41
 cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270,00437270,cockpit/ckptutil.c,14,3,undefined_data|warning_overlapping_globals,54
+FUN_00437280,00437280,.,4,1,unresolved_funcptr,19
+FUN_00437290,00437290,.,8,2,unresolved_funcptr|warning_overlapping_globals,38
+FUN_004372b0,004372b0,.,4,1,unresolved_funcptr,19
 cockpit_ckptutil.c_applyActPalette_FUN_00437380,00437380,cockpit/ckptutil.c,20,0,,20
 cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00437400,00437400,cockpit/ckptutil.c,24,6,stack_param|stack_ref|undefined_data,99
 cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490,00437490,cockpit/ckptutil.c,88,7,unrolled_memcpy|unrolled_strchr|unrolled_strcpy|warning_overlapping_globals,178
@@ -843,9 +848,9 @@ cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90,00437b90,cockpit/ckptutil.c
 cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437d00,00437d00,cockpit/ckptutil.c,90,26,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,370
 cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40,00437f40,cockpit/ckptutil.c,58,15,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,228
 cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0,004380a0,cockpit/ckptutil.c,75,27,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,365
-cockpit_ckptutil.c_FUN_00438280,00438280,cockpit/ckptutil.c,5,0,,5
-cockpit_ckptutil.c_FUN_00438310,00438310,cockpit/ckptutil.c,4,0,,4
-cockpit_ckptutil.c_FUN_00438440,00438440,cockpit/ckptutil.c,5,0,,5
+cockpit_ckptutil.c_FUN_00438260,00438260,cockpit/ckptutil.c,29,22,stack_param|unresolved_funcptr,259
+cockpit_ckptutil.c_FUN_004382d0,004382d0,cockpit/ckptutil.c,61,47,concat_reconstruction|pointer_cast|pointer_truncation|stack_param|undefined_data|warning_overlapping_globals,561
+cockpit_ckptutil.c_FUN_00438410,00438410,cockpit/ckptutil.c,45,34,stack_param|undefined_data,395
 cockpit_ckptutil.c_blitFullScreen_FUN_00438530,00438530,cockpit/ckptutil.c,6,2,undefined_data,31
 cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560,00438560,cockpit/ckptutil.c,66,18,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,266
 cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00438700,00438700,cockpit/ckptutil.c,27,3,pointer_cast|undefined_data,67
@@ -883,6 +888,7 @@ engine_clipper.c_interpolateVertexFarClip_FUN_0043b8b0,0043b8b0,engine/clipper.c
 engine_clipper.c_clipPolygonRightPlane_FUN_0043b9d0,0043b9d0,engine/clipper.c,65,13,undefined_data|warning_overlapping_globals,205
 engine_clipper.c_clipPolygonLeftPlane_FUN_0043bb10,0043bb10,engine/clipper.c,65,13,undefined_data|warning_overlapping_globals,205
 engine_clipper.c_clipPolygonBottomPlane_FUN_0043bd90,0043bd90,engine/clipper.c,65,13,undefined_data|warning_overlapping_globals,205
+FUN_0043bed0,0043bed0,.,122,67,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data|unknown_field|warning_unreachable,822
 engine_clipper.c_normalizeClippedVertices_FUN_0043c0d0,0043c0d0,engine/clipper.c,43,3,undefined_data,78
 engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190,0043c190,engine/clipper.c,558,171,pointer_cast|pointer_truncation|raw_address_pointer_store|shadow_pointer_walk|undefined_data|unknown_field|warning_overlapping_globals|warning_type_propagation|warning_unreachable,2313
 engine_clipper.c_clipAndRasterize_FUN_0043cbf0,0043cbf0,engine/clipper.c,14,4,undefined_data,59
@@ -892,8 +898,10 @@ engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_0043ced0,0043ced0,engine/c
 engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_0043d000,0043d000,engine/clipper.c,54,9,carry_arith_idiom|concat_reconstruction,154
 engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043d140,0043d140,engine/clipper.c,70,41,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy,500
 engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280,0043d280,engine/clipper.c,70,41,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy,500
+FUN_0043d3c0,0043d3c0,.,70,43,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy,520
 engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043d500,0043d500,engine/clipper.c,70,42,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy,510
-engine_clipper.c_FUN_0043d880,0043d880,engine/clipper.c,4,0,,4
+FUN_0043d630,0043d630,.,43,3,undefined_data,78
+engine_clipper.c_FUN_0043d6e0,0043d6e0,engine/clipper.c,414,241,pointer_cast|pointer_truncation|raw_address_pointer_store|stack_param|undefined_data|unrolled_memcpy|warning_overlapping_globals,2859
 engine_clipper.c_clipPolygonToViewport_FUN_0043de60,0043de60,engine/clipper.c,424,219,pointer_cast|pointer_truncation|raw_address_pointer_store|undefined_data|unrolled_memcpy|warning_overlapping_globals,2644
 core_cloth.cpp_CCloth_ctor_FUN_0043e5c0,0043e5c0,core/cloth.cpp,13,10,pointer_cast|pointer_truncation,123
 core_cloth.cpp_CCloth_dtor_FUN_0043e620,0043e620,core/cloth.cpp,7,0,,7
@@ -1029,7 +1037,7 @@ core_construc.cpp_CConstruct_archive_FUN_00446e30,00446e30,core/construc.cpp,67,
 core_construc.cpp_CConstruct_processDamage_FUN_00447090,00447090,core/construc.cpp,43,0,,43
 core_construc.cpp_CConstruct_getTargetPoints_FUN_004471a0,004471a0,core/construc.cpp,50,31,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|unrolled_memcpy,385
 core_construc.cpp_CConstruct_explode_FUN_004472a0,004472a0,core/construc.cpp,96,13,pointer_cast|pointer_truncation|shadow_pointer_walk|stack_alignment_array|unrolled_memcpy|warning_overlapping_globals|warning_type_propagation,261
-core_construc.cpp_FUN_004474d0,004474d0,core/construc.cpp,31,17,unaffected_reg|unnamed_param,211
+core_construc.cpp_CConstruct_getEffectivePosition_FUN_004474d0,004474d0,core/construc.cpp,33,1,warning_type_propagation,48
 core_construc.cpp_CConstruct_startRecombine_FUN_00447560,00447560,core/construc.cpp,48,11,pointer_cast|pointer_truncation|shadow_pointer_walk|stack_alignment_array|unrolled_memcpy|warning_type_propagation,188
 core_construc.cpp_CConstruct_getCollisionType_FUN_00447630,00447630,core/construc.cpp,13,3,unnamed_param,48
 core_construc.cpp_CConstruct_dtor_FUN_00447660,00447660,core/construc.cpp,25,2,negative_offset,50
@@ -1148,6 +1156,7 @@ core_dcamera.cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044ee30,0044ee30,c
 core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30,0044ef30,core/dcamera.cpp,160,47,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|warning_overlapping_globals,655
 core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044f360,0044f360,core/dcamera.cpp,196,17,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,386
 core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044f9c0,0044f9c0,core/dcamera.cpp,34,2,fast_inv_sqrt_inline|warning_overlapping_globals,64
+FUN_0044fb10,0044fb10,.,107,122,pointer_cast|pointer_truncation|stack_alignment_array|unnamed_param|unrolled_memcpy|warning_overlapping_globals,1357
 core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044fea0,0044fea0,core/dcamera.cpp,25,6,undefined_data,90
 core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20,0044ff20,core/dcamera.cpp,62,24,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy|warning_overlapping_globals,327
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0,0044fff0,core/dcamera.cpp,465,53,pointer_cast|pointer_truncation|undefined_data|unrolled_memcpy|unrolled_strchr|unrolled_strcpy|warning_overlapping_globals,1030
@@ -1169,6 +1178,7 @@ core_dcamera.cpp_testCoronaVisibility_FUN_00451eb0,00451eb0,core/dcamera.cpp,36,
 core_dcamera.cpp_processCoronaScanline_FUN_00452110,00452110,core/dcamera.cpp,82,8,undefined_data|warning_overlapping_globals,172
 core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450,00452450,core/dcamera.cpp,72,18,concat_reconstruction|nonstandard_int|pointer_truncation|warning_overlapping_globals,272
 core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550,00452550,core/dcamera.cpp,265,25,pointer_cast|pointer_truncation|raw_address_constant|raw_address_pointer_store|shadow_pointer_walk|sign_compare_idiom|stack_alignment_array|undefined_data|warning_overlapping_globals,560
+FUN_00452d70,00452d70,.,17,13,undefined_data|unnamed_param|warning_overlapping_globals,162
 core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0,00452de0,core/dcamera.cpp,210,13,pointer_cast|undefined_data|warning_overlapping_globals,355
 core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00453390,00453390,core/dcamera.cpp,47,1,warning_overlapping_globals,62
 core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00453540,00453540,core/dcamera.cpp,8,1,warning_overlapping_globals,23
@@ -1197,7 +1207,10 @@ core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_00455150,00455150,core
 core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004551a0,004551a0,core/dcamera.cpp,80,7,pointer_truncation|undefined_data,160
 core_dcube.cpp_staticInit_FUN_004553b0,004553b0,core/dcube.cpp,11,2,undefined_data,36
 core_dcube.cpp_clipEdgeToPlane_FUN_00455460,00455460,core/dcube.cpp,39,11,sub84_truncation|unknown_field|warning_overlapping_globals,164
+FUN_00455600,00455600,.,57,10,undefined_data|unnamed_param|warning_overlapping_globals,172
+FUN_00455760,00455760,.,59,6,unnamed_param|warning_overlapping_globals,129
 core_dcube.cpp_clipPolygonAgainstMaxX_FUN_004558d0,004558d0,core/dcube.cpp,59,1,warning_overlapping_globals,74
+FUN_00455b90,00455b90,.,59,6,unnamed_param|warning_overlapping_globals,129
 core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455d00,00455d00,core/dcube.cpp,59,11,undefined_data|warning_overlapping_globals,179
 core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00455e60,00455e60,core/dcube.cpp,10,2,undefined_data|warning_overlapping_globals,40
 core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455ee0,00455ee0,core/dcube.cpp,10,2,undefined_data|warning_overlapping_globals,40
@@ -1502,7 +1515,6 @@ engine_dosio.cpp_deleteFile_FUN_00479950,00479950,engine/dosio.cpp,6,0,,6
 core_dpart.cpp_CDemonPart_dtor_FUN_004799c0,004799c0,core/dpart.cpp,5,0,,5
 core_dpart.cpp_CDemonPart_alloc_FUN_004799e0,004799e0,core/dpart.cpp,36,4,alloc_magic_size|warning_overlapping_globals,86
 core_dpart.cpp_CDemonPart_free_FUN_00479ae0,00479ae0,core/dpart.cpp,17,0,,17
-core_dpart.cpp_FUN_00479b22,00479b22,core/dpart.cpp,7,2,unaffected_reg,32
 core_dpart.cpp_CDemonPart_load_FUN_00479b40,00479b40,core/dpart.cpp,8,1,warning_overlapping_globals,23
 core_dpart.cpp_CDemonPart_save_FUN_00479b70,00479b70,core/dpart.cpp,8,1,warning_overlapping_globals,23
 core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0,00479ba0,core/dpart.cpp,39,14,pointer_cast|pointer_truncation,189
@@ -1663,7 +1675,7 @@ engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004841a0,004841a0,engi
 engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_00484210,00484210,engine/drender.cpp,22,0,,22
 engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_00484280,00484280,engine/drender.cpp,119,8,pointer_cast|undefined_data|warning_overlapping_globals,214
 engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_004844f0,004844f0,engine/drender.cpp,122,5,undefined_data|warning_overlapping_globals,182
-engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790,00484790,engine/drender.cpp,121,18,pointer_cast|pointer_truncation|undefined_data|unresolved_funcptr|warning_overlapping_globals,326
+engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790,00484790,engine/drender.cpp,121,17,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,311
 engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40,00484a40,engine/drender.cpp,12,1,warning_overlapping_globals,27
 engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_00484a80,00484a80,engine/drender.cpp,28,0,,28
 engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00484b20,00484b20,engine/drender.cpp,37,0,,37
@@ -1702,6 +1714,7 @@ core_dskybox.cpp_staticInit_FUN_00486750,00486750,core/dskybox.cpp,9,1,warning_o
 core_dskybox.cpp_initializeSkyboxTexture_FUN_00486780,00486780,core/dskybox.cpp,21,1,unrolled_strcpy,36
 core_dskybox.cpp_generateSkyDomeVertex_FUN_004867c0,004867c0,core/dskybox.cpp,41,6,undefined_data|warning_overlapping_globals,111
 core_dskybox.cpp_renderSkyDome_FUN_00486900,00486900,core/dskybox.cpp,157,35,concat_reconstruction|pointer_cast|pointer_truncation|stack_alignment_array|stack_ref|undefined_data|unknown_field|unrolled_strcpy|warning_overlapping_globals,552
+FUN_00486de0,00486de0,.,45,13,unaffected_reg|undefined_data,185
 core_dstrendr.cpp_renderDepthOnlyStandard_FUN_00486e26,00486e26,core/dstrendr.cpp,45,2,undefined_data,70
 core_dstrendr.cpp_renderDepth16BitConditional_FUN_00486e74,00486e74,core/dstrendr.cpp,50,2,undefined_data,75
 core_dstrendr.cpp_renderTexturedAlphaMMXScanline_FUN_00486ed7,00486ed7,core/dstrendr.cpp,63,13,undefined_data|warning_overlapping_globals,203
@@ -1783,7 +1796,10 @@ core_dtri.cpp_cylinderTriangleTest_FUN_004904d0,004904d0,core/dtri.cpp,178,0,,17
 core_dtri.cpp_rayEdgeHeightTest_FUN_004908d0,004908d0,core/dtri.cpp,35,1,warning_overlapping_globals,50
 core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40,00490a40,core/dtri.cpp,132,11,undefined_data|unrolled_memcpy|warning_overlapping_globals,257
 core_dtri.cpp_clipLineToPlane_FUN_00490df0,00490df0,core/dtri.cpp,41,11,sub84_truncation|unknown_field|warning_overlapping_globals,166
+FUN_00490f90,00490f90,.,57,20,undefined_data|unnamed_param|warning_overlapping_globals,272
+FUN_004910f0,004910f0,.,57,20,undefined_data|unnamed_param|warning_overlapping_globals,272
 core_dtri.cpp_clipPolygonToRight_FUN_00491260,00491260,core/dtri.cpp,59,13,undefined_data|warning_overlapping_globals,199
+FUN_00491520,00491520,.,57,20,undefined_data|unnamed_param|warning_overlapping_globals,272
 core_dtri.cpp_clipPolygonToFar_FUN_00491690,00491690,core/dtri.cpp,57,15,undefined_data|warning_overlapping_globals,217
 core_dtri.cpp_clipTriangleToBounds_FUN_00491850,00491850,core/dtri.cpp,379,88,undefined_data|warning_overlapping_globals,1269
 core_dtri.cpp_getClippedVertexCount_FUN_004922e0,004922e0,core/dtri.cpp,5,1,warning_overlapping_globals,20
@@ -1872,7 +1888,7 @@ shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e40,00498e40,s
 shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_00498f10,00498f10,shape/edittool.cpp,77,11,undefined_data|warning_overlapping_globals,197
 shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004991d0,004991d0,shape/edittool.cpp,16,1,warning_overlapping_globals,31
 shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00499250,00499250,shape/edittool.cpp,44,7,undefined_data|warning_overlapping_globals,124
-shape_edittool.cpp_FUN_00499350,00499350,shape/edittool.cpp,5,1,warning_overlapping_globals,20
+shape_edittool.cpp_isEditorMini3DMode_FUN_00499350,00499350,shape/edittool.cpp,5,1,warning_overlapping_globals,20
 shape_edittool.cpp_CEditorTools_setMini3DMode_FUN_00499360,00499360,shape/edittool.cpp,10,1,warning_overlapping_globals,25
 shape_edittool.cpp_CStrList_ctor_FUN_00499380,00499380,shape/edittool.cpp,8,0,,8
 shape_edittool.cpp_CStrList_dtor_FUN_004993a0,004993a0,shape/edittool.cpp,16,0,,16
@@ -1948,6 +1964,7 @@ shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0,0049dbe0,shape/edi
 shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_0049dc20,0049dc20,shape/edittool.cpp,8,0,,8
 shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_0049dc50,0049dc50,shape/edittool.cpp,6,0,,6
 shape_edittool.cpp_CEdCheck_render_FUN_0049dc70,0049dc70,shape/edittool.cpp,51,11,pointer_truncation|unaffected_reg|undefined_data|warning_overlapping_globals,181
+FUN_0049dda0,0049dda0,.,40,21,undefined_data|unnamed_param|warning_overlapping_globals,265
 shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0,0049dea0,shape/edittool.cpp,47,0,,47
 shape_edittool.cpp_CStrList_getItemCount_FUN_0049df50,0049df50,shape/edittool.cpp,4,0,,4
 core_elephant.cpp_staticInit_FUN_0049dfa0,0049dfa0,core/elephant.cpp,8,0,,8
@@ -2412,11 +2429,11 @@ core_fldnotes.cpp_SNotesMap_arrdtor4_FUN_004bf700,004bf700,core/fldnotes.cpp,6,0
 core_fldnotes.cpp_SNotesSection_arrdtor6_FUN_004bf720,004bf720,core/fldnotes.cpp,6,0,,6
 core_flattn.cpp_staticInit_FUN_004bf740,004bf740,core/flattn.cpp,8,1,warning_overlapping_globals,23
 core_flattn.cpp_doNothing_FUN_004bf770,004bf770,core/flattn.cpp,4,0,,4
-core_flattn.cpp_FUN_004bf780,004bf780,core/flattn.cpp,17,11,unnamed_param|warning_overlapping_globals,137
-core_flattn.cpp_FUN_004bf800,004bf800,core/flattn.cpp,17,15,unnamed_param|warning_overlapping_globals,177
-core_flattn.cpp_FUN_004bf890,004bf890,core/flattn.cpp,17,11,unnamed_param|warning_overlapping_globals,137
-core_flattn.cpp_FUN_004bf910,004bf910,core/flattn.cpp,11,15,unnamed_param|warning_overlapping_globals,171
-core_flattn.cpp_FUN_004bf990,004bf990,core/flattn.cpp,8,15,unnamed_param|warning_overlapping_globals,168
+core_flattn.cpp_setFlattenMatrix_FUN_004bf780,004bf780,core/flattn.cpp,17,1,warning_overlapping_globals,32
+core_flattn.cpp_setFlattenMatrixAndOffset_FUN_004bf800,004bf800,core/flattn.cpp,17,1,warning_overlapping_globals,32
+core_flattn.cpp_setFlattenMatrixTransposed_FUN_004bf890,004bf890,core/flattn.cpp,17,1,warning_overlapping_globals,32
+core_flattn.cpp_flattenTransformPoint_FUN_004bf910,004bf910,core/flattn.cpp,11,1,warning_overlapping_globals,26
+core_flattn.cpp_flattenTransformVector_FUN_004bf990,004bf990,core/flattn.cpp,11,1,warning_overlapping_globals,26
 core_flies.cpp_staticInit_FUN_004bfa00,004bfa00,core/flies.cpp,7,0,,7
 core_flies.cpp_factoryFuncFlies_FUN_004bfa30,004bfa30,core/flies.cpp,10,0,,10
 core_flies.cpp_CFlies_getActorType_FUN_004bfa50,004bfa50,core/flies.cpp,4,0,,4
@@ -2483,7 +2500,7 @@ engine_font.cpp_CBitFont_remapPalette_FUN_004c45e0,004c45e0,engine/font.cpp,54,1
 engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004c47f0,004c47f0,engine/font.cpp,113,16,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,293
 engine_font.cpp_packPixelNative_FUN_004c4ba0,004c4ba0,engine/font.cpp,8,4,undefined_data,53
 engine_font.cpp_getAlpha_FUN_004c4bf0,004c4bf0,engine/font.cpp,5,1,warning_overlapping_globals,20
-engine_font.cpp_FUN_004c4c51,004c4c51,engine/font.cpp,50,40,register_param|sign_compare_idiom|unaffected_reg|warning_overlapping_globals,470
+engine_font.cpp_FUN_004c4c00,004c4c00,engine/font.cpp,70,16,stack_param|undefined_data|warning_overlapping_globals,245
 engine_font.cpp_findHardwareEdgeByYMin_FUN_004c4d40,004c4d40,engine/font.cpp,18,2,undefined_data|warning_overlapping_globals,48
 engine_fpoly.c_rasterizePolygonHardware_FUN_004c4d80,004c4d80,engine/fpoly.c,163,11,shadow_pointer_walk|undefined_data|warning_overlapping_globals,288
 core_frankgen.cpp_staticInit_FUN_004c50f0,004c50f0,core/frankgen.cpp,8,0,,8
@@ -2961,9 +2978,9 @@ core_inv.cpp_staticInit_FUN_004f5ef0,004f5ef0,core/inv.cpp,38,0,,38
 core_inv.cpp_getItemModel_FUN_004f60c0,004f60c0,core/inv.cpp,61,1,warning_overlapping_globals,76
 core_inv.cpp_getItemDisplayName_FUN_004f62e0,004f62e0,core/inv.cpp,23,1,warning_overlapping_globals,38
 core_inv.cpp_getItemDescription_FUN_004f6350,004f6350,core/inv.cpp,23,1,warning_overlapping_globals,38
-core_inv.cpp_FUN_004f63c0,004f63c0,core/inv.cpp,52,14,param_count_too_few|pointer_cast|pointer_truncation|stack_ref|unaffected_reg|unnamed_param|warning_overlapping_globals,227
+core_inv.cpp_screenToWorldPoint_FUN_004f63c0,004f63c0,core/inv.cpp,53,6,pointer_cast|pointer_truncation|stack_ref|warning_overlapping_globals,133
 core_inv.cpp_renderSps_FUN_004f64f0,004f64f0,core/inv.cpp,21,1,warning_overlapping_globals,36
-core_inv.cpp_renderCompass_FUN_004f6560,004f6560,core/inv.cpp,179,62,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|unknown_field|warning_overlapping_globals,829
+core_inv.cpp_renderCompass_FUN_004f6560,004f6560,core/inv.cpp,185,81,pointer_cast|pointer_truncation|self_copy_guard|stack_alignment_array|undefined_data|unknown_field|warning_overlapping_globals,1030
 core_inv.cpp_playSpsSound_FUN_004f6b50,004f6b50,core/inv.cpp,19,0,,19
 core_inv.cpp_updateSps_FUN_004f6bb0,004f6bb0,core/inv.cpp,124,2,pointer_cast|warning_overlapping_globals,154
 core_inv.cpp_loadItem_FUN_004f6e90,004f6e90,core/inv.cpp,6,0,,6
@@ -3002,7 +3019,7 @@ core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004fa740,004fa740,core/in
 core_inv.cpp_drawWeaponIconBackground_FUN_004fa770,004fa770,core/inv.cpp,61,8,undefined_data,146
 core_inv.cpp_drawItemIconBackground_FUN_004fa930,004fa930,core/inv.cpp,61,8,undefined_data,146
 core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0,004faaf0,core/inv.cpp,81,25,raw_address_constant|raw_address_pointer_store|undefined_data|warning_overlapping_globals,351
-core_inv.cpp_CInventory_renderAllItems_FUN_004fae10,004fae10,core/inv.cpp,547,103,pointer_cast|pointer_truncation|raw_address_constant|raw_address_pointer_store|stack_alignment_array|suspect_float|undefined_data|unknown_field|unrolled_strcat|unrolled_strcpy|unrolled_strlen|warning_overlapping_globals|warning_type_propagation,1642
+core_inv.cpp_CInventory_renderAllItems_FUN_004fae10,004fae10,core/inv.cpp,555,123,pointer_cast|pointer_truncation|raw_address_constant|raw_address_pointer_store|self_copy_guard|stack_alignment_array|suspect_float|undefined_data|unknown_field|unrolled_strcat|unrolled_strcpy|unrolled_strlen|warning_overlapping_globals|warning_type_propagation,1855
 core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004fc240,004fc240,core/inv.cpp,42,1,shadow_pointer_walk,57
 core_inv.cpp_CInventory_removeMatchingKeys_FUN_004fc310,004fc310,core/inv.cpp,24,1,shadow_pointer_walk,39
 core_inv.cpp_CInventory_toggleDetailView_FUN_004fc370,004fc370,core/inv.cpp,15,2,raw_address_pointer_store|warning_overlapping_globals,45
@@ -3093,7 +3110,7 @@ core_lightgun.cpp_factoryFuncLightGun_FUN_004ffe80,004ffe80,core/lightgun.cpp,10
 core_lightgun.cpp_CLightGun_getActorType_FUN_004ffea0,004ffea0,core/lightgun.cpp,4,0,,4
 core_lightgun.cpp_CLightGun_ctor_FUN_004ffeb0,004ffeb0,core/lightgun.cpp,28,2,unnamed_field|warning_overlapping_globals,58
 core_lightgun.cpp_CLightGun_isVampireType_FUN_004fff70,004fff70,core/lightgun.cpp,26,0,,26
-core_lightgun.cpp_FUN_004ffff0,004ffff0,core/lightgun.cpp,28,8,unnamed_param,113
+core_lightgun.cpp_isLightSensitiveType_FUN_004ffff0,004ffff0,core/lightgun.cpp,28,0,,28
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090,00500090,core/lightgun.cpp,36,10,pointer_cast|pointer_truncation|stack_alignment_array|stack_ref|warning_overlapping_globals,161
 core_lightgun.cpp_CLightGun_getMuzzlePoint_FUN_00500160,00500160,core/lightgun.cpp,36,18,pointer_cast|pointer_truncation|stack_alignment_array|stack_ref|unaffected_reg|unrolled_memcpy|warning_overlapping_globals,251
 core_lightgun.cpp_CLightGun_fire_FUN_00500310,00500310,core/lightgun.cpp,363,92,bitcast_double_pair|pointer_cast|pointer_truncation|raw_address_constant|raw_address_pointer_store|stack_alignment_array|stack_param|stack_ref|sub84_truncation|suspect_float|unaffected_reg|unknown_field|unrolled_memcpy|warning_overlapping_globals,1353
@@ -3220,6 +3237,7 @@ engine_matrix.c_getCameraOrigin_FUN_00509050,00509050,engine/matrix.c,12,1,warni
 engine_matrix.c_getCameraRotation_FUN_00509080,00509080,engine/matrix.c,12,1,warning_overlapping_globals,27
 engine_matrix.c_pushViewport_FUN_005090b0,005090b0,engine/matrix.c,31,3,undefined_data|warning_overlapping_globals,71
 engine_matrix.c_popViewport_FUN_00509210,00509210,engine/matrix.c,29,2,undefined_data|warning_overlapping_globals,59
+FUN_00509340,00509340,.,30,11,pointer_cast|stack_alignment_array|undefined_data|unnamed_param|warning_overlapping_globals,165
 engine_matrix.c_pushMatrixRelativeOffset_FUN_005093d0,005093d0,engine/matrix.c,24,1,warning_overlapping_globals,39
 engine_matrix.c_popMatrixRelativeOffset_FUN_00509480,00509480,engine/matrix.c,14,1,warning_overlapping_globals,29
 core_melee.cpp_staticInit_FUN_005094f0,005094f0,core/melee.cpp,7,0,,7
@@ -3496,6 +3514,7 @@ core_mobster.cpp_CMobster_getTargetPoints_FUN_0051f1d0,0051f1d0,core/mobster.cpp
 core_mobster.cpp_CMobster_getCollisionType_FUN_0051f310,0051f310,core/mobster.cpp,7,0,,7
 core_mobster.cpp_CMobster_playTaunt_FUN_0051f330,0051f330,core/mobster.cpp,59,2,pointer_cast|warning_overlapping_globals,89
 core_mobster.cpp_CMobster_dtor_FUN_0051f4b0,0051f4b0,core/mobster.cpp,25,2,negative_offset,50
+FUN_0051f650,0051f650,engine/model.c,96,17,pointer_cast|unnamed_param|warning_overlapping_globals,281
 engine_model.c_loadModelFile_FUN_0051f6d0,0051f6d0,engine/model.c,67,3,undefined_data|unrolled_strchr|warning_overlapping_globals,112
 engine_model.c_freeMRGLData_FUN_0051f8a0,0051f8a0,engine/model.c,28,1,shadow_pointer_walk,43
 engine_model.c_getMRGLBounds_FUN_0051f920,0051f920,engine/model.c,194,44,pointer_cast|pointer_truncation|subfield_vector_pun|unknown_field|unrolled_memcpy|warning_overlapping_globals|warning_type_propagation,669
@@ -3602,6 +3621,8 @@ core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240,0052524
 core_motion.cpp_CMotionController_load_FUN_00525380,00525380,core/motion.cpp,22,2,undefined_data|warning_overlapping_globals,52
 core_motion.cpp_CMotionController_save_FUN_00525420,00525420,core/motion.cpp,22,1,warning_overlapping_globals,37
 core_motion.cpp_CMotionController_render_FUN_005254b0,005254b0,core/motion.cpp,76,14,stack_param|stack_ref|undefined_data|unrolled_memcpy|unrolled_strcpy|warning_overlapping_globals,246
+FUN_00525690,00525690,sound/mp3.cpp,44,12,undefined_data|unnamed_param|warning_overlapping_globals,179
+FUN_005257d0,005257d0,sound/mp3.cpp,11,11,unnamed_param|warning_overlapping_globals,131
 sound_mp3.cpp_calculateMpegFrame_FUN_00525840,00525840,sound/mp3.cpp,65,3,undefined_data|warning_overlapping_globals,105
 sound_mp3.cpp_CFileBitStream_init_FUN_00525ab0,00525ab0,sound/mp3.cpp,34,1,warning_overlapping_globals,49
 sound_mp3.cpp_CFileBitStream_readBit_FUN_00525be0,00525be0,sound/mp3.cpp,46,1,undefined_data,61
@@ -3794,17 +3815,18 @@ cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_005374b0,005374b0,cockpit/pkbitmap.c
 cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_00537500,00537500,cockpit/pkbitmap.cpp,5,0,,5
 cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_00537520,00537520,cockpit/pkbitmap.cpp,8,0,,8
 cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550,00537550,cockpit/pkbitmap.cpp,9,0,,9
+FUN_00537580,00537580,.,9,4,unnamed_param,54
 cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_005375a0,005375a0,cockpit/pkbitmap.cpp,7,0,,7
 cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_005375c0,005375c0,cockpit/pkbitmap.cpp,6,0,,6
 cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_005375e0,005375e0,cockpit/pkbitmap.cpp,16,6,pointer_cast|pointer_truncation,86
 cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00537760,00537760,cockpit/pkbitmap.cpp,64,12,pointer_cast|pointer_truncation|undefined_data,199
 cockpit_pkbitmap.cpp_CPackedBitmap_renderWithGlobalClipping_FUN_005378e0,005378e0,cockpit/pkbitmap.cpp,40,1,warning_overlapping_globals,55
 cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_005379e0,005379e0,cockpit/pkbitmap.cpp,36,0,,36
+FUN_00537aa0,00537aa0,cockpit/pkbitmap.cpp,59,28,pointer_truncation|unnamed_param|unresolved_funcptr|warning_overlapping_globals,359
 cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30,00537c30,cockpit/pkbitmap.cpp,19,7,stack_param,94
 cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0,00537cb0,cockpit/pkbitmap.cpp,18,2,stack_param,43
 cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_00537d00,00537d00,cockpit/pkbitmap.cpp,46,9,pointer_cast|pointer_truncation|unrolled_memcpy,151
 cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0,00537db0,cockpit/pkbitmap.cpp,99,14,pointer_cast|pointer_truncation|stack_param|unrolled_memcpy|warning_overlapping_globals,264
-cockpit_pkbitmap.cpp_FUN_00537fd8,00537fd8,cockpit/pkbitmap.cpp,9,5,unaffected_reg,64
 cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000,00538000,cockpit/pkbitmap.cpp,9,3,stack_param|stack_ref,49
 cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00538050,00538050,cockpit/pkbitmap.cpp,26,4,pointer_cast|pointer_truncation,76
 cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_005380b0,005380b0,cockpit/pkbitmap.cpp,5,0,,5
@@ -3824,7 +3846,10 @@ cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005389c0,005389c0,cockpit/pkbmps
 cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60,00538a60,cockpit/pkbmpset.cpp,24,24,stack_param|unnamed_param,274
 cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30,00538b30,cockpit/pkbmpset.cpp,70,13,stack_param|stack_ref|unaffected_reg|warning_overlapping_globals,220
 cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00538db0,00538db0,cockpit/pkbmpset.cpp,61,1,warning_overlapping_globals,76
-cockpit_pkbmpset.cpp_FUN_00539100,00539100,cockpit/pkbmpset.cpp,4,0,,4
+cockpit_pkbmpset.cpp_FUN_00538f90,00538f90,cockpit/pkbmpset.cpp,28,20,stack_param,233
+FUN_00539040,00539040,.,13,19,stack_param|unnamed_param,213
+FUN_00539090,00539090,.,6,8,unnamed_param,91
+FUN_005390c0,005390c0,.,50,20,unnamed_param|unrolled_strchr,260
 cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190,00539190,cockpit/pkbmpset.cpp,9,3,stack_param|stack_ref,49
 cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_005391e0,005391e0,cockpit/pkbmpset.cpp,16,0,,16
 cockpit_pkbmpset.cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_00539260,00539260,cockpit/pkbmpset.cpp,20,0,,20
@@ -3894,7 +3919,7 @@ engine_prim.c_adjustNearPlaneTextureCoords_FUN_0053dcb0,0053dcb0,engine/prim.c,2
 engine_prim.c_replaceWWithDepth_FUN_0053dd20,0053dd20,engine/prim.c,21,0,,21
 engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60,0053dd60,engine/prim.c,29,3,sign_compare_idiom|undefined_data,69
 engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0053de20,0053de20,engine/prim.c,34,19,sign_compare_idiom|undefined_data,234
-engine_prim.c_FUN_0053df50,0053df50,engine/prim.c,34,41,register_param|sign_compare_idiom|unaffected_reg|undefined_data,464
+engine_prim.c_FUN_0053df10,0053df10,engine/prim.c,36,23,sign_compare_idiom|stack_param|undefined_data,281
 engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000,0053e000,engine/prim.c,35,19,sign_compare_idiom|undefined_data,235
 engine_prim.c_renderPolygonSoftware_FUN_0053e120,0053e120,engine/prim.c,219,10,sign_compare_idiom|undefined_data|warning_overlapping_globals,334
 engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650,0053e650,engine/prim.c,222,25,sign_compare_idiom|undefined_data|warning_overlapping_globals,487
@@ -4098,7 +4123,7 @@ core_setcolid.cpp_CDemonSet_isPointInWater_FUN_005595a0,005595a0,core/setcolid.c
 core_setcolid.cpp_SRaytraceState_ctor_FUN_005596f0,005596f0,core/setcolid.cpp,4,0,,4
 core_setcolid.cpp_SRaytraceState_dtor_FUN_00559700,00559700,core/setcolid.cpp,4,0,,4
 core_setdir.cpp_staticInit_FUN_00559710,00559710,core/setdir.cpp,5,0,,5
-core_setdir.cpp_FUN_00559c10,00559c10,core/setdir.cpp,67,35,pointer_cast|pointer_truncation|raw_address_pointer_store|stack_param|stack_ref|unaffected_reg|undefined_data|unknown_field|unrolled_memcpy,462
+core_setdir.cpp_FUN_00559730,00559730,core/setdir.cpp,315,102,pointer_cast|pointer_truncation|stack_alignment_array|stack_param|undefined_data|unrolled_memcpy|warning_overlapping_globals,1370
 core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80,00559f80,core/setdir.cpp,650,113,pointer_cast|pointer_truncation|shadow_pointer_walk|stack_alignment_array|stack_param|stack_ref|undefined_data|unrolled_memcpy|warning_overlapping_globals,1825
 core_setdir.cpp_CDemonSet_setPendingCamera_FUN_0055b1e0,0055b1e0,core/setdir.cpp,6,0,,6
 core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_0055b200,0055b200,core/setdir.cpp,8,0,,8
@@ -4150,7 +4175,7 @@ core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0,0055f4f0,core/shadow.cpp,20
 core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540,0055f540,core/shadow.cpp,20,0,,20
 core_shadow.cpp_CShadow_playHowlSound_FUN_0055f590,0055f590,core/shadow.cpp,20,0,,20
 core_shadow.cpp_CShadow_playEmergeSound_FUN_0055f5e0,0055f5e0,core/shadow.cpp,20,0,,20
-core_shadow.cpp_FUN_0055f9c0,0055f9c0,core/shadow.cpp,93,31,concat_reconstruction|fpu_register_input|nonstandard_int|pointer_truncation|register_param|unaffected_reg|undefined_data|unrolled_memcpy|warning_overlapping_globals|warning_spacebase,453
+core_shadow.cpp_FUN_0055f630,0055f630,core/shadow.cpp,195,40,stack_alignment_array|stack_param|undefined_data|warning_overlapping_globals,615
 core_shadow.cpp_CShadow_renderOpaque_FUN_0055fbf0,0055fbf0,core/shadow.cpp,17,2,undefined_data,42
 core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60,0055fc60,core/shadow.cpp,71,11,raw_address_constant|stack_param|stack_ref|undefined_data|unrolled_memcpy|warning_overlapping_globals,211
 core_shadow.cpp_CShadow_archive_FUN_0055fe00,0055fe00,core/shadow.cpp,17,0,,17
@@ -4165,7 +4190,7 @@ core_shadowsc.cpp_CShadowsc_getActorType_FUN_00560490,00560490,core/shadowsc.cpp
 core_shadowsc.cpp_CShadowsc_ctor_FUN_005604a0,005604a0,core/shadowsc.cpp,20,1,warning_overlapping_globals,35
 core_shadowsc.cpp_CShadowsc_setup_FUN_00560510,00560510,core/shadowsc.cpp,34,1,unknown_param,49
 core_shadowsc.cpp_CShadowsc_process_FUN_00560630,00560630,core/shadowsc.cpp,407,36,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|unrolled_memset|warning_overlapping_globals|warning_type_propagation,802
-core_shadowsc.cpp_FUN_00560fe0,00560fe0,core/shadowsc.cpp,14,8,param_count_too_few|unnamed_param|unresolved_funcptr,109
+core_shadowsc.cpp_CShadowsc_playGiantAttackSound_FUN_00560fe0,00560fe0,core/shadowsc.cpp,14,0,,14
 core_shadowsc.cpp_CShadowsc_playAttackSound_FUN_00561020,00561020,core/shadowsc.cpp,14,0,,14
 core_shadowsc.cpp_CShadowsc_playHurtSound_FUN_00561060,00561060,core/shadowsc.cpp,14,0,,14
 core_shadowsc.cpp_CShadowsc_playDeathSound_FUN_005610a0,005610a0,core/shadowsc.cpp,14,0,,14
@@ -4619,7 +4644,6 @@ engine_special.cpp_clearZBufferNative_FUN_0057dca4,0057dca4,engine/special.cpp,2
 engine_special.cpp_clearScreenRegion_FUN_0057dd07,0057dd07,engine/special.cpp,42,6,undefined_data|unrolled_memset|warning_overlapping_globals,117
 engine_special.cpp_fillDepthRegion_FUN_0057dd92,0057dd92,engine/special.cpp,26,3,undefined_data|warning_overlapping_globals,66
 engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0057de01,0057de01,engine/special.cpp,541,229,concat_reconstruction|fnstsw_flag_artifact|nonstandard_int|pointer_cast|undefined_data|undefined_ram|undefined_type|unknown_field|warning_overlapping_globals,2876
-engine_special.cpp_FUN_0057e570,0057e570,engine/special.cpp,4,0,,4
 engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3,0057e5e3,engine/special.cpp,585,241,concat_reconstruction|fnstsw_flag_artifact|nonstandard_int|pointer_cast|undefined_data|undefined_ram|undefined_type|unknown_field|warning_overlapping_globals,3040
 engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0057eeac,0057eeac,engine/special.cpp,426,178,concat_reconstruction|fnstsw_flag_artifact|nonstandard_int|pointer_cast|undefined_data|undefined_ram|undefined_type|unknown_field|unnamed_field|warning_overlapping_globals,2256
 engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0057f473,0057f473,engine/special.cpp,436,181,concat_reconstruction|fnstsw_flag_artifact|nonstandard_int|pointer_cast|undefined_data|undefined_ram|undefined_type|unknown_field|unnamed_field|warning_overlapping_globals,2296
@@ -4628,6 +4652,7 @@ engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39,0057fd39,engi
 engine_special.cpp_renderAlphaRow32_FUN_0057ff73,0057ff73,engine/special.cpp,105,28,concat_reconstruction|nonstandard_int|undefined_data|warning_overlapping_globals,405
 engine_special.cpp_renderAlphaRow16_FUN_0058000e,0058000e,engine/special.cpp,113,32,concat_reconstruction|nonstandard_int|undefined_data|undefined_type|warning_overlapping_globals,458
 engine_special.cpp_renderScanline_FUN_00580127,00580127,engine/special.cpp,8,3,warning_indirect_jump|warning_jumptable|warning_overlapping_globals,53
+FUN_0058012d,0058012d,.,14,10,concat_reconstruction|register_param|unaffected_reg|warning_overlapping_globals,134
 engine_special.cpp_transformAndProjectPoint_FUN_00580173,00580173,engine/special.cpp,108,22,undefined_data|warning_overlapping_globals,338
 engine_special.cpp_transformPoint_FUN_0058043c,0058043c,engine/special.cpp,108,22,undefined_data|warning_overlapping_globals,338
 engine_special.cpp_shutdownExternalRenderer_FUN_00580740,00580740,engine/special.cpp,82,1,warning_overlapping_globals,97
@@ -5011,7 +5036,7 @@ support_trisock.cpp_lookupHostByAddr_FUN_0059f230,0059f230,support/trisock.cpp,1
 support_trisock.cpp_getLocalHostInfo_FUN_0059f2a0,0059f2a0,support/trisock.cpp,12,0,,12
 support_trisock.cpp_IpAddr_ctor_FUN_0059f300,0059f300,support/trisock.cpp,4,0,,4
 support_trisock.cpp_initHostInfo_FUN_0059f320,0059f320,support/trisock.cpp,7,3,pointer_cast|pointer_truncation,47
-support_trisock.cpp_FUN_0059f340,0059f340,support/trisock.cpp,6,6,unnamed_param,71
+support_trisock.cpp_copyNetworkAddr_FUN_0059f340,0059f340,support/trisock.cpp,9,0,,9
 core_terrain.cpp_CTerrain_init_FUN_0059f380,0059f380,core/terrain.cpp,11,1,warning_overlapping_globals,26
 core_terrain.cpp_CTerrain_free_FUN_0059f3c0,0059f3c0,core/terrain.cpp,7,1,warning_overlapping_globals,22
 core_terrain.cpp_CTerrain_render_FUN_0059f3e0,0059f3e0,core/terrain.cpp,51,17,pointer_cast|pointer_truncation|stack_alignment_array|stack_ref|undefined_data|vector_type_pun|warning_overlapping_globals,256
@@ -5350,7 +5375,7 @@ wincore_winrun.cpp_FUN_005b4450,005b4450,wincore/winrun.cpp,5,2,unnamed_param,30
 wincore_winrun.cpp_calibrateControllerCenter_FUN_005b4460,005b4460,wincore/winrun.cpp,8,1,warning_overlapping_globals,23
 wincore_winrun.cpp_saveControllerSettings_FUN_005b44a0,005b44a0,wincore/winrun.cpp,54,0,,54
 wincore_winrun.cpp_loadControllerSettings_FUN_005b4650,005b4650,wincore/winrun.cpp,39,16,stack_ref|unaffected_reg,209
-wincore_winrun.cpp_FUN_005b48c0,005b48c0,wincore/winrun.cpp,23,31,pointer_truncation|register_param|stack_param|unaffected_reg|warning_overlapping_globals,358
+wincore_winrun.cpp_FUN_005b47d0,005b47d0,wincore/winrun.cpp,48,3,stack_param|warning_overlapping_globals,88
 wincore_winvideo.cpp_closeMovie_FUN_005b4980,005b4980,wincore/winvideo.cpp,13,1,warning_overlapping_globals,28
 wincore_winvideo.cpp_openMovie_FUN_005b49d0,005b49d0,wincore/winvideo.cpp,66,1,warning_overlapping_globals,81
 wincore_winvideo.cpp_toggleMoviePlayback_FUN_005b4c60,005b4c60,wincore/winvideo.cpp,24,1,warning_overlapping_globals,39
@@ -5374,7 +5399,7 @@ core_xform.cpp_invertAndGetTranslation_FUN_005b62b0,005b62b0,core/xform.cpp,28,1
 core_xform.cpp_determinant_FUN_005b6330,005b6330,core/xform.cpp,9,0,,9
 core_xform.cpp_inverse_FUN_005b6380,005b6380,core/xform.cpp,70,5,pointer_cast|pointer_truncation|unrolled_memcpy|warning_overlapping_globals,140
 core_xform.cpp_computeOrthogonalityError_FUN_005b65b0,005b65b0,core/xform.cpp,50,0,,50
-core_xform.cpp_FUN_005b6920,005b6920,core/xform.cpp,105,83,fpu_register_input|register_param|stack_param|unaffected_reg|warning_overlapping_globals,960
+core_xform.cpp_FUN_005b67e0,005b67e0,core/xform.cpp,120,22,stack_param|warning_overlapping_globals,350
 core_xform.cpp_buildRotationX_FUN_005b6d90,005b6d90,core/xform.cpp,41,2,unrolled_memcpy,66
 core_xform.cpp_buildRotationY_FUN_005b6e10,005b6e10,core/xform.cpp,38,2,unrolled_memcpy,63
 core_xform.cpp_buildXFlipMatrix_FUN_005b7030,005b7030,core/xform.cpp,36,3,unrolled_memcpy|warning_overlapping_globals,76
@@ -5412,7 +5437,9 @@ core_xform.cpp_clipInterpolateRightPlane_FUN_005b9630,005b9630,core/xform.cpp,47
 core_xform.cpp_clipInterpolateLeftPlane_FUN_005b96f0,005b96f0,core/xform.cpp,47,5,carry_arith_idiom|concat_reconstruction|undefined_data,112
 core_xform.cpp_clipInterpolateTopPlane_FUN_005b97b0,005b97b0,core/xform.cpp,47,5,carry_arith_idiom|concat_reconstruction|undefined_data,112
 core_xform.cpp_clipInterpolateBottomPlane_FUN_005b9870,005b9870,core/xform.cpp,47,5,carry_arith_idiom|concat_reconstruction|undefined_data,112
+FUN_005b9ab0,005b9ab0,.,88,20,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data|unknown_field|warning_overlapping_globals|warning_unreachable,323
 core_xform.cpp_clipPolygonStage3_FUN_005b9c30,005b9c30,core/xform.cpp,90,23,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data|unknown_field|warning_overlapping_globals|warning_unreachable,355
+FUN_005b9da0,005b9da0,.,90,38,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data|unknown_field|warning_overlapping_globals|warning_unreachable,505
 core_xform.cpp_clampClippedVertices_FUN_005b9f10,005b9f10,core/xform.cpp,43,3,undefined_data,78
 core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0,005b9fc0,core/xform.cpp,438,123,pointer_cast|pointer_truncation|shadow_pointer_walk|undefined_data|unknown_field|warning_overlapping_globals|warning_unreachable,1703
 core_zombie.cpp_staticInit_FUN_005ba700,005ba700,core/zombie.cpp,7,0,,7

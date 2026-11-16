@@ -25,9 +25,9 @@ CLightGun * __cdecl CLightGun::ctor(CLightGun *this_ptr);
 // Address: 004fff70
 int __cdecl CLightGun::isVampireType(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_FUN_004ffff0
+// Original: core_lightgun.cpp_isLightSensitiveType_FUN_004ffff0
 // Address: 004ffff0
-undefined4 FUN_004ffff0(CCharacter *param_1);
+int __cdecl isLightSensitiveType(CCharacter *character);
 
 // Original: core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090
 // Address: 00500090

@@ -201,9 +201,9 @@ uint __cdecl packPixelNative(int red,int green,int blue);
 // Address: 004c4bf0
 int __cdecl getAlpha(void);
 
-// Original: engine_font.cpp_FUN_004c4c51
-// Address: 004c4c51
-void FUN_004c4c51(void);
+// Original: engine_font.cpp_FUN_004c4c00
+// Address: 004c4c00
+void FUN_004c4c00(void);
 
 // Original: engine_font.cpp_findHardwareEdgeByYMin_FUN_004c4d40
 // Address: 004c4d40

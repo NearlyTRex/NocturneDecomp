@@ -11,33 +11,33 @@ suspicious, since the reference list uses exact address resolution.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions checked: 6227
-  Functions with suspicious globals: 803
-  Total suspicious global references: 1439
+  Functions checked: 6255
+  Functions with suspicious globals: 814
+  Total suspicious global references: 1466
 
   Most commonly misresolved globals:
     g_CDemonActorClassInfo                             46 functions
     g_CEnemyClassInfo                                  31 functions
-    DAT_01c2a38c                                       20 functions
+    DAT_01c2a38c                                       21 functions
     g_CVectorTypeInfo                                  20 functions
     g_CDemonCameraInstance                             19 functions
     g_CWeaponClassInfo                                 15 functions
     DAT_0061ed94                                       14 functions
     DAT_01c34910                                       12 functions
     g_SfxSamples                                       12 functions
+    DAT_00622014                                       11 functions
     DAT_01c35838                                       11 functions
     g_CHeroClassInfo                                   11 functions
     g_CBasicEnemyClassInfo                             11 functions
     g_CAlphaBitmapTypeInfo                             11 functions
     DAT_0265370c                                       10 functions
-    DAT_00622014                                       9 functions
+    DAT_01c2b64c                                       9 functions
     DAT_01c35839                                       8 functions
     DAT_01c3583a                                       8 functions
     g_CBasicNPCClassInfo                               8 functions
-    DAT_01c2b64c                                       8 functions
     DAT_01c37790                                       8 functions
 
-  Raw .cpp files with issues: 803
+  Raw .cpp files with issues: 814
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -849,6 +849,78 @@ shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00480150  [.cpp]  (6 sus
 
   g_CVectorTypeInfo
     Used at lines: 82
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00478aa0  [.cpp]  (5 suspicious globals)
+  File: 
+
+  DAT_01c21e88
+    Used at lines: 22, 43, 55
+    NOT found in function reference list
+
+  DAT_01c21e8c
+    Used at lines: 29
+    NOT found in function reference list
+
+  DAT_01c21f4c
+    Used at lines: 35, 36, 44, 48, 49, ...
+    NOT found in function reference list
+
+  DAT_01c21f50
+    Used at lines: 37, 50
+    NOT found in function reference list
+
+  DAT_01c21f54
+    Used at lines: 38, 51
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00478c00  [.cpp]  (5 suspicious globals)
+  File: 
+
+  DAT_01c21f4c
+    Used at lines: 22, 43, 55
+    NOT found in function reference list
+
+  DAT_01c21f50
+    Used at lines: 29
+    NOT found in function reference list
+
+  DAT_01c22010
+    Used at lines: 35, 36, 44, 48, 49, ...
+    NOT found in function reference list
+
+  DAT_01c22014
+    Used at lines: 37, 50
+    NOT found in function reference list
+
+  DAT_01c22018
+    Used at lines: 38, 51
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00479030  [.cpp]  (5 suspicious globals)
+  File: 
+
+  DAT_01c22198
+    Used at lines: 22, 43, 55
+    NOT found in function reference list
+
+  DAT_01c221a0
+    Used at lines: 29
+    NOT found in function reference list
+
+  DAT_01c2225c
+    Used at lines: 35, 36, 44, 48, 49, ...
+    NOT found in function reference list
+
+  DAT_01c22260
+    Used at lines: 37, 50
+    NOT found in function reference list
+
+  DAT_01c22264
+    Used at lines: 38, 51
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3876,6 +3948,42 @@ wincore_wddvmem.cpp_populateColorTable_FUN_004d0c90  [.cpp]  (3 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_00443f50  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_01510850
+    Used at lines: 22, 43, 55
+    NOT found in function reference list
+
+  DAT_01510854
+    Used at lines: 29
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0046e8f0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_01c2b64c
+    Used at lines: 38
+    NOT found in function reference list
+
+  DAT_01c35e74
+    Used at lines: 40
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_005044c0  [.cpp]  (2 suspicious globals)
+  File: sound/mp3.cpp
+
+  DAT_00618e88
+    Used at lines: 26
+    NOT found in function reference list
+
+  DAT_00618ec8
+    Used at lines: 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042ebf0  [.cpp]  (2 suspicious globals)
   File: cockpit/ckptutil.c
 
@@ -4572,6 +4680,18 @@ engine_3d.c_clipAndDrawLine3D_FUN_00407fc0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_clipper.c_FUN_00432880  [.cpp]  (2 suspicious globals)
+  File: engine/clipper.c
+
+  DAT_00622014
+    Used at lines: 71, 367, 407
+    NOT found in function reference list
+
+  DAT_00622024
+    Used at lines: 48, 52
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 engine_console.cpp_staticInit_FUN_00436650  [.cpp]  (2 suspicious globals)
   File: engine/console.cpp
 
@@ -4737,6 +4857,38 @@ wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005889c0  [.cpp]  (2 suspicio
 
   DAT_01c2b64c
     Used at lines: 30
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00404620  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_00622014
+    Used at lines: 33, 40
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00431070  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_007bee3c
+    Used at lines: 32, 33
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00594d20  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_02666c6c
+    Used at lines: 30, 73, 105
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+cockpit_ckptutil.c_FUN_0042d700  [.cpp]  (1 suspicious globals)
+  File: cockpit/ckptutil.c
+
+  DAT_01c2a38c
+    Used at lines: 34, 46
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

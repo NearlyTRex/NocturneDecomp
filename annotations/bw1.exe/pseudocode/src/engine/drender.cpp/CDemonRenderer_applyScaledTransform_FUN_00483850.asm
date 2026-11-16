@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[55]:
+; XREF[56]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0 at 004087d8
 ;   core_anvil.cpp_CAnvil_renderOpaque_FUN_0040e7b0 at 0040e7ea
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0 at 004102bf
@@ -23,7 +23,7 @@
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00422600 at 0042264d
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_00425480 at 00425550
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0 at 0042f49d
-;   ... and 45 more
+;   ... and 46 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005db384

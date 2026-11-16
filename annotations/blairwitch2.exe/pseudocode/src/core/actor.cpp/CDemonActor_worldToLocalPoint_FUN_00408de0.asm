@@ -12,7 +12,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined        Stack[-0x14]:1  local_14
 ;
-; XREF[95]:
+; XREF[97]:
+;   FUN_00458930 at 00458a36
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a609
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 at 004094d2
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 004101b4
@@ -22,8 +23,7 @@
 ;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf0 at 00427c1a
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 at 0042acc5
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 00428900
-;   core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80 at 00424df0
-;   ... and 85 more
+;   ... and 87 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0

@@ -121,7 +121,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
           iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,0);
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                     (&pCVar1->base,iVar5 + 2,iVar13);
-          core_shadowsc_cpp_FUN_00560fe0(this_ptr);
+          core_shadowsc_cpp_CShadowsc_playGiantAttackSound_FUN_00560fe0(this_ptr);
         }
       }
       else {

@@ -40,7 +40,7 @@ void __cdecl core_baal_cpp_CBaal_processDamage_FUN_00597af0(CBaal *this_ptr,SDam
       }
       iVar3 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
       if (0x5a < iVar3) {
-        core_baal_cpp_FUN_00597be0(this_ptr,0);
+        core_baal_cpp_CBaal_chooseRandomMotion_FUN_00597be0(this_ptr,0);
       }
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);

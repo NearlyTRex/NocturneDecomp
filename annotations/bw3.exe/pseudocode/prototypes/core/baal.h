@@ -49,9 +49,9 @@ int __cdecl CBaal::renderTransparent(CBaal *this_ptr);
 // Address: 00597af0
 void __cdecl CBaal::processDamage(CBaal *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_baal.cpp_FUN_00597be0
+// Original: core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0
 // Address: 00597be0
-void FUN_00597be0(int param_1,int param_2);
+void __cdecl CBaal::chooseRandomMotion(CBaal *this_ptr,int allow_stand);
 
 // Original: core_baal.cpp_CBaal_archive_FUN_00597c70
 // Address: 00597c70

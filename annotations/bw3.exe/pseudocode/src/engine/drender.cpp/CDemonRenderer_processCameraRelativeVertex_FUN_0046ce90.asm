@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[59]:
+; XREF[60]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0 at 004087ff
 ;   core_battery.cpp_CBattery_renderOpaque_FUN_0040f590 at 0040f5a5
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412db9
@@ -22,7 +22,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0045add0 at 0045adea
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0045abd0 at 0045abe9
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170 at 0045d18d
-;   ... and 49 more
+;   ... and 50 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bc513

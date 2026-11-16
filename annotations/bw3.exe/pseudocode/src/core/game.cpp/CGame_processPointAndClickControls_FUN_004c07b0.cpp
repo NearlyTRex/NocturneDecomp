@@ -11,6 +11,7 @@
 void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame *this_ptr,SPlayerInput *player_control)
 
 {
+  CWeapon *actor_ptr;
   bool bVar1;
   float fVar2;
   float fVar3;
@@ -19,7 +20,7 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
   uint uVar6;
   uint uVar7;
   CDemonActor *this_ptr_00;
-  CDemonActor *actor_ptr;
+  CDemonActor *actor_ptr_00;
   int iVar8;
   CCharacter *pCVar9;
   CDemonActor *this_ptr_01;
@@ -285,7 +286,7 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
   float fStack_60;
   float fStack_58;
   float local_54;
-  CDemonActor *local_50;
+  CPrye *local_50;
   int local_4c;
   float fStack_48;
   int iStack_44;
@@ -309,12 +310,13 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
   }
   local_54 = 8.0;
   local_844 = 0.0;
-  local_50 = core_actor_cpp_castToClassHash_FUN_0040c840
-                       (*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04),g_CPryeClassInfo.name_hash)
-  ;
+  local_50 = (CPrye *)core_actor_cpp_castToClassHash_FUN_0040c840
+                                (*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04),
+                                 g_CPryeClassInfo.name_hash);
   iVar8 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
   if (((iVar8 != 0) && (iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x10c))(), 0 < iVar8)) ||
-     ((local_50 != (CDemonActor *)0x0 && (iVar8 = core_prye_cpp_FUN_00527110(), iVar8 != 0)))) {
+     ((local_50 != (CPrye *)0x0 &&
+      (iVar8 = core_prye_cpp_CPrye_isPerformingAction_FUN_00527110(local_50), iVar8 != 0)))) {
     return;
   }
   local_88 = _DAT_01c5fadc;
@@ -900,14 +902,15 @@ LAB_004c23a6:
   if ((pCStack_b4 == (CCharacter *)0x0) && ((_DAT_01c5fae4 & 2) != 0)) {
     (player_control->action_state).fire = 1;
   }
-  if ((((local_50 != (CDemonActor *)0x0) &&
-       (pCVar15 = *(CDemonActor **)(local_50[0x186].actor_name + 0x14),
-       pCVar15 != (CDemonActor *)0x0)) &&
-      ((pCVar15[2].orient.vec.x == 4.2039e-45 ||
-       (((iVar8 = core_actor_cpp_isOfClass_FUN_0040c790(pCVar15,"CStorm"), iVar8 != 0 ||
-         (iVar8 = core_actor_cpp_isOfClass_FUN_0040c790(pCVar15,"CHeal"), iVar8 != 0)) ||
-        (iVar8 = core_actor_cpp_isOfClass_FUN_0040c790(pCVar15,"CFireStaff"), iVar8 != 0)))
-       ))) && (_DAT_01d1e34c = (CCharacter *)0x0, _DAT_01d22b48 == (CDemonActor *)0x5)) {
+  if ((((local_50 != (CPrye *)0x0) && (actor_ptr = local_50->weapon, actor_ptr != (CWeapon *)0x0))
+      && ((actor_ptr->weapon_type == WEAPON_TYPE_DYNAMITE ||
+          (((iVar8 = core_actor_cpp_isOfClass_FUN_0040c790(&actor_ptr->base,"CStorm"),
+            iVar8 != 0 ||
+            (iVar8 = core_actor_cpp_isOfClass_FUN_0040c790(&actor_ptr->base,"CHeal"),
+            iVar8 != 0)) ||
+           (iVar8 = core_actor_cpp_isOfClass_FUN_0040c790(&actor_ptr->base,"CFireStaff"),
+           iVar8 != 0)))))) &&
+     (_DAT_01d1e34c = (CCharacter *)0x0, _DAT_01d22b48 == (CDemonActor *)0x5)) {
     _DAT_01d22b48 = (CDemonActor *)0x0;
   }
   if ((pCStack_b4 == (CCharacter *)0x0) || ((_DAT_01c5fae4 & 2) == 0)) {
@@ -916,8 +919,8 @@ LAB_004c23a6:
     }
   }
   else {
-    if (((local_50 == (CDemonActor *)0x0) || (*(int *)(local_50[0x186].actor_name + 0x14) == 0)) ||
-       (*(int *)(*(int *)(local_50[0x186].actor_name + 0x14) + 0x2e0) != 3)) {
+    if (((local_50 == (CPrye *)0x0) || (local_50->weapon == (CWeapon *)0x0)) ||
+       (local_50->weapon->weapon_type != WEAPON_TYPE_DYNAMITE)) {
       core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_00449eb0
                 (&g_CDemonCameraInstance,local_88,local_4c,(CVector3i *)(auStack_378 + 4));
@@ -1114,9 +1117,9 @@ LAB_004c23a6:
     (player_control->action_state).fire = 1;
   }
 LAB_004c15df:
-  if (((((_DAT_01c5fae4 & 2) != 0) && (local_50 != (CDemonActor *)0x0)) &&
-      (*(int *)(local_50[0x186].actor_name + 0x14) != 0)) &&
-     (*(int *)(*(int *)(local_50[0x186].actor_name + 0x14) + 0x2e0) == 7)) {
+  if (((((_DAT_01c5fae4 & 2) != 0) && (local_50 != (CPrye *)0x0)) &&
+      (local_50->weapon != (CWeapon *)0x0)) && (local_50->weapon->weapon_type == WEAPON_TYPE_MELEE))
+  {
     (player_control->action_state).fire = 1;
   }
   if ((_DAT_01c5fae4 & 1) == 0) {
@@ -1332,7 +1335,7 @@ LAB_004c3ed9:
                              (pCVar15,g_CBoxActorClassInfo.name_hash);
       pCStack_1c = pCStack_94;
       pCStack_84 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar15,g_CMeleeClassInfo.name_hash);
-      actor_ptr = pCStack_74;
+      actor_ptr_00 = pCStack_74;
       this_ptr_02 = core_actor_cpp_castToClassHash_FUN_0040c840
                               (pCStack_74,g_CWeaponClassInfo.name_hash);
       this_ptr_00 = pCStack_84;
@@ -1755,7 +1758,7 @@ LAB_004c3ed9:
         }
         else {
           this_ptr_03 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c840
-                                           (actor_ptr,g_CConstructClassInfo.name_hash);
+                                           (actor_ptr_00,g_CConstructClassInfo.name_hash);
           if (this_ptr_03 != (CHero *)0x0) {
             out_box = (CBoundingBox3D *)0x40a00000;
             (*(((this_ptr_03->base).base.vtable._uh)->_uh).reset)(this_ptr_03);

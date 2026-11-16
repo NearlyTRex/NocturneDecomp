@@ -78,6 +78,6 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b4180(CGame *this_ptr)
   this_ptr->end_timer = -1.0;
   DAT_01d225c8 = 0;
   this_ptr->chapter_reload_filename[0] = '\0';
-  core_game_cpp_FUN_004c4d10(this_ptr);
+  core_game_cpp_CGame_resetMusic_FUN_004c4d10(this_ptr);
   return this_ptr;
 }

@@ -352,11 +352,11 @@ SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_arrdtor4_FUN_004bf700(SNotesMap 
 SNotesSection * __cdecl core_fldnotes_cpp_SNotesSection_arrdtor6_FUN_004bf720(SNotesSection *this_ptr,uint flags);
 void __cdecl core_flattn_cpp_staticInit_FUN_004bf740(void);
 void __cdecl core_flattn_cpp_doNothing_FUN_004bf770(void);
-void core_flattn_cpp_FUN_004bf780(undefined4 *param_1);
-void core_flattn_cpp_FUN_004bf800(undefined4 *param_1,undefined4 *param_2);
-void core_flattn_cpp_FUN_004bf890(undefined4 *param_1);
-void core_flattn_cpp_FUN_004bf910(float *param_1,float *param_2);
-void core_flattn_cpp_FUN_004bf990(float *param_1,float *param_2);
+void __cdecl core_flattn_cpp_setFlattenMatrix_FUN_004bf780(CMatrix3x3f *matrix);
+void __cdecl core_flattn_cpp_setFlattenMatrixAndOffset_FUN_004bf800(CMatrix3x3f *matrix,CVector3f *offset);
+void __cdecl core_flattn_cpp_setFlattenMatrixTransposed_FUN_004bf890(CMatrix3x3f *matrix);
+void __cdecl core_flattn_cpp_flattenTransformPoint_FUN_004bf910(CVector3f *point_out,CVector3f *point_in);
+void __cdecl core_flattn_cpp_flattenTransformVector_FUN_004bf990(CVector3f *vector_out,CVector3f *vector_in);
 void __cdecl core_flies_cpp_staticInit_FUN_004bfa00(void);
 CFlies * __cdecl core_flies_cpp_factoryFuncFlies_FUN_004bfa30(void);
 CDemonActorType * __cdecl core_flies_cpp_CFlies_getActorType_FUN_004bfa50(CFlies *this_ptr);

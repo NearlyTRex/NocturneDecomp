@@ -8,7 +8,8 @@
 ; SRenderVertex *  Stack[0x8]:4   vertex_b
 ; SRenderVertex *  Stack[0xc]:4   vertex_out
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_005b9da0 at 005b9e7c
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0 at 005ba629
 ;
 ; Referenced Globals:

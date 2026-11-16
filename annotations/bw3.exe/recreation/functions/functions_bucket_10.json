@@ -576,7 +576,8 @@
   {
     "addr":"00404410",
     "callers":[
-      "00404440"
+      "00404440",
+      "004044d0"
     ],
     "conv":"__cdecl",
     "instructions":12,
@@ -3908,21 +3909,6 @@
     "variadic":false
   },
   {
-    "addr":"00435e90",
-    "conv":"unknown",
-    "instructions":6,
-    "method":"FUN_00435e90",
-    "name":"cockpit_ckptutil.c_FUN_00435e90",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
     "addr":"00436310",
     "conv":"__cdecl",
     "instructions":56,
@@ -6588,6 +6574,7 @@
       "004f9670",
       "005365c0",
       "0053af20",
+      "0053f0f0",
       "0053f940",
       "00540cf0",
       "005680b0",
@@ -6628,6 +6615,7 @@
       "004dbe70",
       "005365c0",
       "0053af20",
+      "0053f0f0",
       "0053f940",
       "00540cf0",
       "005680b0"
@@ -6713,6 +6701,7 @@
       "004f9670",
       "0050c980",
       "00533b80",
+      "0053f0f0",
       "0053f940",
       "005430e0",
       "00543380",
@@ -6763,6 +6752,7 @@
       "004f9670",
       "005365c0",
       "0053af20",
+      "0053f0f0",
       "0053f940",
       "00540cf0",
       "005680b0"
@@ -10568,14 +10558,15 @@
       "004b4180",
       "004be8d0"
     ],
-    "conv":"unknown",
+    "cls":"CGame",
+    "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_004c4d10",
-    "name":"core_game.cpp_FUN_004c4d10",
-    "receiver":false,
+    "method":"resetMusic",
+    "name":"core_game.cpp_CGame_resetMusic_FUN_004c4d10",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -12419,6 +12410,7 @@
     "callers":[
       "004a6090",
       "004e5570",
+      "0053f0f0",
       "0053f940"
     ],
     "conv":"__cdecl",
@@ -15315,7 +15307,7 @@
     ],
     "cls":"CPackedBitmap",
     "conv":"__cdecl",
-    "instructions":147,
+    "instructions":159,
     "method":"load",
     "name":"cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90",
     "params":[
@@ -15494,6 +15486,10 @@
   },
   {
     "addr":"00510610",
+    "callers":[
+      "00510c70",
+      "00510d20"
+    ],
     "cls":"CPackedBitmapSet",
     "conv":"__cdecl",
     "instructions":34,
@@ -15583,6 +15579,9 @@
   },
   {
     "addr":"00510a90",
+    "callers":[
+      "00510da0"
+    ],
     "calls":[
       "004659c0",
       "004e4330",
@@ -15630,7 +15629,8 @@
   {
     "addr":"00510f90",
     "callers":[
-      "00510810"
+      "00510810",
+      "00510d20"
     ],
     "calls":[
       "005a4ee0"
@@ -16144,14 +16144,15 @@
       "004fc0c0",
       "004fc350"
     ],
-    "conv":"unknown",
+    "cls":"CPrye",
+    "conv":"__cdecl",
     "instructions":51,
-    "method":"FUN_00527110",
-    "name":"core_prye.cpp_FUN_00527110",
-    "receiver":false,
+    "method":"isPerformingAction",
+    "name":"core_prye.cpp_CPrye_isPerformingAction_FUN_00527110",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/prye.cpp",

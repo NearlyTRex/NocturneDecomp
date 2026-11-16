@@ -12,7 +12,7 @@
 ;   core_dtri.cpp_CDemonTriangle_render_FUN_0047aea0 at 0047afdd
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0053ad70 at 0053add6
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 0054085b
-;   core_setdir.cpp_FUN_0053f5d0 at 0053f6c6
+;   core_setdir.cpp_FUN_0053f0f0 at 0053f6c6
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00548c70 at 00549401
 ;   core_water.cpp_CWater_render_FUN_00577760 at 00577cce
 ;

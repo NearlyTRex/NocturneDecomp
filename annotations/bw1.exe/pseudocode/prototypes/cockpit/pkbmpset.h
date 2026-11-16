@@ -33,9 +33,9 @@ void __cdecl CPackedBitmapSet::loadJoinedRAW(CPackedBitmapSet *this_ptr,char *fi
 // Address: 00538db0
 void __cdecl CPackedBitmapSet::reload(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
 
-// Original: cockpit_pkbmpset.cpp_FUN_00539100
-// Address: 00539100
-void FUN_00539100(void);
+// Original: cockpit_pkbmpset.cpp_FUN_00538f90
+// Address: 00538f90
+void FUN_00538f90(void);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190
 // Address: 00539190

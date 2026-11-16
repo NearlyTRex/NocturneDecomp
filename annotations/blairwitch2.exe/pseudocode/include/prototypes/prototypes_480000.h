@@ -34,7 +34,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807
 void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004808b0(CEditorTools *this_ptr,int start_x,int start_y,int length);
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_00480b70(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
 void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00480bf0(CEditorTools *this_ptr,int cursor_type,int height,int width);
-undefined4 shape_edittool_cpp_FUN_00480cf0(void);
+int __cdecl shape_edittool_cpp_isEditorMini3DMode_FUN_00480cf0(void);
 void __cdecl shape_edittool_cpp_CEditorTools_setMini3DMode_FUN_00480d00(CEditorTools *this_ptr,int enable);
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_00480d20(CStrList *this_ptr);
 CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00480d40(CStrList *this_ptr,uint flags);
@@ -110,6 +110,7 @@ int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(CEdChe
 int __cdecl shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004855f0(CEdCheck *this_ptr);
 void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_00485610(CEdCheck *this_ptr);
+undefined4 FUN_00485740(int *param_1);
 int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_00485840(char *pattern,char *target_string,int case_sensitive);
 int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_004858f0(CStrList *this_ptr);
 void __cdecl core_elephant_cpp_staticInit_FUN_00485940(void);

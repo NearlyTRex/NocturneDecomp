@@ -51,7 +51,7 @@ void __cdecl core_game_cpp_drawCursor_FUN_004c4a10(void);
 void __cdecl core_game_cpp_CGame_playMusic_FUN_004c4a60(CGame *this_ptr,char *music_name,double start_position);
 void __cdecl core_game_cpp_CGame_updateMusic_FUN_004c4bc0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_saveMusicPosition_FUN_004c4cc0(CGame *this_ptr);
-void core_game_cpp_FUN_004c4d10(int param_1);
+void __cdecl core_game_cpp_CGame_resetMusic_FUN_004c4d10(CGame *this_ptr);
 CWeapon * __cdecl core_game_cpp_getSelectedWeapon_FUN_004c4d50(CInventory *inventory_ptr);
 CAlphaBitmap * __cdecl core_game_cpp_CAlphaBitmap_arrdtor8_FUN_004c4d60(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl core_gargoyle_cpp_staticInit_FUN_004c4d80(void);

@@ -8,7 +8,8 @@
 ; Local Variables:
 ; undefined        Stack[-0x100]:1  local_100
 ;
-; XREF[4]:
+; XREF[5]:
+;   FUN_004f7ea0 at 004f7eb0
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 004078b0
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004df050 at 004df3b4
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004dee60 at 004dee7d

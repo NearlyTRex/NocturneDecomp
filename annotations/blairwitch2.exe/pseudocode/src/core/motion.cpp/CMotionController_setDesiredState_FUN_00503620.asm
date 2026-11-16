@@ -8,7 +8,8 @@
 ; int              Stack[0x8]:4   desired_state_index
 ; int              Stack[0xc]:4   force_immediate
 ;
-; XREF[162]:
+; XREF[163]:
+;   FUN_00458930 at 00458cff
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040fffb
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410040 at 00410064
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040faba
@@ -18,8 +19,7 @@
 ;   core_basicene.cpp_CBasicEnemy_processNothingState_FUN_0059ebc0 at 0059ebce
 ;   core_basicene.cpp_CBasicEnemy_processPatrolState_FUN_0059ee00 at 0059ef19
 ;   core_basicene.cpp_CBasicEnemy_process_FUN_0059f420 at 0059f49a
-;   core_basicnpc.cpp_CBasicNPC_processDeathState_FUN_005a48a0 at 005a48b8
-;   ... and 152 more
+;   ... and 153 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005dfc48

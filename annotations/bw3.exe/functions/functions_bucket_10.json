@@ -7344,6 +7344,25 @@
     }
   },
   {
+    "addr":"00434e90",
+    "body":[
+      {
+        "end":"00434e95",
+        "size":6,
+        "start":"00434e90"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00434e90",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"00434f90",
     "body":[
       {
@@ -7770,24 +7789,6 @@
     }
   },
   {
-    "addr":"00435e90",
-    "body":[
-      {
-        "end":"00435e97",
-        "size":8,
-        "start":"00435e90"
-      }
-    ],
-    "importable":true,
-    "name":"cockpit_ckptutil.c_FUN_00435e90",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
     "addr":"00436310",
     "body":[
       {
@@ -8138,6 +8139,30 @@
     "importable":true,
     "name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043ad90",
     "ret":"void"
+  },
+  {
+    "addr":"0043b010",
+    "body":[
+      {
+        "end":"0043b071",
+        "size":98,
+        "start":"0043b010"
+      },
+      {
+        "end":"0043b0e1",
+        "size":70,
+        "start":"0043b09c"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_0043b010",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
   },
   {
     "addr":"0043f110",
@@ -14896,6 +14921,25 @@
             "size":4
           }
         ]
+      }
+    }
+  },
+  {
+    "addr":"00479b10",
+    "body":[
+      {
+        "end":"00479c5c",
+        "size":333,
+        "start":"00479b10"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_00479b10",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
       }
     }
   },
@@ -24743,14 +24787,29 @@
         "start":"004c4d10"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004c4d10",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_game.cpp_CGame_resetMusic_FUN_004c4d10",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGame*"
+        }
+      ]
     }
   },
   {
@@ -29603,6 +29662,25 @@
           "type":"undefined4"
         }
       ]
+    }
+  },
+  {
+    "addr":"004e5410",
+    "body":[
+      {
+        "end":"004e54dc",
+        "size":205,
+        "start":"004e5410"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_004e5410",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
     }
   },
   {
@@ -37468,8 +37546,8 @@
     "addr":"0050fa90",
     "body":[
       {
-        "end":"0050fcb7",
-        "size":552,
+        "end":"0050fcd2",
+        "size":579,
         "start":"0050fa90"
       }
     ],
@@ -44537,10 +44615,10 @@
         "start":"00527110"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_prye.cpp_FUN_00527110",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_prye.cpp_CPrye_isPerformingAction_FUN_00527110",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -44560,8 +44638,33 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPrye*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

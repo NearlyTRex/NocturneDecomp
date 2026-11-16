@@ -9,7 +9,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[172]:
+; XREF[173]:
 ;   cockpit_ckptutil.c_generateTransparencySpans_FUN_00438ca0 at 00438dc7
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0 at 00435190
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0 at 0043681e
@@ -20,7 +20,7 @@
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00436a50 at 00436a8e
 ;   cockpit_ckptutil.c_traceConnectedEdges_FUN_00438070 at 0043817b
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90 at 0050fbdd
-;   ... and 162 more
+;   ... and 163 more
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005a2898

@@ -1,0 +1,293 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 281,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 23,
+    "suspect_types": [
+      "sign_compare_idiom",
+      "stack_param",
+      "undefined_data"
+    ],
+    "total_lines": 121
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0053df10",
+    "address_range": [
+      [
+        "0053df10",
+        "0053dffb"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "engine_prim.c_FUN_0053df10",
+    "signature": "bool engine_prim_c_FUN_0053df10(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00713a7c",
+      "name": "DAT_00713a7c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.756410256410256,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 1,
+      "CBRANCH": 2,
+      "COPY": 61,
+      "INT_ADD": 45,
+      "INT_AND": 75,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 6,
+      "INT_LESS": 16,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 15,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 3,
+      "INT_SEXT": 6,
+      "INT_SLESS": 27,
+      "INT_SUB": 23,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 30,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 13,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 449
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00552300",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f9bc0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(in_stack_00000004 + 0x18);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)(in_stack_00000004 + 0x24);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)(in_stack_00000004 + 0x30);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00713a7c",
+      "severity": "mild",
+      "text": "if (DAT_00713a7c == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_00629024",
+      "severity": "mild",
+      "text": "iStack_24 = (&DAT_00629024)[iVar4 * 0xc] - (&DAT_00629024)[iVar1 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_00629024",
+      "severity": "mild",
+      "text": "iStack_24 = (&DAT_00629024)[iVar4 * 0xc] - (&DAT_00629024)[iVar1 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_00629028",
+      "severity": "mild",
+      "text": "iStack_20 = *(int *)(&DAT_00629028 + iVar3) - *(int *)(&DAT_00629028 + iVar1 * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_00629028",
+      "severity": "mild",
+      "text": "iStack_20 = *(int *)(&DAT_00629028 + iVar3) - *(int *)(&DAT_00629028 + iVar1 * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_00629024",
+      "severity": "mild",
+      "text": "iStack_1c = (&DAT_00629024)[iVar5 * 0xc] - (&DAT_00629024)[iVar4 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_00629024",
+      "severity": "mild",
+      "text": "iStack_1c = (&DAT_00629024)[iVar5 * 0xc] - (&DAT_00629024)[iVar4 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_00629028",
+      "severity": "mild",
+      "text": "iStack_18 = *(int *)(&DAT_00629028 + iVar5 * 0x30) - *(int *)(&DAT_00629028 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_00629028",
+      "severity": "mild",
+      "text": "iStack_18 = *(int *)(&DAT_00629028 + iVar5 * 0x30) - *(int *)(&DAT_00629028 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00629024",
+      "severity": "mild",
+      "text": "iStack_1c = (&DAT_00629024)[iVar4 * 0xc] - (&DAT_00629024)[iVar1 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00629024",
+      "severity": "mild",
+      "text": "iStack_1c = (&DAT_00629024)[iVar4 * 0xc] - (&DAT_00629024)[iVar1 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_00629028",
+      "severity": "mild",
+      "text": "iStack_18 = *(int *)(&DAT_00629028 + iVar3) - *(int *)(&DAT_00629028 + iVar1 * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_00629028",
+      "severity": "mild",
+      "text": "iStack_18 = *(int *)(&DAT_00629028 + iVar3) - *(int *)(&DAT_00629028 + iVar1 * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00629024",
+      "severity": "mild",
+      "text": "iStack_24 = (&DAT_00629024)[iVar5 * 0xc] - (&DAT_00629024)[iVar4 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00629024",
+      "severity": "mild",
+      "text": "iStack_24 = (&DAT_00629024)[iVar5 * 0xc] - (&DAT_00629024)[iVar4 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_00629028",
+      "severity": "mild",
+      "text": "iStack_20 = *(int *)(&DAT_00629028 + iVar5 * 0x30) - *(int *)(&DAT_00629028 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_00629028",
+      "severity": "mild",
+      "text": "iStack_20 = *(int *)(&DAT_00629028 + iVar5 * 0x30) - *(int *)(&DAT_00629028 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 39,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 39,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;",
+      "type": "sign_compare_idiom"
+    }
+  ]
+}

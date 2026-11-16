@@ -131,6 +131,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00404320(SMRGLHea
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_00404370(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_setActiveRenderColor_FUN_00404410(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(SLineStrip *line_strip);
+int FUN_004044d0(int param_1);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_004048e0(SMRGLHeaderPrimitive *prim);
@@ -148,6 +149,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDestReadBlendOp33_FUN_004
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLit_FUN_004051a0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405360(SMRGLHeaderPrimitive *prim);
+int * FUN_00405400(SMRGLHeaderPrimitive *param_1);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogTexturedPerspOp39_FUN_00405720(SMRGLHeaderPrimitive *prim);
@@ -302,7 +304,7 @@ void __cdecl core_actor_cpp_crc32ProcessBuffer_FUN_0040cf00(uint *crc_state,byte
 void __cdecl core_actor_cpp_crc32ProcessInt_FUN_0040cf40(uint *crc_state,int value);
 void __cdecl core_actor_cpp_crc32ProcessVector_FUN_0040cf60(uint *crc_state,CVector3f *vector);
 void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040cf80(uint *crc_state,char *string);
-float core_actor_cpp_FUN_0040cfc0(float *param_1);
+float __cdecl core_actor_cpp_sqrtFloatRef_FUN_0040cfc0(float *value);
 CVector3f * __cdecl core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(CVector3f *this_ptr);
 void __cdecl core_actor_cpp_copyVector_FUN_0040cff0(CVector3f *dst_ptr,CVector3f *src_ptr);
 float __cdecl core_actor_cpp_CVector3f_length_FUN_0040d010(CVector3f *this_ptr);

@@ -17,10 +17,6 @@ void __cdecl CDemonPart::alloc(CDemonPart *this_ptr);
 // Address: 00479ae0
 void __cdecl CDemonPart::free(CDemonPart *this_ptr);
 
-// Original: core_dpart.cpp_FUN_00479b22
-// Address: 00479b22
-void FUN_00479b22(void);
-
 // Original: core_dpart.cpp_CDemonPart_load_FUN_00479b40
 // Address: 00479b40
 void __cdecl CDemonPart::load(CDemonPart *this_ptr);

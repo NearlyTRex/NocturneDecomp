@@ -205,6 +205,7 @@ void __esi engine_matrix_c_getCameraOrigin_FUN_004ea3b0(CVector3i *output);
 void __esi engine_matrix_c_getCameraRotation_FUN_004ea3e0(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_004ea410(int x,int y,int width,int height);
 void __cdecl engine_matrix_c_popViewport_FUN_004ea570(void);
+int FUN_004ea6a0(int param_1);
 void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ea730(int offset_x,int offset_y,int offset_z);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_004ea7e0(void);
 void __cdecl core_melee_cpp_staticInit_FUN_004ea850(void);
@@ -230,7 +231,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_a
 void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3d0(char *instruction_text,char *message_text);
 int __cdecl core_menu_cpp_calibrateGamepad_FUN_004eb490(void);
 void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004eb7c0(int *sensitivity_value_ptr,char *window_title);
-void core_menu_cpp_FUN_004eba50(int *param_1,char *param_2);
+void __cdecl core_menu_cpp_adjustFixedPointSlider_FUN_004eba50(int *value_ptr,char *window_title);
 void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004ebce0(char *message_text);
 void __cdecl core_menu_cpp_showCalibrationTest_FUN_004ebe30(void);
 void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004ebf10(void);

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
-; XREF[64]:
+; XREF[65]:
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20 at 0040df69
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e810 at 0040e857
 ;   core_asgaya.cpp_CAsgaya_renderOpaque_FUN_005a1760 at 005a17c2
@@ -17,7 +17,7 @@
 ;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90 at 0041905e
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0 at 004217ab
 ;   core_chain.cpp_CChain_renderTransparent_FUN_0042a280 at 0042a2fe
-;   ... and 54 more
+;   ... and 55 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

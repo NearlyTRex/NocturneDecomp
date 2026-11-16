@@ -119,7 +119,7 @@ void __cdecl core_inv_cpp_staticInit_FUN_004f5ef0(void);
 CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004f60c0(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDescription_FUN_004f6350(CDemonActor *actor_ptr);
-void core_inv_cpp_FUN_004f63c0(float param_1,float param_2);
+CVector3i * __stack2_esi core_inv_cpp_screenToWorldPoint_FUN_004f63c0(float screen_x,float screen_y,CVector3i *out_point);
 void __cdecl core_inv_cpp_renderSps_FUN_004f64f0(void);
 void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void);
 int __cdecl core_inv_cpp_playSpsSound_FUN_004f6b50(CCharacter *character,char *sound_name);
@@ -251,5 +251,5 @@ CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_004ffe80(void);
 CDemonActorType * __cdecl core_lightgun_cpp_CLightGun_getActorType_FUN_004ffea0(CLightGun *this_ptr);
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004ffeb0(CLightGun *this_ptr);
 int __cdecl core_lightgun_cpp_CLightGun_isVampireType_FUN_004fff70(CLightGun *this_ptr);
-undefined4 core_lightgun_cpp_FUN_004ffff0(CCharacter *param_1);
+int __cdecl core_lightgun_cpp_isLightSensitiveType_FUN_004ffff0(CCharacter *character);
 

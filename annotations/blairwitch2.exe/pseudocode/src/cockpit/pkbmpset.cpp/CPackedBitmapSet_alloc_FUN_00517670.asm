@@ -7,9 +7,10 @@
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bitmap_count
 ;
-; XREF[2]:
+; XREF[3]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00517710 at 00517742
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_005177e0 at 005178b6
+;   cockpit_pkbmpset.cpp_FUN_00517c40 at 00517c74
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

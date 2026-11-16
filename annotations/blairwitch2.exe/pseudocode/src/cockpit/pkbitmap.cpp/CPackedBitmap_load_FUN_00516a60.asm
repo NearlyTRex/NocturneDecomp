@@ -79,7 +79,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x130]     ; 00516af3
     CMP EAX,dword ptr [EBP + 0x1c]      ; 00516afa
     JGE 0x00516c88                      ; 00516afd
-        ;   XREF to: 00516c88 (CONDITIONAL_JUMP)
+        ;   XREF to: 00516c88 (CONDITIONAL_JUMP)  ; LAB_00516c88
     MOV EDI,dword ptr [EBP + 0x18]      ; 00516b03
     XOR EBX,EBX                         ; 00516b06
     TEST EDI,EDI                        ; 00516b08
@@ -208,4 +208,18 @@ section .text
         ;   Label: LAB_00516c85
     JMP 0x00516c18                      ; 00516c86
         ;   XREF to: 00516c18 (UNCONDITIONAL_JUMP)  ; LAB_00516c18
+    PUSH ESI                            ; 00516c88
+        ;   Label: LAB_00516c88
+    MOV EAX,dword ptr [EBP + 0x14]      ; 00516c89
+    PUSH EAX                            ; 00516c8c
+    CALL crt_memory.c_realloc_FUN_005b8ce0 ; 00516c8d
+        ;   XREF to: 005b8ce0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005b8ce0(void * ptr, ulong new_size)
+    ADD ESP,0x8                         ; 00516c92
+    MOV dword ptr [EBP + 0x14],EAX      ; 00516c95
+    ADD ESP,0x144                       ; 00516c98
+    POP EBP                             ; 00516c9e
+    POP EDI                             ; 00516c9f
+    POP ESI                             ; 00516ca0
+    POP EBX                             ; 00516ca1
+    RET                                 ; 00516ca2
 

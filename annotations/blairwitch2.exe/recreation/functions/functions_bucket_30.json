@@ -4001,21 +4001,6 @@
     "variadic":false
   },
   {
-    "addr":"0042d730",
-    "conv":"unknown",
-    "instructions":6,
-    "method":"FUN_0042d730",
-    "name":"cockpit_ckptutil.c_FUN_0042d730",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
     "addr":"0042de30",
     "conv":"__cdecl",
     "instructions":61,
@@ -5347,7 +5332,10 @@
   {
     "addr":"00443db0",
     "callers":[
+      "00443f50",
+      "004440b0",
       "00444220",
+      "004444e0",
       "00444650",
       "00445a30"
     ],
@@ -5356,14 +5344,8 @@
     ],
     "conv":"__cdecl",
     "data_refs":[
-      "0044402c",
-      "0044408a",
-      "00444192",
-      "004441ee",
       "00444460",
-      "004444bc",
-      "004445c2",
-      "0044461e"
+      "004444bc"
     ],
     "instructions":145,
     "method":"clipEdgeToPlane",
@@ -10620,14 +10602,24 @@
   },
   {
     "addr":"004a67b0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_004a67b0",
-    "name":"core_flattn.cpp_FUN_004a67b0",
+    "method":"setFlattenMatrix",
+    "name":"core_flattn.cpp_setFlattenMatrix_FUN_004a67b0",
+    "params":[
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -10635,14 +10627,32 @@
   },
   {
     "addr":"004a6830",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":35,
-    "method":"FUN_004a6830",
-    "name":"core_flattn.cpp_FUN_004a6830",
+    "method":"setFlattenMatrixAndOffset",
+    "name":"core_flattn.cpp_setFlattenMatrixAndOffset_FUN_004a6830",
+    "params":[
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -13916,6 +13926,9 @@
   },
   {
     "addr":"004e8d30",
+    "callers":[
+      "004ea6a0"
+    ],
     "conv":"__stack_esi",
     "instructions":74,
     "method":"transformWorldToView",
@@ -14975,16 +14988,14 @@
       "004079f0",
       "004df770",
       "004df960",
-      "004dfd50"
+      "004dfd50",
+      "005006a0"
     ],
     "calls":[
       "004e4500",
       "005b7790"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "005006b0"
-    ],
     "instructions":95,
     "method":"getMRGLSize",
     "name":"engine_model.c_getMRGLSize_FUN_00500f30",
@@ -16225,7 +16236,8 @@
   {
     "addr":"00517130",
     "callers":[
-      "005171e0"
+      "005171e0",
+      "00517c40"
     ],
     "calls":[
       "00460c70",
@@ -16272,7 +16284,8 @@
   {
     "addr":"005175b0",
     "callers":[
-      "00517710"
+      "00517710",
+      "00517c40"
     ],
     "calls":[
       "005b77c0"
@@ -16286,21 +16299,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"cockpit/pkbmpset.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"00517db0",
-    "conv":"unknown",
-    "instructions":5,
-    "method":"FUN_00517db0",
-    "name":"cockpit_pkbmpset.cpp_FUN_00517db0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",
@@ -17183,7 +17181,7 @@
     "addr":"00537030",
     "callers":[
       "00423a60",
-      "00459555",
+      "00458e80",
       "004c1bb0",
       "0056acd0",
       "00576ab0",
@@ -17287,6 +17285,7 @@
       "00423a60",
       "004392b0",
       "0043a7a0",
+      "00458e80",
       "004599a0",
       "00459ff0",
       "0045ab40",
@@ -24649,6 +24648,7 @@
       "00502fa0",
       "00510510",
       "00516d70",
+      "00517d70",
       "00519ee0",
       "00519f00",
       "0051a990",

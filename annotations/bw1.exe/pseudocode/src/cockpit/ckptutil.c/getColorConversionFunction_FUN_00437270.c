@@ -1,6 +1,6 @@
 // Name: cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
 // Address: 00437270
-// Address Range: [[00437270, 00437285] [00437290, 004372a4] [004372b0, 004372b5]]
+// Address Range: [[00437270, 0043727f]]
 // Convention: __cdecl
 // Signature: ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270(void)
 

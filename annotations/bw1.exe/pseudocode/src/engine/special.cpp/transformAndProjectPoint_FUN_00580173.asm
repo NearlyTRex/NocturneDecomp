@@ -7,7 +7,8 @@
 ; SProjectedVertex * Stack[0x4]:4   output
 ; CVector3i *      Stack[0x8]:4   input
 ;
-; XREF[65]:
+; XREF[67]:
+;   FUN_00452d70 at 00452dd2
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940 at 004099cd
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420dc0 at 00420e6d
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420990 at 00420a0a
@@ -17,8 +18,7 @@
 ;   core_cloth.cpp_CCloth_renderBone_FUN_00441500 at 004415e6
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0 at 00452f5d
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457f70 at 0045800c
-;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60 at 0045ecf9
-;   ... and 55 more
+;   ... and 57 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00623e28

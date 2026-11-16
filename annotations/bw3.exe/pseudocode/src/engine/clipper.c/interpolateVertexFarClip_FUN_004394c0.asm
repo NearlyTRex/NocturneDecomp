@@ -8,7 +8,8 @@
 ; SRenderVertex *  Stack[0x8]:4   v2
 ; SRenderVertex *  Stack[0xc]:4   output
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00439ae0 at 00439c4f
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00439da0 at 0043a772
 ;
 ; Referenced Globals:

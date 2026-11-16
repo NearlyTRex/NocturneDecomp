@@ -7,8 +7,8 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_prye.cpp_CPrye_isPerformingAction_FUN_00527110 at 00527163
 ;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 0051924d
-;   core_prye.cpp_FUN_00527110 at 00527163
 ;
 ; *****************************************************************************
 

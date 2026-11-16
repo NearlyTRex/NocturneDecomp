@@ -731,7 +731,7 @@ CConstruct_full_vtable g_CConstructVTable = {
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_00489730,
         .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_0048a220
     },
-    ._uconstruct = {.vfunc83 = (CConstruct_vfunc83 *)core_construc_cpp_FUN_00444340}
+    ._uconstruct = {.vfunc83 = (CConstruct_vfunc83 *)core_construc_cpp_CConstruct_getEffectivePosition_FUN_00444340}
 };
 CConstruct_full_vtable g_CConstructBoneVTable = {
     ._ub = {
@@ -823,7 +823,7 @@ CConstruct_full_vtable g_CConstructBoneVTable = {
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_00489730,
         .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_0048a220
     },
-    ._uconstruct = {.vfunc83 = (CConstruct_vfunc83 *)core_construc_cpp_FUN_00444340}
+    ._uconstruct = {.vfunc83 = (CConstruct_vfunc83 *)core_construc_cpp_CConstruct_getEffectivePosition_FUN_00444340}
 };
 CConstruct_full_vtable g_CConstructRedVTable = {
     ._ub = {
@@ -915,7 +915,7 @@ CConstruct_full_vtable g_CConstructRedVTable = {
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_00489730,
         .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_0048a220
     },
-    ._uconstruct = {.vfunc83 = (CConstruct_vfunc83 *)core_construc_cpp_FUN_00444340}
+    ._uconstruct = {.vfunc83 = (CConstruct_vfunc83 *)core_construc_cpp_CConstruct_getEffectivePosition_FUN_00444340}
 };
 
 // CDemonActor_vtable

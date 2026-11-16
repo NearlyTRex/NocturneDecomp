@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[14]:
+; XREF[15]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0 at 004170c9
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700 at 0044d85e
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0 at 0044d097
@@ -21,7 +21,7 @@
 ;   core_moon.cpp_CMoon_render_FUN_00521e40 at 00521ee2
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0 at 005510ce
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590 at 0055559f
-;   ... and 4 more
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005db35c

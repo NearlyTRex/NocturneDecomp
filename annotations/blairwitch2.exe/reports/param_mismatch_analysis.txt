@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5948
-Functions with no callers: 2825
+Functions with parameter estimates: 5974
+Functions with no callers: 2843
 Parameter mismatches detected: 300
 Signature accuracy rate: 90.4%
 
 Mismatches by confidence:
-  High confidence:   17 (multiple call sites agree)
+  High confidence:   16 (multiple call sites agree)
   Medium confidence: 64 (some agreement)
-  Low confidence:    219 (limited data)
+  Low confidence:    220 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -46,16 +46,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_unknown.c_FUN_005c2ea4 at 005c2fe6: 2 reg [EAX, EDX], 3 stack (12 bytes, via add_esp)
       crt_unknown.c_FUN_005c2ea4 at 005c2ffc: 2 reg [EAX, ECX], 3 stack (12 bytes, via add_esp)
       crt_unknown.c_FUN_005c2ea4 at 005c3057: 2 reg [EAX, EDX], 3 stack (12 bytes, via add_esp)
-
-  core_inv.cpp_FUN_004d9ff0
-    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
-    Call sites: 8, Confidence: high
-    File: core/inv.cpp
-    Signature: void core_inv_cpp_FUN_004d9ff0(float param_1,float param_2)
-    Sample call sites:
-      core_inv.cpp_CInventory_render at 004de5aa: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
-      core_inv.cpp_CInventory_render at 004de6ae: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
-      core_inv.cpp_CInventory_render at 004de7a5: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
 
   crt_unknown.c_FUN_005c618c
     Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
@@ -257,7 +247,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  219 functions with low-confidence mismatches
+  220 functions with low-confidence mismatches
   Sample:
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
     core_actor.cpp_checkNameHash_FUN_0040c870     declared:2 est:1 (-1)
@@ -274,26 +264,26 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 39
+Functions where declaration has MORE params than estimated: 40
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 261
+Functions where declaration has FEWER params than estimated: 260
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -6 params: 1 functions
   -5 params: 1 functions
   -4 params: 1 functions
-  -3 params: 3 functions
+  -3 params: 4 functions
   -2 params: 6 functions
   -1 params: 27 functions
   +1 params: 72 functions
   +2 params: 63 functions
   +3 params: 43 functions
-  +4 params: 34 functions
-  +5 params: 24 functions
+  +4 params: 33 functions
+  +5 params: 23 functions
   +6 params: 14 functions
   +7 params: 7 functions
-  +8 params: 2 functions
+  +8 params: 3 functions
   +9 params: 1 functions
   +10 params: 1 functions

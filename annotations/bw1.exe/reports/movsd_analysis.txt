@@ -8,23 +8,23 @@ fixed by replacing them with explicit MOV instructions in code caves.
 
 SUMMARY
 --------------------------------------------------
-Consecutive MOVSD groups:  3399
-  1x MOVSD ( 4 bytes):   51 sites
+Consecutive MOVSD groups:  3421
+  1x MOVSD ( 4 bytes):   60 sites
   2x MOVSD ( 8 bytes):   18 sites
-  3x MOVSD (12 bytes):   3097 sites
+  3x MOVSD (12 bytes):   3110 sites
   4x MOVSD (16 bytes):   231 sites
   5x MOVSD (20 bytes):   2 sites
-  Fixable (cave patch):   3194
-  No artifacts (OK):      150
-  Unfixable:              55
-  Est. cave space:        ~106632 bytes
+  Fixable (cave patch):   3208
+  No artifacts (OK):      149
+  Unfixable:              64
+  Est. cave space:        ~107094 bytes
 
-REP MOVSD sites:           834
-  Fixable (struct copy):  579
+REP MOVSD sites:           849
+  Fixable (struct copy):  581
   No artifacts (OK):      31
-  Too large (buffer):     106
+  Too large (buffer):     117
   Dynamic count:          81
-  Pass-by-value:          37
+  Pass-by-value:          39
 
   REP MOVSD by copy size:
     unknown count:        82 sites
@@ -34,7 +34,7 @@ REP MOVSD sites:           834
       9 dwords (  36 bytes): 2 sites
      10 dwords (  40 bytes): 19 sites
      11 dwords (  44 bytes): 2 sites
-     12 dwords (  48 bytes): 246 sites
+     12 dwords (  48 bytes): 250 sites
      13 dwords (  52 bytes): 4 sites
      15 dwords (  60 bytes): 4 sites
      16 dwords (  64 bytes): 17 sites
@@ -44,7 +44,7 @@ REP MOVSD sites:           834
      25 dwords ( 100 bytes): 10 sites
      31 dwords ( 124 bytes): 2 sites
      44 dwords ( 176 bytes): 1 sites
-     48 dwords ( 192 bytes): 15 sites
+     48 dwords ( 192 bytes): 25 sites
      49 dwords ( 196 bytes): 4 sites
      50 dwords ( 200 bytes): 3 sites
      64 dwords ( 256 bytes): 8 sites
@@ -64,9 +64,9 @@ REP MOVSD sites:           834
     2050 dwords (8200 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
     4800 dwords (19200 bytes): 1 sites
-    12288 dwords (49152 bytes): 1 sites
+    12288 dwords (49152 bytes): 2 sites
 
-Total MOVSD sites:         4233
+Total MOVSD sites:         4270
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE 5x MOVSD SITES (20 bytes copy, 1 sites)
@@ -353,7 +353,7 @@ FIXABLE 4x MOVSD SITES (16 bytes copy, 217 sites)
     0x0059c81b  4x MOVSD (16 bytes copy, 6 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 3x MOVSD SITES (12 bytes copy, 2962 sites)
+FIXABLE 3x MOVSD SITES (12 bytes copy, 2976 sites)
 ----------------------------------------------------------------------------------------------------
   CBox_processPhysics_FUN_0041e130                                        55 sites  ~1815 bytes
     0x0041e2b6  3x MOVSD (12 bytes copy, 9 bytes borrowable)
@@ -2079,6 +2079,15 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2962 sites)
     0x0055bd4b  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0055bdc3  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0055be3f  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+  FUN_0055f630                                                             8 sites  ~264 bytes
+    0x0055f695  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x0055f6e4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x0055f785  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x0055f7dd  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x0055f894  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x0055f8f5  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x0055f998  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x0055f9f9  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CShadowsc_process_FUN_00560630                                           8 sites  ~264 bytes
     0x0056081c  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x005608de  3x MOVSD (12 bytes copy, 9 bytes borrowable)
@@ -2935,6 +2944,10 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2962 sites)
     0x005ba948  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x005ba95d  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x005ba97b  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  FUN_0044fb10                                                             3 sites  ~99 bytes
+    0x0044fb34  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x0044fbed  3x MOVSD (12 bytes copy, 8 bytes borrowable)
+    0x0044fc09  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonActor_processFootstepAtOffset_FUN_0040c750                         3 sites  ~99 bytes
     0x0040c774  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0040c780  3x MOVSD (12 bytes copy, 5 bytes borrowable)
@@ -3603,6 +3616,10 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2962 sites)
   CSpotView_applyCamera_FUN_005847e0                                       2 sites  ~66 bytes
     0x00584878  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x005848b2  3x MOVSD (12 bytes copy, 8 bytes borrowable)
+  FUN_00405400                                                             1 sites  ~33 bytes
+    0x00405436  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+  FUN_00509340                                                             1 sites  ~33 bytes
+    0x00509372  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70                      1 sites  ~33 bytes
     0x00409dd6  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonActor_inverseTransformVector_FUN_00408b00                          1 sites  ~33 bytes
@@ -3783,7 +3800,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2962 sites)
     0x004f1a7e  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CImp_processDamage_FUN_004f3f50                                          1 sites  ~33 bytes
     0x004f3f9f  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-  FUN_004f63c0                                                             1 sites  ~33 bytes
+  screenToWorldPoint_FUN_004f63c0                                          1 sites  ~33 bytes
     0x004f64df  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CLarva_getTargetPoints_FUN_004fe710                                      1 sites  ~33 bytes
     0x004fe73c  3x MOVSD (12 bytes copy, 5 bytes borrowable)
@@ -3821,6 +3838,8 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2962 sites)
     0x00554f47  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CDemonSet_isPointInWater_FUN_005595a0                                    1 sites  ~33 bytes
     0x0055963c  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+  FUN_00559730                                                             1 sites  ~33 bytes
+    0x00559ac1  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CShadow_getTargetPoints_FUN_00560150                                     1 sites  ~33 bytes
     0x00560183  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CShadow_processDamage_FUN_0055fea0                                       1 sites  ~33 bytes
@@ -3986,7 +4005,7 @@ NO ARTIFACTS 4x MOVSD SITES (16 bytes copy, 12 sites — decompiler handles OK)
     0x005b7bf1  4x MOVSD (16 bytes copy)
 
 ----------------------------------------------------------------------------------------------------
-NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 133 sites — decompiler handles OK)
+NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 132 sites — decompiler handles OK)
 ----------------------------------------------------------------------------------------------------
   CCurtain_solveConstraints_FUN_0044ac10                                  17 sites
     0x0044acb2  3x MOVSD (12 bytes copy)
@@ -4028,7 +4047,7 @@ NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 133 sites — decompiler handles OK)
     0x00435b63  3x MOVSD (12 bytes copy)
     0x00435bba  3x MOVSD (12 bytes copy)
     0x00435c36  3x MOVSD (12 bytes copy)
-  FUN_004474d0                                                             5 sites
+  CConstruct_getEffectivePosition_FUN_004474d0                             5 sites
     0x00447501  3x MOVSD (12 bytes copy)
     0x0044752a  3x MOVSD (12 bytes copy)
     0x00447533  3x MOVSD (12 bytes copy)
@@ -4167,8 +4186,6 @@ NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 133 sites — decompiler handles OK)
     0x00553426  3x MOVSD (12 bytes copy)
   transformToWorldSpace_FUN_00553210                                       1 sites
     0x005532cf  3x MOVSD (12 bytes copy)
-  FUN_0055f9c0                                                             1 sites
-    0x0055f9f9  3x MOVSD (12 bytes copy)
   CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130         1 sites
     0x0056916d  3x MOVSD (12 bytes copy)
   resetTrainSounds_FUN_0057c4e0                                            1 sites
@@ -4197,7 +4214,7 @@ NO ARTIFACTS 2x MOVSD SITES (8 bytes copy, 4 sites — decompiler handles OK)
     0x005ca526  2x MOVSD (8 bytes copy)
   FUN_005ca5a0                                                             1 sites
     0x005ca5bb  2x MOVSD (8 bytes copy)
-  FUN_0059f340                                                             1 sites
+  copyNetworkAddr_FUN_0059f340                                             1 sites
     0x0059f34c  2x MOVSD (8 bytes copy)
   getTime_FUN_005b2420                                                     1 sites
     0x005b2447  2x MOVSD (8 bytes copy)
@@ -4218,7 +4235,7 @@ UNFIXABLE 3x MOVSD SITES (12 bytes copy, 2 sites)
     0x005882e3  3x MOVSD (12 bytes copy)  only 4 bytes available (need 5)
 
 ----------------------------------------------------------------------------------------------------
-UNFIXABLE 1x MOVSD SITES (4 bytes copy, 51 sites)
+UNFIXABLE 1x MOVSD SITES (4 bytes copy, 60 sites)
 ----------------------------------------------------------------------------------------------------
   transformAndClipGeometry_FUN_005b9fc0                                   30 sites
     0x005ba028  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
@@ -4267,6 +4284,13 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 51 sites)
     0x0043cb5e  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0043cb7a  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0043cb80  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+  FUN_005b9ab0                                                             6 sites
+    0x005b9b33  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x005b9b4f  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x005b9b55  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+    0x005b9bbe  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x005b9bda  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x005b9be0  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
   clipPolygonStage3_FUN_005b9c30                                           6 sites
     0x005b9cae  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x005b9cca  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
@@ -4274,9 +4298,13 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 51 sites)
     0x005b9d39  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x005b9d55  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x005b9d5b  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+  FUN_0043bed0                                                             3 sites
+    0x0043bf48  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0043bf64  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0043bf6a  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE REP MOVSD STRUCT COPIES (579 sites)
+FIXABLE REP MOVSD STRUCT COPIES (581 sites)
 ----------------------------------------------------------------------------------------------------
   CStranger_computeWeaponAttachXForm_FUN_0058afe0                         23 sites
     0x0058b0f2  REP MOVSD 12 dwords (48 bytes)
@@ -4540,6 +4568,9 @@ FIXABLE REP MOVSD STRUCT COPIES (579 sites)
     0x0051fd0b  REP MOVSD 13 dwords (52 bytes)
     0x0051fd1d  REP MOVSD 13 dwords (52 bytes)
     0x0051fd62  REP MOVSD 13 dwords (52 bytes)
+  FUN_004044d0                                                             2 sites
+    0x0040451a  REP MOVSD 12 dwords (48 bytes)
+    0x0040452d  REP MOVSD 12 dwords (48 bytes)
   CDemonActor_getWorldBoundingBox_FUN_00408ec0                             2 sites
     0x00408f1b  REP MOVSD 6 dwords (24 bytes)
     0x0040904c  REP MOVSD 6 dwords (24 bytes)
@@ -5249,7 +5280,7 @@ REP MOVSD — NO ARTIFACTS (decompiler handles OK) (31 sites)
     0x00407db3  REP MOVSD 12 dwords (48 bytes)
 
 ----------------------------------------------------------------------------------------------------
-REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (106 sites)
+REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (117 sites)
 ----------------------------------------------------------------------------------------------------
   clipPolygonToViewport_FUN_0043de60                                      10 sites
     0x0043dfe1  REP MOVSD 48 dwords (192 bytes)
@@ -5262,6 +5293,15 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (106 sites)
     0x0043e442  REP MOVSD 48 dwords (192 bytes)
     0x0043e4c1  REP MOVSD 48 dwords (192 bytes)
     0x0043e540  REP MOVSD 48 dwords (192 bytes)
+  FUN_0043d6e0                                                             8 sites
+    0x0043d860  REP MOVSD 48 dwords (192 bytes)
+    0x0043d8d1  REP MOVSD 48 dwords (192 bytes)
+    0x0043d966  REP MOVSD 48 dwords (192 bytes)
+    0x0043da15  REP MOVSD 48 dwords (192 bytes)
+    0x0043dabf  REP MOVSD 48 dwords (192 bytes)
+    0x0043dc21  REP MOVSD 48 dwords (192 bytes)
+    0x0043dca0  REP MOVSD 48 dwords (192 bytes)
+    0x0043dd1f  REP MOVSD 48 dwords (192 bytes)
   CDemonActor_doCheckForInvalidPointers_FUN_0040ab00                       3 sites
     0x0040ab8f  REP MOVSD 49 dwords (196 bytes)
     0x0040ac25  REP MOVSD 49 dwords (196 bytes)
@@ -5294,6 +5334,9 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (106 sites)
     0x00499ccd  REP MOVSD 128 dwords (512 bytes)
     0x00499ceb  REP MOVSD 128 dwords (512 bytes)
     0x00499da1  REP MOVSD 65 dwords (260 bytes)
+  FUN_0043d3c0                                                             2 sites
+    0x0043d43c  REP MOVSD 48 dwords (192 bytes)
+    0x0043d4ac  REP MOVSD 48 dwords (192 bytes)
   CEventList_executeCommand_FUN_004a1d00                                   2 sites
     0x004a4900  REP MOVSD 50 dwords (200 bytes)
     0x004a63ec  REP MOVSD 25 dwords (100 bytes)
@@ -5303,6 +5346,9 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (106 sites)
   CDemonSet_evaluateVirtualDirector_FUN_00559f80                           2 sites
     0x0055ae61  REP MOVSD 256 dwords (1024 bytes)
     0x0055af66  REP MOVSD 12288 dwords (49152 bytes)
+  FUN_00559730                                                             2 sites
+    0x00559cd0  REP MOVSD 256 dwords (1024 bytes)
+    0x00559dc6  REP MOVSD 12288 dwords (49152 bytes)
   clipPolygonLeftPlaneGlobal_FUN_0043d280                                  2 sites
     0x0043d301  REP MOVSD 48 dwords (192 bytes)
     0x0043d371  REP MOVSD 48 dwords (192 bytes)
@@ -5365,8 +5411,6 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (106 sites)
     0x0055937c  REP MOVSD 15 dwords (60 bytes)
   CDemonSet_saveThumbsNoFile_FUN_0055b330                                  1 sites
     0x0055b43a  REP MOVSD 256 dwords (1024 bytes)
-  FUN_00559c10                                                             1 sites
-    0x00559cd0  REP MOVSD 256 dwords (1024 bytes)
   CSound_process_FUN_0057ce10                                              1 sites
     0x0057d2f6  REP MOVSD 25 dwords (100 bytes)
   playSfxInternal_FUN_0057bef0                                             1 sites
@@ -5581,7 +5625,7 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (81 sites)
     0x005b3dc1  REP MOVSD (dynamic count)
 
 ----------------------------------------------------------------------------------------------------
-REP MOVSD — PASS-BY-VALUE (37 sites)
+REP MOVSD — PASS-BY-VALUE (39 sites)
 ----------------------------------------------------------------------------------------------------
   CEditorTools_draw3DAxisLabels_FUN_00498360                               6 sites
     0x00498445  REP MOVSD 12 dwords (48 bytes)
@@ -5605,6 +5649,9 @@ REP MOVSD — PASS-BY-VALUE (37 sites)
     0x00407d92  REP MOVSD 12 dwords (48 bytes)
     0x00407dc3  REP MOVSD 12 dwords (48 bytes)
     0x00407dd3  REP MOVSD 12 dwords (48 bytes)
+  FUN_004044d0                                                             2 sites
+    0x0040453d  REP MOVSD 12 dwords (48 bytes)
+    0x00404554  REP MOVSD 12 dwords (48 bytes)
   CFireEffect_traceLaser_FUN_004b6420                                      2 sites
     0x004b69da  REP MOVSD 21 dwords (84 bytes)
     0x004b6a88  REP MOVSD 21 dwords (84 bytes)

@@ -6,6 +6,10 @@
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ;
+; XREF[2]:
+;   FUN_00539040 at 0053907d
+;   cockpit_pkbmpset.cpp_FUN_00538f90 at 00539021
+;
 ; *****************************************************************************
 
 section .text

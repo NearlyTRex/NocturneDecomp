@@ -4416,6 +4416,24 @@
     "variadic":false
   },
   {
+    "addr":"00435ee0",
+    "calls":[
+      "00434e80"
+    ],
+    "conv":"unknown",
+    "instructions":118,
+    "method":"FUN_00435ee0",
+    "name":"cockpit_ckptutil.c_FUN_00435ee0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"cockpit/ckptutil.c",
+    "variadic":false
+  },
+  {
     "addr":"004367e0",
     "calls":[
       "004659c0",
@@ -4521,21 +4539,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"engine/clipper.c",
-    "variadic":false
-  },
-  {
-    "addr":"0043b4e0",
-    "conv":"unknown",
-    "instructions":7,
-    "method":"FUN_0043b4e0",
-    "name":"engine_clipper.c_FUN_0043b4e0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -7188,7 +7191,7 @@
       "0046ba70",
       "0046bb90",
       "0046bc20",
-      "0046bd80",
+      "0046bd60",
       "0046be60",
       "0046bf90",
       "0046c090",
@@ -7238,6 +7241,24 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
+      "ptr":0
+    },
+    "tu":"engine/drender.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"0046bd60",
+    "calls":[
+      "0046b160"
+    ],
+    "conv":"unknown",
+    "instructions":69,
+    "method":"FUN_0046bd60",
+    "name":"engine_drender.cpp_FUN_0046bd60",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
       "ptr":0
     },
     "tu":"engine/drender.cpp",
@@ -7413,7 +7434,7 @@
       "004d0910",
       "004f5480",
       "004fa6d0",
-      "0053f5d0",
+      "0053f0f0",
       "0053f940",
       "005430e0",
       "00548c70",
@@ -10257,14 +10278,24 @@
   },
   {
     "addr":"004ad5e0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_004ad5e0",
-    "name":"core_flattn.cpp_FUN_004ad5e0",
+    "method":"setFlattenMatrixTransposed",
+    "name":"core_flattn.cpp_setFlattenMatrixTransposed_FUN_004ad5e0",
+    "params":[
+      {
+        "name":"matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -10272,14 +10303,32 @@
   },
   {
     "addr":"004ad660",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":33,
-    "method":"FUN_004ad660",
-    "name":"core_flattn.cpp_FUN_004ad660",
+    "method":"flattenTransformPoint",
+    "name":"core_flattn.cpp_flattenTransformPoint_FUN_004ad660",
+    "params":[
+      {
+        "name":"point_out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"point_in",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -10287,14 +10336,32 @@
   },
   {
     "addr":"004ad6e0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":30,
-    "method":"FUN_004ad6e0",
-    "name":"core_flattn.cpp_FUN_004ad6e0",
+    "method":"flattenTransformVector",
+    "name":"core_flattn.cpp_flattenTransformVector_FUN_004ad6e0",
+    "params":[
+      {
+        "name":"vector_out",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"vector_in",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/flattn.cpp",
@@ -14650,7 +14717,8 @@
   {
     "addr":"00510160",
     "callers":[
-      "00510210"
+      "00510210",
+      "00510c70"
     ],
     "calls":[
       "004659c0",
@@ -14697,7 +14765,8 @@
   {
     "addr":"005105e0",
     "callers":[
-      "00510740"
+      "00510740",
+      "00510c70"
     ],
     "calls":[
       "005a28f0"
@@ -14711,21 +14780,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"cockpit/pkbmpset.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"00510de0",
-    "conv":"unknown",
-    "instructions":5,
-    "method":"FUN_00510de0",
-    "name":"cockpit_pkbmpset.cpp_FUN_00510de0",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",
@@ -21166,14 +21220,25 @@
       "0040cea0",
       "004fc0d0"
     ],
-    "conv":"unknown",
+    "cls":"CBaal",
+    "conv":"__cdecl",
     "instructions":55,
-    "method":"FUN_00597be0",
-    "name":"core_baal.cpp_FUN_00597be0",
-    "receiver":false,
+    "method":"chooseRandomMotion",
+    "name":"core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0",
+    "params":[
+      {
+        "name":"allow_stand",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/baal.cpp",
@@ -21998,6 +22063,7 @@
       "004fba50",
       "00509020",
       "0050fda0",
+      "00510da0",
       "00512f90",
       "00512fb0",
       "00513c30",

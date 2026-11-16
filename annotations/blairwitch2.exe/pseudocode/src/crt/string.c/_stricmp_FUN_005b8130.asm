@@ -7,7 +7,8 @@
 ; char *           Stack[0x4]:4   str1
 ; char *           Stack[0x8]:4   str2
 ;
-; XREF[106]:
+; XREF[107]:
+;   FUN_00517d70 at 00517dfc
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_00516d70 at 00516d9f
 ;   core_actor.cpp_CDemonActor_load_FUN_0040b1c0 at 0040b20a
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_004177e0 at 00417800
@@ -17,8 +18,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_setup_FUN_00462c90 at 00462cbf
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0 at 0048e9e9
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 at 0048e358
-;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 004896af
-;   ... and 96 more
+;   ... and 97 more
 ;
 ; *****************************************************************************
 

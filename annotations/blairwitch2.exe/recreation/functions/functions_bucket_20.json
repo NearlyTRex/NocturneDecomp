@@ -269,6 +269,7 @@
       "00405370",
       "00405450",
       "00405530",
+      "004055d0",
       "004060c0",
       "00406170",
       "004067c0",
@@ -2290,14 +2291,24 @@
   },
   {
     "addr":"0040d320",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":8,
-    "method":"FUN_0040d320",
-    "name":"core_actor.cpp_FUN_0040d320",
+    "method":"sqrtFloatRef",
+    "name":"core_actor.cpp_sqrtFloatRef_FUN_0040d320",
+    "params":[
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/actor.cpp",
@@ -4200,6 +4211,8 @@
       "004555c0",
       "004568e0",
       "004583f0",
+      "00458930",
+      "00458e80",
       "004599a0",
       "0045bdc0",
       "0045d0c0",
@@ -4648,13 +4661,10 @@
     "addr":"004321a0",
     "callers":[
       "004326a0",
+      "00432880",
       "00433000"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "00432f0a",
-      "00432f60"
-    ],
     "instructions":126,
     "method":"interpolateVertexBottomClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004321a0",
@@ -4724,21 +4734,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "tu":"engine/clipper.c",
-    "variadic":false
-  },
-  {
-    "addr":"00432a20",
-    "conv":"unknown",
-    "instructions":7,
-    "method":"FUN_00432a20",
-    "name":"engine_clipper.c_FUN_00432a20",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -6050,6 +6045,7 @@
       "00408de0",
       "00416700",
       "00416d70",
+      "0043e450",
       "00443610",
       "00448c90",
       "0044ac60",
@@ -15234,7 +15230,8 @@
       "00453250",
       "004583a0",
       "004583f0",
-      "00459555",
+      "00458930",
+      "00458e80",
       "0045b190",
       "0045bdc0",
       "0045ca30",
@@ -15463,6 +15460,7 @@
       "00453d80",
       "00455270",
       "004555c0",
+      "00458e80",
       "0045bdc0",
       "0045d0c0",
       "004ad640",
@@ -17528,7 +17526,7 @@
       "00408c30",
       "0040c990",
       "0040ca40",
-      "00459555",
+      "00458e80",
       "00499610",
       "004c8d10",
       "0056acd0",
@@ -19660,24 +19658,10 @@
     "variadic":false
   },
   {
-    "addr":"0055bb20",
-    "conv":"unknown",
-    "instructions":5,
-    "method":"FUN_0055bb20",
-    "name":"engine_special.cpp_FUN_0055bb20",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/special.cpp",
-    "variadic":false
-  },
-  {
     "addr":"0055f920",
     "callers":[
       "00431330",
+      "00432880",
       "00433000",
       "00461f70",
       "004625f0",
@@ -24608,7 +24592,6 @@
       "00448fa0",
       "00449e70",
       "004615d0",
-      "00461612",
       "004724c0",
       "0047b690",
       "0047e780",
@@ -24632,6 +24615,7 @@
       "00509db0",
       "00509f30",
       "00516200",
+      "00516230",
       "005168e0",
       "00516960",
       "005177e0",

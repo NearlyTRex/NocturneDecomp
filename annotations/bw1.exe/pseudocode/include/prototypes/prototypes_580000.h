@@ -38,6 +38,7 @@
 
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0058000e(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_00580127(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
+undefined8 FUN_0058012d(void);
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_transformPoint_FUN_0058043c(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_00580740(void);

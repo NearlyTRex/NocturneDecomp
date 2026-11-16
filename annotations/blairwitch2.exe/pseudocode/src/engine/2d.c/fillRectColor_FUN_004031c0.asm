@@ -20,7 +20,7 @@
 ;   core_game.cpp_drawHealthBar_FUN_004b3220 at 004b32aa
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0 at 004de139
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e163a
-;   core_menu.cpp_FUN_004eba50 at 004ebbc5
+;   core_menu.cpp_adjustFixedPointSlider_FUN_004eba50 at 004ebbc5
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb935
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004ebf10 at 004ecadc
 ;   ... and 8 more

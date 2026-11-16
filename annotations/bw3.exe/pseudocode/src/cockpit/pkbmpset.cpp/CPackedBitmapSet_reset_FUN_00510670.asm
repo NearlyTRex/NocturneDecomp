@@ -6,10 +6,13 @@
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ;
-; XREF[3]:
+; XREF[6]:
+;   FUN_00510d20 at 00510d28
+;   FUN_00510d70 at 00510d76
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0 at 005106b7
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740 at 0051075a
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810 at 00510829
+;   cockpit_pkbmpset.cpp_FUN_00510c70 at 00510c8a
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005a308f

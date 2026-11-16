@@ -10,9 +10,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_004568e0 at 00457df7
 ;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 00454c69
+;   core_doc.cpp_FUN_00458e80 at 004591c9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cfb7f

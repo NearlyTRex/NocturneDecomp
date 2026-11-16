@@ -2,7 +2,7 @@
 PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 ====================================================================================================
 
-7 functions with pass-by-value parameters (705 MOVSD.REP scanned, 30 are pass-by-value)
+7 functions with pass-by-value parameters (714 MOVSD.REP scanned, 32 are pass-by-value)
 
 ====================================================================================================
 
@@ -19,6 +19,14 @@ engine_3d.c_clipAndDrawLine2D_FUN_00407b30
     shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350 @ 0x0048175e   2x SRenderVertex
     shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350 @ 0x004818de   2x SRenderVertex
     shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200 @ 0x00481332   2x SRenderVertex
+
+--------------------------------------------------------------------------------
+
+engine_3d.c_clipAndDrawLine3D_FUN_00407e30
+  Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
+  Call sites (2):
+    FUN_004044d0                             @ 0x00404556   2x SRenderVertex
+    engine_3d.c_drawLine3DFromIndices_FUN_00407db0 @ 0x00407e15   2x SRenderVertex
 
 --------------------------------------------------------------------------------
 
@@ -46,13 +54,6 @@ sound_sndmain.cpp_CSfxSlot_mix_FUN_00554920
 
 --------------------------------------------------------------------------------
 
-engine_3d.c_clipAndDrawLine3D_FUN_00407e30
-  Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
-  Call sites (1):
-    engine_3d.c_drawLine3DFromIndices_FUN_00407db0 @ 0x00407e15   2x SRenderVertex
-
---------------------------------------------------------------------------------
-
 core_actor.cpp_archiveString_FUN_0040b680
   Params: arg1=?struct_300 (0x12c)
   Call sites (1):
@@ -75,6 +76,7 @@ These callers need their local frame size (SUB ESP) increased to cover
 the dynamic stack allocations for pass-by-value arguments.
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b7a0 current: 0x12c  required: 0x258  (+0x12c for by-value args)
+  FUN_004044d0                                       current: 0x60  required: 0xc0  (+0x60 for by-value args)
   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005496c0 current: 0x64  required: 0xc4  (+0x60 for by-value args)
   engine_3d.c_drawLine2DFromIndices_FUN_00407ab0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLine3DFromIndices_FUN_00407db0     current: 0x60  required: 0xc0  (+0x60 for by-value args)

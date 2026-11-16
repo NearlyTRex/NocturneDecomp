@@ -924,6 +924,7 @@
   {
     "addr":"00407df0",
     "callers":[
+      "004044d0",
       "00407d70"
     ],
     "calls":[
@@ -1018,6 +1019,7 @@
       "00537190",
       "0053a3d0",
       "0053a520",
+      "00559730",
       "00559f80",
       "0055fc60",
       "005611a0",
@@ -4476,6 +4478,7 @@
       "0054f0d0",
       "005562c0",
       "005580d0",
+      "00559730",
       "00559f80",
       "0056ae70",
       "00583700",
@@ -5605,11 +5608,13 @@
       "00437d00",
       "00437f40",
       "004380a0",
+      "004382d0",
+      "00438410",
       "00438560",
       "00537760"
     ],
     "conv":"__cdecl",
-    "instructions":15,
+    "instructions":5,
     "method":"getColorConversionFunction",
     "name":"cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270",
     "receiver":false,
@@ -5848,6 +5853,7 @@
       "004051a0",
       "00405280",
       "00405360",
+      "00405400",
       "004054e0",
       "00405600",
       "00405720",
@@ -5923,13 +5929,10 @@
     "addr":"0043cc70",
     "callers":[
       "0043d140",
+      "0043d6e0",
       "0043de60"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0043dbed",
-      "0043dc43"
-    ],
     "instructions":126,
     "method":"interpolateVertexRightClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70",
@@ -9821,7 +9824,10 @@
   {
     "addr":"00490df0",
     "callers":[
+      "00490f90",
+      "004910f0",
       "00491260",
+      "00491520",
       "00491690",
       "00491850"
     ],
@@ -9830,14 +9836,8 @@
     ],
     "conv":"__cdecl",
     "data_refs":[
-      "0049106c",
-      "004910ca",
-      "004911d2",
-      "0049122e",
       "004914a0",
-      "004914fc",
-      "00491602",
-      "0049165e"
+      "004914fc"
     ],
     "instructions":145,
     "method":"clipLineToPlane",
@@ -16010,14 +16010,24 @@
     "calls":[
       "0040c550"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":56,
-    "method":"FUN_004ffff0",
-    "name":"core_lightgun.cpp_FUN_004ffff0",
+    "method":"isLightSensitiveType",
+    "name":"core_lightgun.cpp_isLightSensitiveType_FUN_004ffff0",
+    "params":[
+      {
+        "name":"character",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/lightgun.cpp",
@@ -20226,6 +20236,7 @@
   {
     "addr":"0055c6f0",
     "callers":[
+      "00559730",
       "00559f80"
     ],
     "calls":[
@@ -22238,24 +22249,10 @@
     "variadic":false
   },
   {
-    "addr":"0057e570",
-    "conv":"unknown",
-    "instructions":5,
-    "method":"FUN_0057e570",
-    "name":"engine_special.cpp_FUN_0057e570",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/special.cpp",
-    "variadic":false
-  },
-  {
     "addr":"00582370",
     "callers":[
       "0043c190",
+      "0043d6e0",
       "0043de60",
       "0047a480",
       "0047ab00",
@@ -24835,13 +24832,10 @@
   {
     "addr":"005b96f0",
     "callers":[
+      "005b9ab0",
       "005b9fc0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "005b9b8b",
-      "005b9bf9"
-    ],
     "instructions":79,
     "method":"clipInterpolateLeftPlane",
     "name":"core_xform.cpp_clipInterpolateLeftPlane_FUN_005b96f0",
@@ -24883,12 +24877,10 @@
   {
     "addr":"005b9870",
     "callers":[
+      "005b9da0",
       "005b9fc0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "005b9e7c"
-    ],
     "instructions":81,
     "method":"clipInterpolateBottomPlane",
     "name":"core_xform.cpp_clipInterpolateBottomPlane_FUN_005b9870",
@@ -25215,7 +25207,6 @@
       "0045f100",
       "00462670",
       "00479ae0",
-      "00479b22",
       "0048a9b0",
       "00493bd0",
       "00496df0",
@@ -25240,6 +25231,7 @@
       "0052af80",
       "0052b100",
       "00537550",
+      "00537580",
       "00537c30",
       "00537cb0",
       "00538b30",

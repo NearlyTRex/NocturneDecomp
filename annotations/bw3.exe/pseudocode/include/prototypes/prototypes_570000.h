@@ -39,6 +39,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SIpAddr.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SNetworkAddr.h"
 #include "types/structs/SWaterVertex.h"
 
 // =============================================================================
@@ -74,7 +75,7 @@ int __cdecl support_trisock_cpp_lookupHostByAddr_FUN_00572220(uint ip_address,vo
 int __cdecl support_trisock_cpp_getLocalHostInfo_FUN_00572290(void *host_info_out);
 SIpAddr * __cdecl support_trisock_cpp_IpAddr_ctor_FUN_005722f0(SIpAddr *this_ptr);
 void * __cdecl support_trisock_cpp_initHostInfo_FUN_00572310(void *host_info);
-void support_trisock_cpp_FUN_00572330(undefined4 *param_1,undefined4 *param_2);
+SNetworkAddr * __cdecl support_trisock_cpp_copyNetworkAddr_FUN_00572330(SNetworkAddr *dest,SNetworkAddr *src);
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_00572370(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_free_FUN_005723b0(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_render_FUN_005723d0(CTerrain *this_ptr,int render_pass);

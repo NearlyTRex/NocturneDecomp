@@ -39,7 +39,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
 | 19 | Not reached from startup: `engine/` | 23 | 278 | 19700 | 26 | 2 | 9.3% | 60 | 0 |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% | 4 | 0 |
-| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% | 31 | 0 |
+| 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% | 30 | 0 |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% | 19 | 0 |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 295 | 16062 | 69 | 13 | 23.3% | 163 | 0 |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 36 | 8 | 12.9% | 165 | 0 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% | 164 | 0 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 67 | 0 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 0 |
-| | **All** | | **4487** | **402625** | **1205** | **235** | **26.8%** | **2149** | **0** |
+| | **All** | | **4487** | **402625** | **1205** | **235** | **26.8%** | **2148** | **0** |
 
 ## Step 0: Math value types
 
@@ -4237,7 +4237,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `get16BitConversionFunction` 0x004317a0 (2)
   - [ ] `basicIndexedTo16Bit` 0x00431730 (20)
   - [ ] `getColorConversionFunction` 0x00431760 (5)
-    - BW: [ ] bw1 0x00437270 = bw2 0x0042c410 = bw3 0x00434e80 (logic-change)
   - [ ] `getOptimizedMemcpyFunction` 0x00431780 (6)
   - [ ] `loadACTPaletteFile` 0x00431ac0 (124)
     - BW: [ ] bw1 0x00437490 = bw3 0x004350a0 (logic-change); [ ] bw2 0x0042c780 (logic-change)
@@ -9066,13 +9065,10 @@ the retail game has it too. Sizes are in instructions.
 
 | Unit | Functions | Named | Instructions | Done |
 |---|---|---|---|---|
-| `cockpit/ckptutil.c` | 3 | 0 | 18 | 0 |
-| `cockpit/pkbitmap.cpp` | 1 | 0 | 12 | 0 |
-| `cockpit/pkbmpset.cpp` | 1 | 0 | 5 | 0 |
-| `core/actor.cpp` | 6 | 4 | 53 | 0 |
+| `core/actor.cpp` | 6 | 5 | 53 | 0 |
 | `core/ammo.cpp` | 15 | 15 | 345 | 0 |
 | `core/asgaya.cpp` | 15 | 15 | 1218 | 0 |
-| `core/baal.cpp` | 14 | 13 | 1676 | 0 |
+| `core/baal.cpp` | 14 | 14 | 1676 | 0 |
 | `core/basicene.cpp` | 37 | 37 | 2623 | 0 |
 | `core/basicnpc.cpp` | 14 | 14 | 193 | 0 |
 | `core/belling.cpp` | 13 | 13 | 181 | 0 |
@@ -9089,7 +9085,7 @@ the retail game has it too. Sizes are in instructions.
 | `core/charactr.cpp` | 19 | 17 | 1284 | 0 |
 | `core/confedrt.cpp` | 20 | 20 | 1422 | 0 |
 | `core/confzomb.cpp` | 16 | 16 | 883 | 0 |
-| `core/construc.cpp` | 25 | 23 | 2456 | 0 |
+| `core/construc.cpp` | 24 | 24 | 2400 | 0 |
 | `core/cross.cpp` | 14 | 14 | 1216 | 0 |
 | `core/darkwolf.cpp` | 15 | 15 | 791 | 0 |
 | `core/dcamera.cpp` | 2 | 2 | 117 | 0 |
@@ -9098,10 +9094,9 @@ the retail game has it too. Sizes are in instructions.
 | `core/disease.cpp` | 8 | 8 | 154 | 0 |
 | `core/djien.cpp` | 19 | 19 | 2529 | 0 |
 | `core/dlight.cpp` | 1 | 1 | 268 | 0 |
-| `core/doc.cpp` | 61 | 60 | 14816 | 0 |
+| `core/doc.cpp` | 61 | 60 | 15275 | 0 |
 | `core/dog.cpp` | 12 | 12 | 237 | 0 |
 | `core/door.cpp` | 2 | 2 | 74 | 0 |
-| `core/dpart.cpp` | 1 | 0 | 8 | 0 |
 | `core/enemy.cpp` | 3 | 3 | 281 | 0 |
 | `core/event.cpp` | 1 | 1 | 16 | 0 |
 | `core/exorcism.cpp` | 11 | 11 | 1284 | 0 |
@@ -9110,10 +9105,10 @@ the retail game has it too. Sizes are in instructions.
 | `core/firestff.cpp` | 12 | 12 | 947 | 0 |
 | `core/flame.cpp` | 1 | 1 | 21 | 0 |
 | `core/flashlit.cpp` | 24 | 24 | 1226 | 0 |
-| `core/flattn.cpp` | 9 | 0 | 272 | 0 |
+| `core/flattn.cpp` | 5 | 5 | 156 | 0 |
 | `core/fldnotes.cpp` | 82 | 82 | 6190 | 0 |
 | `core/flintlck.cpp` | 8 | 8 | 911 | 0 |
-| `core/game.cpp` | 18 | 16 | 3410 | 0 |
+| `core/game.cpp` | 18 | 17 | 3410 | 0 |
 | `core/ghostchi.cpp` | 16 | 16 | 720 | 0 |
 | `core/gmehook.cpp` | 5 | 5 | 210 | 0 |
 | `core/goggles.cpp` | 13 | 13 | 176 | 0 |
@@ -9130,17 +9125,17 @@ the retail game has it too. Sizes are in instructions.
 | `core/hpatrol.cpp` | 10 | 10 | 494 | 0 |
 | `core/hpbox.cpp` | 8 | 8 | 747 | 0 |
 | `core/imp.cpp` | 2 | 2 | 10 | 0 |
-| `core/inv.cpp` | 10 | 8 | 977 | 0 |
+| `core/inv.cpp` | 9 | 9 | 880 | 0 |
 | `core/kedward.cpp` | 11 | 11 | 2008 | 0 |
 | `core/lantern.cpp` | 15 | 15 | 398 | 0 |
-| `core/lightgun.cpp` | 2 | 1 | 86 | 0 |
+| `core/lightgun.cpp` | 2 | 2 | 86 | 0 |
 | `core/lightpis.cpp` | 13 | 13 | 1457 | 0 |
 | `core/lightsta.cpp` | 11 | 11 | 2687 | 0 |
 | `core/marquee.cpp` | 1 | 1 | 1 | 0 |
 | `core/mattnntt.cpp` | 13 | 13 | 2292 | 0 |
 | `core/melee.cpp` | 1 | 1 | 90 | 0 |
 | `core/meleeaxe.cpp` | 6 | 6 | 122 | 0 |
-| `core/menu.cpp` | 1 | 0 | 200 | 0 |
+| `core/menu.cpp` | 1 | 1 | 200 | 0 |
 | `core/mine.cpp` | 11 | 11 | 507 | 0 |
 | `core/mission.cpp` | 1 | 1 | 56 | 0 |
 | `core/moocow.cpp` | 11 | 11 | 685 | 0 |
@@ -9151,15 +9146,15 @@ the retail game has it too. Sizes are in instructions.
 | `core/necklace.cpp` | 6 | 6 | 272 | 0 |
 | `core/netgame.cpp` | 1 | 1 | 6 | 0 |
 | `core/npc.cpp` | 2 | 2 | 77 | 0 |
-| `core/prye.cpp` | 53 | 52 | 15384 | 0 |
+| `core/prye.cpp` | 53 | 53 | 15384 | 0 |
 | `core/pryemorp.cpp` | 10 | 10 | 651 | 0 |
 | `core/rifle.cpp` | 11 | 11 | 765 | 0 |
 | `core/schngeis.cpp` | 15 | 15 | 1032 | 0 |
 | `core/script.cpp` | 1 | 1 | 4 | 0 |
 | `core/set.cpp` | 5 | 5 | 383 | 0 |
-| `core/setdir.cpp` | 2 | 0 | 196 | 0 |
-| `core/shadow.cpp` | 37 | 36 | 3214 | 0 |
-| `core/shadowsc.cpp` | 17 | 16 | 1269 | 0 |
+| `core/setdir.cpp` | 2 | 0 | 1140 | 0 |
+| `core/shadow.cpp` | 37 | 36 | 3432 | 0 |
+| `core/shadowsc.cpp` | 17 | 17 | 1269 | 0 |
 | `core/skeleton.cpp` | 4 | 4 | 96 | 0 |
 | `core/smiley.cpp` | 1 | 1 | 10 | 0 |
 | `core/sound.cpp` | 1 | 1 | 2 | 0 |
@@ -9183,50 +9178,37 @@ the retail game has it too. Sizes are in instructions.
 | `core/weapon.cpp` | 3 | 3 | 86 | 0 |
 | `core/weather.cpp` | 2 | 2 | 46 | 0 |
 | `core/weaver.cpp` | 14 | 14 | 861 | 0 |
-| `core/xform.cpp` | 1 | 0 | 288 | 0 |
 | `core/yow.cpp` | 11 | 11 | 1554 | 0 |
 | `core/zombie.cpp` | 21 | 21 | 407 | 0 |
 | `core/zombiepriest.cpp` | 16 | 15 | 2825 | 0 |
 | `engine/2d.c` | 1 | 1 | 3 | 0 |
 | `engine/3d.c` | 1 | 1 | 2 | 0 |
 | `engine/alphabit.cpp` | 4 | 4 | 211 | 0 |
-| `engine/clipper.c` | 2 | 0 | 76 | 0 |
+| `engine/clipper.c` | 2 | 0 | 1010 | 0 |
 | `engine/dosio.cpp` | 5 | 5 | 177 | 0 |
-| `engine/drender.cpp` | 4 | 3 | 43 | 0 |
-| `engine/font.cpp` | 8 | 7 | 947 | 0 |
+| `engine/drender.cpp` | 3 | 3 | 6 | 0 |
+| `engine/font.cpp` | 7 | 7 | 870 | 0 |
 | `engine/ini.cpp` | 3 | 3 | 89 | 0 |
 | `engine/mini3d.cpp` | 131 | 131 | 8551 | 0 |
 | `engine/palette.cpp` | 2 | 2 | 176 | 0 |
-| `engine/prim.c` | 1 | 0 | 58 | 0 |
-| `engine/special.cpp` | 3 | 2 | 685 | 0 |
+| `engine/special.cpp` | 2 | 2 | 680 | 0 |
 | `engine/texture.cpp` | 12 | 12 | 989 | 0 |
-| `shape/edittool.cpp` | 14 | 11 | 447 | 0 |
+| `shape/edittool.cpp` | 12 | 12 | 443 | 0 |
 | `sound/snddx.cpp` | 3 | 3 | 106 | 0 |
 | `sound/sndmain.cpp` | 16 | 16 | 647 | 0 |
 | `sound/sndwav.cpp` | 1 | 1 | 1 | 0 |
 | `support/codec.cpp` | 33 | 33 | 1004 | 0 |
-| `support/trisock.cpp` | 33 | 31 | 2582 | 0 |
+| `support/trisock.cpp` | 32 | 32 | 2512 | 0 |
 | `support/trstream.cpp` | 80 | 80 | 3087 | 0 |
-| `wincore/winrun.cpp` | 19 | 15 | 935 | 0 |
-| **All** | **1888** | **1836** | **156162** | **0** |
-
-### `cockpit/ckptutil.c`
-- [ ] unnamed bw1 0x00438280, bw2 0x0042d570, bw3 0x00435e90 (6)
-- [ ] unnamed bw1 0x00438310, bw2 0x0042d600, bw3 0x00435f20 (6)
-- [ ] unnamed bw1 0x00438440, bw2 0x0042d730, bw3 0x00436050 (6)
-
-### `cockpit/pkbitmap.cpp`
-- [ ] unnamed bw1 0x00537fd8, bw2 0x00516c88, bw3 0x0050fcb8 (12)
-
-### `cockpit/pkbmpset.cpp`
-- [ ] unnamed bw1 0x00539100, bw2 0x00517db0, bw3 0x00510de0 (5)
+| `wincore/winrun.cpp` | 18 | 15 | 884 | 0 |
+| **All** | **1867** | **1852** | **157815** | **0** |
 
 ### `core/actor.cpp`
 - [ ] `CDemonActor::markResourcesInUse` bw1 0x00408890, bw2 0x00408ac0, bw3 0x004088d0 (1)
+- [ ] `sqrtFloatRef` bw1 0x0040cfc0, bw2 0x0040d320, bw3 0x0040d200 (8)
 - [ ] `CDemonActor::startParticleSystem` bw2 0x0040ce40 (14)
 - [ ] `CDemonActor::stopParticleSystem` bw2 0x0040ce70 (14)
 - [ ] `CDemonActor::setParticleSystemFade` bw2 0x0040cea0 (15)
-- [ ] unnamed bw1 0x0040cfc0, bw2 0x0040d320, bw3 0x0040d200 (8)
 - [ ] unnamed bw2 0x0040ced0 (1)
 
 ### `core/ammo.cpp`
@@ -9275,9 +9257,9 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBaal::renderOpaque` bw3 0x00597940 (17)
 - [ ] `CBaal::renderTransparent` bw3 0x00597970 (109)
 - [ ] `CBaal::processDamage` bw3 0x00597af0 (80)
+- [ ] `CBaal::chooseRandomMotion` bw3 0x00597be0 (55)
 - [ ] `CBaal::archive` bw3 0x00597c70 (38)
 - [ ] `CBaal::dtor` bw3 0x00597d00 (47)
-- [ ] unnamed bw3 0x00597be0 (55)
 
 ### `core/basicene.cpp`
 - [ ] `staticInit` bw2 0x0059e380 (9)
@@ -9633,6 +9615,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CConstruct::processDamage` bw1 0x00447090, bw2 0x00437de0, bw3 0x00443f00 (86, differs)
 - [ ] `CConstruct::getTargetPoints` bw1 0x004471a0, bw2 0x00437ee0, bw3 0x00444010 (86, differs)
 - [ ] `CConstruct::explode` bw1 0x004472a0, bw2 0x00438060, bw3 0x00444110 (153, differs)
+- [ ] `CConstruct::getEffectivePosition` bw1 0x004474d0, bw3 0x00444340 (56)
 - [ ] `CConstruct::startRecombine` bw1 0x00447560, bw2 0x004382a0, bw3 0x004443d0 (62, differs)
 - [ ] `CConstruct::getCollisionType` bw1 0x00447630, bw2 0x00438370, bw3 0x004444c0 (15, differs)
 - [ ] `CConstruct::dtor` bw1 0x00447660, bw2 0x00438390, bw3 0x00444780 (47, differs)
@@ -9645,8 +9628,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CConstructRed::ctor` bw3 0x00444600 (14)
 - [ ] `CConstructRed::dtor` bw3 0x00444660 (47)
 - [ ] `CConstructBone::dtor` bw3 0x004446f0 (47)
-- [ ] unnamed bw1 0x004474d0 (56)
-- [ ] unnamed bw3 0x00444340 (56)
 
 ### `core/cross.cpp`
 - [ ] `staticInit` bw2 0x005a6970 (17)
@@ -9816,7 +9797,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDoc::setInventoryIndex` bw2 0x0045def0 (12)
 - [ ] `CDoc::isLanternToggleBlocked` bw2 0x0045df30 (71)
 - [ ] `dotProduct` bw2 0x0045e010 (15)
-- [ ] unnamed bw2 0x00459555 (158)
+- [ ] unnamed bw2 0x00458e80 (617)
 
 ### `core/dog.cpp`
 - [ ] `factoryFuncDogForest` bw3 0x00463650 (10)
@@ -9835,9 +9816,6 @@ the retail game has it too. Sizes are in instructions.
 ### `core/door.cpp`
 - [ ] `CDoor::setState` bw1 0x004774f0, bw2 0x0045efe0, bw3 0x00463d30 (15)
 - [ ] `CDoor::getHandlePosition` bw1 0x004783d0, bw2 0x0045fec0, bw3 0x00464c10 (59)
-
-### `core/dpart.cpp`
-- [ ] unnamed bw1 0x00479b22, bw2 0x00461612, bw3 0x004663f2 (8)
 
 ### `core/enemy.cpp`
 - [ ] `CEnemy::spawnItems` bw3 0x00489c90 (245)
@@ -9961,15 +9939,11 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `staticInit` bw3 0x004a76f0 (97)
 
 ### `core/flattn.cpp`
-- [ ] unnamed bw1 0x004bf780 (29)
-- [ ] unnamed bw1 0x004bf800, bw2 0x004a6830, bw3 0x004ad550 (35)
-- [ ] unnamed bw1 0x004bf890 (29)
-- [ ] unnamed bw1 0x004bf910, bw2 0x004a6940, bw3 0x004ad660 (33)
-- [ ] unnamed bw1 0x004bf990, bw2 0x004a69c0, bw3 0x004ad6e0 (30)
-- [ ] unnamed bw2 0x004a67b0 (29)
-- [ ] unnamed bw2 0x004a68c0 (29)
-- [ ] unnamed bw3 0x004ad4d0 (29)
-- [ ] unnamed bw3 0x004ad5e0 (29)
+- [ ] `setFlattenMatrix` bw1 0x004bf780, bw2 0x004a67b0, bw3 0x004ad4d0 (29)
+- [ ] `setFlattenMatrixAndOffset` bw1 0x004bf800, bw2 0x004a6830, bw3 0x004ad550 (35)
+- [ ] `setFlattenMatrixTransposed` bw1 0x004bf890, bw2 0x004a68c0, bw3 0x004ad5e0 (29)
+- [ ] `flattenTransformPoint` bw1 0x004bf910, bw2 0x004a6940, bw3 0x004ad660 (33)
+- [ ] `flattenTransformVector` bw1 0x004bf990, bw2 0x004a69c0, bw3 0x004ad6e0 (30)
 
 ### `core/fldnotes.cpp`
 - [ ] `SPageResource::ctor` bw1 0x004ba730, bw2 0x004a1e60, bw3 0x004a8370 (10)
@@ -10082,8 +10056,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CGame::playMusic` bw3 0x004c4a60 (110)
 - [ ] `CGame::updateMusic` bw3 0x004c4bc0 (79)
 - [ ] `CGame::saveMusicPosition` bw3 0x004c4cc0 (22)
+- [ ] `CGame::resetMusic` bw3 0x004c4d10 (7)
 - [ ] unnamed bw2 0x004b2930 (19)
-- [ ] unnamed bw3 0x004c4d10 (7)
 
 ### `core/ghostchi.cpp`
 - [ ] `staticInit` bw2 0x005a91d0 (9)
@@ -10295,6 +10269,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `staticInit` bw3 0x004d8280 (1)
 
 ### `core/inv.cpp`
+- [ ] `screenToWorldPoint` bw1 0x004f63c0, bw2 0x004d9ff0 (95, differs)
 - [ ] `renderSps` bw1 0x004f64f0 (33)
 - [ ] `renderCompass` bw1 0x004f6560, bw2 0x004da130 (348)
 - [ ] `playSpsSound` bw1 0x004f6b50, bw3 0x004d9fc0 (33)
@@ -10303,8 +10278,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `setupItems` bw1 0x004f9b20, bw2 0x004dc850, bw3 0x004dcad0 (53, differs)
 - [ ] `CInventory::getActiveGoggles` bw1 0x004f9ef0 (9)
 - [ ] `CInventory::findWeaponByAmmoType` bw3 0x004dba30 (38)
-- [ ] unnamed bw1 0x004f63c0 (95)
-- [ ] unnamed bw2 0x004d9ff0 (97)
 
 ### `core/kedward.cpp`
 - [ ] `factoryFuncKedward` bw3 0x0058fd40 (10)
@@ -10337,8 +10310,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CLantern::dtor` bw2 0x0059d170 (31)
 
 ### `core/lightgun.cpp`
+- [ ] `isLightSensitiveType` bw1 0x004ffff0 (56)
 - [ ] `CLightGun::getMuzzlePoint` bw1 0x00500160, bw2 0x004e2cc0 (30, differs)
-- [ ] unnamed bw1 0x004ffff0 (56)
 
 ### `core/lightpis.cpp`
 - [ ] `staticInit` bw1 0x005015b0 (9)
@@ -10398,7 +10371,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `staticInit` bw2 0x0059d350 (4)
 
 ### `core/menu.cpp`
-- [ ] unnamed bw2 0x004eba50 (200)
+- [ ] `adjustFixedPointSlider` bw2 0x004eba50 (200)
 
 ### `core/mine.cpp`
 - [ ] `staticInit` bw2 0x005ad360 (9)
@@ -10542,8 +10515,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CPrye::dropCarriedObject` bw3 0x00526ff0 (28)
 - [ ] `CPrye::drop` bw3 0x00527050 (23)
 - [ ] `CPrye::toggleGoggles` bw3 0x005270a0 (32)
+- [ ] `CPrye::isPerformingAction` bw3 0x00527110 (51)
 - [ ] `CPrye::dtor` bw3 0x00527300 (31)
-- [ ] unnamed bw3 0x00527110 (51)
 
 ### `core/pryemorp.cpp`
 - [ ] `staticInit` bw3 0x00527350 (9)
@@ -10598,8 +10571,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDemonSet::setSunlight` bw1 0x00555930, bw2 0x00534680, bw3 0x0053b2c0 (17)
 
 ### `core/setdir.cpp`
-- [ ] unnamed bw1 0x00559c10 (98)
-- [ ] unnamed bw3 0x0053f5d0 (98)
+- [ ] unnamed bw1 0x00559730 (570)
+- [ ] unnamed bw3 0x0053f0f0 (570)
 
 ### `core/shadow.cpp`
 - [ ] `staticInit` bw1 0x0055da40, bw2 0x0053c170, bw3 0x00543400 (23, differs)
@@ -10638,7 +10611,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDemonShadow::dtor` bw3 0x00546020 (47)
 - [ ] `CSpiritShadow::dtor` bw3 0x005460b0 (47)
 - [ ] `CShadowForest::dtor` bw3 0x00546140 (47)
-- [ ] unnamed bw1 0x0055f9c0 (132)
+- [ ] unnamed bw1 0x0055f630 (350)
 
 ### `core/shadowsc.cpp`
 - [ ] `staticInit` bw1 0x00560440 (9)
@@ -10647,6 +10620,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CShadowsc::ctor` bw1 0x005604a0, bw3 0x005462c0 (24, differs)
 - [ ] `CShadowsc::setup` bw1 0x00560510, bw3 0x00546360 (62, differs)
 - [ ] `CShadowsc::process` bw1 0x00560630, bw3 0x00546400 (730, differs)
+- [ ] `CShadowsc::playGiantAttackSound` bw1 0x00560fe0 (19)
 - [ ] `CShadowsc::playAttackSound` bw1 0x00561020 (19)
 - [ ] `CShadowsc::playHurtSound` bw1 0x00561060 (19)
 - [ ] `CShadowsc::playDeathSound` bw1 0x005610a0 (19)
@@ -10657,7 +10631,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CShadowsc::processDamage` bw1 0x00561330, bw3 0x00546db0 (91, differs)
 - [ ] `CShadowsc::getTargetPoints` bw1 0x00561460, bw3 0x00546ed0 (39)
 - [ ] `CShadowsc::dtor` bw1 0x005614d0, bw3 0x00546f40 (47, differs)
-- [ ] unnamed bw1 0x00560fe0 (19)
 
 ### `core/skeleton.cpp`
 - [ ] `clearModelAndSkeletonInUseFlags` bw1 0x0056b830, bw2 0x00549180, bw3 0x005503c0 (11)
@@ -10907,9 +10880,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CRobin::renderTransparent` bw2 0x005a6760 (19)
 - [ ] `CRobin::getCarryObjToBodyXForm` bw2 0x005a67a0 (138)
 
-### `core/xform.cpp`
-- [ ] unnamed bw1 0x005b6920, bw2 0x00592dd0, bw3 0x00584b00 (288)
-
 ### `core/yow.cpp`
 - [ ] `staticInit` bw1 0x005b8100, bw3 0x005862e0 (9)
 - [ ] `factoryFuncYow` bw1 0x005b8130, bw3 0x00586310 (10, differs)
@@ -10977,8 +10947,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CAlphaBitmap::arrdtor4` bw1 0x004188f0, bw2 0x0059bfe0, bw3 0x00414500 (7)
 
 ### `engine/clipper.c`
-- [ ] unnamed bw1 0x0043d880, bw2 0x00432a20, bw3 0x0043b4e0 (7)
-- [ ] unnamed bw3 0x0043b3c0 (69)
+- [ ] unnamed bw1 0x0043d6e0 (542)
+- [ ] unnamed bw3 0x0043b330 (468)
 
 ### `engine/dosio.cpp`
 - [ ] `setRelativeFilePathHook` bw1 0x00478e10, bw2 0x00460900, bw3 0x00465650 (3)
@@ -10991,7 +10961,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `matrixPush` bw1 0x00483990, bw2 0x0046b490, bw3 0x0046d070 (2)
 - [ ] `pop` bw1 0x004839a0, bw2 0x0046b4a0, bw3 0x0046d080 (2)
 - [ ] `popViewport` bw1 0x00483c40, bw2 0x0046b740, bw3 0x0046d320 (2)
-- [ ] unnamed bw2 0x0046a190, bw3 0x0046bd80 (37)
 
 ### `engine/font.cpp`
 - [ ] `CBitFont::setAcceleration` bw1 0x004c0fa0, bw2 0x004a7fd0, bw3 0x004afbf0 (346, differs)
@@ -11001,7 +10970,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBitFont::wrapTextToLines` bw1 0x004c4260, bw2 0x004ab2b0, bw3 0x004b2e40 (76)
 - [ ] `CBitFont::drawTextAccelerated` bw1 0x004c47f0, bw2 0x004ab840, bw3 0x004b33d0 (219)
 - [ ] `getAlpha` bw1 0x004c4bf0, bw2 0x004abc40, bw3 0x004b37d0 (2)
-- [ ] unnamed bw1 0x004c4c51 (77)
 
 ### `engine/ini.cpp`
 - [ ] `CIniFile::dtor` bw1 0x004f4b30, bw2 0x004d8940, bw3 0x004d8a50 (27)
@@ -11145,13 +11113,9 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CFont::queueText` bw1 0x00531ee0, bw2 0x00510cd0, bw3 0x00509bc0 (138, differs)
 - [ ] `CFont::flushTextQueue` bw1 0x005320b0, bw2 0x00510d50, bw3 0x00509d90 (38)
 
-### `engine/prim.c`
-- [ ] unnamed bw1 0x0053df50 (58)
-
 ### `engine/special.cpp`
 - [ ] `renderMMXPerspectiveScanlineTrueColor32` bw1 0x0057eeac, bw2 0x0055c45c, bw3 0x00561fdc (322)
 - [ ] `renderMMXPerspectiveScanlineTrueColor16` bw1 0x0057f473, bw2 0x0055ca23, bw3 0x005625a3 (358)
-- [ ] unnamed bw1 0x0057e570, bw2 0x0055bb20, bw3 0x005616a0 (5)
 
 ### `engine/texture.cpp`
 - [ ] `CTextureCache::findFreeSlot` bw1 0x00596680, bw2 0x00573a60, bw3 0x00569670 (93)
@@ -11176,12 +11140,10 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `editorDrawVLine` bw1 0x00492e10, bw2 0x0047a960, bw3 0x0047b9b0 (17)
 - [ ] `editorSetAlpha` bw1 0x00492e40, bw2 0x0047a990, bw3 0x0047b9e0 (15)
 - [ ] `restoreScreen` bw1 0x00494110, bw2 0x0047bbd0, bw3 0x0047ccb0 (67)
+- [ ] `isEditorMini3DMode` bw1 0x00499350, bw2 0x00480cf0, bw3 0x00481ef0 (2)
 - [ ] `CEditorTools::setMini3DMode` bw1 0x00499360, bw2 0x00480d00, bw3 0x00481f00 (11)
 - [ ] `CStrList::populateRecursive` bw1 0x0049a300, bw2 0x00481ca0, bw3 0x00482ea0 (107)
 - [ ] `CStrList::populateRecursiveFromRoot` bw1 0x0049a460, bw2 0x00481e00, bw3 0x00483000 (12)
-- [ ] unnamed bw1 0x00499350 (2)
-- [ ] unnamed bw2 0x00480cf0 (2)
-- [ ] unnamed bw3 0x00481ef0 (2)
 
 ### `sound/snddx.cpp`
 - [ ] `volumeToDirectSoundAttenuation` bw1 0x005779b0, bw2 0x00554f80, bw3 0x0055ab20 (60)
@@ -11269,15 +11231,14 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `httpRequestUpdate` bw1 0x0059e350, bw2 0x0057ad10, bw3 0x00571340 (667, differs)
 - [ ] `httpRequestReset` bw1 0x0059ed20, bw3 0x00571d10 (19)
 - [ ] `httpRequestFillBuffer` bw1 0x0059ed90, bw3 0x00571d80 (57)
-- [ ] `httpRequestGetByte` bw1 0x0059ee60, bw3 0x00571e50 (25)
+- [ ] `httpRequestGetByte` bw1 0x0059ee60, bw2 0x0057b680, bw3 0x00571e50 (25, differs)
 - [ ] `copyHostent` bw1 0x0059efd0, bw2 0x00579550, bw3 0x00571fc0 (154)
 - [ ] `lookupHostByName` bw1 0x0059f1a0, bw2 0x00579720, bw3 0x00572190 (50)
 - [ ] `lookupHostByAddr` bw1 0x0059f230, bw2 0x005797b0, bw3 0x00572220 (33)
 - [ ] `getLocalHostInfo` bw1 0x0059f2a0, bw2 0x00579820, bw3 0x00572290 (24)
 - [ ] `IpAddr_ctor` bw1 0x0059f300, bw2 0x0057b780, bw3 0x005722f0 (2)
 - [ ] `initHostInfo` bw1 0x0059f320, bw2 0x0057b7a0, bw3 0x00572310 (9)
-- [ ] unnamed bw1 0x0059f340, bw2 0x0057b7c0, bw3 0x00572330 (10)
-- [ ] unnamed bw2 0x0057b680 (70)
+- [ ] `copyNetworkAddr` bw1 0x0059f340, bw2 0x0057b7c0, bw3 0x00572330 (10)
 
 ### `support/trstream.cpp`
 - [ ] `staticInit` bw1 0x0059f520, bw2 0x0057b9a0, bw3 0x00572510 (7)
@@ -11378,6 +11339,5 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `saveControllerSettings` bw1 0x005b44a0, bw2 0x00590960, bw3 0x00582680 (121)
 - [ ] `loadControllerSettings` bw1 0x005b4650, bw2 0x00590b10, bw3 0x00582830 (113)
 - [ ] unnamed bw1 0x005b4450 (5)
-- [ ] unnamed bw1 0x005b48c0, bw2 0x00590d80, bw3 0x00582aa0 (51)
 - [ ] unnamed bw2 0x00590910 (5)
 - [ ] unnamed bw3 0x00582630 (5)

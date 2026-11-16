@@ -666,6 +666,7 @@
   {
     "addr":"00407e30",
     "callers":[
+      "004044d0",
       "00407db0"
     ],
     "calls":[
@@ -749,6 +750,7 @@
       "00512200",
       "005220d0",
       "00527970",
+      "0053f0f0",
       "0053f940",
       "00545710",
       "005475a0",
@@ -4213,6 +4215,7 @@
       "00534890",
       "0053bc80",
       "0053da90",
+      "0053f0f0",
       "0053f940",
       "0054fa00",
       "00566fd0"
@@ -6343,6 +6346,29 @@
     "variadic":false
   },
   {
+    "addr":"0043b330",
+    "calls":[
+      "0043a8c0",
+      "0043a9f0",
+      "0043ab20",
+      "0043ac50",
+      "00515ac0",
+      "00565c40"
+    ],
+    "conv":"unknown",
+    "instructions":468,
+    "method":"FUN_0043b330",
+    "name":"engine_clipper.c_FUN_0043b330",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"engine/clipper.c",
+    "variadic":false
+  },
+  {
     "addr":"0043c330",
     "callers":[
       "0043f920"
@@ -7194,7 +7220,10 @@
   {
     "addr":"004515b0",
     "callers":[
+      "00451750",
+      "004518b0",
       "00451a20",
+      "00451ce0",
       "00451e50",
       "00453230"
     ],
@@ -7203,14 +7232,8 @@
     ],
     "conv":"__cdecl",
     "data_refs":[
-      "0045182c",
-      "0045188a",
-      "00451992",
-      "004519ee",
       "00451c60",
-      "00451cbc",
-      "00451dc2",
-      "00451e1e"
+      "00451cbc"
     ],
     "instructions":145,
     "method":"clipEdgeToPlane",
@@ -8457,7 +8480,7 @@
     ],
     "cls":"CDemonPart",
     "conv":"__cdecl",
-    "instructions":26,
+    "instructions":34,
     "method":"free",
     "name":"core_dpart.cpp_CDemonPart_free_FUN_004663b0",
     "receiver":true,
@@ -8962,6 +8985,7 @@
       "004cd690",
       "004dbe70",
       "005220d0",
+      "0053f0f0",
       "0053f940",
       "005496c0",
       "0056d000",
@@ -16133,6 +16157,7 @@
       "004f7710",
       "004f7880",
       "004f7a20",
+      "004f7ea0",
       "004f7f20",
       "004f8170",
       "004f8730",
@@ -16153,6 +16178,8 @@
       "004fc250",
       "004fcc90",
       "004fcd30",
+      "004fcfa0",
+      "004fd0e0",
       "004fd150",
       "004fd3c0",
       "004fd5e0",
@@ -16198,6 +16225,7 @@
       "0050d6f0",
       "0050d8b0",
       "0050da60",
+      "0050f780",
       "0050fa90",
       "0050fe10",
       "0050fe90",
@@ -16386,8 +16414,7 @@
     "conv":"__cdecl",
     "data_refs":[
       "004398ff",
-      "00439957",
-      "004f7eff"
+      "00439957"
     ],
     "instructions":70,
     "method":"displayErrorAndQuit",
@@ -17815,16 +17842,14 @@
       "00407860",
       "004dee60",
       "004df050",
-      "004df440"
+      "004df440",
+      "004f7ea0"
     ],
     "calls":[
       "004e4330",
       "005a28c0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "004f7eb0"
-    ],
     "instructions":95,
     "method":"getMRGLSize",
     "name":"engine_model.c_getMRGLSize_FUN_004f8730",
@@ -18836,6 +18861,9 @@
   },
   {
     "addr":"00510430",
+    "callers":[
+      "00510d20"
+    ],
     "calls":[
       "00435010",
       "004659c0",
@@ -20292,6 +20320,7 @@
   {
     "addr":"005420b0",
     "callers":[
+      "0053f0f0",
       "0053f940"
     ],
     "calls":[
@@ -24141,15 +24170,33 @@
   },
   {
     "addr":"00572330",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":10,
-    "method":"FUN_00572330",
-    "name":"support_trisock.cpp_FUN_00572330",
+    "method":"copyNetworkAddr",
+    "name":"support_trisock.cpp_copyNetworkAddr_FUN_00572330",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"struct",
+          "name":"SNetworkAddr",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"struct",
+          "name":"SNetworkAddr",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SNetworkAddr",
+      "ptr":1
     },
     "tu":"support/trisock.cpp",
     "variadic":false
@@ -25408,6 +25455,21 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
+      "ptr":0
+    },
+    "tu":"wincore/winrun.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"005829b0",
+    "conv":"unknown",
+    "instructions":131,
+    "method":"FUN_005829b0",
+    "name":"wincore_winrun.cpp_FUN_005829b0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
       "ptr":0
     },
     "tu":"wincore/winrun.cpp",

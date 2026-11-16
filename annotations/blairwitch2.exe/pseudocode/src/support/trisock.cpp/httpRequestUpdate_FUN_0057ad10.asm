@@ -40,7 +40,7 @@
 ;   support_trisock.cpp_CSocket_setSocketBlocking_FUN_00579490
 ;   support_trisock.cpp_dnsRequestGetResult_FUN_0057a7c0
 ;   support_trisock.cpp_formatSocketAddress_FUN_00578f50
-;   support_trisock.cpp_FUN_0057b680
+;   support_trisock.cpp_httpRequestGetByte_FUN_0057b680
 ;
 ; *****************************************************************************
 
@@ -471,8 +471,8 @@ section .text
         ;   Label: LAB_0057b1f8
     PUSH EBX                            ; 0057b1fa
     MOV byte ptr [ESI + 0x810],0x0      ; 0057b1fb
-    CALL support_trisock.cpp_FUN_0057b680 ; 0057b202
-        ;   XREF to: 0057b680 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_0057b680()
+    CALL support_trisock.cpp_httpRequestGetByte_FUN_0057b680 ; 0057b202
+        ;   XREF to: 0057b680 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_httpRequestGetByte_FUN_0057b680(void * request, int non_blocking)
     ADD ESP,0x8                         ; 0057b207
     MOV EDX,EAX                         ; 0057b20a
     TEST EAX,EAX                        ; 0057b20c
@@ -640,8 +640,8 @@ section .text
     AND EAX,0xff                        ; 0057b412
     PUSH EAX                            ; 0057b417
     PUSH EBX                            ; 0057b418
-    CALL support_trisock.cpp_FUN_0057b680 ; 0057b419
-        ;   XREF to: 0057b680 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_0057b680()
+    CALL support_trisock.cpp_httpRequestGetByte_FUN_0057b680 ; 0057b419
+        ;   XREF to: 0057b680 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_httpRequestGetByte_FUN_0057b680(void * request, int non_blocking)
     ADD ESP,0x8                         ; 0057b41e
     MOV EDX,EAX                         ; 0057b421
     CMP EAX,-0x2                        ; 0057b423
