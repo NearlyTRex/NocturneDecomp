@@ -29,7 +29,7 @@ jobs:
   # preset also runs clang-tidy over each shim as it compiles.
   build-linux:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     strategy:
@@ -65,6 +65,8 @@ jobs:
       cache-key-files: |
         cmake/bundledlibs.cmake
         cmake/ffmpeg.cmake
+        cmake/platforms/*.cmake
+        cmake/toolchains/*.cmake
       # About 7,400 translation units: ccache recompiles only the ones a
       # commit touched, instead of all of them on every run. One build fills
       # 500M, so at that size ccache evicted as it went and kept only the tail.
@@ -95,12 +97,51 @@ jobs:
           ci-phase Tests ctest --test-dir "$build" --output-on-failure
         fi
 
-  # Compiled and linked only: macOS cannot run the tests headless.
-  # macos-latest is Apple silicon, so the x86_64 leg is also the check that
-  # Apple clang's cross build works. Xcode's clang and CMake are on the runner.
+  # The Linux release build, as release.yml makes it: in Ubuntu 22.04 for its
+  # glibc, then packaged and held to the same floors. The lanes above build on
+  # 24.04, whose glibc is newer than the floor, so this is the one that fails
+  # when a change, or an image, asks for more than the archive promises.
+  # release.yml has the setup.
+  package-linux:
+    name: Package (exe-linux-x86_64, Ubuntu 22.04)
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    permissions:
+      contents: read
+    with:
+      runs-on: ubuntu-24.04
+      linux-image: ubuntu-22.04
+      llvm-version: "18"
+      llvm-on-path: true
+      cmake-version: 3.28.3
+      apt-packages: >-
+        cmake clang ninja-build pkg-config python3 zip gcc g++-12 make
+        libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
+        libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
+        wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
+        libasound2-dev
+      cache-paths: |
+        build/exe-linux-x86_64/_deps
+        build/exe-linux-x86_64/ffmpeg
+      cache-key-files: |
+        cmake/bundledlibs.cmake
+        cmake/ffmpeg.cmake
+        cmake/platforms/*.cmake
+        cmake/toolchains/*.cmake
+      ccache: true
+      ccache-max-size: 2G
+      # Shared with the release build of the same preset and image.
+      cache-key: exe-linux-x86_64-jammy
+      build-command: ci-phase Package ./scripts/Bash/package_release.sh exe-linux-x86_64
+      os-floors: glibc:2.35 glibcxx:3.4.30
+      os-floor-paths: dist/*
+
+  # Compiled, linked and packaged, which holds every binary in the app to the
+  # deployment target: macOS cannot run the tests headless. The runner is Apple
+  # silicon, so the x86_64 leg is also the check that Apple clang's cross build
+  # works. Xcode's clang and CMake are on the runner.
   build-macos:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     strategy:
@@ -108,20 +149,24 @@ jobs:
       matrix:
         preset: [exe-macos-x86_64, exe-macos-arm64]
     with:
-      runs-on: macos-latest
+      runs-on: macos-26
       brew-packages: ninja
       cache-paths: |
         build/${{ matrix.preset }}/_deps
         build/${{ matrix.preset }}/ffmpeg
+      # The platform and toolchain files hand FFmpeg the deployment target.
       cache-key-files: |
         cmake/bundledlibs.cmake
         cmake/ffmpeg.cmake
+        cmake/platforms/*.cmake
+        cmake/toolchains/*.cmake
       ccache: true
       ccache-max-size: 2G
       cache-key: ${{ matrix.preset }}
       build-command: |
-        ci-phase Configure cmake --preset ${{ matrix.preset }}
-        ci-phase Build cmake --build --preset ${{ matrix.preset }}
+        ci-phase Package ./scripts/Bash/package_release.sh ${{ matrix.preset }}
+      os-floors: macos:11.0
+      os-floor-paths: dist/*
 
   # The clang-cl lane, against the Microsoft runtime linked statically, so its
   # tests need nothing staged beside them; windows-tests-msvc runs them. The
@@ -130,7 +175,7 @@ jobs:
   # it up on Linux and macOS runners only.
   build-windows:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     strategy:
@@ -138,7 +183,9 @@ jobs:
       matrix:
         preset: [exe-windows-msvc]
     with:
-      runs-on: windows-latest
+      # The image windows-latest pointed at when this was pinned: Server 2025
+      # with Visual Studio 2026.
+      runs-on: windows-2025
       msvc: true
       cache-paths: |
         build/${{ matrix.preset }}/_deps
@@ -167,7 +214,7 @@ jobs:
   # loader and heap are not Windows'.
   build-windows-tests:
     name: Build (exe-windows-x86_64 tests)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
@@ -182,6 +229,8 @@ jobs:
       cache-key-files: |
         cmake/bundledlibs.cmake
         cmake/ffmpeg.cmake
+        cmake/platforms/*.cmake
+        cmake/toolchains/*.cmake
       ccache: true
       ccache-max-size: 2G
       # Shared with the release build of the same preset.
@@ -199,19 +248,21 @@ jobs:
   windows-tests:
     name: Windows tests (exe-windows-x86_64)
     needs: build-windows-tests
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
+      runs-on: windows-2025
       artifact: windows-tests-exe-windows-x86_64
 
   windows-tests-msvc:
     name: Windows tests (exe-windows-msvc)
     needs: build-windows
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
+      runs-on: windows-2025
       artifact: windows-tests-exe-windows-msvc
 
   # The source recreation is a standalone CMake project that fetches and builds
@@ -221,10 +272,11 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
+      runs-on: ubuntu-26.04
       # SDL3 needs the native lane's X11/Wayland/audio headers plus XTest.
       apt-packages: >-
         cmake ninja-build pkg-config
@@ -260,10 +312,11 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
+      runs-on: ubuntu-26.04
       apt-packages: >-
         cmake ninja-build pkg-config python3
         libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
@@ -293,10 +346,11 @@ jobs:
   # omit list in pyproject.toml; everything else is held to every line and branch.
   python:
     name: Python
-    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
+      runs-on: ubuntu-26.04
       # The suite's pytest.ini lives in tests/, but the rootdir must stay the
       # repository; a file's tests share a worker, so its fixtures build once
       test-command: pytest -q -c tests/pytest.ini --rootdir=. -n auto --dist loadfile tests/unit
@@ -308,10 +362,14 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
+      runs-on: ubuntu-26.04
+      # A -latest runner label moves to a new image without a commit, and the
+      # release binaries with it (docs/releasing.md).
+      pinned-runners: true
       # The research notes predate the Markdown rules and would need thousands
       # of formatting-only edits. Code-fence checking goes with it; turn both on
       # once the notes are cleaned up.

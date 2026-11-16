@@ -15,27 +15,30 @@ permissions: {}
 jobs:
   check:
     name: Check
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
+      runs-on: ubuntu-26.04
       markdown: false
       # Format is checked in the builds; see ci.yml.
       clang-format: false
+      pinned-runners: true
 
   pending:
     name: Pending
-    uses: NearlyTRex/Workflows/.github/workflows/release-check.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/release-check.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     with:
+      runs-on: ubuntu-26.04
       version-file: CMakeLists.txt
 
   package:
     name: Package (${{ matrix.preset }})
     needs: pending
     if: needs.pending.outputs.pending == 'true'
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: read
     strategy:
@@ -43,13 +46,26 @@ jobs:
       # Linux archive is still worth having and the log says which half failed.
       fail-fast: false
       matrix:
-        # SDL compiles its X11/Wayland/audio backends only when their headers
-        # are present; bundledlibs.cmake fails the configure without them. The
-        # exe-linux-x86_64 preset runs clang-tidy over the shims.
+        # Every lane names its runner image: a -latest label moves on to a new
+        # image without a commit, and the binaries with it. floors is the
+        # oldest system each archive runs on; cpp-build checks every binary in
+        # it, and fails the lane on one that needs more (docs/releasing.md).
+        #
+        # The Linux lanes build in cpp-build's Ubuntu 22.04 image for its glibc
+        # 2.35, with LLVM 18's clang, clang-tidy and lld first on PATH, as on
+        # the CI lanes, and the 24.04 CMake, since 22.04's is older than the
+        # presets. g++-12 is the libstdc++ clang compiles against. SDL compiles
+        # its X11/Wayland/audio backends only when their headers are present;
+        # bundledlibs.cmake fails the configure without them.
         include:
           - preset: exe-linux-x86_64
+            os: ubuntu-24.04
+            image: ubuntu-22.04
+            llvm: "18"
+            cmake: 3.28.3
+            floors: glibc:2.35 glibcxx:3.4.30
             packages: >-
-              clang-tidy
+              gcc g++-12 make
               libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
               libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
               wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
@@ -57,42 +73,69 @@ jobs:
           # The mingw lanes are held on 24.04, as in ci.yml's Windows tests build.
           - preset: exe-windows-x86_64
             os: ubuntu-24.04
+            floors: windows:10.0
             packages: g++-mingw-w64-x86-64 lld
           - preset: exe-linux-vanilla-x86_64
+            os: ubuntu-24.04
+            image: ubuntu-22.04
+            llvm: "18"
+            cmake: 3.28.3
+            floors: glibc:2.35 glibcxx:3.4.30
             packages: >-
+              gcc g++-12 make
               libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
               libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
               wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
               libasound2-dev
           - preset: exe-windows-vanilla-x86_64
             os: ubuntu-24.04
+            floors: windows:10.0
             packages: g++-mingw-w64-x86-64 lld
           - preset: exe-linux-aarch64
             os: ubuntu-24.04-arm
+            image: ubuntu-22.04
+            llvm: "18"
+            cmake: 3.28.3
+            floors: glibc:2.35 glibcxx:3.4.30
             packages: >-
+              gcc g++-12 make
               libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
               libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
               wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
               libasound2-dev
           - preset: exe-linux-vanilla-aarch64
             os: ubuntu-24.04-arm
+            image: ubuntu-22.04
+            llvm: "18"
+            cmake: 3.28.3
+            floors: glibc:2.35 glibcxx:3.4.30
             packages: >-
+              gcc g++-12 make
               libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
               libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
               wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
               libasound2-dev
           # The apt list is skipped off Linux; Xcode's clang and CMake are on
-          # the runner already.
+          # the runner already. The minimum macOS is the toolchain file's
+          # deployment target, not the runner's release.
           - preset: exe-macos-x86_64
-            os: macos-latest
+            os: macos-26
+            floors: macos:11.0
           - preset: exe-macos-vanilla-x86_64
-            os: macos-latest
+            os: macos-26
+            floors: macos:11.0
           - preset: exe-macos-arm64
-            os: macos-latest
+            os: macos-26
+            floors: macos:11.0
           - preset: exe-macos-vanilla-arm64
-            os: macos-latest
+            os: macos-26
+            floors: macos:11.0
     with:
-      runs-on: ${{ matrix.os || 'ubuntu-latest' }}
+      runs-on: ${{ matrix.os }}
+      linux-image: ${{ matrix.image }}
+      llvm-version: ${{ matrix.llvm }}
+      llvm-on-path: true
+      cmake-version: ${{ matrix.cmake }}
       apt-packages: cmake clang ninja-build pkg-config python3 zip ${{ matrix.packages }}
       brew-packages: ninja
       # git describe needs the tags and enough history to count commits against
@@ -101,16 +144,21 @@ jobs:
       cache-paths: |
         build/${{ matrix.preset }}/_deps
         build/${{ matrix.preset }}/ffmpeg
+      # The platform and toolchain files hand FFmpeg its flags, the deployment
+      # target among them.
       cache-key-files: |
         cmake/bundledlibs.cmake
         cmake/ffmpeg.cmake
+        cmake/platforms/*.cmake
+        cmake/toolchains/*.cmake
       # About 7,400 translation units: ccache recompiles only the ones a
       # commit touched, instead of all of them on every run.
       ccache: true
       # One build fills 500M, so ccache evicted as it went and kept only the tail.
       ccache-max-size: 2G
-      # Shared by the CI build and the release build of the same preset.
-      cache-key: ${{ matrix.preset }}
+      # Shared by the CI build and the release build of the same preset; the
+      # 22.04 lanes keep their own, since SDL built against 24.04 is no use there.
+      cache-key: ${{ matrix.preset }}${{ matrix.image && '-jammy' || '' }}
       # The Release job tags this commit only after the builds, so tag it here
       # too (locally, never pushed), or git describe stamps a bare hash into the
       # binary instead of the release it is.
@@ -118,14 +166,16 @@ jobs:
       build-command: ./scripts/Bash/package_release.sh "${{ matrix.preset }}"
       artifact: nocturne-${{ matrix.preset }}
       artifact-path: dist/*
+      os-floors: ${{ matrix.floors }}
 
   release:
     name: Release
     needs: [check, package]
-    uses: NearlyTRex/Workflows/.github/workflows/release.yml@4a7f6e3f7dbda5bbe67fd2f25d6f03373ea5f811 # v0.2.25
+    uses: NearlyTRex/Workflows/.github/workflows/release.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
     permissions:
       contents: write
     with:
+      runs-on: ubuntu-26.04
       version-file: CMakeLists.txt
       draft: true
       assets: nocturne-*

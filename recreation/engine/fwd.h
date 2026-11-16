@@ -23,7 +23,7 @@ class CMatrix;
 class CMenuInput;
 class CMouse;
 class CPod;
-class CPodAuditRecord;
+struct CPodAuditRecord;
 class CPodFile;
 struct CPodDirectoryEntry;
 struct CPodSearchContext;
