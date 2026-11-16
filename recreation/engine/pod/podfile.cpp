@@ -244,7 +244,7 @@ bool CPodFile::readPod2(platform::IFile &file, std::span<const std::byte> header
     if (read_audit_) {
         file.seek(audit_offset_);
 
-        for(size_t i = 0; i < audit_count; ++i) {
+        for (size_t i = 0; i < audit_count; ++i) {
             const std::optional<std::vector<std::byte>> audit = readExactly(file, sizeof(CPodAuditRecord));
             if (!audit) {
                 return false;
