@@ -23,6 +23,6 @@ void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005b4400(int cont
     *(uint *)(iVar2 + 0x2c9d1dc) = 0;
     iVar2 = iVar1;
   } while (iVar1 != controller_index * 0x30 + 0x30);
-  wincore_winrun_cpp_FUN_005b4450(controller_index);
+  wincore_winrun_cpp_pollControllerWrapper_FUN_005b4450(controller_index);
   return;
 }

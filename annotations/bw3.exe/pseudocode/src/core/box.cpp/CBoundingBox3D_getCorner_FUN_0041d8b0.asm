@@ -22,7 +22,7 @@
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 at 0053c07b
 ;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90 at 0053dacb
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 0053fa72
-;   core_setdir.cpp_FUN_0053f0f0 at 0053f46b
+;   core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0 at 0053f46b
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0054fa00 at 0054fad1
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0 at 005670b9
 ;

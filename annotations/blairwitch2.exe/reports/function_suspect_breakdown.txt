@@ -4,11 +4,11 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 2192 functions
-  1 suspects: 950 functions
-  2 suspects: 492 functions
-  3 suspects: 343 functions
-  4 suspects: 183 functions
+  0 suspects: 2197 functions
+  1 suspects: 951 functions
+  2 suspects: 488 functions
+  3 suspects: 342 functions
+  4 suspects: 182 functions
   5 suspects: 126 functions
   6 suspects: 119 functions
   7 suspects: 107 functions
@@ -58,11 +58,11 @@ SUSPECT COUNT DISTRIBUTION
   51 suspects: 5 functions
   52 suspects: 4 functions
   53 suspects: 6 functions
-  54 suspects: 9 functions
+  54 suspects: 10 functions
   55 suspects: 2 functions
   56 suspects: 2 functions
   57 suspects: 3 functions
-  58 suspects: 5 functions
+  58 suspects: 6 functions
   59 suspects: 6 functions
   60 suspects: 2 functions
   61 suspects: 5 functions
@@ -88,7 +88,7 @@ SUSPECT COUNT DISTRIBUTION
   83 suspects: 2 functions
   84 suspects: 2 functions
   85 suspects: 1 functions
-  86 suspects: 2 functions
+  86 suspects: 1 functions
   87 suspects: 1 functions
   88 suspects: 2 functions
   89 suspects: 1 functions
@@ -108,7 +108,6 @@ SUSPECT COUNT DISTRIBUTION
   113 suspects: 1 functions
   115 suspects: 2 functions
   116 suspects: 2 functions
-  117 suspects: 1 functions
   121 suspects: 1 functions
   125 suspects: 1 functions
   129 suspects: 3 functions
@@ -149,7 +148,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [warning_overlapping_globals] (600 functions)
+  [warning_overlapping_globals] (601 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0042 (  5 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -326,6 +325,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_boss.c_modelStructNotSupported3_FUN_0041a4e (  8 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     core_bugs.cpp_convertVector_FUN_00422050           (  8 lines)
+      /* WARNING: Globals starting with '_' overlap smaller symbol...
+    cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_ (  8 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
     support_codec.cpp_CInStreamPipe_seek_FUN_00435120  (  8 lines)
       /* WARNING: Globals starting with '_' overlap smaller symbol...
@@ -2127,8 +2128,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/sndmain.cpp, Lines: 5, Types: ['undefined_data']
   sound_sndmain.cpp_getAudioChannelCount_FUN_00552810
     File: sound/sndmain.cpp, Lines: 5, Types: ['undefined_data']
-  wincore_winrun.cpp_FUN_00590910
-    File: wincore/winrun.cpp, Lines: 5, Types: ['unnamed_param']
   core_cloth.cpp_vectorLengthFast_FUN_005b1b10
     File: core/cloth.cpp, Lines: 5, Types: ['fast_sqrt_inline', 'warning_overlapping_globals']
   engine_3d.c_resetRenderBuffer_FUN_00407080
@@ -2191,8 +2190,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/actor.cpp, Lines: 8, Types: ['undefined_data']
   core_actor.cpp_plotPixelWithBoundsCheck_FUN_00409860
     File: core/actor.cpp, Lines: 8, Types: ['undefined_data']
-  cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042c430
-    File: cockpit/ckptutil.c, Lines: 8, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_F
     File: engine/drender.cpp, Lines: 8, Types: ['undefined_data', 'warning_overlapping_globals']
   core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820
@@ -2333,7 +2330,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/fire.cpp, Lines: 11, Types: ['undefined_data', 'warning_overlapping_globals']
   core_fldnotes.cpp_SNotesEntry_ctor_FUN_004a3280
     File: core/fldnotes.cpp, Lines: 11, Types: ['negative_offset']
-  core_game.cpp_FUN_004b2930
+  core_game.cpp_isPlayerLanternOut_FUN_004b2930
     File: core/game.cpp, Lines: 11, Types: ['raw_address_pointer_store', 'warning_overlapping_globals']
   engine_mini3d.cpp_lineListD3DTL_FUN_004f44d0
     File: engine/mini3d.cpp, Lines: 11, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
@@ -2583,8 +2580,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/texture.cpp, Lines: 20, Types: ['undefined_data', 'warning_overlapping_globals']
   core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408b40
     File: core/actor.cpp, Lines: 21, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
-  cockpit_ckptutil.c_copyBitmapRegion_FUN_0042d550
-    File: cockpit/ckptutil.c, Lines: 21, Types: ['unresolved_funcptr']
   core_dcamera.cpp_CDemonCamera_processCorona_FUN_004406d0
     File: core/dcamera.cpp, Lines: 21, Types: ['undefined_data', 'warning_overlapping_globals']
   core_event.cpp_CEventList_getActorByVarName_FUN_00491860
@@ -2941,8 +2936,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: wincore/winrun.cpp, Lines: 47, Types: ['unrolled_strcpy']
   core_script.cpp_CScript_skipCommands_FUN_00529a10
     File: core/script.cpp, Lines: 48, Types: ['undefined_data']
-  core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350
-    File: core/mission.cpp, Lines: 49, Types: ['stack_param']
   sound_sndmain.cpp_getChannelLevels_FUN_005540f0
     File: sound/sndmain.cpp, Lines: 49, Types: ['raw_address_pointer_store', 'warning_overlapping_globals']
   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_00555a80
@@ -3101,8 +3094,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/box.cpp, Lines: 176, Types: ['unrolled_memset', 'warning_unreachable']
   core_actor.cpp_generateRandomValue_FUN_0040cef0
     File: core/actor.cpp, Lines: 5, Types: ['undefined_data']
-  core_charactr.cpp_FUN_00422c10
-    File: core/charactr.cpp, Lines: 7, Types: ['unnamed_param']
   engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80
     File: engine/ini.cpp, Lines: 7, Types: ['pointer_cast', 'undefined_data', 'unresolved_funcptr']
   engine_ini.cpp_CIniFile_setFloatValue_FUN_004d8c30

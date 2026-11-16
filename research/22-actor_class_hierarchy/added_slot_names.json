@@ -1,8 +1,10 @@
 {
- "note": "Names for virtual slots the Blair Witch builds added, which nocedit has no method for. `class` is the class whose part struct introduces the slot; `slot` is the build's own index. `params` follow this_ptr. Only names whose basis settles them are listed; the rest stay vfuncN. Read by build_vtable_structs.py and name_vtable_slot_functions.py (--slot-names) and rendered by actor_hierarchy_report.py.",
+ "note": "Names for virtual slots the Blair Witch builds added, which nocedit has no method for. `class` is the class whose part struct introduces the slot; `slot` is the build's own index. `params` follow this_ptr. Only names whose basis settles them are listed, plus a few strong guesses whose basis starts \"Best guess\"; the rest stay vfuncN. Read by build_vtable_structs.py and name_vtable_slot_functions.py (--slot-names) and rendered by actor_hierarchy_report.py.",
  "slots": [
   {"program": "bw1.exe", "class": "CDemonActor", "slot": 1, "name": "markResourcesInUse", "ret": "void", "params": [],
    "basis": "CCharacter's override marks its model (+0x24a8) and skeleton in use in their pools; the mission's actor setup clears the marks, calls this slot on every actor, purges what is unmarked, then calls setup."},
+  {"program": "bw1.exe", "class": "CDemonActor", "slot": 2, "name": "releaseResources", "ret": "void", "params": [],
+   "basis": "Best guess, no caller in any build. The slot after markResourcesInUse; CCharacter's override (detachMotionList) saves the current motion's name and drops its motion-list pointer into the model pool, which setMotionList later re-finds by that name."},
   {"program": "bw1.exe", "class": "CHero", "slot": 84, "name": "toggleGoggles", "ret": "void", "params": [],
    "basis": "Called when CGame+0x54 (nocedit key_infrared) is pressed; CDoc's override flips its CGoggles item."},
   {"program": "bw1.exe", "class": "CHero", "slot": 85, "name": "canReachPickup", "ret": "int",
@@ -25,6 +27,10 @@
   {"program": "bw1.exe", "class": "CDjien", "slot": 83, "name": "getSackIndex", "ret": "int", "params": [{"name": "part_id", "type": "int"}],
    "basis": "Returns 0..5 for the six sack part ids at +0xc2b0..+0xc2c4, -1 for any other."},
 
+  {"program": "blairwitch2.exe", "class": "CDemonActor", "slot": 3, "name": "markResourcesInUse", "ret": "void", "params": [],
+   "basis": "As bw1 slot 1: prepareAllActors calls +0xc on every actor between clearing and purging the in-use marks; CCharacter's override marks its model in use."},
+  {"program": "blairwitch2.exe", "class": "CDemonActor", "slot": 4, "name": "releaseResources", "ret": "void", "params": [],
+   "basis": "As bw1 slot 2 (best guess, no caller)."},
   {"program": "blairwitch2.exe", "class": "CCharacter", "slot": 82, "name": "setCharacterModel", "ret": "void",
    "params": [{"name": "model_name", "type": "char*"}, {"name": "cloth_name", "type": "char*"}],
    "basis": "Dispatched by the script command \"setCharacterModel(actor, model, cloth)\"."},
@@ -94,6 +100,10 @@
 
   {"program": "bw3.exe", "class": "CDemonActor", "slot": 1, "name": "markResourcesInUse", "ret": "void", "params": [],
    "basis": "Same as bw1: CCharacter's override marks its model and skeleton in use."},
+  {"program": "bw3.exe", "class": "CDemonActor", "slot": 2, "name": "releaseResources", "ret": "void", "params": [],
+   "basis": "As bw1 slot 2 (best guess, no caller)."},
+  {"program": "bw3.exe", "class": "CZombiePriest", "slot": 83, "name": "reset", "ret": "void", "params": [],
+   "basis": "zombiepriest.cpp is a copy of nocedit's mobster.cpp; CZombiePriest's one slot past CEnemy's is where CMobster (nocedit slot 88), CBoneGuy and CSmiley add reset."},
   {"program": "bw3.exe", "class": "CHero", "slot": 80, "name": "createDefaultWeapon", "ret": "void", "params": [],
    "basis": "nocedit CHero slot 85, the first of CHero's four methods; CPrye's override fills the inventory with its starting weapons."},
   {"program": "bw3.exe", "class": "CHero", "slot": 81, "name": "drawWeapon", "ret": "void", "params": [{"name": "drawn", "type": "int"}],

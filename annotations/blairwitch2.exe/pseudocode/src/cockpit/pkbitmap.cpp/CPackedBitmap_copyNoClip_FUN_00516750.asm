@@ -50,7 +50,7 @@ section .text
     JNZ 0x00516856                      ; 00516791
         ;   XREF to: 00516856 (CONDITIONAL_JUMP)  ; LAB_00516856
     CALL cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042c430 ; 00516797
-        ;   XREF to: 0042c430 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042c430()
+        ;   XREF to: 0042c430 (UNCONDITIONAL_CALL)  ; OptimizedMemcpyFunc * cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042c430()
     MOV dword ptr [ESP + 0x8],EAX       ; 0051679c
         ;   Label: LAB_0051679c
     MOV EAX,dword ptr [ESP + 0x20]      ; 005167a0

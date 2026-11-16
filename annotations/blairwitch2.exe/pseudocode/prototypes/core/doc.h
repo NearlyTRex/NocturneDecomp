@@ -113,9 +113,13 @@ void __cdecl CDoc::dropRightHandObject(CDoc *this_ptr);
 // Address: 004583f0
 int __cdecl CDoc::tryClimbLadder(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_00458e80
+// Original: core_doc.cpp_CDoc_tryDescendLadder_FUN_00458930
+// Address: 00458930
+int __cdecl CDoc::tryDescendLadder(CDoc *this_ptr);
+
+// Original: core_doc.cpp_CDoc_tryPlaceObject_FUN_00458e80
 // Address: 00458e80
-undefined4 FUN_00458e80(void);
+int __cdecl CDoc::tryPlaceObject(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_archive_FUN_004597a0
 // Address: 004597a0

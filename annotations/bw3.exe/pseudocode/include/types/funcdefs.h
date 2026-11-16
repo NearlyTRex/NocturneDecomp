@@ -81,6 +81,7 @@
 #include "types/funcdefs/CDemonActor_processFootstep.h"
 #include "types/funcdefs/CDemonActor_processFootstepAtOffset.h"
 #include "types/funcdefs/CDemonActor_processMeleeHit.h"
+#include "types/funcdefs/CDemonActor_releaseResources.h"
 #include "types/funcdefs/CDemonActor_renderBackground.h"
 #include "types/funcdefs/CDemonActor_renderOpaque.h"
 #include "types/funcdefs/CDemonActor_renderTargetPoints.h"
@@ -170,8 +171,10 @@
 #include "types/funcdefs/CWeapon_setWeaponState.h"
 #include "types/funcdefs/CWeapon_updateLighting.h"
 #include "types/funcdefs/CWeapon_vfunc62.h"
+#include "types/funcdefs/CZombiePriest_reset.h"
 #include "types/funcdefs/CZombiePriest_vfunc83.h"
 #include "types/funcdefs/ColorConversionFunc.h"
 #include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/funcdefs/FileSearchHandlerFunc.h"
+#include "types/funcdefs/OptimizedMemcpyFunc.h"
 

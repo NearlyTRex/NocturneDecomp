@@ -19,7 +19,7 @@
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 00540318
-;   core_setdir.cpp_FUN_0053f0f0 at 0053f170
+;   core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0 at 0053f170
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870

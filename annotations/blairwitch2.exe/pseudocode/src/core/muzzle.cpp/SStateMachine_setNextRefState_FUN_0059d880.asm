@@ -15,7 +15,7 @@
 ;   core_hellhag.cpp_CHag_processBurnState_FUN_005aae80 at 005ab23e
 ;
 ; Called Functions:
-;   core_muzzle.cpp_FUN_0059d940
+;   core_muzzle.cpp_SStateMachine_setNextStateWrapper_FUN_0059d940
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_0059d8ca
     PUSH EDX                            ; 0059d8d1
     PUSH EDI                            ; 0059d8d2
-    CALL core_muzzle.cpp_FUN_0059d940   ; 0059d8d3
-        ;   XREF to: 0059d940 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d940()
+    CALL core_muzzle.cpp_SStateMachine_setNextStateWrapper_FUN_0059d940 ; 0059d8d3
+        ;   XREF to: 0059d940 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextStateWrapper_FUN_0059d940(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 0059d8d8
     POP EBP                             ; 0059d8db
     POP EDI                             ; 0059d8dc

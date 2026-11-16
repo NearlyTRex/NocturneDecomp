@@ -4,17 +4,17 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  undefined_data                  9039 ( 22.4%)
+  undefined_data                  9039 ( 22.5%)
   pointer_cast                    8536 ( 21.2%)
   pointer_truncation              7338 ( 18.2%)
   warning_overlapping_globals     2064 (  5.1%)
   unrolled_memcpy                 1566 (  3.9%)
   stack_ref                       1481 (  3.7%)
-  stack_param                     1452 (  3.6%)
+  stack_param                     1415 (  3.5%)
   unknown_field                   1196 (  3.0%)
   concat_reconstruction            817 (  2.0%)
   unaffected_reg                   732 (  1.8%)
-  unresolved_funcptr               718 (  1.8%)
+  unresolved_funcptr               715 (  1.8%)
   stack_alignment_array            597 (  1.5%)
   shadow_pointer_walk              580 (  1.4%)
   unrolled_strcpy                  554 (  1.4%)
@@ -24,7 +24,7 @@ SUSPECT TYPE COUNTS
   unrolled_strlen                  276 (  0.7%)
   raw_address_constant             264 (  0.7%)
   unrolled_memset                  243 (  0.6%)
-  unnamed_param                    214 (  0.5%)
+  unnamed_param                    209 (  0.5%)
   suspect_float                    204 (  0.5%)
   warning_unreachable              157 (  0.4%)
   warning_type_propagation         149 (  0.4%)
@@ -819,7 +819,7 @@ Functions:
   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0
   core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005412b0
   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40
-  core_setdir.cpp_FUN_0053f0f0
+  core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0
   core_setdir.cpp_setPixelGrayscale_FUN_00540e80
   core_setutil.cpp_C3DSCamera_loadPVS_FUN_00541f00
   core_setutil.cpp_C3DSCamera_load_FUN_00541b70
@@ -2107,7 +2107,7 @@ Functions:
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
   core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00541350
   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0
-  core_setdir.cpp_FUN_0053f0f0
+  core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0
   core_setdir.cpp_testOBBIntersection_FUN_00541470
   core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0
   core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0
@@ -3137,7 +3137,7 @@ Functions:
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
   core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00541350
   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0
-  core_setdir.cpp_FUN_0053f0f0
+  core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0
   core_setdir.cpp_testOBBIntersection_FUN_00541470
   core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0
   core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0
@@ -4541,7 +4541,7 @@ Functions:
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00540eb0
   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00540c40
-  core_setdir.cpp_FUN_0053f0f0
+  core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0
   core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0
   core_setutil.cpp_C3DSCamera_loadPVS_FUN_00541f00
   core_setutil.cpp_C3DSCamera_load_FUN_00541b70
@@ -5953,7 +5953,7 @@ Functions:
   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_0053eea0
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0
-  core_setdir.cpp_FUN_0053f0f0
+  core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0
   core_setdir.cpp_testOBBIntersection_FUN_00541470
   core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0
   core_setutil.cpp_C3DSCamera_load_FUN_00541b70
@@ -6545,7 +6545,7 @@ Functions:
   wincore_winrun.cpp_pollController_FUN_00581f50
 
 ====================================================================================================
-TYPE: stack_param (1452 occurrences)
+TYPE: stack_param (1415 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -6553,17 +6553,17 @@ Unique patterns:
     42x  in_stack_fffff9bc
     41x  in_stack_fffffb28
     41x  in_stack_fffffa44
-    38x  in_stack_00000018
-    35x  in_stack_00000010
-    35x  in_stack_0000000c
-    33x  in_stack_00000014
+    36x  in_stack_00000018
+    31x  in_stack_00000010
     30x  in_stack_ffffffc8
+    29x  in_stack_0000000c
     29x  in_stack_fffffb38
     24x  in_stack_ffffff88
     24x  in_stack_fffffd20
     24x  in_stack_fffffce0
     23x  in_stack_ffffff60
     23x  in_stack_ffffff58
+    22x  in_stack_00000014
     21x  in_stack_fffffdd4
     21x  in_stack_ffffff5c
     20x  in_stack_fffffce4
@@ -6724,7 +6724,6 @@ Functions:
   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10
   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_0053eea0
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
-  core_setdir.cpp_FUN_0053f0f0
   core_shadow.cpp_CShadow_process_FUN_005438d0
   core_shadow.cpp_CShadow_renderTransparent_FUN_00545710
   core_simbox.cpp_CSimBox_renderOpaque_FUN_005475a0
@@ -7179,15 +7178,13 @@ Functions:
   wincore_winrun.cpp_pollController_FUN_00581f50
 
 ====================================================================================================
-TYPE: unresolved_funcptr (718 occurrences)
+TYPE: unresolved_funcptr (715 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   718x  code *
+   715x  code *
 
 Functions:
-  cockpit_ckptutil.c_copyBitmapRegion_FUN_00435e70
-  cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00434ea0
   core_baal.cpp_CBaal_process_FUN_005968a0
   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00411d70
   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00412530
@@ -7834,7 +7831,7 @@ Functions:
   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940
   core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00541350
-  core_setdir.cpp_FUN_0053f0f0
+  core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0
   core_setdir.cpp_testOBBIntersection_FUN_00541470
   core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0
   core_shadow.cpp_CShadow_getTargetPoints_FUN_00545c10
@@ -9328,17 +9325,15 @@ Functions:
   shape_spotview.cpp_CSpotView_ctor_FUN_00567c60
 
 ====================================================================================================
-TYPE: unnamed_param (214 occurrences)
+TYPE: unnamed_param (209 occurrences)
 ====================================================================================================
 
 Unique patterns:
    183x  param_2
     26x  param_3
-     5x  param_1
 
 Functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0
-  core_charactr.cpp_FUN_0042b430
   core_construc.cpp_CConstruct_getCollisionType_FUN_004444c0
   core_course.cpp_CCourse_allocMemory_FUN_00444910
   core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00450670
@@ -9367,7 +9362,6 @@ Functions:
   support_trstream.cpp_COutStreamFile_putChar_FUN_005748b0
   support_trstream.cpp_COutStreamMemory_detachBuffer_FUN_00574d90
   support_trstream.cpp_COutStreamMemory_open_FUN_00574d50
-  wincore_winrun.cpp_FUN_00582630
 
 ====================================================================================================
 TYPE: suspect_float (204 occurrences)

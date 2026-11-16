@@ -152,7 +152,7 @@ SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(SDamageInf
 CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_0042ac20(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_markResourcesInUse_FUN_0042b400(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_0042b430(CDemonActor *param_1);
+void __cdecl core_charactr_cpp_CCharacter_releaseResources_FUN_0042b430(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_0042b8d0(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 float __cdecl core_charactr_cpp_clampFloat_FUN_0042b920(float value,float limit);

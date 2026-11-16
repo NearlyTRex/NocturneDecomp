@@ -1275,7 +1275,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2809 sites)
     0x0041e4d8  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0041e678  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0041e6b5  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-  FUN_00458e80                                                            12 sites  ~396 bytes
+  CDoc_tryPlaceObject_FUN_00458e80                                        12 sites  ~396 bytes
     0x00459080  3x MOVSD (12 bytes copy, 11 bytes borrowable)
     0x004590a9  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x004590f4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
@@ -1587,16 +1587,6 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2809 sites)
     0x0053f763  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x0053f7e2  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0053f839  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  FUN_00458930                                                             9 sites  ~297 bytes
-    0x00458a42  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x00458b2c  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-    0x00458b66  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x00458ba6  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x00458cb0  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-    0x00458d6c  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-    0x00458dca  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x00458e34  3x MOVSD (12 bytes copy, 11 bytes borrowable)
-    0x00458e55  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CCrossbow_fire_FUN_0043a7a0                                              9 sites  ~297 bytes
     0x0043a7df  3x MOVSD (12 bytes copy, 11 bytes borrowable)
     0x0043a7fe  3x MOVSD (12 bytes copy, 11 bytes borrowable)
@@ -1627,6 +1617,16 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2809 sites)
     0x0045885f  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x004588c6  3x MOVSD (12 bytes copy, 11 bytes borrowable)
     0x004588e7  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+  CDoc_tryDescendLadder_FUN_00458930                                       9 sites  ~297 bytes
+    0x00458a42  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x00458b2c  3x MOVSD (12 bytes copy, 9 bytes borrowable)
+    0x00458b66  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x00458ba6  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x00458cb0  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x00458d6c  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x00458dca  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x00458e34  3x MOVSD (12 bytes copy, 11 bytes borrowable)
+    0x00458e55  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CZombieDog_process_FUN_0045e360                                          9 sites  ~297 bytes
     0x0045e54f  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x0045e585  3x MOVSD (12 bytes copy, 9 bytes borrowable)
@@ -4645,8 +4645,6 @@ FIXABLE REP MOVSD STRUCT COPIES (560 sites)
   clipToUserPlane_FUN_004f8610                                             2 sites
     0x004f86d8  REP MOVSD 9 dwords (36 bytes)
     0x004f8727  REP MOVSD 9 dwords (36 bytes)
-  FUN_00458930                                                             1 sites
-    0x00458a8b  REP MOVSD 6 dwords (24 bytes)
   CDemonActor_getAllowedMeleeAttackTypes_FUN_00409f20                      1 sites
     0x00409f51  REP MOVSD 6 dwords (24 bytes)
   CAmmo_renderOpaque_FUN_0040e0f0                                          1 sites
@@ -4763,6 +4761,8 @@ FIXABLE REP MOVSD STRUCT COPIES (560 sites)
     0x0045bb8a  REP MOVSD 12 dwords (48 bytes)
   CDoc_tryClimbLadder_FUN_004583f0                                         1 sites
     0x00458549  REP MOVSD 6 dwords (24 bytes)
+  CDoc_tryDescendLadder_FUN_00458930                                       1 sites
+    0x00458a8b  REP MOVSD 6 dwords (24 bytes)
   CDoc_updateLantern_FUN_00455d10                                          1 sites
     0x00456125  REP MOVSD 12 dwords (48 bytes)
   CDoc_updateProceduralAnimation_FUN_00453d80                              1 sites

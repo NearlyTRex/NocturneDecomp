@@ -5,100 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 5710
-Clean: 2192 (38.4%)
-With suspects: 3518
-Total suspects: 43522
-
-====================================================================================================
-FUN_00458930 (86 suspects)
-  File: .
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: uint FUN_00458930(CCharacter *param_1)
-  Line 12 [unaffected_reg]: CCharacter *unaff_EBP;
-  Line 17 [stack_alignment_array]: float afStackY_1100 [45];
-  Line 18 [stack_alignment_array]: int aiStackY_104c [6];
-  Line 19 [stack_alignment_array]: float afStackY_1034 [947];
-  Line 20 [stack_param]: CCharacter *in_stack_fffffea0;
-  Line 65 [unnamed_param]: pCVar1 = param_1[2].flames;
-  Line 70 [unnamed_param]: fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0);
-  Line 72 [unnamed_param]: if ((param_1->carry_hands[0].carry_actor == (CDemonActor *)0x0) &&
-  Line 73 [unnamed_param]: (param_1->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
-  Line 74 [unnamed_param]: pCStack_28 = &(param_1->base).location.position;
-  Line 80 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + (int)fStack_1c),
-  Line 84 [unnamed_param]: (ABS((param_1->base).location.position.y -
-  Line 90 [pointer_truncation]: *(uint *)((int)&CStack_f4 + (uint)bVar7 * -8 + 8) =
-  Line 90 [pointer_cast]: *(uint *)((int)&CStack_f4 + (uint)bVar7 * -8 + 8) =
-  Line 91 [pointer_truncation]: *(uint *)((int)&CStack_114 + (uint)bVar7 * -8 + 4);
-  Line 91 [pointer_cast]: *(uint *)((int)&CStack_114 + (uint)bVar7 * -8 + 4);
-  Line 92 [pointer_truncation]: *(uint *)((int)&CStack_e8 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4) =
-  Line 92 [pointer_cast]: *(uint *)((int)&CStack_e8 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4) =
-  Line 93 [pointer_truncation]: *(uint *)((int)&CStack_114 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 93 [pointer_cast]: *(uint *)((int)&CStack_114 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 96 [stack_param]: (this_ptr,(CBoundingBox3D *)in_stack_fffffea0);
-  Line 97 [stack_ref]: puVar5 = (uint *)&stack0xfffffeb8;
-  Line 98 [stack_ref]: puVar6 = (uint *)&stack0xfffffec8;
-  Line 99 [unrolled_memcpy]: for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 123 [pointer_truncation]: *(float *)((int)&CStack_114 + (uint)bVar7 * -8) = afStack_fc[(uint)bVar7 * -2];
-  Line 123 [pointer_cast]: *(float *)((int)&CStack_114 + (uint)bVar7 * -8) = afStack_fc[(uint)bVar7 * -2];
-  Line 124 [pointer_truncation]: *(float *)((int)&CStack_114 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 4) =
-  Line 124 [pointer_cast]: *(float *)((int)&CStack_114 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 4) =
-  Line 127 [stack_param]: in_stack_fffffea0 = unaff_EBP;
-  Line 127 [unaffected_reg]: in_stack_fffffea0 = unaff_EBP;
-  Line 129 [unaffected_reg]: (&unaff_EBP->base,&CStack_e8,&CStack_a0);
-  Line 131 [pointer_truncation]: *(uint *)((int)&CStack_7c + (uint)bVar7 * -8 + 4) =
-  Line 131 [pointer_cast]: *(uint *)((int)&CStack_7c + (uint)bVar7 * -8 + 4) =
-  Line 132 [pointer_truncation]: *(uint *)((int)&CStack_a0 + (uint)bVar7 * -8 + 4);
-  Line 132 [pointer_cast]: *(uint *)((int)&CStack_a0 + (uint)bVar7 * -8 + 4);
-  Line 133 [pointer_truncation]: *(uint *)((int)&CStack_7c + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4 + 4) =
-  Line 133 [pointer_cast]: *(uint *)((int)&CStack_7c + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4 + 4) =
-  Line 134 [pointer_truncation]: *(uint *)((int)&CStack_a0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 134 [pointer_cast]: *(uint *)((int)&CStack_a0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 136 [unrolled_memcpy]: CStack_e8.x = CStack_7c.x;
-  Line 140 [unaffected_reg]: CStack_e8.y = CStack_e8.y + (unaff_EBP->model).bone_origins[0x18].z;
-  Line 141 [unnamed_param]: fStack_30 = (param_1->base).orient_matrix.m[0].z;
-  Line 142 [unnamed_param]: fStack_2c = (param_1->base).orient_matrix.m[1].z;
-  Line 143 [unnamed_param]: fStack_34 = (param_1->base).orient_matrix.m[2].z;
-  Line 144 [unaffected_reg]: pCStack_28 = (CVector3f *)(unaff_EBP->base).orient_matrix.m[0].z;
-  Line 145 [unaffected_reg]: fStack_24 = (unaff_EBP->base).orient_matrix.m[1].z;
-  Line 146 [unaffected_reg]: fStack_1c = (unaff_EBP->base).orient_matrix.m[2].z;
-  Line 150 [stack_param]: in_stack_fffffea0 = param_1;
-  Line 150 [unnamed_param]: in_stack_fffffea0 = param_1;
-  Line 152 [unaffected_reg]: (&param_1->base,&(unaff_EBP->base).location.position,&CStack_70);
-  Line 152 [unnamed_param]: (&param_1->base,&(unaff_EBP->base).location.position,&CStack_70);
-  Line 154 [pointer_truncation]: afStack_cc[(uint)bVar7 * -2] = *(float *)((int)&CStack_70 + (uint)bVar7 * -8 + 4);
-  Line 154 [pointer_cast]: afStack_cc[(uint)bVar7 * -2] = *(float *)((int)&CStack_70 + (uint)bVar7 * -8 + 4);
-  Line 156 [pointer_truncation]: *(float *)((int)&CStack_70 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 156 [pointer_cast]: *(float *)((int)&CStack_70 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 160 [unaffected_reg]: *(CCharacter **)(param_1[2].flames[1].off_event + 0x3c) = unaff_EBP;
-  Line 160 [unnamed_param]: *(CCharacter **)(param_1[2].flames[1].off_event + 0x3c) = unaff_EBP;
-  Line 162 [unnamed_param]: (&(param_1->model).base,0x2d,1);
-  Line 163 [unnamed_param]: pCVar2 = param_1 + 1;
-  Line 168 [unaffected_reg]: CStack_dc.y = (unaff_EBP->model).bone_origins[0x18].z;
-  Line 172 [unaffected_reg]: (&unaff_EBP->base,&CStack_dc,&CStack_ac);
-  Line 173 [unnamed_param]: piVar4 = &param_1[2].flames[2].base.runtime_state;
-  Line 176 [pointer_truncation]: *(float *)((int)&CStack_ac + (uint)bVar7 * -8 + 4);
-  Line 176 [pointer_cast]: *(float *)((int)&CStack_ac + (uint)bVar7 * -8 + 4);
-  Line 178 [pointer_truncation]: *(float *)((int)&CStack_ac + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 178 [pointer_cast]: *(float *)((int)&CStack_ac + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 179 [unnamed_param]: fStack_4c = fStack_b8 - (param_1->base).location.position.x;
-  Line 180 [unnamed_param]: afStack_48[0] = fStack_b4 - (param_1->base).location.position.y;
-  Line 181 [unnamed_param]: afStack_48[1] = fStack_b0 - (param_1->base).location.position.z;
-  Line 188 [unnamed_param]: param_1[2].flames[2].base.health = iStack_84;
-  Line 189 [unnamed_param]: param_1[2].flames[2].base.validation_magic = uStack_80;
-  Line 191 [unnamed_param]: afStack_48[2] = CStack_e8.x - (param_1->base).location.position.x;
-  Line 192 [unnamed_param]: afStack_48[3] = CStack_e8.y - (param_1->base).location.position.y;
-  Line 193 [unnamed_param]: fStack_38 = CStack_e8.z - (param_1->base).location.position.z;
-  Line 195 [pointer_truncation]: *(float *)((int)&CStack_f4 + (uint)bVar7 * -8 + 4) =
-  Line 195 [pointer_cast]: *(float *)((int)&CStack_f4 + (uint)bVar7 * -8 + 4) =
-  Line 197 [pointer_truncation]: *(float *)((int)&CStack_f4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-  Line 197 [pointer_cast]: *(float *)((int)&CStack_f4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-  Line 202 [pointer_truncation]: aiStack_54[(uint)bVar7 * -2] = *(int *)((int)&CStack_64 + (uint)bVar7 * -8 + 4);
-  Line 202 [pointer_cast]: aiStack_54[(uint)bVar7 * -2] = *(int *)((int)&CStack_64 + (uint)bVar7 * -8 + 4);
-  Line 204 [pointer_truncation]: *(int *)((int)&CStack_64 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 204 [pointer_cast]: *(int *)((int)&CStack_64 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  Line 205 [unnamed_param]: param_1[2].flames[2].base.lifecycle_state = 0x3f800000;
-  Line 206 [unnamed_param]: param_1[2].flames[2].base.direction_hint = aiStack_54[0];
+Clean: 2197 (38.5%)
+With suspects: 3513
+Total suspects: 43417
 
 ====================================================================================================
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042c3e0 (2 suspects)
@@ -416,13 +325,6 @@ cockpit_ckptutil.c_buildHardwarePalettes_FUN_0042c8f0 (12 suspects)
   Line 40 [undefined_data]: (uint)pSVar3->r << (DAT_01c35814 & 0x1f) | (uint)*puVar1 << (DAT_01c35820 & 0x1f);
 
 ====================================================================================================
-cockpit_ckptutil.c_copyBitmapRegion_FUN_0042d550 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 5 [unresolved_funcptr]: code *pcVar1;
-  Line 10 [unresolved_funcptr]: pcVar1 = (code *)cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430();
-
-====================================================================================================
 cockpit_ckptutil.c_copyScreenRegion_FUN_0042da80 (8 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
@@ -484,11 +386,10 @@ cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410 (3 suspects)
   Line 13 [undefined_data]: if (DAT_006141c0 != 0x10) {
 
 ====================================================================================================
-cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042c430 (2 suspects)
+cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042c430 (1 suspect)
   File: cockpit/ckptutil.c
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unresolved_funcptr]: code * cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430(void)
 
 ====================================================================================================
 cockpit_ckptutil.c_isLineBlendingDisabled_FUN_0042f2f0 (1 suspect)
@@ -1298,11 +1199,11 @@ cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_00516750 (6 suspects)
   File: cockpit/pkbitmap.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 48 [pointer_cast]: puVar5 = (ushort *)((int)this_ptr->packed_data + *this_ptr->row_offsets);
-  Line 51 [pointer_cast]: iVar3 = *(int *)((int)this_ptr->row_offsets + iStack_1c + 4);
-  Line 52 [pointer_cast]: for (; puVar5 < (ushort *)((int)puVar2 + iVar3);
-  Line 52 [pointer_truncation]: for (; puVar5 < (ushort *)((int)puVar2 + iVar3);
-  Line 53 [pointer_truncation]: puVar5 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)(puVar5 + 2))) {
+  Line 49 [pointer_cast]: puVar5 = (ushort *)((int)this_ptr->packed_data + *this_ptr->row_offsets);
+  Line 52 [pointer_cast]: iVar3 = *(int *)((int)this_ptr->row_offsets + iStack_1c + 4);
+  Line 53 [pointer_cast]: for (; puVar5 < (ushort *)((int)puVar2 + iVar3);
+  Line 53 [pointer_truncation]: for (; puVar5 < (ushort *)((int)puVar2 + iVar3);
+  Line 54 [pointer_truncation]: puVar5 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)(puVar5 + 2))) {
 
 ====================================================================================================
 cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_005169b0 (9 suspects)
@@ -8791,14 +8692,6 @@ core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000 (43 suspects)
   Line 185 [pointer_cast]: *(float *)((int)&local_ec + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
 
 ====================================================================================================
-core_charactr.cpp_FUN_00422c10 (3 suspects)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void core_charactr_cpp_FUN_00422c10(CDemonActor *param_1)
-  Line 6 [unnamed_param]: ((CMotionController *)(param_1 + 1));
-  Line 7 [unnamed_param]: core_actor_cpp_CDemonActor_markResourcesInUse_FUN_00408ac0(param_1);
-
-====================================================================================================
 core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0 (2 suspects)
   File: core/charactr.cpp
 ====================================================================================================
@@ -14159,6 +14052,128 @@ core_doc.cpp_CDoc_tryClimbLadder_FUN_004583f0 (48 suspects)
   Line 183 [pointer_cast]: *(float *)((int)&CStack_94 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
 
 ====================================================================================================
+core_doc.cpp_CDoc_tryDescendLadder_FUN_00458930 (54 suspects)
+  File: core/doc.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 9 [unaffected_reg]: CDoc *unaff_EBP;
+  Line 14 [stack_alignment_array]: float afStackY_1100 [998];
+  Line 15 [stack_param]: CDoc *in_stack_fffffea0;
+  Line 72 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + (int)fStack_1c),
+  Line 82 [pointer_truncation]: *(uint *)((int)&CStack_f4 + (uint)bVar4 * -8 + 8) =
+  Line 82 [pointer_cast]: *(uint *)((int)&CStack_f4 + (uint)bVar4 * -8 + 8) =
+  Line 83 [pointer_truncation]: *(uint *)((int)&CStack_114 + (uint)bVar4 * -8 + 4);
+  Line 83 [pointer_cast]: *(uint *)((int)&CStack_114 + (uint)bVar4 * -8 + 4);
+  Line 84 [pointer_truncation]: *(uint *)((int)&CStack_e8 + ((uint)bVar4 * -2 + (uint)bVar4 * -2) * 4) =
+  Line 84 [pointer_cast]: *(uint *)((int)&CStack_e8 + ((uint)bVar4 * -2 + (uint)bVar4 * -2) * 4) =
+  Line 85 [pointer_truncation]: *(uint *)((int)&CStack_114 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 85 [pointer_cast]: *(uint *)((int)&CStack_114 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 88 [stack_param]: (this_ptr_00,(CBoundingBox3D *)in_stack_fffffea0);
+  Line 89 [stack_ref]: puVar2 = (uint *)&stack0xfffffeb8;
+  Line 90 [stack_ref]: puVar3 = (uint *)&stack0xfffffec8;
+  Line 91 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 115 [pointer_truncation]: *(float *)((int)&CStack_114 + (uint)bVar4 * -8) = afStack_fc[(uint)bVar4 * -2];
+  Line 115 [pointer_cast]: *(float *)((int)&CStack_114 + (uint)bVar4 * -8) = afStack_fc[(uint)bVar4 * -2];
+  Line 116 [pointer_truncation]: *(float *)((int)&CStack_114 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4) =
+  Line 116 [pointer_cast]: *(float *)((int)&CStack_114 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4) =
+  Line 119 [stack_param]: in_stack_fffffea0 = unaff_EBP;
+  Line 119 [unaffected_reg]: in_stack_fffffea0 = unaff_EBP;
+  Line 121 [unaffected_reg]: ((CDemonActor *)unaff_EBP,&CStack_e8,&CStack_a0);
+  Line 123 [pointer_truncation]: afStack_90[(uint)bVar4 * -2 + 6] = *(float *)((int)&CStack_a0 + (uint)bVar4 * -8 + 4);
+  Line 123 [pointer_cast]: afStack_90[(uint)bVar4 * -2 + 6] = *(float *)((int)&CStack_a0 + (uint)bVar4 * -8 + 4);
+  Line 125 [pointer_truncation]: *(float *)((int)&CStack_a0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 125 [pointer_cast]: *(float *)((int)&CStack_a0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 127 [unrolled_memcpy]: CStack_e8.x = CStack_7c.x;
+  Line 131 [unaffected_reg]: CStack_e8.y = CStack_e8.y + (unaff_EBP->base).base.model.bone_origins[0x18].z;
+  Line 135 [unaffected_reg]: pCStack_28 = (CVector3f *)(unaff_EBP->base).base.base.orient_matrix.m[0].z;
+  Line 136 [unaffected_reg]: fStack_24 = (unaff_EBP->base).base.base.orient_matrix.m[1].z;
+  Line 137 [unaffected_reg]: fStack_1c = (unaff_EBP->base).base.base.orient_matrix.m[2].z;
+  Line 141 [stack_param]: in_stack_fffffea0 = this_ptr;
+  Line 143 [unaffected_reg]: ((CDemonActor *)this_ptr,&(unaff_EBP->base).base.base.location.position,
+  Line 146 [pointer_truncation]: afStack_cc[(uint)bVar4 * -2] = *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + 4);
+  Line 146 [pointer_cast]: afStack_cc[(uint)bVar4 * -2] = *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + 4);
+  Line 148 [pointer_truncation]: *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 148 [pointer_cast]: *(float *)((int)&CStack_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 152 [unaffected_reg]: this_ptr->ladder_to_descend = (CLadder *)unaff_EBP;
+  Line 156 [unaffected_reg]: CStack_dc.y = (unaff_EBP->base).base.model.bone_origins[0x18].z;
+  Line 160 [unaffected_reg]: ((CDemonActor *)unaff_EBP,&CStack_dc,&CStack_ac);
+  Line 163 [pointer_truncation]: *(float *)((int)&CStack_ac + (uint)bVar4 * -8 + 4);
+  Line 163 [pointer_cast]: *(float *)((int)&CStack_ac + (uint)bVar4 * -8 + 4);
+  Line 165 [pointer_truncation]: *(float *)((int)&CStack_ac + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 165 [pointer_cast]: *(float *)((int)&CStack_ac + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 182 [pointer_truncation]: *(float *)((int)&CStack_f4 + (uint)bVar4 * -8 + 4) =
+  Line 182 [pointer_cast]: *(float *)((int)&CStack_f4 + (uint)bVar4 * -8 + 4) =
+  Line 184 [pointer_truncation]: *(float *)((int)&CStack_f4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+  Line 184 [pointer_cast]: *(float *)((int)&CStack_f4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+  Line 189 [pointer_truncation]: afStack_54[(uint)bVar4 * -2] = *(float *)((int)&CStack_64 + (uint)bVar4 * -8 + 4);
+  Line 189 [pointer_cast]: afStack_54[(uint)bVar4 * -2] = *(float *)((int)&CStack_64 + (uint)bVar4 * -8 + 4);
+  Line 191 [pointer_truncation]: *(float *)((int)&CStack_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  Line 191 [pointer_cast]: *(float *)((int)&CStack_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+
+====================================================================================================
+core_doc.cpp_CDoc_tryPlaceObject_FUN_00458e80 (58 suspects)
+  File: core/doc.cpp
+====================================================================================================
+  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 18 [stack_alignment_array]: float afStackY_1160 [1002];
+  Line 103 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_18),
+  Line 116 [pointer_truncation]: afStack_e4[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_130 + (uint)bVar10 * -8 + 4);
+  Line 116 [pointer_cast]: afStack_e4[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_130 + (uint)bVar10 * -8 + 4);
+  Line 118 [pointer_truncation]: *(float *)((int)&CStack_130 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 118 [pointer_cast]: *(float *)((int)&CStack_130 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 123 [pointer_truncation]: afStack_e4[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_64 + (uint)bVar10 * -8 + 4);
+  Line 123 [pointer_cast]: afStack_e4[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_64 + (uint)bVar10 * -8 + 4);
+  Line 125 [pointer_truncation]: *(float *)((int)&CStack_64 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 125 [pointer_cast]: *(float *)((int)&CStack_64 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 143 [unrolled_memcpy]: pCVar12->x = (pCStack_38->position).x;
+  Line 150 [unrolled_memcpy]: (pUVar5->vec).x = (pUVar8->vec).x;
+  Line 167 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_34),
+  Line 180 [pointer_truncation]: afStack_84[(uint)bVar10 * -2] = *(float *)((int)&CStack_70 + (uint)bVar10 * -8 + 4);
+  Line 180 [pointer_cast]: afStack_84[(uint)bVar10 * -2] = *(float *)((int)&CStack_70 + (uint)bVar10 * -8 + 4);
+  Line 182 [pointer_truncation]: *(float *)((int)&CStack_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 182 [pointer_cast]: *(float *)((int)&CStack_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 187 [pointer_truncation]: afStack_120[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_94 + (uint)bVar10 * -8 + 4);
+  Line 187 [pointer_cast]: afStack_120[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_94 + (uint)bVar10 * -8 + 4);
+  Line 189 [pointer_truncation]: *(float *)((int)&CStack_94 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 189 [pointer_cast]: *(float *)((int)&CStack_94 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 193 [stack_ref]: *(uint *)((int)&stack0xfffffe98 + (uint)bVar10 * -8) =
+  Line 193 [pointer_truncation]: *(uint *)((int)&stack0xfffffe98 + (uint)bVar10 * -8) =
+  Line 193 [pointer_cast]: *(uint *)((int)&stack0xfffffe98 + (uint)bVar10 * -8) =
+  Line 194 [stack_ref]: *(uint *)((int)&stack0xfffffe8c + (uint)bVar10 * -8);
+  Line 194 [pointer_truncation]: *(uint *)((int)&stack0xfffffe8c + (uint)bVar10 * -8);
+  Line 194 [pointer_cast]: *(uint *)((int)&stack0xfffffe8c + (uint)bVar10 * -8);
+  Line 195 [stack_ref]: *(uint *)((int)&stack0xfffffe9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
+  Line 195 [pointer_truncation]: *(uint *)((int)&stack0xfffffe9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
+  Line 195 [pointer_cast]: *(uint *)((int)&stack0xfffffe9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
+  Line 196 [stack_ref]: *(uint *)((int)&stack0xfffffe90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+  Line 196 [pointer_truncation]: *(uint *)((int)&stack0xfffffe90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+  Line 196 [pointer_cast]: *(uint *)((int)&stack0xfffffe90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+  Line 205 [stack_ref]: (&stack0xfffffea4)[(uint)bVar10 * 0xfffffffe] =
+  Line 206 [pointer_truncation]: (float)*(uint *)((int)&CStack_154 + (uint)bVar10 * -8 + 4);
+  Line 206 [pointer_cast]: (float)*(uint *)((int)&CStack_154 + (uint)bVar10 * -8 + 4);
+  Line 208 [pointer_truncation]: *(float *)((int)&CStack_154 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 208 [pointer_cast]: *(float *)((int)&CStack_154 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 209 [stack_ref]: if (&this_ptr->carry_object_world_center != (CVector3f *)&stack0xfffffea0) {
+  Line 228 [unrolled_memcpy]: pCVar12->x = (pCVar4->position).x;
+  Line 235 [unrolled_memcpy]: (pUVar8->vec).x = (pUVar5->vec).x;
+  Line 250 [pointer_cast]: pfVar9 = (float *)((int)pCVar7 + (uint)bVar10 * -8 + 0x24);
+  Line 250 [pointer_truncation]: pfVar9 = (float *)((int)pCVar7 + (uint)bVar10 * -8 + 0x24);
+  Line 260 [pointer_truncation]: afStack_120[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_148 + (uint)bVar10 * -8 + 4);
+  Line 260 [pointer_cast]: afStack_120[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_148 + (uint)bVar10 * -8 + 4);
+  Line 262 [pointer_truncation]: *(float *)((int)&CStack_148 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 262 [pointer_cast]: *(float *)((int)&CStack_148 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 274 [pointer_truncation]: afStack_9c[(uint)bVar10 * -2] = *(float *)((int)&CStack_7c + (uint)bVar10 * -8 + 4);
+  Line 274 [pointer_cast]: afStack_9c[(uint)bVar10 * -2] = *(float *)((int)&CStack_7c + (uint)bVar10 * -8 + 4);
+  Line 276 [pointer_truncation]: *(float *)((int)&CStack_7c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 276 [pointer_cast]: *(float *)((int)&CStack_7c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  Line 289 [pointer_truncation]: *(float *)((int)&CStack_ac + (uint)bVar10 * -8 + 4) = afStack_e4[(uint)bVar10 * -2];
+  Line 289 [pointer_cast]: *(float *)((int)&CStack_ac + (uint)bVar10 * -8 + 4) = afStack_e4[(uint)bVar10 * -2];
+  Line 290 [pointer_truncation]: *(float *)((int)&CStack_ac + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+  Line 290 [pointer_cast]: *(float *)((int)&CStack_ac + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+  Line 317 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_20),
+
+====================================================================================================
 core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_0045b510 (55 suspects)
   File: core/doc.cpp
 ====================================================================================================
@@ -14653,128 +14668,6 @@ core_doc.cpp_CDoc_updateWeaponPosition_FUN_004567c0 (21 suspects)
   Line 61 [pointer_cast]: *(uint *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
   Line 62 [pointer_truncation]: *(uint *)((int)&local_2c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   Line 62 [pointer_cast]: *(uint *)((int)&local_2c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-
-====================================================================================================
-core_doc.cpp_FUN_00458e80 (117 suspects)
-  File: core/doc.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 3 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 19 [stack_param]: CCharacter *in_stack_00000004;
-  Line 20 [stack_alignment_array]: float afStackY_1158 [1002];
-  Line 24 [stack_param]: double in_stack_fffffe70;
-  Line 82 [stack_param]: if (*(int *)(in_stack_00000004[2].flames[1].on_event + 0x14) != 0) {
-  Line 82 [derived_field_index_pun]: if (*(int *)(in_stack_00000004[2].flames[1].on_event + 0x14) != 0) {
-  Line 85 [stack_param]: if (in_stack_00000004->carry_hands[1].carry_actor == (CDemonActor *)0x0) {
-  Line 88 [stack_param]: if ((in_stack_00000004->layer_action_index != 9) &&
-  Line 90 [stack_param]: (in_stack_00000004,0), fStack_14 < (float)_DAT_005d0407)) {
-  Line 94 [stack_param]: (&(in_stack_00000004->model).base,0);
-  Line 98 [stack_param]: pCVar7 = in_stack_00000004->carry_hands[1].carry_actor;
-  Line 100 [stack_param]: (iVar12 = (*((pCVar7->vtable)._ub)->canPickup)(pCVar7,&in_stack_00000004->base), iVar12 != 4))
-  Line 107 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar12),
-  Line 112 [stack_param]: (pCStack_3c,in_stack_00000004->carry_hands[1].carry_actor), iVar6 != 0))
-  Line 115 [stack_param]: (&in_stack_00000004->base,
-  Line 116 [stack_param]: &((in_stack_00000004->carry_hands[1].carry_actor)->location).position,&CStack_128
-  Line 120 [pointer_truncation]: afStack_dc[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_128 + (uint)bVar10 * -8 + 4);
-  Line 120 [pointer_cast]: afStack_dc[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_128 + (uint)bVar10 * -8 + 4);
-  Line 122 [pointer_truncation]: *(float *)((int)&CStack_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 122 [pointer_cast]: *(float *)((int)&CStack_128 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 125 [stack_param]: (&in_stack_00000004->base,&pCVar4->position,&CStack_5c);
-  Line 127 [pointer_truncation]: afStack_dc[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_5c + (uint)bVar10 * -8 + 4);
-  Line 127 [pointer_cast]: afStack_dc[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_5c + (uint)bVar10 * -8 + 4);
-  Line 129 [pointer_truncation]: *(float *)((int)&CStack_5c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 129 [pointer_cast]: *(float *)((int)&CStack_5c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 137 [stack_param]: in_stack_fffffe70 = (double)fStack_fc;
-  Line 143 [stack_param]: ((in_stack_fffffe70 < _DAT_005d040f && (ABS(dVar2) < _DAT_005d0417)))) && (0.0 < dVar1)
-  Line 145 [stack_param]: pcVar8 = in_stack_00000004[2].flames[1].on_event + 0x2c;
-  Line 145 [derived_field_index_pun]: pcVar8 = in_stack_00000004[2].flames[1].on_event + 0x2c;
-  Line 146 [stack_param]: pCVar3 = in_stack_00000004[2].flames;
-  Line 153 [stack_param]: *(float *)(in_stack_00000004[2].flames[1].on_event + 0x30) = (pCStack_30->position).y;
-  Line 154 [stack_param]: *(float *)(in_stack_00000004[2].flames[1].on_event + 0x34) = (pCStack_30->position).z;
-  Line 156 [stack_param]: pcVar8 = in_stack_00000004[2].flames[1].on_event + 0x38;
-  Line 156 [derived_field_index_pun]: pcVar8 = in_stack_00000004[2].flames[1].on_event + 0x38;
-  Line 160 [stack_param]: *(float *)(in_stack_00000004[2].flames[1].on_event + 0x3c) =
-  Line 162 [stack_param]: *(float *)(in_stack_00000004[2].flames[1].on_event + 0x40) =
-  Line 166 [stack_param]: (&(in_stack_00000004->model).base,0x16,1);
-  Line 178 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_2c),
-  Line 183 [stack_param]: (pCStack_38,in_stack_00000004->carry_hands[1].carry_actor), iVar12 != 0
-  Line 186 [stack_param]: (&in_stack_00000004->base,
-  Line 187 [stack_param]: &((in_stack_00000004->carry_hands[1].carry_actor)->location).position,&CStack_68)
-  Line 191 [pointer_truncation]: afStack_7c[(uint)bVar10 * -2] = *(float *)((int)&CStack_68 + (uint)bVar10 * -8 + 4);
-  Line 191 [pointer_cast]: afStack_7c[(uint)bVar10 * -2] = *(float *)((int)&CStack_68 + (uint)bVar10 * -8 + 4);
-  Line 193 [pointer_truncation]: *(float *)((int)&CStack_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 193 [pointer_cast]: *(float *)((int)&CStack_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 196 [stack_param]: (&in_stack_00000004->base,&pCVar4->position,&CStack_8c);
-  Line 198 [pointer_truncation]: afStack_118[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_8c + (uint)bVar10 * -8 + 4);
-  Line 198 [pointer_cast]: afStack_118[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_8c + (uint)bVar10 * -8 + 4);
-  Line 200 [pointer_truncation]: *(float *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 200 [pointer_cast]: *(float *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 204 [stack_ref]: *(uint *)((int)&stack0xfffffea0 + (uint)bVar10 * -8) =
-  Line 204 [pointer_truncation]: *(uint *)((int)&stack0xfffffea0 + (uint)bVar10 * -8) =
-  Line 204 [pointer_cast]: *(uint *)((int)&stack0xfffffea0 + (uint)bVar10 * -8) =
-  Line 205 [stack_ref]: *(uint *)((int)&stack0xfffffe94 + (uint)bVar10 * -8);
-  Line 205 [pointer_truncation]: *(uint *)((int)&stack0xfffffe94 + (uint)bVar10 * -8);
-  Line 205 [pointer_cast]: *(uint *)((int)&stack0xfffffe94 + (uint)bVar10 * -8);
-  Line 206 [stack_ref]: *(uint *)((int)&stack0xfffffea4 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4) =
-  Line 206 [pointer_truncation]: *(uint *)((int)&stack0xfffffea4 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4) =
-  Line 206 [pointer_cast]: *(uint *)((int)&stack0xfffffea4 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4) =
-  Line 207 [stack_ref]: *(uint *)((int)&stack0xfffffe98 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4);
-  Line 207 [pointer_truncation]: *(uint *)((int)&stack0xfffffe98 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4);
-  Line 207 [pointer_cast]: *(uint *)((int)&stack0xfffffe98 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4);
-  Line 212 [stack_param]: (&(in_stack_00000004->model).base,0x1a,1);
-  Line 214 [stack_param]: (&in_stack_00000004->base,pCStack_34,&CStack_14c);
-  Line 216 [stack_ref]: (&stack0xfffffeac)[(uint)bVar10 * 0xfffffffe] =
-  Line 217 [pointer_truncation]: (float)*(uint *)((int)&CStack_14c + (uint)bVar10 * -8 + 4);
-  Line 217 [pointer_cast]: (float)*(uint *)((int)&CStack_14c + (uint)bVar10 * -8 + 4);
-  Line 218 [stack_ref]: (&stack0xfffffeac)[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-  Line 219 [pointer_truncation]: (float)*(uint *)((int)&CStack_14c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 219 [pointer_cast]: (float)*(uint *)((int)&CStack_14c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 220 [stack_param]: pCVar4 = &in_stack_00000004[2].flames[2].base.location;
-  Line 221 [stack_ref]: if (pCVar4 != (CLocation *)&stack0xfffffea8) {
-  Line 223 [stack_param]: in_stack_00000004[2].flames[2].base.location.position.y = fStack_154;
-  Line 224 [stack_param]: in_stack_00000004[2].flames[2].base.location.position.z = fStack_150;
-  Line 227 [stack_param]: in_stack_00000004[2].flames[2].base.orient_matrix.m[0].x -
-  Line 228 [stack_param]: in_stack_00000004[2].flames[2].base.orient.vec.x;
-  Line 230 [stack_param]: (in_stack_00000004->carry_hands[1].carry_actor);
-  Line 231 [stack_param]: iVar12 = *(int *)(in_stack_00000004[2].flames[1].off_event + 0x4c);
-  Line 232 [stack_param]: in_stack_00000004[2].flames[2].base.location.position.y =
-  Line 233 [stack_param]: (afStack_4c[2] - fVar11) + in_stack_00000004[2].flames[2].base.location.position.y;
-  Line 238 [stack_param]: pcVar8 = in_stack_00000004[2].flames[1].on_event + 0x2c;
-  Line 238 [derived_field_index_pun]: pcVar8 = in_stack_00000004[2].flames[1].on_event + 0x2c;
-  Line 240 [stack_param]: pCVar3 = in_stack_00000004[2].flames;
-  Line 247 [stack_param]: *(float *)(in_stack_00000004[2].flames[1].on_event + 0x30) =
-  Line 249 [stack_param]: *(float *)(in_stack_00000004[2].flames[1].on_event + 0x34) =
-  Line 252 [stack_param]: pcVar8 = in_stack_00000004[2].flames[1].on_event + 0x38;
-  Line 252 [derived_field_index_pun]: pcVar8 = in_stack_00000004[2].flames[1].on_event + 0x38;
-  Line 256 [stack_param]: *(float *)(in_stack_00000004[2].flames[1].on_event + 0x3c) =
-  Line 258 [stack_param]: *(float *)(in_stack_00000004[2].flames[1].on_event + 0x40) =
-  Line 267 [stack_param]: core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,&in_stack_00000004->base);
-  Line 269 [stack_param]: (g_CDemonSetPtr,in_stack_00000004->carry_hands[1].carry_actor);
-  Line 270 [stack_param]: pCVar7 = in_stack_00000004->carry_hands[1].carry_actor;
-  Line 272 [pointer_cast]: pfVar9 = (float *)((int)pCVar7 + (uint)bVar10 * -8 + 0x24);
-  Line 272 [pointer_truncation]: pfVar9 = (float *)((int)pCVar7 + (uint)bVar10 * -8 + 0x24);
-  Line 280 [stack_param]: (&in_stack_00000004->base,input,&CStack_140);
-  Line 282 [pointer_truncation]: afStack_118[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_140 + (uint)bVar10 * -8 + 4);
-  Line 282 [pointer_cast]: afStack_118[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_140 + (uint)bVar10 * -8 + 4);
-  Line 284 [pointer_truncation]: *(float *)((int)&CStack_140 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 284 [pointer_cast]: *(float *)((int)&CStack_140 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 285 [stack_param]: afStack_130[0] = (in_stack_00000004->base).location.position.y;
-  Line 292 [stack_param]: (&in_stack_00000004->base,&CStack_b0,&CStack_74);
-  Line 296 [pointer_truncation]: afStack_94[(uint)bVar10 * -2] = *(float *)((int)&CStack_74 + (uint)bVar10 * -8 + 4);
-  Line 296 [pointer_cast]: afStack_94[(uint)bVar10 * -2] = *(float *)((int)&CStack_74 + (uint)bVar10 * -8 + 4);
-  Line 298 [pointer_truncation]: *(float *)((int)&CStack_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 298 [pointer_cast]: *(float *)((int)&CStack_74 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-  Line 311 [pointer_truncation]: *(float *)((int)&CStack_a4 + (uint)bVar10 * -8 + 4) = afStack_dc[(uint)bVar10 * -2];
-  Line 311 [pointer_cast]: *(float *)((int)&CStack_a4 + (uint)bVar10 * -8 + 4) = afStack_dc[(uint)bVar10 * -2];
-  Line 312 [pointer_truncation]: *(float *)((int)&CStack_a4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-  Line 312 [pointer_cast]: *(float *)((int)&CStack_a4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-  Line 318 [stack_param]: if (ABS(afStack_4c[3] - (in_stack_00000004->base).location.position.y) <= 1.0) {
-  Line 322 [stack_param]: iVar12 = (int)((ulonglong)in_stack_fffffe70 >> 0x20);
-  Line 324 [stack_param]: pCVar7 = in_stack_00000004->carry_hands[1].carry_actor;
-  Line 325 [stack_param]: pCVar3 = in_stack_00000004[2].flames;
-  Line 331 [stack_param]: (iVar6 = (*((pCVar7->vtable)._ub)->canPickup)(pCVar7,&in_stack_00000004->base),
-  Line 340 [stack_param]: (&(in_stack_00000004->model).base,iVar6,iVar12);
-  Line 344 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_18),
 
 ====================================================================================================
 core_doc.cpp_adjustAimAngleForOffset_FUN_00459db0 (1 suspect)
@@ -24621,13 +24514,6 @@ core_game.cpp_CGame_updateStatusDisplays_FUN_004b3820 (5 suspects)
   Line 47 [shadow_pointer_walk]: pCVar4 = (CGame *)&pCVar4->game_pixy;
 
 ====================================================================================================
-core_game.cpp_FUN_004b2930 (2 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 10 [raw_address_pointer_store]: (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash);
-
-====================================================================================================
 core_game.cpp_beginProfileTimer_FUN_004bd4d0 (1 suspect)
   File: core/game.cpp
 ====================================================================================================
@@ -24743,6 +24629,13 @@ core_game.cpp_hostNetworkGame_FUN_004bd2f0 (1 suspect)
   File: core/game.cpp
 ====================================================================================================
   Line 13 [undefined_data]: DAT_01cb7b50 = 0;
+
+====================================================================================================
+core_game.cpp_isPlayerLanternOut_FUN_004b2930 (2 suspects)
+  File: core/game.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 10 [raw_address_pointer_store]: (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash);
 
 ====================================================================================================
 core_game.cpp_joinNetworkGame_FUN_004bd3a0 (5 suspects)
@@ -31630,13 +31523,6 @@ core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350 (2 suspects)
-  File: core/mission.cpp
-====================================================================================================
-  Line 10 [stack_param]: float in_stack_ffffffec;
-  Line 19 [stack_param]: (*((pCVar3->vtable)._ub)->process)(pCVar3,in_stack_ffffffec);
-
-====================================================================================================
 core_mission.cpp_CDemonMission_process_FUN_004fc940 (3 suspects)
   File: core/mission.cpp
 ====================================================================================================
@@ -32779,15 +32665,6 @@ core_muzzle.cpp_CMuzzleEffect_render_FUN_0059d440 (8 suspects)
   Line 37 [undefined_data]: (DAT_0060b280,&local_1c,(CVector3f *)0x0);
   Line 45 [undefined_data]: (DAT_0060b280,&local_34,(CVector3f *)0x0);
   Line 52 [undefined_data]: engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
-
-====================================================================================================
-core_muzzle.cpp_FUN_0059d940 (4 suspects)
-  File: core/muzzle.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void core_muzzle_cpp_FUN_0059d940(SStateMachine *param_1,char *param_2)
-  Line 2 [unnamed_param]: void core_muzzle_cpp_FUN_0059d940(SStateMachine *param_1,char *param_2)
-  Line 5 [unnamed_param]: core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(param_1,param_2);
-  Line 5 [unnamed_param]: core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(param_1,param_2);
 
 ====================================================================================================
 core_muzzle.cpp_SFollowFormation_addFollower_FUN_0059df90 (12 suspects)
@@ -60719,13 +60596,6 @@ wincore_wddvmem.cpp_videoRestore_FUN_005897e0 (17 suspects)
   Line 52 [undefined_data]: wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);
   Line 52 [undefined_data]: wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);
   Line 52 [undefined_data]: wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);
-
-====================================================================================================
-wincore_winrun.cpp_FUN_00590910 (2 suspects)
-  File: wincore/winrun.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void wincore_winrun_cpp_FUN_00590910(int param_1)
-  Line 5 [unnamed_param]: wincore_winrun_cpp_pollController_FUN_005902a0(param_1);
 
 ====================================================================================================
 wincore_winrun.cpp_calibrateCPUSpeed_FUN_0058e7a0 (3 suspects)

@@ -57,9 +57,9 @@ void __cdecl CZombiePriest::startFiringAttack(CZombiePriest *this_ptr);
 // Address: 0058f510
 void __cdecl CZombiePriest::archive(CZombiePriest *this_ptr);
 
-// Original: core_zombiepriest.cpp_FUN_0058f610
+// Original: core_zombiepriest.cpp_CZombiePriest_reset_FUN_0058f610
 // Address: 0058f610
-undefined4 FUN_0058f610(void);
+void __cdecl CZombiePriest::reset(CZombiePriest *this_ptr);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630
 // Address: 0058f630

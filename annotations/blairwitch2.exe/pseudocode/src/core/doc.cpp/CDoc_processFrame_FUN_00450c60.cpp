@@ -906,10 +906,10 @@ LAB_004526f0:
             local_24c[(uint)bVar25 * -2 + 3] = *(float *)((int)&local_400 + (uint)bVar25 * -8 + 4);
             local_24c[(uint)bVar25 * -2 + (uint)bVar25 * -2 + 4] =
                  *(float *)((int)&local_400 + (uint)bVar25 * -8 + (uint)bVar25 * -8 + 8);
-            local_3e8 = local_24c[2] * (float)(local_28->_ub).setup;
+            local_3e8 = local_24c[2] * (float)(local_28->_ub).vfunc0;
             pCVar33 = &(this_ptr->base).base.model.accumulated_root_motion;
-            local_3e4[0] = local_24c[3] * (float)(local_28->_ub).setup;
-            local_3e4[1] = local_23c * (float)(local_28->_ub).setup;
+            local_3e4[0] = local_24c[3] * (float)(local_28->_ub).vfunc0;
+            local_3e4[1] = local_23c * (float)(local_28->_ub).vfunc0;
             local_358 = local_3e8;
             local_354[(uint)bVar25 * -2] = local_3e4[(uint)bVar25 * -2];
             local_354[(uint)bVar25 * -2 + (uint)bVar25 * -2 + 1] =
@@ -1280,7 +1280,7 @@ LAB_00452c9a:
     (this_ptr->base).base.base.location.position.z = fVar28 + local_15c[1];
     (local_28->_ub).setup = (CDemonActor_setup *)0x0;
     (local_28->_ub).vfunc1 = (CDemonActor_vfunc1 *)(local_28->_ub).setup;
-    (local_28->_ub).setup = (CDemonActor_setup *)(local_28->_ub).vfunc1;
+    (local_28->_ub).vfunc0 = (CDemonActor_vfunc0 *)(local_28->_ub).vfunc1;
   }
   this_ptr->airborne_timer = 0.0;
 LAB_004514a7:

@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 5182
-Clean functions: 1928 (37.2%)
-Functions with suspects: 3254 (62.8%)
+Clean functions: 1931 (37.3%)
+Functions with suspects: 3251 (62.7%)
 
-Total suspect patterns: 40300
-Average suspects per function: 7.78
+Total suspect patterns: 40255
+Average suspects per function: 7.77
 
 Virtual files: 206 total, 4 at 100%, 5 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3945, Average: 50.1
 
-Average complexity score: 137.2
+Average complexity score: 137.1
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -28,11 +28,11 @@ SUSPECT PATTERN BREAKDOWN
   warning_overlapping_globals 2064
   unrolled_memcpy           1566
   stack_ref                 1481
-  stack_param               1452
+  stack_param               1415
   unknown_field             1196
   concat_reconstruction     817
   unaffected_reg            732
-  unresolved_funcptr        718
+  unresolved_funcptr        715
   stack_alignment_array     597
   shadow_pointer_walk       580
   unrolled_strcpy           554
@@ -42,7 +42,7 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strlen           276
   raw_address_constant      264
   unrolled_memset           243
-  unnamed_param             214
+  unnamed_param             209
   suspect_float             204
   warning_unreachable       157
   warning_type_propagation  149
@@ -147,7 +147,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   004156d0: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_004156d0 (4 lines)
   004157b0: core_bodypart.cpp_CBodyPart_getCarrier_FUN_004157b0 (4 lines)
   00417070: core_boneguy.cpp_CBoneGuy_getActorType_FUN_00417070 (4 lines)
-  ... and 1878 more
+  ... and 1881 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -263,7 +263,7 @@ FUNCTIONS BY SUSPECT TYPE
     00409db0: core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409db0
     ... and 357 more
 
-  stack_param (219 functions):
+  stack_param (218 functions):
     00402cf0: engine_2d.c_clipAndDrawLine_FUN_00402cf0
     00404440: engine_3d.c_drawLineStrip2D_FUN_00404440
     004044d0: engine_3d.c_drawLineStrip3D_FUN_004044d0
@@ -274,7 +274,7 @@ FUNCTIONS BY SUSPECT TYPE
     00409db0: core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409db0
     00409f60: core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60
     0040df20: core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20
-    ... and 209 more
+    ... and 208 more
 
   unknown_field (105 functions):
     00403310: engine_2d.c_getInputWithPrompt_FUN_00403310
@@ -315,7 +315,7 @@ FUNCTIONS BY SUSPECT TYPE
     00414d40: core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40
     ... and 146 more
 
-  unresolved_funcptr (247 functions):
+  unresolved_funcptr (245 functions):
     00407720: engine_3d.c_dispatchMRGLBlockChain_FUN_00407720
     00407760: engine_3d.c_renderPrim_FUN_00407760
     004119a0: core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0
@@ -326,7 +326,7 @@ FUNCTIONS BY SUSPECT TYPE
     00411d70: core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00411d70
     004123c0: core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_004123c0
     00412530: core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00412530
-    ... and 237 more
+    ... and 235 more
 
   stack_alignment_array (507 functions):
     004051a0: engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0
@@ -445,9 +445,8 @@ FUNCTIONS BY SUSPECT TYPE
     0041b1d0: core_box.cpp_CBox_updateTransform_FUN_0041b1d0
     ... and 81 more
 
-  unnamed_param (31 functions):
+  unnamed_param (29 functions):
     0040d320: engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320
-    0042b430: core_charactr.cpp_FUN_0042b430
     004416b0: support_codec.cpp_CCheesyCipher_setKey_FUN_004416b0
     004416e0: support_codec.cpp_CCheesyCipher_transformByte_FUN_004416e0
     004444c0: core_construc.cpp_CConstruct_getCollisionType_FUN_004444c0
@@ -456,7 +455,8 @@ FUNCTIONS BY SUSPECT TYPE
     00455080: core_demnfolk.cpp_CDemnfolk_process_FUN_00455080
     0046a4d0: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0
     0046b7d0: engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0
-    ... and 21 more
+    00473940: core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940
+    ... and 19 more
 
   suspect_float (77 functions):
     00408600: core_actor.cpp_CDemonActor_ctor_FUN_00408600

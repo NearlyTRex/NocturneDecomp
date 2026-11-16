@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          5,710
-  Unnamed functions (FUN_):          6 ( 0.1%)
+  Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     33 ( 0.6%)
-  Functions with type issues:        1,337 (23.4%)
+  Functions with type issues:        1,336 (23.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,7 +23,7 @@ SUMMARY STATISTICS
     Missing register params:           4
     Wrong calling convention:          165
     Undefined types in variables:      1077
-    Unresolved stack params:           251
+    Unresolved stack params:           249
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -36,23 +36,7 @@ UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 
 Sorted by caller count (most-referenced first = highest priority to name).
 
-  wincore/winrun.cpp (1 unnamed)
-    0x00590910  unknown       1 callers
-
-  core/muzzle.cpp (1 unnamed)
-    0x0059d940  unknown       1 callers
-
-  core/actor.cpp (1 unnamed)
-    0x0040ced0  unknown       0 callers
-
-  core/charactr.cpp (1 unnamed)
-    0x00422c10  unknown       0 callers
-
-  core/doc.cpp (1 unnamed)
-    0x00458e80  unknown       0 callers
-
-  core/game.cpp (1 unnamed)
-    0x004b2930  unknown       0 callers
+  (none)
 
 ====================================================================================================
 UNNAMED PARAMETERS (still using param_N)
@@ -535,10 +519,10 @@ Wrong calling convention (unaffected register usage) (165)
     Signature: int __cdecl core_doc_cpp_CDoc_tryClimbLadder_FUN_004583f0(CDoc *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_00458930
-    Address: 0x00458930  File: .
+  CDoc_tryDescendLadder
+    Address: 0x00458930  File: core/doc.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
-    Signature: undefined4 FUN_00458930(CCharacter *param_1)
+    Signature: int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDoc_renderOpaque
@@ -1286,7 +1270,7 @@ Wrong calling convention (unaffected register usage) (165)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (251)
+Unresolved stack parameters (missing from signature) (249)
 --------------------------------------------------------------------------------
 
   clipAndDrawLine
@@ -1589,16 +1573,10 @@ Unresolved stack parameters (missing from signature) (251)
     Signature: CMatrix3x4f * __stack3_esi core_doc_cpp_CDoc_computeWeaponAttachXForm_FUN_004568e0(CDoc *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00458930
-    Address: 0x00458930  File: .
+  CDoc_tryDescendLadder
+    Address: 0x00458930  File: core/doc.cpp
     Evidence: in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0
-    Signature: undefined4 FUN_00458930(CCharacter *param_1)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00458e80
-    Address: 0x00458e80  File: core/doc.cpp
-    Evidence: in_stack_00000004, in_stack_fffffe70, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_fffffe70, in_stack_fffffe70, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_fffffe70, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: undefined4 core_doc_cpp_FUN_00458e80(void)
+    Signature: int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CDoc_updateWeaponLayerActions
@@ -2133,12 +2111,6 @@ Unresolved stack parameters (missing from signature) (251)
     Address: 0x004f8750  File: engine/mini3d.cpp
     Evidence: in_stack_00000020, in_stack_00000020
     Signature: int __cdecl engine_mini3d_cpp_userClipPolyList_FUN_004f8750(float *vertices,int vertex_count,ushort *indices,int triangle_count)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonMission_prepareAllActors
-    Address: 0x004fc350  File: core/mission.cpp
-    Evidence: in_stack_ffffffec, in_stack_ffffffec
-    Signature: void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004fc350(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   getObjectGrabPointLocal

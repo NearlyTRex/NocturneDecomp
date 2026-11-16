@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; code * cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430(void)
+; OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430(void)
 ;
 ;
 ; XREF[3]:

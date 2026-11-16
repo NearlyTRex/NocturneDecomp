@@ -23,6 +23,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/funcdefs/ColorConversionFunc.h"
+#include "types/funcdefs/OptimizedMemcpyFunc.h"
 #include "types/structs/SBug.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -62,7 +63,7 @@ SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(SDamageInf
 CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00422930(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_markResourcesInUse_FUN_00422be0(CCharacter *this_ptr);
-void core_charactr_cpp_FUN_00422c10(CDemonActor *param_1);
+void __cdecl core_charactr_cpp_CCharacter_releaseResources_FUN_00422c10(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_archive_FUN_00422c30(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance);
@@ -173,7 +174,7 @@ void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042c2d2(void *dest_buffe
 void __cdecl cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_0042c3e0(void *output_buffer,void *input_buffer,int pixel_count);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410(void);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_0042c420(void);
-code * cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430(void);
+OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430(void);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_get16BitConversionFunction_FUN_0042c450(void);
 void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042c520(char *filename,void *buffer,int size);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_0042c670(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);

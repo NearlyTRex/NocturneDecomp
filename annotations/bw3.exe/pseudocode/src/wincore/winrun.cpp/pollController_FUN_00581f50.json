@@ -23,12 +23,6 @@
   },
   "cross_references": [
     {
-      "addr": "00582630",
-      "from_addr": "00582635",
-      "name": "wincore_winrun.cpp_FUN_00582630",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00582640",
       "from_addr": "00582653",
       "name": "wincore_winrun.cpp_calibrateControllerCenter_FUN_00582640",
@@ -38,6 +32,12 @@
       "addr": "00582370",
       "from_addr": "00582374",
       "name": "wincore_winrun.cpp_pollAllControllers_FUN_00582370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00582630",
+      "from_addr": "00582635",
+      "name": "wincore_winrun.cpp_pollControllerWrapper_FUN_00582630",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -86,7 +86,7 @@
       {
         "call_addr": "00582635",
         "call_type": "direct",
-        "caller": "wincore_winrun.cpp_FUN_00582630",
+        "caller": "wincore_winrun.cpp_pollControllerWrapper_FUN_00582630",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",

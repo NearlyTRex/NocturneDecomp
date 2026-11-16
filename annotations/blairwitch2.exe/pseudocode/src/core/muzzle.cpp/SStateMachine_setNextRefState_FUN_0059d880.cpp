@@ -18,7 +18,8 @@ int __cdecl core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880(SStateMac
     do {
       iVar1 = _strcmp(identifier,str2->identifier);
       if (iVar1 == 0) {
-        iVar2 = core_muzzle_cpp_FUN_0059d940(this_ptr,this_ptr->ref_states[iVar2].state);
+        iVar2 = core_muzzle_cpp_SStateMachine_setNextStateWrapper_FUN_0059d940
+                          (this_ptr,this_ptr->ref_states[iVar2].state);
         return iVar2;
       }
       iVar2 = iVar2 + 1;

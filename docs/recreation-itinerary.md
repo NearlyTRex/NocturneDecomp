@@ -9075,7 +9075,7 @@ the retail game has it too. Sizes are in instructions.
 
 | Unit | Functions | Named | Instructions | Done |
 |---|---|---|---|---|
-| `core/actor.cpp` | 6 | 5 | 53 | 0 |
+| `core/actor.cpp` | 6 | 6 | 53 | 0 |
 | `core/ammo.cpp` | 15 | 15 | 345 | 0 |
 | `core/asgaya.cpp` | 15 | 15 | 1218 | 0 |
 | `core/baal.cpp` | 14 | 14 | 1676 | 0 |
@@ -9092,7 +9092,7 @@ the retail game has it too. Sizes are in instructions.
 | `core/bwsearch.cpp` | 13 | 13 | 176 | 0 |
 | `core/bwspart.cpp` | 18 | 18 | 1039 | 0 |
 | `core/carved.cpp` | 27 | 27 | 4346 | 0 |
-| `core/charactr.cpp` | 19 | 17 | 1284 | 0 |
+| `core/charactr.cpp` | 17 | 17 | 1264 | 0 |
 | `core/confedrt.cpp` | 20 | 20 | 1422 | 0 |
 | `core/confzomb.cpp` | 16 | 16 | 883 | 0 |
 | `core/construc.cpp` | 24 | 24 | 2400 | 0 |
@@ -9104,7 +9104,7 @@ the retail game has it too. Sizes are in instructions.
 | `core/disease.cpp` | 8 | 8 | 154 | 0 |
 | `core/djien.cpp` | 19 | 19 | 2529 | 0 |
 | `core/dlight.cpp` | 1 | 1 | 268 | 0 |
-| `core/doc.cpp` | 61 | 60 | 15275 | 0 |
+| `core/doc.cpp` | 61 | 61 | 15013 | 0 |
 | `core/dog.cpp` | 12 | 12 | 237 | 0 |
 | `core/door.cpp` | 2 | 2 | 74 | 0 |
 | `core/enemy.cpp` | 3 | 3 | 281 | 0 |
@@ -9118,7 +9118,7 @@ the retail game has it too. Sizes are in instructions.
 | `core/flattn.cpp` | 5 | 5 | 156 | 0 |
 | `core/fldnotes.cpp` | 82 | 82 | 6190 | 0 |
 | `core/flintlck.cpp` | 8 | 8 | 911 | 0 |
-| `core/game.cpp` | 18 | 17 | 3410 | 0 |
+| `core/game.cpp` | 18 | 18 | 3410 | 0 |
 | `core/ghostchi.cpp` | 16 | 16 | 720 | 0 |
 | `core/gmehook.cpp` | 5 | 5 | 210 | 0 |
 | `core/goggles.cpp` | 13 | 13 | 176 | 0 |
@@ -9152,7 +9152,7 @@ the retail game has it too. Sizes are in instructions.
 | `core/moon.cpp` | 1 | 1 | 7 | 0 |
 | `core/morph.cpp` | 2 | 2 | 42 | 0 |
 | `core/motion.cpp` | 2 | 2 | 36 | 0 |
-| `core/muzzle.cpp` | 33 | 32 | 1231 | 0 |
+| `core/muzzle.cpp` | 33 | 33 | 1231 | 0 |
 | `core/necklace.cpp` | 6 | 6 | 272 | 0 |
 | `core/netgame.cpp` | 1 | 1 | 6 | 0 |
 | `core/npc.cpp` | 2 | 2 | 77 | 0 |
@@ -9162,7 +9162,7 @@ the retail game has it too. Sizes are in instructions.
 | `core/schngeis.cpp` | 15 | 15 | 1032 | 0 |
 | `core/script.cpp` | 1 | 1 | 4 | 0 |
 | `core/set.cpp` | 5 | 5 | 383 | 0 |
-| `core/setdir.cpp` | 2 | 0 | 1140 | 0 |
+| `core/setdir.cpp` | 1 | 1 | 570 | 0 |
 | `core/shadow.cpp` | 36 | 36 | 3082 | 0 |
 | `core/shadowsc.cpp` | 17 | 17 | 1269 | 0 |
 | `core/skeleton.cpp` | 4 | 4 | 96 | 0 |
@@ -9190,7 +9190,7 @@ the retail game has it too. Sizes are in instructions.
 | `core/weaver.cpp` | 14 | 14 | 861 | 0 |
 | `core/yow.cpp` | 11 | 11 | 1554 | 0 |
 | `core/zombie.cpp` | 21 | 21 | 407 | 0 |
-| `core/zombiepriest.cpp` | 16 | 15 | 2825 | 0 |
+| `core/zombiepriest.cpp` | 16 | 16 | 2825 | 0 |
 | `engine/2d.c` | 1 | 1 | 3 | 0 |
 | `engine/3d.c` | 1 | 1 | 2 | 0 |
 | `engine/alphabit.cpp` | 4 | 4 | 211 | 0 |
@@ -9209,8 +9209,8 @@ the retail game has it too. Sizes are in instructions.
 | `support/codec.cpp` | 33 | 33 | 1004 | 0 |
 | `support/trisock.cpp` | 32 | 32 | 2512 | 0 |
 | `support/trstream.cpp` | 80 | 80 | 3087 | 0 |
-| `wincore/winrun.cpp` | 18 | 15 | 884 | 0 |
-| **All** | **1864** | **1852** | **156455** | **0** |
+| `wincore/winrun.cpp` | 16 | 16 | 874 | 0 |
+| **All** | **1859** | **1859** | **155593** | **0** |
 
 ### `core/actor.cpp`
 - [ ] `CDemonActor::markResourcesInUse` bw1 0x00408890, bw2 0x00408ac0, bw3 0x004088d0 (1)
@@ -9218,7 +9218,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDemonActor::startParticleSystem` bw2 0x0040ce40 (14)
 - [ ] `CDemonActor::stopParticleSystem` bw2 0x0040ce70 (14)
 - [ ] `CDemonActor::setParticleSystemFade` bw2 0x0040cea0 (15)
-- [ ] unnamed bw2 0x0040ced0 (1)
+- [ ] `CDemonActor::doNothing` bw2 0x0040ced0 (1, in nocturne)
 
 ### `core/ammo.cpp`
 - [ ] `CAmmo::consumeForReload` bw2 0x0040e450 (19)
@@ -9569,8 +9569,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CCharacter::renderPhantomEyes` bw2 0x0042b620 (99)
 - [ ] `CCharacter::renderEyeGlow` bw2 0x0042b760 (439)
 - [ ] `preloadEtherealTextures` bw3 0x0042f280 (55)
-- [ ] unnamed bw1 0x0042c7d0 (10)
-- [ ] unnamed bw2 0x00422c10 (10)
 
 ### `core/confedrt.cpp`
 - [ ] `staticInit` bw2 0x005a07e0 (9)
@@ -9769,7 +9767,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDoc::processPickupComplete` bw1 0x00470750, bw2 0x00458320 (36, differs)
 - [ ] `CDoc::dropRightHandObject` bw1 0x004707d0, bw2 0x004583a0 (20, differs)
 - [ ] `CDoc::tryClimbLadder` bw1 0x00470820, bw2 0x004583f0 (345, differs)
-- [ ] `CDoc::tryPlaceObject` bw1 0x004712b0 (494)
+- [ ] `CDoc::tryPlaceObject` bw1 0x004712b0, bw2 0x00458e80 (494, differs)
 - [ ] `CDoc::archive` bw1 0x00471970, bw2 0x004597a0 (86, differs)
 - [ ] `CDoc::renderOpaque` bw1 0x00471af0, bw2 0x004599a0 (516, differs)
 - [ ] `CDoc::renderTransparent` bw1 0x00472220, bw2 0x00459d40 (19, differs)
@@ -9801,12 +9799,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDoc::dtor` bw1 0x00476700, bw2 0x00450580 (31, differs)
 - [ ] `CDoc::setCharacterModel` bw2 0x00450a60 (44)
 - [ ] `CDoc::updateLantern` bw2 0x00455d10 (413)
+- [ ] `CDoc::tryDescendLadder` bw2 0x00458930 (355)
 - [ ] `CDoc::startReload` bw2 0x0045d260 (4)
 - [ ] `CDoc::getTargetPoints` bw2 0x0045de80 (39)
 - [ ] `CDoc::setInventoryIndex` bw2 0x0045def0 (12)
 - [ ] `CDoc::isLanternToggleBlocked` bw2 0x0045df30 (71)
 - [ ] `dotProduct` bw2 0x0045e010 (15)
-- [ ] unnamed bw2 0x00458e80 (617)
 
 ### `core/dog.cpp`
 - [ ] `factoryFuncDogForest` bw3 0x00463650 (10)
@@ -10057,6 +10055,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `loadCursorBitmaps` bw1 0x004dc040, bw3 0x004c48b0 (82)
 - [ ] `freeCursorBitmaps` bw1 0x004dc180, bw3 0x004c49f0 (13)
 - [ ] `drawCursor` bw1 0x004dc1a0, bw3 0x004c4a10 (20)
+- [ ] `isPlayerLanternOut` bw2 0x004b2930 (19)
 - [ ] `CGame::setAlphaFade` bw2 0x004bb500 (16)
 - [ ] `CGame::startAlphaFade` bw2 0x004bb550 (7)
 - [ ] `CGame::stopAlphaFade` bw2 0x004bb580 (5)
@@ -10066,7 +10065,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CGame::updateMusic` bw3 0x004c4bc0 (79)
 - [ ] `CGame::saveMusicPosition` bw3 0x004c4cc0 (22)
 - [ ] `CGame::resetMusic` bw3 0x004c4d10 (7)
-- [ ] unnamed bw2 0x004b2930 (19)
 
 ### `core/ghostchi.cpp`
 - [ ] `staticInit` bw2 0x005a91d0 (9)
@@ -10433,6 +10431,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `SStateMachine::setRefState` bw2 0x0059d7f0 (57)
 - [ ] `SStateMachine::setNextRefState` bw2 0x0059d880 (42)
 - [ ] `SStateMachine::setNextState` bw2 0x0059d8e0 (39)
+- [ ] `SStateMachine::setNextStateWrapper` bw2 0x0059d940 (7)
 - [ ] `SStateMachine::setNextStateIndex` bw2 0x0059d960 (12)
 - [ ] `SStateMachine::setInitialState` bw2 0x0059d990 (39)
 - [ ] `SStateMachine::process` bw2 0x0059da20 (28)
@@ -10455,7 +10454,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `SFollowFormation::getSlots` bw2 0x0059e0f0 (3)
 - [ ] `SFollowFormation::process` bw2 0x0059e110 (169)
 - [ ] `SFollowSlotStruct::ctor` bw2 0x0059e370 (2)
-- [ ] unnamed bw2 0x0059d940 (7)
 
 ### `core/necklace.cpp`
 - [ ] `staticInit` bw2 0x005ada50 (9)
@@ -10580,8 +10578,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDemonSet::setSunlight` bw1 0x00555930, bw2 0x00534680, bw3 0x0053b2c0 (17)
 
 ### `core/setdir.cpp`
-- [ ] unnamed bw1 0x00559730 (570)
-- [ ] unnamed bw3 0x0053f0f0 (570)
+- [ ] `calculateActorVisibility` bw1 0x00559730, bw3 0x0053f0f0 (570)
 
 ### `core/shadow.cpp`
 - [ ] `staticInit` bw1 0x0055da40, bw2 0x0053c170, bw3 0x00543400 (23, differs)
@@ -10935,12 +10932,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CZombiePriest::processWeaponPickup` bw3 0x0058efb0 (346)
 - [ ] `CZombiePriest::startFiringAttack` bw3 0x0058f4a0 (39)
 - [ ] `CZombiePriest::archive` bw3 0x0058f510 (65)
+- [ ] `CZombiePriest::reset` bw3 0x0058f610 (2)
 - [ ] `CZombiePriest::processDismemberment` bw3 0x0058f630 (259)
 - [ ] `CZombiePriest::processDamage` bw3 0x0058f990 (123)
 - [ ] `CZombiePriest::getTargetPoints` bw3 0x0058fb20 (104)
 - [ ] `CZombiePriest::getCollisionType` bw3 0x0058fc60 (7)
 - [ ] `CZombiePriest::dtor` bw3 0x0058fc80 (47)
-- [ ] unnamed bw3 0x0058f610 (2)
 
 ### `engine/2d.c`
 - [ ] `resetTextColor` bw1 0x00402860, bw2 0x00402860, bw3 0x00402860 (3)
@@ -11339,9 +11336,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `updateInputIdleTimers` bw1 0x005b4320, bw2 0x005907e0, bw3 0x00582500 (34)
 - [ ] `getInputIdleTime` bw1 0x005b43a0, bw2 0x00590860, bw3 0x00582580 (29)
 - [ ] `resetControllerCalibration` bw1 0x005b4400, bw2 0x005908c0, bw3 0x005825e0 (26)
+- [ ] `pollControllerWrapper` bw1 0x005b4450, bw2 0x00590910, bw3 0x00582630 (5)
 - [ ] `calibrateControllerCenter` bw1 0x005b4460, bw2 0x00590920, bw3 0x00582640 (14)
 - [ ] `saveControllerSettings` bw1 0x005b44a0, bw2 0x00590960, bw3 0x00582680 (121)
 - [ ] `loadControllerSettings` bw1 0x005b4650, bw2 0x00590b10, bw3 0x00582830 (113)
-- [ ] unnamed bw1 0x005b4450 (5)
-- [ ] unnamed bw2 0x00590910 (5)
-- [ ] unnamed bw3 0x00582630 (5)

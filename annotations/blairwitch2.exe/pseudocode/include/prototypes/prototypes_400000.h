@@ -303,7 +303,7 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60(CDemonActor 
 void __cdecl core_actor_cpp_CDemonActor_startParticleSystem_FUN_0040ce40(CDemonActor *this_ptr,int index,int reset_fade);
 void __cdecl core_actor_cpp_CDemonActor_stopParticleSystem_FUN_0040ce70(CDemonActor *this_ptr,int index,int fade_out);
 void __cdecl core_actor_cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0(CDemonActor *this_ptr,int index,float fade_start,float fade_end,float fade_duration);
-void core_actor_cpp_FUN_0040ced0(void);
+void __cdecl core_actor_cpp_CDemonActor_doNothing_FUN_0040ced0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040cee0(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cef0(void);
 float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value,float max_value);

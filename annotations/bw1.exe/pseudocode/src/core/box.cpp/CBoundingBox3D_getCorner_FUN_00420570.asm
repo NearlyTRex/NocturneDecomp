@@ -22,7 +22,7 @@
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005562c0 at 005566bb
 ;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_005580d0 at 0055810b
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055a0b2
-;   core_setdir.cpp_FUN_00559730 at 00559aab
+;   core_setdir.cpp_calculateActorVisibility_FUN_00559730 at 00559aab
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70 at 0056af41
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00583700 at 005837e9
 ;   ... and 2 more

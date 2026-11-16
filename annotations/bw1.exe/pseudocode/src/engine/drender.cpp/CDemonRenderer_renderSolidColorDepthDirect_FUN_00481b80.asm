@@ -12,7 +12,7 @@
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_00519c20 at 00519c9c
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_00555360 at 005553c6
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055b013
-;   core_setdir.cpp_FUN_00559730 at 00559e61
+;   core_setdir.cpp_calculateActorVisibility_FUN_00559730 at 00559e61
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c4f02c

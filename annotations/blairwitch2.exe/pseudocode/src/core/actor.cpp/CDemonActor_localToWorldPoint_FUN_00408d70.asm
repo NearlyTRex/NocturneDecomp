@@ -16,7 +16,6 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[168]:
-;   FUN_00458930 at 00458b89
 ;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40 at 0040ca58
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a0d7
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 00410370
@@ -26,6 +25,7 @@
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760 at 004127d4
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411d0b
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414290 at 00414304
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004132ab
 ;   ... and 158 more
 ;
 ; Called Functions:

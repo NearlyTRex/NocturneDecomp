@@ -7,9 +7,9 @@
 ; int              Stack[0x4]:4   controller_index
 ;
 ; XREF[3]:
-;   wincore_winrun.cpp_FUN_005b4450 at 005b4455
 ;   wincore_winrun.cpp_calibrateControllerCenter_FUN_005b4460 at 005b4473
 ;   wincore_winrun.cpp_pollAllControllers_FUN_005b4190 at 005b4194
+;   wincore_winrun.cpp_pollControllerWrapper_FUN_005b4450 at 005b4455
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f9ecf

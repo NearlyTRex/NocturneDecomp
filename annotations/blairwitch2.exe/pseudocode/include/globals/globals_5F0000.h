@@ -26,6 +26,7 @@
 // =============================================================================
 
 // CBasicEnemy_full_vtable
+extern CBasicEnemy_full_vtable g_CBasicEnemyVTable;
 extern CBasicEnemy_full_vtable g_CConfederateVTable;
 extern CBasicEnemy_full_vtable g_CTwigZombieVTable;
 extern CBasicEnemy_full_vtable g_CBasicNPCVTable;

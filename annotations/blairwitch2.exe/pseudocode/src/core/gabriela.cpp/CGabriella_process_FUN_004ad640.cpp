@@ -586,7 +586,7 @@ LAB_004ae5e4:
     (this_ptr->base).base.base.location.position.z = fVar4 + afStack_158[1];
     (pCStack_14->_ub).setup = (CDemonActor_setup *)0x0;
     (pCStack_14->_ub).vfunc1 = (CDemonActor_vfunc1 *)(pCStack_14->_ub).setup;
-    (pCStack_14->_ub).setup = (CDemonActor_setup *)(pCStack_14->_ub).vfunc1;
+    (pCStack_14->_ub).vfunc0 = (CDemonActor_vfunc0 *)(pCStack_14->_ub).vfunc1;
   }
   uVar8 = uStack_18;
   core_charactr_cpp_CCharacter_preProcess_FUN_00424470((CCharacter *)this_ptr);

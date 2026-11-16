@@ -25,9 +25,9 @@ void __cdecl CCharacter::setup(CCharacter *this_ptr);
 // Address: 00422be0
 void __cdecl CCharacter::markResourcesInUse(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00422c10
+// Original: core_charactr.cpp_CCharacter_releaseResources_FUN_00422c10
 // Address: 00422c10
-void FUN_00422c10(CDemonActor *param_1);
+void __cdecl CCharacter::releaseResources(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_archive_FUN_00422c30
 // Address: 00422c30

@@ -84,7 +84,7 @@ void __cdecl wincore_winrun_cpp_resetInputIdleTimers_FUN_005824d0(void);
 void __cdecl wincore_winrun_cpp_updateInputIdleTimers_FUN_00582500(float delta_time);
 float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_00582580(void);
 void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005825e0(int controller_index);
-void wincore_winrun_cpp_FUN_00582630(int param_1);
+void __cdecl wincore_winrun_cpp_pollControllerWrapper_FUN_00582630(int controller_index);
 void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_00582640(int controller_index);
 void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_00582680(CIniFile *ini);
 void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_00582830(CIniFile *ini);
@@ -216,7 +216,7 @@ CMatrix3x4f * __stack2_esi core_zombiepriest_cpp_CZombiePriest_getCarryObjToBody
 int __cdecl core_zombiepriest_cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0(CZombiePriest *this_ptr,float delta_time);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest *this_ptr);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_archive_FUN_0058f510(CZombiePriest *this_ptr);
-undefined4 core_zombiepriest_cpp_FUN_0058f610(void);
+void __cdecl core_zombiepriest_cpp_CZombiePriest_reset_FUN_0058f610(CZombiePriest *this_ptr);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_processDismemberment_FUN_0058f630(CZombiePriest *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_processDamage_FUN_0058f990(CZombiePriest *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_zombiepriest_cpp_CZombiePriest_getTargetPoints_FUN_0058fb20(CZombiePriest *this_ptr,CVector3f *out_points_array);

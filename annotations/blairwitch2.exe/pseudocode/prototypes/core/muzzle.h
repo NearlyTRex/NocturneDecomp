@@ -45,9 +45,9 @@ int __cdecl SStateMachine::setNextRefState(SStateMachine *this_ptr,char *identif
 // Address: 0059d8e0
 int __cdecl SStateMachine::setNextState(SStateMachine *this_ptr,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059d940
+// Original: core_muzzle.cpp_SStateMachine_setNextStateWrapper_FUN_0059d940
 // Address: 0059d940
-void FUN_0059d940(SStateMachine *param_1,char *param_2);
+int __cdecl SStateMachine::setNextStateWrapper(SStateMachine *this_ptr,char *state_name);
 
 // Original: core_muzzle.cpp_SStateMachine_setNextStateIndex_FUN_0059d960
 // Address: 0059d960

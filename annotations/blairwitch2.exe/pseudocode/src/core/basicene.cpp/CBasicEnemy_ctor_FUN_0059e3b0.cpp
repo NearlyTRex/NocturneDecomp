@@ -31,7 +31,7 @@ int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_pt
   pCVar11 = core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
   core_muzzle_cpp_SStateMachine_init_FUN_0059d610((SStateMachine *)(pCVar11 + 1));
   this_ptr_00 = (CBasicEnemy *)(this_ptr_01[-0x21].ref_states + 0x27);
-  *(byte **)(this_ptr_01[-0x20].state_names[0xc] + 0xc) = &g_CBasicEnemyVTable;
+  *(CBasicEnemy_full_vtable **)(this_ptr_01[-0x20].state_names[0xc] + 0xc) = &g_CBasicEnemyVTable;
   pacVar3 = this_ptr_01[1].state_names;
   *(char *)((int)(pacVar3 + 8) + 0x10) = '\0';
   *(char *)((int)(pacVar3 + 8) + 0x11) = '\0';

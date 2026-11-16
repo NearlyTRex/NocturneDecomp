@@ -42,7 +42,7 @@ int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_004b27f0(CGabriella *
 void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_004b2810(CGabriella *this_ptr,int drawn);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004b2840(CGabriella *this_ptr,uint flags);
 void __cdecl core_game_cpp_staticInit_FUN_004b28b0(void);
-undefined4 core_game_cpp_FUN_004b2930(void);
+int __cdecl core_game_cpp_isPlayerLanternOut_FUN_004b2930(void);
 void __cdecl core_game_cpp_setupMovieRecording_FUN_004b2970(void);
 void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004b2a50(void);
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b2d80(CGame *this_ptr);

@@ -585,9 +585,9 @@ LAB_004c7569:
     (pCVar1->position).x = (pCVar1->position).x + fStack_1e0;
     (this_ptr->base).base.base.location.position.y = fVar3 + afStack_1dc[0];
     (this_ptr->base).base.base.location.position.z = fVar4 + afStack_1dc[1];
-    (pCStack_14->_ub).vfunc2 = (CDemonActor_vfunc2 *)0x0;
+    (pCStack_14->_ub).releaseResources = (CDemonActor_releaseResources *)0x0;
     (pCStack_14->_ub).markResourcesInUse =
-         (CDemonActor_markResourcesInUse *)(pCStack_14->_ub).vfunc2;
+         (CDemonActor_markResourcesInUse *)(pCStack_14->_ub).releaseResources;
     (pCStack_14->_ub).setup = (CDemonActor_setup *)(pCStack_14->_ub).markResourcesInUse;
   }
   uVar8 = uStack_1c;

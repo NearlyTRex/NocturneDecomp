@@ -176,6 +176,6 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_0053ef60(CDemonSet *t
 SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_ctor_FUN_0053f0b0(SRaytraceState *this_ptr);
 SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_0053f0c0(SRaytraceState *this_ptr,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_0053f0d0(void);
-float core_setdir_cpp_FUN_0053f0f0(void);
+float __cdecl core_setdir_cpp_calculateActorVisibility_FUN_0053f0f0(CDemonActor *actor,CVector3i *bounding_box_vertices,SMRGLHeaderPrimitive *primitives,int thumb_index,C3DSCamera *camera,float radius);
 int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 

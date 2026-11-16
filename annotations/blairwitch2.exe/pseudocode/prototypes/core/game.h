@@ -9,9 +9,9 @@
 // Address: 004b28b0
 void __cdecl staticInit(void);
 
-// Original: core_game.cpp_FUN_004b2930
+// Original: core_game.cpp_isPlayerLanternOut_FUN_004b2930
 // Address: 004b2930
-undefined4 FUN_004b2930(void);
+int __cdecl isPlayerLanternOut(void);
 
 // Original: core_game.cpp_setupMovieRecording_FUN_004b2970
 // Address: 004b2970

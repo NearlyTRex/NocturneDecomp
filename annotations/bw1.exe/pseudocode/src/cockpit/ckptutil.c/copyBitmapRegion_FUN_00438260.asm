@@ -45,7 +45,7 @@ section .text
     POP EBX                             ; 00438286
     RET                                 ; 00438287
     CALL cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00437290 ; 00438288
-        ;   XREF to: 00437290 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00437290()
+        ;   XREF to: 00437290 (UNCONDITIONAL_CALL)  ; OptimizedMemcpyFunc * cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00437290()
         ;   Label: LAB_00438288
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0043828d
     MOV dword ptr [ESP],EAX             ; 00438291

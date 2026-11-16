@@ -1241,9 +1241,9 @@ LAB_0051b2ad:
     (pCVar1->position).x = (pCVar1->position).x + fStack_2a4;
     (this_ptr->base).base.base.location.position.y = fVar11 + afStack_2a0[0];
     (this_ptr->base).base.base.location.position.z = fVar3 + afStack_2a0[1];
-    (pCStack_20->_ub).vfunc2 = (CDemonActor_vfunc2 *)0x0;
+    (pCStack_20->_ub).releaseResources = (CDemonActor_releaseResources *)0x0;
     (pCStack_20->_ub).markResourcesInUse =
-         (CDemonActor_markResourcesInUse *)(pCStack_20->_ub).vfunc2;
+         (CDemonActor_markResourcesInUse *)(pCStack_20->_ub).releaseResources;
     (pCStack_20->_ub).setup = (CDemonActor_setup *)(pCStack_20->_ub).markResourcesInUse;
   }
   this_ptr->airborne_timer = 0.0;

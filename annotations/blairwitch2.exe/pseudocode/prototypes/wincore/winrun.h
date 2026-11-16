@@ -169,9 +169,9 @@ float __cdecl getInputIdleTime(void);
 // Address: 005908c0
 void __cdecl resetControllerCalibration(int controller_index);
 
-// Original: wincore_winrun.cpp_FUN_00590910
+// Original: wincore_winrun.cpp_pollControllerWrapper_FUN_00590910
 // Address: 00590910
-void FUN_00590910(int param_1);
+void __cdecl pollControllerWrapper(int controller_index);
 
 // Original: wincore_winrun.cpp_calibrateControllerCenter_FUN_00590920
 // Address: 00590920

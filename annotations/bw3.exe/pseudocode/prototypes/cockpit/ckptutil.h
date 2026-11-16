@@ -31,7 +31,7 @@ ColorConversionFunc * __cdecl getRGBConvertersionFunction(void);
 
 // Original: cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00434ea0
 // Address: 00434ea0
-code * getOptimizedMemcpyFunction(void);
+OptimizedMemcpyFunc * __cdecl getOptimizedMemcpyFunction(void);
 
 // Original: cockpit_ckptutil.c_get16BitConversionFunction_FUN_00434ec0
 // Address: 00434ec0

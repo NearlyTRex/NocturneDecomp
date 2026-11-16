@@ -17,7 +17,7 @@
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590 at 005555c8
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055a99a
 ;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_0055b330 at 0055b3ec
-;   core_setdir.cpp_FUN_00559730 at 00559804
+;   core_setdir.cpp_calculateActorVisibility_FUN_00559730 at 00559804
 ;   shape_spotview.cpp_CSpotView_applyCamera_FUN_005847e0 at 005848c9
 ;
 ; Called Functions:

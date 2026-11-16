@@ -16,10 +16,10 @@
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455665
 ;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00450fc0
 ;   core_doc.cpp_CDoc_processMotionEvents_FUN_00453250 at 00453692
+;   core_doc.cpp_CDoc_tryPlaceObject_FUN_00458e80 at 00458ee6
 ;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 00453d9b
 ;   core_doc.cpp_CDoc_updateTurnBlending_FUN_00455270 at 004552a0
 ;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0 at 0045be58
-;   core_doc.cpp_FUN_00458e80 at 00458ee6
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410 at 004af5bc
 ;   ... and 17 more
 ;

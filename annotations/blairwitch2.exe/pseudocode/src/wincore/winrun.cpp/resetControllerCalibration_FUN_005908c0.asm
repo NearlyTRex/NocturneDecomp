@@ -10,7 +10,7 @@
 ;   undefined4 DAT_02665a44
 ;
 ; Called Functions:
-;   wincore_winrun.cpp_FUN_00590910
+;   wincore_winrun.cpp_pollControllerWrapper_FUN_00590910
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     JNZ 0x005908e8                      ; 00590901
         ;   XREF to: 005908e8 (CONDITIONAL_JUMP)  ; LAB_005908e8
     PUSH ECX                            ; 00590903
-    CALL wincore_winrun.cpp_FUN_00590910 ; 00590904
-        ;   XREF to: 00590910 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00590910()
+    CALL wincore_winrun.cpp_pollControllerWrapper_FUN_00590910 ; 00590904
+        ;   XREF to: 00590910 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_pollControllerWrapper_FUN_00590910(int controller_index)
     ADD ESP,0x4                         ; 00590909
     POP EDI                             ; 0059090c
     POP ESI                             ; 0059090d

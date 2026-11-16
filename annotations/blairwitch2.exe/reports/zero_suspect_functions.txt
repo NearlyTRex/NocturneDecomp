@@ -1,4 +1,5 @@
 annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/applyActPalette_FUN_0042c670.c
+annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/copyBitmapRegion_FUN_0042d550.c
 annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/flipEdgeArrayHorizontally_FUN_00430210.c
 annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/get16BitConversionFunction_FUN_0042c450.c
 annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/getRGBConvertersionFunction_FUN_0042c420.c
@@ -47,6 +48,7 @@ annotations/blairwitch2.exe/pseudocode/src/cockpit/pkbmpset.cpp/CPackedBitmapSet
 annotations/blairwitch2.exe/pseudocode/src/cockpit/pkbmpset.cpp/CPackedBitmapSet_setFilename_FUN_00517f60.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_calculateChecksum_FUN_00409df0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_cylinderGroundCheck_FUN_00408c30.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_doNothing_FUN_0040ced0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_dtor_FUN_00408930.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_evaluateTriggerCondition_FUN_00409e30.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_fillAttackDamageInfo_FUN_0040ad50.cpp
@@ -81,7 +83,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_arrdtor10_FU
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_ctor_FUN_0040d340.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_dtor_FUN_0040d3f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_length_FUN_0040d370.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/FUN_0040ced0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/castToClassHash_FUN_0040c8f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/checkNameHash_FUN_0040c870.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/crc32ProcessBuffer_FUN_0040d260.cpp
@@ -400,6 +401,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_markReso
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_playSoundWithCooldown_FUN_0042b260.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_preProcess_FUN_00424470.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_releaseFromGrab_FUN_00427a10.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_releaseResources_FUN_00422c10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_setDoorTarget_FUN_00428ab0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_setEyeFrame_FUN_00424b50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_setLookAtTarget_FUN_00429c60.cpp
@@ -1253,6 +1255,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_countA
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_countDamageableEnemies_FUN_004fd450.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_findActorByName_FUN_004fc740.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_freeAllAssets_FUN_004fcf50.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_prepareAllActors_FUN_004fc350.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_removeActorFromList_FUN_004fc270.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_removeActor_FUN_004fc570.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/staticInit_FUN_004fb350.cpp
@@ -1333,6 +1336,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_reset_F
 annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setInitialState_FUN_0059d990.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setNextRefState_FUN_0059d880.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setNextStateIndex_FUN_0059d960.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setNextStateWrapper_FUN_0059d940.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setNextState_FUN_0059d8e0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setRefState_FUN_0059d7f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setTransitionDelay_FUN_0059dcb0.cpp
@@ -2186,6 +2190,7 @@ annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/doNothing2_FUN_005
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/endPeriod_FUN_0058e9d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/getRegistryStringValue_FUN_0058fec0.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/outputDebugString_FUN_0058ffc0.cpp
+annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/pollControllerWrapper_FUN_00590910.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/releaseMutex_FUN_0058fd00.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/saveControllerSettings_FUN_00590960.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/setThreadPriority_FUN_0058fd50.cpp

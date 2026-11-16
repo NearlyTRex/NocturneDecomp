@@ -95,7 +95,7 @@ void __cdecl wincore_winrun_cpp_resetInputIdleTimers_FUN_005b42f0(void);
 void __cdecl wincore_winrun_cpp_updateInputIdleTimers_FUN_005b4320(float delta_time);
 float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_005b43a0(void);
 void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005b4400(int controller_index);
-void wincore_winrun_cpp_FUN_005b4450(int param_1);
+void __cdecl wincore_winrun_cpp_pollControllerWrapper_FUN_005b4450(int controller_index);
 void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_005b4460(int controller_index);
 void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_005b44a0(CIniFile *ini);
 void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_005b4650(CIniFile *ini);

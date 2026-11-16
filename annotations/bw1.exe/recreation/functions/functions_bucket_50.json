@@ -2970,7 +2970,8 @@
       "00408890",
       "005249b0"
     ],
-    "conv":"unknown",
+    "cls":"CCharacter",
+    "conv":"__cdecl",
     "data_refs":[
       "005fb7dc",
       "005fbacc",
@@ -3030,12 +3031,12 @@
       "006083cc"
     ],
     "instructions":10,
-    "method":"FUN_0042c7d0",
-    "name":"core_charactr.cpp_FUN_0042c7d0",
-    "receiver":false,
+    "method":"releaseResources",
+    "name":"core_charactr.cpp_CCharacter_releaseResources_FUN_0042c7d0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -23331,14 +23332,24 @@
     "calls":[
       "005b3d70"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":5,
-    "method":"FUN_005b4450",
-    "name":"wincore_winrun.cpp_FUN_005b4450",
+    "method":"pollControllerWrapper",
+    "name":"wincore_winrun.cpp_pollControllerWrapper_FUN_005b4450",
+    "params":[
+      {
+        "name":"controller_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/winrun.cpp",

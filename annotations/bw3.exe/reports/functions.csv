@@ -665,7 +665,7 @@ core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0,0042abb0,core/charactr.cpp,18,2,
 core_charactr.cpp_CCharacter_ctor_FUN_0042ac20,0042ac20,core/charactr.cpp,146,207,pointer_cast|pointer_truncation|warning_overlapping_globals,2231
 core_charactr.cpp_CCharacter_setup_FUN_0042b0e0,0042b0e0,core/charactr.cpp,118,6,shadow_pointer_walk|undefined_data|unrolled_strcpy|warning_overlapping_globals,198
 core_charactr.cpp_CCharacter_markResourcesInUse_FUN_0042b400,0042b400,core/charactr.cpp,9,0,,9
-core_charactr.cpp_FUN_0042b430,0042b430,core/charactr.cpp,7,3,unnamed_param,42
+core_charactr.cpp_CCharacter_releaseResources_FUN_0042b430,0042b430,core/charactr.cpp,6,0,,6
 core_charactr.cpp_CCharacter_archive_FUN_0042b450,0042b450,core/charactr.cpp,143,13,pointer_cast|pointer_truncation|stack_alignment_array|stack_ref|undefined_data,298
 core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_0042b8d0,0042b8d0,core/charactr.cpp,14,2,unrolled_memset|warning_overlapping_globals,44
 core_charactr.cpp_clampFloat_FUN_0042b920,0042b920,core/charactr.cpp,9,0,,9
@@ -770,7 +770,7 @@ cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00434d42,00434d42,cockpit/ckptutil.c,8
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00434e50,00434e50,cockpit/ckptutil.c,16,2,pointer_cast,41
 cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80,00434e80,cockpit/ckptutil.c,14,3,undefined_data|warning_overlapping_globals,54
 cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00434e90,00434e90,cockpit/ckptutil.c,4,0,,4
-cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00434ea0,00434ea0,cockpit/ckptutil.c,8,2,unresolved_funcptr|warning_overlapping_globals,38
+cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00434ea0,00434ea0,cockpit/ckptutil.c,8,1,warning_overlapping_globals,23
 cockpit_ckptutil.c_get16BitConversionFunction_FUN_00434ec0,00434ec0,cockpit/ckptutil.c,4,0,,4
 cockpit_ckptutil.c_applyActPalette_FUN_00434f90,00434f90,cockpit/ckptutil.c,20,0,,20
 cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00435010,00435010,cockpit/ckptutil.c,24,6,stack_param|stack_ref|undefined_data,99
@@ -782,7 +782,7 @@ cockpit_ckptutil.c_blitRectangleClipped_FUN_004357a0,004357a0,cockpit/ckptutil.c
 cockpit_ckptutil.c_blitUnifiedSprite_FUN_00435910,00435910,cockpit/ckptutil.c,90,26,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,370
 cockpit_ckptutil.c_blitSimpleSprite_FUN_00435b50,00435b50,cockpit/ckptutil.c,58,15,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,228
 cockpit_ckptutil.c_blitDualModeSprite_FUN_00435cb0,00435cb0,cockpit/ckptutil.c,75,27,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,365
-cockpit_ckptutil.c_copyBitmapRegion_FUN_00435e70,00435e70,cockpit/ckptutil.c,21,2,unresolved_funcptr,46
+cockpit_ckptutil.c_copyBitmapRegion_FUN_00435e70,00435e70,cockpit/ckptutil.c,21,0,,21
 cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_00435ee0,00435ee0,cockpit/ckptutil.c,43,10,pointer_cast|pointer_truncation|undefined_data|warning_overlapping_globals,163
 cockpit_ckptutil.c_blitVerticalColumn_FUN_00436020,00436020,cockpit/ckptutil.c,37,7,pointer_cast|undefined_data,117
 cockpit_ckptutil.c_blitFullScreen_FUN_00436140,00436140,cockpit/ckptutil.c,6,2,undefined_data,31
@@ -3424,7 +3424,7 @@ cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0050f2c0,0050f2c0,cockpit/p
 cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440,0050f440,cockpit/pkbitmap.cpp,64,12,pointer_cast|pointer_truncation|undefined_data,199
 cockpit_pkbitmap.cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0050f5c0,0050f5c0,cockpit/pkbitmap.cpp,40,1,warning_overlapping_globals,55
 cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0050f6c0,0050f6c0,cockpit/pkbitmap.cpp,36,0,,36
-cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0050f780,0050f780,cockpit/pkbitmap.cpp,61,6,pointer_cast|pointer_truncation|warning_overlapping_globals,136
+cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0050f780,0050f780,cockpit/pkbitmap.cpp,62,6,pointer_cast|pointer_truncation|warning_overlapping_globals,137
 cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910,0050f910,cockpit/pkbitmap.cpp,19,7,stack_param,94
 cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990,0050f990,cockpit/pkbitmap.cpp,18,2,stack_param,43
 cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0,0050f9e0,cockpit/pkbitmap.cpp,46,9,pointer_cast|pointer_truncation|unrolled_memcpy,151
@@ -3773,7 +3773,7 @@ core_setcolid.cpp_CDemonSet_isPointInWater_FUN_0053ef60,0053ef60,core/setcolid.c
 core_setcolid.cpp_SRaytraceState_ctor_FUN_0053f0b0,0053f0b0,core/setcolid.cpp,4,0,,4
 core_setcolid.cpp_SRaytraceState_dtor_FUN_0053f0c0,0053f0c0,core/setcolid.cpp,4,0,,4
 core_setdir.cpp_staticInit_FUN_0053f0d0,0053f0d0,core/setdir.cpp,5,0,,5
-core_setdir.cpp_FUN_0053f0f0,0053f0f0,core/setdir.cpp,315,102,pointer_cast|pointer_truncation|stack_alignment_array|stack_param|undefined_data|unrolled_memcpy|warning_overlapping_globals,1370
+core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0,0053f0f0,core/setdir.cpp,307,65,pointer_cast|pointer_truncation|stack_alignment_array|undefined_data|unrolled_memcpy|warning_overlapping_globals,987
 core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940,0053f940,core/setdir.cpp,650,113,pointer_cast|pointer_truncation|shadow_pointer_walk|stack_alignment_array|stack_param|stack_ref|undefined_data|unrolled_memcpy|warning_overlapping_globals,1825
 core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00540ba0,00540ba0,core/setdir.cpp,6,0,,6
 core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00540bc0,00540bc0,core/setdir.cpp,8,0,,8
@@ -4866,7 +4866,7 @@ wincore_winrun.cpp_resetInputIdleTimers_FUN_005824d0,005824d0,wincore/winrun.cpp
 wincore_winrun.cpp_updateInputIdleTimers_FUN_00582500,00582500,wincore/winrun.cpp,28,1,warning_overlapping_globals,43
 wincore_winrun.cpp_getInputIdleTime_FUN_00582580,00582580,wincore/winrun.cpp,18,1,warning_overlapping_globals,33
 wincore_winrun.cpp_resetControllerCalibration_FUN_005825e0,005825e0,wincore/winrun.cpp,17,1,warning_overlapping_globals,32
-wincore_winrun.cpp_FUN_00582630,00582630,wincore/winrun.cpp,5,2,unnamed_param,30
+wincore_winrun.cpp_pollControllerWrapper_FUN_00582630,00582630,wincore/winrun.cpp,5,0,,5
 wincore_winrun.cpp_calibrateControllerCenter_FUN_00582640,00582640,wincore/winrun.cpp,8,1,warning_overlapping_globals,23
 wincore_winrun.cpp_saveControllerSettings_FUN_00582680,00582680,wincore/winrun.cpp,54,0,,54
 wincore_winrun.cpp_loadControllerSettings_FUN_00582830,00582830,wincore/winrun.cpp,39,16,stack_ref|unaffected_reg,209
@@ -4998,7 +4998,7 @@ core_zombiepriest.cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0,0058ecd0
 core_zombiepriest.cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0,0058efb0,core/zombiepriest.cpp,183,38,bit_int_float_compare|partial_struct_copy|phantom_float_to_int|pointer_cast|pointer_truncation|raw_address_pointer_store|stack_alignment_array|stack_param|stack_ref|unrolled_memcpy|warning_overlapping_globals,618
 core_zombiepriest.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0,0058f4a0,core/zombiepriest.cpp,19,0,,19
 core_zombiepriest.cpp_CZombiePriest_archive_FUN_0058f510,0058f510,core/zombiepriest.cpp,27,0,,27
-core_zombiepriest.cpp_FUN_0058f610,0058f610,core/zombiepriest.cpp,4,0,,4
+core_zombiepriest.cpp_CZombiePriest_reset_FUN_0058f610,0058f610,core/zombiepriest.cpp,4,0,,4
 core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630,0058f630,core/zombiepriest.cpp,124,2,warning_overlapping_globals|warning_type_propagation,154
 core_zombiepriest.cpp_CZombiePriest_processDamage_FUN_0058f990,0058f990,core/zombiepriest.cpp,60,1,warning_type_propagation,75
 core_zombiepriest.cpp_CZombiePriest_getTargetPoints_FUN_0058fb20,0058fb20,core/zombiepriest.cpp,61,30,pointer_cast|pointer_truncation|stack_alignment_array|unrolled_memcpy|warning_overlapping_globals|warning_type_propagation,391

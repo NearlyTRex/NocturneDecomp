@@ -389,9 +389,9 @@ void __cdecl CDemonActor::stopParticleSystem(CDemonActor *this_ptr,int index,int
 // Address: 0040cea0
 void __cdecl CDemonActor::setParticleSystemFade(CDemonActor *this_ptr,int index,float fade_start,float fade_end,float fade_duration);
 
-// Original: core_actor.cpp_FUN_0040ced0
+// Original: core_actor.cpp_CDemonActor_doNothing_FUN_0040ced0
 // Address: 0040ced0
-void FUN_0040ced0(void);
+void __cdecl CDemonActor::doNothing(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_setRandomSeed_FUN_0040cee0
 // Address: 0040cee0

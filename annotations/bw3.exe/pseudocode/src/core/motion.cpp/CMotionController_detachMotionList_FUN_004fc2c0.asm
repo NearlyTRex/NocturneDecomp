@@ -7,7 +7,7 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042b430 at 0042b43a
+;   core_charactr.cpp_CCharacter_releaseResources_FUN_0042b430 at 0042b43a
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070

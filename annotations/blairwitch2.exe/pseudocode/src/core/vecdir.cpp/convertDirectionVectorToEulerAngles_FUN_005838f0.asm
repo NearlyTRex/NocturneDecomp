@@ -12,7 +12,6 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[89]:
-;   FUN_00458930 at 00458e46
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 004101dc
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411f19
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 0041344e
@@ -22,6 +21,7 @@
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420 at 004297e9
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00428260 at 004283e8
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 at 0042acea
+;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 0042891a
 ;   ... and 79 more
 ;
 ; Called Functions:

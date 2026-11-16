@@ -116,8 +116,11 @@ def plan(program, contract_path, reference="nocedit.exe", slot_names=None):
         return min(lens) if lens else 0
 
     def representative(cls, slot):
-        """A contract row naming `slot`, from `cls` or the classes below it."""
-        for c in [cls] + sorted(subtree(parent, cls)):
+        """A contract row naming `slot`, from `cls` or the classes below it.
+
+        A stale table numbers its slots by an older parent, so its rows name
+        other methods (bw2's CChain called slot 0 `setup`)."""
+        for c in [cls] + sorted(c for c in subtree(parent, cls) if c not in stale):
             r = rows.get(c, {}).get(slot)
             if r and r.get("method"):
                 return c, r

@@ -381,6 +381,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CDemonActor_markResourcesInUse",
+      "type":"function_definition"
+    },
+    {
       "name":"CDemonActor_onDropped",
       "type":"function_definition"
     },
@@ -437,6 +441,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CDemonActor_releaseResources",
+      "type":"function_definition"
+    },
+    {
       "name":"CDemonActor_renderBackground",
       "type":"function_definition"
     },
@@ -490,6 +498,10 @@
     },
     {
       "name":"CDemonActor_updateInteraction",
+      "type":"function_definition"
+    },
+    {
+      "name":"CDemonActor_vfunc0",
       "type":"function_definition"
     },
     {
@@ -2435,6 +2447,10 @@
     {
       "name":"Misc",
       "type":"union"
+    },
+    {
+      "name":"OptimizedMemcpyFunc",
+      "type":"function_definition"
     },
     {
       "name":"PALETTEENTRY",
@@ -8549,6 +8565,20 @@
       "calling_convention":"unknown",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CDemonActor_markResourcesInUse",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"unknown",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CDemonActor_onDropped",
       "parameters":[
         {
@@ -8817,6 +8847,20 @@
       "calling_convention":"unknown",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CDemonActor_releaseResources",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"unknown",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CDemonActor_renderBackground",
       "parameters":[
         {
@@ -9063,6 +9107,20 @@
         }
       ],
       "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"unknown",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CDemonActor_vfunc0",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -12802,6 +12860,28 @@
         }
       ],
       "return_type":"BOOL",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"OptimizedMemcpyFunc",
+      "parameters":[
+        {
+          "name":"dest_buffer",
+          "type":"void*"
+        },
+        {
+          "name":"src_buffer",
+          "type":"void*"
+        },
+        {
+          "name":"byte_count",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -20140,9 +20220,9 @@
       "fields":[
         {
           "len":4,
-          "name":"setup",
+          "name":"vfunc0",
           "offset":0,
-          "type":"CDemonActor_setup*"
+          "type":"CDemonActor_vfunc0*"
         },
         {
           "len":4,
@@ -20158,15 +20238,15 @@
         },
         {
           "len":4,
-          "name":"process",
+          "name":"markResourcesInUse",
           "offset":12,
-          "type":"CDemonActor_process*"
+          "type":"CDemonActor_markResourcesInUse*"
         },
         {
           "len":4,
-          "name":"renderOpaque",
+          "name":"releaseResources",
           "offset":16,
-          "type":"CDemonActor_renderOpaque*"
+          "type":"CDemonActor_releaseResources*"
         },
         {
           "len":4,

@@ -18,6 +18,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/funcdefs/ColorConversionFunc.h"
+#include "types/funcdefs/OptimizedMemcpyFunc.h"
 #include "types/structs/SClothVertex.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -100,7 +101,7 @@ void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00434d42(void *dest_buffe
 void __cdecl cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_00434e50(void *output_buffer,void *input_buffer,int pixel_count);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80(void);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_00434e90(void);
-code * cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00434ea0(void);
+OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00434ea0(void);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_get16BitConversionFunction_FUN_00434ec0(void);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_00434f90(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00435010(char *filename,uchar *output_palette);

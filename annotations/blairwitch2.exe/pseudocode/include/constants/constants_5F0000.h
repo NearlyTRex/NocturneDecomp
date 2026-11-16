@@ -18,7 +18,6 @@
 #include "prototypes/prototypes_570000.h"
 #include "prototypes/prototypes_580000.h"
 #include "prototypes/prototypes_590000.h"
-#include "prototypes/prototypes_5A0000.h"
 #include "prototypes/prototypes_5B0000.h"
 
 // =============================================================================
@@ -737,78 +736,6 @@ static undefined1* DAT_005FE56C = (undefined1*)core_bmppuzzl_cpp_CAudioRecPuzzle
 static undefined1* DAT_005FE570 = (undefined1*)core_bmppuzzl_cpp_CAudioRecPuzzle_getSpeedSetting_FUN_0059be20;
 static undefined1* DAT_005FE574 = (undefined1*)core_bmppuzzl_cpp_CAudioRecPuzzle_getTransportState_FUN_0059be30;
 static undefined1* DAT_005FE578 = (undefined1*)core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_0059b900;
-static undefined1* DAT_005FEC0C = (undefined1*)core_basicene_cpp_CBasicEnemy_setup_FUN_0059e6a0;
-static undefined1* DAT_005FEC10 = (undefined1*)core_charactr_cpp_CCharacter_markResourcesInUse_FUN_00422be0;
-static undefined1* DAT_005FEC14 = (undefined1*)core_charactr_cpp_FUN_00422c10;
-static undefined1* DAT_005FEC18 = (undefined1*)core_basicene_cpp_CBasicEnemy_process_FUN_0059f420;
-static undefined1* DAT_005FEC1C = (undefined1*)core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20;
-static undefined1* DAT_005FEC20 = (undefined1*)core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980;
-static undefined1* DAT_005FEC24 = (undefined1*)core_enemy_cpp_CEnemy_renderBackground_FUN_00488940;
-static undefined1* DAT_005FEC28 = (undefined1*)core_charactr_cpp_CCharacter_getBoundingBox_FUN_004271e0;
-static undefined1* DAT_005FEC2C = (undefined1*)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c990;
-static undefined1* DAT_005FEC30 = (undefined1*)core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40;
-static undefined1* DAT_005FEC34 = (undefined1*)core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60;
-static undefined1* DAT_005FEC38 = (undefined1*)core_actor_cpp_CDemonActor_playSound_FUN_00408e50;
-static undefined1* DAT_005FEC3C = (undefined1*)core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408e70;
-static undefined1* DAT_005FEC40 = (undefined1*)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408e90;
-static undefined1* DAT_005FEC44 = (undefined1*)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0;
-static undefined1* DAT_005FEC48 = (undefined1*)core_basicene_cpp_CBasicEnemy_getCollisionType_FUN_0059f960;
-static undefined1* DAT_005FEC4C = (undefined1*)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30;
-static undefined1* DAT_005FEC60 = (undefined1*)core_enemy_cpp_CEnemy_getTargetPoints_FUN_00488020;
-static undefined1* DAT_005FEC64 = (undefined1*)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409af0;
-static undefined1* DAT_005FEC68 = (undefined1*)core_charactr_cpp_CCharacter_canLookAt_FUN_00429ce0;
-static undefined1* DAT_005FEC6C = (undefined1*)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409e30;
-static undefined1* DAT_005FEC70 = (undefined1*)core_actor_cpp_CDemonActor_processActionButton_FUN_00409e40;
-static undefined1* DAT_005FEC74 = (undefined1*)core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0;
-static undefined1* DAT_005FECB4 = (undefined1*)core_charactr_cpp_CCharacter_spawnFlies_FUN_00429e60;
-static undefined1* DAT_005FECB8 = (undefined1*)core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408f00;
-static undefined1* DAT_005FECBC = (undefined1*)core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408f90;
-static undefined1* DAT_005FECC0 = (undefined1*)core_charactr_cpp_CCharacter_onLaserHit_FUN_00427730;
-static undefined1* DAT_005FECC4 = (undefined1*)core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408b90;
-static undefined1* DAT_005FECC8 = (undefined1*)core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0;
-static undefined1* DAT_005FECCC = (undefined1*)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0;
-static undefined1* DAT_005FECD4 = (undefined1*)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00429c70;
-static undefined1* DAT_005FECD8 = (undefined1*)core_actor_cpp_CDemonActor_getActorType_FUN_00408a20;
-static undefined1* DAT_005FECDC = (undefined1*)core_basicene_cpp_CBasicEnemy_dtor_FUN_005a0780;
-static undefined1* DAT_005FECE0 = (undefined1*)core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10;
-static undefined1* DAT_005FECE4 = (undefined1*)core_charactr_cpp_CCharacter_applyDamage_FUN_004239b0;
-static undefined1* DAT_005FECE8 = (undefined1*)core_charactr_cpp_CCharacter_kill_FUN_00423900;
-static undefined1* DAT_005FECF0 = (undefined1*)core_basicene_cpp_CBasicEnemy_isGrabbable_FUN_0059fa70;
-static undefined1* DAT_005FECF4 = (undefined1*)core_charactr_cpp_CCharacter_isGrabbable_FUN_00427a00;
-static undefined1* DAT_005FECF8 = (undefined1*)core_charactr_cpp_CCharacter_isGrabbable_FUN_00427a00;
-static undefined1* DAT_005FECFC = (undefined1*)core_charactr_cpp_CCharacter_releaseFromGrab_FUN_00427a10;
-static undefined1* DAT_005FED00 = (undefined1*)core_charactr_cpp_CCharacter_getGrabber_FUN_00427a50;
-static undefined1* DAT_005FED04 = (undefined1*)core_enemy_cpp_CEnemy_releaseVictim_FUN_004889d0;
-static undefined1* DAT_005FED08 = (undefined1*)core_enemy_cpp_CEnemy_onVictimLost_FUN_00488a80;
-static undefined1* DAT_005FED0C = (undefined1*)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf0;
-static undefined1* DAT_005FED10 = (undefined1*)core_charactr_cpp_CCharacter_testDamageLine_FUN_00427c80;
-static undefined1* DAT_005FED14 = (undefined1*)core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800;
-static undefined1* DAT_005FED18 = (undefined1*)core_basicene_cpp_CBasicNPC_getDeathState_FUN_0059f930;
-static undefined1* DAT_005FED1C = (undefined1*)core_charactr_cpp_CCharacter_attractActorToward_FUN_00427ac0;
-static undefined1* DAT_005FED20 = (undefined1*)core_charactr_cpp_CCharacter_isGrabbable_FUN_00427a00;
-static undefined1* DAT_005FED24 = (undefined1*)core_charactr_cpp_CCharacter_getPartDominantBone_FUN_00425a70;
-static undefined1* DAT_005FED28 = (undefined1*)core_charactr_cpp_CCharacter_setDoorTarget_FUN_00428ab0;
-static undefined1* DAT_005FED2C = (undefined1*)core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ac0;
-static undefined1* DAT_005FED30 = (undefined1*)core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428af0;
-static undefined1* DAT_005FED34 = (undefined1*)core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00428d60;
-static undefined1* DAT_005FED38 = (undefined1*)core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429120;
-static undefined1* DAT_005FED3C = (undefined1*)core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0;
-static undefined1* DAT_005FED40 = (undefined1*)core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_00428750;
-static undefined1* DAT_005FED44 = (undefined1*)core_charactr_cpp_CCharacter_setWalkTimeout_FUN_004287a0;
-static undefined1* DAT_005FED48 = (undefined1*)core_charactr_cpp_CCharacter_isWalkComplete_FUN_004287b0;
-static undefined1* DAT_005FED4C = (undefined1*)core_charactr_cpp_CCharacter_setCharacterModel_FUN_0042b440;
-static undefined1* DAT_005FED50 = (undefined1*)core_enemy_cpp_CEnemy_getTargetPoint_FUN_00488250;
-static undefined1* DAT_005FED54 = (undefined1*)core_enemy_cpp_CEnemy_updateVictim_FUN_00488450;
-static undefined1* DAT_005FED5C = (undefined1*)core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380;
-static undefined1* DAT_005FED60 = (undefined1*)core_basicene_cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0;
-static undefined1* DAT_005FED64 = (undefined1*)core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0;
-static undefined1* DAT_005FED68 = (undefined1*)core_basicene_cpp_CBasicEnemy_processMovement_FUN_0059f0e0;
-static undefined1* DAT_005FED6C = (undefined1*)core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880;
-static undefined1* DAT_005FED70 = (undefined1*)core_basicene_cpp_CBasicEnemy_startBurn_FUN_005a0270;
-static undefined1* DAT_005FED74 = (undefined1*)core_basicene_cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0;
-static undefined1* DAT_005FED78 = (undefined1*)crt_unknown_c_FUN_005bab17;
-static undefined1* DAT_005FED7C = (undefined1*)core_basicene_cpp_CBasicEnemy_processChasingState_FUN_0059ef90;
-static undefined1* DAT_005FED80 = (undefined1*)core_basicene_cpp_CBasicEnemy_checkVictim_FUN_0059f6b0;
 
 // undefined4 constants
 static undefined4 DAT_005f1854 = 0x006E6F63;

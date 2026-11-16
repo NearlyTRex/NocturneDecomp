@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          5,182
-  Unnamed functions (FUN_):          4 ( 0.1%)
+  Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     29 ( 0.6%)
-  Functions with type issues:        1,219 (23.5%)
+  Functions with type issues:        1,218 (23.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,7 +23,7 @@ SUMMARY STATISTICS
     Missing register params:           3
     Wrong calling convention:          156
     Undefined types in variables:      974
-    Unresolved stack params:           219
+    Unresolved stack params:           218
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -36,17 +36,7 @@ UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 
 Sorted by caller count (most-referenced first = highest priority to name).
 
-  wincore/winrun.cpp (1 unnamed)
-    0x00582630  unknown       1 callers
-
-  core/charactr.cpp (1 unnamed)
-    0x0042b430  unknown       0 callers
-
-  core/setdir.cpp (1 unnamed)
-    0x0053f0f0  unknown       0 callers
-
-  core/zombiepriest.cpp (1 unnamed)
-    0x0058f610  unknown       0 callers
+  (none)
 
 ====================================================================================================
 UNNAMED PARAMETERS (still using param_N)
@@ -1200,7 +1190,7 @@ Wrong calling convention (unaffected register usage) (156)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (219)
+Unresolved stack parameters (missing from signature) (218)
 --------------------------------------------------------------------------------
 
   clipAndDrawLine
@@ -2185,12 +2175,6 @@ Unresolved stack parameters (missing from signature) (219)
     Address: 0x0053ef60  File: core/setcolid.cpp
     Evidence: in_stack_ffffffa4, in_stack_ffffffa4
     Signature: int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_0053ef60(CDemonSet *this_ptr,CVector3f *point)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0053f0f0
-    Address: 0x0053f0f0  File: core/setdir.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000014, in_stack_00000014, in_stack_00000004, in_stack_00000014, in_stack_00000004, in_stack_00000014, in_stack_00000004, in_stack_00000014, in_stack_00000004, in_stack_00000018, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000014, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000010, in_stack_00000014, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: float core_setdir_cpp_FUN_0053f0f0(void)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonSet_evaluateVirtualDirector

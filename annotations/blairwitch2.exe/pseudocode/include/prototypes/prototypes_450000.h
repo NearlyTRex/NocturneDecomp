@@ -5,7 +5,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDoc.h"
@@ -47,8 +46,8 @@ CMatrix3x4f * __stack3_esi core_doc_cpp_CDoc_computeWeaponAttachXForm_FUN_004568
 void __cdecl core_doc_cpp_CDoc_processPickupComplete_FUN_00458320(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_dropRightHandObject_FUN_004583a0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_tryClimbLadder_FUN_004583f0(CDoc *this_ptr);
-undefined4 FUN_00458930(CCharacter *param_1);
-undefined4 core_doc_cpp_FUN_00458e80(void);
+int __cdecl core_doc_cpp_CDoc_tryDescendLadder_FUN_00458930(CDoc *this_ptr);
+int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_00458e80(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_archive_FUN_004597a0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderTransparent_FUN_00459d40(CDoc *this_ptr);

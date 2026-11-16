@@ -18,7 +18,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_00516750(CPackedB
   ushort *puVar5;
   int iStack_1c;
   int iStack_18;
-  ColorConversionFunc *pCStack_14;
+  OptimizedMemcpyFunc *pOStack_14;
   
   if (this_ptr->row_offsets == (int *)0x0) {
     return;
@@ -32,18 +32,19 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_00516750(CPackedB
   iStack_18 = 0;
   if ((uint)row_stride < 0x10) {
     if (row_stride == 8) {
-      pCStack_14 = (ColorConversionFunc *)
-                   cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430();
+      pOStack_14 = cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042c430();
       goto LAB_005167a0;
     }
   }
   else {
     if ((uint)row_stride < 0x11) {
-      pCStack_14 = cockpit_ckptutil_c_get16BitConversionFunction_FUN_0042c450();
+      pOStack_14 = (OptimizedMemcpyFunc *)
+                   cockpit_ckptutil_c_get16BitConversionFunction_FUN_0042c450();
       goto LAB_005167a0;
     }
     if (row_stride == 0x20) {
-      pCStack_14 = cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_0042c420();
+      pOStack_14 = (OptimizedMemcpyFunc *)
+                   cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_0042c420();
       goto LAB_005167a0;
     }
   }
@@ -60,7 +61,7 @@ LAB_005167a0:
         puVar5 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)(puVar5 + 2))) {
       iVar4 = (int)((uint)*puVar5 * row_stride) >> 0x1f;
       uVar1 = puVar5[1];
-      (*pCStack_14)(dest_buffer +
+      (*pOStack_14)(dest_buffer +
                     ((int)(((uint)*puVar5 * row_stride + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3)
                     ,puVar5 + 2,(uint)uVar1);
     }

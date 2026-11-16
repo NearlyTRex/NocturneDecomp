@@ -17991,14 +17991,64 @@
       "005420b0",
       "005632a3"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":570,
-    "method":"FUN_0053f0f0",
-    "name":"core_setdir.cpp_FUN_0053f0f0",
+    "method":"calculateActorVisibility",
+    "name":"core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0",
+    "params":[
+      {
+        "name":"actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bounding_box_vertices",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"primitives",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      },
+      {
+        "name":"thumb_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"camera",
+        "type":{
+          "kind":"class",
+          "name":"C3DSCamera",
+          "ptr":1
+        }
+      },
+      {
+        "name":"radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/setdir.cpp",

@@ -54,7 +54,7 @@ void __cdecl wincore_winrun_cpp_resetInputIdleTimers_FUN_005907b0(void);
 void __cdecl wincore_winrun_cpp_updateInputIdleTimers_FUN_005907e0(float delta_time);
 float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_00590860(void);
 void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005908c0(int controller_index);
-void wincore_winrun_cpp_FUN_00590910(int param_1);
+void __cdecl wincore_winrun_cpp_pollControllerWrapper_FUN_00590910(int controller_index);
 void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_00590920(int controller_index);
 void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_00590960(CIniFile *ini);
 void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_00590b10(CIniFile *ini);
@@ -250,7 +250,7 @@ int __cdecl core_muzzle_cpp_SStateMachine_addRefState_FUN_0059d6f0(SStateMachine
 int __cdecl core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine *this_ptr,char *identifier,char *state_name);
 int __cdecl core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880(SStateMachine *this_ptr,char *identifier);
 int __cdecl core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine *this_ptr,char *state_name);
-void core_muzzle_cpp_FUN_0059d940(SStateMachine *param_1,char *param_2);
+int __cdecl core_muzzle_cpp_SStateMachine_setNextStateWrapper_FUN_0059d940(SStateMachine *this_ptr,char *state_name);
 int __cdecl core_muzzle_cpp_SStateMachine_setNextStateIndex_FUN_0059d960(SStateMachine *this_ptr,int state_index);
 int __cdecl core_muzzle_cpp_SStateMachine_setInitialState_FUN_0059d990(SStateMachine *this_ptr,char *state_name);
 void __cdecl core_muzzle_cpp_SStateMachine_process_FUN_0059da20(SStateMachine *this_ptr,float delta_time);

@@ -9,9 +9,9 @@
 // Address: 00559710
 void __cdecl staticInit(void);
 
-// Original: core_setdir.cpp_FUN_00559730
+// Original: core_setdir.cpp_calculateActorVisibility_FUN_00559730
 // Address: 00559730
-float FUN_00559730(void);
+float __cdecl calculateActorVisibility(CDemonActor *actor,CVector3i *bounding_box_vertices,SMRGLHeaderPrimitive *primitives,int thumb_index,C3DSCamera *camera,float radius);
 
 // Original: core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80
 // Address: 00559f80

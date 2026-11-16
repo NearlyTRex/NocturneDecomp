@@ -16,7 +16,7 @@
 ;   core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40 at 0045acf1
 ;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0 at 0045a868
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459a26
-;   core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_0045b510 at 0045b6af
+;   core_doc.cpp_CDoc_tryPlaceObject_FUN_00458e80 at 00459626
 ;   ... and 29 more
 ;
 ; *****************************************************************************

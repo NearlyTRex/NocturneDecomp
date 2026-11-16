@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 5467
-Clean functions: 2021 (37.0%)
-Functions with suspects: 3446 (63.0%)
+Clean functions: 2024 (37.0%)
+Functions with suspects: 3443 (63.0%)
 
-Total suspect patterns: 44060
-Average suspects per function: 8.06
+Total suspect patterns: 44015
+Average suspects per function: 8.05
 
 Virtual files: 220 total, 3 at 100%, 3 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3734, Average: 51.2
 
-Average complexity score: 141.2
+Average complexity score: 141.1
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -28,11 +28,11 @@ SUSPECT PATTERN BREAKDOWN
   warning_overlapping_globals 2230
   unrolled_memcpy           1814
   stack_ref                 1657
-  stack_param               1641
+  stack_param               1604
   unknown_field             1218
   concat_reconstruction     815
   unaffected_reg            774
-  unresolved_funcptr        744
+  unresolved_funcptr        741
   stack_alignment_array     701
   shadow_pointer_walk       589
   unrolled_strcpy           581
@@ -43,7 +43,7 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_memset           283
   raw_address_constant      271
   suspect_float             229
-  unnamed_param             213
+  unnamed_param             208
   warning_type_propagation  189
   warning_unreachable       156
   extra_output              127
@@ -146,7 +146,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414870: core_beast.cpp_CBeast_getDeathState_FUN_00414870 (4 lines)
   004149e0: core_biggs.cpp_CBiggs_getActorType_FUN_004149e0 (4 lines)
   004151e0: core_bird.cpp_CBird_getActorType_FUN_004151e0 (4 lines)
-  ... and 1971 more
+  ... and 1974 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -262,7 +262,7 @@ FUNCTIONS BY SUSPECT TYPE
     00409d70: core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70
     ... and 401 more
 
-  stack_param (252 functions):
+  stack_param (251 functions):
     00402cf0: engine_2d.c_clipAndDrawLine_FUN_00402cf0
     00404440: engine_3d.c_drawLineStrip2D_FUN_00404440
     004044d0: engine_3d.c_drawLineStrip3D_FUN_004044d0
@@ -273,7 +273,7 @@ FUNCTIONS BY SUSPECT TYPE
     00409d70: core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70
     00409f20: core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
     0040dc80: core_ammo.cpp_CAmmo_renderOpaque_FUN_0040dc80
-    ... and 242 more
+    ... and 241 more
 
   unknown_field (111 functions):
     00403310: engine_2d.c_getInputWithPrompt_FUN_00403310
@@ -314,7 +314,7 @@ FUNCTIONS BY SUSPECT TYPE
     00418fc0: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00418fc0
     ... and 157 more
 
-  unresolved_funcptr (269 functions):
+  unresolved_funcptr (267 functions):
     004076e0: engine_3d.c_dispatchMRGLBlockChain_FUN_004076e0
     00407720: engine_3d.c_renderPrim_FUN_00407720
     0040e680: core_anvil.cpp_CAnvil_process_FUN_0040e680
@@ -325,7 +325,7 @@ FUNCTIONS BY SUSPECT TYPE
     00415c80: core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80
     00415cd0: core_bmppuzzl.cpp_processActivePuzzle_FUN_00415cd0
     00415fc0: core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0
-    ... and 259 more
+    ... and 257 more
 
   stack_alignment_array (605 functions):
     004051a0: engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0
@@ -457,9 +457,8 @@ FUNCTIONS BY SUSPECT TYPE
     00422ed0: core_boxactor.cpp_CLightActor_ctor_FUN_00422ed0
     ... and 78 more
 
-  unnamed_param (31 functions):
+  unnamed_param (29 functions):
     0040d0e0: engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0
-    0042c7d0: core_charactr.cpp_FUN_0042c7d0
     00443a50: support_codec.cpp_CCheesyCipher_setKey_FUN_00443a50
     00443a80: support_codec.cpp_CCheesyCipher_transformByte_FUN_00443a80
     00447630: core_construc.cpp_CConstruct_getCollisionType_FUN_00447630
@@ -468,7 +467,8 @@ FUNCTIONS BY SUSPECT TYPE
     004794b0: engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0
     00480e10: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00480e10
     004820f0: engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004820f0
-    ... and 21 more
+    0048adc0: core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0
+    ... and 19 more
 
   warning_type_propagation (189 functions):
     00409f20: core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20

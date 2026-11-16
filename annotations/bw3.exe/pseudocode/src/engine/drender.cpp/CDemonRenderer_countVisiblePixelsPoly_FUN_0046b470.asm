@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 005407c7
-;   core_setdir.cpp_FUN_0053f0f0 at 0053f623
+;   core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0 at 0053f623
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005bc4ac

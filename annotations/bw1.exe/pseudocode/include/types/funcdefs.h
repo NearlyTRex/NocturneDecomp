@@ -89,6 +89,7 @@
 #include "types/funcdefs/CDemonActor_processFootstep.h"
 #include "types/funcdefs/CDemonActor_processFootstepAtOffset.h"
 #include "types/funcdefs/CDemonActor_processMeleeHit.h"
+#include "types/funcdefs/CDemonActor_releaseResources.h"
 #include "types/funcdefs/CDemonActor_renderBackground.h"
 #include "types/funcdefs/CDemonActor_renderOpaque.h"
 #include "types/funcdefs/CDemonActor_renderTargetPoints.h"
@@ -183,4 +184,5 @@
 #include "types/funcdefs/ColorConversionFunc.h"
 #include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/funcdefs/FileSearchHandlerFunc.h"
+#include "types/funcdefs/OptimizedMemcpyFunc.h"
 

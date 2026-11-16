@@ -11,7 +11,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_onPickup_F
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_stopInteraction_FUN_00409f10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_playAttackHitEffects_FUN_0040ad90.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_shouldIgnoreForTargeting_FUN_0040c890.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/FUN_0040ced0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_doNothing_FUN_0040ced0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/sqrtFloatRef_FUN_0040d320.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_ctor_FUN_0040d340.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_length_FUN_0040d370.cpp
@@ -626,6 +626,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/weather.cpp/CWeather_ctor_FUN_00
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/endPeriod_FUN_0058e9d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/outputDebugString_FUN_0058ffc0.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/clearController_FUN_00590790.cpp
+annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/pollControllerWrapper_FUN_00590910.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bmppuzzl.cpp/CPuzzle_dtor_FUN_0059ab50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hpatrol.cpp/CPatrolPoint_setup_FUN_0059c670.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/meleeaxe.cpp/staticInit_FUN_0059d350.cpp
@@ -669,6 +670,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/beast.cpp/CBeast_setup_FUN_00414
 annotations/blairwitch2.exe/pseudocode/src/core/beast.cpp/CBeast_processDamage_FUN_00414b60.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/SBodyPartFire_arrdtor2_FUN_00417d10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/boxactor.cpp/CDemonFilter_arrdtor8_FUN_0041d8a0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_releaseResources_FUN_00422c10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_setMouthFrame_FUN_00424b90.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/resetBitBuffer_FUN_00433760.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/colonel.cpp/CColonel_renderOpaque_FUN_00436490.cpp
@@ -819,6 +821,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/goggles.cpp/CGoggles_setup_FUN_0
 annotations/blairwitch2.exe/pseudocode/src/core/goggles.cpp/CGoggles_archive_FUN_0059c1a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/goggles.cpp/staticInit_FUN_0059c270.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hpatrol.cpp/CPatrolPoint_renderTransparent_FUN_0059c9a0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setNextStateWrapper_FUN_0059d940.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/basicene.cpp/CBasicEnemy_processNothingState_FUN_0059ebc0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/confedrt.cpp/CConfederate_renderOpaque_FUN_005a1490.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fforest.cpp/CTwigZombie_processDamage_FUN_005a2e90.cpp
@@ -1937,7 +1940,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/weather.cpp/CWeather_setWeatherT
 annotations/blairwitch2.exe/pseudocode/src/engine/winfont.cpp/CWinFont_dtor_FUN_0058e050.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/getValue_FUN_0058eb60.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/zombie.cpp/CZombie_getGrabbed_FUN_00599c60.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setNextRefState_FUN_0059d880.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/confzomb.cpp/CConfederateZombie_getDeathState_FUN_005a24a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fforest.cpp/CTwigZombie_setup_FUN_005a2820.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fforest.cpp/CTwigZombie_processMotionEvent_FUN_005a2e30.cpp
@@ -1999,6 +2001,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_getCol
 annotations/blairwitch2.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_getDeathState_FUN_0058dc50.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/wasKeyPressed_FUN_0058eb40.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hpatrol.cpp/CPatrolPoint_renderOpaque_FUN_0059c980.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_setNextRefState_FUN_0059d880.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/basicene.cpp/CBasicEnemy_processAlertInvisibleState_FUN_0059ed50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/confedrt.cpp/CConfederate_setup_FUN_005a0a90.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromKeyFramedModel_FUN_005b63b0.cpp
@@ -2008,6 +2011,7 @@ annotations/blairwitch2.exe/pseudocode/src/engine/3d.c/setRenderingQuality_FUN_0
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_dtor_FUN_00408930.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/SBodyPartFire_ctor_FUN_00417cb0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/SBodyPartModel_ctor_FUN_00417cf0.cpp
+annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/copyBitmapRegion_FUN_0042d550.c
 annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/setLineBlendingDisabled_FUN_0042f310.c
 annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/setLineClippingDisabled_FUN_0042f320.c
 annotations/blairwitch2.exe/pseudocode/src/core/crossbow.cpp/CCrossbow_getCurFrame_FUN_0043ae10.cpp
@@ -2131,6 +2135,7 @@ annotations/blairwitch2.exe/pseudocode/src/engine/boss.c/modelStructNotSupported
 annotations/blairwitch2.exe/pseudocode/src/engine/boss.c/modelStructNotSupported3_FUN_0041a4e0.c
 annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_expand_FUN_0041a590.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bugs.cpp/convertVector_FUN_00422050.cpp
+annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/getOptimizedMemcpyFunction_FUN_0042c430.c
 annotations/blairwitch2.exe/pseudocode/src/engine/clipper.c/setFarPlaneDistance_FUN_00430620.c
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_seek_FUN_00435120.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_tell_FUN_00435150.cpp
@@ -2489,7 +2494,6 @@ annotations/blairwitch2.exe/pseudocode/src/engine/texture.cpp/freeTextureCache_F
 annotations/blairwitch2.exe/pseudocode/src/core/werewolf.cpp/staticInit_FUN_0058b6f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/winfont.cpp/CWinFont_reset_FUN_0058e640.cpp
 annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/resetInputIdleTimers_FUN_005907b0.cpp
-annotations/blairwitch2.exe/pseudocode/src/wincore/winrun.cpp/FUN_00590910.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/gmehook.cpp/CGameHook_printBanner_FUN_0059c2c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/basicene.cpp/CBasicEnemy_renderOpaque_FUN_0059fa20.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/confedrt.cpp/CConfederate_processStates_FUN_005a0b20.cpp
@@ -2792,7 +2796,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_processFoo
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/getRandomInt_FUN_0040cfc0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/baron.cpp/staticInit_FUN_0040f600.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/bugs.cpp/CBugs_initializeSwarmGraph_FUN_0041f940.cpp
-annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/getOptimizedMemcpyFunction_FUN_0042c430.c
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_writeCodeSequence_FUN_00434650.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_getFogValueAtPosition_FUN_00442cb0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dfilter.cpp/CDemonFilter_ctor_FUN_004477f0.cpp
@@ -2941,7 +2944,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/enemy.cpp/CEnemy_archive_FUN_004
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/allocateSmokeParticle_FUN_0049c0f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CFireEffect_load_FUN_0049ea80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fldnotes.cpp/STextView_flushWord_FUN_004a2b30.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/game.cpp/FUN_004b2930.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/game.cpp/isPlayerLanternOut_FUN_004b2930.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_canLookAt_FUN_004cfe80.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/matrix.c/pop_FUN_004e9810.c
 annotations/blairwitch2.exe/pseudocode/src/engine/mini3d.cpp/lineListD3DTL_FUN_004f44d0.cpp
@@ -2962,7 +2965,6 @@ annotations/blairwitch2.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxUserData_
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_getSoundDuration_FUN_0055af90.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/stranger.cpp/CStranger_archive_FUN_0056b600.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/basicnpc.cpp/CBasicNPC_ctor_FUN_005a47b0.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/FUN_00422c10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_applyGravity_FUN_00423a10.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CCodec_processFromBuffer_FUN_00433ff0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dglobe.cpp/CDemonGlobe_precomputeAttenuation_FUN_00448860.cpp
@@ -3093,7 +3095,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/water.cpp/CWater_captureTextures
 annotations/blairwitch2.exe/pseudocode/src/core/weapon.cpp/CWeapon_canPickup_FUN_00589e50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/basicene.cpp/CBasicEnemy_advanceMotion_FUN_0059e7d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_canLookAt_FUN_00429ce0.cpp
-annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/copyBitmapRegion_FUN_0042d550.c
 annotations/blairwitch2.exe/pseudocode/src/cockpit/ckptutil.c/flipEdgeArrayHorizontally_FUN_00430210.c
 annotations/blairwitch2.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_resumeCodeSequence_FUN_004346d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dcube.cpp/staticInit_FUN_00443d00.cpp
@@ -3151,6 +3152,7 @@ annotations/blairwitch2.exe/pseudocode/src/engine/mini3d.cpp/transformVertexOrth
 annotations/blairwitch2.exe/pseudocode/src/engine/mini3d.cpp/computeVertexFog_FUN_004f5370.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/mini3d.cpp/projectVertex_FUN_004f5860.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/mini3d.cpp/findScanEdge_FUN_004f7220.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_prepareAllActors_FUN_004fc350.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_setMissionName_FUN_004fccd0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_setVersionControlDirectory_FUN_004fd460.cpp
 annotations/blairwitch2.exe/pseudocode/src/sound/mp3.cpp/CMP3Decoder_seek_FUN_0050a0e0.cpp
@@ -3219,7 +3221,6 @@ annotations/blairwitch2.exe/pseudocode/src/engine/texture.cpp/ensureTextureLoade
 annotations/blairwitch2.exe/pseudocode/src/core/xform.cpp/computeOrthogonalityError_FUN_00592a60.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/zombie.cpp/CZombie_getPickupHandIndex_FUN_00598e40.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/SStateMachine_addState_FUN_0059d650.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/FUN_0059d940.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hand.cpp/CHand_ctor_FUN_005a9c00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_getBoundingBox_FUN_00408b40.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/handleActorPropertyParseError_FUN_0040b380.cpp
@@ -3766,7 +3767,6 @@ annotations/blairwitch2.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_promp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CFireEffect_createFirefly_FUN_0049d6a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_ctor_FUN_004ac1a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mirror.cpp/CMirror_setupCorners_FUN_004f98d0.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/mission.cpp/CDemonMission_prepareAllActors_FUN_004fc350.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/setcolid.cpp/CDemonSet_rayVoxelHeightQuery_FUN_00535cf0.cpp
 annotations/blairwitch2.exe/pseudocode/src/sound/sndmain.cpp/pollAllSfxSlots_FUN_00554510.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/special.cpp/drawPolyList_FUN_0055f950.cpp
@@ -4428,7 +4428,6 @@ annotations/blairwitch2.exe/pseudocode/src/engine/2d.c/drawCharacterMasked_FUN_0
 annotations/blairwitch2.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_clipAndFillPoly_FUN_00469590.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CMuzzleFlash_render_FUN_00496a90.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/model.c/byteswapMRGLData_FUN_005006a0.c
-annotations/blairwitch2.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_copyNoClip_FUN_00516750.cpp
 annotations/blairwitch2.exe/pseudocode/src/sound/sndmain.cpp/computeFFT_FUN_0054b160.cpp
 annotations/blairwitch2.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_computeChannelVolumes_FUN_0054e6e0.cpp
 annotations/blairwitch2.exe/pseudocode/src/support/trisock.cpp/CSocket_connectSocket_FUN_005790f0.cpp
@@ -4437,6 +4436,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/muzzle.cpp/CMuzzleEffect_render_
 annotations/blairwitch2.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_renderOpaque_FUN_00415b60.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_updateTransformMatrices_FUN_0043c5d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_enableEntry_FUN_004a5310.cpp
+annotations/blairwitch2.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_copyNoClip_FUN_00516750.cpp
 annotations/blairwitch2.exe/pseudocode/src/sound/sndmain.cpp/createUserSample_FUN_005516d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_isVisibleWithShadow_FUN_0041a670.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_turnTowardPoint_FUN_00423850.cpp
@@ -5541,6 +5541,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/turret.cpp/CTurret_updateTargeti
 annotations/blairwitch2.exe/pseudocode/src/core/weather.cpp/CWeather_renderParticles_FUN_0058ad40.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mmx.c/detectIntelProcessor_FUN_004fd4cc.c
 annotations/blairwitch2.exe/pseudocode/src/core/stranger.cpp/CStranger_updateWeaponLayerActions_FUN_0056db50.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/doc.cpp/CDoc_tryDescendLadder_FUN_00458930.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/stranger.cpp/CStranger_tryDescendLadder_FUN_0056a780.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/stranger.cpp/CStranger_renderOpaque_FUN_0056b770.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_clipAndDrawLine3D_FUN_0046b970.cpp
@@ -5588,6 +5589,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_render
 annotations/blairwitch2.exe/pseudocode/src/core/succubus.cpp/CSuccubus_process_FUN_0056f6d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/confedrt.cpp/CConfederate_processAI_FUN_005a0bd0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/game.cpp/CGame_processKeyboardControls_FUN_004b76c0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/doc.cpp/CDoc_tryPlaceObject_FUN_00458e80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/stranger.cpp/CStranger_tryPlaceObject_FUN_0056acd0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/icepick.cpp/CIcePick_process_FUN_004d4c50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_customRayIntersect_FUN_004e5970.cpp
@@ -5627,7 +5629,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/flies.cpp/CFlies_generateRandomP
 annotations/blairwitch2.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_mix_FUN_0054edb0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_loadImage_FUN_0043e930.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/cloth.cpp/CCloth_step_FUN_005afe20.cpp
-annotations/blairwitch2.exe/pseudocode/src/FUN_00458930.c
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_findSomethingToLookAt_FUN_00429420.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/charactr.cpp/CCharacter_renderCollision_FUN_00424c80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CFireball_render_FUN_00495ca0.cpp
@@ -5661,7 +5662,6 @@ annotations/blairwitch2.exe/pseudocode/src/support/trstream.cpp/CInStream_vscanf
 annotations/blairwitch2.exe/pseudocode/src/core/basicene.cpp/CBasicEnemy_ctor_FUN_0059e3b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/set.cpp/CDemonSet_ctor_FUN_0052bd20.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/mimic.cpp/CMimic_processAnimation_FUN_004f0e10.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/doc.cpp/FUN_00458e80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/menu.cpp/configureCustomKeyBindings_FUN_004eed60.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/menu.cpp/configureSoundOptions_FUN_004ed260.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/imp.cpp/CImp_process_FUN_004d6980.cpp
