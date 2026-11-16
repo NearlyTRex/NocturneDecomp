@@ -11,7 +11,7 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bb9da
 ;   core_netgame.cpp_CNetGame_init_FUN_0050b340 at 0050b347
 ;   crt_stdio.c_fclose_FUN_005b8af0 at 005b8ba9
-;   engine_dosio.cpp_FUN_00461440 at 00461445
+;   engine_dosio.cpp_deleteFile_FUN_00461440 at 00461445
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004d8530 at 004d8709
 ;
 ; Called Functions:

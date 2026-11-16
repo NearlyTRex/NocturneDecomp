@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1550,
-    "complexity_score": 1187,
+    "complexity_score": 1190,
     "cross_reference_count": 2,
     "function_call_count": 22,
     "global_count": 67,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 677,
+    "pseudocode_lines": 680,
     "suspect_count": 49,
     "suspect_types": [
       "raw_address_constant",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2227
+    "total_lines": 2230
   },
   "cross_references": [
     {
@@ -47,7 +47,7 @@
     {
       "addr": "004a1390",
       "is_variadic": false,
-      "name": "core_flashlit.cpp_FUN_004a1390"
+      "name": "core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004a1390"
     },
     {
       "addr": "004a50b0",
@@ -956,7 +956,7 @@
       "line": 86,
       "match": "DAT_0061ed94",
       "severity": "mild",
-      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar10 + 1)] & 2) != 0);",
+      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar11 + 1)] & 2) != 0);",
       "type": "undefined_data"
     },
     {
@@ -980,7 +980,7 @@
       "line": 139,
       "match": "DAT_0061ed94",
       "severity": "mild",
-      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar10 + 1)] & 2) != 0);",
+      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar11 + 1)] & 2) != 0);",
       "type": "undefined_data"
     },
     {
@@ -1004,7 +1004,7 @@
       "line": 208,
       "match": "DAT_0061ed94",
       "severity": "mild",
-      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar10 + 1)] & 2) != 0);",
+      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar11 + 1)] & 2) != 0);",
       "type": "undefined_data"
     },
     {
@@ -1036,7 +1036,7 @@
       "line": 266,
       "match": "DAT_005d5f88",
       "severity": "mild",
-      "text": "pbVar10 = &DAT_005d5f88;",
+      "text": "pbVar11 = &DAT_005d5f88;",
       "type": "undefined_data"
     },
     {
@@ -1076,7 +1076,7 @@
       "line": 331,
       "match": "DAT_005d5fcd",
       "severity": "mild",
-      "text": "pbVar10 = &DAT_005d5fcd;",
+      "text": "pbVar11 = &DAT_005d5fcd;",
       "type": "undefined_data"
     },
     {
@@ -1108,7 +1108,7 @@
       "line": 389,
       "match": "DAT_0061ed94",
       "severity": "mild",
-      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar10 + 1)] & 2) != 0);",
+      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar11 + 1)] & 2) != 0);",
       "type": "undefined_data"
     },
     {
@@ -1132,7 +1132,7 @@
       "line": 442,
       "match": "DAT_005d60e9",
       "severity": "mild",
-      "text": "pbVar10 = &DAT_005d60e9;",
+      "text": "pbVar11 = &DAT_005d60e9;",
       "type": "undefined_data"
     },
     {
@@ -1172,7 +1172,7 @@
       "line": 509,
       "match": "DAT_0061ed94",
       "severity": "mild",
-      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar10 + 1)] & 2) != 0);",
+      "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar11 + 1)] & 2) != 0);",
       "type": "undefined_data"
     },
     {
@@ -1193,15 +1193,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 565,
+      "line": 568,
       "match": "DAT_005d628a",
       "severity": "mild",
-      "text": "pbVar10 = &DAT_005d628a;",
+      "text": "pbVar11 = &DAT_005d628a;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 571,
+      "line": 574,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "} while (((&DAT_0061ed94)[(byte)(*pbVar15 + 1)] & 2) != 0);",
@@ -1209,7 +1209,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 592,
+      "line": 595,
       "match": "DAT_01cab7f0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01cab7f0,\"Unknown tag: '%s' in %s, line %d\");",
@@ -1217,7 +1217,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 596,
+      "line": 599,
       "match": "DAT_01cab7f0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01cab7f0,\"No entry started in %s, line %d\");",
@@ -1225,7 +1225,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 614,
+      "line": 617,
       "match": "DAT_01cab7f0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01cab7f0,pcVar5);",
@@ -1233,7 +1233,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 620,
+      "line": 623,
       "match": "DAT_01cab7f0",
       "severity": "mild",
       "text": "shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(g_CEditorToolsPtr,&DAT_01cab7f0);",
@@ -1241,7 +1241,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 623,
+      "line": 626,
       "match": "DAT_01cab7f0",
       "severity": "mild",
       "text": "pcVar5 = &DAT_01cab7f0;",
@@ -1249,7 +1249,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 637,
+      "line": 640,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(*pbVar13 + 1)] & 2) != 0) {",
@@ -1257,7 +1257,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 662,
+      "line": 665,
       "match": "DAT_00616014",
       "severity": "mild",
       "text": "DAT_00616014 = 1;",
@@ -1265,7 +1265,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 663,
+      "line": 666,
       "match": "DAT_00616010",
       "severity": "mild",
       "text": "DAT_00616010 = 1;",
@@ -1273,7 +1273,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 668,
+      "line": 671,
       "match": "DAT_01cab7f0",
       "severity": "mild",
       "text": "DAT_01cab7f0 = 0;",
@@ -1281,7 +1281,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 678,
+      "line": 681,
       "match": "DAT_00616014",
       "severity": "mild",
       "text": "DAT_00616014 = 0;",
@@ -1300,7 +1300,7 @@
       "line": 552,
       "match": "0x1cace14",
       "severity": "moderate",
-      "text": "iVar11 = iVar12 * 0xd4 + iVar6 * 0x970 + 0x1cace14;",
+      "text": "pcVar5 = (char *)(iVar12 * 0xd4 + iVar6 * 0x970 + 0x1cace14);",
       "type": "raw_address_constant"
     },
     {
@@ -1313,7 +1313,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 624,
+      "line": 627,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

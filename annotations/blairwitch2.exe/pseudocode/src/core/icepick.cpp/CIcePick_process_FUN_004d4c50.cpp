@@ -69,7 +69,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004d4c50(CIcePick *this_ptr,f
   }
   this_ptr->is_armed =
        (uint)((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0);
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0((CCharacter *)this_ptr,delta_time);
   fVar14 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar14;
   if (fVar14 < 0.0) {
@@ -241,7 +241,8 @@ LAB_004d4d65:
     CStack_64.x = (this_ptr->base).base.model.accumulated_root_motion.x;
     CStack_64.y = (this_ptr->base).base.model.accumulated_root_motion.y;
     CStack_64.z = (this_ptr->base).base.model.accumulated_root_motion.z;
-    core_charactr_cpp_FUN_00423a10(this_ptr,in_stack_00000010);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,in_stack_00000010)
+    ;
     CStack_ac.z = (this_ptr->base).base.velocity.x * in_stack_00000010;
     pCVar15 = &CStack_64;
     afStack_9c[0] = (this_ptr->base).base.velocity.y * in_stack_00000010;

@@ -7,11 +7,11 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004c07b0 at 004c0dff
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c0dff
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350
-;   core_motion.cpp_FUN_004fc0c0
+;   core_motion.cpp_CMotionController_getStateIndex_FUN_004fc0c0
 ;
 ; *****************************************************************************
 
@@ -57,15 +57,15 @@ section .text
     JC 0x0052713b                       ; 00527160
         ;   XREF to: 0052713b (CONDITIONAL_JUMP)  ; LAB_0052713b
     PUSH EBX                            ; 00527162
-    CALL core_motion.cpp_FUN_004fc0c0   ; 00527163
-        ;   XREF to: 004fc0c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_004fc0c0()
+    CALL core_motion.cpp_CMotionController_getStateIndex_FUN_004fc0c0 ; 00527163
+        ;   XREF to: 004fc0c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_getStateIndex_FUN_004fc0c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00527168
     CMP EAX,0x2a                        ; 0052716b
     JZ 0x0052713b                       ; 0052716e
         ;   XREF to: 0052713b (CONDITIONAL_JUMP)  ; LAB_0052713b
     PUSH EBX                            ; 00527170
-    CALL core_motion.cpp_FUN_004fc0c0   ; 00527171
-        ;   XREF to: 004fc0c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_004fc0c0()
+    CALL core_motion.cpp_CMotionController_getStateIndex_FUN_004fc0c0 ; 00527171
+        ;   XREF to: 004fc0c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_getStateIndex_FUN_004fc0c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00527176
     CMP EAX,0x2b                        ; 00527179
     JZ 0x0052713b                       ; 0052717c

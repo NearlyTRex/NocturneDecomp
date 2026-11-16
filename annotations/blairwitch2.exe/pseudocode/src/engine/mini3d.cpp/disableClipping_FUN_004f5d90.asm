@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004a97a0 at 004a980e
+;   engine_font.cpp_CBitFont_flushAccelBatch_FUN_004a97a0 at 004a980e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c37788

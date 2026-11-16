@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_event.cpp_FUN_004a1d00 at 004a4bdd
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a4bdd
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0 at 0051c19b
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610 at 0051b645
 ;   core_mission.cpp_CDemonMission_removeAllActors_FUN_0051b5a0 at 0051b5cf

@@ -14,7 +14,7 @@
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
 ;   core_armour.cpp_CFlame_arrdtor50_FUN_00410370
 ;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
-;   core_firestff.cpp_FUN_004a5930
+;   core_firestff.cpp_CFlame_arrdtor12_FUN_004a5930
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -33,8 +33,8 @@ section .text
     PUSH 0x0                            ; 00593cac
     ADD EBX,0xd0b8                      ; 00593cae
     PUSH EBX                            ; 00593cb4
-    CALL core_firestff.cpp_FUN_004a5930 ; 00593cb5
-        ;   XREF to: 004a5930 (UNCONDITIONAL_CALL)  ; undefined core_firestff.cpp_FUN_004a5930()
+    CALL core_firestff.cpp_CFlame_arrdtor12_FUN_004a5930 ; 00593cb5
+        ;   XREF to: 004a5930 (UNCONDITIONAL_CALL)  ; void core_firestff.cpp_CFlame_arrdtor12_FUN_004a5930(CFlame * this_ptr)
     ADD ESP,0x8                         ; 00593cba
     PUSH 0x0                            ; 00593cbd
     SUB EAX,0x985c                      ; 00593cbf

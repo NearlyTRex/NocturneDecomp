@@ -56,7 +56,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00474ef0 at 00474f31
+;   core_doc.cpp_CDoc_handleActionButton_FUN_00474ef0 at 00474f31
 ;
 ; Referenced Globals:
 ;   undefined4 s_actionPending_d_doc_cpp_005da1ab+1

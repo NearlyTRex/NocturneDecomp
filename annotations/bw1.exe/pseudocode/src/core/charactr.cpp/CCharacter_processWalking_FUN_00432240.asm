@@ -34,9 +34,9 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
+;   core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
-;   core_charactr.cpp_FUN_004354a0
 ;   core_door.cpp_CDoor_getOpenStandPos_FUN_00478860
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
@@ -309,8 +309,8 @@ section .text
         ;   XREF to: 004324d0 (CONDITIONAL_JUMP)  ; LAB_004324d0
     PUSH EAX                            ; 0043250e
     PUSH EBX                            ; 0043250f
-    CALL core_charactr.cpp_FUN_004354a0 ; 00432510
-        ;   XREF to: 004354a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004354a0()
+    CALL core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0 ; 00432510
+        ;   XREF to: 004354a0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0(CCharacter * this_ptr, CWayPoint * target_waypoint)
     ADD ESP,0x8                         ; 00432515
     MOV ESI,EAX                         ; 00432518
     TEST EAX,EAX                        ; 0043251a

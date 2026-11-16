@@ -12,7 +12,7 @@
 ;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0050b420 at 0050b478
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0 at 0050b519
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_0050c280 at 0050cb2c
-;   support_trisock.cpp_FUN_00579890 at 00579973
+;   support_trisock.cpp_httpConnectToUrl_FUN_00579890 at 00579973
 ;
 ; *****************************************************************************
 

@@ -65,13 +65,13 @@ void __cdecl clipPolygonToFar(float z_far);
 // Address: 00479360
 int __cdecl clipTriangleToBounds(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max);
 
-// Original: core_dtri.cpp_FUN_00479df0
+// Original: core_dtri.cpp_getClippedVertexCount_FUN_00479df0
 // Address: 00479df0
-undefined4 FUN_00479df0(void);
+int __cdecl getClippedVertexCount(void);
 
-// Original: core_dtri.cpp_FUN_00479e00
+// Original: core_dtri.cpp_getClippedVertices_FUN_00479e00
 // Address: 00479e00
-undefined * FUN_00479e00(void);
+CVector3f * __cdecl getClippedVertices(void);
 
 // Original: core_dtri.cpp_CDemonTriangle_render_FUN_00479e10
 // Address: 00479e10

@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[25]:
-;   core_flashlit.cpp_FUN_004b9f70 at 004b9fe4
+;   core_flashlit.cpp_drawTooltip_FUN_004b9f70 at 004b9fe4
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 at 004be44e
 ;   core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830 at 004bc997
 ;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930 at 004ba94e
@@ -50,9 +50,9 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004c2810
-;   engine_font.cpp_FUN_004c47f0
-;   engine_palette.cpp_FUN_00531ee0
-;   engine_palette.cpp_FUN_005320b0
+;   engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004c47f0
+;   engine_palette.cpp_CFont_flushTextQueue_FUN_005320b0
+;   engine_palette.cpp_CFont_queueText_FUN_00531ee0
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     PUSH EDX                            ; 004c1e0e
     MOV ECX,dword ptr [EBX + 0x4214]    ; 004c1e0f
     PUSH ECX                            ; 004c1e15
-    CALL engine_palette.cpp_FUN_00531ee0 ; 004c1e16
-        ;   XREF to: 00531ee0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_FUN_00531ee0()
+    CALL engine_palette.cpp_CFont_queueText_FUN_00531ee0 ; 004c1e16
+        ;   XREF to: 00531ee0 (UNCONDITIONAL_CALL)  ; int engine_palette.cpp_CFont_queueText_FUN_00531ee0(CFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004c1e1b
     MOV ESI,EAX                         ; 004c1e1e
         ;   Label: LAB_004c1e1e
@@ -106,8 +106,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x40]      ; 004c1e31
     PUSH ECX                            ; 004c1e35
     PUSH EBX                            ; 004c1e36
-    CALL engine_font.cpp_FUN_004c47f0   ; 004c1e37
-        ;   XREF to: 004c47f0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c47f0()
+    CALL engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004c47f0 ; 004c1e37
+        ;   XREF to: 004c47f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004c47f0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x14                        ; 004c1e3c
     JMP 0x004c1e1e                      ; 004c1e3f
         ;   XREF to: 004c1e1e (UNCONDITIONAL_JUMP)  ; LAB_004c1e1e
@@ -156,13 +156,13 @@ section .text
     PUSH ECX                            ; 004c1e8b
     MOV EAX,dword ptr [EBX + 0x4214]    ; 004c1e8c
     PUSH EAX                            ; 004c1e92
-    CALL engine_palette.cpp_FUN_00531ee0 ; 004c1e93
-        ;   XREF to: 00531ee0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_FUN_00531ee0()
+    CALL engine_palette.cpp_CFont_queueText_FUN_00531ee0 ; 004c1e93
+        ;   XREF to: 00531ee0 (UNCONDITIONAL_CALL)  ; int engine_palette.cpp_CFont_queueText_FUN_00531ee0(CFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004c1e98
     MOV EDX,dword ptr [EBX + 0x4214]    ; 004c1e9b
     PUSH EDX                            ; 004c1ea1
-    CALL engine_palette.cpp_FUN_005320b0 ; 004c1ea2
-        ;   XREF to: 005320b0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_FUN_005320b0()
+    CALL engine_palette.cpp_CFont_flushTextQueue_FUN_005320b0 ; 004c1ea2
+        ;   XREF to: 005320b0 (UNCONDITIONAL_CALL)  ; void engine_palette.cpp_CFont_flushTextQueue_FUN_005320b0(CFont * this_ptr)
     ADD ESP,0x4                         ; 004c1ea7
     MOV ECX,dword ptr [ESP + 0x18]      ; 004c1eaa
     TEST ECX,ECX                        ; 004c1eae

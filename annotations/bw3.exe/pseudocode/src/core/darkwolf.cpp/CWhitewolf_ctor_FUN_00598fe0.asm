@@ -7,7 +7,7 @@
 ; CWhitewolf *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_darkwolf.cpp_FUN_00598fb0 at 00598fc3
+;   core_darkwolf.cpp_factoryFuncWhitewolf_FUN_00598fb0 at 00598fc3
 ;
 ; Called Functions:
 ;   core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780

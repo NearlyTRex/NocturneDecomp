@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[16]:
-;   core_flashlit.cpp_FUN_004b9f70 at 004b9fbb
+;   core_flashlit.cpp_drawTooltip_FUN_004b9f70 at 004b9fbb
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 at 004be425
 ;   core_game.cpp_CGame_renderIrisFade_FUN_004d61e0 at 004d62c8
 ;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0 at 004cc5e8

@@ -32,6 +32,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
@@ -40,7 +41,6 @@
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
 ;   ... and 25 more
 ;
 ; *****************************************************************************
@@ -299,8 +299,8 @@ section .text
     MOV dword ptr [EBX + 0x2594],EAX    ; 004fe166
     FSTP float ptr [ESP]                ; 004fe16c
     PUSH EBX                            ; 004fe16f
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 004fe170
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 004fe170
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004fe175
     MOV ESI,dword ptr [EBP + 0x6a]      ; 004fe178
     PUSH ESI                            ; 004fe17b
@@ -382,8 +382,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004fe254
         ;   Label: LAB_004fe254
     PUSH EBX                            ; 004fe25a
-    CALL core_charactr.cpp_FUN_00423a10 ; 004fe25b
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 004fe25b
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     LEA ECX,[EBX + 0x2588]              ; 004fe260
     FLD float ptr [ECX]                 ; 004fe266
     FMUL float ptr [EBP + 0x92]         ; 004fe268

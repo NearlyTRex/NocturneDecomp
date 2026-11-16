@@ -8,8 +8,8 @@
 ;
 ; XREF[14]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_0059af30 at 0059b36f
-;   core_flashlit.cpp_FUN_004a1730 at 004a173c
-;   core_flashlit.cpp_FUN_004a1870 at 004a1884
+;   core_flashlit.cpp_freeNotesBitmaps_FUN_004a1730 at 004a173c
+;   core_flashlit.cpp_loadNotesBitmaps_FUN_004a1870 at 004a1884
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0 at 004a513c
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700 at 004a5ab9
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60 at 004a5fba

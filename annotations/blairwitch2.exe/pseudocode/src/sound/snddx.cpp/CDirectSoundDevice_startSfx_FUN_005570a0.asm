@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   sound_snddx.cpp_FUN_00555020
+;   sound_snddx.cpp_clampDirectSoundFrequency_FUN_00555020
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
@@ -209,8 +209,8 @@ section .text
     FMUL float ptr [ESI + 0x3c]         ; 005572b2
     SUB ESP,0x4                         ; 005572b5
     FSTP float ptr [ESP]                ; 005572b8
-    CALL sound_snddx.cpp_FUN_00555020   ; 005572bb
-        ;   XREF to: 00555020 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_FUN_00555020()
+    CALL sound_snddx.cpp_clampDirectSoundFrequency_FUN_00555020 ; 005572bb
+        ;   XREF to: 00555020 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_clampDirectSoundFrequency_FUN_00555020(float frequency)
     MOV EDX,EAX                         ; 005572c0
     MOV ECX,dword ptr [EDI + 0x264ac2c] ; 005572c2
     ADD ESP,0x4                         ; 005572c8

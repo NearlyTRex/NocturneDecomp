@@ -148,13 +148,13 @@
     {
       "addr": "004c4a60",
       "from_addr": "004c4ae6",
-      "name": "core_game.cpp_FUN_004c4a60",
+      "name": "core_game.cpp_CGame_playMusic_FUN_004c4a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c4bc0",
       "from_addr": "004c4bdb",
-      "name": "core_game.cpp_FUN_004c4bc0",
+      "name": "core_game.cpp_CGame_updateMusic_FUN_004c4bc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -242,33 +242,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00545000",
-      "from_addr": "0054500c",
-      "name": "core_shadow.cpp_FUN_00545000",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00545040",
       "from_addr": "0054504c",
-      "name": "core_shadow.cpp_FUN_00545040",
+      "name": "core_shadow.cpp_CShadow_playAlertSound_FUN_00545040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00545080",
       "from_addr": "0054508c",
-      "name": "core_shadow.cpp_FUN_00545080",
+      "name": "core_shadow.cpp_CShadow_playAttackSound_FUN_00545080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005450c0",
       "from_addr": "005450cc",
-      "name": "core_shadow.cpp_FUN_005450c0",
+      "name": "core_shadow.cpp_CShadow_playDamageSound_FUN_005450c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00545100",
       "from_addr": "0054510c",
-      "name": "core_shadow.cpp_FUN_00545100",
+      "name": "core_shadow.cpp_CShadow_playDeathSound_FUN_00545100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545000",
+      "from_addr": "0054500c",
+      "name": "core_shadow.cpp_CShadow_playHitAlertSound_FUN_00545000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -296,6 +296,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00595710",
+      "from_addr": "00595726",
+      "name": "core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00595f90",
       "from_addr": "0059620d",
       "name": "core_tawiscara.cpp_CTawiscara_processDamage_FUN_00595f90",
@@ -305,12 +311,6 @@
       "addr": "00594000",
       "from_addr": "00594287",
       "name": "core_tawiscara.cpp_CTawiscara_process_FUN_00594000",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00595710",
-      "from_addr": "00595726",
-      "name": "core_tawiscara.cpp_FUN_00595710",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -404,7 +404,7 @@
       {
         "call_addr": "004c4ae6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c4a60",
+        "caller": "core_game.cpp_CGame_playMusic_FUN_004c4a60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -415,7 +415,7 @@
       {
         "call_addr": "004c4bdb",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c4bc0",
+        "caller": "core_game.cpp_CGame_updateMusic_FUN_004c4bc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

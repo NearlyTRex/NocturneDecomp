@@ -94,13 +94,13 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
 void __cdecl core_dog_cpp_CZombieDog_archive_FUN_00463460(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_004634d0(CZombieDog *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_004635e0(CZombieDog *this_ptr,CVector3f *out_points_array);
-void core_dog_cpp_FUN_00463650(void);
+CDogForest * __cdecl core_dog_cpp_factoryFuncDogForest_FUN_00463650(void);
 CDemonActorType * __cdecl core_dog_cpp_CDogForest_getActorType_FUN_00463670(CDogForest *this_ptr);
 CDogForest * __cdecl core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr);
-void core_dog_cpp_FUN_004636e0(void);
+CDemonDog * __cdecl core_dog_cpp_factoryFuncDemonDog_FUN_004636e0(void);
 CDemonActorType * __cdecl core_dog_cpp_CDemonDog_getActorType_FUN_00463700(CDemonDog *this_ptr);
 CDemonDog * __cdecl core_dog_cpp_CDemonDog_ctor_FUN_00463710(CDemonDog *this_ptr);
-void core_dog_cpp_FUN_00463780(void);
+CEtherealDog * __cdecl core_dog_cpp_factoryFuncEtherealDog_FUN_00463780(void);
 CDemonActorType * __cdecl core_dog_cpp_CEtherealDog_getActorType_FUN_004637a0(CEtherealDog *this_ptr);
 CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr);
 CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags);
@@ -113,13 +113,13 @@ CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_00463aa0(CDoor *t
 CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00463ab0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setup_FUN_00463c90(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_onOpened_FUN_00463d10(CDoor *this_ptr);
-void core_door_cpp_FUN_00463d30(CDoor *param_1,EDoorState param_2);
+void __cdecl core_door_cpp_CDoor_setState_FUN_00463d30(CDoor *this_ptr,EDoorState state);
 void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_process_FUN_004642f0(CDoor *this_ptr,float delta_time);
 int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00464a60(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_00464b40(CDoor *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00464bd0(CDoor *this_ptr,CBoundingBox3D *out_box);
-void core_door_cpp_FUN_00464c10(CDemonActor *param_1);
+CVector3f * __stack_esi core_door_cpp_CDoor_getHandlePosition_FUN_00464c10(CDoor *this_ptr,CVector3f *out_position);
 void __cdecl core_door_cpp_CDoor_archive_FUN_00464cd0(CDoor *this_ptr);
 ECollisionType __cdecl core_door_cpp_CDoor_getCollisionType_FUN_00465010(CDoor *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00465050(CDoor *this_ptr);
@@ -132,8 +132,8 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00465380(CDoor *this_ptr,CDemonA
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00465550(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_004655b0(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00465600(char *dest_path,char *directory,char *filename);
-void engine_dosio_cpp_FUN_00465650(undefined *param_1);
-void engine_dosio_cpp_FUN_00465660(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl engine_dosio_cpp_setRelativeFilePathHook_FUN_00465650(void *hook);
+void __cdecl engine_dosio_cpp_callRelativeFilePathHook_FUN_00465660(char *dest_path,char *directory,char *filename);
 void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(FileSearchHandlerFunc *handler);
 template<typename T_func0>
 inline void engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(T_func0 handler) {
@@ -156,9 +156,9 @@ void __cdecl engine_dosio_cpp_makePath_FUN_00465e80(char *full_path,char *drive,
 void __cdecl engine_dosio_cpp_ensureTrailingSlash_FUN_00465eb0(char *input_path,char *drive,char *output_path);
 void __cdecl engine_dosio_cpp_changeFileExtension_FUN_00465f80(char *path,char *new_extension);
 int __cdecl engine_dosio_cpp_getFullPath_FUN_00465ff0(char *output_path,char *input_path);
-void engine_dosio_cpp_FUN_00466040(char *param_1,char *param_2,char *param_3);
-bool engine_dosio_cpp_FUN_00466190(char *param_1);
-bool engine_dosio_cpp_FUN_00466220(char *param_1);
+void __cdecl engine_dosio_cpp_resolveRelativePath_FUN_00466040(char *base_path,char *path,char *out_path);
+int __cdecl engine_dosio_cpp_createDirectoryTree_FUN_00466190(char *directory);
+int __cdecl engine_dosio_cpp_deleteFile_FUN_00466220(char *filename);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00466290(CDemonPart *this_ptr,uint flags);
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004662b0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_free_FUN_004663b0(CDemonPart *this_ptr);
@@ -198,10 +198,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00468f80(CD
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_00469080(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004691e0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004693b0(CDrawSurface *this_ptr);
-undefined4 cockpit_drawsurf_cpp_FUN_004694b0(void);
-undefined4 cockpit_drawsurf_cpp_FUN_004694c0(void);
-void cockpit_drawsurf_cpp_FUN_004694d0(void);
-void cockpit_drawsurf_cpp_FUN_004694e0(undefined4 param_1);
+int __cdecl cockpit_drawsurf_cpp_getDashLength_FUN_004694b0(void);
+float __cdecl cockpit_drawsurf_cpp_getDashAnimationThreshold_FUN_004694c0(void);
+void __cdecl cockpit_drawsurf_cpp_setDashLength_FUN_004694d0(int length);
+void __cdecl cockpit_drawsurf_cpp_setDashAnimationThreshold_FUN_004694e0(float threshold);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_004694f0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00469690(CDrawSurface *this_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);

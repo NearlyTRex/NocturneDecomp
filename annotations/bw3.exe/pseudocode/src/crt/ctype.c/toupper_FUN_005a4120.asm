@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   c
 ;
 ; XREF[16]:
-;   core_event.cpp_FUN_0048c2e0 at 0048c4fc
-;   core_flashlit.cpp_FUN_004a7950 at 004a7981
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048c4fc
+;   core_flashlit.cpp_matchCommand_FUN_004a7950 at 004a7981
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aab71
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb233
 ;   core_game.cpp_checkCheatCode_FUN_004baf50 at 004baf88

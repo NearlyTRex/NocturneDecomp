@@ -16,7 +16,7 @@
 ;   engine_3d.c_updateAnimatedTexture_FUN_004050e0 at 0040514d
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 at 0046ca07
 ;   engine_mini3d.cpp_useTexture_FUN_004f3380 at 004f338f
-;   engine_texture.cpp_FUN_00575150 at 005755ef
+;   engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150 at 005755ef
 ;   ... and 3 more
 ;
 ; Referenced Globals:

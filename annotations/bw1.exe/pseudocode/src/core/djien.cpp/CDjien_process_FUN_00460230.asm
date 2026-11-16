@@ -27,19 +27,19 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
+;   core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
-;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_00435320
-;   core_charactr.cpp_FUN_00435380
-;   core_djien.cpp_FUN_00460960
-;   core_djien.cpp_FUN_00460cb0
+;   core_djien.cpp_CDjien_blowApart_FUN_00460cb0
+;   core_djien.cpp_CDjien_hesitate_FUN_00460960
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   ... and 10 more
 ;
@@ -96,8 +96,8 @@ section .text
     FSTP float ptr [EBX + 0x2524]       ; 004602c6
     FSTP float ptr [ESP]                ; 004602cc
     PUSH EBX                            ; 004602cf
-    CALL core_charactr.cpp_FUN_00435320 ; 004602d0
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 004602d0
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004602d5
     PUSH dword ptr [EBP + 0x92]         ; 004602d8
     PUSH EBX                            ; 004602de
@@ -183,8 +183,8 @@ section .text
     JNZ 0x004603f1                      ; 004603d9
         ;   XREF to: 004603f1 (CONDITIONAL_JUMP)  ; LAB_004603f1
     PUSH EBX                            ; 004603db
-    CALL core_djien.cpp_FUN_00460cb0    ; 004603dc
-        ;   XREF to: 00460cb0 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_00460cb0()
+    CALL core_djien.cpp_CDjien_blowApart_FUN_00460cb0 ; 004603dc
+        ;   XREF to: 00460cb0 (UNCONDITIONAL_CALL)  ; void core_djien.cpp_CDjien_blowApart_FUN_00460cb0(CDjien * this_ptr)
     ADD ESP,0x4                         ; 004603e1
     PUSH 0x0                            ; 004603e4
     PUSH 0xf                            ; 004603e6
@@ -214,8 +214,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00460423
     PUSH EBX                            ; 00460429
     LEA ESI,[EBX + 0x2518]              ; 0046042a
-    CALL core_charactr.cpp_FUN_0042d700 ; 00460430
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 00460430
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 00460435
     FMUL float ptr [EBP + 0x92]         ; 00460437
     FLD float ptr [ESI + 0x4]           ; 0046043d
@@ -429,8 +429,8 @@ section .text
     ADD ESP,0x8                         ; 0046067f
     PUSH 0x5d8c9f                       ; 00460682 | = "DjienHome"
     PUSH EBX                            ; 00460687
-    CALL core_charactr.cpp_FUN_00435380 ; 00460688
-        ;   XREF to: 00435380 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435380()
+    CALL core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380 ; 00460688
+        ;   XREF to: 00435380 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380(CCharacter * this_ptr, char * name_pattern)
     ADD ESP,0x8                         ; 0046068d
     MOV dword ptr [EBX + 0xc2f0],EAX    ; 00460690
     JMP 0x00460332                      ; 00460696
@@ -593,8 +593,8 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0046086d
     PUSH EBX                            ; 00460870
-    CALL core_djien.cpp_FUN_00460960    ; 00460871
-        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_00460960()
+    CALL core_djien.cpp_CDjien_hesitate_FUN_00460960 ; 00460871
+        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; void core_djien.cpp_CDjien_hesitate_FUN_00460960(CDjien * this_ptr)
     ADD ESP,0x4                         ; 00460876
     JMP 0x00460332                      ; 00460879
         ;   XREF to: 00460332 (UNCONDITIONAL_JUMP)  ; LAB_00460332
@@ -606,8 +606,8 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0046088e
     PUSH EBX                            ; 00460891
-    CALL core_djien.cpp_FUN_00460960    ; 00460892
-        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_00460960()
+    CALL core_djien.cpp_CDjien_hesitate_FUN_00460960 ; 00460892
+        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; void core_djien.cpp_CDjien_hesitate_FUN_00460960(CDjien * this_ptr)
     ADD ESP,0x4                         ; 00460897
     JMP 0x00460332                      ; 0046089a
         ;   XREF to: 00460332 (UNCONDITIONAL_JUMP)  ; LAB_00460332
@@ -651,8 +651,8 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00460918
     PUSH EBX                            ; 0046091b
-    CALL core_djien.cpp_FUN_00460960    ; 0046091c
-        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_00460960()
+    CALL core_djien.cpp_CDjien_hesitate_FUN_00460960 ; 0046091c
+        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; void core_djien.cpp_CDjien_hesitate_FUN_00460960(CDjien * this_ptr)
     ADD ESP,0x4                         ; 00460921
     JMP 0x00460332                      ; 00460924
         ;   XREF to: 00460332 (UNCONDITIONAL_JUMP)  ; LAB_00460332

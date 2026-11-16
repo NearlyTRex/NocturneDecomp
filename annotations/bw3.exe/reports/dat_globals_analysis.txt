@@ -13,10 +13,10 @@ Current type breakdown:
   undefined8                     19
   undefined2                     4
 
-DAT_ globals with type hints: 1296 / 3181
+DAT_ globals with type hints: 1298 / 3181
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1045)
+HIGH CONFIDENCE INFERENCES (1047)
 --------------------------------------------------------------------------------
   DAT_005b5849                    addr=005b5849    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005b584d (TerminatedCString) at offset -4
@@ -1248,7 +1248,7 @@ HIGH CONFIDENCE INFERENCES (1045)
     nearby: g_CFieldNotesInstance.is_displayed (undefined4) at offset +56
   DAT_01d1a0d8                    addr=01d1a0d8    current=undefined4      likely=float           refs=4
     nearby: g_CFieldNotesInstance.is_displayed (undefined4) at offset +60
-  DAT_01d1ad7c                    addr=01d1ad7c    current=undefined4      likely=int *           refs=1
+  DAT_01d1ad7c                    addr=01d1ad7c    current=undefined4      likely=SHardwareEdge *  refs=1
   DAT_01d1bb10                    addr=01d1bb10    current=undefined4      likely=double          refs=1
   DAT_01d1bb18                    addr=01d1bb18    current=undefined4      likely=float           refs=1
   DAT_01d1e328                    addr=01d1e328    current=undefined4      likely=float           refs=1
@@ -1633,7 +1633,11 @@ HIGH CONFIDENCE INFERENCES (1045)
   DAT_02d23c38                    addr=02d23c38    current=undefined4      likely=double          refs=1
   DAT_02d24208                    addr=02d24208    current=undefined4      likely=double          refs=2
   DAT_02d2420c                    addr=02d2420c    current=undefined4      likely=double          refs=2
-  DAT_02d24d84                    addr=02d24d84    current=undefined4      likely=int *           refs=2
+  DAT_02d24a54                    addr=02d24a54    current=undefined4      likely=CVector3f *     refs=1
+    nearby: g_CMattanntoteClassInfo.name_hash (undefined4) at offset +4
+  DAT_02d24a60                    addr=02d24a60    current=undefined4      likely=CVector3f *     refs=1
+    nearby: g_CMattanntoteClassInfo.name_hash (undefined4) at offset +16
+  DAT_02d24d84                    addr=02d24d84    current=undefined4      likely=SSoftwareEdge *  refs=2
     nearby: g_CAsgayaClassInfo.name_hash (undefined4) at offset +8
   DAT_02d252a0                    addr=02d252a0    current=undefined4      likely=uint *          refs=7
   DAT_02d252a4                    addr=02d252a4    current=undefined4      likely=uint *          refs=5
@@ -1969,7 +1973,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1885)
+NO TYPE HINTS (1883)
 --------------------------------------------------------------------------------
   DAT_005c601d                    addr=005c601d    type=undefined1      refs=1  nearby: s_You_ve_received_d_health_005c6021 at -4
   DAT_005c6b1f                    addr=005c6b1f    type=undefined4      refs=1  nearby: s_falloff_005c6b2b at -12
@@ -3819,10 +3823,8 @@ NO TYPE HINTS (1885)
   DAT_02d24994                    addr=02d24994    type=undefined4      refs=2  nearby: g_CKedwardClassInfo.name_hash at -128
   DAT_02d24998                    addr=02d24998    type=undefined4      refs=2  nearby: g_CKedwardClassInfo.name_hash at -124
   DAT_02d2499c                    addr=02d2499c    type=undefined4      refs=2  nearby: g_CKedwardClassInfo.name_hash at -120
-  DAT_02d24a54                    addr=02d24a54    type=undefined4      refs=1  nearby: g_CMattanntoteClassInfo.name_hash at +4
   DAT_02d24a58                    addr=02d24a58    type=undefined4      refs=1  nearby: g_CMattanntoteClassInfo.name_hash at +8
   DAT_02d24a5c                    addr=02d24a5c    type=undefined4      refs=1  nearby: g_CMattanntoteClassInfo.name_hash at +12
-  DAT_02d24a60                    addr=02d24a60    type=undefined4      refs=1  nearby: g_CMattanntoteClassInfo.name_hash at +16
   DAT_02d24a64                    addr=02d24a64    type=undefined4      refs=1  nearby: g_CMattanntoteClassInfo.name_hash at +20
   DAT_02d24a68                    addr=02d24a68    type=undefined4      refs=1  nearby: g_CMattanntoteClassInfo.name_hash at +24
   DAT_02d24c4c                    addr=02d24c4c    type=undefined4      refs=2  nearby: g_CSpiritBearClassInfo.name_hash at +4

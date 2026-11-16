@@ -17,7 +17,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870 at 0043d92b
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00441ea0 at 00441ebe
 ;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b537e
-;   core_game.cpp_FUN_004be8a0 at 004bed99
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 at 004bed99
 ;   core_sound.cpp_updateListeners_FUN_00558d50 at 005590fa
 ;
 ; Referenced Globals:

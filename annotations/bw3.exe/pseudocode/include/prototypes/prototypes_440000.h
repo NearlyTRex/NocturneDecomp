@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/iostream.h"
 #include "system/stdio.h"
 #include "types/classes/CAsciiArmor.h"
 #include "types/classes/CAsciiUnarmor.h"
@@ -54,13 +53,13 @@ SClothBone * __cdecl core_cloth_cpp_SClothBone_ctor_FUN_004400a0(SClothBone *thi
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_004400b0(SClothVertex *this_ptr);
 void __cdecl support_codec_cpp_resetBitBuffer_FUN_004400d0(SBitBuffer *bit_buffer);
 int __cdecl support_codec_cpp_readBitsFromStream_FUN_004400f0(SBitBuffer *bit_buffer,int bit_count,void *istream);
-void support_codec_cpp_FUN_00440210(int *param_1,int param_2,uint param_3);
-undefined4 support_codec_cpp_FUN_00440240(undefined4 *param_1,undefined4 *param_2);
+void __cdecl support_codec_cpp_ungetBits_FUN_00440210(SBitBuffer *bit_buffer,int bit_count,uint bits);
+uint __cdecl support_codec_cpp_takeBitBuffer_FUN_00440240(SBitBuffer *bit_buffer,int *bit_count_out);
 int __cdecl support_codec_cpp_writeBitsToStream_FUN_00440260(SBitBuffer *bit_buffer,int bit_count,uint bit_value,void *ostream);
-int support_codec_cpp_FUN_00440400(int *param_1,int *param_2);
+int __cdecl support_codec_cpp_writeWholeBytesToStream_FUN_00440400(SBitBuffer *bit_buffer,void *ostream);
 int __cdecl support_codec_cpp_flushBitBuffer_FUN_00440440(SBitBuffer *bit_buffer,void *ostream);
-void support_codec_cpp_FUN_004404e0(uint *param_1,byte param_2);
-undefined4 support_codec_cpp_FUN_004406e0(undefined4 param_1,_FILE *param_2,int param_3);
+void __cdecl support_codec_cpp_crc32UpdateByteInPlace_FUN_004404e0(uint *crc,uchar data_byte);
+int __cdecl support_codec_cpp_crc32UpdateFromFile_FUN_004406e0(uint *crc,_FILE *file,int byte_count);
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00440800(CCodec *this_ptr);
 CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00440810(CCodec *this_ptr,uint flags);
 int __cdecl support_codec_cpp_CCodec_process_FUN_00440860(CCodec *this_ptr,void *istream,void *ostream);
@@ -80,7 +79,7 @@ int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_00440d70(CLZWDictionary
 uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_00440e10(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,void *istream);
 void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_00440ef0(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,void *ostream);
 int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00440fd0(CLZWDictionary *this_ptr,int code,void *ostream);
-int __cdecl support_codec_cpp_FUN_00441050(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream,int *bytes_remaining);
+int __cdecl support_codec_cpp_CLZWDictionary_resumeCodeSequence_FUN_00441050(CLZWDictionary *this_ptr,int code,int resume_code,void *ostream);
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_004410f0(CLZWCompress *this_ptr,int buffer_size,int num_bits);
 void __cdecl support_codec_cpp_CLZWCompress_init_FUN_00441140(CLZWCompress *this_ptr);
 int __cdecl support_codec_cpp_CLZWCompress_process_FUN_00441190(CLZWCompress *this_ptr,void *istream,void *ostream);
@@ -89,9 +88,9 @@ CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_00441310(CLZW
 void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_00441350(CLZWDecompress *this_ptr);
 int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_00441390(CLZWDecompress *this_ptr,void *istream,void *ostream);
 int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_004413f0(CLZWDecompress *this_ptr,void *ostream);
-int support_codec_cpp_FUN_00441490(uint param_1);
+int __cdecl support_codec_cpp_decodeArmorChar_FUN_00441490(int ch);
 CAsciiArmor * __cdecl support_codec_cpp_CAsciiArmor_ctor_FUN_004414f0(CAsciiArmor *this_ptr);
-void support_codec_cpp_FUN_00441510(int param_1);
+void __cdecl support_codec_cpp_CAsciiArmor_init_FUN_00441510(CAsciiArmor *this_ptr);
 int __cdecl support_codec_cpp_CAsciiArmor_encode_FUN_00441530(CAsciiArmor *this_ptr,void *istream,void *ostream);
 int __cdecl support_codec_cpp_CAsciiArmor_flush_FUN_00441580(CAsciiArmor *this_ptr,void *ostream);
 CAsciiUnarmor * __cdecl support_codec_cpp_CAsciiUnarmor_ctor_FUN_004415f0(CAsciiUnarmor *this_ptr);
@@ -140,14 +139,14 @@ void __cdecl core_construc_cpp_CConstruct_processDamage_FUN_00443f00(CConstruct 
 int __cdecl core_construc_cpp_CConstruct_getTargetPoints_FUN_00444010(CConstruct *this_ptr,CVector3f *out_points_array);
 void __cdecl core_construc_cpp_CConstruct_explode_FUN_00444110(CConstruct *this_ptr);
 void core_construc_cpp_FUN_00444340(int param_1);
-void core_construc_cpp_FUN_004443d0(int param_1);
+void __cdecl core_construc_cpp_CConstruct_startRecombine_FUN_004443d0(CConstruct *this_ptr);
 ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_004444c0(CConstruct *this_ptr,SCollisionInfo *param_2);
 EDeathState __cdecl core_construc_cpp_CConstruct_getDeathState_FUN_004444f0(CConstruct *this_ptr);
-void core_construc_cpp_FUN_00444520(void);
-undefined * core_construc_cpp_FUN_00444540(void);
+CConstructBone * __cdecl core_construc_cpp_factoryFuncConstructBone_FUN_00444520(void);
+CDemonActorType * __cdecl core_construc_cpp_CConstructBone_getActorType_FUN_00444540(CConstructBone *this_ptr);
 CConstructBone * __cdecl core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr);
-void core_construc_cpp_FUN_004445d0(void);
-undefined * core_construc_cpp_FUN_004445f0(void);
+CConstructRed * __cdecl core_construc_cpp_factoryFuncConstructRed_FUN_004445d0(void);
+CDemonActorType * __cdecl core_construc_cpp_CConstructRed_getActorType_FUN_004445f0(CConstructRed *this_ptr);
 CConstructRed * __cdecl core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed *this_ptr);
 CConstructRed * __cdecl core_construc_cpp_CConstructRed_dtor_FUN_00444660(CConstructRed *this_ptr,uint flags);
 CConstructBone * __cdecl core_construc_cpp_CConstructBone_dtor_FUN_004446f0(CConstructBone *this_ptr,uint flags);
@@ -238,7 +237,7 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_00
 CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044a7e0(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector);
 char * __cdecl core_dcamera_cpp_CDemonCamera_allocLight_FUN_0044a9f0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect);
-void core_dcamera_cpp_FUN_0044af70(int param_1,float *param_2,float param_3);
+void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044af70(CDemonCamera *this_ptr,CVector3f *light_dir,float intensity);
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044b4a0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity);
 int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044bb00(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
@@ -254,7 +253,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004
 double __cdecl core_dcamera_cpp_log2Custom_FUN_0044d7d0(double val);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemonCamera *this_ptr,CDemonLight *light_source);
 void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_0044db70(CDemonCamera *this_ptr,CDemonLight *light_source);
-void core_dcamera_cpp_FUN_0044dd00(int param_1);
+void __cdecl core_dcamera_cpp_CDemonCamera_addDirectionalLightMap_FUN_0044dd00(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_0044dd60(CDemonCamera *this_ptr,CDemonLight *light_source);
 CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_0044de30(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds);
 void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_0044ded0(CDemonCamera *this_ptr);

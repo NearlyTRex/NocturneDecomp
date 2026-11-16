@@ -280,7 +280,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e600
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40
-;   core_bwgrndma.cpp_FUN_005a7ed0
+;   core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_bwspart.cpp_CSimpleParticleSystem_isActive_FUN_005a8130
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
@@ -303,8 +303,8 @@ section .text
     LEA EAX,[EBX + 0x3058]              ; 00450c75
     PUSH dword ptr [EBP + 0x92]         ; 00450c7b
     PUSH EAX                            ; 00450c81
-    CALL core_muzzle.cpp_FUN_0059e110   ; 00450c82
-        ;   XREF to: 0059e110 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059e110()
+    CALL core_muzzle.cpp_SFollowFormation_process_FUN_0059e110 ; 00450c82
+        ;   XREF to: 0059e110 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SFollowFormation_process_FUN_0059e110(SFollowFormation * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00450c87
     PUSH 0x5cfe3f                       ; 00450c8a | s_DebugActionPending_005cfe3e+1
     MOV EDX,dword ptr [0x006141f0]      ; 00450c8f | DAT_006141f0
@@ -457,8 +457,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 00450e7d
     MOV EDX,dword ptr [EAX + 0x4]       ; 00450e80
     MOV dword ptr [EAX],EDX             ; 00450e83
-    CALL core_doc.cpp_FUN_00453cc0      ; 00450e85
-        ;   XREF to: 00453cc0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00453cc0()
+    CALL core_doc.cpp_CDoc_getHandsMidpoint_FUN_00453cc0 ; 00450e85
+        ;   XREF to: 00453cc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_doc.cpp_CDoc_getHandsMidpoint_FUN_00453cc0(CDoc * this_ptr, CVector3f * out_position)
     ADD ESP,0x4                         ; 00450e8a
     LEA EAX,[EBP + 0xfffffcba]          ; 00450e8d
     LEA ESI,[EBP + 0xfffffd1a]          ; 00450e93
@@ -478,8 +478,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00450ebf
     MOVSD ES:EDI,ESI                    ; 00450ec0
     MOVSD ES:EDI,ESI                    ; 00450ec1
-    CALL core_doc.cpp_FUN_00453250      ; 00450ec2
-        ;   XREF to: 00453250 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00453250()
+    CALL core_doc.cpp_CDoc_processMotionEvents_FUN_00453250 ; 00450ec2
+        ;   XREF to: 00453250 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_processMotionEvents_FUN_00453250(CDoc * this_ptr, float delta_time)
     MOV EAX,0x1                         ; 00450ec7
     MOV dword ptr [EBP + 0x46],EAX      ; 00450ecc
     MOV dword ptr [EBP + 0x32],EAX      ; 00450ecf
@@ -786,8 +786,8 @@ section .text
     FLD float ptr [EBX + 0x2510]        ; 004511e4
     PUSH EBX                            ; 004511ea
     FSTP float ptr [EBX + 0x2594]       ; 004511eb
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 004511f1
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 004511f1
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004511f6
     LEA ESI,[EBX + 0x2b4]               ; 004511f9
     PUSH ESI                            ; 004511ff
@@ -959,8 +959,8 @@ section .text
     ADD ESP,0x4                         ; 004513f3
     PUSH dword ptr [EBP + 0x92]         ; 004513f6
     PUSH EBX                            ; 004513fc
-    CALL core_doc.cpp_FUN_00455270      ; 004513fd
-        ;   XREF to: 00455270 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00455270()
+    CALL core_doc.cpp_CDoc_updateTurnBlending_FUN_00455270 ; 004513fd
+        ;   XREF to: 00455270 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateTurnBlending_FUN_00455270(CDoc * this_ptr, float delta_time)
     MOV ECX,dword ptr [EBP + -0xa]      ; 00451402
     ADD ESP,0x8                         ; 00451405
     TEST ECX,ECX                        ; 00451408
@@ -1037,8 +1037,8 @@ section .text
     JZ 0x00451501                       ; 004514ee
         ;   XREF to: 00451501 (CONDITIONAL_JUMP)  ; LAB_00451501
     PUSH EBX                            ; 004514f0
-    CALL core_doc.cpp_FUN_0045df30      ; 004514f1
-        ;   XREF to: 0045df30 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045df30()
+    CALL core_doc.cpp_CDoc_isLanternToggleBlocked_FUN_0045df30 ; 004514f1
+        ;   XREF to: 0045df30 (UNCONDITIONAL_CALL)  ; int core_doc.cpp_CDoc_isLanternToggleBlocked_FUN_0045df30(CDoc * this_ptr)
     ADD ESP,0x4                         ; 004514f6
     TEST EAX,EAX                        ; 004514f9
     JZ 0x004530d5                       ; 004514fb
@@ -1049,8 +1049,8 @@ section .text
         ;   XREF to: 00451516 (CONDITIONAL_JUMP)  ; LAB_00451516
     PUSH dword ptr [EBP + 0x92]         ; 00451507
     PUSH EBX                            ; 0045150d
-    CALL core_doc.cpp_FUN_0045bdc0      ; 0045150e
-        ;   XREF to: 0045bdc0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045bdc0()
+    CALL core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0 ; 0045150e
+        ;   XREF to: 0045bdc0 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0(CDoc * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00451513
     MOV EDI,dword ptr [EBX + 0x25640]   ; 00451516
         ;   Label: LAB_00451516
@@ -1097,13 +1097,13 @@ section .text
     JZ 0x004515b4                       ; 004515a9
         ;   XREF to: 004515b4 (CONDITIONAL_JUMP)  ; LAB_004515b4
     PUSH EBX                            ; 004515ab
-    CALL core_doc.cpp_FUN_0045c960      ; 004515ac
-        ;   XREF to: 0045c960 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045c960()
+    CALL core_doc.cpp_CDoc_handleActionButton_FUN_0045c960 ; 004515ac
+        ;   XREF to: 0045c960 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_handleActionButton_FUN_0045c960(CDoc * this_ptr)
     ADD ESP,0x4                         ; 004515b1
     PUSH EBX                            ; 004515b4
         ;   Label: LAB_004515b4
-    CALL core_doc.cpp_FUN_00453d80      ; 004515b5
-        ;   XREF to: 00453d80 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00453d80()
+    CALL core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 ; 004515b5
+        ;   XREF to: 00453d80 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80(CDoc * this_ptr)
     ADD ESP,0x4                         ; 004515ba
     MOV EDX,dword ptr [EBP + 0x52]      ; 004515bd
     PUSH EDX                            ; 004515c0
@@ -1113,8 +1113,8 @@ section .text
         ;   XREF to: 0045b510 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_0045b510(CDoc * this_ptr, float delta_time, int is_weapon_active)
     ADD ESP,0xc                         ; 004515cd
     PUSH EBX                            ; 004515d0
-    CALL core_doc.cpp_FUN_0045db40      ; 004515d1
-        ;   XREF to: 0045db40 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045db40()
+    CALL core_doc.cpp_CDoc_updateClothSimulation_FUN_0045db40 ; 004515d1
+        ;   XREF to: 0045db40 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateClothSimulation_FUN_0045db40(CDoc * this_ptr)
     ADD ESP,0x4                         ; 004515d6
     PUSH 0x0                            ; 004515d9
     PUSH dword ptr [EBP + 0x92]         ; 004515db
@@ -1173,8 +1173,8 @@ section .text
     XOR ESI,ESI                         ; 00451686
     MOV dword ptr [EBX + 0x2a8],0x3dcccccd ; 00451688
     MOV dword ptr [EBP + 0x5e],ESI      ; 00451692
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 00451695
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 00451695
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
         ;   Label: LAB_00451695
     TEST EAX,EAX                        ; 0045169a
     JZ 0x00451951                       ; 0045169c
@@ -1427,8 +1427,8 @@ section .text
     PUSH EBX                            ; 004519c2
     LEA ESI,[EBP + 0xfffffd9e]          ; 004519c3
     LEA EDI,[EBP + 0xfffffd62]          ; 004519c9
-    CALL core_doc.cpp_FUN_00453cc0      ; 004519cf
-        ;   XREF to: 00453cc0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00453cc0()
+    CALL core_doc.cpp_CDoc_getHandsMidpoint_FUN_00453cc0 ; 004519cf
+        ;   XREF to: 00453cc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_doc.cpp_CDoc_getHandsMidpoint_FUN_00453cc0(CDoc * this_ptr, CVector3f * out_position)
     ADD ESP,0x4                         ; 004519d4
     LEA EAX,[EBP + 0xfffffd62]          ; 004519d7
     LEA ESI,[EBP + 0xfffffd9e]          ; 004519dd
@@ -1504,8 +1504,8 @@ section .text
     ADD ESP,0xc                         ; 00451ab8
     PUSH dword ptr [EBP + 0x92]         ; 00451abb
     PUSH EBX                            ; 00451ac1
-    CALL core_doc.cpp_FUN_0045d2c0      ; 00451ac2
-        ;   XREF to: 0045d2c0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045d2c0()
+    CALL core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0 ; 00451ac2
+        ;   XREF to: 0045d2c0 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0(CDoc * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00451ac7
     LEA EAX,[EBX + 0x2437c]             ; 00451aca
     PUSH EAX                            ; 00451ad0
@@ -1514,8 +1514,8 @@ section .text
     ADD ESP,0x4                         ; 00451ad6
     PUSH dword ptr [EBP + 0x92]         ; 00451ad9
     PUSH EBX                            ; 00451adf
-    CALL core_doc.cpp_FUN_0045dbf0      ; 00451ae0
-        ;   XREF to: 0045dbf0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045dbf0()
+    CALL core_doc.cpp_CDoc_processWeaponTick_FUN_0045dbf0 ; 00451ae0
+        ;   XREF to: 0045dbf0 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_processWeaponTick_FUN_0045dbf0(CDoc * this_ptr, float delta_time)
     MOV ECX,dword ptr [EBP + 0x56]      ; 00451ae5
     ADD ESP,0x8                         ; 00451ae8
     TEST ECX,ECX                        ; 00451aeb
@@ -1531,8 +1531,8 @@ section .text
         ;   XREF to: 00451b1b (CONDITIONAL_JUMP)  ; LAB_00451b1b
     PUSH 0x1                            ; 00451b10
     PUSH EBX                            ; 00451b12
-    CALL core_hero.cpp_FUN_004d0780     ; 00451b13
-        ;   XREF to: 004d0780 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d0780()
+    CALL core_hero.cpp_CHero_findHeroAction_FUN_004d0780 ; 00451b13
+        ;   XREF to: 004d0780 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_findHeroAction_FUN_004d0780(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 00451b18
     MOV ESI,dword ptr [EBX + 0x25698]   ; 00451b1b
         ;   Label: LAB_00451b1b
@@ -3351,8 +3351,8 @@ section .text
         ;   XREF to: 00451aaa (UNCONDITIONAL_JUMP)  ; LAB_00451aaa
     PUSH EBX                            ; 00453136
         ;   Label: LAB_00453136
-    CALL core_hero.cpp_FUN_004cf200     ; 00453137
-        ;   XREF to: 004cf200 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cf200()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004cf200 ; 00453137
+        ;   XREF to: 004cf200 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004cf200(CHero * this_ptr)
     ADD ESP,0x4                         ; 0045313c
     JMP 0x00451b1b                      ; 0045313f
         ;   XREF to: 00451b1b (UNCONDITIONAL_JUMP)  ; LAB_00451b1b

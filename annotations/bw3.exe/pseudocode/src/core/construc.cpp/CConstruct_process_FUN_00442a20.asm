@@ -32,15 +32,15 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
 ;   ... and 26 more
 ;
 ; *****************************************************************************
@@ -517,8 +517,8 @@ section .text
     JBE 0x00442d77                      ; 00442fd3
         ;   XREF to: 00442d77 (CONDITIONAL_JUMP)  ; LAB_00442d77
     PUSH EBX                            ; 00442fd9
-    CALL core_construc.cpp_FUN_004443d0 ; 00442fda
-        ;   XREF to: 004443d0 (UNCONDITIONAL_CALL)  ; undefined core_construc.cpp_FUN_004443d0()
+    CALL core_construc.cpp_CConstruct_startRecombine_FUN_004443d0 ; 00442fda
+        ;   XREF to: 004443d0 (UNCONDITIONAL_CALL)  ; void core_construc.cpp_CConstruct_startRecombine_FUN_004443d0(CConstruct * this_ptr)
     ADD ESP,0x4                         ; 00442fdf
     LEA ESP,[EBP + 0x7a]                ; 00442fe2
     POP EBP                             ; 00442fe5
@@ -866,8 +866,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 004433ee
     FSTP float ptr [ESP]                ; 004433f4
     PUSH EBX                            ; 004433f7
-    CALL core_charactr.cpp_FUN_00434850 ; 004433f8
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 004433f8
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004433fd
     PUSH dword ptr [EBP + 0x92]         ; 00443400
     PUSH EBX                            ; 00443406
@@ -924,8 +924,8 @@ section .text
         ;   XREF to: 00443597 (CONDITIONAL_JUMP)  ; LAB_00443597
     PUSH dword ptr [EBP + 0x92]         ; 00443496
     PUSH EBX                            ; 0044349c
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 0044349d
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 0044349d
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     LEA ECX,[EBX + 0x2518]              ; 004434a2
     FLD float ptr [ECX]                 ; 004434a8
     FMUL float ptr [EBP + 0x92]         ; 004434aa

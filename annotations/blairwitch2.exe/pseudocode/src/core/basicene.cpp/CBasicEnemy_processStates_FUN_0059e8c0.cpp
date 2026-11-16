@@ -13,20 +13,24 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnem
   CVector3f *unaff_ESI;
   
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,"Nothing");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,"Nothing")
+    ;
   }
   else if (mode == 1) {
-    iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"Nothing");
+    iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                      (&this_ptr->state_machine,"Nothing");
     if (iVar1 != 0) {
-      core_basicene_cpp_FUN_0059ebc0(this_ptr,delta_time);
+      core_basicene_cpp_CBasicEnemy_processNothingState_FUN_0059ebc0(this_ptr);
       return;
     }
   }
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,"Animation");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650
+              (&this_ptr->state_machine,"Animation");
   }
   else if (mode == 1) {
-    iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"Animation");
+    iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                      (&this_ptr->state_machine,"Animation");
     if (iVar1 != 0) {
       (*(this_ptr->base).base.base.vtable._ub[1].pickup)
                 ((CDemonActor *)this_ptr,(CDemonActor *)delta_time);
@@ -34,30 +38,34 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnem
     }
   }
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,"Alert");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,"Alert");
   }
   else if (mode == 1) {
-    iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"Alert");
+    iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                      (&this_ptr->state_machine,"Alert");
     if (iVar1 != 0) {
-      core_basicene_cpp_FUN_0059ec10(this_ptr,delta_time);
+      core_basicene_cpp_CBasicEnemy_processAlertState_FUN_0059ec10(this_ptr,delta_time);
       return;
     }
   }
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,"Patrol");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,"Patrol");
   }
   else if (mode == 1) {
-    iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"Patrol");
+    iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                      (&this_ptr->state_machine,"Patrol");
     if (iVar1 != 0) {
-      core_basicene_cpp_FUN_0059ee00(this_ptr,delta_time);
+      core_basicene_cpp_CBasicEnemy_processPatrolState_FUN_0059ee00(this_ptr,delta_time);
       return;
     }
   }
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,"Chasing");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,"Chasing")
+    ;
   }
   else if (mode == 1) {
-    iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"Chasing");
+    iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                      (&this_ptr->state_machine,"Chasing");
     if (iVar1 != 0) {
       (*(this_ptr->base).base.base.vtable._ub[1].drop)
                 ((CDemonActor *)this_ptr,(CDemonActor *)delta_time,unaff_ESI);
@@ -65,10 +73,11 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnem
     }
   }
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,"Death");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,"Death");
   }
   else if (mode == 1) {
-    iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"Death");
+    iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                      (&this_ptr->state_machine,"Death");
     if (iVar1 != 0) {
       (*(this_ptr->base).base.base.vtable._ub[1].onDropped)
                 ((CDemonActor *)this_ptr,(CVector3f *)delta_time);
@@ -76,27 +85,32 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnem
     }
   }
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,"AlertInvisible");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650
+              (&this_ptr->state_machine,"AlertInvisible");
   }
   else if (mode == 1) {
-    iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"AlertInvisible");
+    iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                      (&this_ptr->state_machine,"AlertInvisible");
     if (iVar1 != 0) {
-      core_basicene_cpp_FUN_0059ed50(this_ptr,delta_time);
+      core_basicene_cpp_CBasicEnemy_processAlertInvisibleState_FUN_0059ed50(this_ptr,delta_time);
       return;
     }
   }
   if (mode == 0) {
-    core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,"SlamAnimation");
+    core_muzzle_cpp_SStateMachine_addState_FUN_0059d650
+              (&this_ptr->state_machine,"SlamAnimation");
   }
   else if (mode == 1) {
-    iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,"SlamAnimation");
+    iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                      (&this_ptr->state_machine,"SlamAnimation");
     if (iVar1 != 0) {
       return;
     }
   }
   if (mode != 0) {
     if (mode == 1) {
-      iVar1 = core_muzzle_cpp_FUN_0059daa0(&this_ptr->state_machine,&DAT_005ef95b);
+      iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0
+                        (&this_ptr->state_machine,&DAT_005ef95b);
       if (iVar1 != 0) {
         (*(((this_ptr->base).base.base.vtable._uh)->_uh).reset)((CHero *)this_ptr);
         return;
@@ -104,6 +118,6 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnem
     }
     return;
   }
-  core_muzzle_cpp_FUN_0059d650(&this_ptr->state_machine,&DAT_005ef956);
+  core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(&this_ptr->state_machine,&DAT_005ef956);
   return;
 }

@@ -11,7 +11,7 @@
 ;   TerminatedCString s_s_0123456789ABCDEFGHJKLM_005f1320
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00440240
+;   support_codec.cpp_takeBitBuffer_FUN_00440240
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 00441586
     ADD EAX,0x4                         ; 0044158a
     PUSH EAX                            ; 0044158d
-    CALL support_codec.cpp_FUN_00440240 ; 0044158e
-        ;   XREF to: 00440240 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00440240()
+    CALL support_codec.cpp_takeBitBuffer_FUN_00440240 ; 0044158e
+        ;   XREF to: 00440240 (UNCONDITIONAL_CALL)  ; uint support_codec.cpp_takeBitBuffer_FUN_00440240(SBitBuffer * bit_buffer, int * bit_count_out)
     ADD ESP,0x8                         ; 00441593
     CMP dword ptr [ESP],0x0             ; 00441596
     JG 0x004415a5                       ; 0044159a

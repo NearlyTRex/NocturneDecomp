@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   silent
 ;
 ; XREF[2]:
-;   core_event.cpp_FUN_0048c2e0 at 004902ad
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 004902ad
 ;   core_lever.cpp_CLever_process_FUN_004e0250 at 004e045c
 ;
 ; Referenced Globals:

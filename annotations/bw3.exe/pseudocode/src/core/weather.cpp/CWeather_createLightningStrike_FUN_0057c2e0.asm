@@ -43,7 +43,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_event.cpp_FUN_0048c2e0 at 0048ef94
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048ef94
 ;   core_weather.cpp_CWeather_update_FUN_0057bda0 at 0057c050
 ;
 ; Referenced Globals:
@@ -76,7 +76,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
-;   core_weather.cpp_FUN_0057c2c0
+;   core_weather.cpp_getCurrentCameraAmbientValue_FUN_0057c2c0
 ;
 ; *****************************************************************************
 
@@ -294,8 +294,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x138]     ; 0057c59a
     MOV dword ptr [EBX + EAX*0x4 + 0x3c],EDX ; 0057c5a1
     INC dword ptr [EBX + 0x64]          ; 0057c5a5
-    CALL core_weather.cpp_FUN_0057c2c0  ; 0057c5a8
-        ;   XREF to: 0057c2c0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057c2c0()
+    CALL core_weather.cpp_getCurrentCameraAmbientValue_FUN_0057c2c0 ; 0057c5a8
+        ;   XREF to: 0057c2c0 (UNCONDITIONAL_CALL)  ; int core_weather.cpp_getCurrentCameraAmbientValue_FUN_0057c2c0()
         ;   Label: LAB_0057c5a8
     PUSH 0x5d7959                       ; 0057c5ad | = "noLightningFlash"
     MOV dword ptr [ESP + 0x144],EAX     ; 0057c5b2

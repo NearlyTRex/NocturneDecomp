@@ -236,7 +236,7 @@ void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_0051bf10(CDemonMis
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor);
 int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0(CDemonMission *this_ptr,CCharacter *existing_hero);
 void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240(CDemonMission *this_ptr);
-undefined4 core_mission_cpp_FUN_0051c410(void);
+int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_0051c410(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_setVersionControlDirectory_FUN_0051c420(CDemonMission *this_ptr,char *directory);
 void __cdecl core_mmx_c_detectCPUFeatures_FUN_0051c450(void);
 void __cdecl core_mmx_c_detectIntelProcessor_FUN_0051c48c(void);

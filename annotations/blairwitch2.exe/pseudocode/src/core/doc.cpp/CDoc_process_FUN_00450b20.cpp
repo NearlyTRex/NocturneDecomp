@@ -22,7 +22,7 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   if (iVar2 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_0042b5e0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0((CCharacter *)this_ptr,delta_time);
   delta_time_00 = g_CGamePtr->delta_time_float;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
                      (&(this_ptr->base).base.model.base);

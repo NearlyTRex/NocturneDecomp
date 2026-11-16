@@ -15,9 +15,11 @@ void __cdecl core_construc_cpp_staticInit_FUN_00442380(void)
              &g_CEnemyClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
             ((CDemonActorType *)&DAT_007f8edc,"CConstruct_Bone",
-             core_construc_cpp_FUN_00444520,(int *)0x5f170c,1,&g_CConstructClassInfo);
+             core_construc_cpp_factoryFuncConstructBone_FUN_00444520,(int *)0x5f170c,1,
+             &g_CConstructClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
             ((CDemonActorType *)&DAT_007f8f18,"CConstruct_Red",
-             core_construc_cpp_FUN_004445d0,(int *)0x5f1710,1,&g_CConstructClassInfo);
+             core_construc_cpp_factoryFuncConstructRed_FUN_004445d0,(int *)0x5f1710,1,
+             &g_CConstructClassInfo);
   return;
 }

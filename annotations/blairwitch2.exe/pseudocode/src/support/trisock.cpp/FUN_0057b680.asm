@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   support_trisock.cpp_FUN_0057ad10 at 0057b202
+;   support_trisock.cpp_httpRequestUpdate_FUN_0057ad10 at 0057b202
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Error_receiving_s_from_s_005ed51e
@@ -15,8 +15,8 @@
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   support_trisock.cpp_CSocket_isSocketValid_FUN_00579090
+;   support_trisock.cpp_CSocket_pollSocketStatus_FUN_00579150
 ;   support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240
-;   support_trisock.cpp_FUN_00579150
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     JZ 0x0057b6f6                       ; 0057b6e8
         ;   XREF to: 0057b6f6 (CONDITIONAL_JUMP)  ; LAB_0057b6f6
     PUSH ESI                            ; 0057b6ea
-    CALL support_trisock.cpp_FUN_00579150 ; 0057b6eb
-        ;   XREF to: 00579150 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_00579150()
+    CALL support_trisock.cpp_CSocket_pollSocketStatus_FUN_00579150 ; 0057b6eb
+        ;   XREF to: 00579150 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_pollSocketStatus_FUN_00579150(CSocket * this_ptr)
     ADD ESP,0x4                         ; 0057b6f0
     MOV dword ptr [ESP],EAX             ; 0057b6f3
     TEST byte ptr [ESP],0x4             ; 0057b6f6

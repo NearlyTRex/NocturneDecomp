@@ -10,27 +10,27 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processMotionEvent_FUN_005a4600(CUni
 
 {
   int iVar1;
-  uint uVar2;
-  uint uVar3;
+  float damage;
+  float radius;
   
   iVar1 = 0;
   switch(event_id) {
   case 0x1fa4:
     iVar1 = this_ptr->right_finger_bone;
-    uVar3 = 0x40000000;
-    uVar2 = 0x41C80000;
+    radius = 2.0;
+    damage = 0x41C80000;
     break;
   case 0x1fa5:
-    iVar1 = core_basicene_cpp_FUN_0059f740
-                      (this_ptr,0x40A00000,this_ptr->right_finger_bone,0x3f800000);
+    iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
+                      (&this_ptr->base,0x40A00000,this_ptr->right_finger_bone,1.0);
     if (iVar1 == 0) {
       return;
     }
     goto LAB_005a46c4;
   case 0x1fa6:
     iVar1 = this_ptr->left_finger_bone;
-    uVar3 = 0x3f800000;
-    uVar2 = 0x40A00000;
+    radius = 1.0;
+    damage = 0x40A00000;
     break;
   case 0x1fa7:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
@@ -45,7 +45,8 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processMotionEvent_FUN_005a4600(CUni
   default:
     goto switchD_005a4617_default;
   }
-  iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,uVar2,iVar1,uVar3);
+  iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
+                    (&this_ptr->base,damage,iVar1,radius);
 switchD_005a4617_default:
   if (iVar1 == 0) {
     return;

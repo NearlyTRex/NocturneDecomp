@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d4900 at 004d494d
+;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d494d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Already_have_max_bullets_005c4e25

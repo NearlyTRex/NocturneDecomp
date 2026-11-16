@@ -45,7 +45,7 @@
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_00430520
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
-;   core_enemy.cpp_FUN_00489c90
+;   core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
@@ -317,8 +317,8 @@ section .text
         ;   XREF to: 0043022f (UNCONDITIONAL_JUMP)  ; LAB_0043022f
     PUSH EAX                            ; 0043040f
         ;   Label: LAB_0043040f
-    CALL core_enemy.cpp_FUN_00489c90    ; 00430410
-        ;   XREF to: 00489c90 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_00489c90()
+    CALL core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90 ; 00430410
+        ;   XREF to: 00489c90 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00430415
     MOV EAX,dword ptr [EBP + 0x14]      ; 00430418
     MOV dword ptr [EAX + 0x70],0x2      ; 0043041b

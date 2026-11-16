@@ -52,7 +52,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
-;   engine_font.cpp_FUN_004b2e40
+;   engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40
 ;   engine_special.cpp_clearScreen_FUN_00560d70
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
@@ -346,8 +346,8 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 004c01ea
     PUSH EAX                            ; 004c01ee
     PUSH EBP                            ; 004c01ef
-    CALL engine_font.cpp_FUN_004b2e40   ; 004c01f0
-        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b2e40()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40 ; 004c01f0
+        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 004c01f5
     PUSH 0x58                           ; 004c01f8
     XOR EBX,EBX                         ; 004c01fa

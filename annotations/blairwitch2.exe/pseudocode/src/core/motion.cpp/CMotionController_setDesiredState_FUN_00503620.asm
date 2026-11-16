@@ -12,12 +12,12 @@
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040fffb
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410040 at 00410064
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040faba
+;   core_basicene.cpp_CBasicEnemy_processAlertState_FUN_0059ec10 at 0059ed1a
 ;   core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0 at 0059ebf8
 ;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f0c7
+;   core_basicene.cpp_CBasicEnemy_processNothingState_FUN_0059ebc0 at 0059ebce
+;   core_basicene.cpp_CBasicEnemy_processPatrolState_FUN_0059ee00 at 0059ef19
 ;   core_basicene.cpp_CBasicEnemy_process_FUN_0059f420 at 0059f49a
-;   core_basicene.cpp_FUN_0059ebc0 at 0059ebce
-;   core_basicene.cpp_FUN_0059ec10 at 0059ed1a
-;   core_basicene.cpp_FUN_0059ee00 at 0059ef19
 ;   core_basicnpc.cpp_CBasicNPC_processDeathState_FUN_005a48a0 at 005a48b8
 ;   ... and 152 more
 ;

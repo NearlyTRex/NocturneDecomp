@@ -122,7 +122,8 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00536990(CDemonS
       iVar2 = local_14->shadow_map_width * -2;
       iVar1 = local_14->shadow_map_height * -2;
     }
-    core_dlight_cpp_FUN_0045ff30(local_14,(DAT_005fba18 + iVar2) / 2,(DAT_005fba1c + iVar1) / 2,0);
+    core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30
+              (local_14,(DAT_005fba18 + iVar2) / 2,(DAT_005fba1c + iVar1) / 2,0);
     return;
   }
   return;

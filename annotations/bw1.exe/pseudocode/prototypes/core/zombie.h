@@ -9,9 +9,9 @@
 // Address: 005ba700
 void __cdecl staticInit(void);
 
-// Original: core_zombie.cpp_FUN_005ba730
+// Original: core_zombie.cpp_getObjectHeightScale_FUN_005ba730
 // Address: 005ba730
-float FUN_005ba730(int param_1);
+float __cdecl getObjectHeightScale(CDemonActor *actor);
 
 // Original: core_zombie.cpp_getObjectGrabPointLocal_FUN_005ba7d0
 // Address: 005ba7d0
@@ -117,6 +117,6 @@ void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 // Address: 005bedf0
 CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint flags);
 
-// Original: core_zombie.cpp_FUN_005bf0e0
+// Original: core_zombie.cpp_findRasterizerEdge_FUN_005bf0e0
 // Address: 005bf0e0
-int * FUN_005bf0e0(void);
+SSoftwareEdge * __cdecl findRasterizerEdge(int y_start,SSoftwareEdge *exclude_edge);

@@ -17,7 +17,7 @@
 ;   core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220
 ;   core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
 ;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
-;   core_muzzle.cpp_FUN_0059df70
+;   core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
@@ -54,8 +54,8 @@ section .text
     PUSH 0x0                            ; 005a1d06
     SUB EAX,0x9c8                       ; 005a1d08
     PUSH EAX                            ; 005a1d0d
-    CALL core_muzzle.cpp_FUN_0059df70   ; 005a1d0e
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70 ; 005a1d0e
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; SFollowFormation * core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70(SFollowFormation * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a1d13
     PUSH 0x0                            ; 005a1d16
     SUB EAX,0x34c                       ; 005a1d18

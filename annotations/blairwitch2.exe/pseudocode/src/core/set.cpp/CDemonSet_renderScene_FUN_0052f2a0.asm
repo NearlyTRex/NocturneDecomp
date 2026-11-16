@@ -50,6 +50,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00440500
 ;   core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00440370
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0043c040
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0043b7f0
@@ -61,7 +62,6 @@
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00440000
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0043bc30
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80
-;   core_dcamera.cpp_FUN_00440500
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044b020
 ;   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044b050
 ;   ... and 23 more
@@ -319,8 +319,8 @@ section .text
     JNC 0x0052f538                      ; 0052f529
         ;   XREF to: 0052f538 (CONDITIONAL_JUMP)  ; LAB_0052f538
     PUSH 0x1fc7838                      ; 0052f52b
-    CALL core_dcamera.cpp_FUN_00440500  ; 0052f530
-        ;   XREF to: 00440500 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00440500()
+    CALL core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00440500 ; 0052f530
+        ;   XREF to: 00440500 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00440500(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0052f535
     MOV EAX,[0x00616494]                ; 0052f538 | g_CGamePtr
         ;   Label: LAB_0052f538
@@ -597,8 +597,8 @@ section .text
     MOV ESI,dword ptr [0x00616494]      ; 0052f7d5 | g_CGamePtr
         ;   Label: LAB_0052f7d5
     PUSH ESI                            ; 0052f7db | g_CGameInstance
-    CALL core_game.cpp_FUN_004bb620     ; 0052f7dc
-        ;   XREF to: 004bb620 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bb620()
+    CALL core_game.cpp_CGame_renderAlphaFade_FUN_004bb620 ; 0052f7dc
+        ;   XREF to: 004bb620 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_renderAlphaFade_FUN_004bb620(CGame * this_ptr)
     MOV EAX,[0x01cedef4]                ; 0052f7e1 | DAT_01cedef4
     SHL EAX,0x2                         ; 0052f7e6
     MOV EDI,dword ptr [EAX + 0x1cedee4] ; 0052f7e9

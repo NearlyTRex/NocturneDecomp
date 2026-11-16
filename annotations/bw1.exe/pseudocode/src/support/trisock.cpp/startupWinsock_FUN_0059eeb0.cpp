@@ -15,7 +15,7 @@ int __cdecl support_trisock_cpp_startupWinsock_FUN_0059eeb0(void)
   int extraout_EAX;
   WSADATA WStack_190;
   
-  wincore_winrun_cpp_FUN_005b3a90("initSockets\n");
+  wincore_winrun_cpp_outputDebugString_FUN_005b3a90("initSockets\n");
   pvVar1 = (HANDLE)WSAStartup(0x101,&WStack_190);
   if (_DAT_02c8ae58 == (HANDLE)0x0) {
     pvVar1 = wincore_winrun_cpp_createMutex_FUN_005b3740();

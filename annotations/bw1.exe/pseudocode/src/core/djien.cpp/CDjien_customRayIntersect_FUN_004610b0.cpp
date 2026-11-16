@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
@@ -21,10 +20,10 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
   uint *puVar7;
   byte bVar8;
   float afStackY_103c [957];
-  CVector3f *ray_origin_00;
+  CVector3f *pCVar9;
   CVector3f *in_stack_fffffec8;
   CVector3f *in_stack_fffffecc;
-  float afStack_124 [30];
+  CVector3f aCStack_124 [10];
   float afStack_ac [10];
   uint auStack_84 [4];
   uint auStack_74 [2];
@@ -43,7 +42,7 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
   int iStack_14;
   
   bVar8 = 0;
-  ray_origin_00 = (CVector3f *)0x0;
+  pCVar9 = (CVector3f *)0x0;
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)ray_origin);
   puVar5 = auStack_84;
@@ -54,10 +53,11 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
     puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
   }
   fVar2 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0
-                    (&CStack_6c,ray_origin_00,in_stack_fffffec8,in_stack_fffffecc);
+                    (&CStack_6c,pCVar9,in_stack_fffffec8,in_stack_fffffecc);
   if ((0.0 <= fVar2) && (fVar2 <= 1.0)) {
-    __arrinit(afStack_124,10,&g_CVectorTypeInfo);
-    iVar3 = core_djien_cpp_FUN_004615b0(this_ptr,afStack_124,afStack_ac);
+    __arrinit(aCStack_124,10,&g_CVectorTypeInfo);
+    iVar3 = core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0
+                      (this_ptr,aCStack_124,(int *)afStack_ac);
     iStack_20 = -1;
     pfVar6 = (float *)((int)ray_direction + (uint)bVar8 * -8 + 4);
     fStack_54 = ray_direction->x;
@@ -80,11 +80,11 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
     }
     iVar4 = 0;
     if (0 < iVar3) {
-      pfVar6 = afStack_124;
+      pCVar9 = aCStack_124;
       do {
-        fStack_3c = *pfVar6 - ray_origin->x;
-        fStack_38 = pfVar6[1] - ray_origin->y;
-        fStack_34 = pfVar6[2] - ray_origin->z;
+        fStack_3c = pCVar9->x - ray_origin->x;
+        fStack_38 = pCVar9->y - ray_origin->y;
+        fStack_34 = pCVar9->z - ray_origin->z;
         afStack_50[2] = fStack_3c;
         afStack_50[(uint)bVar8 * -2 + 3] = afStack_50[(uint)bVar8 * -2 + 6];
         afStack_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
@@ -100,11 +100,11 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
           fStack_24 = SQRT(fVar1);
         }
         iVar4 = iVar4 + 1;
-        pfVar6 = pfVar6 + 3;
+        pCVar9 = pCVar9 + 1;
       } while (iVar4 < iStack_14);
     }
     if (iStack_20 != -1) {
-      out_normal[1].x = *(float *)((int)afStack_ac + iStack_20 * 4);
+      out_normal[1].x = afStack_ac[iStack_20];
       out_normal->z = 0.0;
       out_normal->y = out_normal->z;
       out_normal->x = out_normal->y;

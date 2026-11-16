@@ -65,9 +65,9 @@ CPathMap * __cdecl CAsgaya::getPathMap(CAsgaya *this_ptr);
 // Address: 005a1b50
 CAsgaya * __cdecl CAsgaya::dtor(CAsgaya *this_ptr,uint flags);
 
-// Original: core_asgaya.cpp_FUN_005a1e60
+// Original: core_asgaya.cpp_findRasterizerEdge_FUN_005a1e60
 // Address: 005a1e60
-int * FUN_005a1e60(void);
+SSoftwareEdge * __cdecl findRasterizerEdge(int y_start,SSoftwareEdge *exclude_edge);
 
 // Original: core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0
 // Address: 005a23c0

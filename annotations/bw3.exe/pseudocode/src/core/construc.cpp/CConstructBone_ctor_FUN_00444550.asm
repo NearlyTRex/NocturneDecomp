@@ -7,7 +7,7 @@
 ; CConstructBone * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_construc.cpp_FUN_00444520 at 00444533
+;   core_construc.cpp_factoryFuncConstructBone_FUN_00444520 at 00444533
 ;
 ; Called Functions:
 ;   core_construc.cpp_CConstruct_ctor_FUN_00442420

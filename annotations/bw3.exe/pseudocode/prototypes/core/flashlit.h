@@ -41,66 +41,66 @@ CVector3f * __cdecl CFlashlight::getMuzzlePoint(CFlashlight *this_ptr,CVector3f 
 // Address: 004a76a0
 CFlashlight * __cdecl CFlashlight::dtor(CFlashlight *this_ptr,uint flags);
 
-// Original: core_flashlit.cpp_FUN_004a76f0
+// Original: core_flashlit.cpp_staticInit_FUN_004a76f0
 // Address: 004a76f0
-void FUN_004a76f0(void);
+void __cdecl staticInit(void);
 
-// Original: core_flashlit.cpp_FUN_004a7890
+// Original: core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004a7890
 // Address: 004a7890
-void FUN_004a7890(char *param_1);
+void __cdecl trimAndNormalizeWhitespace(char *text);
 
-// Original: core_flashlit.cpp_FUN_004a7920
+// Original: core_flashlit.cpp_stripCommentAndTrim_FUN_004a7920
 // Address: 004a7920
-void FUN_004a7920(char *param_1);
+void __cdecl stripCommentAndTrim(char *line);
 
-// Original: core_flashlit.cpp_FUN_004a7950
+// Original: core_flashlit.cpp_matchCommand_FUN_004a7950
 // Address: 004a7950
-undefined4 FUN_004a7950(byte *param_1,byte *param_2,byte *param_3);
+int __cdecl matchCommand(char *line,char *keyword,char *out_args);
 
-// Original: core_flashlit.cpp_FUN_004a79f0
+// Original: core_flashlit.cpp_findNotesEntry_FUN_004a79f0
 // Address: 004a79f0
-SNotesEntry * FUN_004a79f0(char *param_1,int *param_2);
+SNotesEntry * __cdecl findNotesEntry(char *name,int *out_section_index);
 
-// Original: core_flashlit.cpp_FUN_004a7a70
+// Original: core_flashlit.cpp_updateTooltip_FUN_004a7a70
 // Address: 004a7a70
-void FUN_004a7a70(char *param_1);
+void __cdecl updateTooltip(char *text);
 
-// Original: core_flashlit.cpp_FUN_004a7bb0
+// Original: core_flashlit.cpp_drawTooltip_FUN_004a7bb0
 // Address: 004a7bb0
-void FUN_004a7bb0(void);
+void __cdecl drawTooltip(void);
 
-// Original: core_flashlit.cpp_FUN_004a7c30
+// Original: core_flashlit.cpp_freeNotesBitmaps_FUN_004a7c30
 // Address: 004a7c30
-void FUN_004a7c30(void);
+void __cdecl freeNotesBitmaps(void);
 
-// Original: core_flashlit.cpp_FUN_004a7cf0
+// Original: core_flashlit.cpp_loadNotesBitmap_FUN_004a7cf0
 // Address: 004a7cf0
-void FUN_004a7cf0(CAlphaBitmap *param_1,char *param_2,int param_3,int param_4);
+void __cdecl loadNotesBitmap(CAlphaBitmap *bitmap,char *filename,int width,int height);
 
-// Original: core_flashlit.cpp_FUN_004a7d70
+// Original: core_flashlit.cpp_loadNotesBitmaps_FUN_004a7d70
 // Address: 004a7d70
-void FUN_004a7d70(void);
+void __cdecl loadNotesBitmaps(void);
 
-// Original: core_flashlit.cpp_FUN_004a8080
+// Original: core_flashlit.cpp_findSectionForPage_FUN_004a8080
 // Address: 004a8080
-int FUN_004a8080(int param_1);
+int __cdecl findSectionForPage(int page);
 
-// Original: core_flashlit.cpp_FUN_004a80d0
+// Original: core_flashlit.cpp_hitTestSectionTab_FUN_004a80d0
 // Address: 004a80d0
-int FUN_004a80d0(int param_1,int param_2);
+int __cdecl hitTestSectionTab(int x,int y);
 
-// Original: core_flashlit.cpp_FUN_004a8180
+// Original: core_flashlit.cpp_hitTestPageArrows_FUN_004a8180
 // Address: 004a8180
-undefined4 FUN_004a8180(int param_1,int param_2);
+int __cdecl hitTestPageArrows(int x,int y);
 
-// Original: core_flashlit.cpp_FUN_004a8220
+// Original: core_flashlit.cpp_hitTestExitButton_FUN_004a8220
 // Address: 004a8220
-undefined4 FUN_004a8220(int param_1,int param_2);
+int __cdecl hitTestExitButton(int x,int y);
 
-// Original: core_flashlit.cpp_FUN_004a8270
+// Original: core_flashlit.cpp_layoutSections_FUN_004a8270
 // Address: 004a8270
-undefined4 FUN_004a8270(void);
+int __cdecl layoutSections(void);
 
-// Original: core_flashlit.cpp_FUN_004a82f0
+// Original: core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004a82f0
 // Address: 004a82f0
-void FUN_004a82f0(void);
+void __cdecl relayoutSectionsIfDirty(void);

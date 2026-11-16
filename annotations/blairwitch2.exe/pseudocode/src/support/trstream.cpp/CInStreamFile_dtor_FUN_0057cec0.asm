@@ -17,7 +17,7 @@
 ;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015e2
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7f60
 ;   engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0 at 004a8619
-;   engine_font.cpp_FUN_004a7fd0 at 004a830c
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0 at 004a830c
 ;   ... and 7 more
 ;
 ; Referenced Globals:

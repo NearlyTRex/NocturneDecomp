@@ -19,7 +19,7 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a328
   CDemonActor *pCVar4;
   SMotion *pSVar5;
   int iVar6;
-  SStateMachine *pSVar7;
+  SStateMachine *this_ptr_01;
   
   pCVar4 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
   if (pCVar4 != (CDemonActor *)0x0) {
@@ -32,10 +32,10 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a328
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
     iVar6 = pSVar5->state_index;
     if (_DAT_005ff350 < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
-      pSVar7 = &(this_ptr->base).state_machine;
+      this_ptr_01 = &(this_ptr->base).state_machine;
       (this_ptr->base).attack_range = _DAT_005ff350;
-      core_muzzle_cpp_FUN_0059dcb0(pSVar7,0x3f000000);
-      core_muzzle_cpp_FUN_0059d8e0(pSVar7,"Chasing");
+      core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_01,0.5);
+      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");
       if (iVar6 == 10) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
         return;

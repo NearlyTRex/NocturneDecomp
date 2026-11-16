@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_004354a0 at 004354b4
+;   core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0 at 004354b4
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ee4a8
 ;
 ; Referenced Globals:

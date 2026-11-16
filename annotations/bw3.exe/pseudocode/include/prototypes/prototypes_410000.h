@@ -49,7 +49,7 @@
 // FUNCTION PROTOTYPES - Range 0x410000
 // =============================================================================
 
-undefined4 core_bird_cpp_FUN_00410030(CMotionController *param_1,char *param_2);
+int __cdecl core_bird_cpp_setRandomMotionVariant_FUN_00410030(CMotionController *motion_controller,char *motion_name);
 void __cdecl core_bird_cpp_CBird_processDamage_FUN_00410110(CBird *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_bird_cpp_CBird_isInvulnerable_FUN_004101c0(CBird *this_ptr);
 CPathMap * __cdecl core_bird_cpp_CBird_getPathMap_FUN_004101e0(CBird *this_ptr);
@@ -84,7 +84,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecP
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_004123c0(CAudioRecPuzzle *this_ptr);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00412530(CAudioRecPuzzle *this_ptr,float delta_time);
 int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_004129f0(CAudioRecPuzzle *this_ptr,int button);
-void __cdecl core_bmppuzzl_cpp_FUN_00412a50(CAudioRecPuzzle *this_ptr);
+void __cdecl core_bmppuzzl_cpp_doNothing_FUN_00412a50(void);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00412a60(CAudioRecPuzzle *this_ptr);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00412b00(CAudioRecPuzzle *this_ptr,int knob);
 int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_00412bc0(CAudioRecPuzzle *this_ptr,int x,int y);
@@ -178,16 +178,16 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_00419550(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_00419790(CBoneGuy *this_ptr);
 ECollisionType __cdecl core_boneguy_cpp_CBoneGuy_getCollisionType_FUN_00419860(CBoneGuy *this_ptr,SCollisionInfo *collision_info);
 EDeathState __cdecl core_boneguy_cpp_CBoneGuy_getDeathState_FUN_00419880(CBoneGuy *this_ptr);
-void core_boneguy_cpp_FUN_004198b0(void);
+CSkeletonForest * __cdecl core_boneguy_cpp_factoryFuncSkeletonForest_FUN_004198b0(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CSkeletonForest_getActorType_FUN_004198d0(CSkeletonForest *this_ptr);
 CSkeletonForest * __cdecl core_boneguy_cpp_CSkeletonForest_ctor_FUN_004198e0(CSkeletonForest *this_ptr);
-void core_boneguy_cpp_FUN_00419950(void);
+CSkeletonIndian * __cdecl core_boneguy_cpp_factoryFuncSkeletonIndian_FUN_00419950(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CSkeletonIndian_getActorType_FUN_00419970(CSkeletonIndian *this_ptr);
 CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr);
-void core_boneguy_cpp_FUN_004199f0(void);
+CSkeletonDemon * __cdecl core_boneguy_cpp_factoryFuncSkeletonDemon_FUN_004199f0(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CSkeletonDemon_getActorType_FUN_00419a10(CSkeletonDemon *this_ptr);
 CSkeletonDemon * __cdecl core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkeletonDemon *this_ptr);
-void core_boneguy_cpp_FUN_00419a90(void);
+CBaalSkel * __cdecl core_boneguy_cpp_factoryFuncBaalSkel_FUN_00419a90(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CBaalSkel_getActorType_FUN_00419ab0(CBaalSkel *this_ptr);
 CBaalSkel * __cdecl core_boneguy_cpp_CBaalSkel_ctor_FUN_00419ac0(CBaalSkel *this_ptr);
 void __cdecl core_boneguy_cpp_CBaalSkel_process_FUN_00419b40(CBaalSkel *this_ptr,float delta_time);

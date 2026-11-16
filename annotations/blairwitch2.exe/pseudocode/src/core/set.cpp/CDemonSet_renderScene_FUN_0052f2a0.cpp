@@ -150,7 +150,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0052f2a0(CDemonSet *this_ptr
     }
     _DAT_01fc97b0 = 0;
     if (0.0 < this_ptr->directional_light_intensity) {
-      core_dcamera_cpp_FUN_00440500();
+      core_dcamera_cpp_CDemonCamera_addDirectionalLightMap_FUN_00440500(&g_CDemonCameraInstance);
     }
   }
   if (g_CGamePtr->profile_mode != 0) {
@@ -291,7 +291,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0052f2a0(CDemonSet *this_ptr
       local_40 = local_40 + 4;
     } while (local_38 < _DAT_01fc9608);
   }
-  core_game_cpp_FUN_004bb620();
+  core_game_cpp_CGame_renderAlphaFade_FUN_004bb620(g_CGamePtr);
   iVar6 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
   if ((iVar6 != 0) && (*(int *)(0x01D182F0 + 0x1008) == 0)) {
     core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd670((CInventory *)(iVar6 + 0x2437c));

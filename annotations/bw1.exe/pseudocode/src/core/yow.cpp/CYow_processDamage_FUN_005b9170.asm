@@ -18,7 +18,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_sound.cpp_CSound_killSound_FUN_0057d9d0
-;   core_yow.cpp_FUN_005b8eb0
+;   core_yow.cpp_CYow_processDismemberment_FUN_005b8eb0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 005b9178
     PUSH EDI                            ; 005b917c
     PUSH EBX                            ; 005b917d
-    CALL core_yow.cpp_FUN_005b8eb0      ; 005b917e
-        ;   XREF to: 005b8eb0 (UNCONDITIONAL_CALL)  ; undefined core_yow.cpp_FUN_005b8eb0()
+    CALL core_yow.cpp_CYow_processDismemberment_FUN_005b8eb0 ; 005b917e
+        ;   XREF to: 005b8eb0 (UNCONDITIONAL_CALL)  ; void core_yow.cpp_CYow_processDismemberment_FUN_005b8eb0(CYow * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 005b9183
     ADD ESP,0x8                         ; 005b9186
     FSUBR float ptr [EBX + 0x2538]      ; 005b9189

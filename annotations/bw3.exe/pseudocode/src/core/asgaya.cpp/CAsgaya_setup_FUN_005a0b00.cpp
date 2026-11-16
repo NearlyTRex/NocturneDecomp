@@ -29,7 +29,7 @@ void __cdecl core_asgaya_cpp_CAsgaya_setup_FUN_005a0b00(CAsgaya *this_ptr)
   }
   core_fire_cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(0x01C73654,3);
   core_fire_cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(0x01C73654,4);
-  core_charactr_cpp_FUN_0042f280(1);
+  core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(1);
   this_ptr_01 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090(this_ptr_01);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10(this_ptr_01);

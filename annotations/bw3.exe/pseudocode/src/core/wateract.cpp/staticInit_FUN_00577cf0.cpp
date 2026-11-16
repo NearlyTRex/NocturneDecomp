@@ -16,7 +16,8 @@ void __cdecl core_wateract_cpp_staticInit_FUN_00577cf0(void)
              core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60,&g_CWaterActorClassVersion,7,
              &g_CDemonActorClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)0x2d09d24,"CLava",core_wateract_cpp_FUN_00578ff0,
-             (int *)0x607188,1,&g_CWaterActorClassInfo);
+            ((CDemonActorType *)0x2d09d24,"CLava",
+             core_wateract_cpp_factoryFuncLava_FUN_00578ff0,(int *)0x607188,1,
+             &g_CWaterActorClassInfo);
   return;
 }

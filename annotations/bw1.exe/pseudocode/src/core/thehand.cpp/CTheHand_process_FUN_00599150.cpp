@@ -41,7 +41,7 @@ void __cdecl core_thehand_cpp_CTheHand_process_FUN_00599150(CTheHand *this_ptr,f
   CMatrix3x4f CStack_274;
   CMatrix3x4f CStack_244;
   CMatrix3x4f CStack_214;
-  float afStack_1e4 [12];
+  CMatrix3x4f CStack_1e4;
   CQuaternion4f CStack_1b4;
   CQuaternion4f CStack_1a4;
   CQuaternion4f CStack_194;
@@ -108,13 +108,13 @@ void __cdecl core_thehand_cpp_CTheHand_process_FUN_00599150(CTheHand *this_ptr,f
           if ((pCVar3 != (CCharacter *)0x0) &&
              (pCVar10 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
              pCVar10 == (CDemonActor *)0x0)) {
-            core_thehand_cpp_FUN_00599be0(this_ptr);
-            pfVar13 = afStack_1e4;
-            pCVar12 = &CStack_2a4;
+            core_thehand_cpp_CTheHand_getHandBoneMatrix_FUN_00599be0(this_ptr,&CStack_1e4);
+            pCVar12 = &CStack_1e4;
+            pCVar11 = &CStack_2a4;
             for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-              pCVar12->m[0].w = *pfVar13;
-              pfVar13 = pfVar13 + (uint)bVar17 * -2 + 1;
+              pCVar11->m[0].w = pCVar12->m[0].w;
               pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
+              pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar17 * -2 + 1) * 4);
             }
             core_xform_cpp_getTranslation_FUN_005b6270(&CStack_2a4,&CStack_f0);
             CStack_cc.x = CStack_f0.x;

@@ -41,9 +41,9 @@ int __cdecl CMattanntote::renderTransparent(CMattanntote *this_ptr);
 // Address: 005939b0
 void __cdecl CMattanntote::processDamage(CMattanntote *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_mattnntt.cpp_FUN_00593a90
+// Original: core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90
 // Address: 00593a90
-void FUN_00593a90(int param_1);
+void __cdecl CMattanntote::chooseMoveState(CMattanntote *this_ptr);
 
 // Original: core_mattnntt.cpp_CMattanntote_getCarryObjToBodyXForm_FUN_00593ae0
 // Address: 00593ae0

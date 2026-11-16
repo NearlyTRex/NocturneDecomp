@@ -176,7 +176,8 @@ LAB_005313e3:
   }
   fVar13 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar13);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar13);
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(pCStack_1c);
   iVar4 = pSVar5->state_index;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
@@ -580,7 +581,7 @@ switchD_00531823_caseD_5:
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0((CCharacter *)this_ptr);
   if (iVar4 != 0) {
-    core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     afStack_1cc[2] = (this_ptr->base).base.velocity.x * delta_time;
     afStack_1cc[3] = (this_ptr->base).base.velocity.y * delta_time;
     fStack_1bc = (this_ptr->base).base.velocity.z * delta_time;

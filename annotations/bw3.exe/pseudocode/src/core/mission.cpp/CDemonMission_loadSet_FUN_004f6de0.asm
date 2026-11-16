@@ -22,7 +22,7 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004c4870
+;   core_game.cpp_CGame_onSetLoaded_FUN_004c4870
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004f6bf0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80
@@ -104,8 +104,8 @@ section .text
         ;   Label: LAB_004f6e67
     MOV EAX,[0x005fe9dc]                ; 004f6e6c | g_CGamePtr
     PUSH EAX                            ; 004f6e71
-    CALL core_game.cpp_FUN_004c4870     ; 004f6e72
-        ;   XREF to: 004c4870 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004c4870()
+    CALL core_game.cpp_CGame_onSetLoaded_FUN_004c4870 ; 004f6e72
+        ;   XREF to: 004c4870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_onSetLoaded_FUN_004c4870(CGame * this_ptr)
     MOV EAX,[0x005fe9dc]                ; 004f6e77 | g_CGamePtr
     ADD ESP,0x4                         ; 004f6e7c
     MOV dword ptr [EAX + 0x290],0x1     ; 004f6e7f | g_CGameInstance.new_set_event_pending

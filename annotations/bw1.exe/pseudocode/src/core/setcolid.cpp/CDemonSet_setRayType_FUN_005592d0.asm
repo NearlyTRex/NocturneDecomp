@@ -16,7 +16,7 @@
 ;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e45b
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_004c7aa0 at 004c80f3
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0 at 004ca3a8
-;   core_game.cpp_FUN_004d9260 at 004d9a11
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004d9a11
 ;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e880a
 ;   ... and 7 more
 ;

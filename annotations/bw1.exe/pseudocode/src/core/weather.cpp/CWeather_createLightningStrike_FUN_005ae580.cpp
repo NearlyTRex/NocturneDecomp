@@ -89,7 +89,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005ae580(CWeath
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_004b6fe0
               (0x01C57074,&local_64,local_1c,0,0.0);
   }
-  local_18 = (float)core_weather_cpp_FUN_005ae560();
+  local_18 = (float)core_weather_cpp_getCurrentCameraAmbientValue_FUN_005ae560();
   this_ptr_00 = 0x01C51D80;
   this_ptr->base_ambient = local_18;
   local_c0 = this_ptr->base_ambient;

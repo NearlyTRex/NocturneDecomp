@@ -34,13 +34,13 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
-;   core_charactr.cpp_FUN_0042d700
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 ;   ... and 22 more
 ;
 ; *****************************************************************************
@@ -210,8 +210,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 005af657
     FSTP float ptr [ESP]                ; 005af65d
     PUSH EBX                            ; 005af660
-    CALL core_charactr.cpp_FUN_00435320 ; 005af661
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 005af661
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     MOV ESI,dword ptr [EBX + 0xc268]    ; 005af666
     ADD ESP,0x8                         ; 005af66c
     CMP ESI,0x2                         ; 005af66f
@@ -351,8 +351,8 @@ section .text
         ;   Label: LAB_005af7ee
     PUSH EBX                            ; 005af7f4
     LEA ESI,[EBX + 0x2518]              ; 005af7f5
-    CALL core_charactr.cpp_FUN_0042d700 ; 005af7fb
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 005af7fb
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 005af800
     FMUL float ptr [EBP + 0x92]         ; 005af802
     FLD float ptr [ESI + 0x4]           ; 005af808
@@ -441,8 +441,8 @@ section .text
         ;   XREF to: 00433e80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005af922
     PUSH EBX                            ; 005af925
-    CALL core_werewolf.cpp_FUN_005b1850 ; 005af926
-        ;   XREF to: 005b1850 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_FUN_005b1850()
+    CALL core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_005b1850 ; 005af926
+        ;   XREF to: 005b1850 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_005b1850(CWerewolf * this_ptr)
     FLD float ptr [EBP + 0x92]          ; 005af92b
     FMUL double ptr [0x005f9b1a]        ; 005af931 | DAT_005f9b1a
     FLD float ptr [EBX + 0xc2ac]        ; 005af937

@@ -17,9 +17,9 @@ int __cdecl getAmbientLightLevel(void);
 // Address: 004e0b50
 void __cdecl setDirectionalLightVector(int dir_x,int dir_y,int dir_z);
 
-// Original: engine_light.cpp_FUN_004e0b80
+// Original: engine_light.cpp_setSpecularEnabled_FUN_004e0b80
 // Address: 004e0b80
-void FUN_004e0b80(undefined4 param_1);
+void __cdecl setSpecularEnabled(int enabled);
 
 // Original: engine_light.cpp_calculatePhongLighting_FUN_004e0bb0
 // Address: 004e0bb0

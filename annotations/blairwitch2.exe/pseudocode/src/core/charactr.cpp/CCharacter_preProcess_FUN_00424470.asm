@@ -11,7 +11,7 @@
 ;
 ; XREF[38]:
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040faeb
-;   core_basicene.cpp_FUN_0059f0e0 at 0059f30c
+;   core_basicene.cpp_CBasicEnemy_processMovement_FUN_0059f0e0 at 0059f30c
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411c43
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413194
 ;   core_beast.cpp_CBeast_process_FUN_00414a80 at 00414ae3

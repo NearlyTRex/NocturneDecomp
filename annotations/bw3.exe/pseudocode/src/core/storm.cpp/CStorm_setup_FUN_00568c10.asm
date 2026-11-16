@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340
 ;   core_weapon.cpp_CWeapon_setup_FUN_0057af40
-;   core_weather.cpp_FUN_0057d420
+;   core_weather.cpp_CWeather_preloadAssets_FUN_0057d420
 ;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH 0x5                            ; 00568c38
     MOV ECX,dword ptr [0x006071f0]      ; 00568c3a | DAT_006071f0
     PUSH ECX                            ; 00568c40
-    CALL core_weather.cpp_FUN_0057d420  ; 00568c41
-        ;   XREF to: 0057d420 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d420()
+    CALL core_weather.cpp_CWeather_preloadAssets_FUN_0057d420 ; 00568c41
+        ;   XREF to: 0057d420 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_preloadAssets_FUN_0057d420(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 00568c46
     PUSH 0x3                            ; 00568c49
     MOV EBX,dword ptr [0x005fc5a0]      ; 00568c4b | DAT_005fc5a0

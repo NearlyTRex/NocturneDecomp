@@ -24,8 +24,8 @@
 ;   core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40 at 0045ae07
 ;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0 at 0045a2b6
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30 at 0045ceee
-;   core_doc.cpp_CDoc_setup_FUN_00450620 at 00450875
-;   core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_0045b510 at 0045b780
+;   core_doc.cpp_CDoc_getHandsMidpoint_FUN_00453cc0 at 00453ce2
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_00453250 at 004532f5
 ;   ... and 33 more
 ;
 ; Called Functions:

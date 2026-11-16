@@ -64,8 +64,8 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00532370(CSentinel *
 ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_00532500(CSentinel *this_ptr,SCollisionInfo *collision_info);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00532520(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_005325b0(void);
-void core_set_cpp_FUN_00532630(void);
-void core_set_cpp_FUN_005326b0(int param_1);
+void __cdecl core_set_cpp_updateHighlightedActors_FUN_00532630(void);
+void __cdecl core_set_cpp_applyActorFlatColor_FUN_005326b0(CDemonActor *actor);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005327c0(CDemonSet *this_ptr);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00532b00(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_00532b30(CDemonSet *this_ptr);
@@ -87,7 +87,7 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_00536c90(CDemonSet *t
 void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_00536f90(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_00537270(CDemonSet *this_ptr,CDemonLight *light);
 void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(CDemonSet *this_ptr,CDemonGlobe *globe);
-void core_set_cpp_FUN_00537320(undefined4 param_1,int param_2);
+void __cdecl core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00537320(CDemonSet *this_ptr,CDemonGlobe *globe);
 void __cdecl core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00537390(CDemonSet *this_ptr,CDemonGlobe *globe);
 void __cdecl core_set_cpp_CDemonSet_renderLightDebugView_FUN_005373e0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_clearLights_FUN_00537520(CDemonSet *this_ptr);
@@ -126,7 +126,7 @@ void __cdecl core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_0053b130(CDemonSet *
 void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_0053b1c0(CDemonSet *this_ptr,int gamma);
 int __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280(CDemonSet *this_ptr,int index,float value);
-void core_set_cpp_FUN_0053b2c0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl core_set_cpp_CDemonSet_setSunlight_FUN_0053b2c0(CDemonSet *this_ptr,float dir_x,float dir_y,float dir_z,float intensity);
 void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0053b300(CDemonSet *this_ptr,int group_id,float value);
 void __cdecl core_set_cpp_CDemonSet_setCameraEnabled_FUN_0053b340(CDemonSet *this_ptr,int camera_index,int enabled);
 void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_0053b360(CDemonSet *this_ptr,int group_id,int enabled);

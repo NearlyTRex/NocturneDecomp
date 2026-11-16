@@ -24,7 +24,7 @@ void __cdecl core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90(CTawiscara
   bVar5 = 0;
   sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
-    core_tawiscara_cpp_FUN_00595710(this_ptr);
+    core_tawiscara_cpp_CTawiscara_playHowl_FUN_00595710(this_ptr);
     core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
               (&(this_ptr->base).base.model.base,0x16,1);
     core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);

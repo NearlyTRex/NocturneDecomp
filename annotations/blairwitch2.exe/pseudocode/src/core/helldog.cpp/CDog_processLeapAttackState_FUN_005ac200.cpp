@@ -16,7 +16,7 @@ void __cdecl core_helldog_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *thi
   CDemonActor *pCVar3;
   SMotion *pSVar4;
   float fVar5;
-  SStateMachine *pSVar6;
+  SStateMachine *this_ptr_00;
   
   pCVar3 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
   if (pCVar3 == (CDemonActor *)0x0) {
@@ -36,9 +36,10 @@ void __cdecl core_helldog_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *thi
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,0,1);
-  pSVar6 = &(this_ptr->base).state_machine;
+  this_ptr_00 = &(this_ptr->base).state_machine;
   (this_ptr->base).attack_range = _DAT_00600c50;
-  core_muzzle_cpp_FUN_0059d7f0(pSVar6,"ChaseComplete","MeleeAttack");
-  core_muzzle_cpp_FUN_0059d8e0(pSVar6,"Chasing");
+  core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
+            (this_ptr_00,"ChaseComplete","MeleeAttack");
+  core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"Chasing");
   return;
 }

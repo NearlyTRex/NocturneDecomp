@@ -9,7 +9,7 @@
 ;
 ; XREF[30]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_0046a720 at 0046a730
-;   core_flashlit.cpp_FUN_004a7a70 at 004a7aff
+;   core_flashlit.cpp_updateTooltip_FUN_004a7a70 at 004a7aff
 ;   core_fldnotes.cpp_SPageResourceText_ctor_FUN_004a8490 at 004a84e5
 ;   core_fldnotes.cpp_STextView_appendWord_FUN_004a97d0 at 004a9819
 ;   core_fldnotes.cpp_STextView_wordFits_FUN_004a9770 at 004a9780

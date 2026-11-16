@@ -50,7 +50,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
-;   engine_font.cpp_FUN_004b2e40
+;   engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40
 ;   engine_special.cpp_clearScreen_FUN_00560d70
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;
@@ -331,8 +331,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004bfe39
     PUSH EAX                            ; 004bfe3d
     PUSH EBP                            ; 004bfe3e
-    CALL engine_font.cpp_FUN_004b2e40   ; 004bfe3f
-        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b2e40()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40 ; 004bfe3f
+        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 004bfe44
     PUSH 0x58                           ; 004bfe47
     XOR EBX,EBX                         ; 004bfe49

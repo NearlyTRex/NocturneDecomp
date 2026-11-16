@@ -337,7 +337,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_flashlit_cpp_FUN_004a1200
+        .func = (RUNTIME_HANDLER_FUNC *)core_flashlit_cpp_staticInit_FUN_004a1200
     },
     {
         .status = 0x00,
@@ -847,7 +847,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_goggles_cpp_FUN_0059c270
+        .func = (RUNTIME_HANDLER_FUNC *)core_goggles_cpp_staticInit_FUN_0059c270
     },
     {
         .status = 0x00,
@@ -867,7 +867,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_meleeaxe_cpp_FUN_0059d350
+        .func = (RUNTIME_HANDLER_FUNC *)core_meleeaxe_cpp_staticInit_FUN_0059d350
     },
     {
         .status = 0x00,
@@ -932,7 +932,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_bwgrndma_cpp_FUN_005a7eb0
+        .func = (RUNTIME_HANDLER_FUNC *)core_bwgrndma_cpp_staticInit_FUN_005a7eb0
     },
     {
         .status = 0x00,

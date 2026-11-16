@@ -15,8 +15,8 @@
 ;
 ; Called Functions:
 ;   crt_wsock32.c_WSACleanup
-;   support_trisock.cpp_FUN_00570e80
-;   wincore_winrun.cpp_FUN_00581c70
+;   support_trisock.cpp_dnsRequestCancel_FUN_00570e80
+;   wincore_winrun.cpp_outputDebugString_FUN_00581c70
 ;   wincore_winrun.cpp_releaseMutex_FUN_00581990
 ;   wincore_winrun.cpp_sleep_FUN_00581a40
 ;   wincore_winrun.cpp_waitForMutex_FUN_00581930
@@ -33,8 +33,8 @@ section .text
     MOV EBP,ESP                         ; 00571f14
     AND ESP,0xfffffff8                  ; 00571f16
     PUSH 0x5d6df7                       ; 00571f19 | = "killSockets\n"
-    CALL wincore_winrun.cpp_FUN_00581c70 ; 00571f1e
-        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00581c70()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_00581c70 ; 00571f1e
+        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_00581c70(LPCSTR message)
     MOV EDX,dword ptr [0x02cfd8a8]      ; 00571f23 | DAT_02cfd8a8
     ADD ESP,0x4                         ; 00571f29
     TEST EDX,EDX                        ; 00571f2c
@@ -64,8 +64,8 @@ section .text
     MOV ESI,dword ptr [0x02cfd8ac]      ; 00571f58 | DAT_02cfd8ac
         ;   Label: LAB_00571f58
     PUSH ESI                            ; 00571f5e
-    CALL support_trisock.cpp_FUN_00570e80 ; 00571f5f
-        ;   XREF to: 00570e80 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_00570e80()
+    CALL support_trisock.cpp_dnsRequestCancel_FUN_00570e80 ; 00571f5f
+        ;   XREF to: 00570e80 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_dnsRequestCancel_FUN_00570e80(void * request)
     MOV EDI,dword ptr [0x02cfd8ac]      ; 00571f64 | DAT_02cfd8ac
     ADD ESP,0x4                         ; 00571f6a
     TEST EDI,EDI                        ; 00571f6d

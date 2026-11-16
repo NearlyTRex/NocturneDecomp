@@ -15,7 +15,7 @@
 ;   core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005503f0 at 00550445
 ;
 ; Called Functions:
-;   core_morph.cpp_FUN_004fb210
+;   core_morph.cpp_CMotionList_free_FUN_004fb210
 ;   crt_unknown.c_FUN_005a30b6
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     RET                                 ; 00547c07
     PUSH EBX                            ; 00547c08
         ;   Label: LAB_00547c08
-    CALL core_morph.cpp_FUN_004fb210    ; 00547c09
-        ;   XREF to: 004fb210 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_004fb210()
+    CALL core_morph.cpp_CMotionList_free_FUN_004fb210 ; 00547c09
+        ;   XREF to: 004fb210 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMotionList_free_FUN_004fb210(CMotionList * this_ptr)
     ADD ESP,0x4                         ; 00547c0e
     JMP 0x00547b9e                      ; 00547c11
         ;   XREF to: 00547b9e (UNCONDITIONAL_JUMP)  ; LAB_00547b9e

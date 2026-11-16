@@ -919,7 +919,7 @@ switchD_0047ba56_default:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,delta_time);
     fStack_2dc = (this_ptr->base).base.velocity.x * delta_time;
     afStack_2d8[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_2d8[1] = (this_ptr->base).base.velocity.z * delta_time;

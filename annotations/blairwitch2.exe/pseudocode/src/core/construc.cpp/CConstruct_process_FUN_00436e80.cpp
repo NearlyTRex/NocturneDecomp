@@ -149,7 +149,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
                 (*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4));
       return;
     }
-    core_construc_cpp_FUN_004382a0(this_ptr);
+    core_construc_cpp_CConstruct_startRecombine_FUN_004382a0(this_ptr);
   }
   if (this_ptr->blown_up == 2) {
     fVar19 = delta_time / _DAT_005f46a8 + this_ptr->recombine_interpolation;
@@ -258,8 +258,10 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
     iVar7 = core_motion_cpp_CMotionController_advance_FUN_005030c0(&pCVar3->base,afStack_70 + 10);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar7);
   }
+  fVar19 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0();
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+            ((CCharacter *)this_ptr,delta_time * fVar19);
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar3->base);
   iVar7 = pSVar10->state_index;
   iStack_18 = iVar7;
@@ -485,7 +487,7 @@ switchD_00437b48_caseD_7:
   }
   iVar7 = core_charactr_cpp_CCharacter_isOnGround_FUN_00424430((CCharacter *)this_ptr);
   if ((iVar7 != 0) && (iStack_18 != 0xc)) {
-    core_charactr_cpp_FUN_00423a10();
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     fStack_11c = (this_ptr->base).base.velocity.x * delta_time;
     afStack_118[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_118[1] = (this_ptr->base).base.velocity.z * delta_time;

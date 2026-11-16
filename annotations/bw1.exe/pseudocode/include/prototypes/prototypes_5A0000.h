@@ -295,7 +295,7 @@ void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_005adfc0(CWeapon *this_ptr);
 void __cdecl core_weather_cpp_staticInit_FUN_005ae140(void);
 CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_005ae170(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_update_FUN_005ae190(CWeather *this_ptr);
-float core_weather_cpp_FUN_005ae560(void);
+int __cdecl core_weather_cpp_getCurrentCameraAmbientValue_FUN_005ae560(void);
 void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005ae580(CWeather *this_ptr,float flash_timer,int play_sound);
 void __cdecl core_weather_cpp_CWeather_createThunder_FUN_005ae840(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ae890(CWeather *this_ptr);

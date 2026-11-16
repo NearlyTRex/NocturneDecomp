@@ -19,13 +19,13 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
-;   core_enemy.cpp_FUN_0048a1b0
+;   core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_shadow.cpp_FUN_00545000
-;   core_shadow.cpp_FUN_005450c0
-;   core_shadow.cpp_FUN_00545100
+;   core_shadow.cpp_CShadow_playDamageSound_FUN_005450c0
+;   core_shadow.cpp_CShadow_playDeathSound_FUN_00545100
+;   core_shadow.cpp_CShadow_playHitAlertSound_FUN_00545000
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
         ;   XREF to: 00545a78 (CONDITIONAL_JUMP)  ; LAB_00545a78
     PUSH dword ptr [EBP + 0x4]          ; 005459fc
     PUSH EBX                            ; 005459ff
-    CALL core_enemy.cpp_FUN_0048a1b0    ; 00545a00
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0 ; 00545a00
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0(CEnemy * this_ptr, float damage)
     ADD ESP,0x8                         ; 00545a05
     TEST EAX,EAX                        ; 00545a08
     JZ 0x00545a78                       ; 00545a0a
@@ -115,8 +115,8 @@ section .text
     ADD ESP,0xc                         ; 00545a75
     PUSH EBX                            ; 00545a78
         ;   Label: LAB_00545a78
-    CALL core_shadow.cpp_FUN_005450c0   ; 00545a79
-        ;   XREF to: 005450c0 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_005450c0()
+    CALL core_shadow.cpp_CShadow_playDamageSound_FUN_005450c0 ; 00545a79
+        ;   XREF to: 005450c0 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDamageSound_FUN_005450c0(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00545a7e
     PUSH EBP                            ; 00545a81
         ;   Label: LAB_00545a81
@@ -132,8 +132,8 @@ section .text
     RET                                 ; 00545a92
     PUSH EBX                            ; 00545a93
         ;   Label: LAB_00545a93
-    CALL core_shadow.cpp_FUN_00545000   ; 00545a94
-        ;   XREF to: 00545000 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_00545000()
+    CALL core_shadow.cpp_CShadow_playHitAlertSound_FUN_00545000 ; 00545a94
+        ;   XREF to: 00545000 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playHitAlertSound_FUN_00545000(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00545a99
     PUSH 0x41f00000                     ; 00545a9c
     PUSH 0x41700000                     ; 00545aa1
@@ -206,8 +206,8 @@ section .text
         ;   Label: LAB_00545b54
     ADD ESP,0xc                         ; 00545b59
     PUSH EBX                            ; 00545b5c
-    CALL core_shadow.cpp_FUN_00545100   ; 00545b5d
-        ;   XREF to: 00545100 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_00545100()
+    CALL core_shadow.cpp_CShadow_playDeathSound_FUN_00545100 ; 00545b5d
+        ;   XREF to: 00545100 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDeathSound_FUN_00545100(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00545b62
     PUSH 0x5d13b3                       ; 00545b65 | = "ShadowDead"
     MOV ECX,dword ptr [0x005fba60]      ; 00545b6a | DAT_005fba60

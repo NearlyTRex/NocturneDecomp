@@ -59,8 +59,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047e2b0(CEdi
   local_28 = 0;
   if (text_content != (char *)0x0) {
     buffer = (char *)(iVar1 + 0x1c255e8);
-    iVar4 = engine_font_cpp_FUN_004ab2b0
-                      (_DAT_01c25590,text_content,0x1c245f0,0x14,200,(right - left) + iVar2 * -2);
+    iVar4 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
+                      (_DAT_01c25590,text_content,(char *)0x1c245f0,0x14,200,
+                       (right - left) + iVar2 * -2);
     iVar9 = 0;
     if (0 < iVar4) {
       do {

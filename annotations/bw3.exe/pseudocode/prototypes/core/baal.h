@@ -29,9 +29,9 @@ void __cdecl CBaal::setup(CBaal *this_ptr);
 // Address: 005968a0
 void __cdecl CBaal::process(CBaal *this_ptr,float delta_time);
 
-// Original: core_baal.cpp_FUN_00597700
+// Original: core_baal.cpp_CBaal_chooseAttack_FUN_00597700
 // Address: 00597700
-void FUN_00597700(int param_1);
+void __cdecl CBaal::chooseAttack(CBaal *this_ptr);
 
 // Original: core_baal.cpp_CBaal_getCarryObjToBodyXForm_FUN_00597810
 // Address: 00597810

@@ -11,8 +11,8 @@
 ;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046bd0f
 ;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 at 0047dddb
 ;   core_drone.cpp_CDrone_process_FUN_00485d70 at 00486447
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a4a97
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004aa550 at 004aa5b4
-;   core_event.cpp_FUN_004a1d00 at 004a4a97
 ;   core_fire.cpp_CFireball_onCollision_FUN_004aee60 at 004aef0e
 ;   core_flame.cpp_CFlame_process_FUN_004b7b90 at 004b7f60
 ;   ... and 19 more

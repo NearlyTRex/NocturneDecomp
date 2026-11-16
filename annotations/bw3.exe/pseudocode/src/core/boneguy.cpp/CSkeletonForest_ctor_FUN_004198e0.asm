@@ -7,7 +7,7 @@
 ; CSkeletonForest * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_FUN_004198b0 at 004198c3
+;   core_boneguy.cpp_factoryFuncSkeletonForest_FUN_004198b0 at 004198c3
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400

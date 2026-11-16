@@ -12,9 +12,9 @@
 void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float delta_time)
 
 {
-  EWalkState EVar1;
-  CCharacter *pCVar2;
-  float fVar3;
+  float fVar1;
+  EWalkState EVar2;
+  CCharacter *pCVar3;
   int iVar4;
   SMotion *pSVar5;
   CLarva *pCVar6;
@@ -111,10 +111,10 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
   pCStack_30 = &(this_ptr->base).base.model;
   while (0.0 < fStack_50) {
     iVar4 = core_motion_cpp_CMotionController_advance_FUN_005030c0(&pCStack_30->base,&fStack_50);
-    if ((iVar4 == 100) && (pCVar2 = (this_ptr->base).victim, pCVar2 != (CCharacter *)0x0)) {
-      afStack_8c[2] = (pCVar2->base).location.position.x - (pCStack_24->position).x;
-      afStack_8c[3] = (pCVar2->base).location.position.y - (pCStack_24->position).y;
-      fStack_7c = (pCVar2->base).location.position.z - (pCStack_24->position).z;
+    if ((iVar4 == 100) && (pCVar3 = (this_ptr->base).victim, pCVar3 != (CCharacter *)0x0)) {
+      afStack_8c[2] = (pCVar3->base).location.position.x - (pCStack_24->position).x;
+      afStack_8c[3] = (pCVar3->base).location.position.y - (pCStack_24->position).y;
+      fStack_7c = (pCVar3->base).location.position.z - (pCStack_24->position).z;
       fStack_d8 = afStack_8c[2];
       afStack_d4[(uint)bVar8 * -2] = afStack_8c[(uint)bVar8 * -2 + 3];
       afStack_d4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
@@ -133,14 +133,14 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
       fVar12 = (float10)fStack_14 + (float10)fStack_f4;
       fStack_f4 = (float)fVar12;
       fVar13 = atan2((float10)fStack_fc,fVar12);
-      fVar3 = SQRT(fStack_fc * fStack_fc + fStack_f4 * fStack_f4);
+      fVar1 = SQRT(fStack_fc * fStack_fc + fStack_f4 * fStack_f4);
       fVar10 = (float10)fcos(Var9);
       fVar11 = (float10)fsin(fVar13);
       fVar13 = (float10)fcos(fVar13);
-      dStack_64 = (double)fVar3;
-      fStack_2c = fVar3 * (float)_DAT_005dbe36 * fVar3;
+      dStack_64 = (double)fVar1;
+      fStack_2c = fVar1 * (float)_DAT_005dbe36 * fVar1;
       fVar12 = fVar10 * (float10)_DAT_005dbe3e * fVar10 *
-               (fVar12 * (float10)fVar3 - (float10)fStack_f8);
+               (fVar12 * (float10)fVar1 - (float10)fStack_f8);
       CStack_150.y = (float)-fVar14;
       fStack_28 = (float)fVar12;
       CStack_150.x = (float)(fVar11 * fVar10);
@@ -181,8 +181,10 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
       }
     }
   }
+  fVar1 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+            ((CCharacter *)this_ptr,delta_time * fVar1);
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCStack_30->base);
   uVar7 = pSVar5->state_index;
   uStack_3c = uVar7;
@@ -191,17 +193,17 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
   if (iVar4 == 0) {
     if (uVar7 == 0) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      pCVar2 = (this_ptr->base).victim;
-      if (pCVar2 == (CCharacter *)0x0) {
+      pCVar3 = (this_ptr->base).victim;
+      if (pCVar3 == (CCharacter *)0x0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00488970(&this_ptr->base,delta_time);
         if (iVar4 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_30->base,1,1);
         }
       }
       else {
-        fStack_138 = (pCVar2->base).location.position.x - (pCStack_24->position).x;
-        afStack_134[0] = (pCVar2->base).location.position.y - (pCStack_24->position).y;
-        afStack_134[1] = (pCVar2->base).location.position.z - (pCStack_24->position).z;
+        fStack_138 = (pCVar3->base).location.position.x - (pCStack_24->position).x;
+        afStack_134[0] = (pCVar3->base).location.position.y - (pCStack_24->position).y;
+        afStack_134[1] = (pCVar3->base).location.position.z - (pCStack_24->position).z;
         CStack_108.x = fStack_138;
         *(float *)((int)&CStack_108 + (uint)bVar8 * -8 + 4) = afStack_134[(uint)bVar8 * -2];
         *(float *)((int)&CStack_108 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4 + 8) =
@@ -229,7 +231,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
     }
     else if (uVar7 < 2) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      fVar3 = 0x41A00000;
+      fVar1 = 0x41A00000;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00488970(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
@@ -246,10 +248,10 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
         (this_ptr->base).base.model.accumulated_root_motion.x =
              (this_ptr->base).base.model.accumulated_root_motion.y;
         uStack_78 = 0;
-        fStack_70 = fVar3;
+        fStack_70 = fVar1;
         uStack_74 = 0;
-        pCVar2 = (this_ptr->base).victim;
-        path_map = (*((pCVar2->base).vtable._ub)->getPathMap)(&pCVar2->base);
+        pCVar3 = (this_ptr->base).victim;
+        path_map = (*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
         iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                           ((CCharacter *)this_ptr,
                            &(((this_ptr->base).victim)->base).location.position,path_map,pCVar16,
@@ -260,13 +262,13 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_30->base,0,1);
         }
         if ((this_ptr->base).attack_cooldown <= 0.0) {
-          pCVar2 = (this_ptr->base).victim;
-          fStack_198 = (pCVar2->base).location.position.x -
+          pCVar3 = (this_ptr->base).victim;
+          fStack_198 = (pCVar3->base).location.position.x -
                        (this_ptr->base).base.base.location.position.x;
           afStack_194[0] =
-               (pCVar2->base).location.position.y - (this_ptr->base).base.base.location.position.y;
+               (pCVar3->base).location.position.y - (this_ptr->base).base.base.location.position.y;
           afStack_194[1] =
-               (pCVar2->base).location.position.z - (this_ptr->base).base.base.location.position.z;
+               (pCVar3->base).location.position.z - (this_ptr->base).base.base.location.position.z;
           CStack_1a4.x = fStack_198;
           *(float *)((int)&CStack_1a4 + (uint)bVar8 * -8 + 4) = afStack_194[(uint)bVar8 * -2];
           *(float *)((int)&CStack_1a4 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4 + 8) =
@@ -326,9 +328,9 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004e0670(CLarva *this_ptr,float d
     }
     goto LAB_004e0775;
   }
-  EVar1 = (this_ptr->base).base.walk_state;
-  if (EVar1 < 2) {
-    if (EVar1 == WALK_STATE_WALKING) {
+  EVar2 = (this_ptr->base).base.walk_state;
+  if (EVar2 < 2) {
+    if (EVar2 == WALK_STATE_WALKING) {
 LAB_004e074a:
       iVar4 = 1;
     }
@@ -340,8 +342,8 @@ LAB_004e0b9d:
               (&(this_ptr->base).base.model.base,iVar4,1);
   }
   else {
-    if (EVar1 < WALK_STATE_NO_PATH) goto LAB_004e074a;
-    if (EVar1 != WALK_STATE_NO_PATH) goto LAB_004e0b9d;
+    if (EVar2 < WALK_STATE_NO_PATH) goto LAB_004e074a;
+    if (EVar2 != WALK_STATE_NO_PATH) goto LAB_004e0b9d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_30->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00436710
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
@@ -377,14 +379,14 @@ LAB_004e0775:
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_00424430((CCharacter *)this_ptr);
   if (iVar4 != 0) {
-    pCVar2 = (this_ptr->base).victim;
-    if ((pCVar2 != (CCharacter *)0x0) &&
-       (pCVar6 = (CLarva *)(*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
+    pCVar3 = (this_ptr->base).victim;
+    if ((pCVar3 != (CCharacter *)0x0) &&
+       (pCVar6 = (CLarva *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
        pCVar6 == this_ptr)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_00423a10(this_ptr);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     afStack_194[2] = (this_ptr->base).base.velocity.x * delta_time;
     afStack_194[3] = (this_ptr->base).base.velocity.y * delta_time;
     fStack_184 = (this_ptr->base).base.velocity.z * delta_time;

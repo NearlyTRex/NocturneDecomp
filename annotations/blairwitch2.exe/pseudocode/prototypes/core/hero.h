@@ -89,9 +89,9 @@ int __cdecl CHero::tryTalkToNearbyCharacter(CHero *this_ptr);
 // Address: 004cf030
 int __cdecl CHero::tryOpenNearbyDoor(CHero *this_ptr,int ignore_lock);
 
-// Original: core_hero.cpp_FUN_004cf200
+// Original: core_hero.cpp_CHero_clearHeroAction_FUN_004cf200
 // Address: 004cf200
-void FUN_004cf200(int param_1);
+void __cdecl CHero::clearHeroAction(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
 // Address: 004cf230
@@ -177,9 +177,9 @@ int __cdecl CHero::canDoHeroAction(CHero *this_ptr,int action_type);
 // Address: 004d0750
 void __cdecl CHero::toggleGoggles(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d0780
+// Original: core_hero.cpp_CHero_findHeroAction_FUN_004d0780
 // Address: 004d0780
-undefined4 FUN_004d0780(CHero *param_1,int param_2);
+int __cdecl CHero::findHeroAction(CHero *this_ptr,int ignore_lock);
 
 // Original: core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d0910
 // Address: 004d0910
@@ -209,6 +209,6 @@ CHero * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,EHeroTyp
 // Address: 004d0af0
 void __cdecl CHeroPlaceholder::archive(CHeroPlaceholder *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d0b40
+// Original: core_hero.cpp_initializeColorMasks_FUN_004d0b40
 // Address: 004d0b40
-undefined8 FUN_004d0b40(void);
+void __cdecl initializeColorMasks(void);

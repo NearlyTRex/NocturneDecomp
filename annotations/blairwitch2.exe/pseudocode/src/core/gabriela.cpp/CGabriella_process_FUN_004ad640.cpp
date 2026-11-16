@@ -228,7 +228,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004ad640(CGabriella *this_
                  core_motion_cpp_CMotionController_getStateBlendWeight_FUN_005038a0
                            (&pCVar2->base,0x15);
     fStack_20 = (float)pCStack_14 * _DAT_005f7368 + fStack_20;
-    core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0((CCharacter *)this_ptr,delta_time);
   }
   fStack_20 = fStack_20 * delta_time;
   this_ptr_00 = (this_ptr->base).ladder_to_climb;
@@ -555,7 +555,7 @@ LAB_004ae5e4:
           }
         }
       }
-      core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
+      core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
       fStack_2ac = (this_ptr->base).base.velocity.x * delta_time;
       pCVar19 = &CStack_cc;
       fStack_2a8 = (this_ptr->base).base.velocity.y * delta_time;

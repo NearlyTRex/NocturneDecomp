@@ -33,12 +33,12 @@
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_00413c40 at 00413d25
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d540 at 0041d66b
 ;   core_bride.cpp_CBride_processDismemberment_FUN_004248e0 at 004249b7
-;   core_carved.cpp_FUN_0042b580 at 0042b660
+;   core_carved.cpp_CCarved_processDismemberment_FUN_0042b580 at 0042b660
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0 at 004311f4
 ;   core_construc.cpp_CConstruct_explode_FUN_004472a0 at 004473c3
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00448b70 at 00448c2a
-;   core_demnfolk.cpp_FUN_0045c4a0 at 0045c580
-;   core_djien.cpp_CDjien_damageSack_FUN_00460f90 at 0046102e
+;   core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_0045c4a0 at 0045c580
+;   core_djien.cpp_CDjien_blowApart_FUN_00460cb0 at 00460dac
 ;   ... and 11 more
 ;
 ; Referenced Globals:

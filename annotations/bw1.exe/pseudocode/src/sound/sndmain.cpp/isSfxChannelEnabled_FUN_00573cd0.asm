@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[9]:
-;   core_event.cpp_FUN_004a1d00 at 004a4a59
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a4a59
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8f3f
 ;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050bb92
 ;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057cc92

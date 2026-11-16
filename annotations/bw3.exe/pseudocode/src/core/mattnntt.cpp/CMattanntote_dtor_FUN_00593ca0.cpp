@@ -9,11 +9,11 @@
 CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)
 
 {
-  int iVar1;
-  CFlame *pCVar2;
-  CClothList *pCVar3;
-  CDeformableModelInstance *pCVar4;
-  CMattanntote *pCVar5;
+  int extraout_EAX;
+  CFlame *pCVar1;
+  CClothList *pCVar2;
+  CDeformableModelInstance *pCVar3;
+  CMattanntote *pCVar4;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -21,19 +21,19 @@ CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattann
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  iVar1 = core_firestff_cpp_FUN_004a5930(this_ptr->flames,0);
-  pCVar2 = core_armour_cpp_CFlame_arrdtor50_FUN_00410370((CFlame *)(iVar1 + -0x985c),0);
-  pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_0043f900
-                     ((CClothList *)((int)&pCVar2[-4].base.previous_transform_state.orientation + 4)
+  core_firestff_cpp_CFlame_arrdtor12_FUN_004a5930(this_ptr->flames);
+  pCVar1 = core_armour_cpp_CFlame_arrdtor50_FUN_00410370((CFlame *)(extraout_EAX + -0x985c),0);
+  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_0043f900
+                     ((CClothList *)((int)&pCVar1[-4].base.previous_transform_state.orientation + 4)
                       ,0);
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
-                     ((CDeformableModelInstance *)(pCVar3[-0x1b].filenames[7] + 8),0);
-  pCVar5 = (CMattanntote *)
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
+                     ((CDeformableModelInstance *)(pCVar2[-0x1b].filenames[7] + 8),0);
+  pCVar4 = (CMattanntote *)
            core_actor_cpp_CDemonActor_dtor_FUN_00408770
-                     ((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);
+                     ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
-    return pCVar5;
+    return pCVar4;
   }
-  FUN_005a30c4(pCVar5);
-  return pCVar5;
+  FUN_005a30c4(pCVar4);
+  return pCVar4;
 }

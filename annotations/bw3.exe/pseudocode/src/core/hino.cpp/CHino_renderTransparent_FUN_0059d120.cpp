@@ -30,12 +30,12 @@ int __cdecl core_hino_cpp_CHino_renderTransparent_FUN_0059d120(CHino *this_ptr)
   if (0.0 < (double)this_ptr->vanish_timer) {
     dVar5 = (double)this_ptr->vanish_timer * _DAT_005d9e74;
     if (this_ptr->vanishing == 0) {
-      iStack_18 = core_hino_cpp_FUN_0059b740(100);
+      iStack_18 = core_hino_cpp_percentToFixedAlpha_FUN_0059b740(100);
       value = (double)iStack_18 * dVar5;
     }
     else {
       auStack_34._20_8_ = 1.0 - dVar5;
-      iStack_18 = core_hino_cpp_FUN_0059b740(100);
+      iStack_18 = core_hino_cpp_percentToFixedAlpha_FUN_0059b740(100);
       value = (double)iStack_18 * (double)auStack_34._20_8_;
     }
     in_stack_ffffffa0 = SUB84(__BITCAST_UINT64(dVar5),0);
@@ -47,7 +47,7 @@ int __cdecl core_hino_cpp_CHino_renderTransparent_FUN_0059d120(CHino *this_ptr)
                              g_CWeaponClassInfo.name_hash);
     if (this_ptr_02 != (CCharacter *)0x0) {
       (*(((this_ptr_02->base).vtable._uc)->_uc).releaseVictim)(this_ptr_02);
-      iVar1 = core_hino_cpp_FUN_0059b740(100);
+      iVar1 = core_hino_cpp_percentToFixedAlpha_FUN_0059b740(100);
       if (iVar1 == this_ptr->render_alpha) {
         (this_ptr_02->base).is_renderable = 1;
         (this_ptr_02->base).is_transparent = 0;

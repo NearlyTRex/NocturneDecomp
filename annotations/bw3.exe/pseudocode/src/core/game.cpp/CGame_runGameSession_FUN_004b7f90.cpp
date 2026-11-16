@@ -167,7 +167,7 @@ LAB_004b8391:
     core_game_cpp_CGame_updateStatusDisplays_FUN_004b4d50(this_ptr);
     core_game_cpp_CGame_processFudge_FUN_004b4f00(this_ptr);
     core_game_cpp_CGame_playerControls_FUN_004b92e0(this_ptr);
-    core_game_cpp_FUN_004c4bc0(this_ptr);
+    core_game_cpp_CGame_updateMusic_FUN_004c4bc0(this_ptr);
     iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
     if ((iVar5 != 0) &&
        (iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x10c))(iVar5), pCVar3 = g_CFieldNotesPtr,
@@ -199,7 +199,7 @@ LAB_004b84e1:
     if (_DAT_01d22200 == 0) {
       iVar5 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_ESCAPE);
       if (iVar5 == 0) goto LAB_004b8719;
-      if (*(int *)(0x01D81080 + 0x1014) != 0) goto LAB_004b8391;
+      if (0x01D81080->teleport_requested != 0) goto LAB_004b8391;
       shape_edittool_cpp_CPickList_clear_FUN_00484f10(&g_CPickList);
       this_ptr->wait_for_keypress = 0;
       if (g_CFieldNotesPtr->is_displayed == 0) {
@@ -236,7 +236,7 @@ LAB_004b84e1:
             _DAT_01d22200 = 1;
           }
           else {
-            core_game_cpp_FUN_004c4cc0(this_ptr);
+            core_game_cpp_CGame_saveMusicPosition_FUN_004c4cc0(this_ptr);
             core_sound_cpp_CSound_shutdown_FUN_0055fee0(0x02CF5680);
             shape_edittool_cpp_CPickList_ctor_FUN_004831c0(&local_8a4);
             pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Return");
@@ -292,7 +292,7 @@ LAB_004b84e1:
               }
             }
             if (iVar5 == 5) {
-              core_game_cpp_FUN_004bd470(this_ptr);
+              core_game_cpp_CGame_resetIrisFade_FUN_004bd470(this_ptr);
               iVar5 = core_script_cpp_CScript_skipCinematic_FUN_00530530(g_CScriptPtr);
               this_ptr->cinematic_skip_in_progress = (uint)(iVar5 == 0);
             }
@@ -428,7 +428,7 @@ LAB_004b8594:
     } while (iVar5 != 1);
     shape_edittool_cpp_CPickList_dtor_FUN_004832b0(&local_4e4,0);
   }
-  iVar5 = core_mission_cpp_FUN_004f7bf0(0x01D81080);
+  iVar5 = core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004f7bf0(0x01D81080);
   this_ptr_00 = 0x01D70A78;
   this_ptr->damageable_enemy_count = iVar5;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0(this_ptr_00,0);

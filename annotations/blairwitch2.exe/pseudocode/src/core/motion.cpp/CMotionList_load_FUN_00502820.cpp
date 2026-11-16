@@ -28,7 +28,7 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_00502820(CMotionList *this_ptr
   int local_1c;
   int local_14;
   
-  core_moon_cpp_FUN_005027b0(this_ptr);
+  core_moon_cpp_CMotionList_free_FUN_005027b0(this_ptr);
   do {
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;

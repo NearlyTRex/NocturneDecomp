@@ -10,7 +10,7 @@
 ;   TerminatedCString s_Death_005ef9bf
 ;
 ; Called Functions:
-;   core_muzzle.cpp_FUN_0059daa0
+;   core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH 0x5ef9bf                       ; 0059f934 | = "Death"
     ADD EAX,0x10af8                     ; 0059f939
     PUSH EAX                            ; 0059f93e
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 0059f93f
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 0059f93f
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 0059f944
     TEST EAX,EAX                        ; 0059f947
     SETNZ AL                            ; 0059f949

@@ -16,8 +16,8 @@
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5cac
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c7273
 ;   core_inv.cpp_CInventory_updateInventory_FUN_004dcdb0 at 004dd10a
-;   core_inv.cpp_FUN_004d9fc0 at 004d9fd1
-;   core_inv.cpp_FUN_004da020 at 004da15e
+;   core_inv.cpp_playSpsSound_FUN_004d9fc0 at 004d9fd1
+;   core_inv.cpp_updateSps_FUN_004da020 at 004da15e
 ;   ... and 7 more
 ;
 ; Called Functions:

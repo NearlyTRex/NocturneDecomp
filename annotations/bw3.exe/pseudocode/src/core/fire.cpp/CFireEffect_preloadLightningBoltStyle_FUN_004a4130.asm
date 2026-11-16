@@ -12,7 +12,7 @@
 ;   core_exorcism.cpp_CExorcism_setup_FUN_0048b690 at 0048b6c1
 ;   core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0 at 004a42ce
 ;   core_lightsta.cpp_CLightStaff_setup_FUN_004e3eb0 at 004e3efa
-;   core_weather.cpp_FUN_0057d420 at 0057d4a9
+;   core_weather.cpp_CWeather_preloadAssets_FUN_0057d420 at 0057d4a9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

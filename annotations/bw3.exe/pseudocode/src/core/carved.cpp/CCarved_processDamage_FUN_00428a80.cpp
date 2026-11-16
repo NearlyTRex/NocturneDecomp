@@ -23,7 +23,7 @@ void __cdecl core_carved_cpp_CCarved_processDamage_FUN_00428a80(CCarved *this_pt
               (0x01C6E360,"@ShotInvulnerable" + 1);
     return;
   }
-  core_carved_cpp_FUN_00428810(this_ptr,damage_info);
+  core_carved_cpp_CCarved_processDismemberment_FUN_00428810(this_ptr,damage_info);
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseVictim)((CCharacter *)this_ptr);
   iVar3 = this_ptr->part_indices[6];
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -67,7 +67,7 @@ void __cdecl core_carved_cpp_CCarved_processDamage_FUN_00428a80(CCarved *this_pt
         return;
       }
     }
-    core_carved_cpp_FUN_00428600(this_ptr);
+    core_carved_cpp_CCarved_dropAndClearTarget_FUN_00428600(this_ptr);
     iVar3 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
     core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
               (&(this_ptr->base).base.model.base,iVar3 + 0x13,1);

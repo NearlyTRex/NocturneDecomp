@@ -14,6 +14,6 @@ void __cdecl core_exorcism_cpp_CExorcism_setup_FUN_0048b690(CExorcism *this_ptr)
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_exorcism.wav");
   core_fire_cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(0x01C73654,4);
   core_fire_cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(0x01C73654,2);
-  core_charactr_cpp_FUN_0042f280(2);
+  core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(2);
   return;
 }

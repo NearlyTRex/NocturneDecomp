@@ -45,9 +45,9 @@ int __cdecl CBird::renderTransparent(CBird *this_ptr);
 // Address: 0040ff80
 void __cdecl CBird::archive(CBird *this_ptr);
 
-// Original: core_bird.cpp_FUN_00410030
+// Original: core_bird.cpp_setRandomMotionVariant_FUN_00410030
 // Address: 00410030
-undefined4 FUN_00410030(CMotionController *param_1,char *param_2);
+int __cdecl setRandomMotionVariant(CMotionController *motion_controller,char *motion_name);
 
 // Original: core_bird.cpp_CBird_processDamage_FUN_00410110
 // Address: 00410110

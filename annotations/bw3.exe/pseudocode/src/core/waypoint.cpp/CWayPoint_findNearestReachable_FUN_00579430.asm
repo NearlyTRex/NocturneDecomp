@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_004349d0 at 004349e4
+;   core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004349d0 at 004349e4
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8

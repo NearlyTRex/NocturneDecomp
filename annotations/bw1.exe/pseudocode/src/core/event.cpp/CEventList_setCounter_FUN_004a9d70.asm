@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   value
 ;
 ; XREF[2]:
-;   core_event.cpp_FUN_004a1d00 at 004a3fc3
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a3fc3
 ;   core_script.cpp_CScript_step_FUN_00544460 at 005475eb
 ;
 ; Referenced Globals:

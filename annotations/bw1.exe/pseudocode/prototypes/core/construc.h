@@ -53,9 +53,9 @@ void __cdecl CConstruct::explode(CConstruct *this_ptr);
 // Address: 004474d0
 void FUN_004474d0(int param_1);
 
-// Original: core_construc.cpp_FUN_00447560
+// Original: core_construc.cpp_CConstruct_startRecombine_FUN_00447560
 // Address: 00447560
-void FUN_00447560(int param_1);
+void __cdecl CConstruct::startRecombine(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_CConstruct_getCollisionType_FUN_00447630
 // Address: 00447630

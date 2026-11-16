@@ -12,9 +12,9 @@
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
 ;   core_hand.cpp_CHand_processStates_FUN_005a9e10
-;   core_muzzle.cpp_FUN_0059d6f0
-;   core_muzzle.cpp_FUN_0059d990
-;   core_muzzle.cpp_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_addRefState_FUN_0059d6f0
+;   core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -62,17 +62,17 @@ section .text
     PUSH 0x5f09f8                       ; 005a9cd7
     LEA ESI,[EBX + 0x10af8]             ; 005a9cdc
     PUSH ESI                            ; 005a9ce2
-    CALL core_muzzle.cpp_FUN_0059d6f0   ; 005a9ce3
-        ;   XREF to: 0059d6f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d6f0()
+    CALL core_muzzle.cpp_SStateMachine_addRefState_FUN_0059d6f0 ; 005a9ce3
+        ;   XREF to: 0059d6f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_addRefState_FUN_0059d6f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005a9ce8
     PUSH 0x5f0a06                       ; 005a9ceb
     PUSH ESI                            ; 005a9cf0
-    CALL core_muzzle.cpp_FUN_0059d990   ; 005a9cf1
-        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d990()
+    CALL core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990 ; 005a9cf1
+        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a9cf6
     PUSH ESI                            ; 005a9cf9
-    CALL core_muzzle.cpp_FUN_0059dc80   ; 005a9cfa
-        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dc80()
+    CALL core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80 ; 005a9cfa
+        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80(SStateMachine * this_ptr)
     MOV dword ptr [EBX + 0x1137c],0xffffffff ; 005a9cff
     MOV dword ptr [EBX + 0x113fc],0xffffffff ; 005a9d09
     ADD ESP,0x4                         ; 005a9d13

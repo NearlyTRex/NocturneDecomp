@@ -12,8 +12,8 @@
 ;   engine_dosio.cpp_CFileFinder_openSearch_FUN_00479360 at 0047936f
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00499ed0 at 0049a078
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_0049a0d0 at 0049a277
+;   shape_edittool.cpp_CStrList_populateRecursive_FUN_0049a300 at 0049a3a5
 ;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_0049a480 at 0049a580
-;   shape_edittool.cpp_FUN_0049a300 at 0049a3a5
 ;
 ; Referenced Globals:
 ;   void* PTR_FindClose_005d0554 = 001d0d5e

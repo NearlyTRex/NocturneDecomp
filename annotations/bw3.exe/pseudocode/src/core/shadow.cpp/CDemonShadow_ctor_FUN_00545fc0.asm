@@ -7,7 +7,7 @@
 ; CDemonShadow *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_shadow.cpp_FUN_00545f90 at 00545fa3
+;   core_shadow.cpp_factoryFuncDemonShadow_FUN_00545f90 at 00545fa3
 ;
 ; Called Functions:
 ;   core_shadow.cpp_CShadow_ctor_FUN_00543500

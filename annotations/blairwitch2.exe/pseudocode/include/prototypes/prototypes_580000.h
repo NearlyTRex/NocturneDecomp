@@ -9,7 +9,6 @@
 #include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CCryptVessel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -194,7 +193,7 @@ float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_0058a2e0(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_0058a2f0(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_0058a440(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_0058a470(CWeapon *this_ptr);
-undefined4 core_weapon_cpp_FUN_0058a5f0(int param_1);
+int __cdecl core_weapon_cpp_CWeapon_isSimulating_FUN_0058a5f0(CWeapon *this_ptr);
 void __cdecl core_weather_cpp_staticInit_FUN_0058a610(void);
 CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_0058a640(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_update_FUN_0058a660(CWeather *this_ptr);
@@ -217,7 +216,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_0058d7e0(CWerewolf *this_pt
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_0058d920(CWerewolf *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_0058dc50(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_0058dc90(CWerewolf *this_ptr,CVector3f *out_points_array);
-void core_werewolf_cpp_FUN_0058dd00(CCharacter *param_1);
+void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_0058dd00(CWerewolf *this_ptr);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_0058def0(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_0058df90(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_0058e050(CWinFont *this_ptr,uint flags);
@@ -236,7 +235,7 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_0058ead0(void);
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_0058eb40(void);
 char __cdecl wincore_winrun_cpp_getValue_FUN_0058eb60(void);
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_0058eb70(int input_value);
-void wincore_winrun_cpp_FUN_0058ebb0(undefined4 param_1);
+void __cdecl wincore_winrun_cpp_setValue_FUN_0058ebb0(int val);
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_0058ebd0(int x_coord,int y_coord);
 void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_0058ec10(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_0058ed00(void);
@@ -256,6 +255,6 @@ void __cdecl wincore_winrun_cpp_sleep_FUN_0058fd90(double seconds);
 void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdf0(char *buffer);
 void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_0058fec0(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_0058ff40(char *key_path,char *value_name,char *value_data);
-void wincore_winrun_cpp_FUN_0058ffc0(LPCSTR param_1);
+void __cdecl wincore_winrun_cpp_outputDebugString_FUN_0058ffc0(LPCSTR message);
 void __cdecl wincore_winrun_cpp_initJoystick_FUN_0058ffd0(void);
 

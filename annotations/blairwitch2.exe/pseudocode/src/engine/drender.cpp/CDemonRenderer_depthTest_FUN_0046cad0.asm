@@ -8,7 +8,7 @@
 ; SRenderVertex *  Stack[0x8]:4   vertex_ptr
 ;
 ; XREF[8]:
-;   core_bwspart.cpp_FUN_005a86a0 at 005a871d
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a871d
 ;   core_fire.cpp_CFirefly_render_FUN_00495150 at 004951b9
 ;   core_fire.cpp_CPopcorn_render_FUN_0049b9d0 at 0049ba26
 ;   core_fire.cpp_CRainDrop_render_FUN_0049bd40 at 0049bd96

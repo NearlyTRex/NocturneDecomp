@@ -38,7 +38,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
-;   core_event.cpp_FUN_004a1d00 at 004a47c0
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a47c0
 ;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500e70
 ;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 005025d0
 ;   core_weather.cpp_CWeather_update_FUN_005ae190 at 005ae46d
@@ -63,7 +63,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_004b6fe0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0057d8a0
-;   core_weather.cpp_FUN_005ae560
+;   core_weather.cpp_getCurrentCameraAmbientValue_FUN_005ae560
 ;
 ; *****************************************************************************
 
@@ -224,8 +224,8 @@ section .text
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004b6fe0 ; 005ae77c
         ;   XREF to: 004b6fe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004b6fe0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     ADD ESP,0x14                        ; 005ae781
-    CALL core_weather.cpp_FUN_005ae560  ; 005ae784
-        ;   XREF to: 005ae560 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_005ae560()
+    CALL core_weather.cpp_getCurrentCameraAmbientValue_FUN_005ae560 ; 005ae784
+        ;   XREF to: 005ae560 (UNCONDITIONAL_CALL)  ; int core_weather.cpp_getCurrentCameraAmbientValue_FUN_005ae560()
         ;   Label: LAB_005ae784
     PUSH 0x5f996e                       ; 005ae789 | s_BnoLightningFlash_005f996d+1
     MOV dword ptr [ESP + 0xac],EAX      ; 005ae78e

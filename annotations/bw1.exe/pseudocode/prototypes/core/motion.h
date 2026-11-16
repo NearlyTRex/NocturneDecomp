@@ -69,9 +69,9 @@ int __cdecl CMotionController::findPatchToFrame(CMotionController *this_ptr,int 
 // Address: 00524970
 void __cdecl CMotionController::setMotionList(CMotionController *this_ptr,CMotionList *motion_list);
 
-// Original: core_motion.cpp_FUN_005249b0
+// Original: core_motion.cpp_CMotionController_detachMotionList_FUN_005249b0
 // Address: 005249b0
-void FUN_005249b0(CMotionController *param_1);
+void __cdecl CMotionController::detachMotionList(CMotionController *this_ptr);
 
 // Original: core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 // Address: 00524a00

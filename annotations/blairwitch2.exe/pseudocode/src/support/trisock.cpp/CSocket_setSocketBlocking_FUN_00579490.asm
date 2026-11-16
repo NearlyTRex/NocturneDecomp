@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790 at 0050b7ce
-;   support_trisock.cpp_FUN_00579890 at 005799d0
-;   support_trisock.cpp_FUN_0057ad10 at 0057add4
+;   support_trisock.cpp_httpConnectToUrl_FUN_00579890 at 005799d0
+;   support_trisock.cpp_httpRequestUpdate_FUN_0057ad10 at 0057add4
 ;
 ; Called Functions:
 ;   crt_wsock32.c_ioctlsocket

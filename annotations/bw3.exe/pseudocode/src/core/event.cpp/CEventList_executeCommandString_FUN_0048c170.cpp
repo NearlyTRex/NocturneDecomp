@@ -40,7 +40,7 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0048c170(CEventLi
     }
     if (local_208 < pcVar2) {
       *pcVar2 = '\0';
-      iVar3 = core_event_cpp_FUN_0048c2e0(this_ptr,local_208);
+      iVar3 = core_event_cpp_CEventList_executeCommand_FUN_0048c2e0(this_ptr,local_208);
       if (iVar3 == 0) {
         if (_DAT_01c734ac != 0) {
           return 0;

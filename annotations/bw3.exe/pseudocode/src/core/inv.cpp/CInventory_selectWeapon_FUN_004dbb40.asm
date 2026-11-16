@@ -13,7 +13,7 @@
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004b9960 at 004b9c7d
-;   core_game.cpp_FUN_004c07b0 at 004c0a31
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c0a31
 ;   core_inv.cpp_CInventory_addItem_FUN_004da880 at 004db62d
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40 at 004dcc5b
 ;   core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430 at 005184c7

@@ -33,8 +33,8 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0
-;   core_lightpis.cpp_FUN_005016d0
-;   core_lightpis.cpp_FUN_005017f0
+;   core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0
+;   core_lightpis.cpp_isVampireType_FUN_005016d0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00559060
@@ -236,8 +236,8 @@ section .text
     ADD ESP,0x4                         ; 00501ce1
     MOV EDI,dword ptr [EBP + 0x14]      ; 00501ce4
     PUSH EDI                            ; 00501ce7
-    CALL core_lightpis.cpp_FUN_005017f0 ; 00501ce8
-        ;   XREF to: 005017f0 (UNCONDITIONAL_CALL)  ; undefined core_lightpis.cpp_FUN_005017f0()
+    CALL core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0 ; 00501ce8
+        ;   XREF to: 005017f0 (UNCONDITIONAL_CALL)  ; void core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0(CLightPis * this_ptr)
     ADD ESP,0x4                         ; 00501ced
     XOR EAX,EAX                         ; 00501cf0
     MOV dword ptr [ESP + 0x1f4],EAX     ; 00501cf2
@@ -266,8 +266,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1e4]     ; 00501d5e
         ;   Label: LAB_00501d5e
     PUSH ECX                            ; 00501d65
-    CALL core_lightpis.cpp_FUN_005016d0 ; 00501d66
-        ;   XREF to: 005016d0 (UNCONDITIONAL_CALL)  ; undefined core_lightpis.cpp_FUN_005016d0()
+    CALL core_lightpis.cpp_isVampireType_FUN_005016d0 ; 00501d66
+        ;   XREF to: 005016d0 (UNCONDITIONAL_CALL)  ; int core_lightpis.cpp_isVampireType_FUN_005016d0(CDemonActor * actor)
     ADD ESP,0x4                         ; 00501d6b
     TEST EAX,EAX                        ; 00501d6e
     JNZ 0x00501f69                      ; 00501d70
@@ -627,8 +627,8 @@ section .text
     ADD ESP,0x4                         ; 0050220b
     MOV ESI,dword ptr [ESP + 0x1e4]     ; 0050220e
     PUSH ESI                            ; 00502215
-    CALL core_lightpis.cpp_FUN_005016d0 ; 00502216
-        ;   XREF to: 005016d0 (UNCONDITIONAL_CALL)  ; undefined core_lightpis.cpp_FUN_005016d0()
+    CALL core_lightpis.cpp_isVampireType_FUN_005016d0 ; 00502216
+        ;   XREF to: 005016d0 (UNCONDITIONAL_CALL)  ; int core_lightpis.cpp_isVampireType_FUN_005016d0(CDemonActor * actor)
     ADD ESP,0x4                         ; 0050221b
     TEST EAX,EAX                        ; 0050221e
     JZ 0x00502405                       ; 00502220

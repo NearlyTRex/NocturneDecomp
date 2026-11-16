@@ -20,7 +20,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870 at 0043d95f
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00441ea0 at 00441edb
 ;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b539e
-;   core_game.cpp_FUN_004be8a0 at 004bedcd
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 at 004bedcd
 ;   core_sound.cpp_updateListeners_FUN_00558d50 at 00559222
 ;
 ; *****************************************************************************

@@ -29,10 +29,10 @@ void __cdecl initializeGameSystems(int argc,char **argv);
 // Address: 004e4c70
 void __cdecl finalizeGameSystems(void);
 
-// Original: core_main.c_FUN_004e4d00
+// Original: core_main.c_initializeTrigTables_FUN_004e4d00
 // Address: 004e4d00
-undefined8 FUN_004e4d00(void);
+void __cdecl initializeTrigTables(void);
 
-// Original: core_main.c_FUN_004e4d80
+// Original: core_main.c_freeTrigTables_FUN_004e4d80
 // Address: 004e4d80
-void FUN_004e4d80(void);
+void __cdecl freeTrigTables(void);

@@ -10,7 +10,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonSet.h"
-#include "types/classes/CGame.h"
+#include "types/classes/CInventory.h"
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
 #include "types/classes/CSentinel.h"
@@ -25,9 +25,9 @@
 // =============================================================================
 
 void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_00520140(CScat *this_ptr,int hand_index);
-void core_scat_cpp_FUN_005203c0(CDemonActor *param_1,float param_2,int param_3);
-undefined4 core_scat_cpp_FUN_00520a60(CDemonActor *param_1,CDemonActor *param_2,int param_3);
-void core_scat_cpp_FUN_00520df0(int param_1);
+void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005203c0(CScat *this_ptr,float delta_time,int is_holstered);
+float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00520a60(CScat *this_ptr,CDemonActor *target,int is_current_target);
+void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_00520df0(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00520f40(CScat *this_ptr,uint flags);
 void __cdecl core_script_cpp_staticInit_FUN_00520f90(void);
 int __cdecl core_script_cpp_validateActorVariableName_FUN_00520fd0(char *variable_name);
@@ -68,7 +68,7 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_0052a0d0(CScript *this_ptr,_F
 void __cdecl core_script_cpp_CScript_saveState_FUN_0052a400(CScript *this_ptr,_FILE *file_handle);
 uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_0052a630(CScript *this_ptr);
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_0052a690(CDeformableModel *model_ptr);
-undefined4 core_script_cpp_FUN_0052a6a0(int param_1);
+CDemonActor * __cdecl core_script_cpp_CInventory_getSelectedItem_FUN_0052a6a0(CInventory *this_ptr);
 void __cdecl core_sentinel_cpp_staticInit_FUN_0052a6c0(void);
 CSentinel * __cdecl core_sentinel_cpp_factoryFuncSentinel_FUN_0052a6f0(void);
 CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_0052a710(CSentinel *this_ptr);
@@ -82,8 +82,8 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0052b990(CSentinel *
 ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_0052bb20(CSentinel *this_ptr,SCollisionInfo *collision_info);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_0052bb40(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_0052bbe0(void);
-CGame * core_set_cpp_FUN_0052bc60(void);
-void core_set_cpp_FUN_0052bca0(int param_1);
+void __cdecl core_set_cpp_updateHighlightedActors_FUN_0052bc60(void);
+void __cdecl core_set_cpp_applyActorFlatColor_FUN_0052bca0(CDemonActor *actor);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0052bd20(CDemonSet *this_ptr);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0052c060(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_0052c090(CDemonSet *this_ptr);

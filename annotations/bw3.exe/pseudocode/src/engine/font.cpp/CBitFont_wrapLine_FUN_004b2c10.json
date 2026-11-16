@@ -1,0 +1,275 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 231,
+    "complexity_score": 189,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 109,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strlen"
+    ],
+    "total_lines": 340
+  },
+  "cross_references": [
+    {
+      "addr": "004b2e40",
+      "from_addr": "004b2e9b",
+      "name": "engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b2c10",
+    "address_range": [
+      [
+        "004b2c10",
+        "004b2e30"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_wrapLine_FUN_004b2c10",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_wrapLine_FUN_004b2c10(CBitFont *this_ptr,char *source_text,char *dest_line,int line_width,int max_pixel_width,uint flags,int *chars_consumed)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b2a80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c20be",
+      "name": "DAT_005c20be",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c20bf",
+      "name": "s_engine_font_cpp_005c20bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006074b8",
+      "name": "DAT_006074b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b2e9b",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.976190476190476,
+    "instruction_count": 168,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 2,
+      "BRANCH": 11,
+      "CALL": 1,
+      "CBRANCH": 27,
+      "COPY": 136,
+      "INT_ADD": 80,
+      "INT_AND": 144,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 123,
+      "INT_LESS": 11,
+      "INT_MULT": 2,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 61,
+      "INT_SUB": 25,
+      "INT_XOR": 4,
+      "INT_ZEXT": 1,
+      "LOAD": 57,
+      "POPCOUNT": 61,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 836
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ab090",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9791
+    },
+    "bw1.exe": {
+      "addr": "004c4030",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "source_text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "dest_line",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "line_width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "max_pixel_width",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "chars_consumed",
+        "offset": 28,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_005c20be",
+      "severity": "mild",
+      "text": "source_text = &DAT_005c20be;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_006074b8",
+      "severity": "mild",
+      "text": "for (; (((&DAT_006074b8)[(byte)(*pcVar7 + 1)] & 2) != 0 &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_006074b8",
+      "severity": "mild",
+      "text": "while ((0 < iVar8 && (((&DAT_006074b8)[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_006074b8",
+      "severity": "mild",
+      "text": "(((&DAT_006074b8)[(byte)(*pcVar7 + 1)] & 2) != 0 &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 95,
+      "match": "DAT_006074b8",
+      "severity": "mild",
+      "text": "if (((&DAT_006074b8)[(byte)(cVar1 + 1)] & 2) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 106,
+      "match": "DAT_006074b8",
+      "severity": "mild",
+      "text": "if (((((&DAT_006074b8)[(byte)(cVar1 + 1)] & 2) == 0) && ((flags & 0x10) == 0)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 25,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

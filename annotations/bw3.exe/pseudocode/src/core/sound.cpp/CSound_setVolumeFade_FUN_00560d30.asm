@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   fade_time
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_0048c2e0 at 0048ded5
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048ded5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02cf5ecc

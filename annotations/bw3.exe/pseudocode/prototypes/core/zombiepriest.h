@@ -9,13 +9,13 @@
 // Address: 0058d2c0
 void __cdecl staticInit(void);
 
-// Original: core_zombiepriest.cpp_FUN_0058d2f0
+// Original: core_zombiepriest.cpp_getObjectGrabPointLocal_FUN_0058d2f0
 // Address: 0058d2f0
-void FUN_0058d2f0(int param_1);
+CVector3f * __stack_esi getObjectGrabPointLocal(CDemonActor *actor,CVector3f *out_point);
 
-// Original: core_zombiepriest.cpp_FUN_0058d3b0
+// Original: core_zombiepriest.cpp_getObjectGrabPointWorld_FUN_0058d3b0
 // Address: 0058d3b0
-void FUN_0058d3b0(CDemonActor *param_1);
+CVector3f * __stack_esi getObjectGrabPointWorld(CDemonActor *actor,CVector3f *out_point);
 
 // Original: core_zombiepriest.cpp_factoryFuncZombiePriest_FUN_0058d4b0
 // Address: 0058d4b0
@@ -61,9 +61,9 @@ void __cdecl CZombiePriest::archive(CZombiePriest *this_ptr);
 // Address: 0058f610
 undefined4 FUN_0058f610(void);
 
-// Original: core_zombiepriest.cpp_FUN_0058f630
+// Original: core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630
 // Address: 0058f630
-void FUN_0058f630(CCharacter *param_1,float *param_2);
+void __cdecl CZombiePriest::processDismemberment(CZombiePriest *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_processDamage_FUN_0058f990
 // Address: 0058f990

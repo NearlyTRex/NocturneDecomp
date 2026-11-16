@@ -70,7 +70,8 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
   fVar5 = (this_ptr->base).speed;
   iVar9 = pSVar10->state_index;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar5);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar5);
   if (iVar9 == 2) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005d9872;
   }
@@ -160,7 +161,7 @@ LAB_00598b04:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_00598b24:
-  core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
   fStack_48 = (this_ptr->base).base.velocity.x * delta_time;
   fStack_44 = (this_ptr->base).base.velocity.y * delta_time;
   fStack_40 = (this_ptr->base).base.velocity.z * delta_time;

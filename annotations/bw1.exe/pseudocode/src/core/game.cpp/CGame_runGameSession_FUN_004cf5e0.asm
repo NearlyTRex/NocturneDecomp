@@ -592,8 +592,8 @@ section .text
     MOV ESI,dword ptr [0x0061f650]      ; 004cfc9c | DAT_0061f650
         ;   Label: LAB_004cfc9c
     PUSH ESI                            ; 004cfca2 | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051c410  ; 004cfca3
-        ;   XREF to: 0051c410 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051c410()
+    CALL core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_0051c410 ; 004cfca3
+        ;   XREF to: 0051c410 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_0051c410(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004cfca8
     PUSH 0x0                            ; 004cfcab
     MOV EDI,dword ptr [0x0061f2a4]      ; 004cfcad | DAT_0061f2a4
@@ -989,8 +989,8 @@ section .text
         ;   XREF to: 004d012c (CONDITIONAL_JUMP)  ; LAB_004d012c
     MOV EBX,dword ptr [EBP + 0x14]      ; 004d0101
     PUSH EBX                            ; 004d0104
-    CALL core_game.cpp_FUN_004d5e80     ; 004d0105
-        ;   XREF to: 004d5e80 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d5e80()
+    CALL core_game.cpp_CGame_resetIrisFade_FUN_004d5e80 ; 004d0105
+        ;   XREF to: 004d5e80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetIrisFade_FUN_004d5e80(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d010a
     MOV ESI,dword ptr [0x00622ad0]      ; 004d010d | g_CScriptPtr
     PUSH ESI                            ; 004d0113 | g_CScriptInstance

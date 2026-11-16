@@ -17,7 +17,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004e4e20(void)
   core_dmodel_cpp_freeAllModels_FUN_0044fc50();
   core_skeleton_cpp_freeAllModels_FUN_00548f80();
   core_skeleton_cpp_freeAllSkeletons_FUN_00549090();
-  core_marquee_cpp_FUN_004e86a0();
+  core_marquee_cpp_freeTrigTables_FUN_004e86a0();
   wincore_winrun_cpp_endPeriod_FUN_0058e9d0();
   engine_2d_c_cleanupGraphicsSystem_FUN_00401120();
   engine_3d_c_freeTextureCache_FUN_004037f0();

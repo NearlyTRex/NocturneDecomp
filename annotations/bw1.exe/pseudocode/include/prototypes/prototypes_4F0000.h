@@ -9,6 +9,7 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CGoggles.h"
 #include "types/classes/CHighPriestOfGardath.h"
 #include "types/classes/CHotDemon.h"
 #include "types/classes/CIcePick.h"
@@ -108,8 +109,8 @@ void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(CIniFile *this_ptr,
 void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004f4d70(CIniFile *this_ptr,char *key,int value);
 void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004f4db0(CIniFile *this_ptr,char *key,float *output);
 void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004f4e20(CIniFile *this_ptr,char *key,float value);
-void engine_ini_cpp_FUN_004f4e70(void);
-void engine_ini_cpp_FUN_004f4ee0(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_getDouble_FUN_004f4e70(CIniFile *this_ptr,char *key,double *output);
+void __cdecl engine_ini_cpp_CIniFile_setDoubleValue_FUN_004f4ee0(CIniFile *this_ptr,char *key,double value);
 CIni * __cdecl engine_ini_cpp_CIni_ctor_FUN_004f4f30(CIni *this_ptr);
 CIni * __cdecl engine_ini_cpp_CIni_dtor_FUN_004f4f40(CIni *this_ptr,uint flags);
 void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void);
@@ -119,10 +120,10 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004f60c0(CDemonA
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDescription_FUN_004f6350(CDemonActor *actor_ptr);
 void core_inv_cpp_FUN_004f63c0(float param_1,float param_2);
-void core_inv_cpp_FUN_004f64f0(void);
-void core_inv_cpp_FUN_004f6560(void);
-undefined4 core_inv_cpp_FUN_004f6b50(int param_1,char *param_2);
-void core_inv_cpp_FUN_004f6bb0(void);
+void __cdecl core_inv_cpp_renderSps_FUN_004f64f0(void);
+void __cdecl core_inv_cpp_renderCompass_FUN_004f6560(void);
+int __cdecl core_inv_cpp_playSpsSound_FUN_004f6b50(CCharacter *character,char *sound_name);
+void __cdecl core_inv_cpp_updateSps_FUN_004f6bb0(void);
 int __cdecl core_inv_cpp_loadItem_FUN_004f6e90(SInventoryItemInfo *item_info,_FILE *file_handle);
 CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004f6ed0(CInventory *this_ptr);
 CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004f6f80(CInventory *this_ptr,uint flags);
@@ -148,7 +149,7 @@ void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004f9ae0(CInventory *this_ptr
 void __cdecl core_inv_cpp_setupItems_FUN_004f9b20(CInventory *this_ptr);
 int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDemonActor *actor_ptr);
 CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004f9ed0(CInventory *this_ptr);
-int core_inv_cpp_FUN_004f9ef0(int param_1);
+CGoggles * __cdecl core_inv_cpp_CInventory_getActiveGoggles_FUN_004f9ef0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004f9f10(CInventory *this_ptr);
 float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004fa470(CInventory *this_ptr,float max_charge);
 void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0(CInventory *this_ptr,int ammo_type);

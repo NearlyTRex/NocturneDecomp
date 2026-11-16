@@ -10,7 +10,7 @@
 ; SDamageInfo *    Stack[0x10]:4   damage_info
 ;
 ; XREF[22]:
-;   core_basicene.cpp_FUN_0059f740 at 0059f7e3
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 at 0059f7e3
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411de8
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004137e2
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418e6f

@@ -98,7 +98,8 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_0056f6d0(CSuccubus *this_pt
   }
   fVar19 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar19);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+            ((CCharacter *)this_ptr,delta_time * fVar19);
   pCStack_1c = &(this_ptr->base).base.model.base;
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(pCStack_1c);
   uVar12 = pSVar10->state_index;
@@ -219,7 +220,7 @@ LAB_0056f82c:
   }
   iVar9 = core_charactr_cpp_CCharacter_isOnGround_FUN_00424430((CCharacter *)this_ptr);
   if (iVar9 != 0) {
-    core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     fStack_88 = (this_ptr->base).base.velocity.x * delta_time;
     fStack_84 = (this_ptr->base).base.velocity.y * delta_time;
     fStack_80 = (this_ptr->base).base.velocity.z * delta_time;

@@ -13,7 +13,7 @@ CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1
 {
   CSimpleParticleSystem *this_ptr_00;
   CFlame *pCVar1;
-  int iVar2;
+  SFollowFormation *pSVar2;
   CClothList *pCVar3;
   CDeformableModelInstance *pCVar4;
   CConfederateZombie *pCVar5;
@@ -29,8 +29,10 @@ CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1
   core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(this_ptr_00,0);
   core_bwspart_cpp_CSimpleParticleSystem_release_FUN_005a8220(this_ptr_00);
   pCVar1 = core_armour_cpp_CFlame_arrdtor50_FUN_0040f2b0((this_ptr->base).base.base.flames,0);
-  iVar2 = core_muzzle_cpp_FUN_0059df70(&pCVar1[-3].base.particle_systems[3].max_particles,0);
-  pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
+  pSVar2 = core_muzzle_cpp_SFollowFormation_dtor_FUN_0059df70
+                     ((SFollowFormation *)&pCVar1[-3].base.particle_systems[3].max_particles,0);
+  pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_005b1480
+                     ((CClothList *)&pSVar2[-1].slots[2].offset.y,0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);
   pCVar5 = (CConfederateZombie *)

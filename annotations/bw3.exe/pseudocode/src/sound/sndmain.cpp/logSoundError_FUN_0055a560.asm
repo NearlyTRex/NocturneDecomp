@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005a2898
-;   wincore_winrun.cpp_FUN_00581c70
+;   wincore_winrun.cpp_outputDebugString_FUN_00581c70
 ;
 ; *****************************************************************************
 
@@ -50,17 +50,17 @@ section .text
     XOR ECX,ECX                         ; 0055a591
     PUSH 0x5d3fb3                       ; 0055a593 | = "SOUND: "
     MOV dword ptr [ESP + 0x404],ECX     ; 0055a598
-    CALL wincore_winrun.cpp_FUN_00581c70 ; 0055a59f
-        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00581c70()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_00581c70 ; 0055a59f
+        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_00581c70(LPCSTR message)
     ADD ESP,0x4                         ; 0055a5a4
     MOV EAX,ESP                         ; 0055a5a7
     PUSH EAX                            ; 0055a5a9
-    CALL wincore_winrun.cpp_FUN_00581c70 ; 0055a5aa
-        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00581c70()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_00581c70 ; 0055a5aa
+        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_00581c70(LPCSTR message)
     ADD ESP,0x4                         ; 0055a5af
     PUSH 0x5d3fbb                       ; 0055a5b2 | DAT_005d3fbb
-    CALL wincore_winrun.cpp_FUN_00581c70 ; 0055a5b7
-        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00581c70()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_00581c70 ; 0055a5b7
+        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_00581c70(LPCSTR message)
     ADD ESP,0x4                         ; 0055a5bc
     ADD ESP,0x404                       ; 0055a5bf
     RET                                 ; 0055a5c5

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   text_string
 ;
 ; XREF[9]:
-;   core_flashlit.cpp_FUN_004a1570 at 004a1618
+;   core_flashlit.cpp_updateTooltip_FUN_004a1570 at 004a1618
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0 at 004eb1ec
 ;   shape_edittool.cpp_CEdButton_paint_FUN_00484f20 at 00484f7b
 ;   shape_edittool.cpp_CEdCheck_render_FUN_00485610 at 0048566a

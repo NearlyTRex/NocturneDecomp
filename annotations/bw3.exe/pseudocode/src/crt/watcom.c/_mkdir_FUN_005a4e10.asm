@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bdacb
-;   engine_dosio.cpp_FUN_00466190 at 004661de
+;   engine_dosio.cpp_createDirectoryTree_FUN_00466190 at 004661de
 ;   engine_dosio.cpp_reopenFileStream_FUN_00465a80 at 00465ad7
 ;
 ; Referenced Globals:

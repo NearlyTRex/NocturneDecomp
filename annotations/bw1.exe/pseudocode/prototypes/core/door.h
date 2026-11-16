@@ -29,9 +29,9 @@ void __cdecl CDoor::setup(CDoor *this_ptr);
 // Address: 004774d0
 void __cdecl CDoor::onOpened(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_004774f0
+// Original: core_door.cpp_CDoor_setState_FUN_004774f0
 // Address: 004774f0
-void FUN_004774f0(CDoor *param_1,EDoorState param_2);
+void __cdecl CDoor::setState(CDoor *this_ptr,EDoorState state);
 
 // Original: core_door.cpp_CDoor_reposition_FUN_00477540
 // Address: 00477540
@@ -53,9 +53,9 @@ void __cdecl CDoor::renderBackground(CDoor *this_ptr,int layer_flag);
 // Address: 00478390
 CBoundingBox3D * __stack_esi CDoor::getBoundingBox(CDoor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_door.cpp_FUN_004783d0
+// Original: core_door.cpp_CDoor_getHandlePosition_FUN_004783d0
 // Address: 004783d0
-void FUN_004783d0(CDemonActor *param_1);
+CVector3f * __stack_esi CDoor::getHandlePosition(CDoor *this_ptr,CVector3f *out_position);
 
 // Original: core_door.cpp_CDoor_archive_FUN_00478490
 // Address: 00478490

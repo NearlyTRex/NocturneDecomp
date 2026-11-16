@@ -1,0 +1,50 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter *this_ptr,float delta_time)
+;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+;
+; XREF[34]:
+;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fae2
+;   core_basicene.cpp_CBasicEnemy_processMovement_FUN_0059f0e0 at 0059f20c
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411b51
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413083
+;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 00414f5a
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418bd4
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e633
+;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435d28
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 0043740b
+;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439419
+;   ... and 24 more
+;
+; Referenced Globals:
+;   undefined4 DAT_005ccc76
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 00423a10
+        ;   Label: core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
+    CMP dword ptr [EAX + 0x2814],0x0    ; 00423a14
+    JNZ 0x00423a3d                      ; 00423a1b
+        ;   XREF to: 00423a3d (CONDITIONAL_JUMP)  ; LAB_00423a3d
+    CMP dword ptr [EAX + 0x256c],0x0    ; 00423a1d
+    JZ 0x00423a3d                       ; 00423a24
+        ;   XREF to: 00423a3d (CONDITIONAL_JUMP)  ; LAB_00423a3d
+    FLD float ptr [ESP + 0x8]           ; 00423a26
+    FMUL float ptr [0x005ccc76]         ; 00423a2a | DAT_005ccc76
+    FADD float ptr [EAX + 0x258c]       ; 00423a30
+    FSTP float ptr [EAX + 0x258c]       ; 00423a36
+    RET                                 ; 00423a3c
+    MOV dword ptr [EAX + 0x2590],0x0    ; 00423a3d
+        ;   Label: LAB_00423a3d
+    MOV EDX,dword ptr [EAX + 0x2590]    ; 00423a47
+    MOV dword ptr [EAX + 0x258c],EDX    ; 00423a4d
+    MOV EDX,dword ptr [EAX + 0x258c]    ; 00423a53
+    MOV dword ptr [EAX + 0x2588],EDX    ; 00423a59
+    RET                                 ; 00423a5f
+

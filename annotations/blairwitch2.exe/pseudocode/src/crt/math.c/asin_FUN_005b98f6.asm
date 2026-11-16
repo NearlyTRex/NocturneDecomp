@@ -7,7 +7,7 @@
 ; XREF[8]:
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0 at 00449784
 ;   core_dirmat.cpp_angleFromSinCos_FUN_00449610 at 00449638
-;   core_muzzle.cpp_FUN_0059dd00 at 0059de8e
+;   core_muzzle.cpp_SFollowFormation_updateSlot_FUN_0059dd00 at 0059de8e
 ;   core_xform.cpp_angleFromSinCos_FUN_00591d10 at 00591d35
 ;   core_xform.cpp_matrixToEulerAnglesZYX_FUN_00592280 at 00592396
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0 at 00591ef4

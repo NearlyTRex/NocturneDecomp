@@ -11,7 +11,7 @@
 ;   WatcomTypeInfo g_CBurncrossTypeInfo
 ;
 ; Called Functions:
-;   core_burncrss.cpp_FUN_00425490
+;   core_burncrss.cpp_CFlame_arrdtor8_FUN_00425490
 ;   core_weapon.cpp_CWeapon_dtor_FUN_0057aed0
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 0042542c
     ADD EBX,0x5a8                       ; 0042542e
     PUSH EBX                            ; 00425434
-    CALL core_burncrss.cpp_FUN_00425490 ; 00425435
-        ;   XREF to: 00425490 (UNCONDITIONAL_CALL)  ; undefined core_burncrss.cpp_FUN_00425490()
+    CALL core_burncrss.cpp_CFlame_arrdtor8_FUN_00425490 ; 00425435
+        ;   XREF to: 00425490 (UNCONDITIONAL_CALL)  ; CFlame * core_burncrss.cpp_CFlame_arrdtor8_FUN_00425490(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0042543a
     PUSH 0x1                            ; 0042543d
     LEA EBX,[EAX + 0xfffffa58]          ; 0042543f

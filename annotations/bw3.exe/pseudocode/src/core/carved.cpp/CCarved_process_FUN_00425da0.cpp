@@ -230,7 +230,8 @@ LAB_00425e3e:
           pCVar10 = this_ptr->pickup_target;
           if (pCVar10 != (CDemonActor *)0x0) {
             this_ptr->pickup_target = (CDemonActor *)0x0;
-            iVar5 = core_carved_cpp_FUN_00428520();
+            iVar5 = core_carved_cpp_CCarved_getPickupHandIndex_FUN_00428520
+                              (this_ptr,this_ptr->object_shape_class);
             if (-1 < iVar5) {
               core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
                         ((CCharacter *)this_ptr,iVar5,pCVar10,0.2,(CMatrix3x4f *)0x0);
@@ -302,13 +303,13 @@ LAB_00425e7b:
                iVar5 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabbed)
                                  (pCVar2,(CDemonActor *)this_ptr,0), iVar5 != 0)) {
               if (iStack_18 == 0) {
-                core_carved_cpp_FUN_00429090();
+                core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
               }
               goto LAB_00425e3e;
             }
           }
         }
-        core_carved_cpp_FUN_00429090();
+        core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
         goto LAB_00425e3e;
       }
       if (uVar6 != 10) {
@@ -336,7 +337,7 @@ LAB_00425e7b:
           fVar22 = CStack_30c.x - (pCVar2->base).location.position.x;
           fVar4 = CStack_30c.z - (pCVar2->base).location.position.z;
           if ((float)_DAT_005b7c87 < SQRT(fVar4 * fVar4 + fVar22 * fVar22)) {
-            core_carved_cpp_FUN_00429090();
+            core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
             goto LAB_00425e3e;
           }
         }
@@ -345,7 +346,7 @@ LAB_00425e7b:
           pCVar7 = (CCarved *)(*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2);
           if (pCVar7 != this_ptr) {
             in_stack_fffffb38 = this_ptr;
-            core_carved_cpp_FUN_00429090();
+            core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
             goto LAB_00425e3e;
           }
         }
@@ -369,7 +370,7 @@ LAB_00425e7b:
         if (0 < (int)EVar8) {
           pCVar2 = (this_ptr->base).victim;
           (*(((pCVar2->base).vtable._uc)->_uc).releaseFromGrab)(pCVar2);
-          core_carved_cpp_FUN_00429090();
+          core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
         }
         in_stack_fffffb40 = "ghoul-eat-?.wav";
         in_stack_fffffb38 = (CCarved *)0x4262c8;
@@ -377,10 +378,10 @@ LAB_00425e7b:
                   ((CDemonActor *)this_ptr,"ghoul-eat-?.wav");
         goto LAB_00425e3e;
       }
-      core_carved_cpp_FUN_00429090();
+      core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
     }
     else if (uVar6 < 0xc) {
-      iVar5 = core_carved_cpp_FUN_00428520();
+      iVar5 = core_carved_cpp_CCarved_getPickupHandIndex_FUN_00428520(this_ptr,2);
       if (iVar5 < 0) {
         _DAT_01d71de0 = "..\\core\\carved.cpp";
         _DAT_01d71de4 = 0x1e6;
@@ -400,7 +401,7 @@ LAB_00425e7b:
       }
     }
     else if (uVar6 < 0xd) {
-      iStack_30 = core_carved_cpp_FUN_00428520();
+      iStack_30 = core_carved_cpp_CCarved_getPickupHandIndex_FUN_00428520(this_ptr,3);
       if (iStack_30 < 0) {
         _DAT_01d71de0 = "..\\core\\carved.cpp";
         _DAT_01d71de4 = 0x1fd;
@@ -579,8 +580,10 @@ LAB_00425e7b:
     }
     goto LAB_00425e3e;
   }
+  fVar22 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850();
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar22);
   if (((((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] == 0) &&
        ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] == 0)) ||
       ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0)) &&
@@ -619,7 +622,7 @@ LAB_00426d3d:
       }
       goto LAB_00426d3d;
     }
-    core_carved_cpp_FUN_00429090();
+    core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
     goto LAB_004269b6;
   }
   fStack_34 = -1.0;
@@ -633,7 +636,7 @@ LAB_00426d3d:
     if (iVar5 == 0) {
       iVar5 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
       if (iVar5 != 0) {
-        core_carved_cpp_FUN_00429090();
+        core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
       }
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
@@ -644,7 +647,7 @@ LAB_00426d3d:
         (this_ptr->base).victim = *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
       }
       if ((this_ptr->base).victim != (CCharacter *)0x0) {
-        core_carved_cpp_FUN_00429090();
+        core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
         in_stack_fffffb38 = (CCarved *)0x426f46;
         iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[1]);
         if (iVar5 == 0) {
@@ -710,12 +713,12 @@ LAB_00426d3d:
         this_ptr->sfx_handles[1] = uVar6;
       }
       in_stack_fffffb38 = (CCarved *)0x4270b7;
-      core_carved_cpp_FUN_00429090();
+      core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
     }
     else {
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,0x32);
       if (iVar5 == 1) {
-        core_carved_cpp_FUN_00429090();
+        core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
       }
       uStack_38 = (uint)((this_ptr->base).base.model.part_data.visibility_flags
                          [this_ptr->part_indices[1]] != 0);
@@ -723,10 +726,10 @@ LAB_00426d3d:
         uStack_38 = uStack_38 + 1;
       }
       in_stack_fffffb38 = this_ptr;
-      iVar5 = core_carved_cpp_FUN_00427bc0();
+      iVar5 = core_carved_cpp_CCarved_processPickup_FUN_00427bc0(this_ptr,delta_time);
       if (iVar5 == 0) {
         fStack_58 = 0x3FA66666;
-        iStack_50 = core_carved_cpp_FUN_00428520();
+        iStack_50 = core_carved_cpp_CCarved_getPickupHandIndex_FUN_00428520(this_ptr,1);
         if (((-1 < iStack_50) &&
             (pCVar10 = (this_ptr->base).base.carry_hands[iStack_50].carry_actor,
             pCVar10 != (CDemonActor *)0x0)) && (this_ptr->object_shape_class == 1)) {
@@ -777,7 +780,8 @@ LAB_00426d3d:
         }
         else if (iVar5 < 1) {
           in_stack_fffffb38 = (CCarved *)0x427394;
-          iStack_4c = core_carved_cpp_FUN_00428520();
+          iStack_4c = core_carved_cpp_CCarved_getPickupHandIndex_FUN_00428520
+                                (this_ptr,this_ptr->object_shape_class);
           pCVar2 = (this_ptr->base).victim;
           fStack_1b0 = (this_ptr->base).base.base.location.position.x -
                        (pCVar2->base).location.position.x;
@@ -843,7 +847,7 @@ LAB_00426d3d:
     break;
   case 0xb:
     if ((this_ptr->base).victim == (CCharacter *)0x0) goto LAB_00427596;
-    iVar5 = core_carved_cpp_FUN_00428520();
+    iVar5 = core_carved_cpp_CCarved_getPickupHandIndex_FUN_00428520(this_ptr,1);
     if (((-1 < iVar5) &&
         (pCVar2 = (this_ptr->base).victim,
         EVar8 = (*(((pCVar2->base).vtable._uc)->_uc).getDeathState)(pCVar2), (int)EVar8 < 1)) &&
@@ -886,7 +890,7 @@ LAB_00426d3d:
       }
     }
     engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s gave up swing\n");
-    core_carved_cpp_FUN_00429090();
+    core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
     break;
   case 0xc:
     pCVar2 = (this_ptr->base).victim;
@@ -902,7 +906,7 @@ LAB_00426d3d:
       }
       else if (pCVar7 != this_ptr) {
         in_stack_fffffb38 = (CCarved *)0x4275b2;
-        core_carved_cpp_FUN_00429090();
+        core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
       }
       pCVar2 = (this_ptr->base).victim;
       fStack_330 = (this_ptr->base).base.base.location.position.x -
@@ -920,7 +924,7 @@ LAB_00426d3d:
       break;
     }
 LAB_00427596:
-    core_carved_cpp_FUN_00429090();
+    core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
     break;
   case 0x16:
     if (((this_ptr->base).pool_me == 0) &&
@@ -950,8 +954,10 @@ LAB_00427596:
     }
   }
   if ((0.0 <= fStack_34) && ((this_ptr->base).victim != (CCharacter *)0x0)) {
+    fVar22 = (this_ptr->base).speed;
     (this_ptr->base).base.walk_step_speed = fStack_40 * (this_ptr->base).speed * delta_time;
-    core_charactr_cpp_FUN_00434850();
+    core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+              ((CCharacter *)this_ptr,delta_time * fVar22);
     fVar22 = 0.7853982;
     pCVar21 = (CVector3f *)0x40400000;
     uStack_378 = 0;
@@ -964,7 +970,7 @@ LAB_00427596:
                        pCVar9,pCVar21,fVar22,(float)in_stack_fffffb38);
     if (iVar5 != 1) {
       engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s giving up attack\n");
-      core_carved_cpp_FUN_00429090();
+      core_carved_cpp_CCarved_resetChaseState_FUN_00429090(this_ptr);
       (this_ptr->base).base.turn_angle_accumulator = 0.0;
     }
   }
@@ -981,7 +987,7 @@ LAB_004269b6:
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042c1e0();
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     fStack_168 = (this_ptr->base).base.velocity.x * delta_time;
     afStack_164[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_164[1] = (this_ptr->base).base.velocity.z * delta_time;
@@ -1045,7 +1051,7 @@ LAB_004269b6:
               ((CCharacter *)this_ptr,iVar5,bone_index,fVar22);
     core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042fc90((CCharacter *)this_ptr);
   }
-  iVar5 = core_carved_cpp_FUN_00428520();
+  iVar5 = core_carved_cpp_CCarved_getPickupHandIndex_FUN_00428520(this_ptr,1);
   if (((iStack_48 != 0) && (-1 < iVar5)) &&
      (pCVar10 = (this_ptr->base).base.carry_hands[iVar5].carry_actor, pCVar10 != (CDemonActor *)0x0)
      ) {

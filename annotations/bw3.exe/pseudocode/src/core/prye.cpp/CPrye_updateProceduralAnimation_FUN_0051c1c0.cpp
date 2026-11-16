@@ -156,10 +156,8 @@ void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *t
   byte local_378 [12];
   CMotionController_vtable *local_36c [3];
   CVector3f local_360;
-  float local_354;
-  float fStack_350;
-  CVector3f CStack_34c;
-  float local_33c;
+  byte local_354 [12];
+  float local_348 [4];
   float local_338;
   CVector3f local_334;
   float fStack_328;
@@ -233,8 +231,8 @@ void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *t
   CVector3f local_f4;
   float fStack_e0;
   float afStack_dc [4];
-  float local_cc;
-  CVector3f CStack_c4;
+  byte local_cc [12];
+  float afStack_c0 [2];
   CVector3f CStack_b8;
   CVector3f CStack_ac;
   CVector3f local_9c;
@@ -288,18 +286,20 @@ void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *t
       (local_1c == (CDeformableModelInstance *)0x2a)) ||
      (local_1c == (CDeformableModelInstance *)0x27)) {
     local_24 = &this_ptr->carry_object_world_center;
-    if ((this_ptr->base).door_to_open == (CDoor *)0x0) {
-      core_door_cpp_FUN_00464c10();
-      local_378._0_4_ = local_354;
-      *(float *)(local_378 + (uint)bVar10 * -8 + 4) = (&fStack_350)[(uint)bVar10 * -2];
+    pCVar1 = (this_ptr->base).door_to_open;
+    if (pCVar1 == (CDoor *)0x0) {
+      core_door_cpp_CDoor_getHandlePosition_FUN_00464c10(_DAT_01ed36a8,(CVector3f *)local_354);
+      local_378._0_4_ = local_354._0_4_;
+      *(uint *)(local_378 + (uint)bVar10 * -8 + 4) =
+           *(uint *)(local_354 + (uint)bVar10 * -8 + 4);
       local_36c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + -1] =
-           *(CMotionController_vtable **)((int)&CStack_34c + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+           (CMotionController_vtable *)local_348[(uint)bVar10 * -2 + (uint)bVar10 * -2 + -1];
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                 ((CDemonActor *)this_ptr,(CVector3f *)local_378,&local_360);
       local_12c = (CMotionController_vtable *)local_360.x;
-      local_144[(uint)bVar10 * -2 + 7] = *(float *)((int)&local_360 + (uint)bVar10 * -8 + 4);
+      local_144[(uint)bVar10 * -2 + 7] = *(float *)(local_354 + (uint)bVar10 * -8 + -8);
       *(uint *)((int)&local_124 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-           *(uint *)((int)&local_360 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+           *(uint *)(local_354 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -4);
       if ((CVector3f *)(local_144 + 6) != local_24) {
         local_24->x = (float)local_12c;
         local_24->y = local_128;
@@ -307,11 +307,12 @@ void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *t
       }
     }
     else {
-      core_door_cpp_FUN_00464c10();
-      local_2a0.x = local_cc;
-      *(float *)((int)&local_2a0 + (uint)bVar10 * -8 + 4) = afStack_dc[(uint)bVar10 * -2 + 5];
-      *(uint *)((int)&local_2a0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-           *(uint *)((int)&CStack_c4 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+      core_door_cpp_CDoor_getHandlePosition_FUN_00464c10(pCVar1,(CVector3f *)local_cc);
+      local_2a0.x = (float)local_cc._0_4_;
+      *(uint *)((int)&local_2a0 + (uint)bVar10 * -8 + 4) =
+           *(uint *)(local_cc + (uint)bVar10 * -8 + 4);
+      *(float *)((int)&local_2a0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+           afStack_c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + -1];
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                 ((CDemonActor *)this_ptr,&local_2a0,&local_9c);
       pCVar3 = local_24;
@@ -341,7 +342,7 @@ void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *t
     (&local_280)[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
          (CMotionController_vtable *)local_144[(uint)bVar10 * -2 + (uint)bVar10 * -2 + -1];
     fVar15 = fVar15 - local_290[2];
-    local_33c = fVar15;
+    local_348[3] = fVar15;
     local_338 = local_104[3] - local_290[3];
     local_334.x = local_f4.x - (float)local_280;
     local_294 = fVar15;
@@ -495,12 +496,12 @@ void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *t
       (this_ptr->door_align_offset).y = 0.0;
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
                 ((CDemonActor *)this_ptr,&pCVar1->open_position,&CStack_214);
-      CStack_34c.x = CStack_214.x;
-      *(uint *)((int)&CStack_34c + (uint)bVar10 * -8 + 4) =
-           *(uint *)((int)&CStack_214 + (uint)bVar10 * -8 + 4);
-      *(uint *)((int)&CStack_34c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-           *(uint *)((int)&CStack_214 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_34c,&CStack_310);
+      local_354._8_4_ = CStack_214.x;
+      local_348[(uint)bVar10 * -2] = *(float *)((int)&CStack_214 + (uint)bVar10 * -8 + 4);
+      local_348[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+           *(float *)((int)&CStack_214 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
+                ((CVector3f *)(local_354 + 8),&CStack_310);
       local_388 = CStack_310.x;
       local_39c[(uint)bVar10 * -2 + 6] = *(float *)((int)&CStack_310 + (uint)bVar10 * -8 + 4);
       local_39c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
@@ -704,11 +705,12 @@ void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *t
     local_25c = fVar15 - afStack_178[0];
     afStack_258[0] = fStack_240 - afStack_178[1];
     afStack_258[1] = fStack_23c - afStack_178[2];
-    CStack_c4.x = fVar15 - afStack_178[0];
-    *(float *)((int)&CStack_c4 + (uint)bVar10 * -8 + 4) = afStack_258[(uint)bVar10 * -2];
-    *(float *)((int)&CStack_c4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+    local_cc._8_4_ = fVar15 - afStack_178[0];
+    afStack_c0[(uint)bVar10 * -2] = afStack_258[(uint)bVar10 * -2];
+    afStack_c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
          afStack_258[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&CStack_c4,&CStack_448);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250
+              ((CVector3f *)(local_cc + 8),&CStack_448);
     pCVar13 = local_18;
     fStack_238 = CStack_448.x;
     afStack_258[(uint)bVar10 * -2 + 9] = *(float *)((int)&CStack_448 + (uint)bVar10 * -8 + 4);
@@ -1155,7 +1157,7 @@ LAB_0051cae3:
     if (1.0 < _DAT_01ed36d8) {
       _DAT_01ed36d8 = 1.0;
     }
-    pcVar16 = core_prye_cpp_FUN_00517c90;
+    pcVar16 = core_prye_cpp_aimBlendWeightCallback_FUN_00517c90;
     fVar15 = this_ptr->frame_cleared;
     iVar17 = _DAT_01ed36e0;
     core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(this_ptr->aim_pitch,&CStack_544);

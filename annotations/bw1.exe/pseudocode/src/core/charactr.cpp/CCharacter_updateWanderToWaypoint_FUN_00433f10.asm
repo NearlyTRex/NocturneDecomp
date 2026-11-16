@@ -19,9 +19,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
+;   core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0
+;   core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
-;   core_charactr.cpp_FUN_00435380
-;   core_charactr.cpp_FUN_004354a0
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
     PUSH ECX                            ; 00433fa0
         ;   Label: LAB_00433fa0
     PUSH EBX                            ; 00433fa1
-    CALL core_charactr.cpp_FUN_00435380 ; 00433fa2
-        ;   XREF to: 00435380 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435380()
+    CALL core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380 ; 00433fa2
+        ;   XREF to: 00435380 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380(CCharacter * this_ptr, char * name_pattern)
     MOV dword ptr [EBX + 0x277c],EAX    ; 00433fa7
     ADD ESP,0x8                         ; 00433fad
         ;   Label: LAB_00433fad
@@ -123,8 +123,8 @@ section .text
         ;   XREF to: 00433fa0 (CONDITIONAL_JUMP)  ; LAB_00433fa0
     PUSH EDI                            ; 00434030
     PUSH EBX                            ; 00434031
-    CALL core_charactr.cpp_FUN_004354a0 ; 00434032
-        ;   XREF to: 004354a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004354a0()
+    CALL core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0 ; 00434032
+        ;   XREF to: 004354a0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0(CCharacter * this_ptr, CWayPoint * target_waypoint)
     JMP 0x00433fad                      ; 00434037
         ;   XREF to: 00433fad (UNCONDITIONAL_JUMP)  ; LAB_00433fad
     PUSH 0x41200000                     ; 0043403c

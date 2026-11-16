@@ -150,7 +150,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr
     }
     _DAT_0203aec4 = 0;
     if (0.0 < this_ptr->directional_light_intensity) {
-      core_dcamera_cpp_FUN_0044dd00();
+      core_dcamera_cpp_CDemonCamera_addDirectionalLightMap_FUN_0044dd00(&g_CDemonCameraInstance);
     }
   }
   if (g_CGamePtr->profile_mode != 0) {

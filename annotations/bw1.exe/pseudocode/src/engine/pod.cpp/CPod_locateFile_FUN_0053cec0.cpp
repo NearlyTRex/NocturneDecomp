@@ -15,7 +15,7 @@ CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_0053cec0(CPod *this_ptr,ch
   char acStack_224 [532];
   
   iVar2 = 0;
-  engine_dosio_cpp_FUN_00478e20(acStack_224,base_path,filename);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00478e20(acStack_224,base_path,filename);
   pCVar3 = this_ptr;
   if (0 < this_ptr->pod_file_count) {
     do {

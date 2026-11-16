@@ -69,7 +69,8 @@ void __cdecl core_hecaitmx_cpp_CHecaitomix_process_FUN_00597f40(CHecaitomix *thi
   }
   fVar9 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar9);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar9);
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar6 != 0) {
@@ -202,7 +203,7 @@ switchD_00598471_caseD_1:
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0((CCharacter *)this_ptr);
   if (iVar4 != 0) {
-    core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     fStack_50 = (this_ptr->base).base.velocity.x * delta_time;
     fStack_4c = (this_ptr->base).base.velocity.y * delta_time;
     fStack_48 = (this_ptr->base).base.velocity.z * delta_time;

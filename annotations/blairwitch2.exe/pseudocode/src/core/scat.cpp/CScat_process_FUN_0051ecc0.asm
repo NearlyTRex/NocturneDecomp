@@ -23,12 +23,12 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_0042b2a0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_inv.cpp_CInventory_updateInventory_FUN_004dccd0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_005038a0
@@ -65,8 +65,8 @@ section .text
     PUSH dword ptr [ESP + 0xc4]         ; 0051ecf0
         ;   Label: LAB_0051ecf0
     PUSH EBX                            ; 0051ecf7
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 0051ecf8
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 0051ecf8
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0051ecfd
     FLD float ptr [EBX + 0x10a60]       ; 0051ed00
     FSUB float ptr [ESP + 0xc4]         ; 0051ed06
@@ -363,8 +363,8 @@ section .text
         ;   Label: LAB_0051f08b
     PUSH dword ptr [ESP + 0xc8]         ; 0051f08c
     PUSH EBX                            ; 0051f093
-    CALL core_scat.cpp_FUN_005203c0     ; 0051f094
-        ;   XREF to: 005203c0 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_005203c0()
+    CALL core_scat.cpp_CScat_updateAiming_FUN_005203c0 ; 0051f094
+        ;   XREF to: 005203c0 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_updateAiming_FUN_005203c0(CScat * this_ptr, float delta_time, int is_holstered)
     ADD ESP,0xc                         ; 0051f099
     LEA EBP,[EBX + 0x2b4]               ; 0051f09c
     PUSH EBP                            ; 0051f0a2
@@ -418,8 +418,8 @@ section .text
         ;   XREF to: 00429e90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0051f120
     PUSH EBX                            ; 0051f123
-    CALL core_scat.cpp_FUN_00520df0     ; 0051f124
-        ;   XREF to: 00520df0 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_00520df0()
+    CALL core_scat.cpp_CScat_updateWeaponAttachment_FUN_00520df0 ; 0051f124
+        ;   XREF to: 00520df0 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_updateWeaponAttachment_FUN_00520df0(CScat * this_ptr)
     ADD ESP,0x4                         ; 0051f129
     ADD ESP,0xac                        ; 0051f12c
     POP EBP                             ; 0051f132
@@ -682,8 +682,8 @@ section .text
     MOV dword ptr [EDX + 0x4],EAX       ; 0051f3df
     MOV EAX,dword ptr [EDX + 0x4]       ; 0051f3e2
     MOV dword ptr [EDX],EAX             ; 0051f3e5
-    CALL core_charactr.cpp_FUN_00423a10 ; 0051f3e7
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 0051f3e7
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x2588]              ; 0051f3ec
     ADD ESP,0x8                         ; 0051f3f2
     FLD float ptr [EAX]                 ; 0051f3f5

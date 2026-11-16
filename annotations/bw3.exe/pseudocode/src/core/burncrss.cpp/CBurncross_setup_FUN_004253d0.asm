@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0
-;   core_flame.cpp_FUN_004a5ad0
+;   core_flame.cpp_preloadFlameTextures_FUN_004a5ad0
 ;   core_weapon.cpp_CWeapon_setup_FUN_0057af40
 ;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
@@ -44,8 +44,8 @@ section .text
         ;   XREF to: 004a41d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(CFireEffect * this_ptr, int flame_style)
     ADD ESP,0x8                         ; 00425412
     PUSH 0x0                            ; 00425415
-    CALL core_flame.cpp_FUN_004a5ad0    ; 00425417
-        ;   XREF to: 004a5ad0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004a5ad0()
+    CALL core_flame.cpp_preloadFlameTextures_FUN_004a5ad0 ; 00425417
+        ;   XREF to: 004a5ad0 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_preloadFlameTextures_FUN_004a5ad0(int flame_type)
     ADD ESP,0x4                         ; 0042541c
     RET                                 ; 0042541f
 

@@ -25,7 +25,7 @@
 ;
 ; XREF[4]:
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 at 004fb8ff
-;   core_inv.cpp_FUN_004f6560 at 004f668c
+;   core_inv.cpp_renderCompass_FUN_004f6560 at 004f668c
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560 at 00483772
 ;   engine_matrix.c_buildRotationMatrix_FUN_005076b0 at 00507994
 ;

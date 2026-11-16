@@ -36,14 +36,15 @@ int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10(CCh
      (float)_DAT_005d5dff <= SQRT(fVar5 * fVar5 + fVar1 * fVar1 + fVar4 * fVar4))) {
     if (this_ptr->wander_nearest_waypoint == (CWayPoint *)0x0) goto LAB_00433f96;
     if (this_ptr->wander_target == (CWayPoint *)0x0) goto LAB_00433fa0;
-    pCVar2 = (CWayPoint *)core_charactr_cpp_FUN_004354a0(this_ptr,this_ptr->wander_target);
+    pCVar2 = core_charactr_cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0
+                       (this_ptr,this_ptr->wander_target);
   }
   else {
     this_ptr->wander_nearest_waypoint = (CWayPoint *)0x0;
 LAB_00433f96:
     this_ptr->wander_target = (CWayPoint *)0x0;
 LAB_00433fa0:
-    pCVar2 = (CWayPoint *)core_charactr_cpp_FUN_00435380(this_ptr,pattern);
+    pCVar2 = core_charactr_cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380(this_ptr,pattern);
     this_ptr->wander_target = pCVar2;
   }
   this_ptr->wander_nearest_waypoint = pCVar2;

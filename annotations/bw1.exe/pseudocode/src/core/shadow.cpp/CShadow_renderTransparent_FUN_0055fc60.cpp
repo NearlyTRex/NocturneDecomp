@@ -72,7 +72,8 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0055fc60(CShadow *this
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
     if (this_ptr->corona_added != 0) {
-      core_set_cpp_FUN_00551990(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00551990(g_CDemonSetPtr,(CDemonGlobe *)0x269cbb0)
+      ;
     }
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,65000);
     iVar3 = (this_ptr->base).base.was_rendered_opaque;

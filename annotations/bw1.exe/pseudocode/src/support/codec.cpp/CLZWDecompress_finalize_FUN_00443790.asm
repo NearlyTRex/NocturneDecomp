@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_00443110
+;   support_codec.cpp_CLZWDictionary_resumeCodeSequence_FUN_004433f0
 ;   support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00443370
-;   support_codec.cpp_FUN_004433f0
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     PUSH ESI                            ; 004437fc
     PUSH ECX                            ; 004437fd
     PUSH EAX                            ; 004437fe
-    CALL support_codec.cpp_FUN_004433f0 ; 004437ff
-        ;   XREF to: 004433f0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_FUN_004433f0(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, _istream * istream, int * bytes_remaining)
+    CALL support_codec.cpp_CLZWDictionary_resumeCodeSequence_FUN_004433f0 ; 004437ff
+        ;   XREF to: 004433f0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_resumeCodeSequence_FUN_004433f0(CLZWDictionary * this_ptr, int code, int resume_code, void * ostream)
     ADD ESP,0x10                        ; 00443804
     JMP 0x004437b6                      ; 00443807
         ;   XREF to: 004437b6 (UNCONDITIONAL_JUMP)  ; LAB_004437b6

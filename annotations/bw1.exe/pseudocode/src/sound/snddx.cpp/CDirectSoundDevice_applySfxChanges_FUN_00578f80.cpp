@@ -19,6 +19,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80(CDir
   int iVar6;
   double dVar7;
   float fStack_1308;
+  float fStack_1304;
   char acStack_1300 [400];
   char acStack_1170 [400];
   char acStack_fe0 [400];
@@ -62,7 +63,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80(CDir
       fStack_28 = slot->reference_distance;
       fStack_30 = slot->max_distance;
       fStack_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0((slot->options).channel_index);
+      fStack_1304 = fStack_14;
       if ((((slot->options).flags & 1) == 0) && (0.0 < fStack_14)) {
+        fStack_1304 = fStack_14 / fStack_14;
         fStack_28 = fStack_28 * fStack_14;
         fStack_30 = fStack_30 * fStack_14;
       }
@@ -87,7 +90,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80(CDir
       iStack_1c = 0;
     }
     if (((update_flags & 8U) != 0) &&
-       ((iStack_38 = sound_snddx_cpp_FUN_005779b0(), update_flags == -1 ||
+       ((iStack_38 = sound_snddx_cpp_volumeToDirectSoundAttenuation_FUN_005779b0
+                               ((slot->options).current_volume * fStack_1304), update_flags == -1 ||
         (uVar5 = iStack_38 - piStack_18[5] >> 0x1f,
         1 < (int)((iStack_38 - piStack_18[5] ^ uVar5) - uVar5))))) {
       uVar5 = (**(code **)(*piVar1 + 0x3c))(piVar1);
@@ -100,7 +104,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80(CDir
       piStack_18[5] = iStack_38;
     }
     if (((update_flags & 0x10U) != 0) &&
-       ((iStack_34 = sound_snddx_cpp_FUN_00577a50(), update_flags == -1 ||
+       ((iStack_34 = sound_snddx_cpp_clampDirectSoundFrequency_FUN_00577a50
+                               ((float)(slot->sample->sample_info).sample_rate *
+                                (slot->options).base_frequency), update_flags == -1 ||
         (uVar5 = iStack_34 - piStack_18[7] >> 0x1f,
         1 < (int)((iStack_34 - piStack_18[7] ^ uVar5) - uVar5))))) {
       uVar5 = (**(code **)(*piVar1 + 0x44))(piVar1);
@@ -171,7 +177,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_00578f80(CDir
         pCVar3 = (CSfxSlot *)&(pCVar3->options).position;
       } while (iVar6 < iVar4);
     }
-    iStack_2c = sound_snddx_cpp_FUN_005779b0();
+    iStack_2c = sound_snddx_cpp_volumeToDirectSoundAttenuation_FUN_005779b0(fStack_1308);
     iStack_20 = 0;
     if ((iVar4 == 2) && (0.0 < fStack_1308)) {
       if (slot->channel_volumes[1] <= slot->channel_volumes[0]) {
@@ -234,7 +240,8 @@ LAB_00579098:
     }
   }
   if ((update_flags & 0x96U) != 0) {
-    iVar4 = sound_snddx_cpp_FUN_00577a50();
+    iVar4 = sound_snddx_cpp_clampDirectSoundFrequency_FUN_00577a50
+                      ((float)(slot->sample->sample_info).sample_rate * slot->effective_frequency);
     if ((update_flags != -1) ||
        (uVar5 = iVar4 - piStack_18[7] >> 0x1f, 1 < (int)((iVar4 - piStack_18[7] ^ uVar5) - uVar5)))
     {

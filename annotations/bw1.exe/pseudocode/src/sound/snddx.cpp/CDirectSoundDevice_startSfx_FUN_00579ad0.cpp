@@ -72,7 +72,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_00579ad0(CDirectSoun
       iVar5 = iVar1 * 0x24;
       if (((*(int *)(iVar5 + 0x2c823fc) != -1) &&
           (*(int *)(iVar5 + 0x2c823fc) != (slot->sample->sample_info).sample_rate)) &&
-         (iVar3 = sound_snddx_cpp_FUN_00577a50
+         (iVar3 = sound_snddx_cpp_clampDirectSoundFrequency_FUN_00577a50
                             ((float)(slot->sample->sample_info).sample_rate *
                              (slot->options).base_frequency),
          1 < (uint)(iVar3 - *(int *)(iVar5 + 0x2c823fc)))) {

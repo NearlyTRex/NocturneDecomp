@@ -29,7 +29,7 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449c20
+;   core_dirmat.cpp_sinCos_FUN_00449c20
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH EAX                            ; 00591ae7
     LEA EAX,[ESP + 0x14]                ; 00591ae8
     PUSH EAX                            ; 00591aec
-    CALL core_dirmat.cpp_FUN_00449c20   ; 00591aed
-        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449c20()
+    CALL core_dirmat.cpp_sinCos_FUN_00449c20 ; 00591aed
+        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_00449c20(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 00591af2
     LEA EAX,[EDI + 0x8]                 ; 00591af5
     PUSH EAX                            ; 00591af8
@@ -57,8 +57,8 @@ section .text
     PUSH EAX                            ; 00591afd
     LEA EAX,[ESP + 0x18]                ; 00591afe
     PUSH EAX                            ; 00591b02
-    CALL core_dirmat.cpp_FUN_00449c20   ; 00591b03
-        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449c20()
+    CALL core_dirmat.cpp_sinCos_FUN_00449c20 ; 00591b03
+        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_00449c20(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 00591b08
     ADD EDI,0x4                         ; 00591b0b
     PUSH EDI                            ; 00591b0e
@@ -66,8 +66,8 @@ section .text
     PUSH EAX                            ; 00591b13
     LEA EAX,[ESP + 0x1c]                ; 00591b14
     PUSH EAX                            ; 00591b18
-    CALL core_dirmat.cpp_FUN_00449c20   ; 00591b19
-        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449c20()
+    CALL core_dirmat.cpp_sinCos_FUN_00449c20 ; 00591b19
+        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_00449c20(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 00591b1e
     FLD float ptr [ESP + 0x14]          ; 00591b21
     FMUL float ptr [ESP + 0xc]          ; 00591b25

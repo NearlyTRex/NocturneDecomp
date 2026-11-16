@@ -35,8 +35,8 @@
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_setupScanEdge_FUN_004f6df0
-;   engine_special.cpp_FUN_0055c45c
-;   engine_special.cpp_FUN_0055ca23
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c
 ;   engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9
 ;   engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3
 ;
@@ -206,8 +206,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 004f7bfc
     MOV ESI,dword ptr [ESP + 0x10]      ; 004f7c00
     MOV EBX,dword ptr [ESP + 0xc]       ; 004f7c04
-    CALL engine_special.cpp_FUN_0055c45c ; 004f7c08
-        ;   XREF to: 0055c45c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055c45c()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c ; 004f7c08
+        ;   XREF to: 0055c45c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     MOV EDX,dword ptr [ESP + 0x10]      ; 004f7c0d
         ;   Label: LAB_004f7c0d
     MOV EAX,dword ptr [ESP + 0x10]      ; 004f7c11
@@ -333,8 +333,8 @@ section .text
         ;   Label: LAB_004f7d3e
     MOV ESI,dword ptr [ESP + 0x10]      ; 004f7d42
     MOV EBX,dword ptr [ESP + 0xc]       ; 004f7d46
-    CALL engine_special.cpp_FUN_0055ca23 ; 004f7d4a
-        ;   XREF to: 0055ca23 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055ca23()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23 ; 004f7d4a
+        ;   XREF to: 0055ca23 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x004f7c0d                      ; 004f7d4f
         ;   XREF to: 004f7c0d (UNCONDITIONAL_JUMP)  ; LAB_004f7c0d
     MOV EAX,[0x006141c0]                ; 004f7d54 | DAT_006141c0

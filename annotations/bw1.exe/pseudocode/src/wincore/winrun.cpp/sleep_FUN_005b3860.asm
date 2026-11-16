@@ -13,10 +13,10 @@
 ;   sound_sndmain.cpp_audioThreadProc_FUN_00575bb0 at 00575bee
 ;   sound_sndmain.cpp_killSoundThread_FUN_00575ca0 at 00575cc9
 ;   sound_sndmain.cpp_startSoundThread_FUN_00575c00 at 00575c7d
-;   support_trisock.cpp_FUN_0059daf0 at 0059dc41
-;   support_trisock.cpp_FUN_0059de30 at 0059de68
-;   support_trisock.cpp_FUN_0059deb0 at 0059df32
 ;   support_trisock.cpp_cleanupWinsock_FUN_0059ef20 at 0059efa4
+;   support_trisock.cpp_dnsLookupThreadProc_FUN_0059daf0 at 0059dc41
+;   support_trisock.cpp_dnsRequestGetResult_FUN_0059de30 at 0059de68
+;   support_trisock.cpp_dnsRequestQueue_FUN_0059deb0 at 0059df32
 ;
 ; Referenced Globals:
 ;   void* PTR_Sleep_005d0658 = 001d1230

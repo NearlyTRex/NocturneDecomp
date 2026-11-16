@@ -306,19 +306,19 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_actor.cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0
+;   core_actor.cpp_CDemonActor_startParticleSystem_FUN_0040ce40
+;   core_actor.cpp_CDemonActor_stopParticleSystem_FUN_0040ce70
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
+;   core_actor.cpp_copyVector_FUN_0040d350
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d340
-;   core_actor.cpp_FUN_0040ce40
-;   core_actor.cpp_FUN_0040ce70
-;   core_actor.cpp_FUN_0040cea0
-;   core_actor.cpp_FUN_0040d350
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_isOfClass_FUN_0040c840
-;   core_basicene.cpp_FUN_0059e7a0
-;   core_basicene.cpp_FUN_0059e7c0
-;   core_basicene.cpp_FUN_0059f570
-;   core_basicene.cpp_FUN_005a01a0
-;   core_basicene.cpp_FUN_005a0240
+;   core_basicene.cpp_CBasicEnemy_resetInitialPos_FUN_005a0240
+;   core_basicene.cpp_CBasicEnemy_setAIState_FUN_0059e7a0
+;   core_basicene.cpp_CBasicEnemy_setAnimation_FUN_0059e7c0
+;   core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0
+;   core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700
 ;   ... and 92 more
 ;
@@ -4165,8 +4165,8 @@ section .text
     SUB ESP,0x4                         ; 00524dee
     LEA ESI,[ESP + 0x4bc4]              ; 00524df1
     FSTP float ptr [ESP]                ; 00524df8
-    CALL core_charactr.cpp_FUN_0042bef0 ; 00524dfb
-        ;   XREF to: 0042bef0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042bef0()
+    CALL core_charactr.cpp_makeVector_FUN_0042bef0 ; 00524dfb
+        ;   XREF to: 0042bef0 (UNCONDITIONAL_CALL)  ; CVector3f * core_charactr.cpp_makeVector_FUN_0042bef0(float x, float y, float z, CVector3f * out)
     ADD ESP,0xc                         ; 00524e00
     LEA EAX,[ESP + 0x4bc4]              ; 00524e03
     LEA EDI,[ESP + 0x4bc4]              ; 00524e0a
@@ -4197,8 +4197,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00524e69
     MOVSD ES:EDI,ESI                    ; 00524e6a
     MOVSD ES:EDI,ESI                    ; 00524e6b
-    CALL core_actor.cpp_FUN_0040d350    ; 00524e6c
-        ;   XREF to: 0040d350 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d350()
+    CALL core_actor.cpp_copyVector_FUN_0040d350 ; 00524e6c
+        ;   XREF to: 0040d350 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_copyVector_FUN_0040d350(CVector3f * dst_ptr, CVector3f * src_ptr)
     ADD ESP,0x8                         ; 00524e71
     LEA EAX,[ESP + 0x4b64]              ; 00524e74
         ;   Label: LAB_00524e74
@@ -5493,8 +5493,8 @@ section .text
     MOV ESI,dword ptr [0x0061b5a8]      ; 00525e10 | g_CDemonSetPtr
     PUSH ESI                            ; 00525e16 | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x25c],0x0     ; 00525e17 | g_CGameInstance.goggles_active
-    CALL core_event.cpp_FUN_00492630    ; 00525e21
-        ;   XREF to: 00492630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00492630()
+    CALL core_event.cpp_getSelectedCameraIndex_FUN_00492630 ; 00525e21
+        ;   XREF to: 00492630 (UNCONDITIONAL_CALL)  ; int core_event.cpp_getSelectedCameraIndex_FUN_00492630(CDemonSet * set_ptr)
     ADD ESP,0x4                         ; 00525e26
     MOV ESI,EAX                         ; 00525e29
     MOV EAX,[0x0061b460]                ; 00525e2b | g_CScriptPtr
@@ -5510,8 +5510,8 @@ section .text
     MOV EAX,[0x0061b460]                ; 00525e4a | g_CScriptPtr
     PUSH EDX                            ; 00525e4f | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x10],0x0      ; 00525e50 | g_CScriptInstance.focus_actor_changed
-    CALL core_event.cpp_FUN_00492630    ; 00525e57
-        ;   XREF to: 00492630 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00492630()
+    CALL core_event.cpp_getSelectedCameraIndex_FUN_00492630 ; 00525e57
+        ;   XREF to: 00492630 (UNCONDITIONAL_CALL)  ; int core_event.cpp_getSelectedCameraIndex_FUN_00492630(CDemonSet * set_ptr)
     ADD ESP,0x4                         ; 00525e5c
     CMP ESI,EAX                         ; 00525e5f
     JNZ 0x005223fb                      ; 00525e61
@@ -6919,8 +6919,8 @@ section .text
     LEA EDI,[EAX + 0x2437c]             ; 00526f66
     PUSH EDI                            ; 00526f6c
     MOV dword ptr [ESP + 0x4dc4],ESI    ; 00526f6d
-    CALL core_doc.cpp_FUN_0045e1b0      ; 00526f74
-        ;   XREF to: 0045e1b0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045e1b0()
+    CALL core_doc.cpp_getSelectedWeapon_FUN_0045e1b0 ; 00526f74
+        ;   XREF to: 0045e1b0 (UNCONDITIONAL_CALL)  ; CWeapon * core_doc.cpp_getSelectedWeapon_FUN_0045e1b0(CInventory * inventory_ptr)
     ADD ESP,0x4                         ; 00526f79
     MOV dword ptr [ESP + 0x4c84],EAX    ; 00526f7c
     TEST EAX,EAX                        ; 00526f83
@@ -6957,8 +6957,8 @@ section .text
         ;   XREF to: 004db9d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 00526fd3
     PUSH EDI                            ; 00526fd6
-    CALL core_doc.cpp_FUN_0045e1b0      ; 00526fd7
-        ;   XREF to: 0045e1b0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045e1b0()
+    CALL core_doc.cpp_getSelectedWeapon_FUN_0045e1b0 ; 00526fd7
+        ;   XREF to: 0045e1b0 (UNCONDITIONAL_CALL)  ; CWeapon * core_doc.cpp_getSelectedWeapon_FUN_0045e1b0(CInventory * inventory_ptr)
     ADD ESP,0x4                         ; 00526fdc
     MOV ECX,dword ptr [ESP + 0x4c84]    ; 00526fdf
     MOV ESI,EAX                         ; 00526fe6
@@ -7332,8 +7332,8 @@ section .text
     LEA EDX,[ESP + 0x499c]              ; 0052747b
     PUSH EDX                            ; 00527482
     PUSH EAX                            ; 00527483
-    CALL core_basicene.cpp_FUN_0059e7a0 ; 00527484
-        ;   XREF to: 0059e7a0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e7a0()
+    CALL core_basicene.cpp_CBasicEnemy_setAIState_FUN_0059e7a0 ; 00527484
+        ;   XREF to: 0059e7a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setAIState_FUN_0059e7a0(CBasicEnemy * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 00527489
     JMP 0x005223fb                      ; 0052748c
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7411,8 +7411,8 @@ section .text
     ADD ESP,0xc                         ; 0052756d
     PUSH EAX                            ; 00527570
     PUSH ESI                            ; 00527571
-    CALL core_basicene.cpp_FUN_0059e7c0 ; 00527572
-        ;   XREF to: 0059e7c0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e7c0()
+    CALL core_basicene.cpp_CBasicEnemy_setAnimation_FUN_0059e7c0 ; 00527572
+        ;   XREF to: 0059e7c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setAnimation_FUN_0059e7c0(CBasicEnemy * this_ptr, int motion_state)
     ADD ESP,0x8                         ; 00527577
     JMP 0x005223fb                      ; 0052757a
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7481,8 +7481,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4cac]    ; 0052764a
     PUSH ECX                            ; 00527651
     PUSH EAX                            ; 00527652
-    CALL core_actor.cpp_FUN_0040ce40    ; 00527653
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_CDemonActor_startParticleSystem_FUN_0040ce40 ; 00527653
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_startParticleSystem_FUN_0040ce40(CDemonActor * this_ptr, int index, int reset_fade)
     ADD ESP,0xc                         ; 00527658
     JMP 0x005223fb                      ; 0052765b
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7551,8 +7551,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4cb8]    ; 0052772b
     PUSH EDX                            ; 00527732
     PUSH EAX                            ; 00527733
-    CALL core_actor.cpp_FUN_0040ce70    ; 00527734
-        ;   XREF to: 0040ce70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce70()
+    CALL core_actor.cpp_CDemonActor_stopParticleSystem_FUN_0040ce70 ; 00527734
+        ;   XREF to: 0040ce70 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_stopParticleSystem_FUN_0040ce70(CDemonActor * this_ptr, int index, int fade_out)
     ADD ESP,0xc                         ; 00527739
     JMP 0x005223fb                      ; 0052773c
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7626,8 +7626,8 @@ section .text
     PUSH dword ptr [ESP + 0x4ccc]       ; 00527828
     PUSH ECX                            ; 0052782f
     PUSH EAX                            ; 00527830
-    CALL core_actor.cpp_FUN_0040cea0    ; 00527831
-        ;   XREF to: 0040cea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cea0()
+    CALL core_actor.cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0 ; 00527831
+        ;   XREF to: 0040cea0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0(CDemonActor * this_ptr, int index, float fade_start, float fade_end, ...)
     ADD ESP,0x14                        ; 00527836
     JMP 0x005223fb                      ; 00527839
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7688,8 +7688,8 @@ section .text
     JNZ 0x005223fb                      ; 005278eb
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     PUSH EAX                            ; 005278f1
-    CALL core_basicene.cpp_FUN_005a0240 ; 005278f2
-        ;   XREF to: 005a0240 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a0240()
+    CALL core_basicene.cpp_CBasicEnemy_resetInitialPos_FUN_005a0240 ; 005278f2
+        ;   XREF to: 005a0240 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_resetInitialPos_FUN_005a0240(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005278f7
     JMP 0x005223fb                      ; 005278fa
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7764,8 +7764,8 @@ section .text
     PUSH dword ptr [ESP + 0x4ce4]       ; 005279ed
     PUSH dword ptr [ESP + 0x4ce4]       ; 005279f4
     PUSH EAX                            ; 005279fb
-    CALL core_basicene.cpp_FUN_005a01a0 ; 005279fc
-        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a01a0()
+    CALL core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0 ; 005279fc
+        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0(CBasicEnemy * this_ptr, float fade_start, float fade_end, float fade_time)
     ADD ESP,0x10                        ; 00527a01
     JMP 0x005223fb                      ; 00527a04
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7826,8 +7826,8 @@ section .text
     JNZ 0x005223fb                      ; 00527ab6
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     PUSH EAX                            ; 00527abc
-    CALL core_basicene.cpp_FUN_0059f570 ; 00527abd
-        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f570()
+    CALL core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570 ; 00527abd
+        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 00527ac2
     JMP 0x005223fb                      ; 00527ac5
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7885,8 +7885,8 @@ section .text
     MOV EDX,dword ptr [0x00616494]      ; 00527ba1 | g_CGamePtr
     PUSH dword ptr [ESP + 0x4d08]       ; 00527ba7
     PUSH EDX                            ; 00527bae | g_CGameInstance
-    CALL core_game.cpp_FUN_004bb500     ; 00527baf
-        ;   XREF to: 004bb500 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bb500()
+    CALL core_game.cpp_CGame_setAlphaFade_FUN_004bb500 ; 00527baf
+        ;   XREF to: 004bb500 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setAlphaFade_FUN_004bb500(CGame * this_ptr, float start_alpha, float end_alpha, float duration, ...)
     ADD ESP,0x20                        ; 00527bb4
     JMP 0x005223fb                      ; 00527bb7
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7925,8 +7925,8 @@ section .text
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     MOV EAX,[0x00616494]                ; 00527c26 | g_CGamePtr
     PUSH EAX                            ; 00527c2b | g_CGameInstance
-    CALL core_game.cpp_FUN_004bb550     ; 00527c2c
-        ;   XREF to: 004bb550 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bb550()
+    CALL core_game.cpp_CGame_startAlphaFade_FUN_004bb550 ; 00527c2c
+        ;   XREF to: 004bb550 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_startAlphaFade_FUN_004bb550(CGame * this_ptr)
     ADD ESP,0x4                         ; 00527c31
     JMP 0x005223fb                      ; 00527c34
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -7965,8 +7965,8 @@ section .text
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     MOV EDI,dword ptr [0x00616494]      ; 00527ca3 | g_CGamePtr
     PUSH EDI                            ; 00527ca9 | g_CGameInstance
-    CALL core_game.cpp_FUN_004bb580     ; 00527caa
-        ;   XREF to: 004bb580 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bb580()
+    CALL core_game.cpp_CGame_stopAlphaFade_FUN_004bb580 ; 00527caa
+        ;   XREF to: 004bb580 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_stopAlphaFade_FUN_004bb580(CGame * this_ptr)
     ADD ESP,0x4                         ; 00527caf
     JMP 0x005223fb                      ; 00527cb2
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -8109,8 +8109,8 @@ section .text
     PUSH dword ptr [ESP + 0x4d30]       ; 00527ea6
     PUSH ECX                            ; 00527ead
     PUSH EAX                            ; 00527eae
-    CALL core_charactr.cpp_FUN_0042b550 ; 00527eaf
-        ;   XREF to: 0042b550 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b550()
+    CALL core_charactr.cpp_CCharacter_setPhantomEyes_FUN_0042b550 ; 00527eaf
+        ;   XREF to: 0042b550 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setPhantomEyes_FUN_0042b550(CCharacter * this_ptr, int enabled, float glow_from, float glow_to, ...)
     ADD ESP,0x20                        ; 00527eb4
     JMP 0x005223fb                      ; 00527eb7
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -8197,8 +8197,8 @@ section .text
         ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004dbb50(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 00527fbc
     PUSH ESI                            ; 00527fbf
-    CALL core_script.cpp_FUN_0052a6a0   ; 00527fc0
-        ;   XREF to: 0052a6a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_0052a6a0()
+    CALL core_script.cpp_CInventory_getSelectedItem_FUN_0052a6a0 ; 00527fc0
+        ;   XREF to: 0052a6a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_CInventory_getSelectedItem_FUN_0052a6a0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 00527fc5
     CMP EAX,EDI                         ; 00527fc8
     JZ 0x005223fb                       ; 00527fca
@@ -8344,16 +8344,16 @@ section .text
     PUSH EAX                            ; 005281a0
     PUSH EDI                            ; 005281a1
     PUSH ESI                            ; 005281a2
-    CALL core_charactr.cpp_FUN_00424b50 ; 005281a3
-        ;   XREF to: 00424b50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00424b50()
+    CALL core_charactr.cpp_CCharacter_setEyeFrame_FUN_00424b50 ; 005281a3
+        ;   XREF to: 00424b50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setEyeFrame_FUN_00424b50(CCharacter * this_ptr, int eye_side, int frame, float hold_time)
     ADD ESP,0x10                        ; 005281a8
     MOV EDX,dword ptr [ESP + 0x4d4c]    ; 005281ab
     PUSH dword ptr [ESP + 0x4d50]       ; 005281b2
     PUSH EDX                            ; 005281b9
     PUSH 0x1                            ; 005281ba
     PUSH ESI                            ; 005281bc
-    CALL core_charactr.cpp_FUN_00424b50 ; 005281bd
-        ;   XREF to: 00424b50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00424b50()
+    CALL core_charactr.cpp_CCharacter_setEyeFrame_FUN_00424b50 ; 005281bd
+        ;   XREF to: 00424b50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setEyeFrame_FUN_00424b50(CCharacter * this_ptr, int eye_side, int frame, float hold_time)
     ADD ESP,0x10                        ; 005281c2
     JMP 0x005223fb                      ; 005281c5
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -8787,8 +8787,8 @@ section .text
     PUSH dword ptr [ESP + 0x4d6c]       ; 005286c5
     PUSH EDI                            ; 005286cc
     PUSH EAX                            ; 005286cd
-    CALL core_charactr.cpp_FUN_00424b90 ; 005286ce
-        ;   XREF to: 00424b90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00424b90()
+    CALL core_charactr.cpp_CCharacter_setMouthFrame_FUN_00424b90 ; 005286ce
+        ;   XREF to: 00424b90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setMouthFrame_FUN_00424b90(CCharacter * this_ptr, int frame, float hold_time)
     ADD ESP,0xc                         ; 005286d3
     JMP 0x005223fb                      ; 005286d6
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb

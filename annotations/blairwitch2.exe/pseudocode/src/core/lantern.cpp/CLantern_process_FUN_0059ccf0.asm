@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570
-;   core_lantern.cpp_FUN_0059ced0
+;   core_lantern.cpp_CLantern_updateLightTransform_FUN_0059ced0
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_00530630
 ;   core_weapon.cpp_CWeapon_process_FUN_00589c80
 ;
@@ -121,8 +121,8 @@ section .text
     PUSH ESI                            ; 0059ce79
         ;   Label: LAB_0059ce79
     PUSH EBX                            ; 0059ce7a
-    CALL core_lantern.cpp_FUN_0059ced0  ; 0059ce7b
-        ;   XREF to: 0059ced0 (UNCONDITIONAL_CALL)  ; undefined core_lantern.cpp_FUN_0059ced0()
+    CALL core_lantern.cpp_CLantern_updateLightTransform_FUN_0059ced0 ; 0059ce7b
+        ;   XREF to: 0059ced0 (UNCONDITIONAL_CALL)  ; void core_lantern.cpp_CLantern_updateLightTransform_FUN_0059ced0(CLantern * this_ptr)
     ADD ESP,0x4                         ; 0059ce80
     MOV ECX,dword ptr [EBX + 0x704]     ; 0059ce83
     PUSH ECX                            ; 0059ce89

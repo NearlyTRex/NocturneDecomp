@@ -21,8 +21,8 @@
 ;   undefined4 DAT_0061c068
 ;
 ; Called Functions:
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 ;   core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880
-;   core_basicene.cpp_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH dword ptr [0x005ff358]         ; 005a3449 | DAT_005ff358
     PUSH EBX                            ; 005a344f
         ;   Label: LAB_005a344f
-    CALL core_basicene.cpp_FUN_0059f740 ; 005a3450
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005a3450
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005a3455
         ;   Label: LAB_005a3455
     MOV EDI,dword ptr [ESP + 0x18]      ; 005a3458

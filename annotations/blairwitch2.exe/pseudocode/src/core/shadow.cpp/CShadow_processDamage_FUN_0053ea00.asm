@@ -19,10 +19,10 @@
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_shadow.cpp_FUN_0053df40
-;   core_shadow.cpp_FUN_0053e000
-;   core_shadow.cpp_FUN_0053e040
-;   core_shadow.cpp_FUN_0053e9a0
+;   core_shadow.cpp_CShadow_playDamageSound_FUN_0053e000
+;   core_shadow.cpp_CShadow_playDeathSound_FUN_0053e040
+;   core_shadow.cpp_CShadow_playHitAlertSound_FUN_0053df40
+;   core_shadow.cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x4c]      ; 0053ea0b
     PUSH EBP                            ; 0053ea0f
     PUSH EBX                            ; 0053ea10
-    CALL core_shadow.cpp_FUN_0053e9a0   ; 0053ea11
-        ;   XREF to: 0053e9a0 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0053e9a0()
+    CALL core_shadow.cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0 ; 0053ea11
+        ;   XREF to: 0053e9a0 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_scaleDamageByHitBone_FUN_0053e9a0(CShadow * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 0053ea16
     MOV EDX,dword ptr [EBX + 0x10b1c]   ; 0053ea19
     PUSH EDX                            ; 0053ea1f
@@ -116,8 +116,8 @@ section .text
     ADD ESP,0xc                         ; 0053eacc
     PUSH EBX                            ; 0053eacf
         ;   Label: LAB_0053eacf
-    CALL core_shadow.cpp_FUN_0053e000   ; 0053ead0
-        ;   XREF to: 0053e000 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0053e000()
+    CALL core_shadow.cpp_CShadow_playDamageSound_FUN_0053e000 ; 0053ead0
+        ;   XREF to: 0053e000 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDamageSound_FUN_0053e000(CShadow * this_ptr)
     ADD ESP,0x4                         ; 0053ead5
         ;   Label: LAB_0053ead5
     PUSH EBP                            ; 0053ead8
@@ -134,8 +134,8 @@ section .text
     RET                                 ; 0053eae9
     PUSH EBX                            ; 0053eaea
         ;   Label: LAB_0053eaea
-    CALL core_shadow.cpp_FUN_0053df40   ; 0053eaeb
-        ;   XREF to: 0053df40 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0053df40()
+    CALL core_shadow.cpp_CShadow_playHitAlertSound_FUN_0053df40 ; 0053eaeb
+        ;   XREF to: 0053df40 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playHitAlertSound_FUN_0053df40(CShadow * this_ptr)
     ADD ESP,0x4                         ; 0053eaf0
     PUSH 0x41f00000                     ; 0053eaf3
     PUSH 0x41700000                     ; 0053eaf8
@@ -207,8 +207,8 @@ section .text
         ;   XREF to: 00503620 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_00503620(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0053ebb0
     PUSH EBX                            ; 0053ebb3
-    CALL core_shadow.cpp_FUN_0053e040   ; 0053ebb4
-        ;   XREF to: 0053e040 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0053e040()
+    CALL core_shadow.cpp_CShadow_playDeathSound_FUN_0053e040 ; 0053ebb4
+        ;   XREF to: 0053e040 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDeathSound_FUN_0053e040(CShadow * this_ptr)
     JMP 0x0053ead5                      ; 0053ebb9
         ;   XREF to: 0053ead5 (UNCONDITIONAL_JUMP)  ; LAB_0053ead5
     PUSH 0x1                            ; 0053ebbe
@@ -220,8 +220,8 @@ section .text
         ;   XREF to: 00503620 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_00503620(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0053ebcc
     PUSH EBX                            ; 0053ebcf
-    CALL core_shadow.cpp_FUN_0053e040   ; 0053ebd0
-        ;   XREF to: 0053e040 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0053e040()
+    CALL core_shadow.cpp_CShadow_playDeathSound_FUN_0053e040 ; 0053ebd0
+        ;   XREF to: 0053e040 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDeathSound_FUN_0053e040(CShadow * this_ptr)
     JMP 0x0053ead5                      ; 0053ebd5
         ;   XREF to: 0053ead5 (UNCONDITIONAL_JUMP)  ; LAB_0053ead5
     CMP EAX,0x5                         ; 0053ebda

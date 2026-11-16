@@ -48,7 +48,7 @@ void __cdecl core_lightpis_cpp_CLightPis_process_FUN_00502480(CLightPis *this_pt
       sound_sndmain_cpp_setSfxVolume_FUN_00573950(this_ptr->sfx_handle,fVar2);
       sound_sndmain_cpp_setSfxBaseFrequency_FUN_00573980(this_ptr->sfx_handle,base_frequency);
     }
-    core_lightpis_cpp_FUN_005017f0(this_ptr);
+    core_lightpis_cpp_CLightPis_updateBeamLight_FUN_005017f0(this_ptr);
     if (this_ptr->fire_flash_pending != 0) {
       g_CDemonLightInstance.antialiasing_enabled = 1;
       filter_ptr = core_dfilter_cpp_CFilterCache_getFilter_FUN_0045d7c0

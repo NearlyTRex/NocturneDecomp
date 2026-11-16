@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0 at 004b7af7
-;   core_game.cpp_FUN_004be8a0 at 004bebf6
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 at 004bebf6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cedef4

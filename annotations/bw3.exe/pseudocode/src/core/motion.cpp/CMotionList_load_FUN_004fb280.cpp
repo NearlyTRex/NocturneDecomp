@@ -32,7 +32,7 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_004fb280(CMotionList *this_ptr
   int local_1c;
   int local_14;
   
-  core_morph_cpp_FUN_004fb210(this_ptr);
+  core_morph_cpp_CMotionList_free_FUN_004fb210(this_ptr);
   do {
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;

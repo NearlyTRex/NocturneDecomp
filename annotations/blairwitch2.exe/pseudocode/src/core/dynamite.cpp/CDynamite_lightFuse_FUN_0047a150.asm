@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x68]:1  local_68
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_0045bdc0 at 0045c5a7
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0 at 0045c5a7
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50 at 0056e13b
 ;
 ; Referenced Globals:

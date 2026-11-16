@@ -9,21 +9,21 @@
 // Address: 00454750
 void __cdecl staticInit(void);
 
-// Original: core_demnfolk.cpp_FUN_00454780
+// Original: core_demnfolk.cpp_getObjectHeightScale_FUN_00454780
 // Address: 00454780
-float FUN_00454780(int param_1);
+float __cdecl getObjectHeightScale(CDemonActor *actor);
 
-// Original: core_demnfolk.cpp_FUN_00454820
+// Original: core_demnfolk.cpp_getObjectGrabPointLocal_FUN_00454820
 // Address: 00454820
-void FUN_00454820(int param_1);
+CVector3f * __stack_esi getObjectGrabPointLocal(CDemonActor *actor,CVector3f *out_point);
 
-// Original: core_demnfolk.cpp_FUN_004548e0
+// Original: core_demnfolk.cpp_getObjectGrabPointWorld_FUN_004548e0
 // Address: 004548e0
-void FUN_004548e0(CDemonActor *param_1);
+CVector3f * __stack_esi getObjectGrabPointWorld(CDemonActor *actor,CVector3f *out_point);
 
-// Original: core_demnfolk.cpp_FUN_004549e0
+// Original: core_demnfolk.cpp_classifyObjectShape_FUN_004549e0
 // Address: 004549e0
-undefined4 FUN_004549e0(float *param_1);
+int __cdecl classifyObjectShape(CVector3f *dimensions);
 
 // Original: core_demnfolk.cpp_factoryFuncDemnfolk_FUN_00454b30
 // Address: 00454b30
@@ -49,21 +49,21 @@ void __cdecl CDemnfolk::process(CDemnfolk *this_ptr,float param_2);
 // Address: 00457300
 CMatrix3x4f * __stack2_esi CDemnfolk::getCarryObjToBodyXForm(CDemnfolk *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_demnfolk.cpp_FUN_00457740
+// Original: core_demnfolk.cpp_CDemnfolk_processPickup_FUN_00457740
 // Address: 00457740
-undefined4 FUN_00457740(CCharacter *param_1,float param_2);
+int __cdecl CDemnfolk::processPickup(CDemnfolk *this_ptr,float delta_time);
 
-// Original: core_demnfolk.cpp_FUN_004580a0
+// Original: core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0
 // Address: 004580a0
-undefined4 FUN_004580a0(int param_1,uint param_2);
+int __cdecl CDemnfolk::getPickupHandIndex(CDemnfolk *this_ptr,int object_shape_type);
 
-// Original: core_demnfolk.cpp_FUN_00458140
+// Original: core_demnfolk.cpp_CDemnfolk_canPickupWithHand_FUN_00458140
 // Address: 00458140
-undefined4 FUN_00458140(int param_1,undefined4 param_2);
+int __cdecl CDemnfolk::canPickupWithHand(CDemnfolk *this_ptr,int object_shape_type);
 
-// Original: core_demnfolk.cpp_FUN_00458180
+// Original: core_demnfolk.cpp_CDemnfolk_dropAndClearTarget_FUN_00458180
 // Address: 00458180
-void FUN_00458180(int param_1);
+void __cdecl CDemnfolk::dropAndClearTarget(CDemnfolk *this_ptr);
 
 // Original: core_demnfolk.cpp_CDemnfolk_renderOpaque_FUN_004581c0
 // Address: 004581c0
@@ -81,9 +81,9 @@ void __cdecl CDemnfolk::archive(CDemnfolk *this_ptr);
 // Address: 00458530
 int __cdecl CDemnfolk::canBeAttracted(CDemnfolk *this_ptr,CDemonActor *grabber);
 
-// Original: core_demnfolk.cpp_FUN_00458680
+// Original: core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_00458680
 // Address: 00458680
-void __cdecl FUN_00458680(CZombie *this_ptr,SDamageInfo *damage_info);
+void __cdecl CDemnfolk::processDismemberment(CDemnfolk *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_demnfolk.cpp_CDemnfolk_processDamage_FUN_00458950
 // Address: 00458950
@@ -109,9 +109,9 @@ int __cdecl CDemnfolk::getGrabbed(CDemnfolk *this_ptr,CDemonActor *grabber,int g
 // Address: 00458f80
 int __cdecl CDemnfolk::shouldIgnoreForTargeting(CDemnfolk *this_ptr);
 
-// Original: core_demnfolk.cpp_FUN_00458fb0
+// Original: core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0
 // Address: 00458fb0
-void FUN_00458fb0(int param_1);
+void __cdecl CDemnfolk::resetChaseState(CDemnfolk *this_ptr);
 
 // Original: core_demnfolk.cpp_CDemnfolk_dtor_FUN_00459030
 // Address: 00459030

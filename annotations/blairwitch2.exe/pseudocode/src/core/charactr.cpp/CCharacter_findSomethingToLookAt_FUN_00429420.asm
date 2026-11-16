@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   disable_search
 ;
 ; XREF[5]:
-;   core_basicene.cpp_FUN_0059f0e0 at 0059f34f
+;   core_basicene.cpp_CBasicEnemy_processMovement_FUN_0059f0e0 at 0059f34f
 ;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 004515e2
 ;   core_dog.cpp_CZombieDog_process_FUN_0045e360 at 0045e3a8
 ;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d1d20

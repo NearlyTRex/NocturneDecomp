@@ -10,7 +10,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_free_FUN_00540980(CSkeleton *this_ptr,i
 
 {
   if (free_motion_list != 0) {
-    core_moon_cpp_FUN_005027b0(this_ptr);
+    core_moon_cpp_CMotionList_free_FUN_005027b0(&this_ptr->motion_list);
   }
   this_ptr->bone_count = 0;
   this_ptr->frame_count = 0;

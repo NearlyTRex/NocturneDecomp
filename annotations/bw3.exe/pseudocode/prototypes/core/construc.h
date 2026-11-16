@@ -53,9 +53,9 @@ void __cdecl CConstruct::explode(CConstruct *this_ptr);
 // Address: 00444340
 void FUN_00444340(int param_1);
 
-// Original: core_construc.cpp_FUN_004443d0
+// Original: core_construc.cpp_CConstruct_startRecombine_FUN_004443d0
 // Address: 004443d0
-void FUN_004443d0(int param_1);
+void __cdecl CConstruct::startRecombine(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_CConstruct_getCollisionType_FUN_004444c0
 // Address: 004444c0
@@ -65,25 +65,25 @@ ECollisionType __cdecl CConstruct::getCollisionType(CConstruct *this_ptr,SCollis
 // Address: 004444f0
 EDeathState __cdecl CConstruct::getDeathState(CConstruct *this_ptr);
 
-// Original: core_construc.cpp_FUN_00444520
+// Original: core_construc.cpp_factoryFuncConstructBone_FUN_00444520
 // Address: 00444520
-void FUN_00444520(void);
+CConstructBone * __cdecl factoryFuncConstructBone(void);
 
-// Original: core_construc.cpp_FUN_00444540
+// Original: core_construc.cpp_CConstructBone_getActorType_FUN_00444540
 // Address: 00444540
-undefined * FUN_00444540(void);
+CDemonActorType * __cdecl CConstructBone::getActorType(CConstructBone *this_ptr);
 
 // Original: core_construc.cpp_CConstructBone_ctor_FUN_00444550
 // Address: 00444550
 CConstructBone * __cdecl CConstructBone::ctor(CConstructBone *this_ptr);
 
-// Original: core_construc.cpp_FUN_004445d0
+// Original: core_construc.cpp_factoryFuncConstructRed_FUN_004445d0
 // Address: 004445d0
-void FUN_004445d0(void);
+CConstructRed * __cdecl factoryFuncConstructRed(void);
 
-// Original: core_construc.cpp_FUN_004445f0
+// Original: core_construc.cpp_CConstructRed_getActorType_FUN_004445f0
 // Address: 004445f0
-undefined * FUN_004445f0(void);
+CDemonActorType * __cdecl CConstructRed::getActorType(CConstructRed *this_ptr);
 
 // Original: core_construc.cpp_CConstructRed_ctor_FUN_00444600
 // Address: 00444600

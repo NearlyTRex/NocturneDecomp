@@ -75,8 +75,8 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
+;   core_doc.cpp_CDoc_dropRightHandObject_FUN_004707d0
 ;   core_doc.cpp_CDoc_processPickupComplete_FUN_00470750
-;   core_doc.cpp_FUN_004707d0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0
 ;   core_hero.cpp_CHero_executeObjectPickup_FUN_004ec280
@@ -193,8 +193,8 @@ section .text
     PUSH EBX                            ; 0046bf0e
         ;   Label: LAB_0046bf0e
     MOV ESI,dword ptr [EBX + 0x2628]    ; 0046bf0f
-    CALL core_doc.cpp_FUN_004707d0      ; 0046bf15
-        ;   XREF to: 004707d0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_004707d0()
+    CALL core_doc.cpp_CDoc_dropRightHandObject_FUN_004707d0 ; 0046bf15
+        ;   XREF to: 004707d0 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_dropRightHandObject_FUN_004707d0(CDoc * this_ptr)
     MOV EDI,dword ptr [EBX + 0x1ff5c]   ; 0046bf1a
     ADD ESP,0x4                         ; 0046bf20
     CMP EDI,0x2                         ; 0046bf23

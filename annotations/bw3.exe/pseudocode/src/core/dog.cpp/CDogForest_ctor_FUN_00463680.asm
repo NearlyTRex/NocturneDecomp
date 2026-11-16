@@ -7,7 +7,7 @@
 ; CDogForest *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dog.cpp_FUN_00463650 at 00463663
+;   core_dog.cpp_factoryFuncDogForest_FUN_00463650 at 00463663
 ;
 ; Called Functions:
 ;   core_dog.cpp_CZombieDog_ctor_FUN_00462710

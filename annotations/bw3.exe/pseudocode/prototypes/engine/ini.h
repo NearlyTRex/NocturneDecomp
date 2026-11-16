@@ -69,13 +69,13 @@ void __cdecl CIniFile::getFloat(CIniFile *this_ptr,char *key,float *output);
 // Address: 004d8d40
 void __cdecl CIniFile::setFloatValue(CIniFile *this_ptr,char *key,float value);
 
-// Original: engine_ini.cpp_FUN_004d8d90
+// Original: engine_ini.cpp_CIniFile_getDouble_FUN_004d8d90
 // Address: 004d8d90
-void FUN_004d8d90(void);
+void __cdecl CIniFile::getDouble(CIniFile *this_ptr,char *key,double *output);
 
-// Original: engine_ini.cpp_FUN_004d8e00
+// Original: engine_ini.cpp_CIniFile_setDoubleValue_FUN_004d8e00
 // Address: 004d8e00
-void FUN_004d8e00(int param_1,undefined4 param_2);
+void __cdecl CIniFile::setDoubleValue(CIniFile *this_ptr,char *key,double value);
 
 // Original: engine_ini.cpp_CIni_ctor_FUN_004d8e50
 // Address: 004d8e50

@@ -31,7 +31,7 @@
 ;   core_cloth.cpp_CClothList_process_FUN_005b1780
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-;   core_doc.cpp_FUN_00453d80
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80
 ;   core_hero.cpp_CHero_setup_FUN_004ce4a0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
@@ -297,8 +297,8 @@ section .text
     MOV dword ptr [ESI + 0x8],EAX       ; 004508de
     PUSH EBX                            ; 004508e1
         ;   Label: LAB_004508e1
-    CALL core_doc.cpp_FUN_00453d80      ; 004508e2
-        ;   XREF to: 00453d80 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00453d80()
+    CALL core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 ; 004508e2
+        ;   XREF to: 00453d80 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80(CDoc * this_ptr)
     MOV dword ptr [EBX + 0x2573c],0x0   ; 004508e7
     MOV dword ptr [EBX + 0x25750],0x0   ; 004508f1
     ADD ESP,0x4                         ; 004508fb

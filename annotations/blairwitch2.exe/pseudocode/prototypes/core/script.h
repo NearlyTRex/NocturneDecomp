@@ -161,6 +161,6 @@ uint __cdecl CScript::computeChecksum(CScript *this_ptr);
 // Address: 0052a690
 char * __cdecl getDeformableModelFilename(CDeformableModel *model_ptr);
 
-// Original: core_script.cpp_FUN_0052a6a0
+// Original: core_script.cpp_CInventory_getSelectedItem_FUN_0052a6a0
 // Address: 0052a6a0
-undefined4 FUN_0052a6a0(int param_1);
+CDemonActor * __cdecl CInventory::getSelectedItem(CInventory *this_ptr);

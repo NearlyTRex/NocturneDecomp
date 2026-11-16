@@ -49,9 +49,9 @@ int __cdecl CTheHand::attractActorToward(CTheHand *this_ptr,CDemonActor *actor,C
 // Address: 0056cb90
 int __cdecl CTheHand::shouldIgnoreForTargeting(CTheHand *this_ptr);
 
-// Original: core_toxhand.cpp_FUN_0056cbd0
+// Original: core_toxhand.cpp_CTheHand_getHandBoneMatrix_FUN_0056cbd0
 // Address: 0056cbd0
-void FUN_0056cbd0(int param_1);
+CMatrix3x4f * __stack_esi CTheHand::getHandBoneMatrix(CTheHand *this_ptr,CMatrix3x4f *out_matrix);
 
 // Original: core_toxhand.cpp_CTheHand_dtor_FUN_0056cc10
 // Address: 0056cc10

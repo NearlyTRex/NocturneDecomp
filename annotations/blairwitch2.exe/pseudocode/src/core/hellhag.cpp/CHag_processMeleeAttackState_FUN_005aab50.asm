@@ -19,8 +19,8 @@
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_muzzle.cpp_FUN_0059d8e0
-;   core_muzzle.cpp_FUN_0059dcb0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -104,13 +104,13 @@ section .text
     FLD float ptr [0x00600a6c]          ; 005aabfb | DAT_00600a6c
     PUSH EBX                            ; 005aac01
     FSTP float ptr [EBX + 0x89c]        ; 005aac02
-    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005aac08
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005aac08
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(SStateMachine * this_ptr, float delay)
     ADD ESP,0x8                         ; 005aac0d
     PUSH 0x5f0bca                       ; 005aac10 | = "Chasing"
     PUSH EBX                            ; 005aac15
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aac16
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aac16
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aac1b
     JMP 0x005aabe8                      ; 005aac1e
         ;   XREF to: 005aabe8 (UNCONDITIONAL_JUMP)  ; LAB_005aabe8
@@ -157,8 +157,8 @@ section .text
     FLD float ptr [0x00600a70]          ; 005aac7b | DAT_00600a70
     PUSH EBX                            ; 005aac81
     FSTP float ptr [EBX + 0x89c]        ; 005aac82
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aac88
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aac88
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aac8d
     ADD ESP,0x10                        ; 005aac90
     POP EBP                             ; 005aac93

@@ -1,0 +1,125 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 100,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b844e",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c4bc0",
+    "address_range": [
+      [
+        "004c4bc0",
+        "004c4cbd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_updateMusic_FUN_004c4bc0",
+    "signature": "void __cdecl core_game_cpp_CGame_updateMusic_FUN_004c4bc0(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c4a60",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_playMusic_FUN_004c4a60"
+    },
+    {
+      "addr": "00556700",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00556700"
+    },
+    {
+      "addr": "00556c10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxFade_FUN_00556c10"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b844e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.670886075949367,
+    "instruction_count": 79,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 8,
+      "COPY": 103,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 39,
+      "INT_AND": 33,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 24,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 12,
+      "INT_SUB": 28,
+      "INT_ZEXT": 4,
+      "LOAD": 30,
+      "POPCOUNT": 12,
+      "RETURN": 4,
+      "STORE": 28
+    },
+    "pcode_op_count": 369
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
+}

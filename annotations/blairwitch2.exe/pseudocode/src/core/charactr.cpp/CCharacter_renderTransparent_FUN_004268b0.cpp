@@ -37,7 +37,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_004268b0(CCharact
   if (iVar1 != 0) {
     this_ptr->was_rendered_opaque = 1;
     core_charactr_cpp_CCharacter_renderCharacter_FUN_00424bd0(this_ptr);
-    core_charactr_cpp_FUN_0042b620(this_ptr);
+    core_charactr_cpp_CCharacter_renderPhantomEyes_FUN_0042b620(this_ptr);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);
   if ((0 < this_ptr->fire_count) && (this_ptr->was_rendered_opaque != 0)) {

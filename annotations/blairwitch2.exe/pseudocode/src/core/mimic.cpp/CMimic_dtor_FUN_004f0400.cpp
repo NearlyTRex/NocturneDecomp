@@ -13,7 +13,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint f
   CMorph *pCVar1;
   CCloth *pCVar2;
   CFlame *pCVar3;
-  int iVar4;
+  SFollowFormation *pSVar4;
   CClothList *pCVar5;
   CDeformableModelInstance *pCVar6;
   CMimic *pCVar7;
@@ -35,8 +35,10 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint f
                      ((CCloth *)(pCVar1[-0x4e].models[1].textures[0xc].texture_name + 0x30),0);
   pCVar3 = core_armour_cpp_CFlame_arrdtor50_FUN_0040f2b0
                      ((CFlame *)(pCVar2[-1].vertices[0x28e].connected_indices + 0xf),0);
-  iVar4 = core_muzzle_cpp_FUN_0059df70(&pCVar3[-3].base.particle_systems[3].max_particles,0);
-  pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar4 + -0x34c),0);
+  pSVar4 = core_muzzle_cpp_SFollowFormation_dtor_FUN_0059df70
+                     ((SFollowFormation *)&pCVar3[-3].base.particle_systems[3].max_particles,0);
+  pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_005b1480
+                     ((CClothList *)&pSVar4[-1].slots[2].offset.y,0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar5[-0x19].filenames[6] + 0x10),0);
   pCVar7 = (CMimic *)

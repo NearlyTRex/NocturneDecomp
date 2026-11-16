@@ -33,9 +33,9 @@ void __cdecl CConfederate::setup(CConfederate *this_ptr);
 // Address: 005a0b20
 void __cdecl CConfederate::processStates(CConfederate *this_ptr,float delta_time,int mode);
 
-// Original: core_confedrt.cpp_FUN_005a0bd0
+// Original: core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0
 // Address: 005a0bd0
-void FUN_005a0bd0(int param_1,float param_2);
+void __cdecl CConfederate::processAI(CConfederate *this_ptr,float delta_time);
 
 // Original: core_confedrt.cpp_CConfederate_processAnimationState_FUN_005a0fd0
 // Address: 005a0fd0
@@ -45,13 +45,13 @@ void __cdecl CConfederate::processAnimationState(CConfederate *this_ptr,float de
 // Address: 005a1000
 void __cdecl CConfederate::processDeathState(CConfederate *this_ptr,float delta_time);
 
-// Original: core_confedrt.cpp_FUN_005a1030
+// Original: core_confedrt.cpp_CConfederate_processRangeAttackState_FUN_005a1030
 // Address: 005a1030
-void FUN_005a1030(CCharacter *param_1);
+void __cdecl CConfederate::processRangeAttackState(CConfederate *this_ptr,float delta_time);
 
-// Original: core_confedrt.cpp_FUN_005a1180
+// Original: core_confedrt.cpp_CConfederate_processMeleeAttackState_FUN_005a1180
 // Address: 005a1180
-void FUN_005a1180(CCharacter *param_1);
+void __cdecl CConfederate::processMeleeAttackState(CConfederate *this_ptr,float delta_time);
 
 // Original: core_confedrt.cpp_CConfederate_getDeathState_FUN_005a12d0
 // Address: 005a12d0
@@ -73,14 +73,14 @@ int __cdecl CConfederate::renderTransparent(CConfederate *this_ptr);
 // Address: 005a14d0
 void __cdecl CConfederate::archive(CConfederate *this_ptr);
 
-// Original: core_confedrt.cpp_FUN_005a14e0
+// Original: core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0
 // Address: 005a14e0
-void FUN_005a14e0(CDemonActor *param_1);
+void __cdecl CConfederate::fireShotgun(CConfederate *this_ptr);
 
 // Original: core_confedrt.cpp_CConfederate_processDamage_FUN_005a1a70
 // Address: 005a1a70
 void __cdecl CConfederate::processDamage(CConfederate *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_confedrt.cpp_FUN_005a1ab0
+// Original: core_confedrt.cpp_getDistanceXZ_FUN_005a1ab0
 // Address: 005a1ab0
-float FUN_005a1ab0(float *param_1,float *param_2);
+float __cdecl getDistanceXZ(CVector3f *point_a,CVector3f *point_b);

@@ -34,13 +34,13 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
 ;   ... and 21 more
 ;
 ; *****************************************************************************
@@ -210,8 +210,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 0057d8de
     FSTP float ptr [ESP]                ; 0057d8e4
     PUSH EBX                            ; 0057d8e7
-    CALL core_charactr.cpp_FUN_00434850 ; 0057d8e8
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 0057d8e8
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     MOV ESI,dword ptr [EBX + 0xd054]    ; 0057d8ed
     ADD ESP,0x8                         ; 0057d8f3
     CMP ESI,0x2                         ; 0057d8f6
@@ -351,8 +351,8 @@ section .text
         ;   Label: LAB_0057da75
     PUSH EBX                            ; 0057da7b
     LEA ESI,[EBX + 0x2518]              ; 0057da7c
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 0057da82
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 0057da82
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 0057da87
     FMUL float ptr [EBP + 0x92]         ; 0057da89
     FLD float ptr [ESI + 0x4]           ; 0057da8f

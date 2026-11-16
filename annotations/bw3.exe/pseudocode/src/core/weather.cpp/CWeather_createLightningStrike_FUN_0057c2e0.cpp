@@ -192,7 +192,7 @@ LAB_0057c3b7:
     }
   }
 LAB_0057c5a8:
-  local_18 = (float)core_weather_cpp_FUN_0057c2c0();
+  local_18 = (float)core_weather_cpp_getCurrentCameraAmbientValue_FUN_0057c2c0();
   this_ptr_00 = 0x01C6E360;
   this_ptr->base_ambient = local_18;
   fVar7 = this_ptr->base_ambient;

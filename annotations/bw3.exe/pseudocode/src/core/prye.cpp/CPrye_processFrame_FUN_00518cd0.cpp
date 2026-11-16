@@ -344,11 +344,16 @@ void __cdecl core_prye_cpp_CPrye_processFrame_FUN_00518cd0(CPrye *this_ptr,float
         pSVar12->state_index != 0x29 &&
         (pSVar12 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base),
         pSVar12->state_index != 0x27)))) &&
-      ((iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x2a &&
-       ((iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x2b &&
-        (iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x28)))))) &&
-     ((iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x29 &&
-      (iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x27)))) {
+      ((iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+       iVar14 != 0x2a &&
+       ((iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+        iVar14 != 0x2b &&
+        (iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+        iVar14 != 0x28)))))) &&
+     ((iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+      iVar14 != 0x29 &&
+      (iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+      iVar14 != 0x27)))) {
     if ((this_ptr->base).action_pending == 5) {
       (this_ptr->base).action_pending = 0;
     }
@@ -364,10 +369,15 @@ void __cdecl core_prye_cpp_CPrye_processFrame_FUN_00518cd0(CPrye *this_ptr,float
       (pSVar12 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base),
       pSVar12->state_index != 0x22)) &&
      (((pSVar12 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base),
-       pSVar12->state_index != 0x23 && (iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x20)) &&
-      ((iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x1e &&
-       ((iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x22 &&
-        (iVar14 = core_motion_cpp_FUN_004fc0c0(), iVar14 != 0x23)))))))) {
+       pSVar12->state_index != 0x23 &&
+       (iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+       iVar14 != 0x20)) &&
+      ((iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+       iVar14 != 0x1e &&
+       ((iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+        iVar14 != 0x22 &&
+        (iVar14 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(&pCVar2->base),
+        iVar14 != 0x23)))))))) {
     if ((this_ptr->base).action_pending == 4) {
       (this_ptr->base).action_pending = 0;
     }
@@ -451,7 +461,7 @@ void __cdecl core_prye_cpp_CPrye_processFrame_FUN_00518cd0(CPrye *this_ptr,float
     }
   }
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850((CCharacter *)this_ptr,delta_time);
   if ((this_ptr->base).nearby_interactive_actor == (CDemonActor *)0x0) {
     fVar11 = this_ptr->interact_blend - delta_time * (float)_DAT_005cd14f * (float)_DAT_005cd14f;
     this_ptr->interact_blend = fVar11;
@@ -1326,7 +1336,7 @@ LAB_005199e6:
     (this_ptr->left_arm_aim).recoil_timer = 0.0;
   }
   if (iStack_24 != 0) {
-    core_prye_cpp_FUN_00525930();
+    core_prye_cpp_CPrye_handleActionButton_FUN_00525930(this_ptr);
   }
   core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(this_ptr);
   pCVar13 = core_actor_cpp_castToClassHash_FUN_0040c840
@@ -1339,7 +1349,7 @@ LAB_005199e6:
     core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(this_ptr);
   }
   core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(this_ptr,delta_time,iStack_28);
-  core_prye_cpp_FUN_00526cf0();
+  core_prye_cpp_CPrye_updateClothSimulation_FUN_00526cf0(this_ptr);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);
   pCVar2 = &(this_ptr->base).base.model;
   fVar11 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004fc350(&pCVar2->base,0x11);
@@ -1389,9 +1399,9 @@ LAB_005199e6:
   core_prye_cpp_CPrye_updateWeaponPosition_FUN_0051f360(this_ptr,0);
   core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(this_ptr,0,delta_time);
   core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(this_ptr,1,delta_time);
-  core_prye_cpp_FUN_005263c0(this_ptr);
+  core_prye_cpp_CPrye_handleFireButton_FUN_005263c0(this_ptr,delta_time);
   core_inv_cpp_CInventory_updateInventory_FUN_004dcdb0(&(this_ptr->base).inventory);
-  core_prye_cpp_FUN_00526dc0(this_ptr);
+  core_prye_cpp_CPrye_processWeaponTick_FUN_00526dc0(this_ptr,delta_time);
   pCVar13 = core_actor_cpp_castToClassHash_FUN_0040c840
                       ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);
   if (pCVar13 != (CDemonActor *)0x0) {
@@ -1403,13 +1413,13 @@ LAB_005199e6:
     (*((pCVar13->vtable)._ub)->process)(pCVar13,delta_time);
   }
   if (iStack_24 == 0) {
-    core_hero_cpp_FUN_004d3210();
+    core_hero_cpp_CHero_clearHeroAction_FUN_004d3210(&this_ptr->base);
   }
   else {
     fVar11 = (this_ptr->base).hero_action_range + delta_time;
     (this_ptr->base).hero_action_range = fVar11;
     if ((float)_DAT_005cd1df < fVar11) {
-      core_hero_cpp_FUN_004d4900(this_ptr,1);
+      core_hero_cpp_CHero_findHeroAction_FUN_004d4900(&this_ptr->base,1);
     }
   }
   if ((this_ptr->weapon != (CWeapon *)0x0) && ((this_ptr->weapon->base).is_transparent != 0)) {

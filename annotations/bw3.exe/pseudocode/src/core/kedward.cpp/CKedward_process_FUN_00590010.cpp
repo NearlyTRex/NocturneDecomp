@@ -346,7 +346,8 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
       }
       fVar14 = (this_ptr->base).speed;
       (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-      core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar14);
+      core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+                ((CCharacter *)this_ptr,delta_time * fVar14);
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCStack_34->base);
       iVar4 = pSVar5->state_index;
       engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"State: %d\n");
@@ -360,7 +361,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
              iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x10c))(iVar4), iVar4 == 0)) {
             iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
             if (iVar4 != 0) {
-              core_kedward_cpp_FUN_005919a0(this_ptr);
+              core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
             }
             (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
                       (&this_ptr->base,delta_time);
@@ -372,7 +373,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               (this_ptr->base).victim = *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
             }
             if ((this_ptr->base).victim != (CCharacter *)0x0) {
-              core_kedward_cpp_FUN_005919a0(this_ptr);
+              core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
             }
           }
           break;
@@ -399,7 +400,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               }
             }
             else if (pCVar3 == (CCharacter *)0x0) {
-              core_kedward_cpp_FUN_005919a0(this_ptr);
+              core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
             }
             else {
               pCStack_38->z = 0.0;
@@ -490,7 +491,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
           ;
           pCVar3 = (this_ptr->base).victim;
           if (pCVar3 == (CCharacter *)0x0) {
-            core_kedward_cpp_FUN_005919a0(this_ptr);
+            core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
           }
           else {
             fStack_28c = (pCStack_3c->position).x - (pCVar3->base).location.position.x;
@@ -540,7 +541,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               }
             }
             else {
-              core_kedward_cpp_FUN_005919a0(this_ptr);
+              core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
             }
           }
           break;
@@ -549,7 +550,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
           ;
           pCVar3 = (this_ptr->base).victim;
           if (pCVar3 == (CCharacter *)0x0) {
-            core_kedward_cpp_FUN_005919a0(this_ptr);
+            core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
           }
           else {
             fStack_1b4 = (pCStack_3c->position).x - (pCVar3->base).location.position.x;
@@ -599,7 +600,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               }
             }
             else {
-              core_kedward_cpp_FUN_005919a0(this_ptr);
+              core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
             }
           }
           break;
@@ -608,7 +609,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
           ;
           pCVar3 = (this_ptr->base).victim;
           if (pCVar3 == (CCharacter *)0x0) {
-            core_kedward_cpp_FUN_005919a0(this_ptr);
+            core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
           }
           else {
             fStack_208 = (pCStack_3c->position).x - (pCVar3->base).location.position.x;
@@ -658,7 +659,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               }
             }
             else {
-              core_kedward_cpp_FUN_005919a0(this_ptr);
+              core_kedward_cpp_CKedward_resetChaseState_FUN_005919a0(this_ptr);
             }
           }
           break;
@@ -861,7 +862,7 @@ LAB_00590865:
       if (iVar4 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCStack_34->base,0xc,1);
       }
-      core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+      core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
       fStack_268 = pCStack_54->x * delta_time;
       afStack_264[0] = pCStack_54->y * delta_time;
       afStack_264[1] = pCStack_54->z * delta_time;

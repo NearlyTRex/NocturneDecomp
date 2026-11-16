@@ -19,13 +19,13 @@
     {
       "addr": "005a0bd0",
       "from_addr": "005a0c28",
-      "name": "core_confedrt.cpp_FUN_005a0bd0",
+      "name": "core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a2240",
       "from_addr": "005a2255",
-      "name": "core_confzomb.cpp_FUN_005a2240",
+      "name": "core_confzomb.cpp_CConfederateZombie_processAI_FUN_005a2240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,7 +43,7 @@
     {
       "addr": "005a9890",
       "from_addr": "005a98a1",
-      "name": "core_ghostchi.cpp_FUN_005a9890",
+      "name": "core_ghostchi.cpp_CGhostChild_processAI_FUN_005a9890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -55,7 +55,7 @@
     {
       "addr": "005ab260",
       "from_addr": "005ab2b5",
-      "name": "core_hellhag.cpp_FUN_005ab260",
+      "name": "core_hellhag.cpp_CHag_processAI_FUN_005ab260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,13 +79,13 @@
     {
       "addr": "005a4330",
       "from_addr": "005a4345",
-      "name": "core_unionzom.cpp_FUN_005a4330",
+      "name": "core_unionzom.cpp_CUnionZombie_processAI_FUN_005a4330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a61f0",
       "from_addr": "005a6248",
-      "name": "core_weaver.cpp_FUN_005a61f0",
+      "name": "core_weaver.cpp_CRobin_processAI_FUN_005a61f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -110,7 +110,7 @@
     {
       "addr": "005a85c0",
       "is_variadic": false,
-      "name": "core_bwspart.cpp_FUN_005a85c0"
+      "name": "core_bwspart.cpp_processSimpleParticle_FUN_005a85c0"
     }
   ],
   "globals": [],
@@ -142,7 +142,7 @@
       {
         "call_addr": "005a0c28",
         "call_type": "direct",
-        "caller": "core_confedrt.cpp_FUN_005a0bd0",
+        "caller": "core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +153,7 @@
       {
         "call_addr": "005a2255",
         "call_type": "direct",
-        "caller": "core_confzomb.cpp_FUN_005a2240",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processAI_FUN_005a2240",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,7 +164,7 @@
       {
         "call_addr": "005a4345",
         "call_type": "direct",
-        "caller": "core_unionzom.cpp_FUN_005a4330",
+        "caller": "core_unionzom.cpp_CUnionZombie_processAI_FUN_005a4330",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -175,7 +175,7 @@
       {
         "call_addr": "005a6248",
         "call_type": "direct",
-        "caller": "core_weaver.cpp_FUN_005a61f0",
+        "caller": "core_weaver.cpp_CRobin_processAI_FUN_005a61f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,7 +186,7 @@
       {
         "call_addr": "005a6262",
         "call_type": "direct",
-        "caller": "core_weaver.cpp_FUN_005a61f0",
+        "caller": "core_weaver.cpp_CRobin_processAI_FUN_005a61f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,7 +197,7 @@
       {
         "call_addr": "005a98a1",
         "call_type": "direct",
-        "caller": "core_ghostchi.cpp_FUN_005a9890",
+        "caller": "core_ghostchi.cpp_CGhostChild_processAI_FUN_005a9890",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,7 +208,7 @@
       {
         "call_addr": "005ab2b5",
         "call_type": "direct",
-        "caller": "core_hellhag.cpp_FUN_005ab260",
+        "caller": "core_hellhag.cpp_CHag_processAI_FUN_005ab260",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +219,7 @@
       {
         "call_addr": "005ab2cf",
         "call_type": "direct",
-        "caller": "core_hellhag.cpp_FUN_005ab260",
+        "caller": "core_hellhag.cpp_CHag_processAI_FUN_005ab260",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -316,7 +316,7 @@
       "line": 23,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
-      "text": "while (piVar2 = (int *)((int)this_ptr->particles + iVar3), *piVar2 != 0) {",
+      "text": "while (particle = (int *)((int)this_ptr->particles + iVar2), *particle != 0) {",
       "type": "pointer_cast"
     },
     {
@@ -324,7 +324,7 @@
       "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_bwspart_cpp_FUN_005a85c0(piVar2,param_2);",
+      "text": "core_bwspart_cpp_processSimpleParticle_FUN_005a85c0(particle,param_2);",
       "type": "unnamed_param"
     }
   ]

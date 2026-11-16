@@ -17,13 +17,13 @@ int __cdecl CBasicEnemy::ctor(CBasicEnemy *this_ptr);
 // Address: 0059e6a0
 void __cdecl CBasicEnemy::setup(CBasicEnemy *this_ptr);
 
-// Original: core_basicene.cpp_FUN_0059e7a0
+// Original: core_basicene.cpp_CBasicEnemy_setAIState_FUN_0059e7a0
 // Address: 0059e7a0
-void FUN_0059e7a0(int param_1,undefined4 param_2);
+void __cdecl CBasicEnemy::setAIState(CBasicEnemy *this_ptr,char *state_name);
 
-// Original: core_basicene.cpp_FUN_0059e7c0
+// Original: core_basicene.cpp_CBasicEnemy_setAnimation_FUN_0059e7c0
 // Address: 0059e7c0
-void FUN_0059e7c0(int param_1,undefined4 param_2);
+void __cdecl CBasicEnemy::setAnimation(CBasicEnemy *this_ptr,int motion_state);
 
 // Original: core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0
 // Address: 0059e7d0
@@ -37,65 +37,65 @@ void __cdecl CBasicEnemy::processMotionEvent(CBasicEnemy *this_ptr,int param_2);
 // Address: 0059e8c0
 void __cdecl CBasicEnemy::processStates(CBasicEnemy *this_ptr,float delta_time,int mode);
 
-// Original: core_basicene.cpp_FUN_0059ebc0
+// Original: core_basicene.cpp_CBasicEnemy_processNothingState_FUN_0059ebc0
 // Address: 0059ebc0
-void FUN_0059ebc0(int param_1);
+void __cdecl CBasicEnemy::processNothingState(CBasicEnemy *this_ptr);
 
 // Original: core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0
 // Address: 0059ebe0
 void __cdecl CBasicEnemy::processAnimationState(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059ec10
+// Original: core_basicene.cpp_CBasicEnemy_processAlertState_FUN_0059ec10
 // Address: 0059ec10
-void FUN_0059ec10(CEnemy *param_1,float param_2);
+void __cdecl CBasicEnemy::processAlertState(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059ed50
+// Original: core_basicene.cpp_CBasicEnemy_processAlertInvisibleState_FUN_0059ed50
 // Address: 0059ed50
-void FUN_0059ed50(int param_1,undefined4 param_2);
+void __cdecl CBasicEnemy::processAlertInvisibleState(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059ee00
+// Original: core_basicene.cpp_CBasicEnemy_processPatrolState_FUN_0059ee00
 // Address: 0059ee00
-void FUN_0059ee00(CEnemy *param_1,float param_2);
+void __cdecl CBasicEnemy::processPatrolState(CBasicEnemy *this_ptr,float delta_time);
 
 // Original: core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90
 // Address: 0059ef90
 void __cdecl CBasicEnemy::processChasingState(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059f0e0
+// Original: core_basicene.cpp_CBasicEnemy_processMovement_FUN_0059f0e0
 // Address: 0059f0e0
-void FUN_0059f0e0(CCharacter *param_1,float param_2);
+void __cdecl CBasicEnemy::processMovement(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059f390
+// Original: core_basicene.cpp_CBasicEnemy_applyFlinch_FUN_0059f390
 // Address: 0059f390
-void FUN_0059f390(int param_1);
+void __cdecl CBasicEnemy::applyFlinch(CBasicEnemy *this_ptr);
 
 // Original: core_basicene.cpp_CBasicEnemy_process_FUN_0059f420
 // Address: 0059f420
 void __cdecl CBasicEnemy::process(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059f570
+// Original: core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570
 // Address: 0059f570
-void FUN_0059f570(int param_1);
+void __cdecl CBasicEnemy::startFade(CBasicEnemy *this_ptr);
 
-// Original: core_basicene.cpp_FUN_0059f5b0
+// Original: core_basicene.cpp_CBasicEnemy_updateFade_FUN_0059f5b0
 // Address: 0059f5b0
-void FUN_0059f5b0(int param_1,float param_2);
+void __cdecl CBasicEnemy::updateFade(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059f660
+// Original: core_basicene.cpp_CBasicEnemy_updateFlinch_FUN_0059f660
 // Address: 0059f660
-ushort FUN_0059f660(int param_1,float param_2);
+void __cdecl CBasicEnemy::updateFlinch(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059f6a0
+// Original: core_basicene.cpp_CBasicEnemy_processAI_FUN_0059f6a0
 // Address: 0059f6a0
-void FUN_0059f6a0(void);
+void __cdecl CBasicEnemy::processAI(CBasicEnemy *this_ptr);
 
 // Original: core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0
 // Address: 0059f6b0
 int __cdecl CBasicEnemy::checkVictim(CBasicEnemy *this_ptr);
 
-// Original: core_basicene.cpp_FUN_0059f740
+// Original: core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 // Address: 0059f740
-int FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4);
+int __cdecl CBasicEnemy::attackFromBone(CBasicEnemy *this_ptr,float damage,int bone_index,float radius);
 
 // Original: core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800
 // Address: 0059f800
@@ -121,25 +121,25 @@ int __cdecl CBasicEnemy::renderOpaque(CBasicEnemy *this_ptr);
 // Address: 0059fa70
 int __cdecl CBasicEnemy::isGrabbable(CBasicEnemy *this_ptr,CDemonActor *grabber);
 
-// Original: core_basicene.cpp_FUN_0059fae0
+// Original: core_basicene.cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0
 // Address: 0059fae0
-void FUN_0059fae0(CDemonActor *param_1);
+void __cdecl CBasicEnemy::renderDebugInfo(CBasicEnemy *this_ptr);
 
 // Original: core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10
 // Address: 0059fc10
 void __cdecl CBasicEnemy::archive(CBasicEnemy *this_ptr);
 
-// Original: core_basicene.cpp_FUN_005a01a0
+// Original: core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0
 // Address: 005a01a0
-void FUN_005a01a0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CBasicEnemy::setFade(CBasicEnemy *this_ptr,float fade_start,float fade_end,float fade_time);
 
-// Original: core_basicene.cpp_FUN_005a01d0
+// Original: core_basicene.cpp_CBasicEnemy_initFlinch_FUN_005a01d0
 // Address: 005a01d0
-void FUN_005a01d0(int param_1,undefined4 *param_2);
+void __cdecl CBasicEnemy::initFlinch(CBasicEnemy *this_ptr,int *flinch_info);
 
-// Original: core_basicene.cpp_FUN_005a0240
+// Original: core_basicene.cpp_CBasicEnemy_resetInitialPos_FUN_005a0240
 // Address: 005a0240
-void FUN_005a0240(int param_1);
+void __cdecl CBasicEnemy::resetInitialPos(CBasicEnemy *this_ptr);
 
 // Original: core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270
 // Address: 005a0270

@@ -8,8 +8,8 @@
 ; STextView *      Stack[0x8]:4   view
 ;
 ; XREF[5]:
-;   core_flashlit.cpp_FUN_004ba630 at 004ba682
-;   core_flashlit.cpp_FUN_004ba6b0 at 004ba70f
+;   core_flashlit.cpp_layoutSections_FUN_004ba630 at 004ba682
+;   core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004ba6b0 at 004ba70f
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 at 004be182
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bcd7b
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004bde80 at 004bdf1c

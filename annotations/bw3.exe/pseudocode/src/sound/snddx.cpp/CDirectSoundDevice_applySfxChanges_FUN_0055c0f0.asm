@@ -31,9 +31,9 @@
 ;   crt_math.c_floor_FUN_005a3600
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   sound_snddx.cpp_FUN_0055ab20
-;   sound_snddx.cpp_FUN_0055abc0
+;   sound_snddx.cpp_clampDirectSoundFrequency_FUN_0055abc0
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670
+;   sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_0055ab20
 ;   sound_sndmain.cpp_getAudioChannelCount_FUN_005583b0
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20
 ;   sound_sndmain.cpp_logSoundError_FUN_0055a560
@@ -113,8 +113,8 @@ section .text
         ;   XREF to: 0055c195 (CONDITIONAL_JUMP)  ; LAB_0055c195
     PUSH dword ptr [ESP]                ; 0055c1b4
         ;   Label: LAB_0055c1b4
-    CALL sound_snddx.cpp_FUN_0055ab20   ; 0055c1b7
-        ;   XREF to: 0055ab20 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_FUN_0055ab20()
+    CALL sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_0055ab20 ; 0055c1b7
+        ;   XREF to: 0055ab20 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_0055ab20(float volume)
     ADD ESP,0x4                         ; 0055c1bc
     MOV dword ptr [ESP + 0x12dc],EAX    ; 0055c1bf
     XOR EAX,EAX                         ; 0055c1c6
@@ -197,8 +197,8 @@ section .text
     FMUL float ptr [EBX + 0x6c]         ; 0055c2ae
     SUB ESP,0x4                         ; 0055c2b1
     FSTP float ptr [ESP]                ; 0055c2b4
-    CALL sound_snddx.cpp_FUN_0055abc0   ; 0055c2b7
-        ;   XREF to: 0055abc0 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_FUN_0055abc0()
+    CALL sound_snddx.cpp_clampDirectSoundFrequency_FUN_0055abc0 ; 0055c2b7
+        ;   XREF to: 0055abc0 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_clampDirectSoundFrequency_FUN_0055abc0(float frequency)
     ADD ESP,0x4                         ; 0055c2bc
     MOV EDX,dword ptr [ESP + 0x12f0]    ; 0055c2bf
     MOV ESI,EAX                         ; 0055c2c6
@@ -522,8 +522,8 @@ section .text
     FMUL float ptr [ESP + 0x4]          ; 0055c667
     SUB ESP,0x4                         ; 0055c66b
     FSTP float ptr [ESP]                ; 0055c66e
-    CALL sound_snddx.cpp_FUN_0055ab20   ; 0055c671
-        ;   XREF to: 0055ab20 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_FUN_0055ab20()
+    CALL sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_0055ab20 ; 0055c671
+        ;   XREF to: 0055ab20 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_0055ab20(float volume)
     ADD ESP,0x4                         ; 0055c676
     MOV EDX,dword ptr [EBP + 0x1c]      ; 0055c679
     MOV dword ptr [ESP + 0x12d0],EAX    ; 0055c67c
@@ -552,8 +552,8 @@ section .text
     FMUL float ptr [EBX + 0x3c]         ; 0055c6c2
     SUB ESP,0x4                         ; 0055c6c5
     FSTP float ptr [ESP]                ; 0055c6c8
-    CALL sound_snddx.cpp_FUN_0055abc0   ; 0055c6cb
-        ;   XREF to: 0055abc0 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_FUN_0055abc0()
+    CALL sound_snddx.cpp_clampDirectSoundFrequency_FUN_0055abc0 ; 0055c6cb
+        ;   XREF to: 0055abc0 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_clampDirectSoundFrequency_FUN_0055abc0(float frequency)
     ADD ESP,0x4                         ; 0055c6d0
     MOV EDX,dword ptr [EBP + 0x1c]      ; 0055c6d3
     MOV dword ptr [ESP + 0x12d4],EAX    ; 0055c6d6

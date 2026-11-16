@@ -12,12 +12,13 @@ EDeathState __cdecl core_union_cpp_CUnion_getDeathState_FUN_005a5280(CUnion *thi
   uint uVar1;
   int iVar2;
   SMotion *pSVar3;
-  SStateMachine *pSVar4;
+  SStateMachine *this_ptr_00;
   
-  pSVar4 = &(this_ptr->base).base.state_machine;
-  iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar4,"BDeath" + 1);
+  this_ptr_00 = &(this_ptr->base).base.state_machine;
+  iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"BDeath" + 1);
   if ((iVar2 == 0) &&
-     (iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar4,"Animation"), iVar2 == 0)) {
+     (iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Animation"),
+     iVar2 == 0)) {
     return DEATH_STATE_ALIVE;
   }
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0

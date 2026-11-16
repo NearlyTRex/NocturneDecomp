@@ -79,7 +79,7 @@ void __cdecl core_event_cpp_CEventList_reset_FUN_004a19f0(CEventList *this_ptr);
 void __cdecl core_event_cpp_CEventList_process_FUN_004a1a40(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_executeCommands_FUN_004a1b70(CEventList *this_ptr,char *commands);
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004a1b90(CEventList *this_ptr,char *command_string);
-int core_event_cpp_FUN_004a1d00(CEventList *param_1,char *param_2);
+int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004a1d00(CEventList *this_ptr,char *command_buffer);
 int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004a6ba0(CEventList *this_ptr,char *identifier);
 int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList *this_ptr,char *condition_expression);
 char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_004a6c90(CEventList *this_ptr,char *expression);

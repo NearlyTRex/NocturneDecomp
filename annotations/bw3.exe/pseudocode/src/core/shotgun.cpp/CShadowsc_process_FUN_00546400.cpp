@@ -95,7 +95,8 @@ void __cdecl core_shotgun_cpp_CShadowsc_process_FUN_00546400(CShadowsc *this_ptr
   fVar11 = (this_ptr->base).speed;
   iStack_24 = pSVar5->state_index;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar11);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar11);
   iVar4 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
@@ -380,7 +381,7 @@ switchD_00546d3d_caseD_5:
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     afStack_fc[2] = (this_ptr->base).base.velocity.x * delta_time;
     afStack_fc[3] = (this_ptr->base).base.velocity.y * delta_time;
     fStack_ec = (this_ptr->base).base.velocity.z * delta_time;

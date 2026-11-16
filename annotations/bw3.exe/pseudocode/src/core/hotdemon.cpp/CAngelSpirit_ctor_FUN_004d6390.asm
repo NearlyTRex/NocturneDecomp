@@ -7,7 +7,7 @@
 ; CAngelSpirit *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hotdemon.cpp_FUN_004d6360 at 004d6373
+;   core_hotdemon.cpp_factoryFuncAngelSpirit_FUN_004d6360 at 004d6373
 ;
 ; Called Functions:
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004d5430

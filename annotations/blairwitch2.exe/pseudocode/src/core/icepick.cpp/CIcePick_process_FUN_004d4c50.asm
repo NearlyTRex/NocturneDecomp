@@ -26,12 +26,12 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_0042b2a0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
 ;   core_hero.cpp_CHero_tryInteract_FUN_004cec50
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
@@ -70,8 +70,8 @@ section .text
     AND EAX,0xff                        ; 004d4ca4
     PUSH EBX                            ; 004d4ca9
     MOV dword ptr [EBX + 0x25660],EAX   ; 004d4caa
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 004d4cb0
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 004d4cb0
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d4cb5
     FLD float ptr [EBX + 0x10a60]       ; 004d4cb8
     FSUB float ptr [ESP + 0xd0]         ; 004d4cbe
@@ -686,8 +686,8 @@ section .text
     MOV EAX,dword ptr [EDX + 0x8]       ; 004d538b
     PUSH EBX                            ; 004d538e
     MOV dword ptr [ESP + 0x6c],EAX      ; 004d538f
-    CALL core_charactr.cpp_FUN_00423a10 ; 004d5393
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 004d5393
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x2588]              ; 004d5398
     ADD ESP,0x8                         ; 004d539e
     FLD float ptr [EAX]                 ; 004d53a1

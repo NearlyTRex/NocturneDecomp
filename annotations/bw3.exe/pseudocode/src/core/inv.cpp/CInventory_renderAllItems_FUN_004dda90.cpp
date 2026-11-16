@@ -130,8 +130,8 @@ LAB_004de3dc:
     }
     _sprintf(local_564,pcVar9);
     local_24 = local_44;
-    local_60 = engine_font_cpp_FUN_004b2e40
-                         (local_44,local_564,0x1d5be88,10,0x100,iVar6 - (int)local_50);
+    local_60 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
+                         (local_44,local_564,(char *)0x1d5be88,10,0x100,iVar6 - (int)local_50);
     local_38 = local_60;
     local_34 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_44,0x58);
     iVar5 = (DAT_005fba1c - iVar5) + iVar7;
@@ -174,8 +174,8 @@ LAB_004ddcd0:
       core_inv_cpp_getItemDisplayName_FUN_004d9e40(this_ptr->selected_item);
       _sprintf(local_264,"%s\n\n%s");
       local_28 = local_44;
-      local_60 = engine_font_cpp_FUN_004b2e40
-                           (local_44,local_264,0x1d5c888,10,0x100,iVar6 - local_48);
+      local_60 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
+                           (local_44,local_264,(char *)0x1d5c888,10,0x100,iVar6 - local_48);
       local_3c = local_60;
       local_40 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_44,0x58);
       iVar5 = (DAT_005fba1c - iVar5) + iVar7;
@@ -268,8 +268,8 @@ LAB_004ddcd0:
       local_24 = _DAT_01549abc;
     }
     pCVar4 = (CBitFont *)
-             engine_font_cpp_FUN_004b2e40
-                       (local_24,this_ptr->message_text,0x1d5d288,10,0x100,
+             engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
+                       (local_24,this_ptr->message_text,(char *)0x1d5d288,10,0x100,
                         (DAT_005fba18 - iVar5) + -4);
     local_28 = pCVar4;
     local_38 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_24,0x58);

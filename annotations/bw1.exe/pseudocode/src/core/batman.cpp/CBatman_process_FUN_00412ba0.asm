@@ -34,13 +34,13 @@
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_00412b20
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   ... and 19 more
 ;
 ; *****************************************************************************
@@ -89,8 +89,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 00412c1e
     FSTP float ptr [ESP]                ; 00412c24
     PUSH EBX                            ; 00412c27
-    CALL core_charactr.cpp_FUN_00435320 ; 00412c28
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 00412c28
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBX + 0xc2e4]    ; 00412c2d
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x2298] ; 00412c33
     ADD ESP,0x8                         ; 00412c3a
@@ -167,8 +167,8 @@ section .text
         ;   XREF to: 00412df8 (CONDITIONAL_JUMP)  ; LAB_00412df8
     PUSH dword ptr [EBP + 0x92]         ; 00412d0c
     PUSH EBX                            ; 00412d12
-    CALL core_charactr.cpp_FUN_0042d700 ; 00412d13
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 00412d13
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     LEA ECX,[EBX + 0x2518]              ; 00412d18
     FLD float ptr [ECX]                 ; 00412d1e
     FMUL float ptr [EBP + 0x92]         ; 00412d20

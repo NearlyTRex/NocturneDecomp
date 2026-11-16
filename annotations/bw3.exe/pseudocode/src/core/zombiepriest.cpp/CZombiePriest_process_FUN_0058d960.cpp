@@ -181,8 +181,10 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
       core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar6);
     }
   }
+  fVar17 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850();
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850((CCharacter *)this_ptr,param_2 * fVar17)
+  ;
   pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCStack_18->base);
   iVar6 = pSVar9->state_index;
   iVar10 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660((CCharacter *)this_ptr,param_2);
@@ -600,7 +602,7 @@ switchD_0058e8bf_caseD_3:
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042c1e0();
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,param_2);
     fStack_70 = (this_ptr->base).base.velocity.x * param_2;
     afStack_6c[0] = (this_ptr->base).base.velocity.y * param_2;
     afStack_6c[1] = (this_ptr->base).base.velocity.z * param_2;

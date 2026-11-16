@@ -41,9 +41,9 @@ void __cdecl CSchnellGeist::processLeapAttackState(CSchnellGeist *this_ptr,float
 // Address: 005a3420
 void __cdecl CSchnellGeist::processMotionEvent(CSchnellGeist *this_ptr,int event_id);
 
-// Original: core_schngeis.cpp_FUN_005a3560
+// Original: core_schngeis.cpp_CSchnellGeist_processAI_FUN_005a3560
 // Address: 005a3560
-void FUN_005a3560(CDemonActor *param_1,float param_2);
+void __cdecl CSchnellGeist::processAI(CSchnellGeist *this_ptr,float delta_time);
 
 // Original: core_schngeis.cpp_CSchnellGeist_processDeathState_FUN_005a3b10
 // Address: 005a3b10

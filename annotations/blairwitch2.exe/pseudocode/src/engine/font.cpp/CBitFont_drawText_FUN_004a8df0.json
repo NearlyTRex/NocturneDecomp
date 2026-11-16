@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 244,
+    "complexity_score": 245,
     "cross_reference_count": 26,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 105,
     "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 386
+    "total_lines": 387
   },
   "cross_references": [
     {
       "addr": "004a16b0",
       "from_addr": "004a1724",
-      "name": "core_flashlit.cpp_FUN_004a16b0",
+      "name": "core_flashlit.cpp_drawTooltip_FUN_004a16b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -199,12 +199,12 @@
     {
       "addr": "004ab840",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab840"
+      "name": "engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004ab840"
     },
     {
       "addr": "00510cd0",
       "is_variadic": false,
-      "name": "engine_palette.cpp_FUN_00510cd0"
+      "name": "engine_palette.cpp_CFont_queueText_FUN_00510cd0"
     }
   ],
   "globals": [
@@ -593,7 +593,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "if (DAT_006141c0 == 0x20) {",
@@ -601,7 +601,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 66,
       "match": "DAT_01c35820",
       "severity": "mild",
       "text": "uVar2 = _DAT_01cb024c << (DAT_01c35820 & 0x1f) | _DAT_01cb0248 << (DAT_01c35814 & 0x1f);",
@@ -609,7 +609,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 66,
       "match": "DAT_01c35814",
       "severity": "mild",
       "text": "uVar2 = _DAT_01cb024c << (DAT_01c35820 & 0x1f) | _DAT_01cb0248 << (DAT_01c35814 & 0x1f);",
@@ -617,7 +617,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_01c3582c",
       "severity": "mild",
       "text": "uVar2 = uVar4 << (DAT_01c3582c & 0x1f) | uVar2;",
@@ -625,7 +625,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 80,
       "match": "DAT_01c3583a",
       "severity": "mild",
       "text": "uVar4 = (uint)(byte)(&DAT_01c3583a)[iVar3];",
@@ -633,7 +633,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 81,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "if (DAT_006141c0 == 0x20) {",
@@ -641,7 +641,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_01c35839",
       "severity": "mild",
       "text": "uVar2 = (uint)(byte)(&DAT_01c35839)[iVar3] << (DAT_01c35820 & 0x1f) |",
@@ -649,7 +649,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_01c35820",
       "severity": "mild",
       "text": "uVar2 = (uint)(byte)(&DAT_01c35839)[iVar3] << (DAT_01c35820 & 0x1f) |",
@@ -657,7 +657,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_01c35838",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c35838)[iVar3] << (DAT_01c35814 & 0x1f);",
@@ -665,7 +665,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_01c35814",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c35838)[iVar3] << (DAT_01c35814 & 0x1f);",
@@ -673,7 +673,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_01c35838",
       "severity": "mild",
       "text": "uVar2 = (uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c35839)[iVar3] << 8 |",
@@ -681,7 +681,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_01c35839",
       "severity": "mild",
       "text": "uVar2 = (uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c35839)[iVar3] << 8 |",

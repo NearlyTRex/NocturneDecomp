@@ -31,16 +31,16 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
-;   core_baal.cpp_FUN_00597700
+;   core_baal.cpp_CBaal_chooseAttack_FUN_00597700
 ;   core_baal.cpp_FUN_00597be0
 ;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_00419790
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
 ;   ... and 15 more
 ;
 ; *****************************************************************************
@@ -204,8 +204,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 00596aaf
     FSTP float ptr [ESP]                ; 00596ab5
     PUSH EBX                            ; 00596ab8
-    CALL core_charactr.cpp_FUN_00434850 ; 00596ab9
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 00596ab9
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00596abe
     MOV EDX,dword ptr [EBP + 0x6e]      ; 00596ac1
     PUSH EDX                            ; 00596ac4
@@ -271,8 +271,8 @@ section .text
     ADD ESP,0x4                         ; 00596b61
     PUSH dword ptr [EBP + 0x92]         ; 00596b64
     PUSH EBX                            ; 00596b6a
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 00596b6b
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 00596b6b
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x5e]      ; 00596b70
     FLD float ptr [EAX]                 ; 00596b73
     FMUL float ptr [EBP + 0x92]         ; 00596b75
@@ -801,8 +801,8 @@ section .text
     JC 0x00597172                       ; 00597162
         ;   XREF to: 00597172 (CONDITIONAL_JUMP)  ; LAB_00597172
     PUSH EBX                            ; 00597164
-    CALL core_baal.cpp_FUN_00597700     ; 00597165
-        ;   XREF to: 00597700 (UNCONDITIONAL_CALL)  ; undefined core_baal.cpp_FUN_00597700()
+    CALL core_baal.cpp_CBaal_chooseAttack_FUN_00597700 ; 00597165
+        ;   XREF to: 00597700 (UNCONDITIONAL_CALL)  ; void core_baal.cpp_CBaal_chooseAttack_FUN_00597700(CBaal * this_ptr)
     ADD ESP,0x4                         ; 0059716a
     JMP 0x00596b24                      ; 0059716d
         ;   XREF to: 00596b24 (UNCONDITIONAL_JUMP)  ; caseD_8
@@ -1015,8 +1015,8 @@ section .text
     JLE 0x00596b24                      ; 005973aa
         ;   XREF to: 00596b24 (CONDITIONAL_JUMP)  ; caseD_8
     PUSH EBX                            ; 005973b0
-    CALL core_baal.cpp_FUN_00597700     ; 005973b1
-        ;   XREF to: 00597700 (UNCONDITIONAL_CALL)  ; undefined core_baal.cpp_FUN_00597700()
+    CALL core_baal.cpp_CBaal_chooseAttack_FUN_00597700 ; 005973b1
+        ;   XREF to: 00597700 (UNCONDITIONAL_CALL)  ; void core_baal.cpp_CBaal_chooseAttack_FUN_00597700(CBaal * this_ptr)
     ADD ESP,0x4                         ; 005973b6
     JMP 0x00596b24                      ; 005973b9
         ;   XREF to: 00596b24 (UNCONDITIONAL_JUMP)  ; caseD_8

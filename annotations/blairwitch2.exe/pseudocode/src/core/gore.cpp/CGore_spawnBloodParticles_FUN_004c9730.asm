@@ -16,7 +16,7 @@
 ;   core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060 at 00427115
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850 at 004c9884
 ;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d1bd2
-;   core_schngeis.cpp_FUN_005a3560 at 005a3815
+;   core_schngeis.cpp_CSchnellGeist_processAI_FUN_005a3560 at 005a3815
 ;   core_tentacle.cpp_CTentacle_process_FUN_005726c0 at 00572b11
 ;
 ; Referenced Globals:

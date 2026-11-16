@@ -7,7 +7,6 @@
 #include "system/stdio.h"
 #include "types/classes/CActorDestination.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemnfolk.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -26,7 +25,6 @@
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/classes/CZombie.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -82,32 +80,32 @@ float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_00454360(CDemo
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_004545f0(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 void __cdecl core_demnfolk_cpp_staticInit_FUN_00454750(void);
-float core_demnfolk_cpp_FUN_00454780(int param_1);
-void core_demnfolk_cpp_FUN_00454820(int param_1);
-void core_demnfolk_cpp_FUN_004548e0(CDemonActor *param_1);
-undefined4 core_demnfolk_cpp_FUN_004549e0(float *param_1);
+float __cdecl core_demnfolk_cpp_getObjectHeightScale_FUN_00454780(CDemonActor *actor);
+CVector3f * __stack_esi core_demnfolk_cpp_getObjectGrabPointLocal_FUN_00454820(CDemonActor *actor,CVector3f *out_point);
+CVector3f * __stack_esi core_demnfolk_cpp_getObjectGrabPointWorld_FUN_004548e0(CDemonActor *actor,CVector3f *out_point);
+int __cdecl core_demnfolk_cpp_classifyObjectShape_FUN_004549e0(CVector3f *dimensions);
 CDemnfolk * __cdecl core_demnfolk_cpp_factoryFuncDemnfolk_FUN_00454b30(void);
 CDemonActorType * __cdecl core_demnfolk_cpp_CDemnfolk_getActorType_FUN_00454b50(CDemnfolk *this_ptr);
 CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00454b60(CDemnfolk *this_ptr);
 void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00454d20(CDemnfolk *this_ptr);
 void __cdecl core_demnfolk_cpp_CDemnfolk_process_FUN_00455080(CDemnfolk *this_ptr,float param_2);
 CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_00457300(CDemnfolk *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-undefined4 core_demnfolk_cpp_FUN_00457740(CCharacter *param_1,float param_2);
-undefined4 core_demnfolk_cpp_FUN_004580a0(int param_1,uint param_2);
-undefined4 core_demnfolk_cpp_FUN_00458140(int param_1,undefined4 param_2);
-void core_demnfolk_cpp_FUN_00458180(int param_1);
+int __cdecl core_demnfolk_cpp_CDemnfolk_processPickup_FUN_00457740(CDemnfolk *this_ptr,float delta_time);
+int __cdecl core_demnfolk_cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0(CDemnfolk *this_ptr,int object_shape_type);
+int __cdecl core_demnfolk_cpp_CDemnfolk_canPickupWithHand_FUN_00458140(CDemnfolk *this_ptr,int object_shape_type);
+void __cdecl core_demnfolk_cpp_CDemnfolk_dropAndClearTarget_FUN_00458180(CDemnfolk *this_ptr);
 int __cdecl core_demnfolk_cpp_CDemnfolk_renderOpaque_FUN_004581c0(CDemnfolk *this_ptr);
 int __cdecl core_demnfolk_cpp_CDemnfolk_renderTransparent_FUN_00458200(CDemnfolk *this_ptr);
 void __cdecl core_demnfolk_cpp_CDemnfolk_archive_FUN_004583c0(CDemnfolk *this_ptr);
 int __cdecl core_demnfolk_cpp_CDemnfolk_canBeAttracted_FUN_00458530(CDemnfolk *this_ptr,CDemonActor *grabber);
-void __cdecl core_demnfolk_cpp_FUN_00458680(CZombie *this_ptr,SDamageInfo *damage_info);
+void __cdecl core_demnfolk_cpp_CDemnfolk_processDismemberment_FUN_00458680(CDemnfolk *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_00458950(CDemnfolk *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_demnfolk_cpp_CDemnfolk_getTargetPoints_FUN_00458bb0(CDemnfolk *this_ptr,CVector3f *out_points_array);
 int __cdecl core_demnfolk_cpp_CDemnfolk_isGrabbable_FUN_00458ec0(CDemnfolk *this_ptr,CDemonActor *grabber);
 int __cdecl core_demnfolk_cpp_CDemnfolk_canBeGrabbed_FUN_00458f00(CDemnfolk *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl core_demnfolk_cpp_CDemnfolk_getGrabbed_FUN_00458f10(CDemnfolk *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl core_demnfolk_cpp_CDemnfolk_shouldIgnoreForTargeting_FUN_00458f80(CDemnfolk *this_ptr);
-void core_demnfolk_cpp_FUN_00458fb0(int param_1);
+void __cdecl core_demnfolk_cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk *this_ptr);
 CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_dtor_FUN_00459030(CDemnfolk *this_ptr,uint flags);
 void __cdecl core_dest_cpp_staticInit_FUN_004590e0(void);
 CActorDestination * __cdecl core_dest_cpp_factoryFuncActorDestination_FUN_00459110(void);
@@ -158,7 +156,7 @@ CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b80
 CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
 float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_0045b8e0(double y,double x);
 CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
-void core_dirmat_cpp_FUN_0045bef0(float *param_1,float *param_2,float *param_3);
+void __cdecl core_dirmat_cpp_sinCos_FUN_0045bef0(float *sin_out,float *cos_out,float *angle);
 void __cdecl core_disease_cpp_staticInit_FUN_0045bf20(void);
 CDisease * __cdecl core_disease_cpp_factoryFuncDisease_FUN_0045bf50(void);
 CDemonActorType * __cdecl core_disease_cpp_CDisease_getActorType_FUN_0045bf70(CDisease *this_ptr);
@@ -166,7 +164,7 @@ CDisease * __cdecl core_disease_cpp_CDisease_ctor_FUN_0045bf80(CDisease *this_pt
 int __cdecl core_disease_cpp_CDisease_fire_FUN_0045c040(CDisease *this_ptr);
 void __cdecl core_disease_cpp_CDisease_setup_FUN_0045c0d0(CDisease *this_ptr);
 CDisease * __cdecl core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint flags);
-void core_disease_cpp_FUN_0045c160(void);
+void __cdecl core_disease_cpp_staticInit_FUN_0045c160(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_0045c180(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_0045c240(CDemonLight *this_ptr,uint flags);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0045c2a0(CDemonLight *this_ptr);
@@ -199,5 +197,5 @@ int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_0045f4d0(CDemonL
 void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(CVector3f *position,CVector3f *rotation,float fov,float falloff);
 void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_0045fab0(CDemonLight *this_ptr,float intensity);
 void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0045fb40(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
-void core_dlight_cpp_FUN_0045ff30(int param_1,int param_2,int param_3,int param_4);
+void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
 

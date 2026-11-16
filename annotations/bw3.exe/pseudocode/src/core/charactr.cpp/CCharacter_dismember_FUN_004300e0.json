@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 497,
+    "complexity_score": 499,
     "cross_reference_count": 4,
     "function_call_count": 11,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 132,
+    "pseudocode_lines": 134,
     "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 405
+    "total_lines": 407
   },
   "cross_references": [
     {
@@ -93,7 +93,7 @@
     {
       "addr": "00489c90",
       "is_variadic": false,
-      "name": "core_enemy.cpp_FUN_00489c90"
+      "name": "core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90"
     },
     {
       "addr": "004ce9c0",
@@ -477,7 +477,7 @@
       "line": 93,
       "match": "&stack0xffffff2c",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xffffff2c;",
+      "text": "puVar3 = (uint *)&stack0xffffff2c;",
       "type": "stack_ref"
     },
     {
@@ -485,7 +485,7 @@
       "line": 94,
       "match": "&stack0xffffff3c",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xffffff3c;",
+      "text": "puVar4 = (uint *)&stack0xffffff3c;",
       "type": "stack_ref"
     },
     {
@@ -501,7 +501,7 @@
       "line": 57,
       "match": "(int)&local_ac",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_ac + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_ac + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -509,7 +509,7 @@
       "line": 58,
       "match": "(int)&local_70",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4);",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -517,7 +517,7 @@
       "line": 60,
       "match": "(int)&local_ac",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_ac + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_ac + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -525,7 +525,7 @@
       "line": 61,
       "match": "(int)&local_70",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -533,7 +533,7 @@
       "line": 78,
       "match": "(int)&local_58",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_58 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -541,7 +541,7 @@
       "line": 79,
       "match": "(int)&local_64",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_64 + (uint)bVar6 * -8 + 4);",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -549,7 +549,7 @@
       "line": 80,
       "match": "(int)&local_58",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -557,7 +557,7 @@
       "line": 81,
       "match": "(int)&local_64",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_64 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -565,7 +565,7 @@
       "line": 104,
       "match": "(int)&local_70",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_70 + (uint)bVar6 * -8) = afStack_40[(uint)bVar6 * -2];",
+      "text": "*(float *)((int)&local_70 + (uint)bVar5 * -8) = afStack_40[(uint)bVar5 * -2];",
       "type": "pointer_truncation"
     },
     {
@@ -573,7 +573,7 @@
       "line": 105,
       "match": "(int)&local_70",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(float *)((int)&local_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -581,7 +581,7 @@
       "line": 112,
       "match": "(int)&CStack_38",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_38 + (uint)bVar6 * -8 + 4) = local_28[(uint)bVar6 * -2];",
+      "text": "*(float *)((int)&CStack_38 + (uint)bVar5 * -8 + 4) = local_28[(uint)bVar5 * -2];",
       "type": "pointer_truncation"
     },
     {
@@ -589,7 +589,7 @@
       "line": 113,
       "match": "(int)&CStack_38",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -597,7 +597,7 @@
       "line": 95,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -605,7 +605,7 @@
       "line": 57,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_ac + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_ac + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -613,7 +613,7 @@
       "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4);",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -621,7 +621,7 @@
       "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_ac + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_ac + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -629,7 +629,7 @@
       "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -637,7 +637,7 @@
       "line": 78,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_58 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -645,7 +645,7 @@
       "line": 79,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_64 + (uint)bVar6 * -8 + 4);",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -653,7 +653,7 @@
       "line": 80,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -661,7 +661,7 @@
       "line": 81,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_64 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -669,7 +669,7 @@
       "line": 104,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_70 + (uint)bVar6 * -8) = afStack_40[(uint)bVar6 * -2];",
+      "text": "*(float *)((int)&local_70 + (uint)bVar5 * -8) = afStack_40[(uint)bVar5 * -2];",
       "type": "pointer_cast"
     },
     {
@@ -677,7 +677,7 @@
       "line": 105,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(float *)((int)&local_70 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -685,7 +685,7 @@
       "line": 112,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_38 + (uint)bVar6 * -8 + 4) = local_28[(uint)bVar6 * -2];",
+      "text": "*(float *)((int)&CStack_38 + (uint)bVar5 * -8 + 4) = local_28[(uint)bVar5 * -2];",
       "type": "pointer_cast"
     },
     {
@@ -693,7 +693,7 @@
       "line": 113,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ]

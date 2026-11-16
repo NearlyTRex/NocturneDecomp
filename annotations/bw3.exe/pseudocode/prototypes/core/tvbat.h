@@ -61,6 +61,6 @@ void __cdecl CTVBat::processDamage(CTVBat *this_ptr,SDamageInfo *damage_info);
 // Address: 005761a0
 CTVBat * __cdecl CTVBat::dtor(CTVBat *this_ptr,uint flags);
 
-// Original: core_tvbat.cpp_FUN_00576230
+// Original: core_tvbat.cpp_staticInit_FUN_00576230
 // Address: 00576230
-void FUN_00576230(void);
+void __cdecl staticInit(void);

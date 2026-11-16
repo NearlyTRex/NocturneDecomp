@@ -45,7 +45,7 @@
 
 EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_00560110(CShadow *this_ptr);
 int __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_00560150(CShadow *this_ptr,CVector3f *out_points_array);
-void core_shadow_cpp_FUN_005601c0(void);
+void __cdecl core_shadow_cpp_CShadow_processChainConstraint_FUN_005601c0(CShadow *this_ptr);
 CShadow * __cdecl core_shadow_cpp_CShadow_dtor_FUN_005603b0(CShadow *this_ptr,uint flags);
 void __cdecl core_shadowsc_cpp_staticInit_FUN_00560440(void);
 CShadowsc * __cdecl core_shadowsc_cpp_factoryFuncShadowsc_FUN_00560470(void);
@@ -54,10 +54,10 @@ CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *thi
 void __cdecl core_shadowsc_cpp_CShadowsc_setup_FUN_00560510(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_ptr,float delta_time);
 void core_shadowsc_cpp_FUN_00560fe0(int param_1);
-void core_shadowsc_cpp_FUN_00561020(int param_1);
-void core_shadowsc_cpp_FUN_00561060(int param_1);
-void core_shadowsc_cpp_FUN_005610a0(int param_1);
-void core_shadowsc_cpp_FUN_005610e0(int param_1);
+void __cdecl core_shadowsc_cpp_CShadowsc_playAttackSound_FUN_00561020(CShadowsc *this_ptr);
+void __cdecl core_shadowsc_cpp_CShadowsc_playHurtSound_FUN_00561060(CShadowsc *this_ptr);
+void __cdecl core_shadowsc_cpp_CShadowsc_playDeathSound_FUN_005610a0(CShadowsc *this_ptr);
+void __cdecl core_shadowsc_cpp_CShadowsc_playEmergeSound_FUN_005610e0(CShadowsc *this_ptr);
 int __cdecl core_shadowsc_cpp_CShadowsc_renderOpaque_FUN_00561120(CShadowsc *this_ptr);
 int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_archive_FUN_005612d0(CShadowsc *this_ptr);

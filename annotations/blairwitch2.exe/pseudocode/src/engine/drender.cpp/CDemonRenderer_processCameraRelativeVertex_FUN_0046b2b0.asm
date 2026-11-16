@@ -19,7 +19,7 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bcc9
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 at 0041c5e0
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 at 0041c6c8
-;   core_bwspart.cpp_FUN_005a86a0 at 005a8731
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a8731
 ;   core_crate.cpp_CCrate_renderOpaque_FUN_0043a130 at 0043a145
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004468c0 at 004468d5
 ;   ... and 55 more

@@ -73,8 +73,8 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
       local_38 = _DAT_01549ab4;
     }
     pCVar8 = local_38;
-    iVar6 = engine_font_cpp_FUN_004b2e40
-                      (local_38,this_ptr->message_text,0x1d1b110,10,0x100,
+    iVar6 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004b2e40
+                      (local_38,this_ptr->message_text,(char *)0x1d1b110,10,0x100,
                        (g_CDemonCameraInstance.framebuffer_width * 9) / 10);
     local_48 = iVar6;
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(pCVar8,0x58);

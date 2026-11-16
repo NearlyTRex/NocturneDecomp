@@ -9,9 +9,9 @@
 // Address: 00492920
 void __cdecl staticInit(void);
 
-// Original: shape_edittool.cpp_FUN_00492940
+// Original: shape_edittool.cpp_editorPlotPixel_FUN_00492940
 // Address: 00492940
-void FUN_00492940(void);
+void __cdecl editorPlotPixel(int x,int y);
 
 // Original: shape_edittool.cpp_plotPixelWithClipping_FUN_00492970
 // Address: 00492970
@@ -25,29 +25,29 @@ void __cdecl initEditorFontMetrics(void);
 // Address: 00492a40
 void __cdecl drawDashedLine(int x1,int y1,int x2,int y2,int dash_length);
 
-// Original: shape_edittool.cpp_FUN_00492bd0
+// Original: shape_edittool.cpp_editorSetColor_FUN_00492bd0
 // Address: 00492bd0
-void FUN_00492bd0(void);
+void __cdecl editorSetColor(uint color);
 
-// Original: shape_edittool.cpp_FUN_00492c20
+// Original: shape_edittool.cpp_editorFillRectWithBorder_FUN_00492c20
 // Address: 00492c20
-void FUN_00492c20(int param_1,int param_2,int param_3,int param_4,uint param_5,uint param_6);
+void __cdecl editorFillRectWithBorder(int x1,int y1,int x2,int y2,int fill_color,int border_color);
 
-// Original: shape_edittool.cpp_FUN_00492d40
+// Original: shape_edittool.cpp_editorFillRectColor_FUN_00492d40
 // Address: 00492d40
-void FUN_00492d40(int param_1,int param_2,int param_3,int param_4,uint param_5);
+void __cdecl editorFillRectColor(int x1,int y1,int x2,int y2,int color);
 
-// Original: shape_edittool.cpp_FUN_00492de0
+// Original: shape_edittool.cpp_editorDrawHLine_FUN_00492de0
 // Address: 00492de0
-void FUN_00492de0(void);
+void __cdecl editorDrawHLine(int x1,int y,int x2);
 
-// Original: shape_edittool.cpp_FUN_00492e10
+// Original: shape_edittool.cpp_editorDrawVLine_FUN_00492e10
 // Address: 00492e10
-void FUN_00492e10(int param_1,int param_2,int param_3);
+void __cdecl editorDrawVLine(int x,int y1,int y2);
 
-// Original: shape_edittool.cpp_FUN_00492e40
+// Original: shape_edittool.cpp_editorSetAlpha_FUN_00492e40
 // Address: 00492e40
-void FUN_00492e40(int param_1);
+void __cdecl editorSetAlpha(int alpha);
 
 // Original: shape_edittool.cpp_CInputString_init_FUN_00492ec0
 // Address: 00492ec0
@@ -285,9 +285,9 @@ void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int cursor
 // Address: 00499350
 undefined4 FUN_00499350(void);
 
-// Original: shape_edittool.cpp_FUN_00499360
+// Original: shape_edittool.cpp_CEditorTools_setMini3DMode_FUN_00499360
 // Address: 00499360
-void FUN_00499360(void);
+void __cdecl CEditorTools::setMini3DMode(CEditorTools *this_ptr,int enable);
 
 // Original: shape_edittool.cpp_CStrList_ctor_FUN_00499380
 // Address: 00499380
@@ -381,13 +381,13 @@ void __cdecl CStrList::populateFromFileSearch(CStrList *this_ptr,char *directory
 // Address: 0049a0d0
 void __cdecl CStrList::populateFromFilesNoDuplicates(CStrList *this_ptr,char *directory_path,char *file_pattern);
 
-// Original: shape_edittool.cpp_FUN_0049a300
+// Original: shape_edittool.cpp_CStrList_populateRecursive_FUN_0049a300
 // Address: 0049a300
-void FUN_0049a300(CStrList *param_1,undefined4 param_2,undefined4 param_3,char *param_4);
+void __cdecl CStrList::populateRecursive(CStrList *this_ptr,char *base_path,char *relative_dir,char *file_pattern);
 
-// Original: shape_edittool.cpp_FUN_0049a460
+// Original: shape_edittool.cpp_CStrList_populateRecursiveFromRoot_FUN_0049a460
 // Address: 0049a460
-void FUN_0049a460(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CStrList::populateRecursiveFromRoot(CStrList *this_ptr,char *base_path,char *file_pattern);
 
 // Original: shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_0049a480
 // Address: 0049a480

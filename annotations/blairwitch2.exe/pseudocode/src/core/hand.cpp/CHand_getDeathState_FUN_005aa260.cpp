@@ -11,13 +11,15 @@ EDeathState __cdecl core_hand_cpp_CHand_getDeathState_FUN_005aa260(CHand *this_p
 {
   int iVar1;
   SMotion *pSVar2;
-  SStateMachine *pSVar3;
+  SStateMachine *this_ptr_00;
   
-  pSVar3 = &(this_ptr->base).state_machine;
-  iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar3,"Death");
+  this_ptr_00 = &(this_ptr->base).state_machine;
+  iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Death");
   if (((iVar1 == 0) &&
-      (iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar3,"Animation"), iVar1 == 0)) &&
-     (iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar3,"Sleeping"), iVar1 == 0)) {
+      (iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Animation"),
+      iVar1 == 0)) &&
+     (iVar1 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Sleeping"),
+     iVar1 == 0)) {
     return DEATH_STATE_ALIVE;
   }
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0

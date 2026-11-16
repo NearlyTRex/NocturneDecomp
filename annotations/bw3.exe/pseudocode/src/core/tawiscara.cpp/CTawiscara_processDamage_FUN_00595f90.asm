@@ -24,7 +24,7 @@
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_tawiscara.cpp_FUN_00595710
+;   core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
@@ -145,8 +145,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 005960d4
         ;   Label: LAB_005960d4
     PUSH EDI                            ; 005960d7
-    CALL core_tawiscara.cpp_FUN_00595710 ; 005960d8
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710 ; 005960d8
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710(CTawiscara * this_ptr)
     ADD ESP,0x4                         ; 005960dd
     PUSH 0x1                            ; 005960e0
     PUSH 0x16                           ; 005960e2

@@ -258,7 +258,7 @@
 ;   core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80
 ;   core_doc.cpp_getCarriedObjectVerticalOffset_FUN_00468b80
-;   core_door.cpp_FUN_004783d0
+;   core_door.cpp_CDoor_getHandlePosition_FUN_004783d0
 ;   core_lever.cpp_CLever_getHandlePosition_FUN_004ff6b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
@@ -374,8 +374,8 @@ section .text
     PUSH ECX                            ; 0046cbc8
     LEA ESI,[ESP + 0x1ecc]              ; 0046cbc9
     LEA EDI,[ESP + 0x2178]              ; 0046cbd0
-    CALL core_door.cpp_FUN_004783d0     ; 0046cbd7
-        ;   XREF to: 004783d0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_004783d0()
+    CALL core_door.cpp_CDoor_getHandlePosition_FUN_004783d0 ; 0046cbd7
+        ;   XREF to: 004783d0 (UNCONDITIONAL_CALL)  ; CVector3f * core_door.cpp_CDoor_getHandlePosition_FUN_004783d0(CDoor * this_ptr, CVector3f * out_position)
     ADD ESP,0x4                         ; 0046cbdc
     LEA EAX,[ESP + 0x2174]              ; 0046cbdf
     LEA ESI,[ESP + 0x1ec8]              ; 0046cbe6
@@ -969,8 +969,8 @@ section .text
     PUSH ESI                            ; 0046d4af
     LEA ESI,[ESP + 0x1f08]              ; 0046d4b0
     LEA EDI,[ESP + 0x1fec]              ; 0046d4b7
-    CALL core_door.cpp_FUN_004783d0     ; 0046d4be
-        ;   XREF to: 004783d0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_004783d0()
+    CALL core_door.cpp_CDoor_getHandlePosition_FUN_004783d0 ; 0046d4be
+        ;   XREF to: 004783d0 (UNCONDITIONAL_CALL)  ; CVector3f * core_door.cpp_CDoor_getHandlePosition_FUN_004783d0(CDoor * this_ptr, CVector3f * out_position)
     ADD ESP,0x4                         ; 0046d4c3
     LEA EAX,[ESP + 0x1fe8]              ; 0046d4c6
     LEA ESI,[ESP + 0x1f04]              ; 0046d4cd

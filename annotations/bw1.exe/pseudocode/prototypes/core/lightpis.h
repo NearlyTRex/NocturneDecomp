@@ -21,17 +21,17 @@ CDemonActorType * __cdecl CLightPis::getActorType(CLightPis *this_ptr);
 // Address: 00501610
 CLightPis * __cdecl CLightPis::ctor(CLightPis *this_ptr);
 
-// Original: core_lightpis.cpp_FUN_005016d0
+// Original: core_lightpis.cpp_isVampireType_FUN_005016d0
 // Address: 005016d0
-undefined4 FUN_005016d0(CDemonActor *param_1);
+int __cdecl isVampireType(CDemonActor *actor);
 
-// Original: core_lightpis.cpp_FUN_00501750
+// Original: core_lightpis.cpp_isLightVulnerable_FUN_00501750
 // Address: 00501750
-undefined4 FUN_00501750(CCharacter *param_1);
+int __cdecl isLightVulnerable(CCharacter *actor);
 
-// Original: core_lightpis.cpp_FUN_005017f0
+// Original: core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0
 // Address: 005017f0
-void FUN_005017f0(CCharacter *param_1);
+void __cdecl CLightPis::updateBeamLight(CLightPis *this_ptr);
 
 // Original: core_lightpis.cpp_CLightPis_getMuzzlePoint_FUN_005018c0
 // Address: 005018c0

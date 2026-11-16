@@ -17,13 +17,13 @@ int __cdecl fillStreamBuffer(void);
 // Address: 00577880
 int __cdecl releaseSfxHardwareBuffers(int sfx_handle);
 
-// Original: sound_snddx.cpp_FUN_005779b0
+// Original: sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_005779b0
 // Address: 005779b0
-int FUN_005779b0(float param_1);
+int __cdecl volumeToDirectSoundAttenuation(float volume);
 
-// Original: sound_snddx.cpp_FUN_00577a50
+// Original: sound_snddx.cpp_clampDirectSoundFrequency_FUN_00577a50
 // Address: 00577a50
-int FUN_00577a50(float param_1);
+int __cdecl clampDirectSoundFrequency(float frequency);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_close_FUN_00577a90
 // Address: 00577a90

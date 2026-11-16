@@ -1,0 +1,109 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 45
+  },
+  "cross_references": [
+    {
+      "addr": "004bd570",
+      "from_addr": "004bd5b8",
+      "name": "core_game.cpp_CGame_process_FUN_004bd570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bb5b0",
+    "address_range": [
+      [
+        "004bb5b0",
+        "004bb61a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_updateAlphaFade_FUN_004bb5b0",
+    "signature": "void __cdecl core_game_cpp_CGame_updateAlphaFade_FUN_004bb5b0(CGame *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bd5b8",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004bd570",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.12,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 2,
+      "COPY": 116,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 2,
+      "INT_ADD": 14,
+      "INT_AND": 7,
+      "INT_EQUAL": 2,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 11,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 203
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
+}

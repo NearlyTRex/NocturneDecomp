@@ -90,7 +90,8 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d56b0(CHotDemon *this_pt
   }
   fVar11 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar11);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar11);
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar1->base);
   iVar5 = pSVar6->state_index;
   iStack_18 = iVar5;
@@ -359,7 +360,7 @@ switchD_004d5efe_caseD_3:
   }
   iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0((CCharacter *)this_ptr);
   if (iVar5 != 0) {
-    core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     fStack_140 = (this_ptr->base).base.velocity.x * delta_time;
     afStack_13c[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_13c[1] = (this_ptr->base).base.velocity.z * delta_time;

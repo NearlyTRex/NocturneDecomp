@@ -16,8 +16,8 @@
 ;   engine_2d.c_project3DPointToScreen_FUN_00401780 at 004017bc
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 at 0047f38e
 ;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004808b0 at 004809b8
-;   shape_edittool.cpp_FUN_0047a450 at 0047a46e
 ;   shape_edittool.cpp_drawDashedLine_FUN_0047a590 at 0047a6e5
+;   shape_edittool.cpp_editorPlotPixel_FUN_0047a450 at 0047a46e
 ;   ... and 3 more
 ;
 ; Referenced Globals:

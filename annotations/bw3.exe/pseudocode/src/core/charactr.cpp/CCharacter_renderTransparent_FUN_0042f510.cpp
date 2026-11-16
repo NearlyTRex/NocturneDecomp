@@ -86,7 +86,8 @@ int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510(CCharact
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
   if (bVar1) {
-    core_set_cpp_FUN_00537320(g_CDemonSetPtr,&DAT_007e2af0);
+    core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_00537320
+              (g_CDemonSetPtr,(CDemonGlobe *)&DAT_007e2af0);
   }
   if ((0 < this_ptr->fire_count) && (this_ptr->was_rendered_opaque != 0)) {
     core_charactr_cpp_CCharacter_renderFlames_FUN_0042f6f0(this_ptr);

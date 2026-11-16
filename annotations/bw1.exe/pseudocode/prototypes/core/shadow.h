@@ -33,33 +33,33 @@ void __cdecl CShadow::process(CShadow *this_ptr,float delta_time);
 // Address: 0055f3d0
 void __cdecl CShadow::setWalkTarget(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 
-// Original: core_shadow.cpp_FUN_0055f400
+// Original: core_shadow.cpp_CShadow_playHitAlertSound_FUN_0055f400
 // Address: 0055f400
-void FUN_0055f400(int param_1);
+void __cdecl CShadow::playHitAlertSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_0055f450
+// Original: core_shadow.cpp_CShadow_playAlertSound_FUN_0055f450
 // Address: 0055f450
-void FUN_0055f450(int param_1);
+void __cdecl CShadow::playAlertSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_0055f4a0
+// Original: core_shadow.cpp_CShadow_playAttackSound_FUN_0055f4a0
 // Address: 0055f4a0
-void FUN_0055f4a0(int param_1);
+void __cdecl CShadow::playAttackSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_0055f4f0
+// Original: core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0
 // Address: 0055f4f0
-void FUN_0055f4f0(int param_1);
+void __cdecl CShadow::playDamageSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_0055f540
+// Original: core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540
 // Address: 0055f540
-void FUN_0055f540(int param_1);
+void __cdecl CShadow::playDeathSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_0055f590
+// Original: core_shadow.cpp_CShadow_playHowlSound_FUN_0055f590
 // Address: 0055f590
-void FUN_0055f590(int param_1);
+void __cdecl CShadow::playHowlSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_0055f5e0
+// Original: core_shadow.cpp_CShadow_playEmergeSound_FUN_0055f5e0
 // Address: 0055f5e0
-void FUN_0055f5e0(int param_1);
+void __cdecl CShadow::playEmergeSound(CShadow *this_ptr);
 
 // Original: core_shadow.cpp_FUN_0055f9c0
 // Address: 0055f9c0
@@ -89,9 +89,9 @@ EDeathState __cdecl CShadow::getDeathState(CShadow *this_ptr);
 // Address: 00560150
 int __cdecl CShadow::getTargetPoints(CShadow *this_ptr,CVector3f *out_points_array);
 
-// Original: core_shadow.cpp_FUN_005601c0
+// Original: core_shadow.cpp_CShadow_processChainConstraint_FUN_005601c0
 // Address: 005601c0
-void FUN_005601c0(void);
+void __cdecl CShadow::processChainConstraint(CShadow *this_ptr);
 
 // Original: core_shadow.cpp_CShadow_dtor_FUN_005603b0
 // Address: 005603b0

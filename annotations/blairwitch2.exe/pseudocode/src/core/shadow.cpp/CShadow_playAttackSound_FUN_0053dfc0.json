@@ -1,0 +1,124 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 14,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "0053c500",
+      "from_addr": "0053cdc9",
+      "name": "core_shadow.cpp_CShadow_process_FUN_0053c500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053dfc0",
+    "address_range": [
+      [
+        "0053dfc0",
+        "0053dffd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shadow.cpp_CShadow_playAttackSound_FUN_0053dfc0",
+    "signature": "void __cdecl core_shadow_cpp_CShadow_playAttackSound_FUN_0053dfc0(CShadow *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00550b70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00550b70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e66c9",
+      "name": "s_shb_attack_wav_005e66c9",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053cdc9",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_CShadow_process_FUN_0053c500",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.105263157894737,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 16,
+      "INT_ADD": 12,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 8,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 78
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0055f4a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    },
+    "bw3.exe": {
+      "addr": "00545080",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadow *"
+      }
+    ]
+  },
+  "suspects": []
+}

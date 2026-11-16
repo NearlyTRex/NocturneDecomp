@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_event.cpp_FUN_004a1d00 at 004a4c4c
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a4c4c
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610 at 0051b685
 ;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051b92b
 ;   core_mission.cpp_CDemonMission_run_FUN_0051bad0 at 0051bb38

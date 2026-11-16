@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[16]:
-;   core_doc.cpp_FUN_00453d80 at 00454cb0
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 00454cb0
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00486a80 at 00486b63
 ;   core_fire.cpp_CBulletHole_init_FUN_00493a40 at 00493b2a
 ;   core_gore.cpp_CBloodSplat_initWallSplat_FUN_004c7ea0 at 004c7edf

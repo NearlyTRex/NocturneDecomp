@@ -129,13 +129,13 @@ void __cdecl dampControlAxis(float *axis_value,float damp_time,float damp_rate);
 // Address: 004d0ee0
 void __cdecl CGame::processKeyboardControls(CGame *this_ptr,SPlayerInput *player_control);
 
-// Original: core_game.cpp_FUN_004d1760
+// Original: core_game.cpp_CGame_setGogglesActive_FUN_004d1760
 // Address: 004d1760
-void FUN_004d1760(int param_1,int param_2);
+void __cdecl CGame::setGogglesActive(CGame *this_ptr,int active);
 
-// Original: core_game.cpp_FUN_004d17c0
+// Original: core_game.cpp_CGame_setSpecialViewActive_FUN_004d17c0
 // Address: 004d17c0
-void FUN_004d17c0(int param_1,int param_2);
+void __cdecl CGame::setSpecialViewActive(CGame *this_ptr,int active);
 
 // Original: core_game.cpp_CGame_processMouseControls_FUN_004d1820
 // Address: 004d1820
@@ -177,9 +177,9 @@ void __cdecl CGame::processCheatCodes(CGame *this_ptr);
 // Address: 004d5e40
 void __cdecl CGame::loadAssets(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004d5e80
+// Original: core_game.cpp_CGame_resetIrisFade_FUN_004d5e80
 // Address: 004d5e80
-void FUN_004d5e80(void);
+void __cdecl CGame::resetIrisFade(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_beginFadeIn_FUN_004d6030
 // Address: 004d6030
@@ -273,13 +273,13 @@ void __cdecl CGame::finishAct(CGame *this_ptr);
 // Address: 004d8e50
 void __cdecl CGame::rollCredits(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004d9260
+// Original: core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260
 // Address: 004d9260
-void FUN_004d9260(int param_1,undefined4 *param_2);
+void __cdecl CGame::processPointAndClickControls(CGame *this_ptr,SPlayerInput *player_control);
 
-// Original: core_game.cpp_FUN_004dc000
+// Original: core_game.cpp_CGame_onSetLoaded_FUN_004dc000
 // Address: 004dc000
-void FUN_004dc000(int param_1);
+void __cdecl CGame::onSetLoaded(CGame *this_ptr);
 
 // Original: core_game.cpp_loadCursorBitmaps_FUN_004dc040
 // Address: 004dc040

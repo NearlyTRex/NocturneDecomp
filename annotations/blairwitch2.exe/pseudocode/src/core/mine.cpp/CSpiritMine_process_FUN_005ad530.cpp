@@ -21,7 +21,7 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   byte bVar7;
   float10 fVar8;
   float10 fVar9;
-  CSpiritMine *apCStackY_18ac [1462];
+  CSpiritMine *apCStackY_18ac [1463];
   float fVar10;
   float fVar11;
   float blue;
@@ -58,7 +58,7 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   pCStack_18 = (this_ptr->base).base.particle_systems;
   core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180(pCStack_18,delta_time);
   core_boxactor_cpp_CBoxActor_process_FUN_0041c090(&this_ptr->base,delta_time);
-  core_mine_cpp_FUN_005ad940();
+  core_mine_cpp_CSpiritMine_updateGlobe_FUN_005ad940(this_ptr);
   this_ptr_00 = pCStack_18;
   iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
   fVar10 = (this_ptr->base).base.location.position.x - *(float *)(iVar2 + 0x20);
@@ -70,7 +70,7 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
     if (fStack_20 <= this_ptr->trigger_radius) {
       iVar2 = 0;
       do {
-        iVar1 = core_bwgrndma_cpp_FUN_005a7ed0();
+        iVar1 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
         if (iVar1 != 0) {
           fStack_2c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
           fStack_14 = fStack_2c;

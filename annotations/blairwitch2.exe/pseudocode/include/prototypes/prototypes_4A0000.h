@@ -25,6 +25,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SFly.h"
+#include "types/structs/SHardwareEdge.h"
 #include "types/structs/SNotesEntry.h"
 #include "types/structs/SNotesMap.h"
 #include "types/structs/SNotesSection.h"
@@ -80,23 +81,23 @@ void __cdecl core_flashlit_cpp_CFlashlight_renderAimBeam_FUN_004a10f0(CFlashligh
 float __cdecl core_flashlit_cpp_CFlashlight_getDamage_FUN_004a1100(CFlashlight *this_ptr);
 CVector3f * __cdecl core_flashlit_cpp_CFlashlight_getMuzzlePoint_FUN_004a1110(CFlashlight *this_ptr,CVector3f *out_point);
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004a11b0(CFlashlight *this_ptr,uint flags);
-void core_flashlit_cpp_FUN_004a1200(void);
-void core_flashlit_cpp_FUN_004a1390(char *param_1);
-void core_flashlit_cpp_FUN_004a1420(char *param_1);
-undefined4 core_flashlit_cpp_FUN_004a1450(byte *param_1,byte *param_2,byte *param_3);
-SNotesEntry * core_flashlit_cpp_FUN_004a14f0(char *param_1,int *param_2);
-void core_flashlit_cpp_FUN_004a1540(void);
-void core_flashlit_cpp_FUN_004a1570(char *param_1);
-void core_flashlit_cpp_FUN_004a16b0(void);
-void core_flashlit_cpp_FUN_004a1730(void);
-void core_flashlit_cpp_FUN_004a17f0(CAlphaBitmap *param_1,char *param_2,int param_3,int param_4);
-void core_flashlit_cpp_FUN_004a1870(void);
-int core_flashlit_cpp_FUN_004a1b60(void);
-int core_flashlit_cpp_FUN_004a1bb0(int param_1,int param_2);
-undefined4 core_flashlit_cpp_FUN_004a1c60(int param_1,int param_2);
-undefined4 core_flashlit_cpp_FUN_004a1d00(int param_1,int param_2);
-undefined4 core_flashlit_cpp_FUN_004a1d50(void);
-void core_flashlit_cpp_FUN_004a1dd0(void);
+void __cdecl core_flashlit_cpp_staticInit_FUN_004a1200(void);
+void __cdecl core_flashlit_cpp_trimAndNormalizeWhitespace_FUN_004a1390(char *text);
+void __cdecl core_flashlit_cpp_stripCommentAndTrim_FUN_004a1420(char *line);
+int __cdecl core_flashlit_cpp_matchCommand_FUN_004a1450(char *line,char *keyword,char *out_args);
+SNotesEntry * __cdecl core_flashlit_cpp_findNotesEntry_FUN_004a14f0(char *name,int *out_section_index);
+void __cdecl core_flashlit_cpp_resetTooltip_FUN_004a1540(void);
+void __cdecl core_flashlit_cpp_updateTooltip_FUN_004a1570(char *text);
+void __cdecl core_flashlit_cpp_drawTooltip_FUN_004a16b0(void);
+void __cdecl core_flashlit_cpp_freeNotesBitmaps_FUN_004a1730(void);
+void __cdecl core_flashlit_cpp_loadNotesBitmap_FUN_004a17f0(CAlphaBitmap *bitmap,char *filename,int width,int height);
+void __cdecl core_flashlit_cpp_loadNotesBitmaps_FUN_004a1870(void);
+int __cdecl core_flashlit_cpp_findSectionForPage_FUN_004a1b60(int page);
+int __cdecl core_flashlit_cpp_hitTestSectionTab_FUN_004a1bb0(int x,int y);
+int __cdecl core_flashlit_cpp_hitTestPageArrows_FUN_004a1c60(int x,int y);
+int __cdecl core_flashlit_cpp_hitTestExitButton_FUN_004a1d00(int x,int y);
+int __cdecl core_flashlit_cpp_layoutSections_FUN_004a1d50(void);
+void __cdecl core_flashlit_cpp_relayoutSectionsIfDirty_FUN_004a1dd0(void);
 void __cdecl core_fldnotes_cpp_SPageResource_ctor_FUN_004a1e60(SPageResource *this_ptr);
 int __cdecl core_fldnotes_cpp_SPageResource_dtor_FUN_004a1e90(SPageResource *this_ptr);
 void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a1ec0(SPageResource *this_ptr,char *param_2);
@@ -208,8 +209,8 @@ CBitFont * __cdecl engine_font_cpp_CBitFont_dtor_FUN_004a7b90(CBitFont *this_ptr
 void __cdecl engine_font_cpp_CBitFont_reset_FUN_004a7bb0(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont *this_ptr,char *filename,int width,int height,int load_flags);
 void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004a7d00(CBitFont *this_ptr,char *filename,int width,int height,int first_char);
-void engine_font_cpp_FUN_004a7fd0(void);
-void engine_font_cpp_FUN_004a8540(int param_1,float param_2);
+void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004a7fd0(CBitFont *this_ptr,int enable);
+void __cdecl engine_font_cpp_CBitFont_setAccelScale_FUN_004a8540(CBitFont *this_ptr,float scale);
 void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004a8560(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
 void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004a85a0(CBitFont *this_ptr,char *font_path);
 void __cdecl engine_font_cpp_CBitFont_free_FUN_004a8850(CBitFont *this_ptr);
@@ -235,12 +236,12 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_004a95b0(uint red,uint green,uin
 int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004a96e0(void);
 void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004a9700(int text_color);
 void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004a9710(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color);
-void engine_font_cpp_FUN_004a97a0(int param_1);
+void __cdecl engine_font_cpp_CBitFont_flushAccelBatch_FUN_004a97a0(CBitFont *this_ptr);
 int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004a9870(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
 int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont *this_ptr,char *text);
 int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(CBitFont *this_ptr,char *text_string);
-undefined4 engine_font_cpp_FUN_004ab090(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
-int engine_font_cpp_FUN_004ab2b0(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6);
+int __cdecl engine_font_cpp_CBitFont_wrapLine_FUN_004ab090(CBitFont *this_ptr,char *source_text,char *dest_line,int line_width,int max_pixel_width,uint flags,int *chars_consumed);
+int __cdecl engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width);
 int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004ab360(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width,int indent_chars,int indent_first_line);
 int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004ab530(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont *this_ptr,int char_code);
@@ -248,10 +249,10 @@ int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004ab590(CBitFont *this_
 void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
 void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004ab620(CBitFont *this_ptr,int value);
 void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004ab630(CBitFont *this_ptr);
-int engine_font_cpp_FUN_004ab840(byte *param_1,undefined4 param_2,int param_3,undefined4 param_4,int param_5);
+int __cdecl engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004ab840(CBitFont *this_ptr,char *text,int x,int y,int color_mode);
 uint __cdecl engine_font_cpp_packPixelNative_FUN_004abbf0(int red,int green,int blue);
-undefined4 engine_font_cpp_FUN_004abc40(void);
-int * engine_font_cpp_FUN_004abd90(void);
+int __cdecl engine_font_cpp_getAlpha_FUN_004abc40(void);
+SHardwareEdge * __cdecl engine_font_cpp_findHardwareEdgeByYMin_FUN_004abd90(int y_min,SHardwareEdge *exclude_edge);
 void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004abdd0(SRenderVertex **vertices,int vertex_count);
 void __cdecl core_frankgen_cpp_staticInit_FUN_004ac140(void);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004ac170(void);

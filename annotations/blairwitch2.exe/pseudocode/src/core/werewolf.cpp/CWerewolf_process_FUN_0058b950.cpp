@@ -206,7 +206,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_0058b950(CWerewolf *this_pt
   }
   fVar15 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar15);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+            ((CCharacter *)this_ptr,delta_time * fVar15);
   if (this_ptr->type == WEREWOLF_TYPE_FOREST) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005ee6fa;
   }
@@ -908,7 +909,7 @@ LAB_0058bbb2:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_00423a10();
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     afStack_134[2] = (this_ptr->base).base.velocity.x * delta_time;
     afStack_134[3] = (this_ptr->base).base.velocity.y * delta_time;
     fStack_124 = (this_ptr->base).base.velocity.z * delta_time;
@@ -945,7 +946,7 @@ LAB_0058bbb2:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90((CCharacter *)this_ptr,delta_time);
-  core_werewolf_cpp_FUN_0058dd00();
+  core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_0058dd00(this_ptr);
   this_ptr->eye_glow_phase = delta_time * (float)_DAT_005ee742 + this_ptr->eye_glow_phase;
   return;
 }

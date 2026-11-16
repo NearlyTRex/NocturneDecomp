@@ -33,13 +33,13 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042fbd0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_00489ff0
 ;   ... and 14 more
 ;
@@ -383,8 +383,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 0059236f
     FSTP float ptr [ESP]                ; 00592375
     PUSH EBX                            ; 00592378
-    CALL core_charactr.cpp_FUN_00434850 ; 00592379
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 00592379
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059237e
     MOV EDX,dword ptr [EBP + 0x6a]      ; 00592381
     PUSH EDX                            ; 00592384
@@ -420,8 +420,8 @@ section .text
     JZ 0x005923e4                       ; 005923d9
         ;   XREF to: 005923e4 (CONDITIONAL_JUMP)  ; LAB_005923e4
     PUSH EBX                            ; 005923db
-    CALL core_mattnntt.cpp_FUN_00593a90 ; 005923dc
-        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; undefined core_mattnntt.cpp_FUN_00593a90()
+    CALL core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90 ; 005923dc
+        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; void core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote * this_ptr)
     ADD ESP,0x4                         ; 005923e1
     MOV EAX,dword ptr [EBP + 0x62]      ; 005923e4
         ;   Label: LAB_005923e4
@@ -454,8 +454,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0059243e
         ;   Label: LAB_0059243e
     PUSH EBX                            ; 00592444
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 00592445
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 00592445
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x5a]      ; 0059244a
     FLD float ptr [EAX]                 ; 0059244d
     FMUL float ptr [EBP + 0x92]         ; 0059244f
@@ -1099,8 +1099,8 @@ section .text
     JZ 0x00592c2f                       ; 00592c24
         ;   XREF to: 00592c2f (CONDITIONAL_JUMP)  ; LAB_00592c2f
     PUSH EBX                            ; 00592c26
-    CALL core_mattnntt.cpp_FUN_00593a90 ; 00592c27
-        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; undefined core_mattnntt.cpp_FUN_00593a90()
+    CALL core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90 ; 00592c27
+        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; void core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote * this_ptr)
     ADD ESP,0x4                         ; 00592c2c
     PUSH dword ptr [EBP + 0x92]         ; 00592c2f
         ;   Label: LAB_00592c2f
@@ -1228,8 +1228,8 @@ section .text
         ;   XREF to: 00592d76 (UNCONDITIONAL_JUMP)  ; LAB_00592d76
     PUSH EBX                            ; 00592da8
         ;   Label: LAB_00592da8
-    CALL core_mattnntt.cpp_FUN_00593a90 ; 00592da9
-        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; undefined core_mattnntt.cpp_FUN_00593a90()
+    CALL core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90 ; 00592da9
+        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; void core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote * this_ptr)
     ADD ESP,0x4                         ; 00592dae
     JMP 0x005923f9                      ; 00592db1
         ;   XREF to: 005923f9 (UNCONDITIONAL_JUMP)  ; caseD_c
@@ -1367,8 +1367,8 @@ section .text
     JNZ 0x00592f57                      ; 00592f47
         ;   XREF to: 00592f57 (CONDITIONAL_JUMP)  ; LAB_00592f57
     PUSH EBX                            ; 00592f49
-    CALL core_mattnntt.cpp_FUN_00593a90 ; 00592f4a
-        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; undefined core_mattnntt.cpp_FUN_00593a90()
+    CALL core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90 ; 00592f4a
+        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; void core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote * this_ptr)
     ADD ESP,0x4                         ; 00592f4f
     JMP 0x005923f9                      ; 00592f52
         ;   XREF to: 005923f9 (UNCONDITIONAL_JUMP)  ; caseD_c
@@ -1658,8 +1658,8 @@ section .text
     JNZ 0x005923f9                      ; 00593281
         ;   XREF to: 005923f9 (CONDITIONAL_JUMP)  ; caseD_c
     PUSH EBX                            ; 00593287
-    CALL core_mattnntt.cpp_FUN_00593a90 ; 00593288
-        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; undefined core_mattnntt.cpp_FUN_00593a90()
+    CALL core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90 ; 00593288
+        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; void core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote * this_ptr)
     ADD ESP,0x4                         ; 0059328d
     JMP 0x005923f9                      ; 00593290
         ;   XREF to: 005923f9 (UNCONDITIONAL_JUMP)  ; caseD_c
@@ -1674,8 +1674,8 @@ section .text
     JNZ 0x005932c3                      ; 005932b3
         ;   XREF to: 005932c3 (CONDITIONAL_JUMP)  ; LAB_005932c3
     PUSH EBX                            ; 005932b5
-    CALL core_mattnntt.cpp_FUN_00593a90 ; 005932b6
-        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; undefined core_mattnntt.cpp_FUN_00593a90()
+    CALL core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90 ; 005932b6
+        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; void core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote * this_ptr)
     ADD ESP,0x4                         ; 005932bb
     JMP 0x005923f9                      ; 005932be
         ;   XREF to: 005923f9 (UNCONDITIONAL_JUMP)  ; caseD_c
@@ -1746,8 +1746,8 @@ section .text
     JNZ 0x005933b6                      ; 005933a6
         ;   XREF to: 005933b6 (CONDITIONAL_JUMP)  ; LAB_005933b6
     PUSH EBX                            ; 005933a8
-    CALL core_mattnntt.cpp_FUN_00593a90 ; 005933a9
-        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; undefined core_mattnntt.cpp_FUN_00593a90()
+    CALL core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90 ; 005933a9
+        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; void core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote * this_ptr)
     ADD ESP,0x4                         ; 005933ae
     JMP 0x005923f9                      ; 005933b1
         ;   XREF to: 005923f9 (UNCONDITIONAL_JUMP)  ; caseD_c
@@ -1823,8 +1823,8 @@ section .text
     JNZ 0x005934b3                      ; 005934a3
         ;   XREF to: 005934b3 (CONDITIONAL_JUMP)  ; LAB_005934b3
     PUSH EBX                            ; 005934a5
-    CALL core_mattnntt.cpp_FUN_00593a90 ; 005934a6
-        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; undefined core_mattnntt.cpp_FUN_00593a90()
+    CALL core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90 ; 005934a6
+        ;   XREF to: 00593a90 (UNCONDITIONAL_CALL)  ; void core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90(CMattanntote * this_ptr)
     ADD ESP,0x4                         ; 005934ab
     JMP 0x005923f9                      ; 005934ae
         ;   XREF to: 005923f9 (UNCONDITIONAL_JUMP)  ; caseD_c

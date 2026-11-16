@@ -1,0 +1,47 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter *this_ptr,float delta_time)
+;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+;
+; XREF[40]:
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f662
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041171a
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412d13
+;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414c3a
+;   core_bird.cpp_CBird_process_FUN_00415340 at 004154c7
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c054
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 0042468a
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429765
+;   core_colonel.cpp_CColonel_process_FUN_00444550 at 00444a48
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 0044662d
+;   ... and 30 more
+;
+; Referenced Globals:
+;   undefined4 DAT_005d5907
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0042d700
+        ;   Label: core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
+    CMP dword ptr [EAX + 0x27a8],0x0    ; 0042d704
+    JZ 0x0042d730                       ; 0042d70b
+        ;   XREF to: 0042d730 (CONDITIONAL_JUMP)  ; LAB_0042d730
+    MOV dword ptr [EAX + 0x2520],0x0    ; 0042d70d
+    MOV EDX,dword ptr [EAX + 0x2520]    ; 0042d717
+    MOV dword ptr [EAX + 0x251c],EDX    ; 0042d71d
+    MOV EDX,dword ptr [EAX + 0x251c]    ; 0042d723
+    MOV dword ptr [EAX + 0x2518],EDX    ; 0042d729
+    RET                                 ; 0042d72f
+    FLD float ptr [ESP + 0x8]           ; 0042d730
+        ;   Label: LAB_0042d730
+    FMUL float ptr [0x005d5907]         ; 0042d734 | DAT_005d5907
+    FADD float ptr [EAX + 0x251c]       ; 0042d73a
+    FSTP float ptr [EAX + 0x251c]       ; 0042d740
+    RET                                 ; 0042d746
+

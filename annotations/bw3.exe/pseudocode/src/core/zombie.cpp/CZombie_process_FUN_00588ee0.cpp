@@ -650,8 +650,10 @@ LAB_00588fbb:
     }
     goto LAB_00588fbb;
   }
+  fVar29 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850();
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar29);
   if (((((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] == 0) &&
        ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] == 0)) ||
       ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0)) &&
@@ -1202,8 +1204,10 @@ LAB_00589ecd:
       }
     }
     if ((0.0 <= fStack_28) && ((this_ptr->base).victim != (CCharacter *)0x0)) {
+      fVar29 = (this_ptr->base).speed;
       (this_ptr->base).base.walk_step_speed = fStack_a8 * (this_ptr->base).speed * delta_time;
-      core_charactr_cpp_FUN_00434850();
+      core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+                ((CCharacter *)this_ptr,delta_time * fVar29);
       fVar29 = 0.7853982;
       pCVar28 = (CVector3f *)0x40400000;
       uStack_2bc = 0;
@@ -1274,7 +1278,7 @@ LAB_00589d98:
           core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                     (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
         }
-        core_charactr_cpp_FUN_0042c1e0();
+        core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
         fStack_10c = (this_ptr->base).base.velocity.x * delta_time;
         UStack_108 = (UActorVTable)((this_ptr->base).base.velocity.y * delta_time);
         fStack_104 = (this_ptr->base).base.velocity.z * delta_time;

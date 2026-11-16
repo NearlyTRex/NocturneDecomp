@@ -11,7 +11,7 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_00
 {
   CPathMap *pCVar1;
   CFlame *pCVar2;
-  int iVar3;
+  SFollowFormation *pSVar3;
   CClothList *pCVar4;
   CDeformableModelInstance *pCVar5;
   CHighPriestOfGardath *pCVar6;
@@ -25,8 +25,10 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_00
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_00511d10(&(this_ptr->base).path_map,0);
   pCVar2 = core_armour_cpp_CFlame_arrdtor50_FUN_0040f2b0
                      ((CFlame *)(pCVar1[-1].height_cache[0x42] + 0x53),0);
-  iVar3 = core_muzzle_cpp_FUN_0059df70(&pCVar2[-3].base.particle_systems[3].max_particles,0);
-  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar3 + -0x34c),0);
+  pSVar3 = core_muzzle_cpp_SFollowFormation_dtor_FUN_0059df70
+                     ((SFollowFormation *)&pCVar2[-3].base.particle_systems[3].max_particles,0);
+  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_005b1480
+                     ((CClothList *)&pSVar3[-1].slots[2].offset.y,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar4[-0x19].filenames[6] + 0x10),0);
   pCVar6 = (CHighPriestOfGardath *)

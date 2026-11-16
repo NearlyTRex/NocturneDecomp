@@ -187,7 +187,7 @@ LAB_0051e8aa:
                            ((CCharacter *)this_ptr,3);
       local_f0 = (1.0 - (float)local_18) * local_e8 * local_f0;
       if (0.0 < local_f0) {
-        pcVar16 = core_prye_cpp_FUN_00517ce0;
+        pcVar16 = core_prye_cpp_armBlendWeightCallback_FUN_00517ce0;
         iVar15 = _DAT_01ed3720;
         core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(fVar1,&local_a0);
         pCVar13 = &local_e0;
@@ -217,7 +217,7 @@ LAB_0051e8aa:
       puVar7[(uint)bVar11 * -2 + 1] = puVar8[(uint)bVar11 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
                 (&(this_ptr->base).base.model,&local_80,local_38,_DAT_01ed3720,
-                 core_prye_cpp_FUN_00517ce0);
+                 core_prye_cpp_armBlendWeightCallback_FUN_00517ce0);
       pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840
                          ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007e1a50);
       if ((pCVar4 != (CDemonActor *)0x0) && (this_ptr->weapon != (CWeapon *)0x0)) {
@@ -256,7 +256,7 @@ LAB_0051e8aa:
       core_xform_cpp_quaternionFromAngleX_FUN_00585cd0
                 ((this_ptr->right_arm_aim).target_pitch,&local_b0);
       fVar1 = local_30;
-      pcVar16 = core_prye_cpp_FUN_00517ce0;
+      pcVar16 = core_prye_cpp_armBlendWeightCallback_FUN_00517ce0;
       pCVar13 = &local_c0;
       pCVar12 = &(this_ptr->base).base.model;
       local_c0.w = local_b0.w;
@@ -275,7 +275,7 @@ LAB_0051e8aa:
                 ((this_ptr->right_arm_aim).target_yaw,&local_90);
       pCVar12 = local_18;
       fVar1 = local_30;
-      pcVar16 = core_prye_cpp_FUN_00517ce0;
+      pcVar16 = core_prye_cpp_armBlendWeightCallback_FUN_00517ce0;
       pCVar13 = &local_d0;
       local_d0.w = local_90.w;
       puVar7 = (uint *)((int)&local_d0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);

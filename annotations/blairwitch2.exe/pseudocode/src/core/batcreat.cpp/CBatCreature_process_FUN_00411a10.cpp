@@ -105,7 +105,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
   }
   fVar10 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar10);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+            ((CCharacter *)this_ptr,delta_time * fVar10);
   pCStack_20 = &(this_ptr->base).base.model;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCStack_20->base);
   iStack_28 = pSVar6->state_index;
@@ -436,7 +437,7 @@ switchD_00412491_caseD_2:
   }
   iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_00424430((CCharacter *)this_ptr);
   if (iVar5 != 0) {
-    core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     fStack_17c = (this_ptr->base).base.velocity.x * delta_time;
     afStack_178[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_178[1] = (this_ptr->base).base.velocity.z * delta_time;

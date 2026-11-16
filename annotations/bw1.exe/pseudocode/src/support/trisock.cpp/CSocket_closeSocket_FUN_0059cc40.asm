@@ -12,9 +12,9 @@
 ;   support_trisock.cpp_CSocket_createSocket_FUN_0059c910 at 0059c916
 ;   support_trisock.cpp_CSocket_createUDPSocket_FUN_0059c940 at 0059c946
 ;   support_trisock.cpp_CSocket_dtor_FUN_0059c8f0 at 0059c8f6
-;   support_trisock.cpp_FUN_0059cf00 at 0059d02c
-;   support_trisock.cpp_FUN_0059e350 at 0059e400
-;   support_trisock.cpp_FUN_0059ed20 at 0059ed72
+;   support_trisock.cpp_httpConnectToUrl_FUN_0059cf00 at 0059d02c
+;   support_trisock.cpp_httpRequestReset_FUN_0059ed20 at 0059ed72
+;   support_trisock.cpp_httpRequestUpdate_FUN_0059e350 at 0059e400
 ;
 ; Called Functions:
 ;   crt_wsock32.c_closesocket

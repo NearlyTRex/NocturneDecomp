@@ -111,7 +111,8 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
   iVar6 = pSVar7->state_index;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iStack_28 = iVar6;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar12);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar12);
   if (iVar6 == 8) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005bbc44;
   }
@@ -483,7 +484,7 @@ switchD_00463453_caseD_d:
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     fStack_10c = (this_ptr->base).base.velocity.x * delta_time;
     afStack_108[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_108[1] = (this_ptr->base).base.velocity.z * delta_time;

@@ -7,6 +7,7 @@
 #include "system/stdio.h"
 #include "types/classes/CActorDestination.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonCamera.h"
@@ -24,6 +25,7 @@
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCoronaLightEntry.h"
@@ -38,7 +40,7 @@
 
 void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00440000(CDemonCamera *this_ptr,CDemonLight *light_source);
 void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00440370(CDemonCamera *this_ptr,CDemonLight *light_source);
-void core_dcamera_cpp_FUN_00440500(int param_1);
+void __cdecl core_dcamera_cpp_CDemonCamera_addDirectionalLightMap_FUN_00440500(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00440560(CDemonCamera *this_ptr,CDemonLight *light_source);
 CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00440630(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds);
 void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_004406d0(CDemonCamera *this_ptr);
@@ -147,7 +149,7 @@ CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044953
 CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output);
 float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_00449610(double y,double x);
 CVector3f * __stack_esi core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
-void core_dirmat_cpp_FUN_00449c20(float *param_1,float *param_2,float *param_3);
+void __cdecl core_dirmat_cpp_sinCos_FUN_00449c20(float *sin_out,float *cos_out,float *angle);
 void __cdecl core_dlight_cpp_staticInit_FUN_00449c50(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_00449c70(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00449d30(CDemonLight *this_ptr,uint flags);
@@ -212,7 +214,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FU
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(CKeyFramedModelInstance *this_ptr,char *filename);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_0044fdb0(CKeyFramedModel *this_ptr,uint flags);
 void __cdecl core_doc_cpp_staticInit_FUN_0044fdd0(void);
-float core_doc_cpp_FUN_0044fe40(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
-undefined4 core_doc_cpp_FUN_0044fec0(void);
-float core_doc_cpp_FUN_0044ffd0(CDemonActor *param_1);
+float __cdecl core_doc_cpp_blendWeightCallback_FUN_0044fe40(int bone,int target,float weight,int distance,CDeformableModelInstance *instance);
+int __cdecl core_doc_cpp_getWeaponInteractionType_FUN_0044fec0(CWeapon *weapon);
+float __cdecl core_doc_cpp_getCarriedObjectVerticalOffset_FUN_0044ffd0(CDemonActor *object);
 

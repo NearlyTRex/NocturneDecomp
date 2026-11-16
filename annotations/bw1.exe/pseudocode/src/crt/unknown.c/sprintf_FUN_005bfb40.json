@@ -127,7 +127,7 @@
     {
       "addr": "00415830",
       "from_addr": "00415866",
-      "name": "core_bird.cpp_FUN_00415830",
+      "name": "core_bird.cpp_setRandomMotionVariant_FUN_00415830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -185,15 +185,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a6d80",
-      "from_addr": "004a6db6",
-      "name": "core_event.cpp_CEventList_render_FUN_004a6d80",
+      "addr": "004a1d00",
+      "from_addr": "004a2f98",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a1d00",
-      "from_addr": "004a2f98",
-      "name": "core_event.cpp_FUN_004a1d00",
+      "addr": "004a6d80",
+      "from_addr": "004a6db6",
+      "name": "core_event.cpp_CEventList_render_FUN_004a6d80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -235,13 +235,13 @@
     {
       "addr": "004ba0b0",
       "from_addr": "004ba0ea",
-      "name": "core_flashlit.cpp_FUN_004ba0b0",
+      "name": "core_flashlit.cpp_loadNotesBitmap_FUN_004ba0b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ba130",
       "from_addr": "004ba21f",
-      "name": "core_flashlit.cpp_FUN_004ba130",
+      "name": "core_flashlit.cpp_loadNotesBitmaps_FUN_004ba130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -659,6 +659,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004f4e70",
+      "from_addr": "004f4e8b",
+      "name": "engine_ini.cpp_CIniFile_getDouble_FUN_004f4e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f4db0",
       "from_addr": "004f4dcb",
       "name": "engine_ini.cpp_CIniFile_getFloat_FUN_004f4db0",
@@ -668,6 +674,12 @@
       "addr": "004f4d10",
       "from_addr": "004f4d26",
       "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4ee0",
+      "from_addr": "004f4ef9",
+      "name": "engine_ini.cpp_CIniFile_setDoubleValue_FUN_004f4ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -698,18 +710,6 @@
       "addr": "004f4720",
       "from_addr": "004f4874",
       "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004f4720",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f4e70",
-      "from_addr": "004f4e8b",
-      "name": "engine_ini.cpp_FUN_004f4e70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f4ee0",
-      "from_addr": "004f4ef9",
-      "name": "engine_ini.cpp_FUN_004f4ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -989,48 +989,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059cf00",
-      "from_addr": "0059cf6e",
-      "name": "support_trisock.cpp_FUN_0059cf00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059d4b0",
-      "from_addr": "0059d676",
-      "name": "support_trisock.cpp_FUN_0059d4b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059d760",
-      "from_addr": "0059d7d9",
-      "name": "support_trisock.cpp_FUN_0059d760",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059d850",
-      "from_addr": "0059d8fa",
-      "name": "support_trisock.cpp_FUN_0059d850",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059e270",
-      "from_addr": "0059e2f8",
-      "name": "support_trisock.cpp_FUN_0059e270",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059e350",
-      "from_addr": "0059e4b4",
-      "name": "support_trisock.cpp_FUN_0059e350",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059ed90",
-      "from_addr": "0059ee26",
-      "name": "support_trisock.cpp_FUN_0059ed90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0059c590",
       "from_addr": "0059c5b8",
       "name": "support_trisock.cpp_formatIPAddress_FUN_0059c590",
@@ -1043,21 +1001,63 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005b44a0",
-      "from_addr": "005b44d3",
-      "name": "wincore_winrun.cpp_FUN_005b44a0",
+      "addr": "0059cf00",
+      "from_addr": "0059cf6e",
+      "name": "support_trisock.cpp_httpConnectToUrl_FUN_0059cf00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005b4650",
-      "from_addr": "005b4683",
-      "name": "wincore_winrun.cpp_FUN_005b4650",
+      "addr": "0059d760",
+      "from_addr": "0059d7d9",
+      "name": "support_trisock.cpp_httpGetDocument_FUN_0059d760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d850",
+      "from_addr": "0059d8fa",
+      "name": "support_trisock.cpp_httpPostDocument_FUN_0059d850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d4b0",
+      "from_addr": "0059d676",
+      "name": "support_trisock.cpp_httpReceiveResponse_FUN_0059d4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ed90",
+      "from_addr": "0059ee26",
+      "name": "support_trisock.cpp_httpRequestFillBuffer_FUN_0059ed90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e270",
+      "from_addr": "0059e2f8",
+      "name": "support_trisock.cpp_httpRequestStart_FUN_0059e270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e350",
+      "from_addr": "0059e4b4",
+      "name": "support_trisock.cpp_httpRequestUpdate_FUN_0059e350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005b3080",
       "from_addr": "005b30a0",
       "name": "wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b4650",
+      "from_addr": "005b4683",
+      "name": "wincore_winrun.cpp_loadControllerSettings_FUN_005b4650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b44a0",
+      "from_addr": "005b44d3",
+      "name": "wincore_winrun.cpp_saveControllerSettings_FUN_005b44a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {

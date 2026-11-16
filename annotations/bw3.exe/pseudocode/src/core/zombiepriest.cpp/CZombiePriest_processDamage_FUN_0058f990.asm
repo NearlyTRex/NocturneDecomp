@@ -18,7 +18,7 @@
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_zombiepriest.cpp_FUN_0058f630
+;   core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
@@ -40,8 +40,8 @@ section .text
     ADD ESP,0x4                         ; 0058f9a8
     PUSH EDI                            ; 0058f9ab
     PUSH EBX                            ; 0058f9ac
-    CALL core_zombiepriest.cpp_FUN_0058f630 ; 0058f9ad
-        ;   XREF to: 0058f630 (UNCONDITIONAL_CALL)  ; undefined core_zombiepriest.cpp_FUN_0058f630()
+    CALL core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630 ; 0058f9ad
+        ;   XREF to: 0058f630 (UNCONDITIONAL_CALL)  ; void core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630(CZombiePriest * this_ptr, SDamageInfo * damage_info)
     MOV EAX,dword ptr [EBX + 0xd0e4]    ; 0058f9b2
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x2298] ; 0058f9b8
     ADD ESP,0x8                         ; 0058f9bf

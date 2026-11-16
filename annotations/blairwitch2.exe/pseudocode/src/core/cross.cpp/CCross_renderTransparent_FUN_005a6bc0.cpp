@@ -27,7 +27,7 @@ int __cdecl core_cross_cpp_CCross_renderTransparent_FUN_005a6bc0(CCross *this_pt
   CStack_24.y = (this_ptr->base).base.base.location.position.y;
   CStack_24.z = (this_ptr->base).base.base.location.position.z;
   if (this_ptr->corona_queued != 0) {
-    core_set_cpp_FUN_005306e0(g_CDemonSetPtr,0x26686b8);
+    core_set_cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0(g_CDemonSetPtr,(CDemonGlobe *)0x26686b8);
     this_ptr->corona_queued = 0;
   }
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810((CDemonGlobe *)0x26686b8,&CStack_24);

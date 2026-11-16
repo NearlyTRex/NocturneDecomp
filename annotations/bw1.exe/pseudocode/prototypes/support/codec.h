@@ -13,33 +13,33 @@ void __cdecl resetBitBuffer(SBitBuffer *bit_buffer);
 // Address: 00442490
 int __cdecl readBitsFromStream(SBitBuffer *bit_buffer,int bit_count,void *istream);
 
-// Original: support_codec.cpp_FUN_004425b0
+// Original: support_codec.cpp_ungetBits_FUN_004425b0
 // Address: 004425b0
-void FUN_004425b0(int *param_1,int param_2,uint param_3);
+void __cdecl ungetBits(SBitBuffer *bit_buffer,int bit_count,uint bits);
 
-// Original: support_codec.cpp_FUN_004425e0
+// Original: support_codec.cpp_takeBitBuffer_FUN_004425e0
 // Address: 004425e0
-undefined4 FUN_004425e0(undefined4 *param_1,undefined4 *param_2);
+uint __cdecl takeBitBuffer(SBitBuffer *bit_buffer,int *bit_count_out);
 
 // Original: support_codec.cpp_writeBitsToStream_FUN_00442600
 // Address: 00442600
 int __cdecl writeBitsToStream(SBitBuffer *bit_buffer,int bit_count,uint bit_value,void *ostream);
 
-// Original: support_codec.cpp_FUN_004427a0
+// Original: support_codec.cpp_writeWholeBytesToStream_FUN_004427a0
 // Address: 004427a0
-int FUN_004427a0(int *param_1,int *param_2);
+int __cdecl writeWholeBytesToStream(SBitBuffer *bit_buffer,void *ostream);
 
 // Original: support_codec.cpp_flushBitBuffer_FUN_004427e0
 // Address: 004427e0
 int __cdecl flushBitBuffer(SBitBuffer *bit_buffer,void *ostream);
 
-// Original: support_codec.cpp_FUN_00442880
+// Original: support_codec.cpp_crc32UpdateByteInPlace_FUN_00442880
 // Address: 00442880
-void FUN_00442880(uint *param_1,byte param_2);
+void __cdecl crc32UpdateByteInPlace(uint *crc,uchar data_byte);
 
-// Original: support_codec.cpp_FUN_00442a80
+// Original: support_codec.cpp_crc32UpdateFromFile_FUN_00442a80
 // Address: 00442a80
-undefined4 FUN_00442a80(undefined4 param_1,_FILE *param_2,int param_3);
+int __cdecl crc32UpdateFromFile(uint *crc,_FILE *file,int byte_count);
 
 // Original: support_codec.cpp_CCodec_ctor_FUN_00442ba0
 // Address: 00442ba0
@@ -117,9 +117,9 @@ void __cdecl CLZWDictionary::writeCodeBits(CLZWDictionary *this_ptr,int code_val
 // Address: 00443370
 int __cdecl CLZWDictionary::writeCodeSequence(CLZWDictionary *this_ptr,int code,void *ostream);
 
-// Original: support_codec.cpp_FUN_004433f0
+// Original: support_codec.cpp_CLZWDictionary_resumeCodeSequence_FUN_004433f0
 // Address: 004433f0
-int __cdecl FUN_004433f0(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream,int *bytes_remaining);
+int __cdecl CLZWDictionary::resumeCodeSequence(CLZWDictionary *this_ptr,int code,int resume_code,void *ostream);
 
 // Original: support_codec.cpp_CLZWCompress_ctor_FUN_00443490
 // Address: 00443490
@@ -153,17 +153,17 @@ int __cdecl CLZWDecompress::process(CLZWDecompress *this_ptr,void *istream,void 
 // Address: 00443790
 int __cdecl CLZWDecompress::finalize(CLZWDecompress *this_ptr,void *ostream);
 
-// Original: support_codec.cpp_FUN_00443830
+// Original: support_codec.cpp_decodeArmorChar_FUN_00443830
 // Address: 00443830
-int FUN_00443830(uint param_1);
+int __cdecl decodeArmorChar(int ch);
 
 // Original: support_codec.cpp_CAsciiArmor_ctor_FUN_00443890
 // Address: 00443890
 CAsciiArmor * __cdecl CAsciiArmor::ctor(CAsciiArmor *this_ptr);
 
-// Original: support_codec.cpp_FUN_004438b0
+// Original: support_codec.cpp_CAsciiArmor_init_FUN_004438b0
 // Address: 004438b0
-void FUN_004438b0(int param_1);
+void __cdecl CAsciiArmor::init(CAsciiArmor *this_ptr);
 
 // Original: support_codec.cpp_CAsciiArmor_encode_FUN_004438d0
 // Address: 004438d0

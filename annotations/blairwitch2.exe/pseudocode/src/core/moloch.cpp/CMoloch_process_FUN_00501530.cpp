@@ -80,7 +80,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00501530(CMoloch *this_ptr,floa
     core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar8);
   }
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0((CCharacter *)this_ptr,delta_time);
   iVar8 = core_charactr_cpp_CCharacter_processWalking_FUN_004287f0
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar8 == 0) {
@@ -136,7 +136,7 @@ LAB_00501615:
 LAB_0050161d:
   pCVar5 = (this_ptr->base).base.grabbed_by;
   if (pCVar5 == (CDemonActor *)0x0) {
-    core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     fStack_b4 = (this_ptr->base).base.velocity.x * delta_time;
     pCVar1 = &(this_ptr->base).base.model.accumulated_root_motion;
     afStack_b0[0] = (this_ptr->base).base.velocity.y * delta_time;

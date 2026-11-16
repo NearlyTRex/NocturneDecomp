@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 0049207e
-;   core_event.cpp_FUN_0048c2e0 at 0048c50b
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048c50b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006074b8

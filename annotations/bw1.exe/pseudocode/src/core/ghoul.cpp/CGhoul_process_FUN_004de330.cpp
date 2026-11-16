@@ -432,10 +432,12 @@ switchD_004dedc4_caseD_e:
   }
   fStack_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40
                         ((CMotionController *)pCStack_18,1);
+  fVar27 = (this_ptr->base).speed;
   dStack_a0 = (double)delta_time;
   (this_ptr->base).base.walk_step_speed =
        fStack_14 * (float)_DAT_005e3ca1 * delta_time * (this_ptr->base).speed;
-  core_charactr_cpp_FUN_00435320(this_ptr);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320
+            ((CCharacter *)this_ptr,delta_time * fVar27);
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                      ((CMotionController *)pCStack_18);
   fStack_34 = (float)pSVar6->state_index;
@@ -1134,7 +1136,7 @@ LAB_004de489:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042d700(this_ptr);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,delta_time);
     fStack_134 = (this_ptr->base).base.velocity.x * delta_time;
     afStack_130[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_130[1] = (this_ptr->base).base.velocity.z * delta_time;

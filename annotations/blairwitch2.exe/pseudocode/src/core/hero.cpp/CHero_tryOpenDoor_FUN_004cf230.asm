@@ -9,7 +9,7 @@
 ; XREF[11]:
 ;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435cca
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30 at 0045cc7b
-;   core_doc.cpp_FUN_00453250 at 00453bd4
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_00453250 at 00453bd4
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004af410 at 004af8bb
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004ae92c
 ;   core_haystack.cpp_CHaystack_process_FUN_004cc990 at 004cce5c

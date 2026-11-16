@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_door.cpp_CDoor_process_FUN_0045f5a0 at 0045f678
+;   core_door.cpp_CDoor_setState_FUN_0045efe0 at 0045f008
 ;   core_door.cpp_CDoor_updateCollisionData_FUN_004605e0 at 004605ff
-;   core_door.cpp_FUN_0045efe0 at 0045f008
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0045f01c = 0045f078

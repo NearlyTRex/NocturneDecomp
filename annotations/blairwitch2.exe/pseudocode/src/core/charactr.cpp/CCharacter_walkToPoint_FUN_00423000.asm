@@ -90,9 +90,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[33]:
+;   core_basicene.cpp_CBasicEnemy_processAlertState_FUN_0059ec10 at 0059ecd5
 ;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f037
-;   core_basicene.cpp_FUN_0059ec10 at 0059ecd5
-;   core_basicene.cpp_FUN_0059ee00 at 0059ee75
+;   core_basicene.cpp_CBasicEnemy_processPatrolState_FUN_0059ee00 at 0059ee75
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 004121d8
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413ab8
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004191c0

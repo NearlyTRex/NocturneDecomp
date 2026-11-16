@@ -214,24 +214,22 @@ LAB_004f1a46:
           }
         }
         else if (DAT_005fba20 == 0x20) {
-          engine_special_cpp_FUN_00561fdc();
+          engine_special_cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
+                    (left_vertex,local_14,local_18);
         }
         else {
-          engine_special_cpp_FUN_005625a3();
+          engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
+                    (left_vertex,local_14,local_18);
         }
-        (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
-        (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
-        (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
-        (local_14->base).depth_current =
-             (local_14->base).depth_current + (local_14->base).depth_gradient;
-        (local_14->base).red_current = (local_14->base).red_current + (local_14->base).red_gradient;
-        iVar5 = (local_14->base).alpha_current;
-        local_14->green_current = local_14->green_current + local_14->green_gradient;
-        local_14->blue_current = local_14->blue_current + local_14->blue_gradient;
-        iVar6 = (local_14->base).alpha_gradient;
-        *(int *)&local_14->field_0x48 =
-             *(int *)&local_14->field_0x48 + *(int *)&local_14->field_0x4c;
-        (local_14->base).alpha_current = iVar5 + iVar6;
+        *(int *)(local_18 + 8) = *(int *)(local_18 + 8) + *(int *)(local_18 + 0xc);
+        *(int *)(local_18 + 0x18) = *(int *)(local_18 + 0x18) + *(int *)(local_18 + 0x1c);
+        *(int *)(local_18 + 0x20) = *(int *)(local_18 + 0x20) + *(int *)(local_18 + 0x24);
+        *(int *)(local_18 + 0x28) = *(int *)(local_18 + 0x28) + *(int *)(local_18 + 0x2c);
+        *(int *)(local_18 + 0x10) = *(int *)(local_18 + 0x10) + *(int *)(local_18 + 0x14);
+        *(int *)(local_18 + 0x38) = *(int *)(local_18 + 0x38) + *(int *)(local_18 + 0x3c);
+        *(int *)(local_18 + 0x40) = *(int *)(local_18 + 0x40) + *(int *)(local_18 + 0x44);
+        *(int *)(local_18 + 0x48) = *(int *)(local_18 + 0x48) + *(int *)(local_18 + 0x4c);
+        *(int *)(local_18 + 0x30) = *(int *)(local_18 + 0x30) + *(int *)(local_18 + 0x34);
         (left_vertex->base).x_current =
              (left_vertex->base).x_current + (left_vertex->base).x_gradient;
         (left_vertex->base).u_current =
@@ -247,7 +245,7 @@ LAB_004f1a46:
         iVar4 = left_vertex->green_gradient;
         (left_vertex->base).red_current =
              (left_vertex->base).red_current + (left_vertex->base).red_gradient;
-        local_18 = local_18 + 1;
+        local_1c = (float)((int)local_1c + 1);
         left_vertex->green_current = iVar5 + iVar4;
         left_vertex->blue_current = iVar6 + left_vertex->blue_gradient;
         iVar5 = (left_vertex->base).alpha_gradient;

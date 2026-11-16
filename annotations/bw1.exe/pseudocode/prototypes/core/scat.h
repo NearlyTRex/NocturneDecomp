@@ -77,17 +77,17 @@ void __cdecl CScat::blendLayerAction(CScat *this_ptr);
 // Address: 00542270
 void __cdecl CScat::blendAimBones(CScat *this_ptr,int hand_index);
 
-// Original: core_scat.cpp_FUN_005424f0
+// Original: core_scat.cpp_CScat_updateAiming_FUN_005424f0
 // Address: 005424f0
-void FUN_005424f0(CDemonActor *param_1,float param_2,float param_3);
+void __cdecl CScat::updateAiming(CScat *this_ptr,float delta_time,int is_holstered);
 
-// Original: core_scat.cpp_FUN_00542b90
+// Original: core_scat.cpp_CScat_scoreAimTarget_FUN_00542b90
 // Address: 00542b90
-undefined4 FUN_00542b90(CDemonActor *param_1,CDemonActor *param_2,int param_3);
+float __cdecl CScat::scoreAimTarget(CScat *this_ptr,CDemonActor *target,int is_current_target);
 
-// Original: core_scat.cpp_FUN_00542f20
+// Original: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00542f20
 // Address: 00542f20
-void FUN_00542f20(int param_1);
+void __cdecl CScat::updateWeaponAttachment(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_dtor_FUN_00543070
 // Address: 00543070

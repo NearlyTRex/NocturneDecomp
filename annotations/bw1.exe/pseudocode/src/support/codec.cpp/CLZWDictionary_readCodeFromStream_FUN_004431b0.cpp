@@ -14,12 +14,12 @@ uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_004431b0(CL
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  int iVar6;
-  uint uVar7;
+  int bit_count;
+  uint bits;
   uint local_14;
   
-  iVar6 = 0;
-  uVar7 = 0;
+  bit_count = 0;
+  bits = 0;
   iVar1 = this_ptr->entry_count;
   local_14 = 0;
   uVar5 = 0;
@@ -30,11 +30,11 @@ uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_004431b0(CL
     if ((iVar1 - 1U & uVar2) != 0) {
       uVar3 = support_codec_cpp_readBitsFromStream_FUN_00442490(bit_buffer,1,istream);
       if ((int)uVar3 < 0) {
-        support_codec_cpp_FUN_004425b0(bit_buffer,iVar6,uVar7);
+        support_codec_cpp_ungetBits_FUN_004425b0(bit_buffer,bit_count,bits);
         return uVar3;
       }
-      iVar6 = iVar6 + 1;
-      uVar7 = uVar7 * 2 | uVar3;
+      bit_count = bit_count + 1;
+      bits = bits * 2 | uVar3;
       if (uVar3 == 0) break;
       local_14 = local_14 | uVar2;
     }
@@ -45,11 +45,11 @@ uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_004431b0(CL
   do {
     uVar4 = support_codec_cpp_readBitsFromStream_FUN_00442490(bit_buffer,1,istream);
     if ((int)uVar4 < 0) {
-      support_codec_cpp_FUN_004425b0(bit_buffer,iVar6,uVar7);
+      support_codec_cpp_ungetBits_FUN_004425b0(bit_buffer,bit_count,bits);
       return 0xffffffff;
     }
-    iVar6 = iVar6 + 1;
-    uVar7 = uVar7 * 2 | uVar4;
+    bit_count = bit_count + 1;
+    bits = bits * 2 | uVar4;
     if (uVar4 != 0) {
       local_14 = local_14 | uVar5;
     }

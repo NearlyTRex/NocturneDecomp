@@ -29,9 +29,9 @@ void __cdecl CYow::setup(CYow *this_ptr);
 // Address: 005b8440
 void __cdecl CYow::process(CYow *this_ptr,float param_2);
 
-// Original: core_yow.cpp_FUN_005b8eb0
+// Original: core_yow.cpp_CYow_processDismemberment_FUN_005b8eb0
 // Address: 005b8eb0
-void FUN_005b8eb0(CCharacter *param_1,int *param_2);
+void __cdecl CYow::processDismemberment(CYow *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_yow.cpp_CYow_archive_FUN_005b9110
 // Address: 005b9110

@@ -7,9 +7,9 @@
 ; CTextureCache *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   engine_texture.cpp_CTextureCache_addPalettedTexture_FUN_00596e60 at 00596e67
+;   engine_texture.cpp_CTextureCache_addTrueColorTexture_FUN_00596ed0 at 00596ed7
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0 at 0059686c
-;   engine_texture.cpp_FUN_00596e60 at 00596e67
-;   engine_texture.cpp_FUN_00596ed0 at 00596ed7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_005f78ce

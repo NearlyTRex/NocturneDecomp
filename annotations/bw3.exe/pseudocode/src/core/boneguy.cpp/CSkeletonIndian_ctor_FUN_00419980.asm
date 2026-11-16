@@ -7,7 +7,7 @@
 ; CSkeletonIndian * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_FUN_00419950 at 00419963
+;   core_boneguy.cpp_factoryFuncSkeletonIndian_FUN_00419950 at 00419963
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400

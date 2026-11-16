@@ -125,9 +125,9 @@ void __cdecl CEventList::resetGameFlags(CEventList *this_ptr);
 // Address: 00491110
 void __cdecl CEventList::addOrRemoveGameFlag(CEventList *this_ptr,char *name,int add_flag);
 
-// Original: core_event.cpp_FUN_00491240
+// Original: core_event.cpp_CEventList_getTimerValue_FUN_00491240
 // Address: 00491240
-undefined4 FUN_00491240(int param_1,int param_2);
+float __cdecl CEventList::getTimerValue(CEventList *this_ptr,int timer_index);
 
 // Original: core_event.cpp_CEventList_setTimerEvent_FUN_00491280
 // Address: 00491280
@@ -225,6 +225,6 @@ int __cdecl CRuleList::evaluateAndRun(CRuleList *this_ptr);
 // Address: 00492610
 CQuaternion4f * __cdecl copyQuaternion(CQuaternion4f *dest,CQuaternion4f *src);
 
-// Original: core_event.cpp_FUN_00492630
+// Original: core_event.cpp_getSelectedCameraIndex_FUN_00492630
 // Address: 00492630
-undefined4 FUN_00492630(int param_1);
+int __cdecl getSelectedCameraIndex(CDemonSet *set_ptr);

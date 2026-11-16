@@ -27,13 +27,13 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
-;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_00435320
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_moloch.cpp_CMoloch_processAI_FUN_00520c10
 ;   core_moloch.cpp_CMoloch_startMorph_FUN_00521230
@@ -121,8 +121,8 @@ section .text
     FLD float ptr [EBX + 0x24a4]        ; 00520581
     PUSH EBX                            ; 00520587
     FSTP float ptr [EBX + 0x2524]       ; 00520588
-    CALL core_charactr.cpp_FUN_00435320 ; 0052058e
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 0052058e
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00520593
     PUSH dword ptr [EBP + 0x18]         ; 00520596
     PUSH EBX                            ; 00520599
@@ -451,8 +451,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00520961
         ;   Label: LAB_00520961
     PUSH EBX                            ; 00520964
-    CALL core_charactr.cpp_FUN_0042d700 ; 00520965
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 00520965
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x2518]              ; 0052096a
     ADD ESP,0x8                         ; 00520970
     FLD float ptr [EAX]                 ; 00520973

@@ -31,6 +31,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
@@ -40,7 +41,6 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
 ;   core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   ... and 27 more
 ;
 ; *****************************************************************************
@@ -104,8 +104,8 @@ section .text
     FSTP float ptr [EBX + 0x2524]       ; 004de3d7
     FSTP float ptr [ESP]                ; 004de3dd
     PUSH EBX                            ; 004de3e0
-    CALL core_charactr.cpp_FUN_00435320 ; 004de3e1
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 004de3e1
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004de3e6
     MOV ECX,dword ptr [EBP + 0x72]      ; 004de3e9
     PUSH ECX                            ; 004de3ec
@@ -206,8 +206,8 @@ section .text
         ;   Label: LAB_004de4fa
     PUSH EBX                            ; 004de500
     LEA ESI,[EBX + 0x2518]              ; 004de501
-    CALL core_charactr.cpp_FUN_0042d700 ; 004de507
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 004de507
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 004de50c
     FMUL float ptr [EBP + 0x92]         ; 004de50e
     FLD float ptr [ESI + 0x4]           ; 004de514

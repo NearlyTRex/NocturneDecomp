@@ -31,7 +31,7 @@
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042f010
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042d9f0
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
-;   core_charactr.cpp_FUN_0042d500
+;   core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500
 ;   core_cloth.cpp_CClothList_render_FUN_0043fc50
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
@@ -50,8 +50,8 @@ section .text
         ;   XREF to: 0042d95c (CONDITIONAL_JUMP)  ; LAB_0042d95c
     PUSH ESI                            ; 0042d8ef
     PUSH EBX                            ; 0042d8f0
-    CALL core_charactr.cpp_FUN_0042d500 ; 0042d8f1
-        ;   XREF to: 0042d500 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d500()
+    CALL core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500 ; 0042d8f1
+        ;   XREF to: 0042d500 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042d8f6
     MOV ECX,dword ptr [EBX + 0xcdc4]    ; 0042d8f9
     LEA ESI,[EBX + 0x158]               ; 0042d8ff

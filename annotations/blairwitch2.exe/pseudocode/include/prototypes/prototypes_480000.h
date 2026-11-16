@@ -35,7 +35,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004808b0(CEditorT
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_00480b70(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
 void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00480bf0(CEditorTools *this_ptr,int cursor_type,int height,int width);
 undefined4 shape_edittool_cpp_FUN_00480cf0(void);
-void shape_edittool_cpp_FUN_00480d00(void);
+void __cdecl shape_edittool_cpp_CEditorTools_setMini3DMode_FUN_00480d00(CEditorTools *this_ptr,int enable);
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_00480d20(CStrList *this_ptr);
 CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00480d40(CStrList *this_ptr,uint flags);
 CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_00480d90(CStrList *this_ptr,CStrList *other);
@@ -59,8 +59,8 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00481540(CStrList *
 void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00481620(CStrList *this_ptr,char *search_key,char *file_path,int file_size,time_t file_timestamp);
 void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00481870(CStrList *this_ptr,char *directory_path,char *file_pattern);
 void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70(CStrList *this_ptr,char *directory_path,char *file_pattern);
-void shape_edittool_cpp_FUN_00481ca0(CStrList *param_1,undefined4 param_2,undefined4 param_3,char *param_4);
-void shape_edittool_cpp_FUN_00481e00(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl shape_edittool_cpp_CStrList_populateRecursive_FUN_00481ca0(CStrList *this_ptr,char *base_path,char *relative_dir,char *file_pattern);
+void __cdecl shape_edittool_cpp_CStrList_populateRecursiveFromRoot_FUN_00481e00(CStrList *this_ptr,char *base_path,char *file_pattern);
 void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_00481e20(CStrList *this_ptr,char *base_path,char *search_path);
 CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_00481fc0(CPickList *this_ptr);
 CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004820b0(CPickList *this_ptr,uint flags);

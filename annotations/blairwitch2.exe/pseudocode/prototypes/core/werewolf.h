@@ -61,9 +61,9 @@ EDeathState __cdecl CWerewolf::getDeathState(CWerewolf *this_ptr);
 // Address: 0058dc90
 int __cdecl CWerewolf::getTargetPoints(CWerewolf *this_ptr,CVector3f *out_points_array);
 
-// Original: core_werewolf.cpp_FUN_0058dd00
+// Original: core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_0058dd00
 // Address: 0058dd00
-void FUN_0058dd00(CCharacter *param_1);
+void __cdecl CWerewolf::processChainConstraint(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_dtor_FUN_0058def0
 // Address: 0058def0

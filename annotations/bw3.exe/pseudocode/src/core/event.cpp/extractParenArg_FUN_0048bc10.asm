@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   require_open_paren
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_0048c2e0 at 0048c6ab
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048c6ab
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_No_opening_parenthesis_005bdeb1

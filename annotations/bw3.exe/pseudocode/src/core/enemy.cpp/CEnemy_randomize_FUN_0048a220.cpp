@@ -14,7 +14,7 @@ void __cdecl core_enemy_cpp_CEnemy_randomize_FUN_0048a220(CEnemy *this_ptr)
   
   EVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
   if ((0 < (int)EVar1) && (this_ptr->spawned_item_already == 0)) {
-    core_enemy_cpp_FUN_00489c90(this_ptr);
+    core_enemy_cpp_CEnemy_spawnItems_FUN_00489c90(this_ptr);
   }
   if ((this_ptr->base).hit_points <= 0.0) {
     EVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);

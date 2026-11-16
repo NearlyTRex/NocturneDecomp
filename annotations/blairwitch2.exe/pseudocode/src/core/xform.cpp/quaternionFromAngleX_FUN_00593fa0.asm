@@ -13,12 +13,12 @@
 ;
 ; XREF[17]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40 at 00429b7e
-;   core_confedrt.cpp_FUN_005a0bd0 at 005a0d64
+;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0d64
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0 at 00456324
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455a27
 ;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451749
-;   core_doc.cpp_FUN_00453d80 at 00453fa3
-;   core_doc.cpp_FUN_00455d10 at 00455e26
-;   core_doc.cpp_FUN_004562a0 at 00456324
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00455e26
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 00453fa3
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbb5
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c78c
 ;   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004d5470 at 004d553d

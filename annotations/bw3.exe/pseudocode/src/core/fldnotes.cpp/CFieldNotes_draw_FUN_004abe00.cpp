@@ -13,10 +13,10 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004abe00(CFieldNotes *this_p
 {
   int iVar1;
   SPageResource *pSVar2;
-  char *pcVar3;
-  SNotesSection *pSVar4;
-  int iVar5;
-  CAlphaBitmap *pCVar6;
+  char *text;
+  SNotesSection *pSVar3;
+  int iVar4;
+  CAlphaBitmap *pCVar5;
   char local_520 [256];
   char local_420 [256];
   char local_320 [256];
@@ -29,12 +29,12 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004abe00(CFieldNotes *this_p
   
   local_18 = 0;
   if (this_ptr->is_displayed == 0) {
-    pCVar6 = CAlphaBitmap_ARRAY_01d19bc0;
+    pCVar5 = CAlphaBitmap_ARRAY_01d19bc0;
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19bac);
     do {
-      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(pCVar6);
-      pCVar6 = pCVar6 + 1;
-    } while (pCVar6 != &CAlphaBitmap_01d19c38);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(pCVar5);
+      pCVar5 = pCVar5 + 1;
+    } while (pCVar5 != &CAlphaBitmap_01d19c38);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19c38);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19c4c);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19c60);
@@ -51,12 +51,12 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004abe00(CFieldNotes *this_p
     return;
   }
   if (DAT_005fe370 != 0) {
-    pCVar6 = CAlphaBitmap_ARRAY_01d19bc0;
+    pCVar5 = CAlphaBitmap_ARRAY_01d19bc0;
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19bac);
     do {
-      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(pCVar6);
-      pCVar6 = pCVar6 + 1;
-    } while (pCVar6 != &CAlphaBitmap_01d19c38);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(pCVar5);
+      pCVar5 = pCVar5 + 1;
+    } while (pCVar5 != &CAlphaBitmap_01d19c38);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19c38);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19c4c);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d19c60);
@@ -76,24 +76,24 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004abe00(CFieldNotes *this_p
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(&CAlphaBitmap_01d19bac,local_520,0x280,0x1e0)
     ;
     iVar1 = 9;
-    iVar5 = 0;
+    iVar4 = 0;
     engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dbb0(&CAlphaBitmap_01d19bac,0xff);
     if (0 < _DAT_01d0d210) {
-      pCVar6 = CAlphaBitmap_ARRAY_01d19bc0;
+      pCVar5 = CAlphaBitmap_ARRAY_01d19bc0;
       do {
-        local_20 = iVar5 * 0x2e4;
+        local_20 = iVar4 * 0x2e4;
         _sprintf(local_420,"tab_%s");
-        local_1c = iVar5 * 0x14;
+        local_1c = iVar4 * 0x14;
         engine_dosio_cpp_splitPath_FUN_00465e50
                   (local_420,(char *)0x0,(char *)0x0,local_220,(char *)0x0);
         _sprintf(local_320,&DAT_005c0d12);
-        engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(pCVar6,local_320,0x5a,0x36);
+        engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(pCVar5,local_320,0x5a,0x36);
         *(uint *)((int)SNotesSection_ARRAY_01d0d214[0].entries + local_20 + -0xc) = 0x215;
         *(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + local_20 + -8) = iVar1;
-        iVar5 = iVar5 + 1;
-        pCVar6 = pCVar6 + 1;
+        iVar4 = iVar4 + 1;
+        pCVar5 = pCVar5 + 1;
         iVar1 = iVar1 + *(int *)((int)&CAlphaBitmap_ARRAY_01d19bc0[0].height + local_1c) + 10;
-      } while (iVar5 < _DAT_01d0d210);
+      } while (iVar4 < _DAT_01d0d210);
     }
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
               (&CAlphaBitmap_01d19c38,"pentip",0x20,0x20);
@@ -119,52 +119,52 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_draw_FUN_004abe00(CFieldNotes *this_p
   DAT_01d19cf0 = '\0';
   if (DAT_005fe374 != 0) {
     core_fldnotes_cpp_STextView_setRect_FUN_004a8eb0(&g_STextViewInstance,0x60,0x40,0x1eb,0x1b8);
-    iVar5 = 0;
+    iVar4 = 0;
     core_fldnotes_cpp_STextView_reset_FUN_004a8e00(&g_STextViewInstance);
     DAT_005fe374 = 0;
     DAT_01d0d010 = 0;
     if (0 < _DAT_01d0d210) {
-      pSVar4 = SNotesSection_ARRAY_01d0d214;
+      pSVar3 = SNotesSection_ARRAY_01d0d214;
       do {
-        iVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a9d90(pSVar4,&g_STextViewInstance);
+        iVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a9d90(pSVar3,&g_STextViewInstance);
         if (iVar1 == 0) break;
-        iVar5 = iVar5 + 1;
-        pSVar4 = pSVar4 + 1;
-      } while (iVar5 < _DAT_01d0d210);
+        iVar4 = iVar4 + 1;
+        pSVar3 = pSVar3 + 1;
+      } while (iVar4 < _DAT_01d0d210);
     }
   }
-  iVar5 = 0;
+  iVar4 = 0;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0(&CAlphaBitmap_01d19bac,0,0,0xffff);
   if (0 < _DAT_01d0d210) {
-    pSVar4 = SNotesSection_ARRAY_01d0d214;
+    pSVar3 = SNotesSection_ARRAY_01d0d214;
     do {
-      if ((pSVar4->first_page <= _DAT_01d19ba8) &&
-         (_DAT_01d19ba8 < pSVar4->first_page + pSVar4->page_count)) goto LAB_004abf0c;
-      iVar5 = iVar5 + 1;
-      pSVar4 = pSVar4 + 1;
-    } while (iVar5 < _DAT_01d0d210);
+      if ((pSVar3->first_page <= _DAT_01d19ba8) &&
+         (_DAT_01d19ba8 < pSVar3->first_page + pSVar3->page_count)) goto LAB_004abf0c;
+      iVar4 = iVar4 + 1;
+      pSVar3 = pSVar3 + 1;
+    } while (iVar4 < _DAT_01d0d210);
   }
-  iVar5 = -1;
+  iVar4 = -1;
 LAB_004abf0c:
   iVar1 = 0;
-  local_14 = iVar5;
+  local_14 = iVar4;
   if (0 < _DAT_01d0d210) {
-    pSVar4 = SNotesSection_ARRAY_01d0d214;
-    pCVar6 = CAlphaBitmap_ARRAY_01d19bc0;
+    pSVar3 = SNotesSection_ARRAY_01d0d214;
+    pCVar5 = CAlphaBitmap_ARRAY_01d19bc0;
     do {
       if (iVar1 == local_14) {
         engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0
-                  (pCVar6,pSVar4->tab_x + -2,pSVar4->tab_y + -2,0xffff);
+                  (pCVar5,pSVar3->tab_x + -2,pSVar3->tab_y + -2,0xffff);
       }
       else {
         engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040d8a0
-                  (pCVar6,0x246,pSVar4->tab_y,0x246 - pSVar4->tab_x,0,
+                  (pCVar5,0x246,pSVar3->tab_y,0x246 - pSVar3->tab_x,0,
                    CAlphaBitmap_ARRAY_01d19bc0[iVar1].width + -1,
                    CAlphaBitmap_ARRAY_01d19bc0[iVar1].height + -1,0xffff);
       }
-      pCVar6 = pCVar6 + 1;
+      pCVar5 = pCVar5 + 1;
       iVar1 = iVar1 + 1;
-      pSVar4 = pSVar4 + 1;
+      pSVar3 = pSVar3 + 1;
     } while (iVar1 < _DAT_01d0d210);
   }
   _DAT_01d1a058 = 0;
@@ -176,20 +176,20 @@ LAB_004abf0c:
     _DAT_01d19f78 = 0;
     return;
   }
-  iVar5 = core_flashlit_cpp_FUN_004a80d0(_DAT_01c5fadc,_DAT_01c5fae0);
-  if (-1 < iVar5) {
-    core_flashlit_cpp_FUN_004a7a70(iVar5 * 0x2e4 + 0x1d0d254);
+  iVar4 = core_flashlit_cpp_hitTestSectionTab_FUN_004a80d0(_DAT_01c5fadc,_DAT_01c5fae0);
+  if (-1 < iVar4) {
+    core_flashlit_cpp_updateTooltip_FUN_004a7a70(SNotesSection_ARRAY_01d0d214[iVar4].title);
     local_18 = 1;
   }
-  iVar5 = core_flashlit_cpp_FUN_004a8180(_DAT_01c5fadc,_DAT_01c5fae0);
-  if (iVar5 != 0) {
+  iVar4 = core_flashlit_cpp_hitTestPageArrows_FUN_004a8180(_DAT_01c5fadc,_DAT_01c5fae0);
+  if (iVar4 != 0) {
     local_18 = 1;
   }
   pSVar2 = core_fldnotes_cpp_STextPage_findResourceAt_FUN_004a8d50
                      (g_STextViewInstance.pages + _DAT_01d19ba8,_DAT_01c5fadc,_DAT_01c5fae0);
   if ((pSVar2 != (SPageResource *)0x0) &&
-     (iVar5 = (**(code **)((int)pSVar2->vtable + 8))
-                        (pSVar2,0,_DAT_01c5fadc - pSVar2->x,_DAT_01c5fae0 - pSVar2->y), iVar5 != 0))
+     (iVar4 = (**(code **)((int)pSVar2->vtable + 8))
+                        (pSVar2,0,_DAT_01c5fadc - pSVar2->x,_DAT_01c5fae0 - pSVar2->y), iVar4 != 0))
   {
     local_18 = 1;
   }
@@ -210,8 +210,8 @@ LAB_004abf0c:
   if ((((0x00000262 <= _DAT_01c5fadc) && (0x000001C0 <= _DAT_01c5fae0)) &&
       (_DAT_01c5fadc < 0x00000262 + CAlphaBitmap_01d19cc4.width)) &&
      (_DAT_01c5fae0 < 0x000001C0 + CAlphaBitmap_01d19cc4.height)) {
-    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c17b4);
-    core_flashlit_cpp_FUN_004a7a70(pcVar3);
+    text = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c17b4);
+    core_flashlit_cpp_updateTooltip_FUN_004a7a70(text);
     local_18 = 1;
   }
   if (-1 < DAT_005fe3a8) {

@@ -17,7 +17,6 @@
 #include "types/classes/CMarquee.h"
 #include "types/classes/CMelee.h"
 #include "types/classes/CMirrorHack.h"
-#include "types/classes/COutStream.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
@@ -181,8 +180,8 @@ void __cdecl core_marquee_cpp_CMarquee_archive_FUN_004e84a0(CMarquee *this_ptr);
 ECollisionType __cdecl core_marquee_cpp_CMarquee_getCollisionType_FUN_004e8520(CMarquee *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_004e8530(CMarquee *this_ptr,CBoundingBox3D *out_box);
 CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags);
-undefined8 core_marquee_cpp_FUN_004e8620(void);
-void core_marquee_cpp_FUN_004e86a0(void);
+void __cdecl core_marquee_cpp_initializeTrigTables_FUN_004e8620(void);
+void __cdecl core_marquee_cpp_freeTrigTables_FUN_004e86a0(void);
 int __cdecl engine_matrix_c_interpolatedSin_FUN_004e86b0(int angle);
 int __cdecl engine_matrix_c_interpolatedCos_FUN_004e86f0(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e8730(void);
@@ -224,7 +223,7 @@ void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004eacc0(CMelee *th
 void __cdecl core_melee_cpp_CMelee_process_FUN_004eacf0(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_004ead10(CMelee *this_ptr,int weapon_state);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_004ead30(CMelee *this_ptr,uint flags);
-void core_melee_cpp_FUN_004eada0(COutStream *param_1);
+void __cdecl core_melee_cpp_dumpHeap_FUN_004eada0(void *stream);
 void __cdecl core_menu_cpp_staticInit_FUN_004eae70(void);
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004eaf30(int x_center,int y_top,int height_half);
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);

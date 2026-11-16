@@ -7,7 +7,7 @@
 ; STextView *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_flashlit.cpp_FUN_004b9ab0 at 004b9c1c
+;   core_flashlit.cpp_staticInit_FUN_004b9ab0 at 004b9c1c
 ;
 ; *****************************************************************************
 

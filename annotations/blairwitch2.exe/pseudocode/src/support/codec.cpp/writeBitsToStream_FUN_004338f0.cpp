@@ -13,7 +13,7 @@ int __cdecl support_codec_cpp_writeBitsToStream_FUN_004338f0(SBitBuffer *bit_buf
   int iVar2;
   byte local_14;
   
-  iVar1 = support_codec_cpp_FUN_00433a90(bit_buffer,ostream);
+  iVar1 = support_codec_cpp_writeWholeBytesToStream_FUN_00433a90(bit_buffer,ostream);
   if (iVar1 < 0) {
     if (iVar1 != -1) {
       return -3;

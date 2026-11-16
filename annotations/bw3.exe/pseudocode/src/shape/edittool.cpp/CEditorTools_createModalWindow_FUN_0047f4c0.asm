@@ -52,7 +52,7 @@
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
-;   engine_font.cpp_FUN_004b2e40
+;   engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40
 ;   engine_mini3d.cpp_getRenderViewport_FUN_004ed150
 ;   engine_mini3d.cpp_setRenderViewport_FUN_004ed020
 ;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_0047cbd0
@@ -164,8 +164,8 @@ section .text
     MOV ESI,dword ptr [0x01c5b0e0]      ; 0047f5f5 | DAT_01c5b0e0
     PUSH ESI                            ; 0047f5fb
     LEA EBP,[EBX + 0x48]                ; 0047f5fc
-    CALL engine_font.cpp_FUN_004b2e40   ; 0047f5ff
-        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b2e40()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40 ; 0047f5ff
+        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 0047f604
     XOR EDI,EDI                         ; 0047f607
     MOV dword ptr [ESP + 0xc],EAX       ; 0047f609

@@ -136,8 +136,8 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/actor.cpp, Suspects: 1
     - [stack_alignment] at 0040cfc8: AND ESP,0xfffffff8
 
-  core_actor.cpp_FUN_0040d370
-    File: core/actor.cpp, Suspects: 7
+  core_actor.cpp_CVector3f_length_FUN_0040d370
+    File: core/actor.cpp, Suspects: 0
     - [stack_alignment] at 0040d376: AND ESP,0xfffffff8
 
   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040e170
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 24.3 suspects/function
-  Without stack patterns: avg 6.3 suspects/function
+  With stack patterns:    avg 23.1 suspects/function
+  Without stack patterns: avg 5.9 suspects/function

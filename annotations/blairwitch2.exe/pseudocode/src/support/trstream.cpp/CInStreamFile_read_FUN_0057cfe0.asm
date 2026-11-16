@@ -17,9 +17,9 @@
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010ed
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a9f
 ;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015c8
-;   engine_font.cpp_FUN_004a7fd0 at 004a816e
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0 at 004a816e
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573e8f
-;   engine_texture.cpp_FUN_00575150 at 00575274
+;   engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150 at 00575274
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 at 0054e324
 ;   sound_sndmain.cpp_getSfxSample_FUN_0054c1c0 at 0054c517
 ;

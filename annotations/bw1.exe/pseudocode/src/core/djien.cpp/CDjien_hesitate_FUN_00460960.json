@@ -1,0 +1,130 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 16,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "00460230",
+      "from_addr": "00460871",
+      "name": "core_djien.cpp_CDjien_process_FUN_00460230",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00460960",
+    "address_range": [
+      [
+        "00460960",
+        "004609b0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_djien.cpp_CDjien_hesitate_FUN_00460960",
+    "signature": "void __cdecl core_djien_cpp_CDjien_hesitate_FUN_00460960(CDjien *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd00"
+    },
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00460871",
+        "call_type": "direct",
+        "caller": "core_djien.cpp_CDjien_process_FUN_00460230",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00460892",
+        "call_type": "direct",
+        "caller": "core_djien.cpp_CDjien_process_FUN_00460230",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0046091c",
+        "call_type": "direct",
+        "caller": "core_djien.cpp_CDjien_process_FUN_00460230",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.05,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 10,
+      "INT_AND": 9,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDjien *"
+      }
+    ]
+  },
+  "suspects": []
+}

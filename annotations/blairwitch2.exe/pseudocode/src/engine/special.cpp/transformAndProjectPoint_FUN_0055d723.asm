@@ -9,15 +9,15 @@
 ;
 ; XREF[70]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0 at 00409b7d
-;   core_basicene.cpp_FUN_0059fae0 at 0059fb77
+;   core_basicene.cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0 at 0059fb77
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041ae50 at 0041aefd
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041aa20 at 0041aa9a
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 at 0041a972
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620 at 0041f6cf
-;   core_bwspart.cpp_FUN_005a86a0 at 005a8825
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a8825
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80 at 00424e69
+;   core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760 at 0042b891
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 at 0042568c
-;   core_charactr.cpp_FUN_0042b760 at 0042b891
 ;   ... and 60 more
 ;
 ; Referenced Globals:

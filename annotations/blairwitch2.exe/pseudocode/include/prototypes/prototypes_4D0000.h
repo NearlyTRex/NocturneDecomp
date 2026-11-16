@@ -54,7 +54,7 @@ void __cdecl core_hero_cpp_CHero_reset_FUN_004d02e0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(CHero *this_ptr,int action_type);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004d0750(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004d0780(CHero *param_1,int param_2);
+int __cdecl core_hero_cpp_CHero_findHeroAction_FUN_004d0780(CHero *this_ptr,int ignore_lock);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004d0910(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004d0930(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr);
@@ -62,7 +62,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004d09a0(CHer
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004d0a00(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
 CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004d0a40(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004d0af0(CHeroPlaceholder *this_ptr);
-undefined8 core_hero_cpp_FUN_004d0b40(void);
+void __cdecl core_hero_cpp_initializeColorMasks_FUN_004d0b40(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004d0c90(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10(void);
 void __cdecl core_hiram_cpp_staticInit_FUN_004d0ed0(void);
@@ -160,8 +160,8 @@ void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004d8b20(CIniFile *this_ptr,
 void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004d8b80(CIniFile *this_ptr,char *key,int value);
 void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004d8bc0(CIniFile *this_ptr,char *key,float *output);
 void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004d8c30(CIniFile *this_ptr,char *key,float value);
-void engine_ini_cpp_FUN_004d8c80(void);
-void engine_ini_cpp_FUN_004d8cf0(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_getDouble_FUN_004d8c80(CIniFile *this_ptr,char *key,double *output);
+void __cdecl engine_ini_cpp_CIniFile_setDoubleValue_FUN_004d8cf0(CIniFile *this_ptr,char *key,double value);
 CIni * __cdecl engine_ini_cpp_CIni_ctor_FUN_004d8d40(CIni *this_ptr);
 CIni * __cdecl engine_ini_cpp_CIni_dtor_FUN_004d8d50(CIni *this_ptr,uint flags);
 void __cdecl core_inivar_cpp_readIniData_FUN_004d8d60(void);
@@ -171,7 +171,7 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004d9db0(CDemonA
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9f10(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *actor_ptr);
 void core_inv_cpp_FUN_004d9ff0(float param_1,float param_2);
-void core_inv_cpp_FUN_004da130(void);
+void __cdecl core_inv_cpp_renderCompass_FUN_004da130(void);
 int __cdecl core_inv_cpp_loadItem_FUN_004da720(SInventoryItemInfo *item_info,_FILE *file_handle);
 CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004da760(CInventory *this_ptr);
 CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004da840(CInventory *this_ptr,uint flags);

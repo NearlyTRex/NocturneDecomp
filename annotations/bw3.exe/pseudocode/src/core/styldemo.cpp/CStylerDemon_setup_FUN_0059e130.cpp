@@ -30,9 +30,9 @@ void __cdecl core_styldemo_cpp_CStylerDemon_setup_FUN_0059e130(CStylerDemon *thi
   }
   pCVar2 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(pCVar2);
-  core_charactr_cpp_FUN_0042f280(2);
-  core_charactr_cpp_FUN_0042f280(4);
-  core_charactr_cpp_FUN_0042f280(3);
+  core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(2);
+  core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(4);
+  core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(3);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(pCVar2);
   _DAT_02d24cf4 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);

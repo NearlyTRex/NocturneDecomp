@@ -129,9 +129,9 @@ char * __cdecl CDemonCamera::allocLight(CDemonCamera *this_ptr);
 // Address: 0044e8e0
 void __cdecl CDemonCamera::precomputeLight(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect);
 
-// Original: core_dcamera.cpp_FUN_0044ee30
+// Original: core_dcamera.cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044ee30
 // Address: 0044ee30
-void FUN_0044ee30(int param_1,float *param_2,float param_3);
+void __cdecl CDemonCamera::computeDirectionalLightMap(CDemonCamera *this_ptr,CVector3f *light_dir,float intensity);
 
 // Original: core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30
 // Address: 0044ef30
@@ -193,9 +193,9 @@ void __cdecl CDemonCamera::renderLightCoronas(CDemonCamera *this_ptr,CDemonLight
 // Address: 00451a30
 void __cdecl CDemonCamera::addLightmapToCorona(CDemonCamera *this_ptr,CDemonLight *light_source);
 
-// Original: core_dcamera.cpp_FUN_00451bc0
+// Original: core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00451bc0
 // Address: 00451bc0
-void FUN_00451bc0(int param_1);
+void __cdecl CDemonCamera::addDirectionalLightMap(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00451c20
 // Address: 00451c20

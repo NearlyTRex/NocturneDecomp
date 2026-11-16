@@ -68,7 +68,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
   bVar9 = 0;
   local_18 = 0;
   engine_pod_cpp_CPodFile_cleanup_FUN_0051a8f0(this_ptr);
-  engine_dosio_cpp_FUN_00460910(&local_6a4,0,pod_filename);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910
+            (local_6a4.found_path,(char *)0x0,pod_filename);
   iVar2 = engine_dosio_cpp_findFileNormally_FUN_004609e0(&local_6a4);
   if (iVar2 == 0) {
     return 0;

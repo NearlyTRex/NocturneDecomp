@@ -21,8 +21,8 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_shadow.cpp_FUN_0055f4f0
-;   core_shadow.cpp_FUN_0055f540
+;   core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0
+;   core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -95,8 +95,8 @@ section .text
     JNZ 0x0055ff6c                      ; 0055ff50
         ;   XREF to: 0055ff6c (CONDITIONAL_JUMP)  ; LAB_0055ff6c
     PUSH EBX                            ; 0055ff52
-    CALL core_shadow.cpp_FUN_0055f4f0   ; 0055ff53
-        ;   XREF to: 0055f4f0 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0055f4f0()
+    CALL core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0 ; 0055ff53
+        ;   XREF to: 0055f4f0 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0(CShadow * this_ptr)
     ADD ESP,0x4                         ; 0055ff58
     LEA EAX,[EBP + 0x1c]                ; 0055ff5b
     PUSH EAX                            ; 0055ff5e
@@ -165,8 +165,8 @@ section .text
         ;   Label: LAB_00560000
     ADD ESP,0xc                         ; 00560005
     PUSH EBX                            ; 00560008
-    CALL core_shadow.cpp_FUN_0055f540   ; 00560009
-        ;   XREF to: 0055f540 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0055f540()
+    CALL core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540 ; 00560009
+        ;   XREF to: 0055f540 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDeathSound_FUN_0055f540(CShadow * this_ptr)
     ADD ESP,0x4                         ; 0056000e
     PUSH 0x5f17a2                       ; 00560011 | = "ShadowDead"
     MOV EDI,dword ptr [0x0061b4d0]      ; 00560016 | DAT_0061b4d0
@@ -255,8 +255,8 @@ section .text
     ADD ESP,0xc                         ; 005600c3
     PUSH EBX                            ; 005600c6
         ;   Label: LAB_005600c6
-    CALL core_shadow.cpp_FUN_0055f4f0   ; 005600c7
-        ;   XREF to: 0055f4f0 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_0055f4f0()
+    CALL core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0 ; 005600c7
+        ;   XREF to: 0055f4f0 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playDamageSound_FUN_0055f4f0(CShadow * this_ptr)
     ADD ESP,0x4                         ; 005600cc
     PUSH EBP                            ; 005600cf
     PUSH EBX                            ; 005600d0

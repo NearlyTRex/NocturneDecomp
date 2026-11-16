@@ -32,14 +32,14 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   ... and 14 more
 ;
@@ -389,8 +389,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 004d6e4a
     FSTP float ptr [ESP]                ; 004d6e50
     PUSH EBX                            ; 004d6e53
-    CALL core_charactr.cpp_FUN_00434850 ; 004d6e54
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 004d6e54
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d6e59
     LEA EAX,[EBX + 0x158]               ; 004d6e5c
     PUSH EAX                            ; 004d6e62
@@ -456,8 +456,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004d6f0a
     PUSH EBX                            ; 004d6f10
     LEA ESI,[EBX + 0x2518]              ; 004d6f11
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 004d6f17
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 004d6f17
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 004d6f1c
     FMUL float ptr [EBP + 0x92]         ; 004d6f1e
     FLD float ptr [ESI + 0x4]           ; 004d6f24

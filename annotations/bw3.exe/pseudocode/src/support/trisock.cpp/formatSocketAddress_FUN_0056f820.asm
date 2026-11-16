@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_0056fef0 at 0056ffeb
-;   support_trisock.cpp_FUN_00571340 at 00571c10
+;   support_trisock.cpp_httpConnectToUrl_FUN_0056fef0 at 0056ffeb
+;   support_trisock.cpp_httpRequestUpdate_FUN_00571340 at 00571c10
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d68d7

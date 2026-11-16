@@ -17,10 +17,10 @@
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010ef
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402aa6
 ;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015ca
-;   engine_font.cpp_FUN_004c0fa0 at 004c1154
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0 at 004c1154
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0053b250 at 0053b3fc
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0 at 00596ab3
-;   engine_texture.cpp_FUN_00597d70 at 00597e96
+;   engine_texture.cpp_cacheTextureAtFullSize_FUN_00597d70 at 00597e96
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460 at 00570994
 ;   ... and 1 more
 ;

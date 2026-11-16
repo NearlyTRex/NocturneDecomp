@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004eca10 at 004ecb2e
+;   core_hero.cpp_CHero_findHeroAction_FUN_004eca10 at 004ecb2e
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 005913cf
 ;
 ; Referenced Globals:

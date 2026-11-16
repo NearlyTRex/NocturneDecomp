@@ -9,19 +9,17 @@
 int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_00443790(CLZWDecompress *this_ptr,void *ostream)
 
 {
-  SBitBuffer *bit_buffer;
   int iVar1;
   
-  bit_buffer = (SBitBuffer *)this_ptr->current_code;
-  if (-1 < (int)bit_buffer) {
+  iVar1 = this_ptr->current_code;
+  if (-1 < iVar1) {
     if (this_ptr->pending_sequence_index < 0) {
       iVar1 = support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00443370
-                        (&this_ptr->lzw_dict,(int)bit_buffer,ostream);
+                        (&this_ptr->lzw_dict,iVar1,ostream);
     }
     else {
-      iVar1 = support_codec_cpp_FUN_004433f0
-                        (&this_ptr->lzw_dict,bit_buffer,(_istream *)this_ptr->pending_sequence_index
-                         ,ostream);
+      iVar1 = support_codec_cpp_CLZWDictionary_resumeCodeSequence_FUN_004433f0
+                        (&this_ptr->lzw_dict,iVar1,this_ptr->pending_sequence_index,ostream);
     }
     if (iVar1 == -1) {
       this_ptr->pending_sequence_index = -1;

@@ -34,7 +34,7 @@ void __cdecl core_charactr_cpp_CCharacter_setCharacterModel_FUN_0042b440(CCharac
   (this_ptr->model).scale_factor = this_ptr->size_scale;
   this_ptr->blink_timer = fVar1;
   core_charactr_cpp_CCharacter_computeBoundingBox_FUN_00429390(this_ptr);
-  core_charactr_cpp_FUN_004247f0(this_ptr);
+  core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_004247f0(this_ptr);
   if (0 < (this_ptr->cloth_list).count) {
     core_cloth_cpp_CClothList_remove_FUN_005b1640(&this_ptr->cloth_list,0);
   }

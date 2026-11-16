@@ -56,7 +56,7 @@ void __cdecl core_moocow_cpp_CMooCow_process_FUN_00521480(CMooCow *this_ptr,floa
     core_charactr_cpp_CCharacter_processMotion_FUN_00434a80(&this_ptr->base,iVar5);
   }
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320(&this_ptr->base,delta_time);
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar1->base);
   iVar5 = pSVar6->state_index;
   iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240(&this_ptr->base,delta_time);
@@ -127,7 +127,7 @@ LAB_0052155f:
 switchD_005217c3_caseD_5:
   iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042e120(&this_ptr->base);
   if (iVar5 != 0) {
-    core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700(&this_ptr->base,delta_time);
     fStack_44 = (this_ptr->base).velocity.x * delta_time;
     fStack_40 = (this_ptr->base).velocity.y * delta_time;
     fStack_3c = (this_ptr->base).velocity.z * delta_time;

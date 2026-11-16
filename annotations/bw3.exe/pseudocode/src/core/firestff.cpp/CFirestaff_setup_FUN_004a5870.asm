@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0
-;   core_flame.cpp_FUN_004a5ad0
+;   core_flame.cpp_preloadFlameTextures_FUN_004a5ad0
 ;   core_weapon.cpp_CWeapon_setup_FUN_0057af40
 ;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
@@ -44,8 +44,8 @@ section .text
         ;   XREF to: 004a42c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0(CFireEffect * this_ptr, int variant)
     ADD ESP,0x8                         ; 004a58b2
     PUSH 0x0                            ; 004a58b5
-    CALL core_flame.cpp_FUN_004a5ad0    ; 004a58b7
-        ;   XREF to: 004a5ad0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004a5ad0()
+    CALL core_flame.cpp_preloadFlameTextures_FUN_004a5ad0 ; 004a58b7
+        ;   XREF to: 004a5ad0 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_preloadFlameTextures_FUN_004a5ad0(int flame_type)
     ADD ESP,0x4                         ; 004a58bc
     RET                                 ; 004a58bf
 

@@ -133,9 +133,9 @@ void __cdecl CDemonLight::setVolumetricIntensity(CDemonLight *this_ptr,float int
 // Address: 0045fb40
 void __cdecl CDemonLight::drawShadowDepthBuffer(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
 
-// Original: core_dlight.cpp_FUN_0045ff30
+// Original: core_dlight.cpp_CDemonLight_drawMonsterVisionBuffer_FUN_0045ff30
 // Address: 0045ff30
-void FUN_0045ff30(int param_1,int param_2,int param_3,int param_4);
+void __cdecl CDemonLight::drawMonsterVisionBuffer(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
 
 // Original: core_dlight.cpp_CDemonLight_testVisibility_FUN_00460270
 // Address: 00460270

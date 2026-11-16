@@ -11,6 +11,7 @@
 #include "types/classes/CCrater.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonSet.h"
 #include "types/classes/CEventList.h"
 #include "types/classes/CExplosion.h"
 #include "types/classes/CFilmProjector.h"
@@ -58,7 +59,7 @@ int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_00490ec0(CEventLis
 void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList *this_ptr,char *name,int add_flag);
 void __cdecl core_event_cpp_CEventList_resetGameFlags_FUN_004910b0(CEventList *this_ptr);
 void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_00491110(CEventList *this_ptr,char *name,int add_flag);
-undefined4 core_event_cpp_FUN_00491240(int param_1,int param_2);
+float __cdecl core_event_cpp_CEventList_getTimerValue_FUN_00491240(CEventList *this_ptr,int timer_index);
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00491280(CEventList *this_ptr,char *name,float duration);
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_00491400(CEventList *this_ptr,char *name,int value);
 int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_00491510(CEventList *this_ptr,char *str);
@@ -83,7 +84,7 @@ void __cdecl core_event_cpp_CRuleList_remove_FUN_004924a0(CRuleList *this_ptr,in
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00492570(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_004925c0(CRuleList *this_ptr);
 CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00492610(CQuaternion4f *dest,CQuaternion4f *src);
-undefined4 core_event_cpp_FUN_00492630(int param_1);
+int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00492630(CDemonSet *set_ptr);
 void __fastcall crt_watcom_c__memset_FUN_00492670(void *dest,int fill_byte,uint size);
 void crt_unknown_c_FUN_004926e0(void);
 void crt_unknown_c_FUN_004926e8(void);

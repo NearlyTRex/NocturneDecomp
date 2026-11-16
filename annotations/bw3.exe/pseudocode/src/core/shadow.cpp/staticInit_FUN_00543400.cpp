@@ -22,13 +22,16 @@ void __cdecl core_shadow_cpp_staticInit_FUN_00543400(void)
              core_shadow_cpp_factoryFuncShadow_FUN_005434d0,&g_CShadowClassVersion,2,
              &g_CEnemyClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)0x270f854,"CShadow_Forest",core_shadow_cpp_FUN_00545e70,
-             (int *)0x6040d0,1,&g_CShadowClassInfo);
+            ((CDemonActorType *)0x270f854,"CShadow_Forest",
+             core_shadow_cpp_factoryFuncShadowForest_FUN_00545e70,(int *)0x6040d0,1,
+             &g_CShadowClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)0x270f890,"CSpiritShadow",core_shadow_cpp_FUN_00545f00,
-             (int *)0x6040d4,1,&g_CShadowClassInfo);
+            ((CDemonActorType *)0x270f890,"CSpiritShadow",
+             core_shadow_cpp_factoryFuncSpiritShadow_FUN_00545f00,(int *)0x6040d4,1,
+             &g_CShadowClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)0x270f8cc,"CDemonShadow",core_shadow_cpp_FUN_00545f90,
-             (int *)0x6040d8,1,&g_CShadowClassInfo);
+            ((CDemonActorType *)0x270f8cc,"CDemonShadow",
+             core_shadow_cpp_factoryFuncDemonShadow_FUN_00545f90,(int *)0x6040d8,1,
+             &g_CShadowClassInfo);
   return;
 }

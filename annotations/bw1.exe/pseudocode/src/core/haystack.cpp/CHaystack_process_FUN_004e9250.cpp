@@ -59,7 +59,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004e9250(CHaystack *this_pt
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_haystack_cpp_CHaystack_updateAI_FUN_004e98b0(this_ptr,delta_time);
   }
-  core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320((CCharacter *)this_ptr,delta_time);
   fVar14 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar14;
   if (fVar14 < 0.0) {
@@ -184,7 +184,7 @@ LAB_004e931f:
 switchD_004e9753_caseD_4:
   pCVar3 = (this_ptr->base).base.grabbed_by;
   if (pCVar3 == (CDemonActor *)0x0) {
-    core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,delta_time);
     pCVar15 = &(this_ptr->base).base.model.accumulated_root_motion;
     pCVar1 = &(this_ptr->base).base.position_delta;
     fStack_90 = pCVar15->x + pCVar1->x;

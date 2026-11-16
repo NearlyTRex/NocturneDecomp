@@ -55,8 +55,8 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005439b0(CScript *this_
     if ((DAT_0061b49c < 0x180) && (this_ptr_00 = _DAT_0152d250, _DAT_01d7f1b8 != 0)) {
       this_ptr_00 = _DAT_0152d248;
     }
-    iVar5 = engine_font_cpp_FUN_004c4260
-                      (this_ptr_00,this_ptr->current_message,0x1e7e0a8,10,0x400,
+    iVar5 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
+                      (this_ptr_00,this_ptr->current_message,(char *)0x1e7e0a8,10,0x400,
                        (DAT_0061b498 * 9) / 10);
     iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
     y = ((iVar7 * 2 - iVar4) - iVar6 * iVar5) / 2;

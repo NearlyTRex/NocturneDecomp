@@ -34,7 +34,7 @@ void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_0051b610(CDemonMission *
     (**(code **)(*(int *)(iVar1 + 0x154) + 0x50))(iVar1);
   }
   sound_sndmain_cpp_killAllSfx_FUN_00573b00();
-  core_game_cpp_FUN_004dc000(g_CGamePtr);
+  core_game_cpp_CGame_onSetLoaded_FUN_004dc000(g_CGamePtr);
   g_CGamePtr->new_set_event_pending = 1;
   return;
 }

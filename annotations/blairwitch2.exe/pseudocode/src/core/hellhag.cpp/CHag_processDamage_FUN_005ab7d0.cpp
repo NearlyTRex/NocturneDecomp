@@ -43,7 +43,8 @@ void __cdecl core_hellhag_cpp_CHag_processDamage_FUN_005ab7d0(CHag *this_ptr,SDa
                  &(this_ptr->base).base.base.base.location.position);
     }
     (this_ptr->base).base.base.hit_points = 0.0;
-    core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"@Death" + 1);
+    core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
+              (&(this_ptr->base).state_machine,"@Death" + 1);
   }
   return;
 }

@@ -33,14 +33,14 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
-;   core_carved.cpp_FUN_0042a930
-;   core_carved.cpp_FUN_0042b290
-;   core_carved.cpp_FUN_0042be20
+;   core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290
+;   core_carved.cpp_CCarved_processPickup_FUN_0042a930
+;   core_carved.cpp_CCarved_resetChaseState_FUN_0042be20
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
-;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   ... and 31 more
 ;
 ; *****************************************************************************
@@ -211,8 +211,8 @@ section .text
         ;   XREF to: 00428cab (CONDITIONAL_JUMP)  ; LAB_00428cab
     PUSH EBX                            ; 00428c9d
         ;   Label: LAB_00428c9d
-    CALL core_carved.cpp_FUN_0042be20   ; 00428c9e
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00428c9e
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00428ca3
     JMP 0x00428b77                      ; 00428ca6
         ;   XREF to: 00428b77 (UNCONDITIONAL_JUMP)  ; LAB_00428b77
@@ -353,8 +353,8 @@ section .text
     JNZ 0x00428b77                      ; 00428e43
         ;   XREF to: 00428b77 (CONDITIONAL_JUMP)  ; LAB_00428b77
     PUSH EBX                            ; 00428e49
-    CALL core_carved.cpp_FUN_0042be20   ; 00428e4a
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00428e4a
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00428e4f
     JMP 0x00428b77                      ; 00428e52
         ;   XREF to: 00428b77 (UNCONDITIONAL_JUMP)  ; LAB_00428b77
@@ -363,8 +363,8 @@ section .text
     JNZ 0x00428e6e                      ; 00428e5e
         ;   XREF to: 00428e6e (CONDITIONAL_JUMP)  ; LAB_00428e6e
     PUSH EBX                            ; 00428e60
-    CALL core_carved.cpp_FUN_0042be20   ; 00428e61
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00428e61
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00428e66
     JMP 0x00428b77                      ; 00428e69
         ;   XREF to: 00428b77 (UNCONDITIONAL_JUMP)  ; LAB_00428b77
@@ -407,8 +407,8 @@ section .text
     JZ 0x00428f26                       ; 00428edd
         ;   XREF to: 00428f26 (CONDITIONAL_JUMP)  ; LAB_00428f26
     PUSH EBX                            ; 00428edf
-    CALL core_carved.cpp_FUN_0042be20   ; 00428ee0
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00428ee0
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00428ee5
     JMP 0x00428b77                      ; 00428ee8
         ;   XREF to: 00428b77 (UNCONDITIONAL_JUMP)  ; LAB_00428b77
@@ -428,8 +428,8 @@ section .text
     JBE 0x00428f26                      ; 00428f16
         ;   XREF to: 00428f26 (CONDITIONAL_JUMP)  ; LAB_00428f26
     PUSH EBX                            ; 00428f18
-    CALL core_carved.cpp_FUN_0042be20   ; 00428f19
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00428f19
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00428f1e
     JMP 0x00428b77                      ; 00428f21
         ;   XREF to: 00428b77 (UNCONDITIONAL_JUMP)  ; LAB_00428b77
@@ -497,8 +497,8 @@ section .text
     CALL dword ptr [ESI + 0xf0]         ; 00428fec
     ADD ESP,0x4                         ; 00428ff2
     PUSH EBX                            ; 00428ff5
-    CALL core_carved.cpp_FUN_0042be20   ; 00428ff6
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00428ff6
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00428ffb
     PUSH 0x5d52dd                       ; 00428ffe | = "ghoul-eat-?.wav"
         ;   Label: LAB_00428ffe
@@ -517,8 +517,8 @@ section .text
     PUSH EAX                            ; 00429029
     PUSH EBX                            ; 0042902a
     MOV dword ptr [EBX + 0xc278],0x0    ; 0042902b
-    CALL core_carved.cpp_FUN_0042b290   ; 00429035
-        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b290()
+    CALL core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 ; 00429035
+        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; int core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290(CCarved * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 0042903a
     MOV ESI,EAX                         ; 0042903d
     TEST EAX,EAX                        ; 0042903f
@@ -547,8 +547,8 @@ section .text
     PUSH 0x2                            ; 00429076
         ;   Label: LAB_00429076
     PUSH EBX                            ; 00429078
-    CALL core_carved.cpp_FUN_0042b290   ; 00429079
-        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b290()
+    CALL core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 ; 00429079
+        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; int core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290(CCarved * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 0042907e
     MOV ESI,EAX                         ; 00429081
     TEST EAX,EAX                        ; 00429083
@@ -603,8 +603,8 @@ section .text
     PUSH 0x3                            ; 00429123
         ;   Label: LAB_00429123
     PUSH EBX                            ; 00429125
-    CALL core_carved.cpp_FUN_0042b290   ; 00429126
-        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b290()
+    CALL core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 ; 00429126
+        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; int core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290(CCarved * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 0042912b
     MOV dword ptr [EBP + 0x5a],EAX      ; 0042912e
     TEST EAX,EAX                        ; 00429131
@@ -1019,8 +1019,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 0042966b
     FSTP float ptr [ESP]                ; 00429671
     PUSH EBX                            ; 00429674
-    CALL core_charactr.cpp_FUN_00435320 ; 00429675
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 00429675
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBX + 0xc2c4]    ; 0042967a
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x2298] ; 00429680
     ADD ESP,0x8                         ; 00429687
@@ -1057,8 +1057,8 @@ section .text
         ;   XREF to: 00429a81 (CONDITIONAL_JUMP)  ; LAB_00429a81
     PUSH EBX                            ; 004296e9
         ;   Label: LAB_004296e9
-    CALL core_carved.cpp_FUN_0042be20   ; 004296ea
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 004296ea
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 004296ef
     FLD float ptr [EBX + 0xc1e4]        ; 004296f2
         ;   Label: LAB_004296f2
@@ -1101,8 +1101,8 @@ section .text
         ;   Label: LAB_00429758
     PUSH EBX                            ; 0042975e
     LEA ESI,[EBX + 0x2518]              ; 0042975f
-    CALL core_charactr.cpp_FUN_0042d700 ; 00429765
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 00429765
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 0042976a
     FMUL float ptr [EBP + 0x92]         ; 0042976c
     FLD float ptr [ESI + 0x4]           ; 00429772
@@ -1263,8 +1263,8 @@ section .text
         ;   Label: LAB_00429965
     PUSH EBX                            ; 00429967
     MOV ESI,dword ptr [EBP + 0x36]      ; 00429968
-    CALL core_carved.cpp_FUN_0042b290   ; 0042996b
-        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b290()
+    CALL core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 ; 0042996b
+        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; int core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290(CCarved * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 00429970
     TEST ESI,ESI                        ; 00429973
     JZ 0x00428bcf                       ; 00429975
@@ -1438,8 +1438,8 @@ section .text
     FSTP float ptr [EBX + 0x2524]       ; 00429b70
     FSTP float ptr [ESP]                ; 00429b76
     PUSH EBX                            ; 00429b79
-    CALL core_charactr.cpp_FUN_00435320 ; 00429b7a
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 00429b7a
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     XOR EAX,EAX                         ; 00429b7f
     ADD ESP,0x8                         ; 00429b81
     MOV dword ptr [EBP + 0xfffffd12],EAX ; 00429b84
@@ -1474,8 +1474,8 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00429bef
     PUSH EBX                            ; 00429bf2
-    CALL core_carved.cpp_FUN_0042be20   ; 00429bf3
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00429bf3
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00429bf8
     MOV dword ptr [EBX + 0x2508],0x0    ; 00429bfb
     JMP 0x004296f2                      ; 00429c05
@@ -1500,8 +1500,8 @@ section .text
     JZ 0x00429c48                       ; 00429c3d
         ;   XREF to: 00429c48 (CONDITIONAL_JUMP)  ; LAB_00429c48
     PUSH EBX                            ; 00429c3f
-    CALL core_carved.cpp_FUN_0042be20   ; 00429c40
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00429c40
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00429c45
     PUSH dword ptr [EBP + 0x92]         ; 00429c48
         ;   Label: LAB_00429c48
@@ -1518,8 +1518,8 @@ section .text
     JZ 0x00429b35                       ; 00429c6f
         ;   XREF to: 00429b35 (CONDITIONAL_JUMP)  ; caseD_15
     PUSH EBX                            ; 00429c75
-    CALL core_carved.cpp_FUN_0042be20   ; 00429c76
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00429c76
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00429c7b
     MOV ESI,dword ptr [EBX + 0xc2e0]    ; 00429c7e
     PUSH ESI                            ; 00429c84
@@ -1636,8 +1636,8 @@ section .text
     MOV dword ptr [EBX + 0xc2e0],EAX    ; 00429df8
     PUSH EBX                            ; 00429dfe
         ;   Label: LAB_00429dfe
-    CALL core_carved.cpp_FUN_0042be20   ; 00429dff
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00429dff
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00429e04
     JMP 0x00429b35                      ; 00429e07
         ;   XREF to: 00429b35 (UNCONDITIONAL_JUMP)  ; caseD_15
@@ -1691,8 +1691,8 @@ section .text
     JNZ 0x00429e9a                      ; 00429e8f
         ;   XREF to: 00429e9a (CONDITIONAL_JUMP)  ; LAB_00429e9a
     PUSH EBX                            ; 00429e91
-    CALL core_carved.cpp_FUN_0042be20   ; 00429e92
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 00429e92
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00429e97
     MOV EAX,dword ptr [EBX + 0xc2bc]    ; 00429e9a
         ;   Label: LAB_00429e9a
@@ -1712,8 +1712,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00429eca
         ;   Label: LAB_00429eca
     PUSH EBX                            ; 00429ed0
-    CALL core_carved.cpp_FUN_0042a930   ; 00429ed1
-        ;   XREF to: 0042a930 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042a930()
+    CALL core_carved.cpp_CCarved_processPickup_FUN_0042a930 ; 00429ed1
+        ;   XREF to: 0042a930 (UNCONDITIONAL_CALL)  ; int core_carved.cpp_CCarved_processPickup_FUN_0042a930(CCarved * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00429ed6
     TEST EAX,EAX                        ; 00429ed9
     JNZ 0x00429b35                      ; 00429edb
@@ -1722,8 +1722,8 @@ section .text
     MOV EAX,[0x005fd468]                ; 00429ee3 | DAT_005fd468
     PUSH EBX                            ; 00429ee8
     MOV dword ptr [EBP + 0x4a],EAX      ; 00429ee9
-    CALL core_carved.cpp_FUN_0042b290   ; 00429eec
-        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b290()
+    CALL core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 ; 00429eec
+        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; int core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290(CCarved * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 00429ef1
     MOV dword ptr [EBP + 0x3e],EAX      ; 00429ef4
     TEST EAX,EAX                        ; 00429ef7
@@ -1897,8 +1897,8 @@ section .text
     PUSH EDI                            ; 0042a108
     PUSH EBX                            ; 0042a109
     LEA ESI,[EBP + -0x4e]               ; 0042a10a
-    CALL core_carved.cpp_FUN_0042b290   ; 0042a10d
-        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b290()
+    CALL core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 ; 0042a10d
+        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; int core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290(CCarved * this_ptr, int object_shape_type)
     MOV dword ptr [EBP + 0x42],EAX      ; 0042a112
     LEA EAX,[EBX + 0x20]                ; 0042a115
     LEA EDI,[EBP + 0xffffff6a]          ; 0042a118
@@ -2063,8 +2063,8 @@ section .text
         ;   XREF to: 00429b35 (CONDITIONAL_JUMP)  ; caseD_15
     PUSH EBX                            ; 0042a30b
         ;   Label: LAB_0042a30b
-    CALL core_carved.cpp_FUN_0042be20   ; 0042a30c
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 0042a30c
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 0042a311
     JMP 0x00429b35                      ; 0042a314
         ;   XREF to: 00429b35 (UNCONDITIONAL_JUMP)  ; caseD_15
@@ -2073,8 +2073,8 @@ section .text
     JZ 0x0042a299                       ; 0042a31b
         ;   XREF to: 0042a299 (CONDITIONAL_JUMP)  ; LAB_0042a299
     PUSH EBX                            ; 0042a321
-    CALL core_carved.cpp_FUN_0042be20   ; 0042a322
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 0042a322
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 0042a327
     JMP 0x0042a299                      ; 0042a32a
         ;   XREF to: 0042a299 (UNCONDITIONAL_JUMP)  ; LAB_0042a299
@@ -2084,8 +2084,8 @@ section .text
         ;   XREF to: 0042a30b (CONDITIONAL_JUMP)  ; LAB_0042a30b
     PUSH 0x1                            ; 0042a338
     PUSH EBX                            ; 0042a33a
-    CALL core_carved.cpp_FUN_0042b290   ; 0042a33b
-        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b290()
+    CALL core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 ; 0042a33b
+        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; int core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290(CCarved * this_ptr, int object_shape_type)
     MOV ESI,EAX                         ; 0042a340
     ADD ESP,0x8                         ; 0042a342
     TEST EAX,EAX                        ; 0042a345
@@ -2192,8 +2192,8 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0042a49f
     PUSH EBX                            ; 0042a4a2
-    CALL core_carved.cpp_FUN_0042be20   ; 0042a4a3
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
+    CALL core_carved.cpp_CCarved_resetChaseState_FUN_0042be20 ; 0042a4a3
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_resetChaseState_FUN_0042be20(CCarved * this_ptr)
     ADD ESP,0x4                         ; 0042a4a8
     JMP 0x00429b35                      ; 0042a4ab
         ;   XREF to: 00429b35 (UNCONDITIONAL_JUMP)  ; caseD_15

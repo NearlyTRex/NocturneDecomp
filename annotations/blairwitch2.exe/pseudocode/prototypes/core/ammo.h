@@ -57,9 +57,9 @@ void __cdecl CAmmo::setWeaponClass(CAmmo *this_ptr,char *weapon_class_name);
 // Address: 0040e440
 void __cdecl CAmmo::setAmmoCount(CAmmo *this_ptr,int ammo_count);
 
-// Original: core_ammo.cpp_FUN_0040e450
+// Original: core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450
 // Address: 0040e450
-undefined4 FUN_0040e450(int param_1,int param_2);
+int __cdecl CAmmo::consumeForReload(CAmmo *this_ptr,CDoc *hero);
 
 // Original: core_ammo.cpp_CAmmo_canPickup_FUN_0040e490
 // Address: 0040e490

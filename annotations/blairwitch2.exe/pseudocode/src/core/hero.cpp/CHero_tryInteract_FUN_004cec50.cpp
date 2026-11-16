@@ -43,7 +43,7 @@ int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004cec50(CHero *this_ptr)
   CVector3f CStack_30;
   CVector3f CStack_24;
   CDemonActor *pCStack_18;
-  CDemonActor *pCStack_14;
+  CWeapon *pCStack_14;
   float fVar8;
   
   bVar7 = 0;
@@ -85,17 +85,18 @@ int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004cec50(CHero *this_ptr)
   iVar3 = 0;
   for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count; iVar6 = iVar6 + 1) {
     pCStack_18 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);
-    pCStack_14 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+    pCStack_14 = (CWeapon *)
+                 core_actor_cpp_castToClassHash_FUN_0040c8f0
                            (pCStack_18,g_CWeaponClassInfo.name_hash);
     fStack_a0 = -1.0;
-    if (pCStack_14 == (CDemonActor *)0x0) {
+    if (pCStack_14 == (CWeapon *)0x0) {
       iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
       fStack_a0 = (float)(**(code **)(*(int *)(iVar2 + 0x2b0) + 0x68))
                                    (iVar2,this_ptr,&stack0xffffffb8);
     }
     else {
-      iVar2 = core_weapon_cpp_FUN_0058a5f0();
-      if ((iVar2 == 0) || (pCStack_14 == (CDemonActor *)0x0)) {
+      iVar2 = core_weapon_cpp_CWeapon_isSimulating_FUN_0058a5f0(pCStack_14);
+      if ((iVar2 == 0) || (pCStack_14 == (CWeapon *)0x0)) {
         iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
         fStack_a0 = (float)(**(code **)(*(int *)(iVar2 + 0x2b0) + 0x68))
                                      (iVar2,this_ptr,&stack0xffffffb8);

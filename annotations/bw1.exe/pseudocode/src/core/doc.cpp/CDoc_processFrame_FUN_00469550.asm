@@ -578,8 +578,8 @@ section .text
     FLD float ptr [EBX + 0x24a4]        ; 00469c6d
     PUSH EBX                            ; 00469c73
     FSTP float ptr [EBX + 0x2524]       ; 00469c74
-    CALL core_charactr.cpp_FUN_00435320 ; 00469c7a
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 00469c7a
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     MOV ECX,dword ptr [EBX + 0x1ff88]   ; 00469c7f
     ADD ESP,0x8                         ; 00469c85
     TEST ECX,ECX                        ; 00469c88
@@ -1019,8 +1019,8 @@ section .text
     JZ 0x0046a27b                       ; 0046a270
         ;   XREF to: 0046a27b (CONDITIONAL_JUMP)  ; LAB_0046a27b
     PUSH EBX                            ; 0046a272
-    CALL core_doc.cpp_FUN_00474ef0      ; 0046a273
-        ;   XREF to: 00474ef0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00474ef0()
+    CALL core_doc.cpp_CDoc_handleActionButton_FUN_00474ef0 ; 0046a273
+        ;   XREF to: 00474ef0 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_handleActionButton_FUN_00474ef0(CDoc * this_ptr)
     ADD ESP,0x4                         ; 0046a278
     PUSH EBX                            ; 0046a27b
         ;   Label: LAB_0046a27b
@@ -1065,8 +1065,8 @@ section .text
         ;   XREF to: 00473c10 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc * this_ptr, float delta_time, int is_weapon_active)
     ADD ESP,0xc                         ; 0046a2df
     PUSH EBX                            ; 0046a2e2
-    CALL core_doc.cpp_FUN_00476080      ; 0046a2e3
-        ;   XREF to: 00476080 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00476080()
+    CALL core_doc.cpp_CDoc_updateClothSimulation_FUN_00476080 ; 0046a2e3
+        ;   XREF to: 00476080 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateClothSimulation_FUN_00476080(CDoc * this_ptr)
     ADD ESP,0x4                         ; 0046a2e8
     PUSH dword ptr [EBP + 0x18]         ; 0046a2eb
     PUSH EBX                            ; 0046a2ee
@@ -1201,8 +1201,8 @@ section .text
     ADD ESP,0xc                         ; 0046a496
     PUSH dword ptr [EBP + 0x18]         ; 0046a499
     PUSH EBX                            ; 0046a49c
-    CALL core_doc.cpp_FUN_00475920      ; 0046a49d
-        ;   XREF to: 00475920 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00475920()
+    CALL core_doc.cpp_CDoc_handleFireButton_FUN_00475920 ; 0046a49d
+        ;   XREF to: 00475920 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_handleFireButton_FUN_00475920(CDoc * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0046a4a2
     LEA EAX,[EBX + 0x1fae8]             ; 0046a4a5
     PUSH EAX                            ; 0046a4ab
@@ -1211,8 +1211,8 @@ section .text
     ADD ESP,0x4                         ; 0046a4b1
     PUSH dword ptr [EBP + 0x18]         ; 0046a4b4
     PUSH EBX                            ; 0046a4b7
-    CALL core_doc.cpp_FUN_00476150      ; 0046a4b8
-        ;   XREF to: 00476150 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00476150()
+    CALL core_doc.cpp_CDoc_processWeaponTick_FUN_00476150 ; 0046a4b8
+        ;   XREF to: 00476150 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_processWeaponTick_FUN_00476150(CDoc * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0046a4bd
     CMP dword ptr [ESP + 0x4c8],0x0     ; 0046a4c0
     JZ 0x0046bcc7                       ; 0046a4c8
@@ -1227,8 +1227,8 @@ section .text
         ;   XREF to: 0046a4f3 (CONDITIONAL_JUMP)  ; LAB_0046a4f3
     PUSH 0x1                            ; 0046a4e8
     PUSH EBX                            ; 0046a4ea
-    CALL core_hero.cpp_FUN_004eca10     ; 0046a4eb
-        ;   XREF to: 004eca10 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eca10()
+    CALL core_hero.cpp_CHero_findHeroAction_FUN_004eca10 ; 0046a4eb
+        ;   XREF to: 004eca10 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_findHeroAction_FUN_004eca10(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 0046a4f0
     MOV EDI,dword ptr [EBX + 0x20004]   ; 0046a4f3
         ;   Label: LAB_0046a4f3
@@ -3057,8 +3057,8 @@ section .text
         ;   XREF to: 0046a472 (UNCONDITIONAL_JUMP)  ; LAB_0046a472
     PUSH EBX                            ; 0046bcc7
         ;   Label: LAB_0046bcc7
-    CALL core_hero.cpp_FUN_004eb5b0     ; 0046bcc8
-        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb5b0()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0 ; 0046bcc8
+        ;   XREF to: 004eb5b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 0046bccd
     JMP 0x0046a4f3                      ; 0046bcd0
         ;   XREF to: 0046a4f3 (UNCONDITIONAL_JUMP)  ; LAB_0046a4f3

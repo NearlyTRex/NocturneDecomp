@@ -35,7 +35,7 @@
 ;   core_flattn.cpp_doNothing_FUN_004ad4c0
 ;   core_inivar.cpp_readIniData_FUN_004d8e70
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
-;   core_main.c_FUN_004e4d00
+;   core_main.c_initializeTrigTables_FUN_004e4d00
 ;   core_menu.cpp_showCalibrationTest_FUN_004e84d0
 ;   core_mission.cpp_CDemonMission_reset_FUN_004f5aa0
 ;   core_mmx.c_detectCPUFeatures_FUN_004f7c30
@@ -119,8 +119,8 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004e45ba
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004e45bf
-    CALL core_main.c_FUN_004e4d00       ; 004e45c2
-        ;   XREF to: 004e4d00 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4d00()
+    CALL core_main.c_initializeTrigTables_FUN_004e4d00 ; 004e45c2
+        ;   XREF to: 004e4d00 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeTrigTables_FUN_004e4d00()
         ;   Label: LAB_004e45c2
     CALL engine_3d.c_initTextureCache_FUN_00403790 ; 004e45c7
         ;   XREF to: 00403790 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_initTextureCache_FUN_00403790()

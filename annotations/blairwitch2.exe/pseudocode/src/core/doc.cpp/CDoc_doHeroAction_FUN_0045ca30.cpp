@@ -59,7 +59,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
   case 2:
   case 9:
     core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(&this_ptr->base);
-    core_hero_cpp_FUN_004cf200(this_ptr_00);
+    core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
     return;
   case 3:
     pCVar3 = (this_ptr->base).hero_action_actor;
@@ -69,7 +69,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
     if (pCVar7 == (CDoor *)0x0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
                 (g_CEditorToolsPtr,"CHero::doHeroAction - type=eHeroActionOpenDoor, but actor is NULL or isn't a door");
-      core_hero_cpp_FUN_004cf200(this_ptr_00);
+      core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
       return;
     }
     iVar6 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004925c0(&pCVar7->open_rule);
@@ -79,36 +79,36 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
         break;
       default:
         core_hero_cpp_CHero_tryOpenDoor_FUN_004cf230(&this_ptr_00->base);
-        core_hero_cpp_FUN_004cf200(this_ptr_00);
+        core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
         return;
       case 2:
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr_00->base).base.model.base,0x1f,1);
         this_ptr_00->action_pending = 5;
-        core_hero_cpp_FUN_004cf200(this_ptr_00);
+        core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
         return;
       case 3:
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr_00->base).base.model.base,0x20,1);
         this_ptr_00->action_pending = 5;
-        core_hero_cpp_FUN_004cf200(this_ptr_00);
+        core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
         return;
       case 4:
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr_00->base).base.model.base,0x1d,1);
         this_ptr_00->action_pending = 5;
-        core_hero_cpp_FUN_004cf200(this_ptr_00);
+        core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
         return;
       case 5:
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr_00->base).base.model.base,0x1e,1);
         this_ptr_00->action_pending = 5;
-        core_hero_cpp_FUN_004cf200(this_ptr_00);
+        core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
         return;
       }
     }
     (this_ptr_00->base).door_to_open = (CDoor *)0x0;
-    core_hero_cpp_FUN_004cf200(this_ptr_00);
+    core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
     return;
   case 4:
     pCVar3 = (this_ptr->base).hero_action_actor;
@@ -234,13 +234,13 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
         break;
       default:
         (this_ptr_00->base).object_to_pick_up = (CDemonActor *)0x0;
-        core_hero_cpp_FUN_004cf200(this_ptr_00);
+        core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
         return;
       }
       engine_console_cpp_CConsole_printf_FUN_00436710(this_ptr_01,in_stack_ffffff28);
       if ((this_ptr_00->base).object_to_pick_up != (CDemonActor *)0x0) {
         this_ptr_00->action_pending = 4;
-        core_hero_cpp_FUN_004cf200();
+        core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
         return;
       }
     }
@@ -255,7 +255,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
     if (pCVar5 == (CLever *)0x0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
                 (g_CEditorToolsPtr,"CDoc::doHeroAction - type=eHeroActionPullLever, but actor is NULL or isn't a lever");
-      core_hero_cpp_FUN_004cf200(this_ptr_00);
+      core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
       return;
     }
     engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  lever = %s\n");
@@ -264,10 +264,10 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
       (this_ptr_00->base).lever_to_pull = pCVar5;
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr_00->base).base.model.base,0x21,1);
-      core_hero_cpp_FUN_004cf200(this_ptr_00);
+      core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
       return;
     }
   }
-  core_hero_cpp_FUN_004cf200();
+  core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(&this_ptr_00->base);
   return;
 }

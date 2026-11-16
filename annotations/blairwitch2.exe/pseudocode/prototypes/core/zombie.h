@@ -9,9 +9,9 @@
 // Address: 00595680
 void __cdecl staticInit(void);
 
-// Original: core_zombie.cpp_FUN_005956b0
+// Original: core_zombie.cpp_getObjectHeightScale_FUN_005956b0
 // Address: 005956b0
-float FUN_005956b0(int param_1);
+float __cdecl getObjectHeightScale(CDemonActor *actor);
 
 // Original: core_zombie.cpp_getObjectGrabPointLocal_FUN_00595750
 // Address: 00595750

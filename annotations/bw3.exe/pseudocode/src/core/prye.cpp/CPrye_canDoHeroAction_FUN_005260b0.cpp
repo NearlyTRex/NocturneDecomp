@@ -82,6 +82,6 @@ int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int
       return 0;
     }
   }
-  iVar16 = core_hero_cpp_FUN_004d4840(this_ptr,action_type);
+  iVar16 = core_hero_cpp_CHero_canDoHeroAction_FUN_004d4840(&this_ptr->base,action_type);
   return iVar16;
 }

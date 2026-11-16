@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c78e7
-;   core_hero.cpp_FUN_004eca10 at 004ecb0b
+;   core_hero.cpp_CHero_findHeroAction_FUN_004eca10 at 004ecb0b
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 00591315
 ;
 ; Referenced Globals:

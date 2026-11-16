@@ -30,6 +30,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
@@ -38,9 +39,8 @@
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
-;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_00435320
 ;   ... and 17 more
 ;
 ; *****************************************************************************
@@ -147,8 +147,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 00560727
     FSTP float ptr [ESP]                ; 0056072d
     PUSH EBX                            ; 00560730
-    CALL core_charactr.cpp_FUN_00435320 ; 00560731
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 00560731
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00560736
     PUSH dword ptr [EBP + 0x92]         ; 00560739
     PUSH EBX                            ; 0056073f
@@ -277,8 +277,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 005608a1
     PUSH EBX                            ; 005608a7
     LEA ESI,[EBX + 0x2518]              ; 005608a8
-    CALL core_charactr.cpp_FUN_0042d700 ; 005608ae
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 005608ae
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 005608b3
     FMUL float ptr [EBP + 0x92]         ; 005608b5
     FLD float ptr [ESI + 0x4]           ; 005608bb
@@ -428,8 +428,8 @@ section .text
     CALL crt_math.c_round_FUN_005c03a0  ; 00560a40
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EBX + 0xc294]      ; 00560a45
-    CALL core_shadowsc.cpp_FUN_005610e0 ; 00560a4b
-        ;   XREF to: 005610e0 (UNCONDITIONAL_CALL)  ; undefined core_shadowsc.cpp_FUN_005610e0()
+    CALL core_shadowsc.cpp_CShadowsc_playEmergeSound_FUN_005610e0 ; 00560a4b
+        ;   XREF to: 005610e0 (UNCONDITIONAL_CALL)  ; void core_shadowsc.cpp_CShadowsc_playEmergeSound_FUN_005610e0(CShadowsc * this_ptr)
     ADD ESP,0x4                         ; 00560a50
     JMP 0x005607c1                      ; 00560a53
         ;   XREF to: 005607c1 (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -504,8 +504,8 @@ section .text
     JNZ 0x005607c1                      ; 00560b23
         ;   XREF to: 005607c1 (CONDITIONAL_JUMP)  ; caseD_5
     PUSH EBX                            ; 00560b29
-    CALL core_shadowsc.cpp_FUN_00561020 ; 00560b2a
-        ;   XREF to: 00561020 (UNCONDITIONAL_CALL)  ; undefined core_shadowsc.cpp_FUN_00561020()
+    CALL core_shadowsc.cpp_CShadowsc_playAttackSound_FUN_00561020 ; 00560b2a
+        ;   XREF to: 00561020 (UNCONDITIONAL_CALL)  ; void core_shadowsc.cpp_CShadowsc_playAttackSound_FUN_00561020(CShadowsc * this_ptr)
     ADD ESP,0x4                         ; 00560b2f
     JMP 0x005607c1                      ; 00560b32
         ;   XREF to: 005607c1 (UNCONDITIONAL_JUMP)  ; caseD_5

@@ -125,7 +125,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
         fVar11 = (this_ptr->base).speed;
         (this_ptr->base).base.walk_step_speed =
              delta_time * (this_ptr->base).speed * (float)_DAT_005d4f58;
-        core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar11);
+        core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320
+                  ((CCharacter *)this_ptr,delta_time * fVar11);
         if (((((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] ==
                0) && ((this_ptr->base).base.model.part_data.visibility_flags
                       [this_ptr->part_indices[1]] == 0)) ||
@@ -403,7 +404,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
       fVar11 = (this_ptr->base).speed;
       (this_ptr->base).base.walk_step_speed =
            delta_time * (float)_DAT_005d4f70 * (this_ptr->base).speed;
-      core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar11);
+      core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320
+                ((CCharacter *)this_ptr,delta_time * fVar11);
       fVar13 = 0.5235988;
       CStack_12c.x = 0.0;
       fVar11 = 3.0;
@@ -442,7 +444,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0((CDemonActor *)this_ptr);
     iVar3 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042e120((CCharacter *)this_ptr);
     if (iVar3 != 0) {
-      core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
+      core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,delta_time);
       fStack_108 = (this_ptr->base).base.velocity.x * delta_time;
       this_ptr_00 = &(this_ptr->base).base.model.base;
       afStack_104[0] = (this_ptr->base).base.velocity.y * delta_time;

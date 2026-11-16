@@ -10,7 +10,7 @@
 ;   undefined4 DAT_005fc5a0
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042f280
+;   core_charactr.cpp_preloadEtherealTextures_FUN_0042f280
 ;   core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0
 ;   core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130
 ;   core_weapon.cpp_CWeapon_setup_FUN_0057af40
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 004a41d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(CFireEffect * this_ptr, int flame_style)
     ADD ESP,0x8                         ; 0048b6d7
     PUSH 0x2                            ; 0048b6da
-    CALL core_charactr.cpp_FUN_0042f280 ; 0048b6dc
-        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042f280()
+    CALL core_charactr.cpp_preloadEtherealTextures_FUN_0042f280 ; 0048b6dc
+        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_preloadEtherealTextures_FUN_0042f280(int ethereal_type)
     ADD ESP,0x4                         ; 0048b6e1
     POP EBX                             ; 0048b6e4
     RET                                 ; 0048b6e5

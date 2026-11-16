@@ -141,7 +141,7 @@ LAB_005a6f19:
          *(float *)&(this_ptr->base).base.base.field_0x2a8 - delta_time;
     if ((0.0 < fVar19) && (*(float *)&(this_ptr->base).base.base.field_0x2a8 <= 0.0)) {
       *(uint *)&(this_ptr->base).base.base.field_0x2a8 = 0x3e19999a;
-      iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
+      iVar2 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
       if (iVar2 != 0) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
@@ -388,7 +388,7 @@ LAB_005a6f19:
       pCStack_28 = &(this_ptr->base).base.base.location;
       iStack_24 = 0;
       do {
-        iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
+        iVar2 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
         if (iVar2 != 0) {
           fVar19 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
           fVar10 = (float10)fcos((float10)fVar19);

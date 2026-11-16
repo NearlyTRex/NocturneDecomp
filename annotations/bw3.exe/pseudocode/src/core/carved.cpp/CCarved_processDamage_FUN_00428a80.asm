@@ -17,8 +17,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
-;   core_carved.cpp_FUN_00428600
-;   core_carved.cpp_FUN_00428810
+;   core_carved.cpp_CCarved_dropAndClearTarget_FUN_00428600
+;   core_carved.cpp_CCarved_processDismemberment_FUN_00428810
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
@@ -40,8 +40,8 @@ section .text
         ;   XREF to: 00428ba1 (CONDITIONAL_JUMP)  ; LAB_00428ba1
     PUSH EDI                            ; 00428a97
     PUSH EBX                            ; 00428a98
-    CALL core_carved.cpp_FUN_00428810   ; 00428a99
-        ;   XREF to: 00428810 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_00428810()
+    CALL core_carved.cpp_CCarved_processDismemberment_FUN_00428810 ; 00428a99
+        ;   XREF to: 00428810 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_processDismemberment_FUN_00428810(CCarved * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00428a9e
     MOV EAX,dword ptr [EBX + 0x154]     ; 00428aa1
     PUSH EBX                            ; 00428aa7
@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 00428bc3 (CONDITIONAL_JUMP)  ; LAB_00428bc3
     PUSH EBX                            ; 00428b23
         ;   Label: LAB_00428b23
-    CALL core_carved.cpp_FUN_00428600   ; 00428b24
-        ;   XREF to: 00428600 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_00428600()
+    CALL core_carved.cpp_CCarved_dropAndClearTarget_FUN_00428600 ; 00428b24
+        ;   XREF to: 00428600 (UNCONDITIONAL_CALL)  ; void core_carved.cpp_CCarved_dropAndClearTarget_FUN_00428600(CCarved * this_ptr)
     ADD ESP,0x4                         ; 00428b29
     PUSH 0x2                            ; 00428b2c
     PUSH 0x0                            ; 00428b2e

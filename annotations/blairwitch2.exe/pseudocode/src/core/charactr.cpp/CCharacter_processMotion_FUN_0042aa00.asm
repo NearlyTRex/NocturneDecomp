@@ -26,7 +26,7 @@
 ;   core_colonel.cpp_CColonel_processMotionEvents_FUN_00436420 at 00436463
 ;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 0043732e
 ;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439524
-;   core_doc.cpp_FUN_00453250 at 00453c12
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_00453250 at 00453c12
 ;   ... and 25 more
 ;
 ; Referenced Globals:

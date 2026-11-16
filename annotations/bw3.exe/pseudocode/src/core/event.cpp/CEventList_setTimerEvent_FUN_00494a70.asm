@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_0048c2e0 at 00490769
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 00490769
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_005bff00

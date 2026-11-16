@@ -28,10 +28,10 @@
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0
-;   core_charactr.cpp_FUN_0042b620
+;   core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620
 ;   core_cloth.cpp_CClothList_reset_FUN_005b1550
-;   core_doc.cpp_FUN_004567c0
-;   core_doc.cpp_FUN_0045bba0
+;   core_doc.cpp_CDoc_getThrowDirection_FUN_0045bba0
+;   core_doc.cpp_CDoc_updateWeaponPosition_FUN_004567c0
 ;   core_fire.cpp_CFireEffect_createLaserPath_FUN_0049d840
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
@@ -65,8 +65,8 @@ section .text
         ;   XREF to: 004089d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004599c4
     PUSH EBX                            ; 004599c7
-    CALL core_charactr.cpp_FUN_0042b620 ; 004599c8
-        ;   XREF to: 0042b620 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b620()
+    CALL core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620 ; 004599c8
+        ;   XREF to: 0042b620 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004599cd
     PUSH EBX                            ; 004599d0
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10 ; 004599d1
@@ -134,8 +134,8 @@ section .text
     PUSH EBX                            ; 00459a7a
     LEA ESI,[ESP + 0x3c]                ; 00459a7b
     LEA EDI,[ESP + 0x60]                ; 00459a7f
-    CALL core_doc.cpp_FUN_0045bba0      ; 00459a83
-        ;   XREF to: 0045bba0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045bba0()
+    CALL core_doc.cpp_CDoc_getThrowDirection_FUN_0045bba0 ; 00459a83
+        ;   XREF to: 0045bba0 (UNCONDITIONAL_CALL)  ; CVector3f * core_doc.cpp_CDoc_getThrowDirection_FUN_0045bba0(CDoc * this_ptr, CVector3f * out_direction)
     ADD ESP,0x4                         ; 00459a88
     LEA EAX,[ESP + 0x5c]                ; 00459a8b
     LEA ESI,[ESP + 0x38]                ; 00459a8f
@@ -215,8 +215,8 @@ section .text
     PUSH 0x1                            ; 00459b63
     PUSH EBX                            ; 00459b65
         ;   Label: LAB_00459b65
-    CALL core_doc.cpp_FUN_004567c0      ; 00459b66
-        ;   XREF to: 004567c0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_004567c0()
+    CALL core_doc.cpp_CDoc_updateWeaponPosition_FUN_004567c0 ; 00459b66
+        ;   XREF to: 004567c0 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_updateWeaponPosition_FUN_004567c0(CDoc * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 00459b6b
     MOV EAX,dword ptr [EBX + 0x25698]   ; 00459b6e
     PUSH EAX                            ; 00459b74

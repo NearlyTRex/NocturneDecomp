@@ -202,7 +202,8 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004d8700(CGame *this_ptr)
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
-  iVar4 = engine_font_cpp_FUN_004c4260(this_ptr_00,&stack0xfffffaa8,0x1cc9bb0,0x14,0x100,0xc0);
+  iVar4 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
+                    (this_ptr_00,&stack0xfffffaa8,(char *)0x1cc9bb0,0x14,0x100,0xc0);
   iVar6 = 0;
   local_28 = iVar4;
   local_2c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);

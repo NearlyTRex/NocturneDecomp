@@ -12,12 +12,13 @@ EDeathState __cdecl core_helldog_cpp_CDog_getDeathState_FUN_005ac5a0(CDog *this_
   uint uVar1;
   int iVar2;
   SMotion *pSVar3;
-  SStateMachine *pSVar4;
+  SStateMachine *this_ptr_00;
   
-  pSVar4 = &(this_ptr->base).state_machine;
-  iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar4,"Death");
+  this_ptr_00 = &(this_ptr->base).state_machine;
+  iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Death");
   if ((iVar2 == 0) &&
-     (iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar4,"Animation"), iVar2 == 0)) {
+     (iVar2 = core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(this_ptr_00,"Animation"),
+     iVar2 == 0)) {
     return DEATH_STATE_ALIVE;
   }
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0

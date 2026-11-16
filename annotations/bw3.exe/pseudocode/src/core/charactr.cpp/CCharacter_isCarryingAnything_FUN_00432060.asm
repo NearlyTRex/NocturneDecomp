@@ -7,8 +7,8 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_hero.cpp_CHero_canDoHeroAction_FUN_004d4840 at 004d4898
 ;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004d3500 at 004d3513
-;   core_hero.cpp_FUN_004d4840 at 004d4898
 ;
 ; *****************************************************************************
 

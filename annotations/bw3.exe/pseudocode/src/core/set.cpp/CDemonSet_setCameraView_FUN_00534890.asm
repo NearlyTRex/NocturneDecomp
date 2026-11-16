@@ -41,8 +41,8 @@
 ; XREF[8]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540 at 004bab5a
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b83ed
-;   core_game.cpp_FUN_004ba220 at 004ba268
-;   core_game.cpp_FUN_004ba280 at 004ba2c8
+;   core_game.cpp_CGame_setGogglesActive_FUN_004ba220 at 004ba268
+;   core_game.cpp_CGame_setSpecialViewActive_FUN_004ba280 at 004ba2c8
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052d576
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_005353b0 at 005353ce
 ;   core_set.cpp_CDemonSet_restoreCameraView_FUN_0053b0d0 at 0053b0e4
@@ -71,6 +71,7 @@
 ;   core_box.cpp_CBoundingBox3D_getCorner_FUN_0041d8b0
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_00449840
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0
+;   core_dcamera.cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044af70
 ;   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_00449a00
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00449750
 ;   core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004503f0
@@ -79,7 +80,6 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044b070
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_004512a0
 ;   core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00451250
-;   core_dcamera.cpp_FUN_0044af70
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0
 ;   core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_0045c480
 ;   ... and 22 more
@@ -784,8 +784,8 @@ section .text
     PUSH dword ptr [EAX + 0xc]          ; 005351f5
     PUSH EAX                            ; 005351f8
     PUSH 0x2038f4c                      ; 005351f9
-    CALL core_dcamera.cpp_FUN_0044af70  ; 005351fe
-        ;   XREF to: 0044af70 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044af70()
+    CALL core_dcamera.cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044af70 ; 005351fe
+        ;   XREF to: 0044af70 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044af70(CDemonCamera * this_ptr, CVector3f * light_dir, float intensity)
     ADD ESP,0xc                         ; 00535203
     JMP 0x00534a45                      ; 00535206
         ;   XREF to: 00534a45 (UNCONDITIONAL_JUMP)  ; LAB_00534a45

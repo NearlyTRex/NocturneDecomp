@@ -18,7 +18,7 @@
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;
 ; *****************************************************************************
@@ -109,8 +109,8 @@ section .text
         ;   XREF to: 005ac08a (CONDITIONAL_JUMP)  ; LAB_005ac08a
     PUSH 0x5f0d8f                       ; 005ac075 | = "LeapAttack"
     PUSH ESI                            ; 005ac07a
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005ac07b
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005ac07b
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005ac080
     ADD ESP,0x3c                        ; 005ac083
     POP EDI                             ; 005ac086
@@ -122,8 +122,8 @@ section .text
     FLD float ptr [0x00600c4c]          ; 005ac08f | DAT_00600c4c
     PUSH ESI                            ; 005ac095
     FSTP float ptr [EBX + 0x11394]      ; 005ac096
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005ac09c
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005ac09c
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005ac0a1
     ADD ESP,0x3c                        ; 005ac0a4
     POP EDI                             ; 005ac0a7

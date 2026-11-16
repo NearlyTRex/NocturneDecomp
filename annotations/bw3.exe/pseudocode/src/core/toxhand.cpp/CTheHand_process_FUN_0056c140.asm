@@ -154,8 +154,8 @@ section .text
     PUSH EBX                            ; 0056c27a
     LEA ESI,[EBP + 0xfffffe46]          ; 0056c27b
     LEA EDI,[EBP + 0xfffffe16]          ; 0056c281
-    CALL core_toxhand.cpp_FUN_0056cbd0  ; 0056c287
-        ;   XREF to: 0056cbd0 (UNCONDITIONAL_CALL)  ; undefined core_toxhand.cpp_FUN_0056cbd0()
+    CALL core_toxhand.cpp_CTheHand_getHandBoneMatrix_FUN_0056cbd0 ; 0056c287
+        ;   XREF to: 0056cbd0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_toxhand.cpp_CTheHand_getHandBoneMatrix_FUN_0056cbd0(CTheHand * this_ptr, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 0056c28c
     LEA ESI,[EBP + 0xfffffe46]          ; 0056c291
     LEA EAX,[EBP + 0xfffffe16]          ; 0056c297

@@ -1,0 +1,20 @@
+// Name: shape_edittool.cpp_editorPlotPixel_FUN_00492940
+// Address: 00492940
+// Address Range: [[00492940, 00492966]]
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_editorPlotPixel_FUN_00492940(int x,int y)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl shape_edittool_cpp_editorPlotPixel_FUN_00492940(int x,int y)
+
+{
+  if (_DAT_01c3f544 != 0) {
+    engine_mini3d_cpp_drawPixel_FUN_00517f10(x,y);
+    return;
+  }
+  engine_2d_c_plotPixel_FUN_00401130(x,y);
+  return;
+}

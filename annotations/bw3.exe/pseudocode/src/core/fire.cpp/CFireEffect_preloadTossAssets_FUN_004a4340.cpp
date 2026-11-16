@@ -22,7 +22,7 @@ void __cdecl core_fire_cpp_CFireEffect_preloadTossAssets_FUN_004a4340(CFireEffec
                "bindingstone.kfm");
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580
               ((CKeyFramedModelInstance *)(CStack_180.part_visibility_flags + 2));
-    core_charactr_cpp_FUN_0042f280();
+    core_charactr_cpp_preloadEtherealTextures_FUN_0042f280(0);
   }
   else if (toss_type == 2) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0

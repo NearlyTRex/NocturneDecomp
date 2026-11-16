@@ -17,9 +17,9 @@
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_muzzle.cpp_FUN_0059d880
-;   core_muzzle.cpp_FUN_0059d8e0
-;   core_muzzle.cpp_FUN_0059db90
+;   core_muzzle.cpp_SStateMachine_getInitialStateName_FUN_0059db90
+;   core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
     PUSH 0x5f0dae                       ; 005ac16f | s_ChaseFoodComplete_005f0dad+1
         ;   Label: LAB_005ac16f
     PUSH ESI                            ; 005ac174
-    CALL core_muzzle.cpp_FUN_0059d880   ; 005ac175
-        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d880()
+    CALL core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880 ; 005ac175
+        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880(SStateMachine * this_ptr, char * identifier)
     ADD ESP,0x8                         ; 005ac17a
     POP EBP                             ; 005ac17d
     POP ESI                             ; 005ac17e
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_005ac181
     PUSH ESI                            ; 005ac186
     MOV dword ptr [EBX + 0x1185c],0x0   ; 005ac187
-    CALL core_muzzle.cpp_FUN_0059d880   ; 005ac191
-        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d880()
+    CALL core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880 ; 005ac191
+        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880(SStateMachine * this_ptr, char * identifier)
     ADD ESP,0x8                         ; 005ac196
     POP EBP                             ; 005ac199
     POP ESI                             ; 005ac19a
@@ -135,13 +135,13 @@ section .text
     ADD ESP,0xc                         ; 005ac1da
     ADD EBX,0x10af8                     ; 005ac1dd
     PUSH EBX                            ; 005ac1e3
-    CALL core_muzzle.cpp_FUN_0059db90   ; 005ac1e4
-        ;   XREF to: 0059db90 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059db90()
+    CALL core_muzzle.cpp_SStateMachine_getInitialStateName_FUN_0059db90 ; 005ac1e4
+        ;   XREF to: 0059db90 (UNCONDITIONAL_CALL)  ; char * core_muzzle.cpp_SStateMachine_getInitialStateName_FUN_0059db90(SStateMachine * this_ptr)
     ADD ESP,0x4                         ; 005ac1e9
     PUSH EAX                            ; 005ac1ec
     PUSH EBX                            ; 005ac1ed
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005ac1ee
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005ac1ee
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005ac1f3
     POP EBP                             ; 005ac1f6
     POP ESI                             ; 005ac1f7

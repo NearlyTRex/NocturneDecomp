@@ -81,7 +81,7 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
     this_ptr->pool_me = 1;
   }
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850(&this_ptr->base,delta_time);
   pCVar11 = &(this_ptr->base).model;
   iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660(&this_ptr->base,delta_time);
   if (iVar7 == 0) {
@@ -205,7 +205,7 @@ LAB_0059968b:
        (this_ptr->base).model.accumulated_root_motion.y;
 LAB_005996b8:
   if (((iStack_14 != 2) && (iStack_14 != 3)) && ((iStack_14 != 1 && (iStack_14 != 4)))) {
-    core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0(&this_ptr->base,delta_time);
   }
   (this_ptr->base).position_delta.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;

@@ -80,8 +80,8 @@
 ;   engine_mini3d.cpp_roundFloat_FUN_004f1810
 ;   engine_mini3d.cpp_setupScanEdge_FUN_004f13a0
 ;   engine_special.cpp_drawPolygon_FUN_00565c10
-;   engine_special.cpp_FUN_00561fdc
-;   engine_special.cpp_FUN_005625a3
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
 ;   engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00562e69
 ;   engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
 ;
@@ -263,8 +263,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0xac]      ; 004f1a6a
     MOV EBX,dword ptr [ESP + 0xa8]      ; 004f1a71
     MOV EDI,EBP                         ; 004f1a78
-    CALL engine_special.cpp_FUN_00561fdc ; 004f1a7a
-        ;   XREF to: 00561fdc (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00561fdc()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc ; 004f1a7a
+        ;   XREF to: 00561fdc (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     MOV EDX,dword ptr [ESP + 0xac]      ; 004f1a7f
         ;   Label: LAB_004f1a7f
     MOV EAX,dword ptr [ESP + 0xac]      ; 004f1a86
@@ -738,8 +738,8 @@ section .text
         ;   Label: LAB_004f202b
     MOV EBX,dword ptr [ESP + 0xa8]      ; 004f2032
     MOV EDI,EBP                         ; 004f2039
-    CALL engine_special.cpp_FUN_005625a3 ; 004f203b
-        ;   XREF to: 005625a3 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005625a3()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3 ; 004f203b
+        ;   XREF to: 005625a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x004f1a7f                      ; 004f2040
         ;   XREF to: 004f1a7f (UNCONDITIONAL_JUMP)  ; LAB_004f1a7f
     CMP dword ptr [0x005fba20],0x20     ; 004f2045 | DAT_005fba20

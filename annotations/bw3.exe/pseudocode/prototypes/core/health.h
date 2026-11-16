@@ -57,9 +57,9 @@ int __cdecl CHealthItem::useItem(CHealthItem *this_ptr,CCharacter *user);
 // Address: 004d2130
 void __cdecl CHealthItem::onPickup(CHealthItem *this_ptr,CDemonActor *owner);
 
-// Original: core_health.cpp_FUN_004d2150
+// Original: core_health.cpp_factoryFuncHealthItemSmall_FUN_004d2150
 // Address: 004d2150
-void FUN_004d2150(void);
+CHealthItemSmall * __cdecl factoryFuncHealthItemSmall(void);
 
 // Original: core_health.cpp_CHealthItemSmall_getActorType_FUN_004d2170
 // Address: 004d2170

@@ -7,7 +7,7 @@
 ; CAmmoBullet *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_ammo.cpp_FUN_0040e3a0 at 0040e3b3
+;   core_ammo.cpp_factoryFuncAmmoBullet_FUN_0040e3a0 at 0040e3b3
 ;
 ; Referenced Globals:
 ;   undefined4 s_ammopouch_kfm_005b6124+1

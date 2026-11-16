@@ -37,12 +37,12 @@
 ;   core_boxactor.cpp_CLightActor_process_FUN_0041d020 at 0041d21a
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_004277e0 at 00427968
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_00425aa0 at 00425b41
+;   core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620 at 0042b66d
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30 at 00428fd5
-;   core_charactr.cpp_FUN_0042b620 at 0042b66d
 ;   core_course.cpp_CCourse_evaluate_FUN_00438c40 at 00438ca4
+;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_004568e0 at 00457a76
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459bb3
-;   core_doc.cpp_FUN_00455d10 at 00456164
-;   core_doc.cpp_FUN_004567c0 at 00456886
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00456164
 ;   ... and 21 more
 ;
 ; Referenced Globals:

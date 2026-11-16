@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_palette.cpp_FUN_005320b0 at 005320b6
+;   engine_palette.cpp_CFont_flushTextQueue_FUN_005320b0 at 005320b6
 ;
 ; Called Functions:
 ;   engine_special.cpp_lockFrame_FUN_00581f50

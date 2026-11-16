@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   expression
 ;
 ; XREF[3]:
-;   core_event.cpp_FUN_0048c2e0 at 0048c81a
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048c81a
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c5b1
 ;   core_script.cpp_parseConditionExpr_FUN_00528970 at 005289a0
 ;

@@ -17,8 +17,8 @@
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047dd05
 ;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0 at 0047aff4
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 0048369b
-;   shape_edittool.cpp_FUN_0047a990 at 0047a9b6
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047ba00
+;   shape_edittool.cpp_editorSetAlpha_FUN_0047a990 at 0047a9b6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ddc3c

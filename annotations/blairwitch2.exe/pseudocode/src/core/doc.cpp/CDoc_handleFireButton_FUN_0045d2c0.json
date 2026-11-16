@@ -1,0 +1,278 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 378,
+    "complexity_score": 285,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 190,
+    "suspect_count": 7,
+    "suspect_types": [
+      "raw_address_constant",
+      "shadow_pointer_walk",
+      "stack_param",
+      "unaffected_reg",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 568
+  },
+  "cross_references": [
+    {
+      "addr": "00450c60",
+      "from_addr": "00451ac2",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00450c60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045d2c0",
+    "address_range": [
+      [
+        "0045d2c0",
+        "0045d6b2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0",
+    "signature": "void __cdecl core_doc_cpp_CDoc_handleFireButton_FUN_0045d2c0(CDoc *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0040e450",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450"
+    },
+    {
+      "addr": "0042a5a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0"
+    },
+    {
+      "addr": "0055ae50",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_0055ae50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0045d27c",
+      "name": "switchdataD_0045d27c",
+      "type": "void*",
+      "value": "0045d3c3"
+    },
+    {
+      "addr": "005d07df",
+      "name": "s_swordswing0_wav_005d07de+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d07f7",
+      "name": "DAT_005d07f7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d07ff",
+      "name": "DAT_005d07ff",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc3a4",
+      "name": "g_CAmmoClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661f38",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00451ac2",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_processFrame_FUN_00450c60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.806451612903226,
+    "instruction_count": 279,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 9,
+      "BRANCH": 12,
+      "BRANCHIND": 1,
+      "CALL": 6,
+      "CALLIND": 3,
+      "CBRANCH": 45,
+      "COPY": 334,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_NAN": 8,
+      "INT2FLOAT": 2,
+      "INT_ADD": 116,
+      "INT_AND": 165,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 129,
+      "INT_LEFT": 16,
+      "INT_LESS": 26,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 23,
+      "INT_OR": 20,
+      "INT_SBORROW": 26,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 64,
+      "INT_SUB": 56,
+      "INT_XOR": 6,
+      "INT_ZEXT": 16,
+      "LOAD": 73,
+      "POPCOUNT": 64,
+      "RETURN": 6,
+      "STORE": 53
+    },
+    "pcode_op_count": 1341
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00475920",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6151
+    }
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoc *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "CDemonActor *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffffe8",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_ffffffe8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 160,
+      "match": "in_stack_ffffffe8",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr->weapon,in_stack_ffffffe8,(int)fVar3), iVar5 != 0))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 164,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr->weapon,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Raw hex address 0x264b290 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 65,
+      "match": "0x264b290",
+      "severity": "moderate",
+      "text": "this_ptr_00 = 0x0264B290;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 182,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CInventory *)&pCVar9->owner;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

@@ -19,7 +19,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
-;   core_hino.cpp_FUN_0059b740
+;   core_hino.cpp_percentToFixedAlpha_FUN_0059b740
 ;   core_motion.cpp_CMotionController_render_FUN_004fcdc0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   crt_math.c_round_FUN_005a3120
@@ -60,8 +60,8 @@ section .text
     FSUB double ptr [ESP]               ; 0059d165
     PUSH 0x64                           ; 0059d168
     FSTP double ptr [ESP + 0x44]        ; 0059d16a
-    CALL core_hino.cpp_FUN_0059b740     ; 0059d16e
-        ;   XREF to: 0059b740 (UNCONDITIONAL_CALL)  ; undefined core_hino.cpp_FUN_0059b740()
+    CALL core_hino.cpp_percentToFixedAlpha_FUN_0059b740 ; 0059d16e
+        ;   XREF to: 0059b740 (UNCONDITIONAL_CALL)  ; int core_hino.cpp_percentToFixedAlpha_FUN_0059b740(int percent)
     ADD ESP,0x4                         ; 0059d173
     MOV dword ptr [ESP + 0x48],EAX      ; 0059d176
     FILD dword ptr [ESP + 0x48]         ; 0059d17a
@@ -88,8 +88,8 @@ section .text
     CALL dword ptr [EAX + 0xf8]         ; 0059d1b7
     ADD ESP,0x8                         ; 0059d1bd
     PUSH 0x64                           ; 0059d1c0
-    CALL core_hino.cpp_FUN_0059b740     ; 0059d1c2
-        ;   XREF to: 0059b740 (UNCONDITIONAL_CALL)  ; undefined core_hino.cpp_FUN_0059b740()
+    CALL core_hino.cpp_percentToFixedAlpha_FUN_0059b740 ; 0059d1c2
+        ;   XREF to: 0059b740 (UNCONDITIONAL_CALL)  ; int core_hino.cpp_percentToFixedAlpha_FUN_0059b740(int percent)
     MOV EDX,dword ptr [EBX + 0xd05c]    ; 0059d1c7
     ADD ESP,0x4                         ; 0059d1cd
     CMP EAX,EDX                         ; 0059d1d0
@@ -134,8 +134,8 @@ section .text
     RET                                 ; 0059d23d
     PUSH 0x64                           ; 0059d23e
         ;   Label: LAB_0059d23e
-    CALL core_hino.cpp_FUN_0059b740     ; 0059d240
-        ;   XREF to: 0059b740 (UNCONDITIONAL_CALL)  ; undefined core_hino.cpp_FUN_0059b740()
+    CALL core_hino.cpp_percentToFixedAlpha_FUN_0059b740 ; 0059d240
+        ;   XREF to: 0059b740 (UNCONDITIONAL_CALL)  ; int core_hino.cpp_percentToFixedAlpha_FUN_0059b740(int percent)
     ADD ESP,0x4                         ; 0059d245
     MOV dword ptr [ESP + 0x48],EAX      ; 0059d248
     FILD dword ptr [ESP + 0x48]         ; 0059d24c

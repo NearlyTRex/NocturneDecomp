@@ -15,7 +15,7 @@
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 00486ffb
 ;   core_exorcism.cpp_CExorcism_fire_FUN_0048b020 at 0048b21c
 ;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aea3c
-;   core_game.cpp_FUN_004c07b0 at 004c11a1
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c11a1
 ;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d119a
 ;   core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00 at 00523374
 ;   ... and 3 more

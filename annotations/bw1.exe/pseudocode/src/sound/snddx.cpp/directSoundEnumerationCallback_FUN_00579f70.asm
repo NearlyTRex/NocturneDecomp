@@ -23,7 +23,7 @@
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
-;   wincore_winrun.cpp_FUN_005b3a90
+;   wincore_winrun.cpp_outputDebugString_FUN_005b3a90
 ;
 ; *****************************************************************************
 
@@ -229,8 +229,8 @@ section .text
     MOV EAX,0x1                         ; 0057a19e
     PUSH 0x5f5617                       ; 0057a1a3
     MOV [0x02c823dc],EAX                ; 0057a1a8 | DAT_02c823dc
-    CALL wincore_winrun.cpp_FUN_005b3a90 ; 0057a1ad
-        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b3a90()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_005b3a90 ; 0057a1ad
+        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_005b3a90(LPCSTR message)
     ADD ESP,0x4                         ; 0057a1b2
     JMP 0x0057a11a                      ; 0057a1b5
         ;   XREF to: 0057a11a (UNCONDITIONAL_JUMP)  ; LAB_0057a11a
@@ -238,8 +238,8 @@ section .text
         ;   Label: LAB_0057a1ba
     PUSH 0x5f55cb                       ; 0057a1bf
     MOV dword ptr [0x02c823dc],EDX      ; 0057a1c4 | DAT_02c823dc
-    CALL wincore_winrun.cpp_FUN_005b3a90 ; 0057a1ca
-        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b3a90()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_005b3a90 ; 0057a1ca
+        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_005b3a90(LPCSTR message)
     ADD ESP,0x4                         ; 0057a1cf
     JMP 0x0057a11a                      ; 0057a1d2
         ;   XREF to: 0057a11a (UNCONDITIONAL_JUMP)  ; LAB_0057a11a

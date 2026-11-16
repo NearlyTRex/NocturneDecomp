@@ -10,7 +10,7 @@
 ; int *            Stack[0x10]:4   file_index_out
 ;
 ; Called Functions:
-;   engine_dosio.cpp_FUN_00478e20
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_0053bed0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0053cee1
     PUSH EAX                            ; 0053cee5
     XOR EBX,EBX                         ; 0053cee6
-    CALL engine_dosio.cpp_FUN_00478e20  ; 0053cee8
-        ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00478e20()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20 ; 0053cee8
+        ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20(char * dest_path, char * directory, char * filename)
     MOV ESI,dword ptr [EDI]             ; 0053ceed
     ADD ESP,0xc                         ; 0053ceef
     TEST ESI,ESI                        ; 0053cef2

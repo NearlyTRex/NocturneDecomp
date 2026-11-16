@@ -8,7 +8,7 @@
 ; CInventory *     Stack[0x8]:4   inventory
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00458320 at 0045835c
+;   core_doc.cpp_CDoc_processPickupComplete_FUN_00458320 at 0045835c
 ;   core_gabriela.cpp_CGabriella_collectAmmo_FUN_004b0a40 at 004b0a6d
 ;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160 at 0056a19c
 ;

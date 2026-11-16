@@ -1,0 +1,229 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 108,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_ref",
+      "unaffected_reg",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "00570ae0",
+      "from_addr": "00570ca0",
+      "name": "support_trisock.cpp_dnsLookupThreadProc_FUN_00570ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572290",
+      "from_addr": "005722d6",
+      "name": "support_trisock.cpp_getLocalHostInfo_FUN_00572290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056fef0",
+      "from_addr": "0056ff9c",
+      "name": "support_trisock.cpp_httpConnectToUrl_FUN_0056fef0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00572190",
+    "address_range": [
+      [
+        "00572190",
+        "00572211"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_lookupHostByName_FUN_00572190",
+    "signature": "int __cdecl support_trisock_cpp_lookupHostByName_FUN_00572190(char *host_name,void *host_info_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "005b2556",
+      "is_variadic": false,
+      "name": "crt_wsock32.c_gethostbyname"
+    },
+    {
+      "addr": "00571fc0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_copyHostent_FUN_00571fc0"
+    },
+    {
+      "addr": "0056f5c0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_parseIPComponents_FUN_0056f5c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005722d6",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_getLocalHostInfo_FUN_00572290",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056ff9c",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_httpConnectToUrl_FUN_0056fef0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00570ca0",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_dnsLookupThreadProc_FUN_00570ae0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 38,
+      "INT_ADD": 23,
+      "INT_AND": 23,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 19,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 210
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00579720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0059f1a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "host_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "host_info_out",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 11,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "iVar2 = support_trisock_cpp_parseIPComponents_FUN_0056f5c0((uint *)&stack0xfffffff4,host_name);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)host_info_out",
+      "severity": "moderate",
+      "text": "*(uint *)((int)host_info_out + 0x284) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)((int)host_info_out + 0x288) = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(uint *)((int)host_info_out",
+      "severity": "moderate",
+      "text": "*(uint *)((int)host_info_out + 0x288) = unaff_EBX;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 19,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

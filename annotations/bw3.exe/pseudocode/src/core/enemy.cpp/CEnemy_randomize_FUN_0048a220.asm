@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70
-;   core_enemy.cpp_FUN_00489c90
+;   core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     RET                                 ; 0048a25f
     PUSH EBX                            ; 0048a260
         ;   Label: LAB_0048a260
-    CALL core_enemy.cpp_FUN_00489c90    ; 0048a261
-        ;   XREF to: 00489c90 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_00489c90()
+    CALL core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90 ; 0048a261
+        ;   XREF to: 00489c90 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0048a266
     JMP 0x0048a242                      ; 0048a269
         ;   XREF to: 0048a242 (UNCONDITIONAL_JUMP)  ; LAB_0048a242

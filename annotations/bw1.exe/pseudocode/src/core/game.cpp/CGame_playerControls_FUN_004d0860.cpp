@@ -33,7 +33,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004d0860(CGame *this_ptr)
           core_game_cpp_CGame_processJoystickControls_FUN_004d0d30(this_ptr,player_control);
           break;
         case CONTROL_MODE_POINT_AND_CLICK:
-          core_game_cpp_FUN_004d9260(this_ptr,player_control);
+          core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(this_ptr,player_control);
           break;
         default:
           _DAT_01d1d400 = "..\\core\\game.cpp";

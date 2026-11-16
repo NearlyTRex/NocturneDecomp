@@ -18,8 +18,8 @@
 ;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b89b4
 ;   core_game.cpp_CGame_process_FUN_004bd570 at 004bda9b
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b64b8
-;   core_game.cpp_FUN_004b7fc0 at 004b7ff7
-;   core_game.cpp_FUN_004b8030 at 004b8067
+;   core_game.cpp_CGame_setGogglesActive_FUN_004b7fc0 at 004b7ff7
+;   core_game.cpp_CGame_setSpecialViewActive_FUN_004b8030 at 004b8067
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00525e3c
 ;
 ; Referenced Globals:

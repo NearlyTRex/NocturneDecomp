@@ -20,7 +20,7 @@
 ;   core_dfont.cpp_freeFonts_FUN_0045a8d0
 ;   core_dmodel.cpp_freeAllModels_FUN_004624d0
 ;   core_inivar.cpp_writeIniData_FUN_004d95c0
-;   core_main.c_FUN_004e4d80
+;   core_main.c_freeTrigTables_FUN_004e4d80
 ;   core_mission.cpp_CDemonMission_clearMission_FUN_004f5b70
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_00503ed0
 ;   core_skeleton.cpp_freeAllModels_FUN_005501a0
@@ -69,8 +69,8 @@ section .text
         ;   XREF to: 005501a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllModels_FUN_005501a0()
     CALL core_skeleton.cpp_freeAllSkeletons_FUN_005502d0 ; 004e4cbe
         ;   XREF to: 005502d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllSkeletons_FUN_005502d0()
-    CALL core_main.c_FUN_004e4d80       ; 004e4cc3
-        ;   XREF to: 004e4d80 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4d80()
+    CALL core_main.c_freeTrigTables_FUN_004e4d80 ; 004e4cc3
+        ;   XREF to: 004e4d80 (UNCONDITIONAL_CALL)  ; void core_main.c_freeTrigTables_FUN_004e4d80()
     CALL wincore_winrun.cpp_endPeriod_FUN_00580690 ; 004e4cc8
         ;   XREF to: 00580690 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00580690()
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_00401120 ; 004e4ccd

@@ -1,0 +1,297 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 161,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 10,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "00501a70",
+      "from_addr": "00501ce8",
+      "name": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00502480",
+      "from_addr": "0050257c",
+      "name": "core_lightpis.cpp_CLightPis_process_FUN_00502480",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005017f0",
+    "address_range": [
+      [
+        "005017f0",
+        "005018b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0",
+    "signature": "void __cdecl core_lightpis_cpp_CLightPis_updateBeamLight_FUN_005017f0(CLightPis *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40"
+    },
+    {
+      "addr": "0045f3e0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0"
+    },
+    {
+      "addr": "00465da0",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603174",
+      "name": "DAT_00603174",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccc3e8",
+      "name": "g_CDemonLightInstance.base.base.position",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccc3ec",
+      "name": "g_CDemonLightInstance.base.base.position+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccc3f0",
+      "name": "g_CDemonLightInstance.base.base.position+8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccc3f4",
+      "name": "g_CDemonLightInstance.base.base.rotation_matrix.m[0].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccc41c",
+      "name": "g_CDemonLightInstance.base.base.focal_length",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccc524",
+      "name": "g_CDemonLightInstance.base.max_distance",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cce098",
+      "name": "g_CDemonLightInstance.light_enabled_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cce0a0",
+      "name": "g_CDemonLightInstance.volumetric_enabled",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cce0b4",
+      "name": "g_CDemonLightInstance.antialiasing_enabled",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00501ce8",
+        "call_type": "direct",
+        "caller": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050257c",
+        "call_type": "direct",
+        "caller": "core_lightpis.cpp_CLightPis_process_FUN_00502480",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.672413793103448,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 76,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 35,
+      "INT_AND": 16,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_MULT": 12,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 28,
+      "INT_ZEXT": 12,
+      "LOAD": 16,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 271
+  },
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightPis *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "afStackY_1024",
+      "severity": "moderate",
+      "text": "float afStackY_1024 [1017];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xffffffc8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar1 * -8) = (&uStack_10)[(uint)bVar1 * -2];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xffffffcc",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffcc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&CStack_2c",
+      "severity": "moderate",
+      "text": "afStack_1c[(uint)bVar1 * -2] = *(float *)((int)&CStack_2c + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)&CStack_2c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_2c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "afStack_1c[(uint)bVar1 * -2] = *(float *)((int)&CStack_2c + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 27,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_2c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

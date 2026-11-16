@@ -32,12 +32,12 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_00489ff0
@@ -144,8 +144,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 0059013b
     FSTP float ptr [ESP]                ; 00590141
     PUSH EBX                            ; 00590144
-    CALL core_charactr.cpp_FUN_00434850 ; 00590145
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 00590145
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059014a
     MOV EDX,dword ptr [EBP + 0x56]      ; 0059014d
     PUSH EDX                            ; 00590150
@@ -230,8 +230,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00590235
         ;   Label: LAB_00590235
     PUSH EBX                            ; 0059023b
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 0059023c
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 0059023c
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x36]      ; 00590241
     FLD float ptr [EAX]                 ; 00590244
     FMUL float ptr [EBP + 0x92]         ; 00590246
@@ -981,8 +981,8 @@ section .text
     JZ 0x00590b81                       ; 00590b76
         ;   XREF to: 00590b81 (CONDITIONAL_JUMP)  ; LAB_00590b81
     PUSH EBX                            ; 00590b78
-    CALL core_kedward.cpp_FUN_005919a0  ; 00590b79
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 00590b79
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 00590b7e
     PUSH dword ptr [EBP + 0x92]         ; 00590b81
         ;   Label: LAB_00590b81
@@ -1013,8 +1013,8 @@ section .text
     JZ 0x005901f0                       ; 00590bed
         ;   XREF to: 005901f0 (CONDITIONAL_JUMP)  ; caseD_b
     PUSH EBX                            ; 00590bf3
-    CALL core_kedward.cpp_FUN_005919a0  ; 00590bf4
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 00590bf4
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 00590bf9
     JMP 0x005901f0                      ; 00590bfc
         ;   XREF to: 005901f0 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -1087,8 +1087,8 @@ section .text
     JNZ 0x00590cdd                      ; 00590ccd
         ;   XREF to: 00590cdd (CONDITIONAL_JUMP)  ; LAB_00590cdd
     PUSH EBX                            ; 00590ccf
-    CALL core_kedward.cpp_FUN_005919a0  ; 00590cd0
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 00590cd0
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 00590cd5
     JMP 0x005901f0                      ; 00590cd8
         ;   XREF to: 005901f0 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -1310,8 +1310,8 @@ section .text
     JNZ 0x00590f5f                      ; 00590f4f
         ;   XREF to: 00590f5f (CONDITIONAL_JUMP)  ; LAB_00590f5f
     PUSH EBX                            ; 00590f51
-    CALL core_kedward.cpp_FUN_005919a0  ; 00590f52
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 00590f52
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 00590f57
     JMP 0x005901f0                      ; 00590f5a
         ;   XREF to: 005901f0 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -1383,8 +1383,8 @@ section .text
     JBE 0x00591040                      ; 00591030
         ;   XREF to: 00591040 (CONDITIONAL_JUMP)  ; LAB_00591040
     PUSH EBX                            ; 00591032
-    CALL core_kedward.cpp_FUN_005919a0  ; 00591033
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 00591033
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 00591038
     JMP 0x005901f0                      ; 0059103b
         ;   XREF to: 005901f0 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -1453,8 +1453,8 @@ section .text
     JNZ 0x00591124                      ; 00591114
         ;   XREF to: 00591124 (CONDITIONAL_JUMP)  ; LAB_00591124
     PUSH EBX                            ; 00591116
-    CALL core_kedward.cpp_FUN_005919a0  ; 00591117
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 00591117
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 0059111c
     JMP 0x005901f0                      ; 0059111f
         ;   XREF to: 005901f0 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -1532,8 +1532,8 @@ section .text
     JBE 0x00591211                      ; 00591201
         ;   XREF to: 00591211 (CONDITIONAL_JUMP)  ; LAB_00591211
     PUSH EBX                            ; 00591203
-    CALL core_kedward.cpp_FUN_005919a0  ; 00591204
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 00591204
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 00591209
     JMP 0x005901f0                      ; 0059120c
         ;   XREF to: 005901f0 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -1602,8 +1602,8 @@ section .text
     JNZ 0x005912ef                      ; 005912df
         ;   XREF to: 005912ef (CONDITIONAL_JUMP)  ; LAB_005912ef
     PUSH EBX                            ; 005912e1
-    CALL core_kedward.cpp_FUN_005919a0  ; 005912e2
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 005912e2
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 005912e7
     JMP 0x005901f0                      ; 005912ea
         ;   XREF to: 005901f0 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -1675,8 +1675,8 @@ section .text
     JBE 0x005913c1                      ; 005913b1
         ;   XREF to: 005913c1 (CONDITIONAL_JUMP)  ; LAB_005913c1
     PUSH EBX                            ; 005913b3
-    CALL core_kedward.cpp_FUN_005919a0  ; 005913b4
-        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; undefined core_kedward.cpp_FUN_005919a0()
+    CALL core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0 ; 005913b4
+        ;   XREF to: 005919a0 (UNCONDITIONAL_CALL)  ; void core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0(CKedward * this_ptr)
     ADD ESP,0x4                         ; 005913b9
     JMP 0x005901f0                      ; 005913bc
         ;   XREF to: 005901f0 (UNCONDITIONAL_JUMP)  ; caseD_b

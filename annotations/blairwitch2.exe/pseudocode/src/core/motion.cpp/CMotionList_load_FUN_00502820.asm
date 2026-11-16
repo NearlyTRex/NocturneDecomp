@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
-;   core_moon.cpp_FUN_005027b0
+;   core_moon.cpp_CMotionList_free_FUN_005027b0
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
@@ -55,8 +55,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x30]      ; 00502827
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0050282b
     PUSH EDX                            ; 0050282f
-    CALL core_moon.cpp_FUN_005027b0     ; 00502830
-        ;   XREF to: 005027b0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_005027b0()
+    CALL core_moon.cpp_CMotionList_free_FUN_005027b0 ; 00502830
+        ;   XREF to: 005027b0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMotionList_free_FUN_005027b0(CMotionList * this_ptr)
     MOV ECX,0xffffffff                  ; 00502835
     ADD ESP,0x4                         ; 0050283a
     MOV EBX,EDI                         ; 0050283d

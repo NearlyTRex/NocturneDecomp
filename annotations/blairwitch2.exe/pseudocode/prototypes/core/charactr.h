@@ -27,7 +27,7 @@ void __cdecl CCharacter::markResourcesInUse(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_00422c10
 // Address: 00422c10
-void FUN_00422c10(int param_1);
+void FUN_00422c10(CDemonActor *param_1);
 
 // Original: core_charactr.cpp_CCharacter_archive_FUN_00422c30
 // Address: 00422c30
@@ -53,9 +53,9 @@ void __cdecl CCharacter::kill(CCharacter *this_ptr,int damage_type,CVector3f *da
 // Address: 004239b0
 void __cdecl CCharacter::applyDamage(CCharacter *this_ptr,int damage_type,float damage_amount);
 
-// Original: core_charactr.cpp_FUN_00423a10
+// Original: core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 // Address: 00423a10
-void FUN_00423a10(int param_1,float param_2);
+void __cdecl CCharacter::applyGravity(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 // Address: 00423a60
@@ -73,21 +73,21 @@ void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 // Address: 004244b0
 int __cdecl CCharacter::processCharacter(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_004246e0
+// Original: core_charactr.cpp_applyFacePartToHead_FUN_004246e0
 // Address: 004246e0
-void FUN_004246e0(int param_1,int param_2,int param_3);
+void __cdecl applyFacePartToHead(CDeformableModel *model,int head_part_index,int face_part_index);
 
-// Original: core_charactr.cpp_FUN_004247f0
+// Original: core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0
 // Address: 004247f0
-void FUN_004247f0(CDemonActor *param_1);
+void __cdecl CCharacter::updateFacialAnimation(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00424b50
+// Original: core_charactr.cpp_CCharacter_setEyeFrame_FUN_00424b50
 // Address: 00424b50
-void FUN_00424b50(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CCharacter::setEyeFrame(CCharacter *this_ptr,int eye_side,int frame,float hold_time);
 
-// Original: core_charactr.cpp_FUN_00424b90
+// Original: core_charactr.cpp_CCharacter_setMouthFrame_FUN_00424b90
 // Address: 00424b90
-void FUN_00424b90(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CCharacter::setMouthFrame(CCharacter *this_ptr,int frame,float hold_time);
 
 // Original: core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0
 // Address: 00424bd0
@@ -389,41 +389,41 @@ int __cdecl CCharacter::moveOutOfHeroWay(CCharacter *this_ptr,float delta_time);
 // Address: 0042b260
 void __cdecl CCharacter::playSoundWithCooldown(CCharacter *this_ptr,char *sound_name);
 
-// Original: core_charactr.cpp_FUN_0042b2a0
+// Original: core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 // Address: 0042b2a0
-void FUN_0042b2a0(int param_1,float param_2);
+void __cdecl CCharacter::updateTurnSpeed(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_0042b300
+// Original: core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_0042b300
 // Address: 0042b300
-int FUN_0042b300(int param_1,char *param_2);
+CWayPoint * __cdecl CCharacter::pickRandomNamedWaypoint(CCharacter *this_ptr,char *name_pattern);
 
-// Original: core_charactr.cpp_FUN_0042b420
+// Original: core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_0042b420
 // Address: 0042b420
-void FUN_0042b420(int param_1,CWayPoint *param_2);
+CWayPoint * __cdecl CCharacter::findNearestReachableWaypoint(CCharacter *this_ptr,CWayPoint *target_waypoint);
 
 // Original: core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440
 // Address: 0042b440
 void __cdecl CCharacter::setCharacterModel(CCharacter *this_ptr,char *model_name,char *cloth_name);
 
-// Original: core_charactr.cpp_FUN_0042b550
+// Original: core_charactr.cpp_CCharacter_setPhantomEyes_FUN_0042b550
 // Address: 0042b550
-void FUN_0042b550(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
+void __cdecl CCharacter::setPhantomEyes(CCharacter *this_ptr,int enabled,float glow_from,float glow_to,float duration,CVector3f color);
 
-// Original: core_charactr.cpp_FUN_0042b5e0
+// Original: core_charactr.cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0
 // Address: 0042b5e0
-void FUN_0042b5e0(int param_1,float param_2);
+void __cdecl CCharacter::updatePhantomEyes(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_0042b620
+// Original: core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620
 // Address: 0042b620
-void FUN_0042b620(CDemonActor *param_1);
+void __cdecl CCharacter::renderPhantomEyes(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042b760
+// Original: core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760
 // Address: 0042b760
-void FUN_0042b760(int param_1,float *param_2);
+void __cdecl CCharacter::renderEyeGlow(CCharacter *this_ptr,CVector3f *eye_position);
 
-// Original: core_charactr.cpp_FUN_0042bef0
+// Original: core_charactr.cpp_makeVector_FUN_0042bef0
 // Address: 0042bef0
-void FUN_0042bef0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+CVector3f * __stack3_esi makeVector(float x,float y,float z,CVector3f *out);
 
 // Original: core_charactr.cpp_setActorXPos_FUN_0042bf20
 // Address: 0042bf20
@@ -441,6 +441,6 @@ CCharacter * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
 // Address: 0042c0a0
 SFire * __cdecl SFire::ctor(SFire *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042c0c0
+// Original: core_charactr.cpp_expandIndexedTo16Bit_FUN_0042c0c0
 // Address: 0042c0c0
-undefined4 FUN_0042c0c0(void);
+void __cdecl expandIndexedTo16Bit(void *output_buffer,void *indexed_input_buffer,int pixel_count);

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 97,
+    "complexity_score": 110,
     "cross_reference_count": 10,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 5,
+    "pseudocode_lines": 35,
+    "suspect_count": 6,
     "suspect_types": [
       "negative_offset",
       "raw_address_pointer_store",
       "undefined_data"
     ],
-    "total_lines": 107
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -114,7 +114,7 @@
     {
       "addr": "0059df70",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059df70"
+      "name": "core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70"
     },
     {
       "addr": "00511d10",
@@ -333,7 +333,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_005f8274",
       "severity": "mild",
       "text": "(this_ptr->base).base.vtable._ub = (CDemonActor_vtable *)&DAT_005f8274;",
@@ -341,7 +341,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
+      "line": 17,
       "match": "*(CHero **)(iVar1 + 0x1cedee4",
       "severity": "moderate",
       "text": "if (this_ptr == *(CHero **)(iVar1 + 0x1cedee4)) {",
@@ -349,7 +349,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 27,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CFlame *)(pCVar3[-1].height_cache[0x42] + 0x44),0);",
@@ -357,18 +357,26 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 29,
       "match": "pCVar4[-3].",
       "severity": "mild",
-      "text": "iVar1 = core_muzzle_cpp_FUN_0059df70(&pCVar4[-3].base.particle_systems[3].max_particles,0);",
+      "text": "((SFollowFormation *)&pCVar4[-3].base.particle_systems[3].max_particles,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 33,
-      "match": "pCVar6[-1].",
+      "line": 31,
+      "match": "pSVar5[-1].",
       "severity": "mild",
-      "text": "(pCVar6[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
+      "text": "((CClothList *)&pSVar5[-1].slots[2].offset.y,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 36,
+      "match": "pCVar7[-1].",
+      "severity": "mild",
+      "text": "(pCVar7[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
       "type": "negative_offset"
     }
   ],

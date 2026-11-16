@@ -24,8 +24,8 @@
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047de69
 ;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0 at 0047b130
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 0048357c
-;   shape_edittool.cpp_FUN_0047a770 at 0047a80e
-;   shape_edittool.cpp_FUN_0047a890 at 0047a8ba
+;   shape_edittool.cpp_draw3DBorder_FUN_00483ea0 at 00484025
+;   shape_edittool.cpp_editorFillRectColor_FUN_0047a890 at 0047a8ba
 ;   ... and 1 more
 ;
 ; Referenced Globals:

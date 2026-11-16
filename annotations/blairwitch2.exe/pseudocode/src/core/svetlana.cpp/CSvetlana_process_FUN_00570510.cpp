@@ -68,7 +68,7 @@ switchD_0057096f_caseD_9:
     return;
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042a7a0((CCharacter *)this_ptr,delta_time);
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0((CCharacter *)this_ptr,delta_time);
   fVar13 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar13;
   if (fVar13 < 0.0) {
@@ -212,7 +212,7 @@ switchD_0057096f_caseD_4:
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
                        (&(this_ptr->base).base.model.base);
     if (pSVar5->state_index != 0x1a) {
-      core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
+      core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     }
     afStack_7c[2] = (this_ptr->base).base.velocity.x * delta_time;
     afStack_7c[3] = (this_ptr->base).base.velocity.y * delta_time;

@@ -89,6 +89,6 @@ SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr,uint flags);
 // Address: 00465c60
 CDraculaBride * __cdecl CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
 
-// Original: core_dracbrid.cpp_FUN_00465d00
+// Original: core_dracbrid.cpp_CDrawSurface_ctor_FUN_00465d00
 // Address: 00465d00
-CDrawSurface * FUN_00465d00(void);
+CDrawSurface * __cdecl CDrawSurface::ctor(CDrawSurface *this_ptr);

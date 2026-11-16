@@ -50,6 +50,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
+;   core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00451bc0
 ;   core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00451a30
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0
@@ -61,7 +62,6 @@
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004516c0
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044d2f0
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430
-;   core_dcamera.cpp_FUN_00451bc0
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00463820
 ;   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00463850
 ;   ... and 22 more
@@ -319,8 +319,8 @@ section .text
     JNC 0x00550818                      ; 00550809
         ;   XREF to: 00550818 (CONDITIONAL_JUMP)  ; LAB_00550818
     PUSH 0x1fe37ec                      ; 0055080b
-    CALL core_dcamera.cpp_FUN_00451bc0  ; 00550810
-        ;   XREF to: 00451bc0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00451bc0()
+    CALL core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00451bc0 ; 00550810
+        ;   XREF to: 00451bc0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00451bc0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00550815
     MOV EAX,[0x0061d95c]                ; 00550818 | g_CGamePtr
         ;   Label: LAB_00550818

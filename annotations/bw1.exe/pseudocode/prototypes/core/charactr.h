@@ -31,7 +31,7 @@ void __cdecl CCharacter::markResourcesInUse(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042c7d0
 // Address: 0042c7d0
-void FUN_0042c7d0(int param_1);
+void FUN_0042c7d0(CDemonActor *param_1);
 
 // Original: core_charactr.cpp_CCharacter_archive_FUN_0042c7f0
 // Address: 0042c7f0
@@ -65,9 +65,9 @@ void __cdecl CCharacter::kill(CCharacter *this_ptr,int damage_type,CVector3f *da
 // Address: 0042d6a0
 void __cdecl CCharacter::applyDamage(CCharacter *this_ptr,int damage_type,float damage_amount);
 
-// Original: core_charactr.cpp_FUN_0042d700
+// Original: core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 // Address: 0042d700
-void FUN_0042d700(int param_1,float param_2);
+void __cdecl CCharacter::applyGravity(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 // Address: 0042d750
@@ -85,21 +85,21 @@ void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 // Address: 0042e1a0
 int __cdecl CCharacter::processCharacter(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_0042e410
+// Original: core_charactr.cpp_applyFacePartToHead_FUN_0042e410
 // Address: 0042e410
-void FUN_0042e410(int *param_1,int param_2,int param_3);
+void __cdecl applyFacePartToHead(CDeformableModel *model,int head_part_index,int face_part_index);
 
-// Original: core_charactr.cpp_FUN_0042e580
+// Original: core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042e580
 // Address: 0042e580
-void FUN_0042e580(CDemonActor *param_1);
+void __cdecl CCharacter::updateFacialAnimation(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042e8e0
+// Original: core_charactr.cpp_CCharacter_setEyeFrame_FUN_0042e8e0
 // Address: 0042e8e0
-void FUN_0042e8e0(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CCharacter::setEyeFrame(CCharacter *this_ptr,int eye_side,int frame,float hold_time);
 
-// Original: core_charactr.cpp_FUN_0042e920
+// Original: core_charactr.cpp_CCharacter_setMouthFrame_FUN_0042e920
 // Address: 0042e920
-void FUN_0042e920(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CCharacter::setMouthFrame(CCharacter *this_ptr,int frame,float hold_time);
 
 // Original: core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960
 // Address: 0042e960
@@ -401,17 +401,17 @@ int __cdecl CCharacter::moveOutOfHeroWay(CCharacter *this_ptr,float delta_time);
 // Address: 004352e0
 void __cdecl CCharacter::playSoundWithCooldown(CCharacter *this_ptr,char *sound_name);
 
-// Original: core_charactr.cpp_FUN_00435320
+// Original: core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 // Address: 00435320
-void FUN_00435320(int param_1,float param_2);
+void __cdecl CCharacter::updateTurnSpeed(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_00435380
+// Original: core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380
 // Address: 00435380
-int FUN_00435380(int param_1,char *param_2);
+CWayPoint * __cdecl CCharacter::pickRandomNamedWaypoint(CCharacter *this_ptr,char *name_pattern);
 
-// Original: core_charactr.cpp_FUN_004354a0
+// Original: core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004354a0
 // Address: 004354a0
-void FUN_004354a0(int param_1,CWayPoint *param_2);
+CWayPoint * __cdecl CCharacter::findNearestReachableWaypoint(CCharacter *this_ptr,CWayPoint *target_waypoint);
 
 // Original: core_charactr.cpp_setActorXPos_FUN_00435500
 // Address: 00435500

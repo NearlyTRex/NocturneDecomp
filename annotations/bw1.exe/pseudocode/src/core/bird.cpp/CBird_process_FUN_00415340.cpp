@@ -85,7 +85,7 @@ void __cdecl core_bird_cpp_CBird_process_FUN_00415340(CBird *this_ptr,float delt
     iStack_14 = 1;
   }
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320(&this_ptr->base,delta_time);
   iVar3 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240(&this_ptr->base,delta_time);
   if (iVar3 == 0) goto LAB_004154bd;
   EVar2 = (this_ptr->base).walk_state;
@@ -130,7 +130,7 @@ LAB_0041549d:
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
 LAB_004154bd:
-  core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700(&this_ptr->base,delta_time);
   fStack_80 = (this_ptr->base).velocity.x * delta_time;
   fStack_7c = (this_ptr->base).velocity.y * delta_time;
   fStack_78 = (this_ptr->base).velocity.z * delta_time;

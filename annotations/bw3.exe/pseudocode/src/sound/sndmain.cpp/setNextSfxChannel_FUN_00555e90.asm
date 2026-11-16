@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[7]:
-;   core_event.cpp_FUN_0048c2e0 at 0048f244
-;   core_game.cpp_FUN_004c4a60 at 004c4b09
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048f244
+;   core_game.cpp_CGame_playMusic_FUN_004c4a60 at 004c4b09
 ;   core_script.cpp_CScript_startDialogLine_FUN_00530150 at 005302b6
 ;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005608c7
 ;   core_sound.cpp_CSound_init_FUN_0055fd30 at 0055fe0c

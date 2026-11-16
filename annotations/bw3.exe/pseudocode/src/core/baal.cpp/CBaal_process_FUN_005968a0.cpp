@@ -251,7 +251,8 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
         fVar12 = (float)_DAT_005d9659;
         (this_ptr->base).base.walk_step_speed =
              (this_ptr->base).base.model.accumulated_root_motion.z;
-        core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar7 * fVar12);
+        core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+                  ((CCharacter *)this_ptr,delta_time * fVar7 * fVar12);
         pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCStack_1c->base);
         iVar3 = pSVar5->state_index;
         iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
@@ -343,7 +344,7 @@ LAB_00596f96:
                 }
               }
               else {
-                core_baal_cpp_FUN_00597700(this_ptr);
+                core_baal_cpp_CBaal_chooseAttack_FUN_00597700(this_ptr);
               }
             }
           }
@@ -425,7 +426,7 @@ LAB_00596f96:
                           (&pCStack_1c->base,0,1);
               }
               else if (0 < iVar3) {
-                core_baal_cpp_FUN_00597700(this_ptr);
+                core_baal_cpp_CBaal_chooseAttack_FUN_00597700(this_ptr);
               }
             }
           }
@@ -542,7 +543,7 @@ switchD_005976af_caseD_6:
           (this_ptr->base).attack_cooldown = -1.0;
         }
         core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCStack_1c->base);
-        core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+        core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
         fStack_f0 = pCStack_2c->x * delta_time;
         afStack_ec[0] = pCStack_2c->y * delta_time;
         afStack_ec[1] = pCStack_2c->z * delta_time;

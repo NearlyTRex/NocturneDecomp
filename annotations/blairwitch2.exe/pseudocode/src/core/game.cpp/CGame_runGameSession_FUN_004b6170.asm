@@ -47,9 +47,9 @@
 ;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bdb10
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
+;   core_game.cpp_CGame_resetIrisFade_FUN_004bb090
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000
 ;   core_game.cpp_CGame_saveGame_FUN_004bb9b0
-;   core_game.cpp_CGame_setGameRes_FUN_004b5fd0
 ;   ... and 42 more
 ;
 ; *****************************************************************************
@@ -926,8 +926,8 @@ section .text
         ;   XREF to: 004b6c07 (CONDITIONAL_JUMP)  ; LAB_004b6c07
     MOV EDX,dword ptr [EBP + 0x14]      ; 004b6bd9
     PUSH EDX                            ; 004b6bdc
-    CALL core_game.cpp_FUN_004bb090     ; 004b6bdd
-        ;   XREF to: 004bb090 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bb090()
+    CALL core_game.cpp_CGame_resetIrisFade_FUN_004bb090 ; 004b6bdd
+        ;   XREF to: 004bb090 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetIrisFade_FUN_004bb090(CGame * this_ptr)
     ADD ESP,0x4                         ; 004b6be2
     MOV ECX,dword ptr [0x0061b460]      ; 004b6be5 | g_CScriptPtr
     PUSH ECX                            ; 004b6beb | g_CScriptInstance

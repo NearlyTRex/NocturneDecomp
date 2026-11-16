@@ -36,11 +36,11 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
-;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90
 ;   ... and 35 more
 ;
 ; *****************************************************************************
@@ -205,8 +205,8 @@ section .text
         ;   XREF to: 00455245 (CONDITIONAL_JUMP)  ; LAB_00455245
     PUSH EBX                            ; 00455237
         ;   Label: LAB_00455237
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 00455238
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 00455238
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 0045523d
     JMP 0x0045511e                      ; 00455240
         ;   XREF to: 0045511e (UNCONDITIONAL_JUMP)  ; LAB_0045511e
@@ -344,8 +344,8 @@ section .text
     JNZ 0x0045511e                      ; 004553e7
         ;   XREF to: 0045511e (CONDITIONAL_JUMP)  ; LAB_0045511e
     PUSH EBX                            ; 004553ed
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 004553ee
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 004553ee
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 004553f3
     JMP 0x0045511e                      ; 004553f6
         ;   XREF to: 0045511e (UNCONDITIONAL_JUMP)  ; LAB_0045511e
@@ -354,8 +354,8 @@ section .text
     JNZ 0x00455412                      ; 00455402
         ;   XREF to: 00455412 (CONDITIONAL_JUMP)  ; LAB_00455412
     PUSH EBX                            ; 00455404
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 00455405
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 00455405
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 0045540a
     JMP 0x0045511e                      ; 0045540d
         ;   XREF to: 0045511e (UNCONDITIONAL_JUMP)  ; LAB_0045511e
@@ -398,8 +398,8 @@ section .text
     JZ 0x004554ca                       ; 00455481
         ;   XREF to: 004554ca (CONDITIONAL_JUMP)  ; LAB_004554ca
     PUSH EBX                            ; 00455483
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 00455484
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 00455484
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 00455489
     JMP 0x0045511e                      ; 0045548c
         ;   XREF to: 0045511e (UNCONDITIONAL_JUMP)  ; LAB_0045511e
@@ -419,8 +419,8 @@ section .text
     JBE 0x004554ca                      ; 004554ba
         ;   XREF to: 004554ca (CONDITIONAL_JUMP)  ; LAB_004554ca
     PUSH EBX                            ; 004554bc
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 004554bd
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 004554bd
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 004554c2
     JMP 0x0045511e                      ; 004554c5
         ;   XREF to: 0045511e (UNCONDITIONAL_JUMP)  ; LAB_0045511e
@@ -489,8 +489,8 @@ section .text
     CALL dword ptr [ESI + 0xf0]         ; 00455597
     ADD ESP,0x4                         ; 0045559d
     PUSH EBX                            ; 004555a0
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 004555a1
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 004555a1
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 004555a6
     PUSH 0x5ba4aa                       ; 004555a9 | = "ghoul-eat-?.wav"
         ;   Label: LAB_004555a9
@@ -510,8 +510,8 @@ section .text
     PUSH EBX                            ; 004555d5
     MOV EDI,ECX                         ; 004555d6
     MOV dword ptr [EBX + 0xd064],0x0    ; 004555d8
-    CALL core_demnfolk.cpp_FUN_004580a0 ; 004555e2
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004580a0()
+    CALL core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0 ; 004555e2
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; int core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0(CDemnfolk * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 004555e7
     MOV ESI,EAX                         ; 004555ea
     TEST EAX,EAX                        ; 004555ec
@@ -540,8 +540,8 @@ section .text
     PUSH 0x2                            ; 00455623
         ;   Label: LAB_00455623
     PUSH EBX                            ; 00455625
-    CALL core_demnfolk.cpp_FUN_004580a0 ; 00455626
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004580a0()
+    CALL core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0 ; 00455626
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; int core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0(CDemnfolk * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 0045562b
     MOV ESI,EAX                         ; 0045562e
     TEST EAX,EAX                        ; 00455630
@@ -596,8 +596,8 @@ section .text
     PUSH 0x3                            ; 004556d2
         ;   Label: LAB_004556d2
     PUSH EBX                            ; 004556d4
-    CALL core_demnfolk.cpp_FUN_004580a0 ; 004556d5
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004580a0()
+    CALL core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0 ; 004556d5
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; int core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0(CDemnfolk * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 004556da
     MOV dword ptr [EBP + -0x26],EAX     ; 004556dd
     TEST EAX,EAX                        ; 004556e0
@@ -1006,8 +1006,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 00455c3d
     FSTP float ptr [ESP]                ; 00455c43
     PUSH EBX                            ; 00455c46
-    CALL core_charactr.cpp_FUN_00434850 ; 00455c47
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 00455c47
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBX + 0xd120]    ; 00455c4c
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x2298] ; 00455c52
     ADD ESP,0x8                         ; 00455c59
@@ -1182,8 +1182,8 @@ section .text
     PUSH 0x1                            ; 00455e46
         ;   Label: LAB_00455e46
     PUSH EBX                            ; 00455e48
-    CALL core_demnfolk.cpp_FUN_004580a0 ; 00455e49
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004580a0()
+    CALL core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0 ; 00455e49
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; int core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0(CDemnfolk * this_ptr, int object_shape_type)
     MOV EDX,dword ptr [EBP + -0x12]     ; 00455e4e
     ADD ESP,0x8                         ; 00455e51
     TEST EDX,EDX                        ; 00455e54
@@ -1311,8 +1311,8 @@ section .text
     FSTP float ptr [EBX + 0x2524]       ; 00455fc7
     FSTP float ptr [ESP]                ; 00455fcd
     PUSH EBX                            ; 00455fd0
-    CALL core_charactr.cpp_FUN_00434850 ; 00455fd1
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 00455fd1
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00455fd6
     MOV EAX,dword ptr [EBP + 0x5a]      ; 00455fd9
     PUSH 0x3f490fdb                     ; 00455fdc
@@ -1347,8 +1347,8 @@ section .text
         ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00456046
     PUSH EBX                            ; 00456049
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 0045604a
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 0045604a
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 0045604f
     MOV dword ptr [EBX + 0x2508],0x0    ; 00456052
     JMP 0x00455cd6                      ; 0045605c
@@ -1729,8 +1729,8 @@ section .text
     JZ 0x004564f0                       ; 004564e5
         ;   XREF to: 004564f0 (CONDITIONAL_JUMP)  ; LAB_004564f0
     PUSH EBX                            ; 004564e7
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 004564e8
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 004564e8
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 004564ed
     PUSH dword ptr [EBP + 0x92]         ; 004564f0
         ;   Label: LAB_004564f0
@@ -1747,8 +1747,8 @@ section .text
     JZ 0x00455f8c                       ; 00456517
         ;   XREF to: 00455f8c (CONDITIONAL_JUMP)  ; caseD_2f
     PUSH EBX                            ; 0045651d
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 0045651e
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 0045651e
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 00456523
     MOV EDI,dword ptr [EBX + 0xd13c]    ; 00456526
     PUSH EDI                            ; 0045652c
@@ -1870,8 +1870,8 @@ section .text
     MOV dword ptr [EBX + 0xd13c],EAX    ; 004566ad
     PUSH EBX                            ; 004566b3
         ;   Label: LAB_004566b3
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 004566b4
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 004566b4
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 004566b9
     JMP 0x00455f8c                      ; 004566bc
         ;   XREF to: 00455f8c (UNCONDITIONAL_JUMP)  ; caseD_2f
@@ -2018,8 +2018,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0045685d
         ;   Label: LAB_0045685d
     PUSH EBX                            ; 00456863
-    CALL core_demnfolk.cpp_FUN_00457740 ; 00456864
-        ;   XREF to: 00457740 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00457740()
+    CALL core_demnfolk.cpp_CDemnfolk_processPickup_FUN_00457740 ; 00456864
+        ;   XREF to: 00457740 (UNCONDITIONAL_CALL)  ; int core_demnfolk.cpp_CDemnfolk_processPickup_FUN_00457740(CDemnfolk * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00456869
     TEST EAX,EAX                        ; 0045686c
     JNZ 0x00455f8c                      ; 0045686e
@@ -2028,8 +2028,8 @@ section .text
     MOV EAX,[0x005de058]                ; 00456876 | DAT_005de058
     PUSH EBX                            ; 0045687b
     MOV dword ptr [EBP + 0xe],EAX       ; 0045687c
-    CALL core_demnfolk.cpp_FUN_004580a0 ; 0045687f
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004580a0()
+    CALL core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0 ; 0045687f
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; int core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0(CDemnfolk * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 00456884
     MOV dword ptr [EBP + 0x12],EAX      ; 00456887
     TEST EAX,EAX                        ; 0045688a
@@ -2162,8 +2162,8 @@ section .text
         ;   XREF to: 00455f8c (UNCONDITIONAL_JUMP)  ; caseD_2f
     PUSH EBX                            ; 00456a39
         ;   Label: LAB_00456a39
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 00456a3a
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 00456a3a
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 00456a3f
     JMP 0x004567fd                      ; 00456a42
         ;   XREF to: 004567fd (UNCONDITIONAL_JUMP)  ; LAB_004567fd
@@ -2227,8 +2227,8 @@ section .text
         ;   Label: LAB_00456aca
     PUSH EDX                            ; 00456ad0
     PUSH EBX                            ; 00456ad1
-    CALL core_demnfolk.cpp_FUN_004580a0 ; 00456ad2
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004580a0()
+    CALL core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0 ; 00456ad2
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; int core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0(CDemnfolk * this_ptr, int object_shape_type)
     MOV dword ptr [EBP + 0x26],EAX      ; 00456ad7
     LEA EAX,[EBX + 0x20]                ; 00456ada
     MOV EDX,dword ptr [EBX + 0xcde4]    ; 00456add
@@ -2383,8 +2383,8 @@ section .text
         ;   XREF to: 00455f8c (CONDITIONAL_JUMP)  ; caseD_2f
     PUSH EBX                            ; 00456ca5
         ;   Label: LAB_00456ca5
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 00456ca6
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 00456ca6
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 00456cab
     JMP 0x00455f8c                      ; 00456cae
         ;   XREF to: 00455f8c (UNCONDITIONAL_JUMP)  ; caseD_2f
@@ -2394,8 +2394,8 @@ section .text
         ;   XREF to: 00456ca5 (CONDITIONAL_JUMP)  ; LAB_00456ca5
     PUSH 0x1                            ; 00456cbc
     PUSH EBX                            ; 00456cbe
-    CALL core_demnfolk.cpp_FUN_004580a0 ; 00456cbf
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004580a0()
+    CALL core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0 ; 00456cbf
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; int core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0(CDemnfolk * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 00456cc4
     MOV ESI,EAX                         ; 00456cc7
     TEST EAX,EAX                        ; 00456cc9
@@ -2530,8 +2530,8 @@ section .text
         ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00456e6e
     PUSH EBX                            ; 00456e71
-    CALL core_demnfolk.cpp_FUN_00458fb0 ; 00456e72
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0 ; 00456e72
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 00456e77
     JMP 0x00455f8c                      ; 00456e7a
         ;   XREF to: 00455f8c (UNCONDITIONAL_JUMP)  ; caseD_2f
@@ -2671,8 +2671,8 @@ section .text
         ;   Label: LAB_00456fec
     PUSH EBX                            ; 00456ff2
     LEA ESI,[EBX + 0x2518]              ; 00456ff3
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 00456ff9
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 00456ff9
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 00456ffe
     FMUL float ptr [EBP + 0x92]         ; 00457000
     FSTP float ptr [EBP + 0xfffffe8a]   ; 00457006

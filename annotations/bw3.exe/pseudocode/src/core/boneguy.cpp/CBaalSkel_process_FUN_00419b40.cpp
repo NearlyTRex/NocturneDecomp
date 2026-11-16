@@ -252,9 +252,11 @@ void __cdecl core_boneguy_cpp_CBaalSkel_process_FUN_00419b40(CBaalSkel *this_ptr
       core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar7);
     }
   }
+  fVar20 = (this_ptr->base).base.speed;
   (this_ptr->base).base.base.walk_step_speed =
        (this_ptr->base).base.base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar20);
   pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(pCStack_34);
   iVar7 = pSVar9->state_index;
   iStack_40 = iVar7;
@@ -481,7 +483,7 @@ switchD_0041a7ec_caseD_3:
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,&((this_ptr->base).base.victim)->base);
     }
-    core_charactr_cpp_FUN_0042c1e0();
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     fStack_104 = (this_ptr->base).base.base.velocity.x * delta_time;
     afStack_100[0] = (this_ptr->base).base.base.velocity.y * delta_time;
     afStack_100[1] = (this_ptr->base).base.base.velocity.z * delta_time;

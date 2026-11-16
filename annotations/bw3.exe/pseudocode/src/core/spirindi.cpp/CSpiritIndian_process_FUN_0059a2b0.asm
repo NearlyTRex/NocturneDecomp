@@ -24,14 +24,14 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004cec40
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10
@@ -135,8 +135,8 @@ section .text
     FSTP float ptr [EBX + 0x2524]       ; 0059a3c1
     FSTP float ptr [ESP]                ; 0059a3c7
     PUSH EBX                            ; 0059a3ca
-    CALL core_charactr.cpp_FUN_00434850 ; 0059a3cb
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 0059a3cb
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059a3d0
     PUSH dword ptr [EBP + 0x18]         ; 0059a3d3
     PUSH EBX                            ; 0059a3d6
@@ -174,8 +174,8 @@ section .text
         ;   Label: LAB_0059a433
     PUSH EBX                            ; 0059a436
     LEA ESI,[EBX + 0x2518]              ; 0059a437
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 0059a43d
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 0059a43d
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059a442
     FLD float ptr [ESI]                 ; 0059a445
     FMUL float ptr [EBP + 0x18]         ; 0059a447

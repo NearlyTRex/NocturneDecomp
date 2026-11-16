@@ -13,8 +13,8 @@
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
 ;   core_belling.cpp_CBelling_processStates_FUN_005a9060
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
-;   core_muzzle.cpp_FUN_0059d990
-;   core_muzzle.cpp_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -60,12 +60,12 @@ section .text
     PUSH 0x5f088d                       ; 005a9020
     LEA ESI,[EBX + 0x10af8]             ; 005a9025
     PUSH ESI                            ; 005a902b
-    CALL core_muzzle.cpp_FUN_0059d990   ; 005a902c
-        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d990()
+    CALL core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990 ; 005a902c
+        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a9031
     PUSH ESI                            ; 005a9034
-    CALL core_muzzle.cpp_FUN_0059dc80   ; 005a9035
-        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dc80()
+    CALL core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80 ; 005a9035
+        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80(SStateMachine * this_ptr)
     ADD ESP,0x4                         ; 005a903a
     MOV EAX,EBX                         ; 005a903d
     POP ESI                             ; 005a903f

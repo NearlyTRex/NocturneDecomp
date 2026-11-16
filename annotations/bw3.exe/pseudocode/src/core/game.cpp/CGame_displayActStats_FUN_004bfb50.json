@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 547,
+    "complexity_score": 548,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 212,
+    "pseudocode_lines": 213,
     "suspect_count": 30,
     "suspect_types": [
       "stack_ref",
@@ -18,7 +18,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 538
+    "total_lines": 539
   },
   "cross_references": [
     {
@@ -89,7 +89,7 @@
     {
       "addr": "004b2e40",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b2e40"
+      "name": "engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40"
     },
     {
       "addr": "00560d70",
@@ -534,15 +534,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 198,
+      "line": 199,
       "match": "&stack0xfffffaa8",
       "severity": "moderate",
-      "text": "iVar4 = engine_font_cpp_FUN_004b2e40(this_ptr_00,&stack0xfffffaa8,0x1d1bb20,0x14,0x100,0xc0);",
+      "text": "(this_ptr_00,&stack0xfffffaa8,(char *)0x1d1bb20,0x14,0x100,0xc0);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 213,
+      "line": 214,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "*(uint *)(unaff_EDI + 0x278) = 0;",

@@ -1,0 +1,20 @@
+// Name: core_doc.cpp_CDoc_dropRightHandObject_FUN_004707d0
+// Address: 004707d0
+// Address Range: [[004707d0, 00470815]]
+// Convention: __cdecl
+// Signature: void __cdecl core_doc_cpp_CDoc_dropRightHandObject_FUN_004707d0(CDoc *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_doc_cpp_CDoc_dropRightHandObject_FUN_004707d0(CDoc *this_ptr)
+
+{
+  if (this_ptr->weapon == (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor) {
+    this_ptr->weapon = (CWeapon *)0x0;
+  }
+  (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+            ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
+            (&(this_ptr->base).base.model.base,0,1);
+  return;
+}

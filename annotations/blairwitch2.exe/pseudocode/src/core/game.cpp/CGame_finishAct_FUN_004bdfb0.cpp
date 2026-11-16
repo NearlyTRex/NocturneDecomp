@@ -221,7 +221,8 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
   local_2c = _DAT_01511cc0;
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
   pCVar8 = local_2c;
-  iVar3 = engine_font_cpp_FUN_004ab2b0(local_2c,&stack0xfffffaa4,0x1cb2520,0x14,0x100,0xc0);
+  iVar3 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
+                    (local_2c,&stack0xfffffaa4,(char *)0x1cb2520,0x14,0x100,0xc0);
   iVar10 = 0;
   iStack_34 = iVar3;
   local_30 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(pCVar8,0x58);

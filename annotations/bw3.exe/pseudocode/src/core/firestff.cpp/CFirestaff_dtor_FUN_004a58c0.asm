@@ -11,7 +11,7 @@
 ;   WatcomTypeInfo g_CFirestaffTypeInfo
 ;
 ; Called Functions:
-;   core_firestff.cpp_FUN_004a5930
+;   core_firestff.cpp_CFlame_arrdtor12_FUN_004a5930
 ;   core_weapon.cpp_CWeapon_dtor_FUN_0057aed0
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 004a58cc
     ADD EBX,0x614                       ; 004a58ce
     PUSH EBX                            ; 004a58d4
-    CALL core_firestff.cpp_FUN_004a5930 ; 004a58d5
-        ;   XREF to: 004a5930 (UNCONDITIONAL_CALL)  ; undefined core_firestff.cpp_FUN_004a5930()
+    CALL core_firestff.cpp_CFlame_arrdtor12_FUN_004a5930 ; 004a58d5
+        ;   XREF to: 004a5930 (UNCONDITIONAL_CALL)  ; void core_firestff.cpp_CFlame_arrdtor12_FUN_004a5930(CFlame * this_ptr)
     ADD ESP,0x8                         ; 004a58da
     PUSH 0x1                            ; 004a58dd
     LEA EBX,[EAX + 0xfffff9ec]          ; 004a58df

@@ -64,7 +64,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f4d0(CBaron *this_ptr,float d
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_baron_cpp_CBaron_updateMountedPosition_FUN_0040fc00(this_ptr,delta_time);
   }
-  core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320((CCharacter *)this_ptr,delta_time);
   fVar8 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar8;
   if (fVar8 < 0.0) {
@@ -206,7 +206,7 @@ switchD_0040fa5f_default:
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,delta_time);
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
   pCVar7 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(pCVar7);

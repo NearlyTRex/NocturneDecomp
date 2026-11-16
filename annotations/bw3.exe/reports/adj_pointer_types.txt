@@ -1,7 +1,7 @@
-Scanning 548 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw3.exe/pseudocode/src...
+Scanning 550 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw3.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (180 files still need ADJ)
+UNFINISHED CTORS/DTORS (182 files still need ADJ)
 ======================================================================
 
   [core/ammo.cpp]
@@ -551,6 +551,10 @@ UNFINISHED CTORS/DTORS (180 files still need ADJ)
     CDeformableModel_ctor_FUN_00548230:
       _arrinit @ this+0x2290 (8848) -> CDeformableModel_ptr_8848
       _arrinit @ this+0x274c (10060) -> CDeformableModel_ptr_10060
+    CSkeleton_ctor_FUN_005479f0:
+      CMotionList_ctor @ ??? (UNKNOWN)
+    CSkeleton_dtor_FUN_00547a50:
+      CMotionList_dtor @ ??? (UNKNOWN)
     SVert_ctor_FUN_00550520:
       _arrinit @ this+0x10 (16) -> SVert_ptr_16
 
@@ -949,7 +953,7 @@ NEEDED ADJ POINTER TYPES
 Total: 186 types across 132 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (128 calls with unknown offset)
+MANUAL REVIEW NEEDED (130 calls with unknown offset)
 ======================================================================
   CAsgaya_dtor_FUN_005a1b50.asm: CClothList_dtor
   CAsgaya_dtor_FUN_005a1b50.asm: CDeformableModelInstance_dtor
@@ -1044,6 +1048,8 @@ MANUAL REVIEW NEEDED (128 calls with unknown offset)
   CSpiritShadow_dtor_FUN_005460b0.asm: CDeformableModelInstance_dtor
   CShadowsc_dtor_FUN_00546f40.asm: CClothList_dtor
   CShadowsc_dtor_FUN_00546f40.asm: CDeformableModelInstance_dtor
+  CSkeleton_ctor_FUN_005479f0.asm: CMotionList_ctor
+  CSkeleton_dtor_FUN_00547a50.asm: CMotionList_dtor
   CSpiritBear_dtor_FUN_0059b540.asm: CClothList_dtor
   CSpiritBear_dtor_FUN_0059b540.asm: CDeformableModelInstance_dtor
   CSpiritEagle_dtor_FUN_00599e40.asm: CClothList_dtor

@@ -79,7 +79,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dd9b0(CInventory *thi
   char local_98 [4];
   int local_94;
   int local_90;
-  char local_8c [4];
+  int local_8c;
   int local_88;
   int local_84;
   int local_80;
@@ -139,10 +139,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dd9b0(CInventory *thi
     local_88 = 0x28;
     local_5c = 8;
   }
-  local_8c[0] = -1;
-  local_8c[1] = -1;
-  local_8c[2] = '\0';
-  local_8c[3] = '\0';
+  local_8c = 0xffff;
   if (this_ptr->weapon_highlight_timer < 1.0) {
     dVar11 = round
                        ((double)(this_ptr->weapon_highlight_timer * _DAT_005dbb06));
@@ -290,7 +287,8 @@ LAB_004ddc00:
     _sprintf(local_904,pcVar7);
   }
   local_44 = local_34;
-  iVar8 = engine_font_cpp_FUN_004ab2b0(local_34,local_904,0x1cee3b0,10,0x100);
+  iVar8 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
+                    (local_34,local_904,(char *)0x1cee3b0,10,0x100,local_6c - local_8c);
   local_50 = iVar8;
   local_5c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(local_34,0x58);
   iVar12 = (DAT_006141bc - local_7c) + local_60;
@@ -359,7 +357,8 @@ LAB_004ddd00:
                 (this_ptr->selected_items[this_ptr->current_group]);
       _sprintf(acStack_804,"%s\n\n%s");
       local_48 = local_34;
-      local_4c = engine_font_cpp_FUN_004ab2b0(local_34,acStack_804,0x1ceedb0,10,0x100);
+      local_4c = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
+                           (local_34,acStack_804,(char *)0x1ceedb0,10,0x100,local_68 - local_88);
       local_20 = (float)local_4c;
       local_58 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(local_34,0x58);
       iVar8 = (DAT_006141bc - iVar8) + iVar12;
@@ -434,11 +433,15 @@ LAB_004ddd00:
     }
     engine_3d_c_setRenderAlpha_FUN_00406da0(local_80);
     local_30 = _DAT_01511cc4;
+    iVar8 = 0x00000060;
     if (DAT_006141bc < 0x180) {
+      iVar8 = 0x00000060 / 2;
       local_30 = _DAT_01511ccc;
     }
     pCVar5 = (CBitFont *)
-             engine_font_cpp_FUN_004ab2b0(local_30,this_ptr->message_text,0x1cef7b0,10,0x100);
+             engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
+                       (local_30,this_ptr->message_text,(char *)0x1cef7b0,10,0x100,
+                        (DAT_006141b8 - iVar8) + -4);
     local_38 = pCVar5;
     local_40 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(local_30,0x58);
     iVar8 = (DAT_006141bc + -4) - local_40 * (int)pCVar5;

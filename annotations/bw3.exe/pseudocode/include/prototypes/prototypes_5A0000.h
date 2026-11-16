@@ -25,6 +25,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5A0000
@@ -35,7 +36,7 @@ int __cdecl core_styldemo_cpp_CStylerDemon_renderOpaque_FUN_005a01c0(CStylerDemo
 int __cdecl core_styldemo_cpp_CStylerDemon_shouldIgnoreForTargeting_FUN_005a02b0(CStylerDemon *this_ptr);
 void __cdecl core_styldemo_cpp_CStylerDemon_archive_FUN_005a02e0(CStylerDemon *this_ptr);
 void __cdecl core_styldemo_cpp_CStylerDemon_processDamage_FUN_005a0330(CStylerDemon *this_ptr,SDamageInfo *damage_info);
-undefined4 core_styldemo_cpp_FUN_005a0480(int param_1,int param_2);
+int __cdecl core_styldemo_cpp_CStylerDemon_tryAttack_FUN_005a0480(CStylerDemon *this_ptr,int distance);
 int __cdecl core_styldemo_cpp_CStylerDemon_getTargetPoints_FUN_005a06c0(CStylerDemon *this_ptr,CVector3f *out_points_array);
 CMatrix3x4f * __stack2_esi core_styldemo_cpp_CStylerDemon_getCarryObjToBodyXForm_FUN_005a07c0(CStylerDemon *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 ECollisionType __cdecl core_styldemo_cpp_CStylerDemon_getCollisionType_FUN_005a08f0(CStylerDemon *this_ptr,SCollisionInfo *collision_info);
@@ -56,7 +57,7 @@ int __cdecl core_asgaya_cpp_CAsgaya_isInvulnerable_FUN_005a1b20(CAsgaya *this_pt
 CPathMap * __cdecl core_asgaya_cpp_CAsgaya_getPathMap_FUN_005a1b40(CAsgaya *this_ptr);
 CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags);
 void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005a1c00(SRenderVertex *v0,SRenderVertex *v1);
-int * core_asgaya_cpp_FUN_005a1e60(void);
+SSoftwareEdge * __cdecl core_asgaya_cpp_findRasterizerEdge_FUN_005a1e60(int y_start,SSoftwareEdge *exclude_edge);
 void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005a1ea0(SRenderVertex *vertex_buffer,int vertex_count);
 void __cdecl core_asgaya_cpp_rasterizePolygonCustom_FUN_005a23c0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>

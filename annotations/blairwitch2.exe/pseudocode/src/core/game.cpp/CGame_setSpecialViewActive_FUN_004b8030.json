@@ -1,0 +1,125 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004b8030",
+    "address_range": [
+      [
+        "004b8030",
+        "004b8096"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_setSpecialViewActive_FUN_004b8030",
+    "signature": "void __cdecl core_game_cpp_CGame_setSpecialViewActive_FUN_004b8030(CGame *this_ptr,int active)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052ddf0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0"
+    },
+    {
+      "addr": "00538d10",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b460",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e65cd0"
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.735294117647059,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 16,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 11,
+      "LOAD": 12,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 127
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d17c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6774
+    },
+    "bw3.exe": {
+      "addr": "004ba280",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6774
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "active",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

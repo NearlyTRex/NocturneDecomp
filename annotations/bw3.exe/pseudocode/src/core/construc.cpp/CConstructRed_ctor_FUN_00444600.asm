@@ -7,7 +7,7 @@
 ; CConstructRed *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_construc.cpp_FUN_004445d0 at 004445e3
+;   core_construc.cpp_factoryFuncConstructRed_FUN_004445d0 at 004445e3
 ;
 ; Called Functions:
 ;   core_construc.cpp_CConstruct_ctor_FUN_00442420

@@ -210,8 +210,8 @@ section .text
     PUSH EAX                            ; 004ddc2f
     MOV ECX,dword ptr [ESP + 0x548]     ; 004ddc30
     PUSH ECX                            ; 004ddc37
-    CALL engine_font.cpp_FUN_004b2e40   ; 004ddc38
-        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b2e40()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40 ; 004ddc38
+        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     MOV dword ptr [ESP + 0x530],EAX     ; 004ddc3d
     ADD ESP,0x18                        ; 004ddc44
     PUSH 0x58                           ; 004ddc47
@@ -373,8 +373,8 @@ section .text
     PUSH EAX                            ; 004dde56
     MOV EAX,dword ptr [ESP + 0x548]     ; 004dde57
     PUSH EAX                            ; 004dde5e
-    CALL engine_font.cpp_FUN_004b2e40   ; 004dde5f
-        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b2e40()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40 ; 004dde5f
+        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     MOV dword ptr [ESP + 0x530],EAX     ; 004dde64
     ADD ESP,0x18                        ; 004dde6b
     PUSH 0x58                           ; 004dde6e
@@ -694,8 +694,8 @@ section .text
     PUSH EAX                            ; 004de277
     MOV EDX,dword ptr [ESP + 0x574]     ; 004de278
     PUSH EDX                            ; 004de27f
-    CALL engine_font.cpp_FUN_004b2e40   ; 004de280
-        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b2e40()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40 ; 004de280
+        ;   XREF to: 004b2e40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004b2e40(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 004de285
     PUSH 0x58                           ; 004de288
     MOV ECX,dword ptr [ESP + 0x564]     ; 004de28a

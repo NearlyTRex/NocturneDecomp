@@ -23,7 +23,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090
-;   core_bwgrndma.cpp_FUN_005a7ed0
+;   core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_bwspart.cpp_CSimpleParticleSystem_isActive_FUN_005a8130
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
@@ -115,8 +115,8 @@ section .text
     FLD float ptr [ESP + 0x17c]         ; 005aca31
     ADD ESP,0x8                         ; 005aca38
     FSTP float ptr [ESP]                ; 005aca3b
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005aca3e
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005aca3e
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
     TEST EAX,EAX                        ; 005aca43
     JZ 0x005acb40                       ; 005aca45
         ;   XREF to: 005acb40 (CONDITIONAL_JUMP)  ; LAB_005acb40
@@ -206,8 +206,8 @@ section .text
     XOR ECX,ECX                         ; 005acb61
     MOV dword ptr [ESP + 0x158],ESI     ; 005acb63
     MOV dword ptr [ESP + 0x170],ECX     ; 005acb6a
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005acb71
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005acb71
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
         ;   Label: LAB_005acb71
     TEST EAX,EAX                        ; 005acb76
     JZ 0x005accc4                       ; 005acb78
@@ -309,8 +309,8 @@ section .text
     XOR ECX,ECX                         ; 005accf3
     MOV dword ptr [ESP + 0x15c],ESI     ; 005accf5
     MOV dword ptr [ESP + 0x168],ECX     ; 005accfc
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005acd03
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005acd03
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
         ;   Label: LAB_005acd03
     TEST EAX,EAX                        ; 005acd08
     JNZ 0x005acd94                      ; 005acd0a
@@ -521,8 +521,8 @@ section .text
     XOR EAX,EAX                         ; 005ad05a
     MOV dword ptr [ESP + 0x16c],EAX     ; 005ad05c
     MOV dword ptr [ESP + 0x164],EDI     ; 005ad063
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005ad06a
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005ad06a
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
         ;   Label: LAB_005ad06a
     TEST EAX,EAX                        ; 005ad06f
     JNZ 0x005ad08d                      ; 005ad071

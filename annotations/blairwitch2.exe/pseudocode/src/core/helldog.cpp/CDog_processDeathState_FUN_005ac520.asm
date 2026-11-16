@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042b550
+;   core_charactr.cpp_CCharacter_setPhantomEyes_FUN_0042b550
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;
@@ -57,8 +57,8 @@ section .text
     PUSH 0x1                            ; 005ac57f
     PUSH EBX                            ; 005ac581
     MOV dword ptr [EBX + 0x1186c],0x1   ; 005ac582
-    CALL core_charactr.cpp_FUN_0042b550 ; 005ac58c
-        ;   XREF to: 0042b550 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b550()
+    CALL core_charactr.cpp_CCharacter_setPhantomEyes_FUN_0042b550 ; 005ac58c
+        ;   XREF to: 0042b550 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setPhantomEyes_FUN_0042b550(CCharacter * this_ptr, int enabled, float glow_from, float glow_to, ...)
     ADD ESP,0x20                        ; 005ac591
     POP ESI                             ; 005ac594
     POP EBX                             ; 005ac595

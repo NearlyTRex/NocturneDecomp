@@ -30,12 +30,14 @@ void __cdecl core_hellhag_cpp_CHag_processHealingState_FUN_005aaca0(CHag *this_p
        fVar3 = (this_ptr->base).base.base.base.location.position.z -
                (pCVar1->base).location.position.z,
        SQRT(fVar3 * fVar3 + fVar2 * fVar2) < _DAT_00600a6c)) {
-      core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"?MeleeAttack" + 1);
+      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
+                (&(this_ptr->base).state_machine,"?MeleeAttack" + 1);
       return;
     }
     if ((float)_DAT_005f0c06 <= (this_ptr->base).base.base.hit_points) {
       (this_ptr->base).attack_range = _DAT_00600a6c;
-      core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Chasing");
+      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
+                (&(this_ptr->base).state_machine,"Chasing");
       return;
     }
   }

@@ -9,7 +9,7 @@
 ; uint             Stack[0xc]:4   sfx_handle
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_004a1d00 at 004a4ab2
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a4ab2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_005ded3a

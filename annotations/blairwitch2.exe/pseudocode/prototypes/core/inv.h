@@ -25,9 +25,9 @@ char * __cdecl getItemDescription(CDemonActor *actor_ptr);
 // Address: 004d9ff0
 void FUN_004d9ff0(float param_1,float param_2);
 
-// Original: core_inv.cpp_FUN_004da130
+// Original: core_inv.cpp_renderCompass_FUN_004da130
 // Address: 004da130
-void FUN_004da130(void);
+void __cdecl renderCompass(void);
 
 // Original: core_inv.cpp_loadItem_FUN_004da720
 // Address: 004da720

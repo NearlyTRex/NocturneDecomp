@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510
-;   core_tawiscara.cpp_FUN_00595760
+;   core_tawiscara.cpp_CTawiscara_renderEyeGlow_FUN_00595760
 ;   core_xform.cpp_getTranslation_FUN_00584450
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
@@ -108,13 +108,13 @@ section .text
     ADD ESP,0xc                         ; 00595e0b
     PUSH 0x2d24a54                      ; 00595e0e
     PUSH EBX                            ; 00595e13
-    CALL core_tawiscara.cpp_FUN_00595760 ; 00595e14
-        ;   XREF to: 00595760 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595760()
+    CALL core_tawiscara.cpp_CTawiscara_renderEyeGlow_FUN_00595760 ; 00595e14
+        ;   XREF to: 00595760 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_renderEyeGlow_FUN_00595760(CTawiscara * this_ptr, CVector3f * eye_position)
     ADD ESP,0x8                         ; 00595e19
     PUSH 0x2d24a60                      ; 00595e1c
     PUSH EBX                            ; 00595e21
-    CALL core_tawiscara.cpp_FUN_00595760 ; 00595e22
-        ;   XREF to: 00595760 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595760()
+    CALL core_tawiscara.cpp_CTawiscara_renderEyeGlow_FUN_00595760 ; 00595e22
+        ;   XREF to: 00595760 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_renderEyeGlow_FUN_00595760(CTawiscara * this_ptr, CVector3f * eye_position)
     ADD ESP,0x8                         ; 00595e27
     PUSH EBX                            ; 00595e2a
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830 ; 00595e2b

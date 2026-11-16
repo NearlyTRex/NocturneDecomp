@@ -18,8 +18,8 @@
 ;   crt_unknown.c_istream_seekg_FUN_005b9c98
 ;   crt_unknown.c_openFile_FUN_005b9c39
 ;   crt_watcom.c__mkdir_FUN_005b9c20
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910
 ;   engine_dosio.cpp_findFile_FUN_00460980
-;   engine_dosio.cpp_FUN_00460910
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH ESI                            ; 00460d6a
     LEA EAX,[ESP + 0x8]                 ; 00460d6b
     PUSH EAX                            ; 00460d6f
-    CALL engine_dosio.cpp_FUN_00460910  ; 00460d70
-        ;   XREF to: 00460910 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00460910()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910 ; 00460d70
+        ;   XREF to: 00460910 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 00460d75
     TEST byte ptr [ESP + 0x22c],0x52    ; 00460d78
     JZ 0x00460db5                       ; 00460d80

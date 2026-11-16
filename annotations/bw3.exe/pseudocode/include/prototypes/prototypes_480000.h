@@ -44,7 +44,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_00481ab0(CEditorT
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_00481d70(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
 void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00481df0(CEditorTools *this_ptr,int cursor_type,int height,int width);
 undefined4 shape_edittool_cpp_FUN_00481ef0(void);
-void shape_edittool_cpp_FUN_00481f00(void);
+void __cdecl shape_edittool_cpp_CEditorTools_setMini3DMode_FUN_00481f00(CEditorTools *this_ptr,int enable);
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_00481f20(CStrList *this_ptr);
 CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00481f40(CStrList *this_ptr,uint flags);
 CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_00481f90(CStrList *this_ptr,CStrList *other);
@@ -68,8 +68,8 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00482740(CStrList *
 void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00482820(CStrList *this_ptr,char *search_key,char *file_path,int file_size,time_t file_timestamp);
 void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00482a70(CStrList *this_ptr,char *directory_path,char *file_pattern);
 void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70(CStrList *this_ptr,char *directory_path,char *file_pattern);
-void shape_edittool_cpp_FUN_00482ea0(CStrList *param_1,undefined4 param_2,undefined4 param_3,char *param_4);
-void shape_edittool_cpp_FUN_00483000(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl shape_edittool_cpp_CStrList_populateRecursive_FUN_00482ea0(CStrList *this_ptr,char *base_path,char *relative_dir,char *file_pattern);
+void __cdecl shape_edittool_cpp_CStrList_populateRecursiveFromRoot_FUN_00483000(CStrList *this_ptr,char *base_path,char *file_pattern);
 void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_00483020(CStrList *this_ptr,char *base_path,char *search_path);
 CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_004831c0(CPickList *this_ptr);
 CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004832b0(CPickList *this_ptr,uint flags);
@@ -157,13 +157,13 @@ int __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_00489600(CEnemy *this_ptr,CDe
 void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,float delta_time);
 void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_00489b60(CEnemy *this_ptr,CDemonActor *victim);
 void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(CEnemy *this_ptr,SDamageInfo *damage_info);
-void core_enemy_cpp_FUN_00489c90(int param_1);
+void __cdecl core_enemy_cpp_CEnemy_spawnItems_FUN_00489c90(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_renderBackground_FUN_00489fc0(CEnemy *this_ptr,int layer_flag);
 int __cdecl core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(CEnemy *this_ptr,float delta_time);
 void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_0048a050(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_0048a100(CEnemy *this_ptr,CDemonActor *lost_actor);
 int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_0048a130(CEnemy *this_ptr);
-undefined4 core_enemy_cpp_FUN_0048a1b0(float param_1,float param_2);
+int __cdecl core_enemy_cpp_CEnemy_testPainThreshold_FUN_0048a1b0(CEnemy *this_ptr,float damage);
 int __cdecl core_enemy_cpp_CEnemy_isGrabbable_FUN_0048a200(CEnemy *this_ptr,CDemonActor *grabber);
 void __cdecl core_enemy_cpp_CEnemy_randomize_FUN_0048a220(CEnemy *this_ptr);
 void __cdecl core_exorcism_cpp_staticInit_FUN_0048a2b0(void);
@@ -195,5 +195,5 @@ void __cdecl core_event_cpp_CEventList_reset_FUN_0048bfd0(CEventList *this_ptr);
 void __cdecl core_event_cpp_CEventList_process_FUN_0048c020(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_executeCommands_FUN_0048c150(CEventList *this_ptr,char *commands);
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0048c170(CEventList *this_ptr,char *command_string);
-int core_event_cpp_FUN_0048c2e0(CEventList *param_1,char *param_2);
+int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0048c2e0(CEventList *this_ptr,char *command_buffer);
 

@@ -67,7 +67,8 @@ void __cdecl core_styler_cpp_CStyler_process_FUN_0059d9e0(CStyler *this_ptr,floa
   fVar5 = (this_ptr->base).speed;
   iVar9 = pSVar10->state_index;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar5);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar5);
   if (iVar9 == 4) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005d9f19;
   }
@@ -144,7 +145,7 @@ LAB_0059dc5c:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_0059db1e:
-  core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
   afStack_60[2] = (this_ptr->base).base.velocity.x * delta_time;
   afStack_60[3] = (this_ptr->base).base.velocity.y * delta_time;
   fStack_50 = (this_ptr->base).base.velocity.z * delta_time;

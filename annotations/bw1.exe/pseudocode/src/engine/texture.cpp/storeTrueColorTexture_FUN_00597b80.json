@@ -1,0 +1,169 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 53,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 96
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00597b80",
+    "address_range": [
+      [
+        "00597b80",
+        "00597c20"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_storeTrueColorTexture_FUN_00597b80",
+    "signature": "void __cdecl engine_texture_cpp_storeTrueColorTexture_FUN_00597b80(SMRGLTextureBasic *texture,int dimension,uchar *true_color_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "00596ed0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_addTrueColorTexture_FUN_00596ed0"
+    },
+    {
+      "addr": "005970b0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_005970b0"
+    },
+    {
+      "addr": "00597000",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_replaceTrueColorTexture_FUN_00597000"
+    },
+    {
+      "addr": "00597140",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_setupTexture_FUN_00597140"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00713a74",
+      "name": "DAT_00713a74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8a67c",
+      "name": "DAT_02c8a67c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8a680",
+      "name": "DAT_02c8a680",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5833333333333335,
+    "instruction_count": 60,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 53,
+      "INT_ADD": 22,
+      "INT_AND": 17,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 25,
+      "LOAD": 15,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 24
+    },
+    "pcode_op_count": 215
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00574f60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0056ab70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "dimension",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "true_color_data",
+        "offset": 12,
+        "size": 4,
+        "type": "uchar *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_00713a74",
+      "severity": "mild",
+      "text": "if ((DAT_00713a74 == 0) && (texture->texture_name[0] != '\\0')) {",
+      "type": "undefined_data"
+    }
+  ]
+}

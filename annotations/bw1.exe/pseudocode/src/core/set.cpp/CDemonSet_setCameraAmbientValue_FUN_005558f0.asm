@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   value
 ;
 ; XREF[3]:
-;   core_event.cpp_FUN_004a1d00 at 004a5085
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a5085
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d2498
 ;   core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00555970 at 005559a6
 ;

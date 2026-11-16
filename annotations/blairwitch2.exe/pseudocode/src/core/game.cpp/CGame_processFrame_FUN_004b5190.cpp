@@ -39,7 +39,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr)
   float local_84;
   CVector3i local_80;
   CVector3i local_74 [2];
-  int local_5c;
+  float local_5c;
   int local_58;
   int local_54;
   int local_50;
@@ -57,7 +57,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr)
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
+  float local_14;
   
   bVar10 = 0;
   local_40 = 0;
@@ -135,8 +135,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr)
     }
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
     if (this_ptr->profile_mode != 0) {
-      local_14 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
-      local_14 = local_14 - local_44;
+      iVar2 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
+      local_14 = (float)(iVar2 - local_44);
       engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"screen paint : %3.2f ms\n")
       ;
     }
@@ -169,7 +169,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr)
       }
       iVar2 = core_event_cpp_CEventList_findTimer_FUN_004915e0(0x01C38BC0,"blood_timer");
       if (-1 < iVar2) {
-        local_14 = core_event_cpp_FUN_00491240(0x01C38BC0,iVar2);
+        local_14 = core_event_cpp_CEventList_getTimerValue_FUN_00491240(0x01C38BC0,iVar2);
         this_ptr_01 = _DAT_01511cc0;
         _sprintf(local_4e0,&DAT_005d750f);
         engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(this_ptr_01,0x58);
@@ -285,7 +285,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004b5190(CGame *this_ptr)
           engine_2d_c_drawText_FUN_00401fe0((char *)&local_830.taken,0,DAT_006141bc + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_00551cb0
-                  (&local_50,&local_5c,&local_4c,&local_48,&local_58,&local_54);
+                  (&local_50,(int *)&local_5c,&local_4c,&local_48,&local_58,&local_54);
         local_14 = local_5c;
         sound_sndmain_cpp_countActiveSfx_FUN_005513f0();
         _sprintf((char *)&local_830.taken,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk");

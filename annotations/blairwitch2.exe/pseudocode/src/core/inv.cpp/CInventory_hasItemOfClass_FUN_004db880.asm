@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   class_name
 ;
 ; XREF[2]:
-;   core_ammo.cpp_FUN_0040e450 at 0040e471
+;   core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450 at 0040e471
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0 at 0048f378
 ;
 ; Called Functions:

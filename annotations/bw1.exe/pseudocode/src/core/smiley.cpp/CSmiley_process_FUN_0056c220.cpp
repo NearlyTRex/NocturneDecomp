@@ -156,7 +156,8 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_0056c220(CSmiley *this_ptr,floa
   }
   fVar12 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar12);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320
+            ((CCharacter *)this_ptr,delta_time * fVar12);
   pCStack_1c = &(this_ptr->base).base.model;
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCStack_1c->base);
   iVar6 = pSVar7->state_index;
@@ -439,7 +440,7 @@ switchD_0056cb7d_caseD_3:
         core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
                   (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
       }
-      core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
+      core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,delta_time);
       fStack_e4 = (this_ptr->base).base.velocity.x * delta_time;
       afStack_e0[0] = (this_ptr->base).base.velocity.y * delta_time;
       afStack_e0[1] = (this_ptr->base).base.velocity.z * delta_time;

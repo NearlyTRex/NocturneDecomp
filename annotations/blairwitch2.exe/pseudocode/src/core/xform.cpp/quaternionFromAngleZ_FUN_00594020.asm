@@ -12,15 +12,15 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[9]:
-;   core_confedrt.cpp_FUN_005a0bd0 at 005a0d20
+;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0d20
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0 at 00456301
 ;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 004516f9
-;   core_doc.cpp_FUN_00455d10 at 00455de7
-;   core_doc.cpp_FUN_004562a0 at 00456301
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00455de7
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afed3
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c74e
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00520140 at 005201a9
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0 at 00568031
-;   core_weaver.cpp_FUN_005a61f0 at 005a63b7
+;   core_weaver.cpp_CRobin_processAI_FUN_005a61f0 at 005a63b7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eedb2

@@ -9,9 +9,9 @@
 ; char *           Stack[0xc]:4   texture_name
 ;
 ; XREF[3]:
-;   engine_texture.cpp_FUN_00574ea0 at 00574ecf
-;   engine_texture.cpp_FUN_00574f60 at 00574f8f
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00 at 00574e33
+;   engine_texture.cpp_storePalettedTexture_FUN_00574ea0 at 00574ecf
+;   engine_texture.cpp_storeTrueColorTexture_FUN_00574f60 at 00574f8f
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130

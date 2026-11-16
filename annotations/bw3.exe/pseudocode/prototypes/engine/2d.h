@@ -141,9 +141,9 @@ int __cdecl getTextColor(void);
 // Address: 00402850
 void __cdecl setTextColor(int color);
 
-// Original: engine_2d.c_FUN_00402860
+// Original: engine_2d.c_resetTextColor_FUN_00402860
 // Address: 00402860
-void FUN_00402860(void);
+void __cdecl resetTextColor(void);
 
 // Original: engine_2d.c_buildColorLookupTable_FUN_00402880
 // Address: 00402880

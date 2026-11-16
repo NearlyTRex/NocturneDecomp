@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 167,
+    "complexity_score": 168,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 38,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 125
+    "total_lines": 126
   },
   "cross_references": [],
   "function": {
@@ -57,14 +57,14 @@
       "name": "crt_watcom.c__mkdir_FUN_005b9c20"
     },
     {
+      "addr": "00460910",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910"
+    },
+    {
       "addr": "00460980",
       "is_variadic": false,
       "name": "engine_dosio.cpp_findFile_FUN_00460980"
-    },
-    {
-      "addr": "00460910",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460910"
     }
   ],
   "globals": [
@@ -192,7 +192,7 @@
       "line": 9,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "uint in_stack_00000014;",
+      "text": "char *in_stack_00000014;",
       "type": "stack_param"
     },
     {
@@ -213,15 +213,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "engine_dosio_cpp_FUN_00460910(acStack_214,directory_path,in_stack_00000014);",
+      "text": "(acStack_214,directory_path,in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 21,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "if ((in_stack_00000018 & 0x52) == 0) {",
@@ -229,7 +229,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 24,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "openFile(file_stream,acStack_114,in_stack_00000018,_DAT_006013f0);",
@@ -237,7 +237,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 24,
+      "line": 25,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (unaff_EBX != 0) {",
@@ -245,7 +245,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 30,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "istream_seekg(&file_stream->_istream_core,unaff_EBX);",
@@ -253,7 +253,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 39,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "openFile(file_stream,acStack_214,in_stack_00000018,_DAT_006013f0);",

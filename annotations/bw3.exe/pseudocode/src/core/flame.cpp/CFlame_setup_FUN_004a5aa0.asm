@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
-;   core_flame.cpp_FUN_004a5ad0
+;   core_flame.cpp_preloadFlameTextures_FUN_004a5ad0
 ;   crt_stdlib.c_rand_FUN_005a35cc
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
     ADD ESP,0x4                         ; 004a5aab
     MOV EDX,dword ptr [EBX + 0x1a8]     ; 004a5aae
     PUSH EDX                            ; 004a5ab4
-    CALL core_flame.cpp_FUN_004a5ad0    ; 004a5ab5
-        ;   XREF to: 004a5ad0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_004a5ad0()
+    CALL core_flame.cpp_preloadFlameTextures_FUN_004a5ad0 ; 004a5ab5
+        ;   XREF to: 004a5ad0 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_preloadFlameTextures_FUN_004a5ad0(int flame_type)
     ADD ESP,0x4                         ; 004a5aba
     CALL crt_stdlib.c_rand_FUN_005a35cc ; 004a5abd
         ;   XREF to: 005a35cc (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005a35cc()

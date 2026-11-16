@@ -1,0 +1,135 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 43,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 17
+  },
+  "cross_references": [
+    {
+      "addr": "005704a0",
+      "from_addr": "005704be",
+      "name": "support_trisock.cpp_httpReceiveResponse_FUN_005704a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570320",
+    "address_range": [
+      [
+        "00570320",
+        "00570344"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_httpReaderInit_FUN_00570320",
+    "signature": "void __cdecl support_trisock_cpp_httpReaderInit_FUN_00570320(void *reader,CSocket *socket)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005704be",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_httpReceiveResponse_FUN_005704a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.75,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "COPY": 7,
+      "INT_ADD": 7,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 22
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00579cc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0059d330",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "reader",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "socket",
+        "offset": 8,
+        "size": 4,
+        "type": "CSocket *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 5,
+      "match": "(uint *)((int)reader",
+      "severity": "moderate",
+      "text": "*(uint *)((int)reader + 0x808) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 7,
+      "match": "(CSocket **)((int)reader",
+      "severity": "moderate",
+      "text": "*(CSocket **)((int)reader + 4) = socket;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(int *)((int)reader",
+      "severity": "moderate",
+      "text": "*(int *)((int)reader + 0x80c) = (int)reader + 8;",
+      "type": "pointer_cast"
+    }
+  ]
+}

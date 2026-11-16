@@ -81,11 +81,11 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_00579f70(LPGUID d
       }
       if (DStack_74.dwFreeHw3DStaticBuffers == 0) {
         _DAT_02c823dc = 1;
-        wincore_winrun_cpp_FUN_005b3a90("SOUND: No onboard RAM detected.  Forcing samples to load in system memory.\n");
+        wincore_winrun_cpp_outputDebugString_FUN_005b3a90("SOUND: No onboard RAM detected.  Forcing samples to load in system memory.\n");
       }
       else {
         _DAT_02c823dc = 1;
-        wincore_winrun_cpp_FUN_005b3a90("SOUND: Onboard RAM detected.  Samples will be loaded into available onboard memory.\n");
+        wincore_winrun_cpp_outputDebugString_FUN_005b3a90("SOUND: Onboard RAM detected.  Samples will be loaded into available onboard memory.\n");
       }
     }
     else {

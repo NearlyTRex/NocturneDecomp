@@ -106,13 +106,13 @@
     {
       "addr": "00489c90",
       "from_addr": "00489d36",
-      "name": "core_enemy.cpp_FUN_00489c90",
+      "name": "core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0048c2e0",
       "from_addr": "0048d402",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -202,7 +202,7 @@
     {
       "addr": "004c07b0",
       "from_addr": "004c0812",
-      "name": "core_game.cpp_FUN_004c07b0",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -284,6 +284,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0059d000",
+      "from_addr": "0059d054",
+      "name": "core_hino.cpp_CHino_isHeroAtPlatform_FUN_0059d000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0059b960",
       "from_addr": "0059cf5a",
       "name": "core_hino.cpp_CHino_process_FUN_0059b960",
@@ -293,12 +299,6 @@
       "addr": "0059d120",
       "from_addr": "0059d19b",
       "name": "core_hino.cpp_CHino_renderTransparent_FUN_0059d120",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059d000",
-      "from_addr": "0059d054",
-      "name": "core_hino.cpp_FUN_0059d000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -335,6 +335,12 @@
       "addr": "004dbd80",
       "from_addr": "004dbdd2",
       "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbd80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dba30",
+      "from_addr": "004dba51",
+      "name": "core_inv.cpp_CInventory_findWeaponByAmmoType_FUN_004dba30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -380,21 +386,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004da020",
-      "from_addr": "004da0a3",
-      "name": "core_inv.cpp_FUN_004da020",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dba30",
-      "from_addr": "004dba51",
-      "name": "core_inv.cpp_FUN_004dba30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d9d20",
       "from_addr": "004d9d92",
       "name": "core_inv.cpp_getItemModel_FUN_004d9d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da020",
+      "from_addr": "004da0a3",
+      "name": "core_inv.cpp_updateSps_FUN_004da020",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -500,6 +500,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005263c0",
+      "from_addr": "0052658d",
+      "name": "core_prye.cpp_CPrye_handleFireButton_FUN_005263c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0051e6d0",
       "from_addr": "0051ec24",
       "name": "core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0",
@@ -542,6 +548,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00520df0",
+      "from_addr": "00520eb4",
+      "name": "core_prye.cpp_CPrye_tryClimbLadder_FUN_00520df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00521880",
       "from_addr": "00521946",
       "name": "core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880",
@@ -560,27 +572,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00517d50",
-      "from_addr": "00517d81",
-      "name": "core_prye.cpp_FUN_00517d50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00520df0",
-      "from_addr": "00520eb4",
-      "name": "core_prye.cpp_FUN_00520df0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005263c0",
-      "from_addr": "0052658d",
-      "name": "core_prye.cpp_FUN_005263c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00517e80",
       "from_addr": "00517e94",
       "name": "core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00517d50",
+      "from_addr": "00517d81",
+      "name": "core_prye.cpp_getWeaponInteractionType_FUN_00517d50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -777,7 +777,7 @@
       {
         "call_addr": "0048d402",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -788,7 +788,7 @@
       {
         "call_addr": "0048d42c",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -799,7 +799,7 @@
       {
         "call_addr": "0048ea75",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -810,7 +810,7 @@
       {
         "call_addr": "0048f529",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -821,7 +821,7 @@
       {
         "call_addr": "00491367",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -832,7 +832,7 @@
       {
         "call_addr": "004913a3",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -843,7 +843,7 @@
       {
         "call_addr": "0049179f",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

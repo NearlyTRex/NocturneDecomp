@@ -17,8 +17,9 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processDeathState_FUN_005a1ed0
   iVar1 = (this_ptr->base).fade_state;
   (this_ptr->base).base.base.is_spectral = 1;
   if ((iVar1 == 0) && (0.0 < (this_ptr->base).fade_val)) {
-    core_basicene_cpp_FUN_005a01a0(this_ptr,(this_ptr->base).fade_val,0,0x400ccccd);
-    core_basicene_cpp_FUN_0059f570(this_ptr);
+    core_basicene_cpp_CBasicEnemy_setFade_FUN_005a01a0
+              (&this_ptr->base,(this_ptr->base).fade_val,0.0,2.2);
+    core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570(&this_ptr->base);
     return;
   }
   return;

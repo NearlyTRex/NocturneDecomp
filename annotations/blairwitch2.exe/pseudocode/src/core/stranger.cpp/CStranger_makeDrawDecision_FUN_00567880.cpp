@@ -187,7 +187,7 @@ LAB_00567a5a:
                          ((CCharacter *)this_ptr,3);
     local_100 = (1.0 - local_18) * local_f8 * local_100;
     if (0.0 < local_100) {
-      pcVar17 = core_stranger_cpp_FUN_005625c0;
+      pcVar17 = core_stranger_cpp_aimPitchBlendWeightCallback_FUN_005625c0;
       iVar16 = _DAT_0264be74;
       core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(fVar1,&local_90);
       pCVar14 = &local_70;
@@ -232,7 +232,7 @@ LAB_00567a5a:
     core_xform_cpp_quaternionFromAngleX_FUN_00593fa0
               ((this_ptr->right_arm_aim).target_pitch,&local_80);
     fVar1 = local_38;
-    pcVar17 = core_stranger_cpp_FUN_005625c0;
+    pcVar17 = core_stranger_cpp_aimPitchBlendWeightCallback_FUN_005625c0;
     pCVar14 = &local_e0;
     pCVar12 = &(this_ptr->base).base.model;
     local_e0.w = local_80.w;
@@ -257,7 +257,8 @@ LAB_00567a5a:
     *puVar8 = *puVar5;
     puVar8[(uint)bVar10 * -2 + 1] = puVar5[(uint)bVar10 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
-              (local_30,&local_50,local_38,_DAT_0264be74,core_stranger_cpp_FUN_005625c0);
+              (local_30,&local_50,local_38,_DAT_0264be74,
+               core_stranger_cpp_aimPitchBlendWeightCallback_FUN_005625c0);
     if ((this_ptr->base).base.layer_action_index != 0xe) {
       return;
     }

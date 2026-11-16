@@ -227,7 +227,7 @@ RuntimeHandlerEntry g_InitHandlers[187] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_djien_cpp_FUN_00462450
+        .func = (RUNTIME_HANDLER_FUNC *)core_djien_cpp_staticInit_FUN_00462450
     },
     {
         .status = 0x00,
@@ -347,7 +347,7 @@ RuntimeHandlerEntry g_InitHandlers[187] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_flashlit_cpp_FUN_004b9ab0
+        .func = (RUNTIME_HANDLER_FUNC *)core_flashlit_cpp_staticInit_FUN_004b9ab0
     },
     {
         .status = 0x00,

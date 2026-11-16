@@ -87,13 +87,13 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60(CCharacter
 int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(CCharacter *this_ptr,int bone_index);
 int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_00434190(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_00434810(CCharacter *this_ptr,char *sound_name);
-void core_charactr_cpp_FUN_00434850(int param_1,float param_2);
-int core_charactr_cpp_FUN_004348b0(int param_1,char *param_2);
-void core_charactr_cpp_FUN_004349d0(int param_1,CWayPoint *param_2);
+void __cdecl core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter *this_ptr,float delta_time);
+CWayPoint * __cdecl core_charactr_cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0(CCharacter *this_ptr,char *name_pattern);
+CWayPoint * __cdecl core_charactr_cpp_CCharacter_findNearestReachableWaypoint_FUN_004349d0(CCharacter *this_ptr,CWayPoint *target_waypoint);
 void __cdecl core_charactr_cpp_setActorXPos_FUN_00434a30(CDemonActor *actor,float x);
 float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_00434b00(CGame *game_ptr);
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_00434b10(SFire *this_ptr);
-undefined4 core_charactr_cpp_FUN_00434b30(void);
+void __cdecl core_charactr_cpp_expandIndexedTo16Bit_FUN_00434b30(void *output_buffer,void *indexed_input_buffer,int pixel_count);
 void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_00434c1a(void *output_buffer,void *input_buffer,int pixel_count);
 void __cdecl cockpit_ckptutil_c_optimizedMemcpy_FUN_00434c48(void *dest_buffer,void *src_buffer,int byte_count);
 void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00434d42(void *dest_buffer,void *src_buffer,int byte_count);

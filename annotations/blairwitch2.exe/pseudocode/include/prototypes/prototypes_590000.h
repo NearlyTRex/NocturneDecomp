@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/basetsd.h"
 #include "system/winuser.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CAudioRecPuzzle.h"
@@ -14,7 +13,6 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CExamplePuzzle.h"
 #include "types/classes/CGameHook.h"
 #include "types/classes/CGoggles.h"
@@ -35,9 +33,11 @@
 #include "types/structs/SButtonStruct.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SFollowFormation.h"
 #include "types/structs/SFollowSlotStruct.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
+#include "types/structs/SStateMachine.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x590000
@@ -45,19 +45,19 @@
 
 void __cdecl wincore_winrun_cpp_doNothing2_FUN_00590040(void);
 void __cdecl wincore_winrun_cpp_getJoystickState_FUN_00590060(void);
-float wincore_winrun_cpp_FUN_005901c0(int param_1,int *param_2,float param_3,float param_4);
-void wincore_winrun_cpp_FUN_005902a0(int param_1);
-void wincore_winrun_cpp_FUN_00590650(void);
-void wincore_winrun_cpp_FUN_00590680(int param_1,int param_2,UINT_PTR param_3);
-void wincore_winrun_cpp_FUN_00590790(int param_1);
-void wincore_winrun_cpp_FUN_005907b0(void);
-void wincore_winrun_cpp_FUN_005907e0(float param_1);
-float wincore_winrun_cpp_FUN_00590860(void);
-void wincore_winrun_cpp_FUN_005908c0(int param_1);
-void wincore_winrun_cpp_FUN_00590910(undefined4 param_1);
-undefined4 wincore_winrun_cpp_FUN_00590920(undefined4 param_1);
-void wincore_winrun_cpp_FUN_00590960(CIniFile *param_1);
-void wincore_winrun_cpp_FUN_00590b10(void);
+float __cdecl wincore_winrun_cpp_normalizeControllerAxis_FUN_005901c0(int raw_value,int *axis_calibration,float out_min,float out_max);
+void __cdecl wincore_winrun_cpp_pollController_FUN_005902a0(int controller_index);
+void __cdecl wincore_winrun_cpp_pollAllControllers_FUN_00590650(void);
+void __cdecl wincore_winrun_cpp_initController_FUN_00590680(int controller_index,int controller_type,uint pc_port);
+void __cdecl wincore_winrun_cpp_clearController_FUN_00590790(int controller_index);
+void __cdecl wincore_winrun_cpp_resetInputIdleTimers_FUN_005907b0(void);
+void __cdecl wincore_winrun_cpp_updateInputIdleTimers_FUN_005907e0(float delta_time);
+float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_00590860(void);
+void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005908c0(int controller_index);
+void wincore_winrun_cpp_FUN_00590910(int param_1);
+void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_00590920(int controller_index);
+void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_00590960(CIniFile *ini);
+void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_00590b10(CIniFile *ini);
 void wincore_winrun_cpp_FUN_00590d80(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_00590e40(HWND window_handle);
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_00590e90(HWND parent_window,char *movie_filename);
@@ -114,7 +114,7 @@ void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00594bb0(void);
 void __cdecl core_xform_cpp_clampClippedVertices_FUN_00594e90(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00594f40(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_00595680(void);
-float core_zombie_cpp_FUN_005956b0(int param_1);
+float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005956b0(CDemonActor *actor);
 CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointLocal_FUN_00595750(CDemonActor *actor,CVector3f *out_point);
 CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_00595810(CDemonActor *actor,CVector3f *out_point);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_00595910(CVector3f *dimensions);
@@ -168,7 +168,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_0059b3c0(CAudioRecP
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_0059b430(CAudioRecPuzzle *this_ptr);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_0059b5a0(CAudioRecPuzzle *this_ptr,float delta_time);
 int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_0059b900(CAudioRecPuzzle *this_ptr,int button);
-void __cdecl core_bmppuzzl_cpp_FUN_0059b960(CAudioRecPuzzle *this_ptr);
+void __cdecl core_bmppuzzl_cpp_doNothing_FUN_0059b960(void);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_0059b970(CAudioRecPuzzle *this_ptr);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_0059ba10(CAudioRecPuzzle *this_ptr,int knob);
 int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int x,int y);
@@ -201,7 +201,7 @@ void __cdecl core_goggles_cpp_CGoggles_archive_FUN_0059c1a0(CGoggles *this_ptr);
 ECollisionType __cdecl core_goggles_cpp_CGoggles_getCollisionType_FUN_0059c1d0(CGoggles *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_goggles_cpp_CGoggles_getBoundingBox_FUN_0059c1e0(CGoggles *this_ptr,CBoundingBox3D *out_box);
 CGoggles * __cdecl core_goggles_cpp_CGoggles_dtor_FUN_0059c220(CGoggles *this_ptr,uint flags);
-void core_goggles_cpp_FUN_0059c270(void);
+void __cdecl core_goggles_cpp_staticInit_FUN_0059c270(void);
 CGameHook * __cdecl core_gmehook_cpp_CGameHook_ctor_FUN_0059c290(CGameHook *this_ptr);
 CGameHook * __cdecl core_gmehook_cpp_CGameHook_dtor_FUN_0059c2b0(CGameHook *this_ptr,uint flags);
 void __cdecl core_gmehook_cpp_CGameHook_printBanner_FUN_0059c2c0(CGameHook *this_ptr);
@@ -216,7 +216,7 @@ void __cdecl core_hpatrol_cpp_CPatrolPoint_setup_FUN_0059c670(CPatrolPoint *this
 void __cdecl core_hpatrol_cpp_CPatrolPoint_process_FUN_0059c680(CPatrolPoint *this_ptr,float delta_time);
 int __cdecl core_hpatrol_cpp_CPatrolPoint_renderOpaque_FUN_0059c980(CPatrolPoint *this_ptr);
 int __cdecl core_hpatrol_cpp_CPatrolPoint_renderTransparent_FUN_0059c9a0(CPatrolPoint *this_ptr);
-CDemonActor * core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2);
+CPatrolPoint * __cdecl core_hpatrol_cpp_findNextPatrolPoint_FUN_0059c9c0(char *current_name,int *direction);
 void __cdecl core_lantern_cpp_staticInit_FUN_0059cb70(void);
 CLantern * __cdecl core_lantern_cpp_factoryFuncLantern_FUN_0059cba0(void);
 CDemonActorType * __cdecl core_lantern_cpp_CLantern_getActorType_FUN_0059cbc0(CLantern *this_ptr);
@@ -224,7 +224,7 @@ CLantern * __cdecl core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_pt
 void __cdecl core_lantern_cpp_CLantern_setup_FUN_0059ccc0(CLantern *this_ptr);
 int __cdecl core_lantern_cpp_CLantern_fire_FUN_0059cce0(CLantern *this_ptr);
 void __cdecl core_lantern_cpp_CLantern_process_FUN_0059ccf0(CLantern *this_ptr,float delta_time);
-void core_lantern_cpp_FUN_0059ced0(CDemonActor *param_1);
+void __cdecl core_lantern_cpp_CLantern_updateLightTransform_FUN_0059ced0(CLantern *this_ptr);
 int __cdecl core_lantern_cpp_CLantern_renderOpaque_FUN_0059d000(CLantern *this_ptr);
 int __cdecl core_lantern_cpp_CLantern_renderTransparent_FUN_0059d040(CLantern *this_ptr);
 void __cdecl core_lantern_cpp_CLantern_renderAimBeam_FUN_0059d0a0(CLantern *this_ptr);
@@ -237,70 +237,70 @@ CMeleeAxe * __cdecl core_meleeaxe_cpp_factoryFuncMeleeAxe_FUN_0059d1f0(void);
 CDemonActorType * __cdecl core_meleeaxe_cpp_CMeleeAxe_getActorType_FUN_0059d210(CMeleeAxe *this_ptr);
 CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr);
 CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags);
-void core_meleeaxe_cpp_FUN_0059d350(void);
+void __cdecl core_meleeaxe_cpp_staticInit_FUN_0059d350(void);
 void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_muzzle_cpp_CMuzzleEffect_process_FUN_0059d420(CMuzzleEffect *this_ptr);
 void __cdecl core_muzzle_cpp_CMuzzleEffect_render_FUN_0059d440(CMuzzleEffect *this_ptr);
-void core_muzzle_cpp_FUN_0059d5f0(void);
-void core_muzzle_cpp_FUN_0059d610(int param_1);
-undefined4 core_muzzle_cpp_FUN_0059d650(char *param_1,char *param_2);
-undefined4 core_muzzle_cpp_FUN_0059d6f0(char *param_1,char *param_2,char *param_3);
-undefined4 core_muzzle_cpp_FUN_0059d7f0(char *param_1,char *param_2,char *param_3);
-undefined4 core_muzzle_cpp_FUN_0059d880(int param_1,char *param_2);
-undefined4 core_muzzle_cpp_FUN_0059d8e0(char *param_1,char *param_2);
-void core_muzzle_cpp_FUN_0059d940(undefined4 param_1,undefined4 param_2);
-undefined4 core_muzzle_cpp_FUN_0059d960(int param_1,int param_2);
-undefined4 core_muzzle_cpp_FUN_0059d990(char *param_1,char *param_2);
-void core_muzzle_cpp_FUN_0059da20(int param_1,float param_2);
-void core_muzzle_cpp_FUN_0059da70(int param_1);
-undefined4 core_muzzle_cpp_FUN_0059daa0(int param_1,char *param_2);
-undefined4 core_muzzle_cpp_FUN_0059dae0(int param_1,char *param_2,char *param_3);
-int core_muzzle_cpp_FUN_0059db70(int param_1);
-int core_muzzle_cpp_FUN_0059db90(int param_1);
-undefined4 core_muzzle_cpp_FUN_0059dbe0(int param_1,int param_2);
-int core_muzzle_cpp_FUN_0059dc00(int param_1,int param_2);
-undefined4 core_muzzle_cpp_FUN_0059dc70(int param_1);
-void core_muzzle_cpp_FUN_0059dc80(int param_1);
-void core_muzzle_cpp_FUN_0059dcb0(int param_1,undefined4 param_2);
-undefined4 core_muzzle_cpp_FUN_0059dce0(int param_1);
-void core_muzzle_cpp_FUN_0059dd00(int *param_1,int *param_2);
-undefined4 * core_muzzle_cpp_FUN_0059ded0(int param_1);
-undefined4 core_muzzle_cpp_FUN_0059df70(undefined4 param_1);
-void __cdecl core_muzzle_cpp_FUN_0059df80(void);
-undefined4 core_muzzle_cpp_FUN_0059df90(int *param_1,int param_2,int param_3);
-int * core_muzzle_cpp_FUN_0059e0a0(int *param_1,int param_2);
-int core_muzzle_cpp_FUN_0059e0f0(int param_1);
-void core_muzzle_cpp_FUN_0059e110(int *param_1,float param_2);
+void __cdecl core_muzzle_cpp_loadMuzzleEffectAssets_FUN_0059d5f0(void);
+void __cdecl core_muzzle_cpp_SStateMachine_init_FUN_0059d610(SStateMachine *this_ptr);
+int __cdecl core_muzzle_cpp_SStateMachine_addState_FUN_0059d650(SStateMachine *this_ptr,char *state_name);
+int __cdecl core_muzzle_cpp_SStateMachine_addRefState_FUN_0059d6f0(SStateMachine *this_ptr,char *identifier,char *state_name);
+int __cdecl core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine *this_ptr,char *identifier,char *state_name);
+int __cdecl core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880(SStateMachine *this_ptr,char *identifier);
+int __cdecl core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine *this_ptr,char *state_name);
+void core_muzzle_cpp_FUN_0059d940(SStateMachine *param_1,char *param_2);
+int __cdecl core_muzzle_cpp_SStateMachine_setNextStateIndex_FUN_0059d960(SStateMachine *this_ptr,int state_index);
+int __cdecl core_muzzle_cpp_SStateMachine_setInitialState_FUN_0059d990(SStateMachine *this_ptr,char *state_name);
+void __cdecl core_muzzle_cpp_SStateMachine_process_FUN_0059da20(SStateMachine *this_ptr,float delta_time);
+void __cdecl core_muzzle_cpp_SStateMachine_applyNextState_FUN_0059da70(SStateMachine *this_ptr);
+int __cdecl core_muzzle_cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine *this_ptr,char *state_name);
+int __cdecl core_muzzle_cpp_SStateMachine_isRefStateTarget_FUN_0059dae0(SStateMachine *this_ptr,char *identifier,char *state_name);
+char * __cdecl core_muzzle_cpp_SStateMachine_getStateName_FUN_0059db70(SStateMachine *this_ptr);
+char * __cdecl core_muzzle_cpp_SStateMachine_getInitialStateName_FUN_0059db90(SStateMachine *this_ptr);
+char * __cdecl core_muzzle_cpp_SStateMachine_getRefStateTarget_FUN_0059dbe0(SStateMachine *this_ptr,int index);
+char * __cdecl core_muzzle_cpp_SStateMachine_getRefStateIdentifier_FUN_0059dc00(SStateMachine *this_ptr,int index);
+int __cdecl core_muzzle_cpp_SStateMachine_getRefStateCount_FUN_0059dc70(SStateMachine *this_ptr);
+void __cdecl core_muzzle_cpp_SStateMachine_reset_FUN_0059dc80(SStateMachine *this_ptr);
+void __cdecl core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(SStateMachine *this_ptr,float delay);
+int __cdecl core_muzzle_cpp_SStateMachine_isTransitionPending_FUN_0059dce0(SStateMachine *this_ptr);
+void __cdecl core_muzzle_cpp_SFollowFormation_updateSlot_FUN_0059dd00(SFollowFormation *this_ptr,SFollowSlotStruct *slot);
+SFollowFormation * __cdecl core_muzzle_cpp_SFollowFormation_ctor_FUN_0059ded0(SFollowFormation *this_ptr);
+SFollowFormation * __cdecl core_muzzle_cpp_SFollowFormation_dtor_FUN_0059df70(SFollowFormation *this_ptr,uint flags);
+void __cdecl core_muzzle_cpp_SFollowFormation_setLeader_FUN_0059df80(SFollowFormation *this_ptr,CCharacter *leader);
+int __cdecl core_muzzle_cpp_SFollowFormation_addFollower_FUN_0059df90(SFollowFormation *this_ptr,CCharacter *follower,float follow_distance);
+SFollowSlotStruct * __cdecl core_muzzle_cpp_SFollowFormation_findSlot_FUN_0059e0a0(SFollowFormation *this_ptr,CCharacter *follower);
+SFollowSlotStruct * __cdecl core_muzzle_cpp_SFollowFormation_getSlots_FUN_0059e0f0(SFollowFormation *this_ptr);
+void __cdecl core_muzzle_cpp_SFollowFormation_process_FUN_0059e110(SFollowFormation *this_ptr,float delta_time);
 SFollowSlotStruct * __cdecl core_muzzle_cpp_SFollowSlotStruct_ctor_FUN_0059e370(SFollowSlotStruct *this_ptr);
 void __cdecl core_basicene_cpp_staticInit_FUN_0059e380(void);
 int __cdecl core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_ptr);
 void __cdecl core_basicene_cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy *this_ptr);
-void core_basicene_cpp_FUN_0059e7a0(int param_1,undefined4 param_2);
-void core_basicene_cpp_FUN_0059e7c0(int param_1,undefined4 param_2);
+void __cdecl core_basicene_cpp_CBasicEnemy_setAIState_FUN_0059e7a0(CBasicEnemy *this_ptr,char *state_name);
+void __cdecl core_basicene_cpp_CBasicEnemy_setAnimation_FUN_0059e7c0(CBasicEnemy *this_ptr,int motion_state);
 void __cdecl core_basicene_cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0(CBasicEnemy *this_ptr,float delta_time);
 void __cdecl core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy *this_ptr,int param_2);
 void __cdecl core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy *this_ptr,float delta_time,int mode);
-void core_basicene_cpp_FUN_0059ebc0(int param_1);
+void __cdecl core_basicene_cpp_CBasicEnemy_processNothingState_FUN_0059ebc0(CBasicEnemy *this_ptr);
 void __cdecl core_basicene_cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0(CBasicEnemy *this_ptr,float delta_time);
-void core_basicene_cpp_FUN_0059ec10(CEnemy *param_1,float param_2);
-void core_basicene_cpp_FUN_0059ed50(int param_1,undefined4 param_2);
-void core_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2);
+void __cdecl core_basicene_cpp_CBasicEnemy_processAlertState_FUN_0059ec10(CBasicEnemy *this_ptr,float delta_time);
+void __cdecl core_basicene_cpp_CBasicEnemy_processAlertInvisibleState_FUN_0059ed50(CBasicEnemy *this_ptr,float delta_time);
+void __cdecl core_basicene_cpp_CBasicEnemy_processPatrolState_FUN_0059ee00(CBasicEnemy *this_ptr,float delta_time);
 void __cdecl core_basicene_cpp_CBasicEnemy_processChasingState_FUN_0059ef90(CBasicEnemy *this_ptr,float delta_time);
-void core_basicene_cpp_FUN_0059f0e0(CCharacter *param_1,float param_2);
-void core_basicene_cpp_FUN_0059f390(int param_1);
+void __cdecl core_basicene_cpp_CBasicEnemy_processMovement_FUN_0059f0e0(CBasicEnemy *this_ptr,float delta_time);
+void __cdecl core_basicene_cpp_CBasicEnemy_applyFlinch_FUN_0059f390(CBasicEnemy *this_ptr);
 void __cdecl core_basicene_cpp_CBasicEnemy_process_FUN_0059f420(CBasicEnemy *this_ptr,float delta_time);
-void core_basicene_cpp_FUN_0059f570(int param_1);
-void core_basicene_cpp_FUN_0059f5b0(int param_1,float param_2);
-ushort core_basicene_cpp_FUN_0059f660(int param_1,float param_2);
-void core_basicene_cpp_FUN_0059f6a0(void);
+void __cdecl core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570(CBasicEnemy *this_ptr);
+void __cdecl core_basicene_cpp_CBasicEnemy_updateFade_FUN_0059f5b0(CBasicEnemy *this_ptr,float delta_time);
+void __cdecl core_basicene_cpp_CBasicEnemy_updateFlinch_FUN_0059f660(CBasicEnemy *this_ptr,float delta_time);
+void __cdecl core_basicene_cpp_CBasicEnemy_processAI_FUN_0059f6a0(CBasicEnemy *this_ptr);
 int __cdecl core_basicene_cpp_CBasicEnemy_checkVictim_FUN_0059f6b0(CBasicEnemy *this_ptr);
-int core_basicene_cpp_FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4);
+int __cdecl core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy *this_ptr,float damage,int bone_index,float radius);
 void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnemy *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_basicene_cpp_CBasicNPC_getDeathState_FUN_0059f930(CBasicNPC *this_ptr);
 ECollisionType __cdecl core_basicene_cpp_CBasicEnemy_getCollisionType_FUN_0059f960(CBasicEnemy *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(CBasicEnemy *this_ptr);
 int __cdecl core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20(CBasicEnemy *this_ptr);
 int __cdecl core_basicene_cpp_CBasicEnemy_isGrabbable_FUN_0059fa70(CBasicEnemy *this_ptr,CDemonActor *grabber);
-void core_basicene_cpp_FUN_0059fae0(CDemonActor *param_1);
+void __cdecl core_basicene_cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0(CBasicEnemy *this_ptr);
 void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *this_ptr);
 

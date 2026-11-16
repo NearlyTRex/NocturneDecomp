@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   should_delete_actor
 ;
 ; XREF[7]:
-;   core_doc.cpp_FUN_0045bdc0 at 0045c85d
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0 at 0045c85d
 ;   core_inv.cpp_CInventory_clear_FUN_004da860 at 004da883
 ;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004def40 at 004def7c
 ;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dca6a

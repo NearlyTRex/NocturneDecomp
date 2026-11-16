@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60
-;   core_moocow.cpp_FUN_004f9050
+;   core_moocow.cpp_CMooCow_processDismemberment_FUN_004f9050
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0
@@ -30,8 +30,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 004f91d7
     PUSH EDI                            ; 004f91db
     PUSH EBX                            ; 004f91dc
-    CALL core_moocow.cpp_FUN_004f9050   ; 004f91dd
-        ;   XREF to: 004f9050 (UNCONDITIONAL_CALL)  ; undefined core_moocow.cpp_FUN_004f9050()
+    CALL core_moocow.cpp_CMooCow_processDismemberment_FUN_004f9050 ; 004f91dd
+        ;   XREF to: 004f9050 (UNCONDITIONAL_CALL)  ; void core_moocow.cpp_CMooCow_processDismemberment_FUN_004f9050(CMooCow * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 004f91e2
     FSUBR float ptr [EBX + 0x2538]      ; 004f91e5
     ADD ESP,0x8                         ; 004f91eb

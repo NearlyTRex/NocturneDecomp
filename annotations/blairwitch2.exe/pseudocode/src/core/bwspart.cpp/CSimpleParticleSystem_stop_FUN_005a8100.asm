@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   param_2
 ;
 ; XREF[11]:
-;   core_actor.cpp_FUN_0040ce70 at 0040ce90
+;   core_actor.cpp_CDemonActor_stopParticleSystem_FUN_0040ce70 at 0040ce90
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 at 005a81ec
 ;   core_confedrt.cpp_CConfederate_dtor_FUN_005a09c0 at 005a09e4
 ;   core_confzomb.cpp_CConfederateZombie_dtor_FUN_005a1cc0 at 005a1ce4

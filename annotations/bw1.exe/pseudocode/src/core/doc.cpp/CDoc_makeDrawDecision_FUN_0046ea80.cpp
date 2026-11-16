@@ -193,7 +193,7 @@ LAB_0046ecd2:
                            ((CCharacter *)this_ptr,3);
       local_ec = (1.0 - local_18) * local_f0 * local_ec;
       if (0.0 < local_ec) {
-        pcVar15 = core_doc_cpp_FUN_00468a20;
+        pcVar15 = core_doc_cpp_blendWeightCallback_FUN_00468a20;
         iVar14 = _DAT_01b68858;
         core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(fVar1,&local_70);
         pCVar12 = &local_80;
@@ -214,7 +214,7 @@ LAB_0046ecd2:
       core_xform_cpp_quaternionFromAngleY_FUN_005b7b30
                 ((this_ptr->right_arm_aim).target_yaw,&local_60);
       fVar1 = local_38;
-      pcVar15 = core_doc_cpp_FUN_00468a20;
+      pcVar15 = core_doc_cpp_blendWeightCallback_FUN_00468a20;
       pCVar12 = &local_b0;
       pCVar11 = &(this_ptr->base).base.model;
       local_b0.w = local_60.w;
@@ -261,7 +261,7 @@ LAB_0046ecd2:
       core_xform_cpp_quaternionFromAngleX_FUN_005b7af0
                 ((this_ptr->right_arm_aim).target_pitch,&local_c0);
       fVar1 = local_34;
-      pcVar15 = core_doc_cpp_FUN_00468a20;
+      pcVar15 = core_doc_cpp_blendWeightCallback_FUN_00468a20;
       pCVar12 = &local_90;
       pCVar11 = &(this_ptr->base).base.model;
       local_90.w = local_c0.w;
@@ -280,7 +280,7 @@ LAB_0046ecd2:
                 ((this_ptr->right_arm_aim).target_yaw,&local_a0);
       pCVar11 = local_30;
       fVar1 = local_34;
-      pcVar15 = core_doc_cpp_FUN_00468a20;
+      pcVar15 = core_doc_cpp_blendWeightCallback_FUN_00468a20;
       pCVar12 = &local_e0;
       local_e0.w = local_a0.w;
       puVar6 = (uint *)((int)&local_e0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);

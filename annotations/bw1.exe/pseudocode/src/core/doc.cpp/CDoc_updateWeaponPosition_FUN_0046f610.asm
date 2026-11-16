@@ -18,9 +18,9 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[3]:
+;   core_doc.cpp_CDoc_handleFireButton_FUN_00475920 at 00475bd0
 ;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046a2b4
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471d5a
-;   core_doc.cpp_FUN_00475920 at 00475bd0
 ;
 ; Called Functions:
 ;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740

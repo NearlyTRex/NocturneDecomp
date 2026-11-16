@@ -33,14 +33,14 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_followActor_FUN_004310e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
+;   core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
 ;   ... and 25 more
 ;
 ; *****************************************************************************
@@ -161,8 +161,8 @@ section .text
     MOV dword ptr [EAX + 0x2524],EDX    ; 00543a34
     FSTP float ptr [ESP]                ; 00543a3a
     PUSH EAX                            ; 00543a3d
-    CALL core_charactr.cpp_FUN_00434850 ; 00543a3e
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 00543a3e
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 00543a43
     MOV EDX,dword ptr [EAX + 0xd054]    ; 00543a49
     ADD ESP,0x8                         ; 00543a4f
@@ -277,8 +277,8 @@ section .text
         ;   Label: LAB_00543bb3
     PUSH dword ptr [EBP + 0x92]         ; 00543bb9
     PUSH ESI                            ; 00543bbf
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 00543bc0
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 00543bc0
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI + 0x2518]        ; 00543bc5
     FMUL float ptr [EBP + 0x92]         ; 00543bcb
     FLD float ptr [ESI + 0x251c]        ; 00543bd1
@@ -372,8 +372,8 @@ section .text
     ADD ESP,0x8                         ; 00543d30
     MOV ECX,dword ptr [EBP + 0x8e]      ; 00543d33
     PUSH ECX                            ; 00543d39
-    CALL core_shadow.cpp_FUN_00545c80   ; 00543d3a
-        ;   XREF to: 00545c80 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_00545c80()
+    CALL core_shadow.cpp_CShadow_processChainConstraint_FUN_00545c80 ; 00543d3a
+        ;   XREF to: 00545c80 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_processChainConstraint_FUN_00545c80(CShadow * this_ptr)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 00543d3f
     ADD ESP,0x4                         ; 00543d45
     FLD float ptr [EAX + 0xd0c8]        ; 00543d48
@@ -519,8 +519,8 @@ section .text
     ADD ESP,0xc                         ; 00543f33
     PUSH 0x5d1295                       ; 00543f36 | DAT_005d1295
     PUSH EBX                            ; 00543f3b
-    CALL core_charactr.cpp_FUN_004348b0 ; 00543f3c
-        ;   XREF to: 004348b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004348b0()
+    CALL core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0 ; 00543f3c
+        ;   XREF to: 004348b0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0(CCharacter * this_ptr, char * name_pattern)
     ADD ESP,0x8                         ; 00543f41
     MOV dword ptr [EBX + 0xd0bc],EAX    ; 00543f44
     TEST EAX,EAX                        ; 00543f4a
@@ -761,8 +761,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x8e]      ; 00544216
         ;   Label: LAB_00544216
     PUSH EDI                            ; 0054421c
-    CALL core_shadow.cpp_FUN_00545080   ; 0054421d
-        ;   XREF to: 00545080 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_00545080()
+    CALL core_shadow.cpp_CShadow_playAttackSound_FUN_00545080 ; 0054421d
+        ;   XREF to: 00545080 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playAttackSound_FUN_00545080(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00544222
     JMP 0x00543af0                      ; 00544225
         ;   XREF to: 00543af0 (UNCONDITIONAL_JUMP)  ; LAB_00543af0
@@ -1159,8 +1159,8 @@ section .text
         ;   XREF to: 005447ae (CONDITIONAL_JUMP)  ; LAB_005447ae
     MOV ECX,dword ptr [EBP + 0x8e]      ; 0054479f
     PUSH ECX                            ; 005447a5
-    CALL core_shadow.cpp_FUN_00545040   ; 005447a6
-        ;   XREF to: 00545040 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_00545040()
+    CALL core_shadow.cpp_CShadow_playAlertSound_FUN_00545040 ; 005447a6
+        ;   XREF to: 00545040 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playAlertSound_FUN_00545040(CShadow * this_ptr)
     ADD ESP,0x4                         ; 005447ab
     PUSH 0x1                            ; 005447ae
         ;   Label: LAB_005447ae
@@ -1345,8 +1345,8 @@ section .text
     PUSH 0x5d1293                       ; 005449f6 | DAT_005d1293
     MOV EBX,dword ptr [EBP + 0x8e]      ; 005449fb
     PUSH EBX                            ; 00544a01
-    CALL core_charactr.cpp_FUN_004348b0 ; 00544a02
-        ;   XREF to: 004348b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004348b0()
+    CALL core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0 ; 00544a02
+        ;   XREF to: 004348b0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0(CCharacter * this_ptr, char * name_pattern)
     ADD ESP,0x8                         ; 00544a07
     MOV dword ptr [EBX + 0xd0bc],EAX    ; 00544a0a
     TEST EAX,EAX                        ; 00544a10
@@ -1370,8 +1370,8 @@ section .text
         ;   XREF to: 00544a52 (CONDITIONAL_JUMP)  ; LAB_00544a52
     MOV EDI,dword ptr [EBP + 0x8e]      ; 00544a43
     PUSH EDI                            ; 00544a49
-    CALL core_shadow.cpp_FUN_00545040   ; 00544a4a
-        ;   XREF to: 00545040 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_00545040()
+    CALL core_shadow.cpp_CShadow_playAlertSound_FUN_00545040 ; 00544a4a
+        ;   XREF to: 00545040 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playAlertSound_FUN_00545040(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00544a4f
     MOV EAX,dword ptr [EBP + 0x8e]      ; 00544a52
         ;   Label: LAB_00544a52
@@ -1386,8 +1386,8 @@ section .text
         ;   XREF to: 00543af0 (CONDITIONAL_JUMP)  ; LAB_00543af0
     MOV EBX,dword ptr [EBP + 0x8e]      ; 00544a77
     PUSH EBX                            ; 00544a7d
-    CALL core_shadow.cpp_FUN_00545040   ; 00544a7e
-        ;   XREF to: 00545040 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_00545040()
+    CALL core_shadow.cpp_CShadow_playAlertSound_FUN_00545040 ; 00544a7e
+        ;   XREF to: 00545040 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playAlertSound_FUN_00545040(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00544a83
     JMP 0x00543af0                      ; 00544a86
         ;   XREF to: 00543af0 (UNCONDITIONAL_JUMP)  ; LAB_00543af0
@@ -1539,8 +1539,8 @@ section .text
     PUSH 0x5d1270                       ; 00544c1f | DAT_005d1270
     MOV EBX,dword ptr [EBP + 0x8e]      ; 00544c24
     PUSH EBX                            ; 00544c2a
-    CALL core_charactr.cpp_FUN_004348b0 ; 00544c2b
-        ;   XREF to: 004348b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004348b0()
+    CALL core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0 ; 00544c2b
+        ;   XREF to: 004348b0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0(CCharacter * this_ptr, char * name_pattern)
     ADD ESP,0x8                         ; 00544c30
     MOV dword ptr [EBX + 0xd0bc],EAX    ; 00544c33
     TEST EAX,EAX                        ; 00544c39
@@ -1792,8 +1792,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x8e]      ; 00544ee8
         ;   Label: LAB_00544ee8
     PUSH ECX                            ; 00544eee
-    CALL core_shadow.cpp_FUN_00545040   ; 00544eef
-        ;   XREF to: 00545040 (UNCONDITIONAL_CALL)  ; undefined core_shadow.cpp_FUN_00545040()
+    CALL core_shadow.cpp_CShadow_playAlertSound_FUN_00545040 ; 00544eef
+        ;   XREF to: 00545040 (UNCONDITIONAL_CALL)  ; void core_shadow.cpp_CShadow_playAlertSound_FUN_00545040(CShadow * this_ptr)
     ADD ESP,0x4                         ; 00544ef4
     JMP 0x00544eb2                      ; 00544ef7
         ;   XREF to: 00544eb2 (UNCONDITIONAL_JUMP)  ; LAB_00544eb2

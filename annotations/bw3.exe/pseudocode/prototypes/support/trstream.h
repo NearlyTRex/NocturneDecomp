@@ -17,9 +17,9 @@ CInStream * __cdecl CInStream::ctor(CInStream *this_ptr);
 // Address: 00572540
 CInStream * __cdecl CInStream::dtor(CInStream *this_ptr,uint flags);
 
-// Original: support_trstream.cpp_FUN_00572550
+// Original: support_trstream.cpp_CInStream_copy_FUN_00572550
 // Address: 00572550
-void FUN_00572550(void);
+CInStream * __cdecl CInStream::copy(CInStream *this_ptr);
 
 // Original: support_trstream.cpp_CInStream_ungetChar_FUN_00572570
 // Address: 00572570

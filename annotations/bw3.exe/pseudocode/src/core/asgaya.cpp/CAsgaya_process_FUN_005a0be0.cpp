@@ -139,7 +139,8 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
   }
   fVar1 = this_ptr->speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar1);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar1);
   iVar4 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
   pCVar10 = &(this_ptr->base).base.model;
@@ -348,7 +349,7 @@ LAB_005a0ed4:
   if (this_ptr->fade_timer < 0.0) {
     this_ptr->fade_timer = 0.0;
   }
-  core_charactr_cpp_FUN_0042c1e0();
+  core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
   CStack_108.z = (this_ptr->base).base.velocity.x * delta_time;
   CStack_fc.x = (this_ptr->base).base.velocity.y * delta_time;
   CStack_fc.y = (this_ptr->base).base.velocity.z * delta_time;

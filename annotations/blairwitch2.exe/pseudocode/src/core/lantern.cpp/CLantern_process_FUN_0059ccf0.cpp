@@ -42,7 +42,7 @@ void __cdecl core_lantern_cpp_CLantern_process_FUN_0059ccf0(CLantern *this_ptr,f
       this_ptr->light->bloom_intensity =
            (this_ptr->flicker * (float)_DAT_005ef7c1 + (float)_DAT_005ef7c9) * this_ptr->brightness;
     }
-    core_lantern_cpp_FUN_0059ced0(this_ptr);
+    core_lantern_cpp_CLantern_updateLightTransform_FUN_0059ced0(this_ptr);
     core_set_cpp_CDemonSet_addDynamicLight_FUN_00530630(g_CDemonSetPtr,this_ptr->light);
     (this_ptr->base).base.is_transparent = 1;
     return;

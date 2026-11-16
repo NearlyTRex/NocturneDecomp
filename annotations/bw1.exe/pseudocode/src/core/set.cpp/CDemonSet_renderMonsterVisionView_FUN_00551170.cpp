@@ -35,7 +35,7 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00551170(CDemonS
   float afStack_30 [2];
   CVector3f local_28;
   CMatrix3x4f *local_1c;
-  uint local_18;
+  int local_18;
   CDemonLight *local_14;
   
   bVar5 = 0;
@@ -128,7 +128,7 @@ void __cdecl core_set_cpp_CDemonSet_renderMonsterVisionView_FUN_00551170(CDemonS
       iVar3 = local_14->shadow_map_width * -2;
       iVar2 = local_14->shadow_map_height * -2;
     }
-    core_dlight_cpp_FUN_00466220
+    core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220
               (local_14,(DAT_0061b498 + iVar3) / 2,(DAT_0061b49c + iVar2) / 2,0,local_18);
     return;
   }

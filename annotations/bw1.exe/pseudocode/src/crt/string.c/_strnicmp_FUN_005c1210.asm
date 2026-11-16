@@ -10,14 +10,14 @@
 ;
 ; XREF[23]:
 ;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_0042a4f0 at 0042a54f
-;   core_carved.cpp_FUN_0042b290 at 0042b2c6
+;   core_carved.cpp_CCarved_getPickupHandIndex_FUN_0042b290 at 0042b2c6
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431c30 at 00431c58
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 at 0042dd25
-;   core_charactr.cpp_FUN_00435320 at 00435352
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 at 00435352
 ;   core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_0045b120 at 0045b17f
-;   core_demnfolk.cpp_FUN_0045bec0 at 0045bef6
+;   core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_0045bec0 at 0045bef6
 ;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f57e
-;   core_event.cpp_FUN_004a1d00 at 004a1f58
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a1f58
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0 at 004bb7c4
 ;   ... and 13 more
 ;

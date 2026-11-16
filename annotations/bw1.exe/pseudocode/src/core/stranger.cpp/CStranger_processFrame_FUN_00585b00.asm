@@ -47,7 +47,7 @@
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50
-;   core_charactr.cpp_FUN_00435320
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 ;   ... and 36 more
 ;
 ; *****************************************************************************
@@ -537,8 +537,8 @@ section .text
     FLD float ptr [EBX + 0x24a4]        ; 00586189
     PUSH EBX                            ; 0058618f
     FSTP float ptr [EBX + 0x2524]       ; 00586190
-    CALL core_charactr.cpp_FUN_00435320 ; 00586196
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 00586196
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0058619b
     LEA ESI,[EBX + 0x158]               ; 0058619e
     PUSH ESI                            ; 005861a4

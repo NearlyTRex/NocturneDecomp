@@ -10,7 +10,7 @@
 ; char *           Stack[0x10]:4   error_text
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_004a1d00 at 004a37bd
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a37bd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_No_such_entry_s_005e0143

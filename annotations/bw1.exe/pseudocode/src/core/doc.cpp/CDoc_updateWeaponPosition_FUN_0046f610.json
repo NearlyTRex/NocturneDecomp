@@ -20,6 +20,12 @@
   },
   "cross_references": [
     {
+      "addr": "00475920",
+      "from_addr": "00475bd0",
+      "name": "core_doc.cpp_CDoc_handleFireButton_FUN_00475920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00469550",
       "from_addr": "0046a2b4",
       "name": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
@@ -29,12 +35,6 @@
       "addr": "00471af0",
       "from_addr": "00471d5a",
       "name": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00475920",
-      "from_addr": "00475bd0",
-      "name": "core_doc.cpp_FUN_00475920",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -106,7 +106,7 @@
       {
         "call_addr": "00475bd0",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00475920",
+        "caller": "core_doc.cpp_CDoc_handleFireButton_FUN_00475920",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,6 +159,14 @@
       "STORE": 31
     },
     "pcode_op_count": 393
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004567c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9756
+    }
   },
   "stack_frame": {
     "frame_size": 308,

@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bb620 at 004bb872
+;   core_game.cpp_CGame_renderAlphaFade_FUN_004bb620 at 004bb872
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0

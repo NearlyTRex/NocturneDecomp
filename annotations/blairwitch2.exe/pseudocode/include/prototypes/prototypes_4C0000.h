@@ -240,7 +240,7 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004cec30(CHero *this_pt
 int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004cec50(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004cf030(CHero *this_ptr,int ignore_lock);
-void core_hero_cpp_FUN_004cf200(int param_1);
+void __cdecl core_hero_cpp_CHero_clearHeroAction_FUN_004cf200(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004cf230(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004cf2b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(CHero *this_ptr);

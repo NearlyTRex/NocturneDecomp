@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 235,
+    "complexity_score": 236,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 121
+    "total_lines": 122
   },
   "cross_references": [
     {
       "addr": "0057ad10",
       "from_addr": "0057b202",
-      "name": "support_trisock.cpp_FUN_0057ad10",
+      "name": "support_trisock.cpp_httpRequestUpdate_FUN_0057ad10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -47,14 +47,14 @@
       "name": "support_trisock.cpp_CSocket_isSocketValid_FUN_00579090"
     },
     {
+      "addr": "00579150",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_pollSocketStatus_FUN_00579150"
+    },
+    {
       "addr": "00579240",
       "is_variadic": false,
       "name": "support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240"
-    },
-    {
-      "addr": "00579150",
-      "is_variadic": false,
-      "name": "support_trisock.cpp_FUN_00579150"
     }
   ],
   "globals": [
@@ -71,7 +71,7 @@
       {
         "call_addr": "0057b202",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0057ad10",
+        "caller": "support_trisock.cpp_httpRequestUpdate_FUN_0057ad10",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,7 +86,7 @@
       {
         "call_addr": "0057b419",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0057ad10",
+        "caller": "support_trisock.cpp_httpRequestUpdate_FUN_0057ad10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -236,23 +236,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_c = support_trisock_cpp_FUN_00579150((CSocket *)(param_1 + 0xd2c));",
+      "text": "((CSocket *)(param_1 + 0xd2c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CSocket *)(param_1 + 0xd2c),(char *)(param_1 + 0x610),0x200,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "((CSocket *)(param_1 + 0xd2c),(char *)(param_1 + 0x610),0x200,",
@@ -260,7 +252,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CSocket *)(param_1 + 0xd2c),(char *)(param_1 + 0x610),0x200,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 != 0) {",
@@ -268,7 +268,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0xa14) = iVar2;",
@@ -276,7 +276,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "_sprintf((char *)(param_1 + 0xa18),\"Error receiving %s from %s\");",
@@ -284,7 +284,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xd28) = 0xfffffffb;",

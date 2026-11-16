@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   filename
 ;
 ; XREF[1]:
-;   engine_dosio.cpp_FUN_00465660 at 00465670
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660 at 00465670
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_005bbf95

@@ -12,8 +12,8 @@
 ;
 ; XREF[40]:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0 at 004088fb
+;   core_baal.cpp_CBaal_chooseAttack_FUN_00597700 at 00597788
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00597084
-;   core_baal.cpp_FUN_00597700 at 00597788
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_004123c0 at 0041247b
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f513
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00 at 00422db4

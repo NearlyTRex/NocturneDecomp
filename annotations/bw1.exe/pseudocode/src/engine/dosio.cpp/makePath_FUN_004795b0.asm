@@ -11,12 +11,12 @@
 ; char *           Stack[0x14]:4   extension
 ;
 ; XREF[13]:
-;   engine_dosio.cpp_FUN_00479770 at 0047985f
 ;   engine_dosio.cpp_changeFileExtension_FUN_004796b0 at 00479703
 ;   engine_dosio.cpp_ensureTrailingSlash_FUN_004795e0 at 00479630
+;   engine_dosio.cpp_resolveRelativePath_FUN_00479770 at 0047985f
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0e3d
-;   engine_font.cpp_FUN_004c0fa0 at 004c10f2
-;   engine_texture.cpp_FUN_00597d70 at 00597ed8
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0 at 004c10f2
+;   engine_texture.cpp_cacheTextureAtFullSize_FUN_00597d70 at 00597ed8
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180 at 0049531a
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 at 00495084
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00499c80 at 00499d1e

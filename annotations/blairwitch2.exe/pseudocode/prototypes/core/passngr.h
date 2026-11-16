@@ -41,6 +41,6 @@ int __cdecl CPassenger::renderOpaque(CPassenger *this_ptr);
 // Address: 00511a70
 void __cdecl CPassenger::archive(CPassenger *this_ptr);
 
-// Original: core_passngr.cpp_FUN_00511b50
+// Original: core_passngr.cpp_resetPathfindingQueue_FUN_00511b50
 // Address: 00511b50
-void FUN_00511b50(void);
+void __cdecl resetPathfindingQueue(void);

@@ -18,9 +18,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 ;   core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880
-;   core_basicene.cpp_FUN_0059f740
-;   core_confedrt.cpp_FUN_005a14e0
+;   core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
         ;   Label: switchD
     PUSH EBX                            ; 005a136c
         ;   Label: caseD_206c
-    CALL core_confedrt.cpp_FUN_005a14e0 ; 005a136d
-        ;   XREF to: 005a14e0 (UNCONDITIONAL_CALL)  ; undefined core_confedrt.cpp_FUN_005a14e0()
+    CALL core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0 ; 005a136d
+        ;   XREF to: 005a14e0 (UNCONDITIONAL_CALL)  ; void core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederate * this_ptr)
     ADD ESP,0x4                         ; 005a1372
     MOV EDX,dword ptr [ESP + 0x14]      ; 005a1375
         ;   Label: default
@@ -61,8 +61,8 @@ section .text
     PUSH ESI                            ; 005a1392
     PUSH dword ptr [0x005fedbc]         ; 005a1393 | DAT_005fedbc
     PUSH EBX                            ; 005a1399
-    CALL core_basicene.cpp_FUN_0059f740 ; 005a139a
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005a139a
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005a139f
     TEST EAX,EAX                        ; 005a13a2
     JZ 0x005a1375                       ; 005a13a4
@@ -94,8 +94,8 @@ section .text
     PUSH EDX                            ; 005a13de
     PUSH dword ptr [0x005fedbc]         ; 005a13df | DAT_005fedbc
     PUSH EBX                            ; 005a13e5
-    CALL core_basicene.cpp_FUN_0059f740 ; 005a13e6
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005a13e6
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005a13eb
     TEST EAX,EAX                        ; 005a13ee
     JZ 0x005a1375                       ; 005a13f0

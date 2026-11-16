@@ -65,14 +65,14 @@ void __cdecl CSimpleParticleSystem::render(CSimpleParticleSystem *this_ptr);
 // Address: 005a8300
 void __cdecl CSimpleParticleSystem::emit(CSimpleParticleSystem *this_ptr,float lifetime,float alpha_start,float alpha_end,float size_start,float size_end,float red,float green,float blue,CVector3f *position_offset,CVector3f *velocity,CVector3f *acceleration,int texture_index);
 
-// Original: core_bwspart.cpp_FUN_005a84c0
+// Original: core_bwspart.cpp_initSimpleParticle_FUN_005a84c0
 // Address: 005a84c0
-void FUN_005a84c0(undefined4 *param_1);
+void __cdecl initSimpleParticle(void *particle);
 
-// Original: core_bwspart.cpp_FUN_005a85c0
+// Original: core_bwspart.cpp_processSimpleParticle_FUN_005a85c0
 // Address: 005a85c0
-void FUN_005a85c0(int *param_1,float param_2);
+void __cdecl processSimpleParticle(void *particle,float delta_time);
 
-// Original: core_bwspart.cpp_FUN_005a86a0
+// Original: core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0
 // Address: 005a86a0
-int FUN_005a86a0(int param_1);
+void __cdecl renderSimpleParticle(void *particle);

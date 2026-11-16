@@ -9,7 +9,7 @@
 ; XREF[21]:
 ;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0c97
 ;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 0059882d
-;   core_enemy.cpp_FUN_00489c90 at 00489d24
+;   core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90 at 00489d24
 ;   core_fire.cpp_spawnDiseaseBugs_FUN_0049cca0 at 0049ccb4
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bbb4f
 ;   core_game.cpp_giveHeroWeapon_FUN_004bafd0 at 004bafd9

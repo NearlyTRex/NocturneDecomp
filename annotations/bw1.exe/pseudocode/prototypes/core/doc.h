@@ -9,13 +9,13 @@
 // Address: 004689b0
 void __cdecl staticInit(void);
 
-// Original: core_doc.cpp_FUN_00468a20
+// Original: core_doc.cpp_blendWeightCallback_FUN_00468a20
 // Address: 00468a20
-float FUN_00468a20(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+float __cdecl blendWeightCallback(int bone,int target,float weight,int distance,CDeformableModelInstance *instance);
 
-// Original: core_doc.cpp_FUN_00468a90
+// Original: core_doc.cpp_getWeaponInteractionType_FUN_00468a90
 // Address: 00468a90
-undefined4 FUN_00468a90(CDemonActor *param_1);
+int __cdecl getWeaponInteractionType(CWeapon *weapon);
 
 // Original: core_doc.cpp_getCarriedObjectVerticalOffset_FUN_00468b80
 // Address: 00468b80
@@ -93,13 +93,13 @@ CMatrix3x4f * __stack3_esi CDoc::computeWeaponAttachXForm(CDoc *this_ptr,CDemonA
 // Address: 00470750
 void __cdecl CDoc::processPickupComplete(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_004707d0
+// Original: core_doc.cpp_CDoc_dropRightHandObject_FUN_004707d0
 // Address: 004707d0
-void FUN_004707d0(int param_1);
+void __cdecl CDoc::dropRightHandObject(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_00470820
+// Original: core_doc.cpp_CDoc_tryClimbLadder_FUN_00470820
 // Address: 00470820
-undefined4 FUN_00470820(void);
+int __cdecl CDoc::tryClimbLadder(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0
 // Address: 004712b0
@@ -117,13 +117,13 @@ int __cdecl CDoc::renderOpaque(CDoc *this_ptr);
 // Address: 00472220
 int __cdecl CDoc::renderTransparent(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_00472260
+// Original: core_doc.cpp_adjustAimAngleForOffset_FUN_00472260
 // Address: 00472260
-void FUN_00472260(void);
+void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
-// Original: core_doc.cpp_FUN_004722f0
+// Original: core_doc.cpp_calculateAimAnglesWithOffset_FUN_004722f0
 // Address: 004722f0
-float * FUN_004722f0(void);
+CVector3f * __stack2_esi calculateAimAnglesWithOffset(CVector3f *direction,float *offset_pair,CVector3f *out_angles);
 
 // Original: core_doc.cpp_CDoc_autoAimAtThreat_FUN_004724a0
 // Address: 004724a0
@@ -153,9 +153,9 @@ CVector3f * __stack_esi CDoc::getThrowDirection(CDoc *this_ptr,CVector3f *out_di
 // Address: 00474400
 void __cdecl CDoc::updateWeaponLayerActions(CDoc *this_ptr,float delta_time);
 
-// Original: core_doc.cpp_FUN_00474ef0
+// Original: core_doc.cpp_CDoc_handleActionButton_FUN_00474ef0
 // Address: 00474ef0
-void FUN_00474ef0(CDoc *param_1);
+void __cdecl CDoc::handleActionButton(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0
 // Address: 00474fc0
@@ -165,25 +165,25 @@ void __cdecl CDoc::doHeroAction(CDoc *this_ptr);
 // Address: 00475650
 int __cdecl CDoc::canDoHeroAction(CDoc *this_ptr,int action_type);
 
-// Original: core_doc.cpp_FUN_00475890
+// Original: core_doc.cpp_CDoc_tryThrowDynamite_FUN_00475890
 // Address: 00475890
-undefined4 FUN_00475890(int param_1);
+int __cdecl CDoc::tryThrowDynamite(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_00475920
+// Original: core_doc.cpp_CDoc_handleFireButton_FUN_00475920
 // Address: 00475920
-void FUN_00475920(CDoc *param_1);
+void __cdecl CDoc::handleFireButton(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_CDoc_canReachPickup_FUN_00475c20
 // Address: 00475c20
 int __cdecl CDoc::canReachPickup(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
 
-// Original: core_doc.cpp_FUN_00476080
+// Original: core_doc.cpp_CDoc_updateClothSimulation_FUN_00476080
 // Address: 00476080
-void FUN_00476080(int param_1);
+void __cdecl CDoc::updateClothSimulation(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_00476150
+// Original: core_doc.cpp_CDoc_processWeaponTick_FUN_00476150
 // Address: 00476150
-void FUN_00476150(int param_1,undefined4 param_2);
+void __cdecl CDoc::processWeaponTick(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_CDoc_isWeaponDrawn_FUN_00476210
 // Address: 00476210
@@ -217,17 +217,17 @@ void __cdecl CDoc::drop(CDoc *this_ptr,CDemonActor *carrier,CVector3f *drop_posi
 // Address: 00476510
 void __cdecl CDoc::toggleGoggles(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_004765f0
+// Original: core_doc.cpp_divideVectorByScalar_FUN_004765f0
 // Address: 004765f0
-void FUN_004765f0(float *param_1,float *param_2);
+void __cdecl divideVectorByScalar(CVector3f *vector,float *divisor);
 
-// Original: core_doc.cpp_FUN_00476620
+// Original: core_doc.cpp_makeVector_FUN_00476620
 // Address: 00476620
-void FUN_00476620(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+CVector3f * __stack3_esi makeVector(float x,float y,float z,CVector3f *out);
 
-// Original: core_doc.cpp_FUN_004766f0
+// Original: core_doc.cpp_getSelectedWeapon_FUN_004766f0
 // Address: 004766f0
-undefined4 FUN_004766f0(int param_1);
+CWeapon * __cdecl getSelectedWeapon(CInventory *inventory_ptr);
 
 // Original: core_doc.cpp_CDoc_dtor_FUN_00476700
 // Address: 00476700

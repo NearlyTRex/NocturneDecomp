@@ -4,14 +4,12 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/basetsd.h"
 #include "system/stdarg.h"
 #include "system/stdlib.h"
 #include "system/winbase.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CIniFile.h"
@@ -28,6 +26,7 @@
 #include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5B0000
@@ -41,7 +40,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005b1330(CWerewolf *this_pt
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_005b17a0(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005b17e0(CWerewolf *this_ptr,CVector3f *out_points_array);
-void core_werewolf_cpp_FUN_005b1850(CCharacter *param_1);
+void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_005b1850(CWerewolf *this_ptr);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005b1a40(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005b1ad0(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005b1b90(CWinFont *this_ptr,uint flags);
@@ -60,15 +59,15 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_005b2510(void);
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(void);
 char __cdecl wincore_winrun_cpp_getValue_FUN_005b25a0(void);
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_005b25b0(int input_value);
-void wincore_winrun_cpp_FUN_005b25f0(undefined4 param_1);
+void __cdecl wincore_winrun_cpp_setValue_FUN_005b25f0(int val);
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_005b2610(int x_coord,int y_coord);
 void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005b2650(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005b2740(void);
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005b2750(int x,int y);
 LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005b27d0(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0(void);
-void wincore_winrun_cpp_FUN_005b2d90(void);
-void wincore_winrun_cpp_FUN_005b2de0(void);
+void __cdecl wincore_winrun_cpp_createMainWindow_FUN_005b2d90(void);
+void __cdecl wincore_winrun_cpp_destroyMainWindow_FUN_005b2de0(void);
 int __stdcall wincore_winrun_cpp_winMain_FUN_005b2e00(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005b3080(char *message);
 char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005b30e0(EInputCodeType keycode);
@@ -78,28 +77,28 @@ int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_005b3770(HANDLE mutex_han
 void __cdecl wincore_winrun_cpp_releaseMutex_FUN_005b37b0(HANDLE mutex_handle);
 HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_005b37d0(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param);
 int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005b3800(HANDLE hThread,int priority_level);
-void wincore_winrun_cpp_FUN_005b3840(HANDLE param_1);
+void __cdecl wincore_winrun_cpp_closeThread_FUN_005b3840(HANDLE thread_handle);
 void __cdecl wincore_winrun_cpp_sleep_FUN_005b3860(double seconds);
 void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005b38c0(char *buffer);
 void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_005b3990(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005b3a10(char *key_path,char *value_name,char *value_data);
-void wincore_winrun_cpp_FUN_005b3a90(LPCSTR param_1);
+void __cdecl wincore_winrun_cpp_outputDebugString_FUN_005b3a90(LPCSTR message);
 void __cdecl wincore_winrun_cpp_initJoystick_FUN_005b3aa0(void);
 void __cdecl wincore_winrun_cpp_doNothing2_FUN_005b3b10(void);
 void __cdecl wincore_winrun_cpp_getJoystickState_FUN_005b3b30(void);
-float wincore_winrun_cpp_FUN_005b3c90(int param_1,int *param_2,float param_3,float param_4);
-void wincore_winrun_cpp_FUN_005b3d70(int param_1);
-void wincore_winrun_cpp_FUN_005b4190(void);
-void wincore_winrun_cpp_FUN_005b41c0(int param_1,int param_2,UINT_PTR param_3);
-void wincore_winrun_cpp_FUN_005b42d0(int param_1);
-void wincore_winrun_cpp_FUN_005b42f0(void);
-void wincore_winrun_cpp_FUN_005b4320(float param_1);
-float wincore_winrun_cpp_FUN_005b43a0(void);
-void wincore_winrun_cpp_FUN_005b4400(int param_1);
-void wincore_winrun_cpp_FUN_005b4450(undefined4 param_1);
-undefined4 wincore_winrun_cpp_FUN_005b4460(undefined4 param_1);
-void wincore_winrun_cpp_FUN_005b44a0(CIniFile *param_1);
-void wincore_winrun_cpp_FUN_005b4650(void);
+float __cdecl wincore_winrun_cpp_normalizeControllerAxis_FUN_005b3c90(int raw_value,int *axis_calibration,float out_min,float out_max);
+void __cdecl wincore_winrun_cpp_pollController_FUN_005b3d70(int controller_index);
+void __cdecl wincore_winrun_cpp_pollAllControllers_FUN_005b4190(void);
+void __cdecl wincore_winrun_cpp_initController_FUN_005b41c0(int controller_index,int controller_type,uint pc_port);
+void __cdecl wincore_winrun_cpp_clearController_FUN_005b42d0(int controller_index);
+void __cdecl wincore_winrun_cpp_resetInputIdleTimers_FUN_005b42f0(void);
+void __cdecl wincore_winrun_cpp_updateInputIdleTimers_FUN_005b4320(float delta_time);
+float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_005b43a0(void);
+void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005b4400(int controller_index);
+void wincore_winrun_cpp_FUN_005b4450(int param_1);
+void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_005b4460(int controller_index);
+void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_005b44a0(CIniFile *ini);
+void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_005b4650(CIniFile *ini);
 void wincore_winrun_cpp_FUN_005b48c0(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_005b4980(HWND window_handle);
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_005b49d0(HWND parent_window,char *movie_filename);
@@ -153,7 +152,7 @@ CDemonActorType * __cdecl core_yow_cpp_CYow_getActorType_FUN_005b8150(CYow *this
 CYow * __cdecl core_yow_cpp_CYow_ctor_FUN_005b8160(CYow *this_ptr);
 void __cdecl core_yow_cpp_CYow_setup_FUN_005b81d0(CYow *this_ptr);
 void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float param_2);
-void core_yow_cpp_FUN_005b8eb0(CCharacter *param_1,int *param_2);
+void __cdecl core_yow_cpp_CYow_processDismemberment_FUN_005b8eb0(CYow *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_yow_cpp_CYow_archive_FUN_005b9110(CYow *this_ptr);
 void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamageInfo *param_2);
 int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *param_2);
@@ -166,7 +165,7 @@ void __cdecl core_xform_cpp_clipPolygonStage3_FUN_005b9c30(void);
 void __cdecl core_xform_cpp_clampClippedVertices_FUN_005b9f10(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_005ba700(void);
-float core_zombie_cpp_FUN_005ba730(int param_1);
+float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005ba730(CDemonActor *actor);
 CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointLocal_FUN_005ba7d0(CDemonActor *actor,CVector3f *out_point);
 CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(CDemonActor *actor,CVector3f *out_point);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_005ba990(CVector3f *dimensions);
@@ -194,7 +193,7 @@ int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005bed50(CZombi
 void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_005bed80(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005bedf0(CZombie *this_ptr,uint flags);
 void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005bee80(SRenderVertex *v0,SRenderVertex *v1);
-int * core_zombie_cpp_FUN_005bf0e0(void);
+SSoftwareEdge * __cdecl core_zombie_cpp_findRasterizerEdge_FUN_005bf0e0(int y_start,SSoftwareEdge *exclude_edge);
 void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005bf120(SRenderVertex *vertex_buffer,int vertex_count);
 void __cdecl engine_zraster_c_rasterizePolygonCustom_FUN_005bf640(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>

@@ -13,8 +13,8 @@
 ;
 ; XREF[5]:
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930 at 00418b92
-;   core_carved.cpp_FUN_00427bc0 at 00427eb8
-;   core_demnfolk.cpp_FUN_00457740 at 00457a32
+;   core_carved.cpp_CCarved_processPickup_FUN_00427bc0 at 00427eb8
+;   core_demnfolk.cpp_CDemnfolk_processPickup_FUN_00457740 at 00457a32
 ;   core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0 at 0058b6e2
 ;   core_zombiepriest.cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0 at 0058f240
 ;

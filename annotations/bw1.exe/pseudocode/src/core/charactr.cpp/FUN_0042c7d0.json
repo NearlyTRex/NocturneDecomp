@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 41,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 7,
     "suspect_count": 3,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 19
+    "total_lines": 20
   },
   "cross_references": [],
   "function": {
@@ -25,18 +25,18 @@
     ],
     "convention": "unknown",
     "name": "core_charactr.cpp_FUN_0042c7d0",
-    "signature": "void core_charactr_cpp_FUN_0042c7d0(int param_1)"
+    "signature": "void core_charactr_cpp_FUN_0042c7d0(CDemonActor *param_1)"
   },
   "function_calls": [
     {
       "addr": "00408890",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408890"
+      "name": "core_actor.cpp_CDemonActor_markResourcesInUse_FUN_00408890"
     },
     {
       "addr": "005249b0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005249b0"
+      "name": "core_motion.cpp_CMotionController_detachMotionList_FUN_005249b0"
     }
   ],
   "globals": [],
@@ -83,15 +83,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_0042c7d0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_motion_cpp_FUN_005249b0(param_1 + 0x158);",
+      "text": "void core_charactr_cpp_FUN_0042c7d0(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -99,7 +91,15 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408890(param_1);",
+      "text": "((CMotionController *)(param_1 + 1));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_markResourcesInUse_FUN_00408890(param_1);",
       "type": "unnamed_param"
     }
   ],

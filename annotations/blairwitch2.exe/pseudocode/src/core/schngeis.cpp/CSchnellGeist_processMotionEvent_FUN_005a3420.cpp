@@ -10,14 +10,14 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMotionEvent_FUN_005a3420(CSc
 
 {
   CSound *this_ptr_00;
-  uint uVar1;
-  int iVar2;
+  float damage;
+  int bone_index;
   
   this_ptr_00 = 0x0264B290;
   switch(event_id) {
   case 8000:
-    iVar2 = this_ptr->tongue_attack_bone;
-    uVar1 = 0x41700000;
+    bone_index = this_ptr->tongue_attack_bone;
+    damage = 0x41700000;
     goto LAB_005a344f;
   case 0x1f41:
     this_ptr->breath_state = 1;
@@ -30,14 +30,15 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMotionEvent_FUN_005a3420(CSc
     core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(&this_ptr->base,event_id);
     return;
   case 0x1f43:
-    iVar2 = this_ptr->tongue_attack_bone;
-    uVar1 = 0x41A00000;
+    bone_index = this_ptr->tongue_attack_bone;
+    damage = 0x41A00000;
     goto LAB_005a344f;
   case 0x1f44:
-    iVar2 = this_ptr->finger_bone;
-    uVar1 = 0x41200000;
+    bone_index = this_ptr->finger_bone;
+    damage = 0x41200000;
 LAB_005a344f:
-    core_basicene_cpp_FUN_0059f740(this_ptr,uVar1,iVar2,0x40000000);
+    core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740(&this_ptr->base,damage,bone_index,2.0)
+    ;
     break;
   case 0x1f45:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50

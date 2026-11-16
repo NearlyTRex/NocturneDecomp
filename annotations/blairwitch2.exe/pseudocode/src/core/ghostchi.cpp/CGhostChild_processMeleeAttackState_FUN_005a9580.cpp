@@ -89,14 +89,15 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(
     pSVar7 = &(this_ptr->base).state_machine;
     this_ptr->hit_count = 0;
     this_ptr->sleep_phase = 0;
-    core_muzzle_cpp_FUN_0059d7f0(pSVar7,"SleepComplete","Alert");
-    core_muzzle_cpp_FUN_0059d8e0(pSVar7,"Sleep");
+    core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
+              (pSVar7,"SleepComplete","Alert");
+    core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(pSVar7,"Sleep");
     return;
   }
   pSVar7 = &(this_ptr->base).state_machine;
   (this_ptr->base).run_distance = 0.0;
   (this_ptr->base).attack_range = fVar4;
-  core_muzzle_cpp_FUN_0059dcb0(pSVar7,0x3f000000);
-  core_muzzle_cpp_FUN_0059d8e0(pSVar7,"Chasing");
+  core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(pSVar7,0.5);
+  core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(pSVar7,"Chasing");
   return;
 }

@@ -45,9 +45,9 @@ void __cdecl CConfederateZombie::processRangeAttackState(CConfederateZombie *thi
 // Address: 005a2130
 void __cdecl CConfederateZombie::processMeleeAttackState(CConfederateZombie *this_ptr,float delta_time);
 
-// Original: core_confzomb.cpp_FUN_005a2240
+// Original: core_confzomb.cpp_CConfederateZombie_processAI_FUN_005a2240
 // Address: 005a2240
-void FUN_005a2240(int param_1,float param_2);
+void __cdecl CConfederateZombie::processAI(CConfederateZombie *this_ptr,float delta_time);
 
 // Original: core_confzomb.cpp_CConfederateZombie_getDeathState_FUN_005a24a0
 // Address: 005a24a0

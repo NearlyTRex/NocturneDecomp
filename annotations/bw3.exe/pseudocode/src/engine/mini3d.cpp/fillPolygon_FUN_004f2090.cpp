@@ -11,13 +11,12 @@
 void __cdecl engine_mini3d_cpp_fillPolygon_FUN_004f2090(float *vertices,int vertex_count)
 
 {
-  int *piVar1;
+  int iVar1;
   float fVar2;
   float fVar3;
   int iVar4;
   int iVar5;
   float *v0;
-  int local_28;
   SSoftwareEdge *local_24;
   SSoftwareEdge *local_20;
   
@@ -47,43 +46,43 @@ void __cdecl engine_mini3d_cpp_fillPolygon_FUN_004f2090(float *vertices,int vert
       v0 = v0 + 0x10;
     } while (iVar5 < vertex_count);
   }
+  iVar5 = _DAT_01d80d48;
   local_20 = (SSoftwareEdge *)&DAT_01d80848;
-  iVar5 = 0;
+  iVar4 = 0;
   if (0 < _DAT_01d80844) {
     do {
       if ((_DAT_01d80d48 == (local_20->base).y_min) && (local_20 != (SSoftwareEdge *)0x0))
       goto LAB_004f2184;
-      iVar5 = iVar5 + 1;
+      iVar4 = iVar4 + 1;
       local_20 = local_20 + 1;
-    } while (iVar5 < _DAT_01d80844);
+    } while (iVar4 < _DAT_01d80844);
   }
   local_20 = (SSoftwareEdge *)0x0;
 LAB_004f2184:
   if (local_20 != (SSoftwareEdge *)0x0) {
-    iVar5 = 0;
+    iVar4 = 0;
     local_24 = (SSoftwareEdge *)&DAT_01d80848;
     if (0 < _DAT_01d80844) {
       do {
         if ((_DAT_01d80d48 == (local_24->base).y_min) && (local_24 != local_20)) goto LAB_004f21b7;
-        iVar5 = iVar5 + 1;
+        iVar4 = iVar4 + 1;
         local_24 = local_24 + 1;
-      } while (iVar5 < _DAT_01d80844);
+      } while (iVar4 < _DAT_01d80844);
     }
     local_24 = (SSoftwareEdge *)0x0;
 LAB_004f21b7:
     if (local_24 != (SSoftwareEdge *)0x0) {
-      local_28 = _DAT_01d80d48;
       do {
-        if ((local_20->base).y_max <= local_28) {
+        if ((local_20->base).y_max <= iVar5) {
           (local_20->base).y_min = -1;
           local_20 = (SSoftwareEdge *)&DAT_01d80848;
-          iVar5 = 0;
+          iVar4 = 0;
           if (0 < _DAT_01d80844) {
             do {
-              if ((local_28 == (local_20->base).y_min) && (local_20 != local_24)) goto LAB_004f2204;
-              iVar5 = iVar5 + 1;
+              if ((iVar5 == (local_20->base).y_min) && (local_20 != local_24)) goto LAB_004f2204;
+              iVar4 = iVar4 + 1;
               local_20 = local_20 + 1;
-            } while (iVar5 < _DAT_01d80844);
+            } while (iVar4 < _DAT_01d80844);
           }
           local_20 = (SSoftwareEdge *)0x0;
 LAB_004f2204:
@@ -91,16 +90,16 @@ LAB_004f2204:
             return;
           }
         }
-        if ((local_24->base).y_max <= local_28) {
+        if ((local_24->base).y_max <= iVar5) {
           (local_24->base).y_min = -1;
           local_24 = (SSoftwareEdge *)&DAT_01d80848;
-          iVar5 = 0;
+          iVar4 = 0;
           if (0 < _DAT_01d80844) {
             do {
-              if ((local_28 == (local_24->base).y_min) && (local_24 != local_20)) goto LAB_004f2248;
-              iVar5 = iVar5 + 1;
+              if ((iVar5 == (local_24->base).y_min) && (local_24 != local_20)) goto LAB_004f2248;
+              iVar4 = iVar4 + 1;
               local_24 = local_24 + 1;
-            } while (iVar5 < _DAT_01d80844);
+            } while (iVar4 < _DAT_01d80844);
           }
           local_24 = (SSoftwareEdge *)0x0;
 LAB_004f2248:
@@ -111,47 +110,43 @@ LAB_004f2248:
         if (_DAT_01c6e2a0 == 0) {
           if (DAT_005fba20 == 0x20) {
             engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
-                      (local_24,local_20,local_28);
+                      (local_24,local_20,iVar5);
           }
           else {
             engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69
-                      (local_24,local_20,local_28);
+                      (local_24,local_20,iVar5);
           }
         }
         else if (DAT_005fba20 == 0x20) {
-          engine_special_cpp_FUN_00561fdc();
+          engine_special_cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
+                    (local_24,local_20,iVar5);
         }
         else {
-          engine_special_cpp_FUN_005625a3();
+          engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
+                    (local_24,local_20,iVar5);
         }
-        (local_20->base).x_current = (local_20->base).x_current + (local_20->base).x_gradient;
-        (local_20->base).u_current = (local_20->base).u_current + (local_20->base).u_gradient;
-        (local_20->base).v_current = (local_20->base).v_current + (local_20->base).v_gradient;
-        (local_20->base).depth_current =
-             (local_20->base).depth_current + (local_20->base).depth_gradient;
-        (local_20->base).red_current = (local_20->base).red_current + (local_20->base).red_gradient;
-        iVar5 = (local_20->base).alpha_current;
-        local_20->green_current = local_20->green_current + local_20->green_gradient;
-        local_20->blue_current = local_20->blue_current + local_20->blue_gradient;
-        iVar4 = (local_20->base).alpha_gradient;
-        *(int *)&local_20->field_0x48 =
-             *(int *)&local_20->field_0x48 + *(int *)&local_20->field_0x4c;
-        (local_20->base).alpha_current = iVar5 + iVar4;
-        piVar1 = &(local_24->base).x_current;
-        *piVar1 = *piVar1 + (local_24->base).x_gradient;
+        (local_24->base).x_current = (local_24->base).x_current + (local_24->base).x_gradient;
         (local_24->base).u_current = (local_24->base).u_current + (local_24->base).u_gradient;
         (local_24->base).v_current = (local_24->base).v_current + (local_24->base).v_gradient;
         (local_24->base).depth_current =
              (local_24->base).depth_current + (local_24->base).depth_gradient;
         (local_24->base).red_current = (local_24->base).red_current + (local_24->base).red_gradient;
-        iVar5 = (local_24->base).alpha_current;
+        iVar4 = (local_24->base).alpha_current;
         local_24->green_current = local_24->green_current + local_24->green_gradient;
-        local_28 = local_28 + 1;
         local_24->blue_current = local_24->blue_current + local_24->blue_gradient;
-        iVar4 = (local_24->base).alpha_gradient;
+        iVar1 = (local_24->base).alpha_gradient;
         *(int *)&local_24->field_0x48 =
              *(int *)&local_24->field_0x48 + *(int *)&local_24->field_0x4c;
-        (local_24->base).alpha_current = iVar5 + iVar4;
+        (local_24->base).alpha_current = iVar4 + iVar1;
+        *(int *)(iVar5 + 8) = *(int *)(iVar5 + 8) + *(int *)(iVar5 + 0xc);
+        *(int *)(iVar5 + 0x18) = *(int *)(iVar5 + 0x18) + *(int *)(iVar5 + 0x1c);
+        *(int *)(iVar5 + 0x20) = *(int *)(iVar5 + 0x20) + *(int *)(iVar5 + 0x24);
+        *(int *)(iVar5 + 0x28) = *(int *)(iVar5 + 0x28) + *(int *)(iVar5 + 0x2c);
+        *(int *)(iVar5 + 0x10) = *(int *)(iVar5 + 0x10) + *(int *)(iVar5 + 0x14);
+        *(int *)(iVar5 + 0x38) = *(int *)(iVar5 + 0x38) + *(int *)(iVar5 + 0x3c);
+        *(int *)(iVar5 + 0x40) = *(int *)(iVar5 + 0x40) + *(int *)(iVar5 + 0x44);
+        *(int *)(iVar5 + 0x48) = *(int *)(iVar5 + 0x48) + *(int *)(iVar5 + 0x4c);
+        *(int *)(iVar5 + 0x30) = *(int *)(iVar5 + 0x30) + *(int *)(iVar5 + 0x34);
       } while( true );
     }
   }

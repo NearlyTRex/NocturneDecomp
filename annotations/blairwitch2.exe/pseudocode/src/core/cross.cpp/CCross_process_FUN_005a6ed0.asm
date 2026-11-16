@@ -28,7 +28,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
-;   core_bwgrndma.cpp_FUN_005a7ed0
+;   core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_melee.cpp_CMelee_process_FUN_004eacf0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
@@ -142,8 +142,8 @@ section .text
     JC 0x005a7770                       ; 005a7028
         ;   XREF to: 005a7770 (CONDITIONAL_JUMP)  ; LAB_005a7770
     MOV dword ptr [EBX + 0x2a8],0x3e19999a ; 005a702e
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005a7038
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005a7038
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
     TEST EAX,EAX                        ; 005a703d
     JZ 0x005a7770                       ; 005a703f
         ;   XREF to: 005a7770 (CONDITIONAL_JUMP)  ; LAB_005a7770
@@ -694,8 +694,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 005a7794
     MOV dword ptr [EBP + 0x66],EDX      ; 005a7797
     MOV dword ptr [EBP + 0x62],EAX      ; 005a779a
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005a779d
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005a779d
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
         ;   Label: LAB_005a779d
     TEST EAX,EAX                        ; 005a77a2
     JNZ 0x005a77e3                      ; 005a77a4

@@ -20,25 +20,25 @@
     {
       "addr": "00597900",
       "from_addr": "0059794a",
-      "name": "engine_texture.cpp_FUN_00597900",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00597ac0",
-      "from_addr": "00597b3b",
-      "name": "engine_texture.cpp_FUN_00597ac0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00597b80",
-      "from_addr": "00597bf1",
-      "name": "engine_texture.cpp_FUN_00597b80",
+      "name": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00597900",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00597a20",
       "from_addr": "00597a88",
       "name": "engine_texture.cpp_ensureTextureLoaded_FUN_00597a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597ac0",
+      "from_addr": "00597b3b",
+      "name": "engine_texture.cpp_storePalettedTexture_FUN_00597ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597b80",
+      "from_addr": "00597bf1",
+      "name": "engine_texture.cpp_storeTrueColorTexture_FUN_00597b80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -218,7 +218,7 @@
       {
         "call_addr": "00597b3b",
         "call_type": "direct",
-        "caller": "engine_texture.cpp_FUN_00597ac0",
+        "caller": "engine_texture.cpp_storePalettedTexture_FUN_00597ac0",
         "estimated_params": 3,
         "instructions_analyzed": 10,
         "method": "push_count",
@@ -229,7 +229,7 @@
       {
         "call_addr": "0059794a",
         "call_type": "direct",
-        "caller": "engine_texture.cpp_FUN_00597900",
+        "caller": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00597900",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,7 +240,7 @@
       {
         "call_addr": "00597bf1",
         "call_type": "direct",
-        "caller": "engine_texture.cpp_FUN_00597b80",
+        "caller": "engine_texture.cpp_storeTrueColorTexture_FUN_00597b80",
         "estimated_params": 3,
         "instructions_analyzed": 10,
         "method": "push_count",

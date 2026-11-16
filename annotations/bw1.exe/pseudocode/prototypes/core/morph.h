@@ -129,14 +129,14 @@ void __cdecl CMorph::render(CMorph *this_ptr,float morph_t);
 // Address: 00523880
 CMorphModel * __cdecl CMorphModel::arrdtor2(CMorphModel *this_ptr,uint flags);
 
-// Original: core_morph.cpp_FUN_005238c0
+// Original: core_morph.cpp_CMotionList_ctor_FUN_005238c0
 // Address: 005238c0
-undefined4 * FUN_005238c0(undefined4 *param_1);
+CMotionList * __cdecl CMotionList::ctor(CMotionList *this_ptr);
 
-// Original: core_morph.cpp_FUN_005238f0
+// Original: core_morph.cpp_CMotionList_dtor_FUN_005238f0
 // Address: 005238f0
-undefined4 FUN_005238f0(undefined4 param_1);
+CMotionList * __cdecl CMotionList::dtor(CMotionList *this_ptr);
 
-// Original: core_morph.cpp_FUN_00523910
+// Original: core_morph.cpp_CMotionList_free_FUN_00523910
 // Address: 00523910
-void FUN_00523910(undefined4 *param_1);
+void __cdecl CMotionList::free(CMotionList *this_ptr);

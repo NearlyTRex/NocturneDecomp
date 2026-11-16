@@ -41,9 +41,9 @@ void __cdecl CZombieDog::processDamage(CZombieDog *this_ptr,SDamageInfo *damage_
 // Address: 004635e0
 int __cdecl CZombieDog::getTargetPoints(CZombieDog *this_ptr,CVector3f *out_points_array);
 
-// Original: core_dog.cpp_FUN_00463650
+// Original: core_dog.cpp_factoryFuncDogForest_FUN_00463650
 // Address: 00463650
-void FUN_00463650(void);
+CDogForest * __cdecl factoryFuncDogForest(void);
 
 // Original: core_dog.cpp_CDogForest_getActorType_FUN_00463670
 // Address: 00463670
@@ -53,9 +53,9 @@ CDemonActorType * __cdecl CDogForest::getActorType(CDogForest *this_ptr);
 // Address: 00463680
 CDogForest * __cdecl CDogForest::ctor(CDogForest *this_ptr);
 
-// Original: core_dog.cpp_FUN_004636e0
+// Original: core_dog.cpp_factoryFuncDemonDog_FUN_004636e0
 // Address: 004636e0
-void FUN_004636e0(void);
+CDemonDog * __cdecl factoryFuncDemonDog(void);
 
 // Original: core_dog.cpp_CDemonDog_getActorType_FUN_00463700
 // Address: 00463700
@@ -65,9 +65,9 @@ CDemonActorType * __cdecl CDemonDog::getActorType(CDemonDog *this_ptr);
 // Address: 00463710
 CDemonDog * __cdecl CDemonDog::ctor(CDemonDog *this_ptr);
 
-// Original: core_dog.cpp_FUN_00463780
+// Original: core_dog.cpp_factoryFuncEtherealDog_FUN_00463780
 // Address: 00463780
-void FUN_00463780(void);
+CEtherealDog * __cdecl factoryFuncEtherealDog(void);
 
 // Original: core_dog.cpp_CEtherealDog_getActorType_FUN_004637a0
 // Address: 004637a0

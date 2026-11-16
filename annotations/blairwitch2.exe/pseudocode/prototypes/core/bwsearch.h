@@ -29,9 +29,9 @@ void __cdecl CSearchParty::setup(CSearchParty *this_ptr);
 // Address: 005a8db0
 void __cdecl CSearchParty::processStates(CSearchParty *this_ptr,float delta_time,int mode);
 
-// Original: core_bwsearch.cpp_FUN_005a8dd0
+// Original: core_bwsearch.cpp_CSearchParty_processAI_FUN_005a8dd0
 // Address: 005a8dd0
-void FUN_005a8dd0(int param_1);
+void __cdecl CSearchParty::processAI(CSearchParty *this_ptr);
 
 // Original: core_bwsearch.cpp_CSearchParty_processDeathState_FUN_005a8e20
 // Address: 005a8e20

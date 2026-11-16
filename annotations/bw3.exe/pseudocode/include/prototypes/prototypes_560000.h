@@ -11,6 +11,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CExternalRenderer.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CSocket.h"
 #include "types/classes/CSound.h"
 #include "types/classes/CSpawner.h"
@@ -78,8 +79,8 @@ void __cdecl engine_special_cpp_fillDepthRegion_FUN_00560ec2(int left,int right,
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void engine_special_cpp_FUN_005616a0(void);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
-void engine_special_cpp_FUN_00561fdc(void);
-void engine_special_cpp_FUN_005625a3(void);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_005630a3(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
@@ -93,8 +94,8 @@ CDemonActorType * __cdecl core_spawner_cpp_CSpawner_getActorType_FUN_00563890(CS
 CSpawner * __cdecl core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr);
 void __cdecl core_spawner_cpp_CSpawner_setup_FUN_00563910(CSpawner *this_ptr);
 void __cdecl core_spawner_cpp_CSpawner_process_FUN_00563970(CSpawner *this_ptr,float param_2);
-undefined4 core_spawner_cpp_FUN_00563e40(void);
-void core_spawner_cpp_FUN_00563e50(CDemonActor *param_1);
+int __cdecl core_spawner_cpp_CSpawner_renderOpaque_FUN_00563e40(CSpawner *this_ptr);
+void __cdecl core_spawner_cpp_CSpawner_archive_FUN_00563e50(CSpawner *this_ptr);
 CSpawner * __cdecl core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags);
 void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_00564010(void);
 int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00564be0(HWND window_handle);
@@ -141,7 +142,7 @@ int __cdecl engine_special_cpp_unlockTexture_FUN_005664a0(void);
 int __cdecl engine_special_cpp_getTextureInfo_FUN_005664c0(int texture_size);
 int __cdecl engine_special_cpp_setVideoModeX_FUN_005664e0(int width,int height,int bits_per_pixel,int flags);
 int __cdecl engine_special_cpp_lockFrameX_FUN_00566560(void);
-undefined4 engine_special_cpp_FUN_005665c0(void);
+int __cdecl engine_special_cpp_toggleX_FUN_005665c0(void);
 void __cdecl engine_special_cpp_CExternalRenderer_ctor_FUN_005665e0(CExternalRenderer *this_ptr);
 int __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00566630(CExternalRenderer *this_ptr,CExternalRenderer *capabilities);
 int __cdecl engine_special_cpp_switchRenderer_FUN_00566790(char *new_dll_name,int card_index);
@@ -233,23 +234,23 @@ void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005695b0(CTextureCache *
 void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005695c0(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00569670(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00569790(CTextureCache *this_ptr,char *texture_name);
-int engine_texture_cpp_FUN_00569e50(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6);
-int engine_texture_cpp_FUN_00569ec0(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4);
-void engine_texture_cpp_FUN_00569f20(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-void engine_texture_cpp_FUN_00569ff0(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+int __cdecl engine_texture_cpp_CTextureCache_addPalettedTexture_FUN_00569e50(CTextureCache *this_ptr,char *texture_name,int dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
+int __cdecl engine_texture_cpp_CTextureCache_addTrueColorTexture_FUN_00569ec0(CTextureCache *this_ptr,char *texture_name,int dimension,uchar *true_color_data);
+void __cdecl engine_texture_cpp_CTextureCache_replacePalettedTexture_FUN_00569f20(CTextureCache *this_ptr,SMRGLTextureBasic *texture,int dimension,uchar *texture_data ,uchar *palette_data,uchar *opacity_data);
+void __cdecl engine_texture_cpp_CTextureCache_replaceTrueColorTexture_FUN_00569ff0(CTextureCache *this_ptr,SMRGLTextureBasic *texture,int dimension,uchar *true_color_data);
 int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_0056a0a0(CTextureCache *this_ptr,int hint_index,char *texture_name);
 void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_0056a130(CTextureCache *this_ptr,SMRGLTextureBasic *texture,int upload_mode);
-void engine_texture_cpp_FUN_0056a610(int param_1,int param_2);
-void engine_texture_cpp_FUN_0056a690(int param_1,int param_2);
+void __cdecl engine_texture_cpp_CTextureCache_selectTextureByHandle_FUN_0056a610(CTextureCache *this_ptr,SMRGLTextureBasic *texture);
+void __cdecl engine_texture_cpp_CTextureCache_uploadTexture_FUN_0056a690(CTextureCache *this_ptr,SMRGLTextureBasic *texture);
 int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_0056a700(CTextureCache *this_ptr,char *output_buffer);
-void engine_texture_cpp_FUN_0056a7d0(void);
-void engine_texture_cpp_FUN_0056a8f0(CTextureCache *param_1);
+void __cdecl engine_texture_cpp_CTextureCache_printTextureList_FUN_0056a7d0(CTextureCache *this_ptr,void *file,int dimension);
+void __cdecl engine_texture_cpp_CTextureCache_renderAllTextures_FUN_0056a8f0(CTextureCache *this_ptr);
 CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_0056a960(void);
 void __cdecl engine_texture_cpp_freeTextureCache_FUN_0056a9c0(void);
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic *texture);
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_0056aa90(SMRGLTextureBasic *texture_info);
-void engine_texture_cpp_FUN_0056aab0(SMRGLTextureBasic *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void engine_texture_cpp_FUN_0056ab70(void);
+void __cdecl engine_texture_cpp_storePalettedTexture_FUN_0056aab0(SMRGLTextureBasic *texture,int dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
+void __cdecl engine_texture_cpp_storeTrueColorTexture_FUN_0056ab70(SMRGLTextureBasic *texture,int dimension,uchar *true_color_data);
 void __cdecl engine_texture_cpp_clearTextureCache_FUN_0056ac20(void);
 void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_0056ac50(SMRGLTextureBasic *texture);
 void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_0056ac80(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
@@ -257,8 +258,8 @@ void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_0056acb0(int enabled)
 void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_0056acc0(char *output_buffer);
 void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_0056ace0(void);
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_0056acf0(void);
-void engine_texture_cpp_FUN_0056ad50(void);
-void engine_texture_cpp_FUN_0056ad60(void);
+void __cdecl engine_texture_cpp_freezeTextureCache_FUN_0056ad50(void);
+void __cdecl engine_texture_cpp_cacheTextureAtFullSize_FUN_0056ad60(SMRGLTextureBasic *texture,char *filename);
 void __cdecl core_tommygun_cpp_staticInit_FUN_0056b310(void);
 CTommyGun * __cdecl core_tommygun_cpp_factoryFuncTommyGun_FUN_0056b340(void);
 CDemonActorType * __cdecl core_tommygun_cpp_CTommyGun_getActorType_FUN_0056b360(CTommyGun *this_ptr);
@@ -279,7 +280,7 @@ void __cdecl core_toxhand_cpp_CTheHand_archive_FUN_0056c8c0(CTheHand *this_ptr);
 int __cdecl core_toxhand_cpp_CTheHand_findNearbyTarget_FUN_0056c900(CTheHand *this_ptr,char *class_name);
 int __cdecl core_toxhand_cpp_CTheHand_attractActorToward_FUN_0056ca00(CTheHand *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 int __cdecl core_toxhand_cpp_CTheHand_shouldIgnoreForTargeting_FUN_0056cb90(CTheHand *this_ptr);
-void core_toxhand_cpp_FUN_0056cbd0(int param_1);
+CMatrix3x4f * __stack_esi core_toxhand_cpp_CTheHand_getHandBoneMatrix_FUN_0056cbd0(CTheHand *this_ptr,CMatrix3x4f *out_matrix);
 CTheHand * __cdecl core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10(CTheHand *this_ptr,uint flags);
 void __cdecl core_trap_cpp_staticInit_FUN_0056cca0(void);
 CTrap * __cdecl core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void);
@@ -348,12 +349,12 @@ int __cdecl support_trisock_cpp_CSocket_createUDPSocket_FUN_0056f930(CSocket *th
 int __cdecl support_trisock_cpp_CSocket_isSocketValid_FUN_0056f960(CSocket *this_ptr);
 int __cdecl support_trisock_cpp_CSocket_bindSocket_FUN_0056f970(CSocket *this_ptr,ushort port);
 int __cdecl support_trisock_cpp_CSocket_connectSocket_FUN_0056f9c0(CSocket *this_ptr,SNetworkAddr *dest_addr);
-byte support_trisock_cpp_FUN_0056fa20(CSocket *param_1);
+int __cdecl support_trisock_cpp_CSocket_pollSocketStatus_FUN_0056fa20(CSocket *this_ptr);
 int __cdecl support_trisock_cpp_CSocket_receiveSocketData_FUN_0056fb10(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
 int __cdecl support_trisock_cpp_CSocket_sendSocketData_FUN_0056fbb0(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *dest_addr);
 int __cdecl support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30(CSocket *this_ptr);
 int __cdecl support_trisock_cpp_CSocket_getSocketName_FUN_0056fd00(CSocket *this_ptr,SNetworkAddr *out_address);
 int __cdecl support_trisock_cpp_CSocket_setSocketBlocking_FUN_0056fd60(CSocket *this_ptr,int blocking_mode);
-bool support_trisock_cpp_FUN_0056fee0(int param_1);
-undefined4 support_trisock_cpp_FUN_0056fef0(undefined4 param_1,undefined4 param_2,uint16_t *param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7);
+int __cdecl support_trisock_cpp_defaultHttpStatusCallback_FUN_0056fee0(int is_error);
+int __cdecl support_trisock_cpp_httpConnectToUrl_FUN_0056fef0(char *url,char *host_out,ushort *port_out,char *path_out,int path_size,CSocket *socket,void *status_callback);
 

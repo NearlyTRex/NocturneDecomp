@@ -672,8 +672,11 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,uVar9);
     }
   }
+  fVar23 = (this_ptr->base).speed;
+  fVar21 = (float)_DAT_005da4c6;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850();
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar23 * fVar21);
   pCStack_28 = &(this_ptr->base).base.model;
   pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCStack_28->base);
   iVar7 = pSVar11->state_index;
@@ -687,7 +690,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       if (iVar7 == 0) {
         dVar18 = round((double)UStack_24.vec.x);
         fStack_14 = (float)(int)ROUND(dVar18);
-        iVar7 = core_styldemo_cpp_FUN_005a0480();
+        iVar7 = core_styldemo_cpp_CStylerDemon_tryAttack_FUN_005a0480(this_ptr,(int)fStack_14);
         if ((iVar7 == 0) &&
            (((_DAT_005e84dc < UStack_24.vec.x || ((this_ptr->base).attack_cooldown <= 0.0)) &&
             (UStack_24.vec.x < (this_ptr->base).guard_distance)))) {
@@ -709,7 +712,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         fVar23 = 8.265136e-39;
         dVar18 = round((double)UStack_24.vec.x);
         fStack_14 = (float)(int)ROUND(dVar18);
-        iVar12 = core_styldemo_cpp_FUN_005a0480();
+        iVar12 = core_styldemo_cpp_CStylerDemon_tryAttack_FUN_005a0480(this_ptr,(int)fStack_14);
         if (iVar12 == 0) {
           pCVar16 = &(this_ptr->base).base.model;
           if (UStack_24.vec.x <= _DAT_005e84dc + (float)_DAT_005da4e6) {
@@ -1099,7 +1102,7 @@ LAB_0059f642:
   }
   iVar7 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0((CCharacter *)this_ptr);
   if (iVar7 != 0) {
-    core_charactr_cpp_FUN_0042c1e0();
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     fStack_a8 = (this_ptr->base).base.velocity.x * delta_time;
     afStack_a4[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_a4[1] = (this_ptr->base).base.velocity.z * delta_time;

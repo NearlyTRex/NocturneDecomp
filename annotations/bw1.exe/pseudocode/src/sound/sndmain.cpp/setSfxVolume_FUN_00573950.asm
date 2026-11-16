@@ -9,7 +9,7 @@
 ;
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0 at 0042fa85
-;   core_event.cpp_FUN_004a1d00 at 004a3a55
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a3a55
 ;   core_lightgun.cpp_CLightGun_fire_FUN_00500310 at 00500ce8
 ;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500e00
 ;   core_lightpis.cpp_CLightPis_fire_FUN_00501a70 at 00502448

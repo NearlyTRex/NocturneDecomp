@@ -30,7 +30,7 @@
 ;
 ; XREF[21]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a892
-;   core_confedrt.cpp_FUN_005a14e0 at 005a1823
+;   core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0 at 005a1823
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043a9a7
 ;   core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40 at 0045acd0
 ;   core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_0045b510 at 0045b87c
@@ -38,7 +38,7 @@
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 at 0049dbc6
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00 at 004af18b
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0 at 004b14b9
-;   core_game.cpp_FUN_004be8a0 at 004bee6b
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 at 004bee6b
 ;   ... and 11 more
 ;
 ; Referenced Globals:

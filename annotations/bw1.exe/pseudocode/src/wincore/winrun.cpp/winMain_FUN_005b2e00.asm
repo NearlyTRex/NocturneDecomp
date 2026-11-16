@@ -235,8 +235,8 @@ section .text
     MOV dword ptr [ESP + 0x24],ECX      ; 005b2fc3
     CALL dword ptr CS:[0x5d04f0]        ; 005b2fc7 | PTR_RegisterClassA_005d04f0
     MOV dword ptr [0x02c9be6c],EBP      ; 005b2fce | DAT_02c9be6c
-    CALL wincore_winrun.cpp_FUN_005b2d90 ; 005b2fd4
-        ;   XREF to: 005b2d90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2d90()
+    CALL wincore_winrun.cpp_createMainWindow_FUN_005b2d90 ; 005b2fd4
+        ;   XREF to: 005b2d90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_createMainWindow_FUN_005b2d90()
     PUSH EBX                            ; 005b2fd9
     MOV ESI,dword ptr [0x02c9be68]      ; 005b2fda | DAT_02c9be68
     PUSH ESI                            ; 005b2fe0

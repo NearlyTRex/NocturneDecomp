@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01ba5c50
 ;
 ; Called Functions:
-;   core_bwspart.cpp_FUN_005a86a0
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     RET                                 ; 005a82e6
     PUSH EAX                            ; 005a82e7
         ;   Label: LAB_005a82e7
-    CALL core_bwspart.cpp_FUN_005a86a0  ; 005a82e8
-        ;   XREF to: 005a86a0 (UNCONDITIONAL_CALL)  ; undefined core_bwspart.cpp_FUN_005a86a0()
+    CALL core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 ; 005a82e8
+        ;   XREF to: 005a86a0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0(void * particle)
     ADD ESP,0x4                         ; 005a82ed
     INC EBX                             ; 005a82f0
     MOV EAX,dword ptr [EDI + 0x18]      ; 005a82f1

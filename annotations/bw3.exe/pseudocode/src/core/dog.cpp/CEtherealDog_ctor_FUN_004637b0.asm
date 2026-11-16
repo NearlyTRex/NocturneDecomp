@@ -7,7 +7,7 @@
 ; CEtherealDog *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dog.cpp_FUN_00463780 at 00463793
+;   core_dog.cpp_factoryFuncEtherealDog_FUN_00463780 at 00463793
 ;
 ; Called Functions:
 ;   core_dog.cpp_CZombieDog_ctor_FUN_00462710

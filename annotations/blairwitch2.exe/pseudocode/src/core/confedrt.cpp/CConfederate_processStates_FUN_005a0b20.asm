@@ -19,10 +19,10 @@
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
-;   core_confedrt.cpp_FUN_005a1030
-;   core_confedrt.cpp_FUN_005a1180
-;   core_muzzle.cpp_FUN_0059d650
-;   core_muzzle.cpp_FUN_0059daa0
+;   core_confedrt.cpp_CConfederate_processMeleeAttackState_FUN_005a1180
+;   core_confedrt.cpp_CConfederate_processRangeAttackState_FUN_005a1030
+;   core_muzzle.cpp_SStateMachine_addState_FUN_0059d650
+;   core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -68,24 +68,24 @@ section .text
     PUSH 0x5efc15                       ; 005a0b5f | = "RangeAttack"
         ;   Label: LAB_005a0b5f
     PUSH EAX                            ; 005a0b64
-    CALL core_muzzle.cpp_FUN_0059d650   ; 005a0b65
-        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d650()
+    CALL core_muzzle.cpp_SStateMachine_addState_FUN_0059d650 ; 005a0b65
+        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_addState_FUN_0059d650(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a0b6a
     JMP 0x005a0b3d                      ; 005a0b6d
         ;   XREF to: 005a0b3d (UNCONDITIONAL_JUMP)  ; LAB_005a0b3d
     PUSH 0x5efc21                       ; 005a0b6f | = "RangeAttack"
         ;   Label: LAB_005a0b6f
     PUSH EAX                            ; 005a0b74
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a0b75
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a0b75
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a0b7a
     TEST EAX,EAX                        ; 005a0b7d
     JZ 0x005a0b3d                       ; 005a0b7f
         ;   XREF to: 005a0b3d (CONDITIONAL_JUMP)  ; LAB_005a0b3d
     PUSH dword ptr [ESP + 0x10]         ; 005a0b81
     PUSH ESI                            ; 005a0b85
-    CALL core_confedrt.cpp_FUN_005a1030 ; 005a0b86
-        ;   XREF to: 005a1030 (UNCONDITIONAL_CALL)  ; undefined core_confedrt.cpp_FUN_005a1030()
+    CALL core_confedrt.cpp_CConfederate_processRangeAttackState_FUN_005a1030 ; 005a0b86
+        ;   XREF to: 005a1030 (UNCONDITIONAL_CALL)  ; void core_confedrt.cpp_CConfederate_processRangeAttackState_FUN_005a1030(CConfederate * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005a0b8b
     POP ESI                             ; 005a0b8e
     POP EBX                             ; 005a0b8f
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5efc2d                       ; 005a0b91 | = "MeleeAttack"
         ;   Label: LAB_005a0b91
     PUSH EAX                            ; 005a0b96
-    CALL core_muzzle.cpp_FUN_0059d650   ; 005a0b97
-        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d650()
+    CALL core_muzzle.cpp_SStateMachine_addState_FUN_0059d650 ; 005a0b97
+        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_addState_FUN_0059d650(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a0b9c
     POP ESI                             ; 005a0b9f
     POP EBX                             ; 005a0ba0
@@ -102,16 +102,16 @@ section .text
     PUSH 0x5efc39                       ; 005a0ba2 | = "MeleeAttack"
         ;   Label: LAB_005a0ba2
     PUSH EAX                            ; 005a0ba7
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a0ba8
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a0ba8
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a0bad
     TEST EAX,EAX                        ; 005a0bb0
     JZ 0x005a0b4c                       ; 005a0bb2
         ;   XREF to: 005a0b4c (CONDITIONAL_JUMP)  ; LAB_005a0b4c
     PUSH dword ptr [ESP + 0x10]         ; 005a0bb4
     PUSH ESI                            ; 005a0bb8
-    CALL core_confedrt.cpp_FUN_005a1180 ; 005a0bb9
-        ;   XREF to: 005a1180 (UNCONDITIONAL_CALL)  ; undefined core_confedrt.cpp_FUN_005a1180()
+    CALL core_confedrt.cpp_CConfederate_processMeleeAttackState_FUN_005a1180 ; 005a0bb9
+        ;   XREF to: 005a1180 (UNCONDITIONAL_CALL)  ; void core_confedrt.cpp_CConfederate_processMeleeAttackState_FUN_005a1180(CConfederate * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005a0bbe
     POP ESI                             ; 005a0bc1
     POP EBX                             ; 005a0bc2

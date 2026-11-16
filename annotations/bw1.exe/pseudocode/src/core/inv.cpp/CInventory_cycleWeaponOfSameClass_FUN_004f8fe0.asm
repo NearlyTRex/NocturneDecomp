@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0 at 004d12b9
-;   core_game.cpp_FUN_004d9260 at 004d9576
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004d9576
 ;
 ; Referenced Globals:
 ;   undefined4 g_CWeaponClassInfo.name_hash

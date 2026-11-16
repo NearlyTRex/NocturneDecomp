@@ -8,7 +8,6 @@
 #include "system/stdio.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -76,7 +75,7 @@ CMooCow * __cdecl core_moocow_cpp_CMooCow_ctor_FUN_00521300(CMooCow *this_ptr);
 void __cdecl core_moocow_cpp_CMooCow_setup_FUN_00521370(CMooCow *this_ptr);
 void __cdecl core_moocow_cpp_CMooCow_process_FUN_00521480(CMooCow *this_ptr,float delta_time);
 void __cdecl core_moocow_cpp_CMooCow_archive_FUN_005217d0(CMooCow *this_ptr);
-void core_moocow_cpp_FUN_00521810(CCharacter *param_1,float *param_2);
+void __cdecl core_moocow_cpp_CMooCow_processDismemberment_FUN_00521810(CMooCow *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_moocow_cpp_CMooCow_processDamage_FUN_00521990(CMooCow *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_moocow_cpp_CMooCow_getTargetPoints_FUN_00521a60(CMooCow *this_ptr,CVector3f *out_points_array);
 CMooCow * __cdecl core_moocow_cpp_CMooCow_dtor_FUN_00521ad0(CMooCow *this_ptr,uint flags);
@@ -122,9 +121,9 @@ void __cdecl core_morph_cpp_CMorph_render_FUN_005237e0(CMorph *this_ptr,float mo
 CBoundingBox3D * __cdecl core_box_cpp_CBoundingBox3D_ctor_FUN_00523860(CBoundingBox3D *this_ptr);
 CBoundingBox3D * __cdecl core_box_cpp_CBoundingBox3D_dtor_FUN_00523870(CBoundingBox3D *this_ptr,uint flags);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor2_FUN_00523880(CMorphModel *this_ptr,uint flags);
-undefined4 * core_morph_cpp_FUN_005238c0(undefined4 *param_1);
-undefined4 core_morph_cpp_FUN_005238f0(undefined4 param_1);
-void core_morph_cpp_FUN_00523910(undefined4 *param_1);
+CMotionList * __cdecl core_morph_cpp_CMotionList_ctor_FUN_005238c0(CMotionList *this_ptr);
+CMotionList * __cdecl core_morph_cpp_CMotionList_dtor_FUN_005238f0(CMotionList *this_ptr);
+void __cdecl core_morph_cpp_CMotionList_free_FUN_00523910(CMotionList *this_ptr);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_00523980(CMotionList *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionList_save_FUN_00523db0(CMotionList *this_ptr,_FILE *file_handle);
 int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(CMotionList *this_ptr,char *motion_name,int error_on_not_found);
@@ -141,7 +140,7 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052485
 void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_00524880(CMotionController *this_ptr,SMotionTransition *transition);
 int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_00524940(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index);
 void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_00524970(CMotionController *this_ptr,CMotionList *motion_list);
-void core_motion_cpp_FUN_005249b0(CMotionController *param_1);
+void __cdecl core_motion_cpp_CMotionController_detachMotionList_FUN_005249b0(CMotionController *this_ptr);
 CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController *this_ptr);
 char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_00524a10(CMotionController *this_ptr);
 float __cdecl core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController *this_ptr,int desired_state_index);

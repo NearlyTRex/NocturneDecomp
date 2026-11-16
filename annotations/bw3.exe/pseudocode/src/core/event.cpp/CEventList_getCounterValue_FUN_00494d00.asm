@@ -9,7 +9,7 @@
 ;
 ; XREF[4]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492504
-;   core_event.cpp_FUN_0048c2e0 at 0048e5ad
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048e5ad
 ;   core_event.cpp_parseIntOrCounter_FUN_0048b910 at 0048b941
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052cc92
 ;

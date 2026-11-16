@@ -60,9 +60,9 @@
 ;   core_dynamite.cpp_CDynamite_isFuseLit_FUN_00492690
 ;   core_dynamite.cpp_CDynamite_lightFuse_FUN_00492640
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0
+;   core_inv.cpp_CInventory_getActiveGoggles_FUN_004f9ef0
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004f9ed0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004f8d00
-;   core_inv.cpp_FUN_004f9ef0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
 ;   ... and 3 more
 ;
@@ -109,8 +109,8 @@ section .text
     AND EAX,0xff                        ; 00474461
     PUSH ESI                            ; 00474466
     MOV dword ptr [ESP + 0x58],EAX      ; 00474467
-    CALL core_inv.cpp_FUN_004f9ef0      ; 0047446b
-        ;   XREF to: 004f9ef0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f9ef0()
+    CALL core_inv.cpp_CInventory_getActiveGoggles_FUN_004f9ef0 ; 0047446b
+        ;   XREF to: 004f9ef0 (UNCONDITIONAL_CALL)  ; CGoggles * core_inv.cpp_CInventory_getActiveGoggles_FUN_004f9ef0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 00474470
     TEST EAX,EAX                        ; 00474473
     SETNZ AL                            ; 00474475

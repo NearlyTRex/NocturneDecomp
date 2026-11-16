@@ -1,0 +1,170 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 72,
+    "complexity_score": 50,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 35,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strcpy"
+    ],
+    "total_lines": 107
+  },
+  "cross_references": [
+    {
+      "addr": "004659c0",
+      "from_addr": "00465a0c",
+      "name": "engine_dosio.cpp_getFile_FUN_004659c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00466190",
+    "address_range": [
+      [
+        "00466190",
+        "0046621b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_createDirectoryTree_FUN_00466190",
+    "signature": "int __cdecl engine_dosio_cpp_createDirectoryTree_FUN_00466190(char *directory)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a4e10",
+      "is_variadic": false,
+      "name": "crt_watcom.c__mkdir_FUN_005a4e10"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00465a0c",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_getFile_FUN_004659c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.363636363636363,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 6,
+      "COPY": 46,
+      "INT_ADD": 18,
+      "INT_AND": 36,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 32,
+      "INT_LESS": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 16,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 13,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 240
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004613b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004798c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 284,
+    "local_size": 280,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_113",
+        "offset": -275,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "directory",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004661a1",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 15,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

@@ -9,7 +9,7 @@
 ; void *           Stack[0xc]:4   ostream
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00443830
+;   support_codec.cpp_decodeArmorChar_FUN_00443830
 ;   support_codec.cpp_writeBitsToStream_FUN_00442600
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     RET                                 ; 004439d7
     PUSH EAX                            ; 004439d8
         ;   Label: LAB_004439d8
-    CALL support_codec.cpp_FUN_00443830 ; 004439d9
-        ;   XREF to: 00443830 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00443830()
+    CALL support_codec.cpp_decodeArmorChar_FUN_00443830 ; 004439d9
+        ;   XREF to: 00443830 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_decodeArmorChar_FUN_00443830(int ch)
     ADD ESP,0x4                         ; 004439de
     TEST EAX,EAX                        ; 004439e1
     JL 0x004439c2                       ; 004439e3

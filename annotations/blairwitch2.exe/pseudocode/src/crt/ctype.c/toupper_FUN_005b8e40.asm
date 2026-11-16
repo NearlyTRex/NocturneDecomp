@@ -8,7 +8,7 @@
 ;
 ; XREF[16]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 00489824
-;   core_flashlit.cpp_FUN_004a1450 at 004a1481
+;   core_flashlit.cpp_matchCommand_FUN_004a1450 at 004a1481
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4503
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004b91f4
 ;   core_game.cpp_checkCheatCode_FUN_004b8d90 at 004b8dc8

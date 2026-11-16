@@ -411,8 +411,8 @@ section .text
     PUSH EAX                            ; 004fb17f
     MOV EBX,dword ptr [ESP + 0x8e8]     ; 004fb180
     PUSH EBX                            ; 004fb187
-    CALL engine_font.cpp_FUN_004c4260   ; 004fb188
-        ;   XREF to: 004c4260 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c4260()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260 ; 004fb188
+        ;   XREF to: 004c4260 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 004fb18d
     PUSH 0x58                           ; 004fb190
     PUSH EBX                            ; 004fb192
@@ -632,8 +632,8 @@ section .text
     PUSH EAX                            ; 004fb463
     MOV EAX,dword ptr [ESP + 0x8e8]     ; 004fb464
     PUSH EAX                            ; 004fb46b
-    CALL engine_font.cpp_FUN_004c4260   ; 004fb46c
-        ;   XREF to: 004c4260 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c4260()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260 ; 004fb46c
+        ;   XREF to: 004c4260 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     MOV dword ptr [ESP + 0x8f4],EAX     ; 004fb471
     ADD ESP,0x18                        ; 004fb478
     PUSH 0x58                           ; 004fb47b
@@ -848,8 +848,8 @@ section .text
     PUSH EAX                            ; 004fb70e
     MOV EDX,dword ptr [ESP + 0x8ec]     ; 004fb70f
     PUSH EDX                            ; 004fb716
-    CALL engine_font.cpp_FUN_004c4260   ; 004fb717
-        ;   XREF to: 004c4260 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c4260()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260 ; 004fb717
+        ;   XREF to: 004c4260 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 004fb71c
     PUSH 0x58                           ; 004fb71f
     MOV ECX,dword ptr [ESP + 0x8dc]     ; 004fb721

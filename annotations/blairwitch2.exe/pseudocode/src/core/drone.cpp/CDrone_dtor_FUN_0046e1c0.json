@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 52,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 2,
+    "pseudocode_lines": 29,
+    "suspect_count": 3,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 92
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -46,7 +46,7 @@
     {
       "addr": "0059df70",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059df70"
+      "name": "core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70"
     },
     {
       "addr": "00544d50",
@@ -156,15 +156,23 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 19,
       "match": "pCVar1[-3].",
       "severity": "mild",
-      "text": "iVar2 = core_muzzle_cpp_FUN_0059df70(&pCVar1[-3].base.particle_systems[3].max_particles,0);",
+      "text": "((SFollowFormation *)&pCVar1[-3].base.particle_systems[3].max_particles,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 21,
+      "match": "pSVar2[-1].",
+      "severity": "mild",
+      "text": "((CClothList *)&pSVar2[-1].slots[2].offset.y,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
       "match": "pCVar4[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",

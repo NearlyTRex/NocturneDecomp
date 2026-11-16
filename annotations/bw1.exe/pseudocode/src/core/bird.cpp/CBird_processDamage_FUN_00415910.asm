@@ -13,7 +13,7 @@
 ;   CDemonActorType g_CBirdClassInfo
 ;
 ; Called Functions:
-;   core_bird.cpp_FUN_00415830
+;   core_bird.cpp_setRandomMotionVariant_FUN_00415830
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_004319e0
 ;
@@ -57,8 +57,8 @@ section .text
     PUSH 0x5d3d6e                       ; 00415965 | DAT_005d3d6e
     PUSH ESI                            ; 0041596a
         ;   Label: LAB_0041596a
-    CALL core_bird.cpp_FUN_00415830     ; 0041596b
-        ;   XREF to: 00415830 (UNCONDITIONAL_CALL)  ; undefined core_bird.cpp_FUN_00415830()
+    CALL core_bird.cpp_setRandomMotionVariant_FUN_00415830 ; 0041596b
+        ;   XREF to: 00415830 (UNCONDITIONAL_CALL)  ; int core_bird.cpp_setRandomMotionVariant_FUN_00415830(CMotionController * motion_controller, char * motion_name)
     ADD ESP,0x8                         ; 00415970
     PUSH EDI                            ; 00415973
         ;   Label: LAB_00415973

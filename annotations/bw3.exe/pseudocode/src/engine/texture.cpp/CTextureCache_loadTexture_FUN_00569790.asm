@@ -46,9 +46,9 @@
 ;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_unknown.c_sprintf_FUN_005a28c0
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660
 ;   engine_dosio.cpp_changeFileExtension_FUN_00465f80
 ;   engine_dosio.cpp_findFile_FUN_004656d0
-;   engine_dosio.cpp_FUN_00465660
 ;   engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00569670
 ;   support_trstream.cpp_CInStreamFile_close_FUN_00573db0
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0
@@ -105,8 +105,8 @@ section .text
     PUSH EDI                            ; 0056980e
     PUSH 0x5d5ed4                       ; 0056980f | DAT_005d5ed4
     PUSH 0x2cfd0d8                      ; 00569814
-    CALL engine_dosio.cpp_FUN_00465660  ; 00569819
-        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00465660()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660 ; 00569819
+        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 0056981e
     PUSH 0x2cfd0d8                      ; 00569821
     CALL engine_dosio.cpp_findFile_FUN_004656d0 ; 00569826
@@ -182,8 +182,8 @@ section .text
     PUSH EAX                            ; 005698d7
     PUSH 0x5d5f23                       ; 005698d8 | DAT_005d5f23
     PUSH 0x2cfd2ec                      ; 005698dd
-    CALL engine_dosio.cpp_FUN_00465660  ; 005698e2
-        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00465660()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660 ; 005698e2
+        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 005698e7
     PUSH 0x2cfd2ec                      ; 005698ea
     CALL engine_dosio.cpp_findFile_FUN_004656d0 ; 005698ef
@@ -218,8 +218,8 @@ section .text
     PUSH EAX                            ; 00569942
     PUSH 0x5d5f2c                       ; 00569943 | DAT_005d5f2c
     PUSH 0x2cfd500                      ; 00569948
-    CALL engine_dosio.cpp_FUN_00465660  ; 0056994d
-        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00465660()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660 ; 0056994d
+        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 00569952
     PUSH 0x2cfd500                      ; 00569955
     CALL engine_dosio.cpp_findFile_FUN_004656d0 ; 0056995a

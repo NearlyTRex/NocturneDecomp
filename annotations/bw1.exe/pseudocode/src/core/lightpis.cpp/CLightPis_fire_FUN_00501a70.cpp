@@ -194,7 +194,7 @@ int __cdecl core_lightpis_cpp_CLightPis_fire_FUN_00501a70(CLightPis *this_ptr)
       iVar3 = iVar3 + 1;
     } while (iVar3 < 1);
     core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00559060(g_CDemonSetPtr);
-    core_lightpis_cpp_FUN_005017f0(this_ptr);
+    core_lightpis_cpp_CLightPis_updateBeamLight_FUN_005017f0(this_ptr);
     iStack_20 = 0;
     pfStack_28 = afStack_184;
     iStack_24 = 0;
@@ -336,7 +336,7 @@ LAB_00501f69:
           if (bVar1) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010((SDamageInfo *)auStack_1a4);
             in_stack_fffffe0c = (CBoundingBox3D *)0x50221b;
-            iVar3 = core_lightpis_cpp_FUN_005016d0();
+            iVar3 = core_lightpis_cpp_isVampireType_FUN_005016d0(unaff_ESI);
             if (iVar3 == 0) {
               auStack_1a4._4_4_ = 0.1;
             }
@@ -362,7 +362,7 @@ LAB_00501f69:
       }
       else {
         dVar14 = __BITCAST_DOUBLE(CONCAT44(out_box,pCStack_2c));
-        iVar3 = core_lightpis_cpp_FUN_005016d0(pCStack_2c);
+        iVar3 = core_lightpis_cpp_isVampireType_FUN_005016d0(&pCStack_2c->base);
         out_box = (CBoundingBox3D *)((ulonglong)dVar14 >> 0x20);
         if (iVar3 != 0) goto LAB_00501f69;
       }

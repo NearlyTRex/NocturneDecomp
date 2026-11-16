@@ -1,0 +1,219 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 54,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 105
+  },
+  "cross_references": [
+    {
+      "addr": "004f33d0",
+      "from_addr": "004f33ec",
+      "name": "engine_mini3d.cpp_loadTexture_FUN_004f33d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575150",
+      "from_addr": "005755c2",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00574ea0",
+    "address_range": [
+      [
+        "00574ea0",
+        "00574f55"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_storePalettedTexture_FUN_00574ea0",
+    "signature": "void __cdecl engine_texture_cpp_storePalettedTexture_FUN_00574ea0(SMRGLTextureBasic *texture,int dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "00574240",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_addPalettedTexture_FUN_00574240"
+    },
+    {
+      "addr": "00574490",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_00574490"
+    },
+    {
+      "addr": "00574310",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_replacePalettedTexture_FUN_00574310"
+    },
+    {
+      "addr": "00574520",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_CTextureCache_setupTexture_FUN_00574520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0070ca74",
+      "name": "DAT_0070ca74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02652eac",
+      "name": "DAT_02652eac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02652eb0",
+      "name": "DAT_02652eb0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004f33ec",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_loadTexture_FUN_004f33d0",
+        "estimated_params": 5,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "005755c2",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.514705882352941,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 61,
+      "INT_ADD": 26,
+      "INT_AND": 17,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 29,
+      "LOAD": 19,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 28
+    },
+    "pcode_op_count": 239
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00597ac0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0056aab0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "dimension",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_data",
+        "offset": 12,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "palette_data",
+        "offset": 16,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "opacity_data",
+        "offset": 20,
+        "size": 4,
+        "type": "uchar *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0070ca74",
+      "severity": "mild",
+      "text": "if ((DAT_0070ca74 == 0) && (texture->texture_name[0] != '\\0')) {",
+      "type": "undefined_data"
+    }
+  ]
+}

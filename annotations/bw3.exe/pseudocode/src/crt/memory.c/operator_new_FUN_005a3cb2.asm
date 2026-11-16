@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[150]:
-;   core_ammo.cpp_FUN_0040e0c0 at 0040e0c5
-;   core_ammo.cpp_FUN_0040e230 at 0040e235
-;   core_ammo.cpp_FUN_0040e3a0 at 0040e3a5
+;   core_ammo.cpp_factoryFuncAmmoBullet_FUN_0040e3a0 at 0040e3a5
+;   core_ammo.cpp_factoryFuncAmmoManaLarge_FUN_0040e230 at 0040e235
+;   core_ammo.cpp_factoryFuncAmmoMana_FUN_0040e0c0 at 0040e0c5
 ;   core_ammo.cpp_factoryFuncAmmo_FUN_0040de30 at 0040de35
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e720 at 0040e768
 ;   core_ammobox.cpp_factoryFuncAmmoBox_FUN_0040e590 at 0040e595

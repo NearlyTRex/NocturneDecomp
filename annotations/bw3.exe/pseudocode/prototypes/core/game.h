@@ -125,13 +125,13 @@ void __cdecl dampControlAxis(float *axis_value,float damp_time,float damp_rate);
 // Address: 004b9960
 void __cdecl CGame::processKeyboardControls(CGame *this_ptr,SPlayerInput *player_control);
 
-// Original: core_game.cpp_FUN_004ba220
+// Original: core_game.cpp_CGame_setGogglesActive_FUN_004ba220
 // Address: 004ba220
-void FUN_004ba220(int param_1,int param_2);
+void __cdecl CGame::setGogglesActive(CGame *this_ptr,int active);
 
-// Original: core_game.cpp_FUN_004ba280
+// Original: core_game.cpp_CGame_setSpecialViewActive_FUN_004ba280
 // Address: 004ba280
-void FUN_004ba280(int param_1,int param_2);
+void __cdecl CGame::setSpecialViewActive(CGame *this_ptr,int active);
 
 // Original: core_game.cpp_CGame_processMouseControls_FUN_004ba2e0
 // Address: 004ba2e0
@@ -165,9 +165,9 @@ void __cdecl CGame::processCheatCodes(CGame *this_ptr);
 // Address: 004bd430
 void __cdecl CGame::loadAssets(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004bd470
+// Original: core_game.cpp_CGame_resetIrisFade_FUN_004bd470
 // Address: 004bd470
-void FUN_004bd470(void);
+void __cdecl CGame::resetIrisFade(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_beginFadeIn_FUN_004bd620
 // Address: 004bd620
@@ -261,13 +261,13 @@ void __cdecl CGame::finishAct(CGame *this_ptr);
 // Address: 004c02a0
 void __cdecl CGame::rollCredits(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004c07b0
+// Original: core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0
 // Address: 004c07b0
-void FUN_004c07b0(int param_1,undefined4 *param_2);
+void __cdecl CGame::processPointAndClickControls(CGame *this_ptr,SPlayerInput *player_control);
 
-// Original: core_game.cpp_FUN_004c4870
+// Original: core_game.cpp_CGame_onSetLoaded_FUN_004c4870
 // Address: 004c4870
-void FUN_004c4870(int param_1);
+void __cdecl CGame::onSetLoaded(CGame *this_ptr);
 
 // Original: core_game.cpp_loadCursorBitmaps_FUN_004c48b0
 // Address: 004c48b0
@@ -281,25 +281,25 @@ void __cdecl freeCursorBitmaps(void);
 // Address: 004c4a10
 void __cdecl drawCursor(void);
 
-// Original: core_game.cpp_FUN_004c4a60
+// Original: core_game.cpp_CGame_playMusic_FUN_004c4a60
 // Address: 004c4a60
-void FUN_004c4a60(void *param_1,char *param_2,int param_3,uint param_4);
+void __cdecl CGame::playMusic(CGame *this_ptr,char *music_name,double start_position);
 
-// Original: core_game.cpp_FUN_004c4bc0
+// Original: core_game.cpp_CGame_updateMusic_FUN_004c4bc0
 // Address: 004c4bc0
-void FUN_004c4bc0(int param_1);
+void __cdecl CGame::updateMusic(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004c4cc0
+// Original: core_game.cpp_CGame_saveMusicPosition_FUN_004c4cc0
 // Address: 004c4cc0
-void FUN_004c4cc0(int param_1);
+void __cdecl CGame::saveMusicPosition(CGame *this_ptr);
 
 // Original: core_game.cpp_FUN_004c4d10
 // Address: 004c4d10
 void FUN_004c4d10(int param_1);
 
-// Original: core_game.cpp_FUN_004c4d50
+// Original: core_game.cpp_getSelectedWeapon_FUN_004c4d50
 // Address: 004c4d50
-undefined4 FUN_004c4d50(int param_1);
+CWeapon * __cdecl getSelectedWeapon(CInventory *inventory_ptr);
 
 // Original: core_game.cpp_CAlphaBitmap_arrdtor8_FUN_004c4d60
 // Address: 004c4d60

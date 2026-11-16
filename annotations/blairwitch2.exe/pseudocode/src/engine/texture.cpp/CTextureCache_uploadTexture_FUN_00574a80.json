@@ -1,0 +1,172 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 30,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "00575070",
+      "from_addr": "0057508a",
+      "name": "engine_texture.cpp_loadAndUpdateTexture_FUN_00575070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575040",
+      "from_addr": "0057505a",
+      "name": "engine_texture.cpp_updateTextureWithPalette_FUN_00575040",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00574a80",
+    "address_range": [
+      [
+        "00574a80",
+        "00574adf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_CTextureCache_uploadTexture_FUN_00574a80",
+    "signature": "void __cdecl engine_texture_cpp_CTextureCache_uploadTexture_FUN_00574a80(CTextureCache *this_ptr,SMRGLTextureBasic *texture)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c37788",
+      "name": "DAT_01c37788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbe4",
+      "name": "DAT_0264bbe4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbec",
+      "name": "DAT_0264bbec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0057508a",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_loadAndUpdateTexture_FUN_00575070",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0057505a",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_updateTextureWithPalette_FUN_00575040",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.883720930232558,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CALLIND": 2,
+      "CBRANCH": 2,
+      "COPY": 42,
+      "INT_ADD": 21,
+      "INT_AND": 28,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 17,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 18,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 210
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005976a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0056a690",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTextureCache *"
+      },
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

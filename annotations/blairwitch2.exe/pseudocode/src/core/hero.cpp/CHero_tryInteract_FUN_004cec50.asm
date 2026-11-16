@@ -13,7 +13,7 @@
 ;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435c7f
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004ae8ee
 ;   core_haystack.cpp_CHaystack_process_FUN_004cc990 at 004cce0d
-;   core_hero.cpp_FUN_004d0780 at 004d07b0
+;   core_hero.cpp_CHero_findHeroAction_FUN_004d0780 at 004d07b0
 ;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d51ee
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e696
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00570510 at 00570a77
@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
-;   core_weapon.cpp_FUN_0058a5f0
+;   core_weapon.cpp_CWeapon_isSimulating_FUN_0058a5f0
 ;
 ; *****************************************************************************
 
@@ -142,8 +142,8 @@ section .text
     JZ 0x004ceda1                       ; 004ced92
         ;   XREF to: 004ceda1 (CONDITIONAL_JUMP)  ; LAB_004ceda1
     PUSH EAX                            ; 004ced94
-    CALL core_weapon.cpp_FUN_0058a5f0   ; 004ced95
-        ;   XREF to: 0058a5f0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_0058a5f0()
+    CALL core_weapon.cpp_CWeapon_isSimulating_FUN_0058a5f0 ; 004ced95
+        ;   XREF to: 0058a5f0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_isSimulating_FUN_0058a5f0(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 004ced9a
     TEST EAX,EAX                        ; 004ced9d
     JZ 0x004cee0c                       ; 004ced9f

@@ -7,9 +7,9 @@
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0 at 0040dbec
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0 at 0040d730
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0 at 0040d94a
-;   engine_alphabit.cpp_FUN_0040dbe0 at 0040dbec
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6a974

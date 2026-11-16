@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[26]:
-;   core_flashlit.cpp_FUN_004a16b0 at 004a1724
+;   core_flashlit.cpp_drawTooltip_FUN_004a16b0 at 004a1724
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700 at 004a5a5e
 ;   core_fldnotes.cpp_SNotesMap_draw_FUN_004a3e40 at 004a3fa7
 ;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2060 at 004a207e
@@ -52,8 +52,8 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004a9870
-;   engine_font.cpp_FUN_004ab840
-;   engine_palette.cpp_FUN_00510cd0
+;   engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004ab840
+;   engine_palette.cpp_CFont_queueText_FUN_00510cd0
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     PUSH ESI                            ; 004a8e2e
     MOV ESI,dword ptr [EBX + 0x4214]    ; 004a8e2f
     PUSH ESI                            ; 004a8e35
-    CALL engine_palette.cpp_FUN_00510cd0 ; 004a8e36
-        ;   XREF to: 00510cd0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_FUN_00510cd0()
+    CALL engine_palette.cpp_CFont_queueText_FUN_00510cd0 ; 004a8e36
+        ;   XREF to: 00510cd0 (UNCONDITIONAL_CALL)  ; int engine_palette.cpp_CFont_queueText_FUN_00510cd0(CFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004a8e3b
     ADD ESP,0x24                        ; 004a8e3e
         ;   Label: LAB_004a8e3e
@@ -104,8 +104,8 @@ section .text
     PUSH EBP                            ; 004a8e4c
     PUSH ESI                            ; 004a8e4d
     PUSH EBX                            ; 004a8e4e
-    CALL engine_font.cpp_FUN_004ab840   ; 004a8e4f
-        ;   XREF to: 004ab840 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004ab840()
+    CALL engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004ab840 ; 004a8e4f
+        ;   XREF to: 004ab840 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004ab840(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x14                        ; 004a8e54
     JMP 0x004a8e3e                      ; 004a8e57
         ;   XREF to: 004a8e3e (UNCONDITIONAL_JUMP)  ; LAB_004a8e3e

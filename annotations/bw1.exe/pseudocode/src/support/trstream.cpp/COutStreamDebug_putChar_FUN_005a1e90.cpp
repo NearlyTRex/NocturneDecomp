@@ -13,6 +13,6 @@ int __cdecl support_trstream_cpp_COutStreamDebug_putChar_FUN_005a1e90(COutStream
   
   acStack_4[0] = ch;
   acStack_4[1] = 0;
-  wincore_winrun_cpp_FUN_005b3a90(acStack_4);
+  wincore_winrun_cpp_outputDebugString_FUN_005b3a90(acStack_4);
   return 0;
 }

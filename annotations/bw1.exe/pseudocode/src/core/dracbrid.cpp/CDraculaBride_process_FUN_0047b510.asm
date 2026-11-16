@@ -35,12 +35,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -333,8 +333,8 @@ section .text
         ;   Label: LAB_0047b890
     PUSH EBX                            ; 0047b896
     LEA ESI,[EBX + 0x2518]              ; 0047b897
-    CALL core_charactr.cpp_FUN_0042d700 ; 0047b89d
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 0047b89d
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 0047b8a2
     FMUL float ptr [EBP + 0x92]         ; 0047b8a4
     FLD float ptr [ESI + 0x4]           ; 0047b8aa

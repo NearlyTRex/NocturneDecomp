@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
     FLD float ptr [0x00600a6c]          ; 005aad37 | DAT_00600a6c
     PUSH EBX                            ; 005aad3d
     FSTP float ptr [EBX + 0x89c]        ; 005aad3e
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aad44
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aad44
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aad49
     ADD ESP,0x10                        ; 005aad4c
     POP EBX                             ; 005aad4f
@@ -92,8 +92,8 @@ section .text
         ;   Label: LAB_005aad51
     ADD EBX,0x10af8                     ; 005aad56
     PUSH EBX                            ; 005aad5c
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aad5d
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aad5d
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aad62
     ADD ESP,0x10                        ; 005aad65
     POP EBX                             ; 005aad68

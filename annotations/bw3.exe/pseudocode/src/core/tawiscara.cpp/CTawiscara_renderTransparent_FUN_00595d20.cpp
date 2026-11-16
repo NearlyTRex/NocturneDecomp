@@ -60,8 +60,8 @@ int __cdecl core_tawiscara_cpp_CTawiscara_renderTransparent_FUN_00595d20(CTawisc
                 (DAT_005f2afc,(CVector3f *)&DAT_02cfd900,translation);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
                 (DAT_005f2afc,&CStack_2c,(CVector3f *)0x0);
-      core_tawiscara_cpp_FUN_00595760(this_ptr,&DAT_02d24a54);
-      core_tawiscara_cpp_FUN_00595760(this_ptr,&DAT_02d24a60);
+      core_tawiscara_cpp_CTawiscara_renderEyeGlow_FUN_00595760(this_ptr,(CVector3f *)&DAT_02d24a54);
+      core_tawiscara_cpp_CTawiscara_renderEyeGlow_FUN_00595760(this_ptr,(CVector3f *)&DAT_02d24a60);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);

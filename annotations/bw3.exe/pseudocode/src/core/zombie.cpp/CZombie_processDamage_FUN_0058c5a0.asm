@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
-;   core_enemy.cpp_FUN_0048a1b0
+;   core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -66,8 +66,8 @@ section .text
         ;   XREF to: 0058c64c (CONDITIONAL_JUMP)  ; LAB_0058c64c
     PUSH dword ptr [EDI + 0x4]          ; 0058c605
     PUSH EBX                            ; 0058c608
-    CALL core_enemy.cpp_FUN_0048a1b0    ; 0058c609
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0 ; 0058c609
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0(CEnemy * this_ptr, float damage)
     ADD ESP,0x8                         ; 0058c60e
     TEST EAX,EAX                        ; 0058c611
     JZ 0x0058c622                       ; 0058c613

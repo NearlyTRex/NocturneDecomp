@@ -66,7 +66,8 @@ void __cdecl core_hand_cpp_CHand_processSleepingState_FUN_005a9ff0(CHand *this_p
       fVar5 = (this_ptr->base).base.base.base.location.position.z -
               (pCVar3->base).location.position.z;
       if (SQRT(fVar5 * fVar5 + fVar4 * fVar4) < _DAT_0060088c) {
-        core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"?MeleeAttack" + 1);
+        core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
+                  (&(this_ptr->base).state_machine,"?MeleeAttack" + 1);
         return;
       }
     }

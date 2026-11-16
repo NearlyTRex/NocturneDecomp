@@ -13,7 +13,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampire
   CCloth *pCVar2;
   CDeformableModelInstance *pCVar3;
   CFlame *pCVar4;
-  int iVar5;
+  SFollowFormation *pSVar5;
   CClothList *pCVar6;
   CVampireBoss *pCVar7;
   void *ptr;
@@ -33,8 +33,10 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampire
                       (pCVar2[-1].collide_bones[0x13].world_matrix.m + 2),0);
   pCVar4 = core_armour_cpp_CFlame_arrdtor50_FUN_0040f2b0
                      ((CFlame *)(pCVar3[-7].part_data.texture_set_indices + 0x17),0);
-  iVar5 = core_muzzle_cpp_FUN_0059df70(&pCVar4[-3].base.particle_systems[3].max_particles,0);
-  pCVar6 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar5 + -0x34c),0);
+  pSVar5 = core_muzzle_cpp_SFollowFormation_dtor_FUN_0059df70
+                     ((SFollowFormation *)&pCVar4[-3].base.particle_systems[3].max_particles,0);
+  pCVar6 = core_cloth_cpp_CClothList_dtor_FUN_005b1480
+                     ((CClothList *)&pSVar5[-1].slots[2].offset.y,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar6[-0x19].filenames[6] + 0x10),0);
   pCVar7 = (CVampireBoss *)

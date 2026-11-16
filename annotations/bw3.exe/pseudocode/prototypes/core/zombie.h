@@ -9,9 +9,9 @@
 // Address: 00588410
 void __cdecl staticInit(void);
 
-// Original: core_zombie.cpp_FUN_005884f0
+// Original: core_zombie.cpp_getObjectHeightScale_FUN_005884f0
 // Address: 005884f0
-float FUN_005884f0(int param_1);
+float __cdecl getObjectHeightScale(CDemonActor *actor);
 
 // Original: core_zombie.cpp_getObjectGrabPointLocal_FUN_00588590
 // Address: 00588590
@@ -117,9 +117,9 @@ int __cdecl CZombie::isInvulnerable(CZombie *this_ptr);
 // Address: 0058cc20
 void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_0058cc90
+// Original: core_zombie.cpp_factoryFuncZombieCemetery_FUN_0058cc90
 // Address: 0058cc90
-void FUN_0058cc90(void);
+CZombieCemetery * __cdecl factoryFuncZombieCemetery(void);
 
 // Original: core_zombie.cpp_CZombieCemetery_getActorType_FUN_0058ccb0
 // Address: 0058ccb0
@@ -129,9 +129,9 @@ CDemonActorType * __cdecl CZombieCemetery::getActorType(CZombieCemetery *this_pt
 // Address: 0058ccc0
 CZombieCemetery * __cdecl CZombieCemetery::ctor(CZombieCemetery *this_ptr);
 
-// Original: core_zombie.cpp_FUN_0058cd20
+// Original: core_zombie.cpp_factoryFuncZombieForest_FUN_0058cd20
 // Address: 0058cd20
-void FUN_0058cd20(void);
+CZombieForest * __cdecl factoryFuncZombieForest(void);
 
 // Original: core_zombie.cpp_CZombieForest_getActorType_FUN_0058cd40
 // Address: 0058cd40
@@ -141,9 +141,9 @@ CDemonActorType * __cdecl CZombieForest::getActorType(CZombieForest *this_ptr);
 // Address: 0058cd50
 CZombieForest * __cdecl CZombieForest::ctor(CZombieForest *this_ptr);
 
-// Original: core_zombie.cpp_FUN_0058cdb0
+// Original: core_zombie.cpp_factoryFuncZombieSpirit_FUN_0058cdb0
 // Address: 0058cdb0
-void FUN_0058cdb0(void);
+CZombieSpirit * __cdecl factoryFuncZombieSpirit(void);
 
 // Original: core_zombie.cpp_CZombieSpirit_getActorType_FUN_0058cdd0
 // Address: 0058cdd0
@@ -153,9 +153,9 @@ CDemonActorType * __cdecl CZombieSpirit::getActorType(CZombieSpirit *this_ptr);
 // Address: 0058cde0
 CZombieSpirit * __cdecl CZombieSpirit::ctor(CZombieSpirit *this_ptr);
 
-// Original: core_zombie.cpp_FUN_0058ce40
+// Original: core_zombie.cpp_factoryFuncZombieIndian_FUN_0058ce40
 // Address: 0058ce40
-void FUN_0058ce40(void);
+CZombieIndian * __cdecl factoryFuncZombieIndian(void);
 
 // Original: core_zombie.cpp_CZombieIndian_getActorType_FUN_0058ce60
 // Address: 0058ce60
@@ -165,9 +165,9 @@ CDemonActorType * __cdecl CZombieIndian::getActorType(CZombieIndian *this_ptr);
 // Address: 0058ce70
 CZombieIndian * __cdecl CZombieIndian::ctor(CZombieIndian *this_ptr);
 
-// Original: core_zombie.cpp_FUN_0058ced0
+// Original: core_zombie.cpp_factoryFuncZombieDemon_FUN_0058ced0
 // Address: 0058ced0
-void FUN_0058ced0(void);
+CZombieDemon * __cdecl factoryFuncZombieDemon(void);
 
 // Original: core_zombie.cpp_CZombieDemon_getActorType_FUN_0058cef0
 // Address: 0058cef0

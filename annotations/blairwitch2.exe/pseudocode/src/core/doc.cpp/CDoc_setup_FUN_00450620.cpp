@@ -118,7 +118,7 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
     (this_ptr->ref_r_upperarm_bone_pos).y = fStack_34;
     (this_ptr->ref_r_upperarm_bone_pos).z = fStack_30;
   }
-  core_doc_cpp_FUN_00453d80(this_ptr);
+  core_doc_cpp_CDoc_updateProceduralAnimation_FUN_00453d80(this_ptr);
   this_ptr->grab_timer = 0.0;
   this_ptr->ladder_blend_time = 0.0;
   this_ptr->fall_velocity_snapshot = 0.0;

@@ -42,7 +42,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_0051b8d0(CDemonMission *
       iVar2 = 0;
       do {
         engine_special_cpp_lockFrame_FUN_00581f50();
-        engine_alphabit_cpp_FUN_0040d9a0(&local_24);
+        engine_alphabit_cpp_CAlphaBitmap_displayFullScreen_FUN_0040d9a0(&local_24);
         engine_special_cpp_unlockFrame_FUN_00581fa0(0);
         iVar2 = iVar2 + 1;
         wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();

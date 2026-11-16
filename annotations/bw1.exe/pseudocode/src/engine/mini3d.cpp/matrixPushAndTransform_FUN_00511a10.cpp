@@ -40,9 +40,9 @@ void __cdecl engine_mini3d_cpp_matrixPushAndTransform_FUN_00511a10(CVector3f *an
     core_main_c_displayErrorAndQuit_FUN_005030e0("Matrix unbalance");
   }
   iVar15 = _DAT_01d22580 * 0x3c;
-  core_dirmat_cpp_FUN_0045fd80(&fStack_5c,afStack_44,angles);
-  core_dirmat_cpp_FUN_0045fd80(afStack_50,&fStack_58,&angles->z);
-  core_dirmat_cpp_FUN_0045fd80(&fStack_54,afStack_3c,&angles->y);
+  core_dirmat_cpp_sinCos_FUN_0045fd80(&fStack_5c,afStack_44,&angles->x);
+  core_dirmat_cpp_sinCos_FUN_0045fd80(afStack_50,&fStack_58,&angles->z);
+  core_dirmat_cpp_sinCos_FUN_0045fd80(&fStack_54,afStack_3c,&angles->y);
   fVar6 = fStack_54 * afStack_44[0];
   fVar7 = afStack_50[0] * afStack_44[0];
   fVar8 = fStack_58 * afStack_44[0];

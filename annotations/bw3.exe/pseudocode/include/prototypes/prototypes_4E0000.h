@@ -14,7 +14,6 @@
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMelee.h"
 #include "types/classes/CMini3D.h"
-#include "types/classes/COutStream.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
@@ -46,7 +45,7 @@ CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004e0ab0(CLever *this_ptr,uint f
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004e0b10(int light_level);
 int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004e0b40(void);
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004e0b50(int dir_x,int dir_y,int dir_z);
-void engine_light_cpp_FUN_004e0b80(undefined4 param_1);
+void __cdecl engine_light_cpp_setSpecularEnabled_FUN_004e0b80(int enabled);
 int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004e0bb0(int world_x,int world_y,int world_z);
 int __cdecl engine_light_cpp_calculateLighting_FUN_004e0e00(int normal_x,int normal_y,int normal_z);
 void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004e0ed0(int vertex_index,CVector3i *vertex_position);
@@ -78,8 +77,8 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_004e4400(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_004e44d0(void);
 void __cdecl core_main_c_initializeGameSystems_FUN_004e44e0(int argc,char **argv);
 void __cdecl core_main_c_finalizeGameSystems_FUN_004e4c70(void);
-undefined8 core_main_c_FUN_004e4d00(void);
-void core_main_c_FUN_004e4d80(void);
+void __cdecl core_main_c_initializeTrigTables_FUN_004e4d00(void);
+void __cdecl core_main_c_freeTrigTables_FUN_004e4d80(void);
 int __cdecl engine_matrix_c_interpolatedSin_FUN_004e4d90(int angle);
 int __cdecl engine_matrix_c_interpolatedCos_FUN_004e4dd0(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e4e10(void);
@@ -119,7 +118,7 @@ void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004e73b0(CMelee *th
 void __cdecl core_melee_cpp_CMelee_process_FUN_004e73e0(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_004e74b0(CMelee *this_ptr,int weapon_state);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_004e74d0(CMelee *this_ptr,uint flags);
-void core_melee_cpp_FUN_004e7540(COutStream *param_1);
+void __cdecl core_melee_cpp_dumpHeap_FUN_004e7540(void *stream);
 void __cdecl core_menu_cpp_staticInit_FUN_004e7610(void);
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int y_top,int height_half);
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);

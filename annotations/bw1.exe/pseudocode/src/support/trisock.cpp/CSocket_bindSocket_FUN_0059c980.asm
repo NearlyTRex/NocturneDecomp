@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970 at 0052c9c4
-;   support_trisock.cpp_FUN_0059cf00 at 0059d04b
-;   support_trisock.cpp_FUN_0059e350 at 0059e41f
+;   support_trisock.cpp_httpConnectToUrl_FUN_0059cf00 at 0059d04b
+;   support_trisock.cpp_httpRequestUpdate_FUN_0059e350 at 0059e41f
 ;
 ; Called Functions:
 ;   crt_wsock32.c_bind

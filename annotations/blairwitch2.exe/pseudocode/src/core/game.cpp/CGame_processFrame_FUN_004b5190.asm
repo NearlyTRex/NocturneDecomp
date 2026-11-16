@@ -75,8 +75,8 @@
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0043c6b0
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
 ;   core_event.cpp_CEventList_findTimer_FUN_004915e0
+;   core_event.cpp_CEventList_getTimerValue_FUN_00491240
 ;   core_event.cpp_CEventList_render_FUN_0048e490
-;   core_event.cpp_FUN_00491240
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004b30d0
 ;   core_game.cpp_CGame_process_FUN_004bd570
@@ -417,8 +417,8 @@ section .text
     PUSH EAX                            ; 004b5538
     MOV EBX,dword ptr [0x006141f0]      ; 004b5539 | DAT_006141f0
     PUSH EBX                            ; 004b553f
-    CALL core_event.cpp_FUN_00491240    ; 004b5540
-        ;   XREF to: 00491240 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00491240()
+    CALL core_event.cpp_CEventList_getTimerValue_FUN_00491240 ; 004b5540
+        ;   XREF to: 00491240 (UNCONDITIONAL_CALL)  ; float core_event.cpp_CEventList_getTimerValue_FUN_00491240(CEventList * this_ptr, int timer_index)
     ADD ESP,0x8                         ; 004b5545
     MOV dword ptr [EBP + 0x7a],EAX      ; 004b5548
     SUB ESP,0x8                         ; 004b554b

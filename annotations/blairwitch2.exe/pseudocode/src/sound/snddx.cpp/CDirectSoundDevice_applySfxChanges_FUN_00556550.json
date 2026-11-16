@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 822,
-    "complexity_score": 477,
+    "complexity_score": 484,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 257,
+    "pseudocode_lines": 264,
     "suspect_count": 19,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -17,7 +17,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1079
+    "total_lines": 1086
   },
   "cross_references": [],
   "function": {
@@ -55,19 +55,19 @@
       "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
-      "addr": "00554f80",
-      "is_variadic": false,
-      "name": "sound_snddx.cpp_FUN_00554f80"
-    },
-    {
       "addr": "00555020",
       "is_variadic": false,
-      "name": "sound_snddx.cpp_FUN_00555020"
+      "name": "sound_snddx.cpp_clampDirectSoundFrequency_FUN_00555020"
     },
     {
       "addr": "00554ad0",
       "is_variadic": false,
       "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0"
+    },
+    {
+      "addr": "00554f80",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_00554f80"
     },
     {
       "addr": "00552810",
@@ -340,7 +340,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 49,
+      "line": 50,
       "match": "*(int **)(iVar4 * 0x24 + 0x264ac14",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar4 * 0x24 + 0x264ac14);",
@@ -348,7 +348,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
+      "line": 67,
       "match": "code *",
       "severity": "moderate",
       "text": "(uVar5 = (**(code **)(*piVar2 + 0x4c))",
@@ -356,7 +356,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 74,
+      "line": 77,
       "match": "code *",
       "severity": "moderate",
       "text": "(uVar5 = (**(code **)(*piVar2 + 0x50))",
@@ -364,7 +364,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 86,
+      "line": 90,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar1 + 0x3c))(piVar1);",
@@ -372,7 +372,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 99,
+      "line": 105,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar1 + 0x44))(piVar1);",
@@ -380,7 +380,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 114,
+      "line": 120,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar2 + 0x48))(piVar2,iStack_24);",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 125,
+      "line": 131,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar2 + 0x44))(piVar2,fStack_28);",
@@ -396,7 +396,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 132,
+      "line": 138,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar2 + 0x40))(piVar2,uStack_3c,1);",
@@ -404,7 +404,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 143,
+      "line": 149,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar1 + 0x34))(piVar1,(uint)uStack_44);",
@@ -412,7 +412,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 176,
+      "line": 182,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_44._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
@@ -420,7 +420,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 176,
+      "line": 182,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_44._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
@@ -428,7 +428,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 195,
+      "line": 201,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_44._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
@@ -436,7 +436,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 195,
+      "line": 201,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_44._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
@@ -444,7 +444,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 207,
+      "line": 213,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar1 + 0x3c))(piVar1);",
@@ -452,7 +452,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 219,
+      "line": 225,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar1 + 0x40))(piVar1);",
@@ -460,7 +460,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 234,
+      "line": 241,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar1 + 0x44))(piVar1);",
@@ -468,7 +468,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 247,
+      "line": 254,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar1 + 0x34))(piVar1,(uint)uStack_44);",
@@ -476,7 +476,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 164,
+      "line": 170,
       "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar3 = (CSfxSlot *)&(pCVar3->options).position;",

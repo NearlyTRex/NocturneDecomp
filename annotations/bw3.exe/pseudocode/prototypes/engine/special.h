@@ -33,13 +33,13 @@ void FUN_005616a0(void);
 // Address: 00561713
 void __edi_esi_ebx renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
-// Original: engine_special.cpp_FUN_00561fdc
+// Original: engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
 // Address: 00561fdc
-void FUN_00561fdc(void);
+void __edi_esi_ebx renderMMXPerspectiveScanlineTrueColor32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
-// Original: engine_special.cpp_FUN_005625a3
+// Original: engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
 // Address: 005625a3
-void FUN_005625a3(void);
+void __edi_esi_ebx renderMMXPerspectiveScanlineTrueColor16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
 // Address: 00562c33
@@ -249,9 +249,9 @@ int __cdecl setVideoModeX(int width,int height,int bits_per_pixel,int flags);
 // Address: 00566560
 int __cdecl lockFrameX(void);
 
-// Original: engine_special.cpp_FUN_005665c0
+// Original: engine_special.cpp_toggleX_FUN_005665c0
 // Address: 005665c0
-undefined4 FUN_005665c0(void);
+int __cdecl toggleX(void);
 
 // Original: engine_special.cpp_CExternalRenderer_ctor_FUN_005665e0
 // Address: 005665e0

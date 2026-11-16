@@ -7,8 +7,8 @@
 ; CSocket *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_00579890 at 005799c5
-;   support_trisock.cpp_FUN_0057ad10 at 0057adc9
+;   support_trisock.cpp_httpConnectToUrl_FUN_00579890 at 005799c5
+;   support_trisock.cpp_httpRequestUpdate_FUN_0057ad10 at 0057adc9
 ;
 ; Called Functions:
 ;   crt_wsock32.c_socket

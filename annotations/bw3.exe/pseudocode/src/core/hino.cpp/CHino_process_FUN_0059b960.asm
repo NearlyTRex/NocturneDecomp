@@ -32,14 +32,14 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   ... and 19 more
 ;
@@ -90,8 +90,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 0059b9e8
     FSTP float ptr [ESP]                ; 0059b9ee
     PUSH EBX                            ; 0059b9f1
-    CALL core_charactr.cpp_FUN_00434850 ; 0059b9f2
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 0059b9f2
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059b9f7
     LEA EAX,[EBX + 0x158]               ; 0059b9fa
     PUSH EAX                            ; 0059ba00
@@ -193,8 +193,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0059bb13
         ;   Label: LAB_0059bb13
     PUSH EBX                            ; 0059bb19
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 0059bb1a
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 0059bb1a
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059bb1f
     LEA ESI,[EBX + 0x2518]              ; 0059bb22
         ;   Label: LAB_0059bb22
@@ -616,8 +616,8 @@ section .text
     JNZ 0x0059c0b7                      ; 0059bfde
         ;   XREF to: 0059c0b7 (CONDITIONAL_JUMP)  ; LAB_0059c0b7
     PUSH EBX                            ; 0059bfe4
-    CALL core_hino.cpp_FUN_0059d000     ; 0059bfe5
-        ;   XREF to: 0059d000 (UNCONDITIONAL_CALL)  ; undefined core_hino.cpp_FUN_0059d000()
+    CALL core_hino.cpp_CHino_isHeroAtPlatform_FUN_0059d000 ; 0059bfe5
+        ;   XREF to: 0059d000 (UNCONDITIONAL_CALL)  ; int core_hino.cpp_CHino_isHeroAtPlatform_FUN_0059d000(CHino * this_ptr)
     MOV dword ptr [EBX + 0xd074],EAX    ; 0059bfea
     MOV EAX,[0x006071f0]                ; 0059bff0 | DAT_006071f0
     MOV EDX,dword ptr [EAX]             ; 0059bff5 | DAT_02d0c1a0

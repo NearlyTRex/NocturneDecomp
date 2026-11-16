@@ -17,9 +17,9 @@ CWeather * __cdecl CWeather::ctor(CWeather *this_ptr);
 // Address: 0057bda0
 void __cdecl CWeather::update(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0057c2c0
+// Original: core_weather.cpp_getCurrentCameraAmbientValue_FUN_0057c2c0
 // Address: 0057c2c0
-float FUN_0057c2c0(void);
+int __cdecl getCurrentCameraAmbientValue(void);
 
 // Original: core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0
 // Address: 0057c2e0
@@ -41,6 +41,6 @@ void __cdecl CWeather::setWeatherType(CWeather *this_ptr,EWeatherType type);
 // Address: 0057d1a0
 void __cdecl CWeather::setOriginAndRotation(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 
-// Original: core_weather.cpp_FUN_0057d420
+// Original: core_weather.cpp_CWeather_preloadAssets_FUN_0057d420
 // Address: 0057d420
-void FUN_0057d420(undefined4 param_1,int param_2);
+void __cdecl CWeather::preloadAssets(CWeather *this_ptr,EWeatherType type);

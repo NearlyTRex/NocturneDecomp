@@ -10,8 +10,8 @@
 ; undefined        Stack[-0x8c]:1  local_8c
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004c07b0 at 004c479f
-;   core_hero.cpp_FUN_004d4900 at 004d497c
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c479f
+;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d497c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c4d01

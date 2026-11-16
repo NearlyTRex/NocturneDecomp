@@ -28,17 +28,17 @@
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0 at 0041a255
 ;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435b2c
 ;   core_construc.cpp_CConstruct_explode_FUN_00438060 at 00438200
-;   core_construc.cpp_FUN_004382a0 at 004382d5
+;   core_construc.cpp_CConstruct_startRecombine_FUN_004382a0 at 004382d5
 ;   core_conveyor.cpp_CConveyor_setup_FUN_00438550 at 0043858b
 ;   core_cross.cpp_CCross_process_FUN_005a6ed0 at 005a755c
-;   core_doc.cpp_FUN_00453d80 at 004540a1
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 004540a1
 ;   ... and 12 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eedea
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449c20
+;   core_dirmat.cpp_sinCos_FUN_00449c20
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 0059439d
     PUSH EAX                            ; 005943a1
     FSTP float ptr [ESP + 0x30]         ; 005943a2
-    CALL core_dirmat.cpp_FUN_00449c20   ; 005943a6
-        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449c20()
+    CALL core_dirmat.cpp_sinCos_FUN_00449c20 ; 005943a6
+        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_00449c20(float * sin_out, float * cos_out, float * angle)
     FLD float ptr [ESI + 0x8]           ; 005943ab
     LEA EAX,[ESP + 0x40]                ; 005943ae
     ADD ESP,0xc                         ; 005943b2
@@ -71,8 +71,8 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 005943c1
     PUSH EAX                            ; 005943c5
     FSTP float ptr [ESP + 0x40]         ; 005943c6
-    CALL core_dirmat.cpp_FUN_00449c20   ; 005943ca
-        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449c20()
+    CALL core_dirmat.cpp_sinCos_FUN_00449c20 ; 005943ca
+        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_00449c20(float * sin_out, float * cos_out, float * angle)
     FLD float ptr [ESI + 0x4]           ; 005943cf
     LEA EAX,[ESP + 0x38]                ; 005943d2
     ADD ESP,0xc                         ; 005943d6
@@ -83,8 +83,8 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 005943e5
     PUSH EAX                            ; 005943e9
     FSTP float ptr [ESP + 0x38]         ; 005943ea
-    CALL core_dirmat.cpp_FUN_00449c20   ; 005943ee
-        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449c20()
+    CALL core_dirmat.cpp_sinCos_FUN_00449c20 ; 005943ee
+        ;   XREF to: 00449c20 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_00449c20(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 005943f3
     FLD float ptr [ESP + 0x1c]          ; 005943f6
     FMUL float ptr [ESP + 0x18]         ; 005943fa

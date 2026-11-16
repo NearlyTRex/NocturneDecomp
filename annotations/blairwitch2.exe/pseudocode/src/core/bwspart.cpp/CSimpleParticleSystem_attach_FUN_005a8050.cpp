@@ -23,7 +23,8 @@ void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleP
       iVar4 = 0;
       do {
         iVar3 = iVar3 + 1;
-        core_bwspart_cpp_FUN_005a84c0((int)this_ptr->particles + iVar4);
+        core_bwspart_cpp_initSimpleParticle_FUN_005a84c0((void *)((int)this_ptr->particles + iVar4))
+        ;
         iVar4 = iVar4 + 0x60;
       } while (iVar3 < this_ptr->max_particles);
     }

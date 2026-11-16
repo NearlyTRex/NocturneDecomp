@@ -13,12 +13,12 @@ void __cdecl core_helldog_cpp_CDog_processMeleeAttackState_FUN_005abfa0(CDog *th
 
 {
   CDeformableModelInstance *this_ptr_00;
-  SStateMachine *pSVar1;
-  CCharacter *pCVar2;
+  SStateMachine *this_ptr_01;
+  CCharacter *pCVar1;
+  float fVar2;
   float fVar3;
-  float fVar4;
-  CDemonActor *pCVar5;
-  byte bVar6;
+  CDemonActor *pCVar4;
+  byte bVar5;
   float afStackY_1030 [1015];
   CVector3f CStack_48;
   CVector3f CStack_3c;
@@ -26,17 +26,17 @@ void __cdecl core_helldog_cpp_CDog_processMeleeAttackState_FUN_005abfa0(CDog *th
   float fStack_24;
   float afStack_20 [5];
   
-  bVar6 = 0;
-  pCVar5 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
-  if (pCVar5 == (CDemonActor *)0x0) {
+  bVar5 = 0;
+  pCVar4 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar4 == (CDemonActor *)0x0) {
     return;
   }
   core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
             ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
-  pCVar2 = (this_ptr->base).base.victim;
-  fVar3 = (this_ptr->base).base.base.base.location.position.x - (pCVar2->base).location.position.x;
-  fVar4 = (this_ptr->base).base.base.base.location.position.z - (pCVar2->base).location.position.z;
-  afStack_20[3] = SQRT(fVar4 * fVar4 + fVar3 * fVar3);
+  pCVar1 = (this_ptr->base).base.victim;
+  fVar2 = (this_ptr->base).base.base.base.location.position.x - (pCVar1->base).location.position.x;
+  fVar3 = (this_ptr->base).base.base.base.location.position.z - (pCVar1->base).location.position.z;
+  afStack_20[3] = SQRT(fVar3 * fVar3 + fVar2 * fVar2);
   this_ptr_00 = &(this_ptr->base).base.base.model;
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
   if (_DAT_00600c4c < afStack_20[3]) {
@@ -44,23 +44,23 @@ void __cdecl core_helldog_cpp_CDog_processMeleeAttackState_FUN_005abfa0(CDog *th
               ((CDemonActor *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position,
                &CStack_48);
     CStack_30.x = CStack_48.x;
-    *(uint *)((int)&CStack_30 + (uint)bVar6 * -8 + 4) =
-         *(uint *)((int)&CStack_48 + (uint)bVar6 * -8 + 4);
-    *(uint *)((int)&CStack_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-         *(uint *)((int)&CStack_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&CStack_48 + (uint)bVar5 * -8 + 4);
+    *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         *(uint *)((int)&CStack_48 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     CStack_30.y = 0.0;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_30,&CStack_3c);
     fStack_24 = CStack_3c.x;
-    afStack_20[(uint)bVar6 * -2] = *(float *)((int)&CStack_3c + (uint)bVar6 * -8 + 4);
-    afStack_20[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-         *(float *)((int)&CStack_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-    pSVar1 = &(this_ptr->base).state_machine;
+    afStack_20[(uint)bVar5 * -2] = *(float *)((int)&CStack_3c + (uint)bVar5 * -8 + 4);
+    afStack_20[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+         *(float *)((int)&CStack_3c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    this_ptr_01 = &(this_ptr->base).state_machine;
     if (ABS(afStack_20[0]) < (float)_DAT_005f0da6) {
-      core_muzzle_cpp_FUN_0059d8e0(pSVar1,"LeapAttack");
+      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"LeapAttack");
       return;
     }
     (this_ptr->base).attack_range = _DAT_00600c4c;
-    core_muzzle_cpp_FUN_0059d8e0(pSVar1,"Chasing");
+    core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,4,1);

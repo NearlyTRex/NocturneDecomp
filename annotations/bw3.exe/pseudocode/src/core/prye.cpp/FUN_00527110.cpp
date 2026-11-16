@@ -18,9 +18,9 @@ uint core_prye_cpp_FUN_00527110(int param_1)
   if (fVar1 <= 0.0) {
     fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004fc350(this_ptr,0x2b);
     if (fVar1 <= 0.0) {
-      iVar2 = core_motion_cpp_FUN_004fc0c0(this_ptr);
+      iVar2 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(this_ptr);
       if (iVar2 != 0x2a) {
-        iVar2 = core_motion_cpp_FUN_004fc0c0(this_ptr);
+        iVar2 = core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(this_ptr);
         if (((iVar2 != 0x2b) && (*(int *)(param_1 + 0x20b64) != 5)) &&
            (*(int *)(param_1 + 0x20b94) == 0)) {
           return 0;

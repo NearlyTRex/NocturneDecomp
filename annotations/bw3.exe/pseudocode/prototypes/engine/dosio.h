@@ -9,13 +9,13 @@
 // Address: 00465600
 void __cdecl getRelativeFilePath(char *dest_path,char *directory,char *filename);
 
-// Original: engine_dosio.cpp_FUN_00465650
+// Original: engine_dosio.cpp_setRelativeFilePathHook_FUN_00465650
 // Address: 00465650
-void FUN_00465650(undefined *param_1);
+void __cdecl setRelativeFilePathHook(void *hook);
 
-// Original: engine_dosio.cpp_FUN_00465660
+// Original: engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660
 // Address: 00465660
-void FUN_00465660(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl callRelativeFilePathHook(char *dest_path,char *directory,char *filename);
 
 // Original: engine_dosio.cpp_addGetFileInfoHook_FUN_00465680
 // Address: 00465680
@@ -89,14 +89,14 @@ void __cdecl changeFileExtension(char *path,char *new_extension);
 // Address: 00465ff0
 int __cdecl getFullPath(char *output_path,char *input_path);
 
-// Original: engine_dosio.cpp_FUN_00466040
+// Original: engine_dosio.cpp_resolveRelativePath_FUN_00466040
 // Address: 00466040
-void FUN_00466040(char *param_1,char *param_2,char *param_3);
+void __cdecl resolveRelativePath(char *base_path,char *path,char *out_path);
 
-// Original: engine_dosio.cpp_FUN_00466190
+// Original: engine_dosio.cpp_createDirectoryTree_FUN_00466190
 // Address: 00466190
-bool FUN_00466190(char *param_1);
+int __cdecl createDirectoryTree(char *directory);
 
-// Original: engine_dosio.cpp_FUN_00466220
+// Original: engine_dosio.cpp_deleteFile_FUN_00466220
 // Address: 00466220
-bool FUN_00466220(char *param_1);
+int __cdecl deleteFile(char *filename);

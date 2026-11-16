@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0 at 00495420
-;   core_game.cpp_FUN_004c4a60 at 004c4b3f
+;   core_game.cpp_CGame_playMusic_FUN_004c4a60 at 004c4b3f
 ;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005608d1
 ;
 ; Referenced Globals:

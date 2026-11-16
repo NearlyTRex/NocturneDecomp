@@ -38,9 +38,9 @@
 ;   ... and 41 more
 ;
 ; Called Functions:
-;   core_flashlit.cpp_FUN_004a7a70
-;   core_flashlit.cpp_FUN_004a80d0
-;   core_flashlit.cpp_FUN_004a8180
+;   core_flashlit.cpp_hitTestPageArrows_FUN_004a8180
+;   core_flashlit.cpp_hitTestSectionTab_FUN_004a80d0
+;   core_flashlit.cpp_updateTooltip_FUN_004a7a70
 ;   core_fldnotes.cpp_SNotesSection_layout_FUN_004a9d90
 ;   core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a8d50
 ;   core_fldnotes.cpp_STextView_drawPage_FUN_004a98b0
@@ -201,8 +201,8 @@ section .text
     PUSH EDI                            ; 004abfae
     MOV EBP,dword ptr [0x01c5fadc]      ; 004abfaf | DAT_01c5fadc
     PUSH EBP                            ; 004abfb5
-    CALL core_flashlit.cpp_FUN_004a80d0 ; 004abfb6
-        ;   XREF to: 004a80d0 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a80d0()
+    CALL core_flashlit.cpp_hitTestSectionTab_FUN_004a80d0 ; 004abfb6
+        ;   XREF to: 004a80d0 (UNCONDITIONAL_CALL)  ; int core_flashlit.cpp_hitTestSectionTab_FUN_004a80d0(int x, int y)
     ADD ESP,0x8                         ; 004abfbb
     TEST EAX,EAX                        ; 004abfbe
     JL 0x004abff5                       ; 004abfc0
@@ -219,8 +219,8 @@ section .text
     ADD EAX,0x1d0d214                   ; 004abfd8
     ADD EAX,0x40                        ; 004abfdd
     PUSH EAX                            ; 004abfe0
-    CALL core_flashlit.cpp_FUN_004a7a70 ; 004abfe1
-        ;   XREF to: 004a7a70 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a7a70()
+    CALL core_flashlit.cpp_updateTooltip_FUN_004a7a70 ; 004abfe1
+        ;   XREF to: 004a7a70 (UNCONDITIONAL_CALL)  ; void core_flashlit.cpp_updateTooltip_FUN_004a7a70(char * text)
     MOV EAX,0x1                         ; 004abfe6
     ADD ESP,0x4                         ; 004abfeb
     MOV dword ptr [ESP + 0x508],EAX     ; 004abfee
@@ -229,8 +229,8 @@ section .text
     PUSH EDX                            ; 004abffb
     MOV ECX,dword ptr [0x01c5fadc]      ; 004abffc | DAT_01c5fadc
     PUSH ECX                            ; 004ac002
-    CALL core_flashlit.cpp_FUN_004a8180 ; 004ac003
-        ;   XREF to: 004a8180 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a8180()
+    CALL core_flashlit.cpp_hitTestPageArrows_FUN_004a8180 ; 004ac003
+        ;   XREF to: 004a8180 (UNCONDITIONAL_CALL)  ; int core_flashlit.cpp_hitTestPageArrows_FUN_004a8180(int x, int y)
     ADD ESP,0x8                         ; 004ac008
     TEST EAX,EAX                        ; 004ac00b
     JZ 0x004ac01a                       ; 004ac00d
@@ -728,8 +728,8 @@ section .text
     ADD ESP,0x4                         ; 004ac629
     PUSH EAX                            ; 004ac62c
     MOV ESI,0x1                         ; 004ac62d
-    CALL core_flashlit.cpp_FUN_004a7a70 ; 004ac632
-        ;   XREF to: 004a7a70 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a7a70()
+    CALL core_flashlit.cpp_updateTooltip_FUN_004a7a70 ; 004ac632
+        ;   XREF to: 004a7a70 (UNCONDITIONAL_CALL)  ; void core_flashlit.cpp_updateTooltip_FUN_004a7a70(char * text)
     ADD ESP,0x4                         ; 004ac637
     MOV dword ptr [ESP + 0x508],ESI     ; 004ac63a
     JMP 0x004ac148                      ; 004ac641

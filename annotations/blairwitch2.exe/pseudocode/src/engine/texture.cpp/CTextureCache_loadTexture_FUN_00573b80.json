@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 561,
-    "complexity_score": 387,
+    "complexity_score": 388,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 237,
+    "pseudocode_lines": 238,
     "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
@@ -15,7 +15,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 798
+    "total_lines": 799
   },
   "cross_references": [
     {
@@ -64,6 +64,11 @@
       "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
+      "addr": "00460910",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910"
+    },
+    {
       "addr": "004611a0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_changeFileExtension_FUN_004611a0"
@@ -72,11 +77,6 @@
       "addr": "00460980",
       "is_variadic": false,
       "name": "engine_dosio.cpp_findFile_FUN_00460980"
-    },
-    {
-      "addr": "00460910",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460910"
     },
     {
       "addr": "00573a60",
@@ -525,15 +525,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 51,
       "match": "DAT_005ec6f1",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00460910(0x2652eb8,&DAT_005ec6f1,texture_name);",
+      "text": "((char *)0x2652eb8,&DAT_005ec6f1,texture_name);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_005ec73b",
       "severity": "mild",
       "text": "engine_dosio_cpp_changeFileExtension_FUN_004611a0(local_1d8,&DAT_005ec73b);",
@@ -541,15 +541,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 85,
       "match": "DAT_005ec740",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00460910(0x26530cc,&DAT_005ec740,local_1d8);",
+      "text": "engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910((char *)0x26530cc,&DAT_005ec740,local_1d8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 98,
       "match": "DAT_005ec744",
       "severity": "mild",
       "text": "engine_dosio_cpp_changeFileExtension_FUN_004611a0(local_158,&DAT_005ec744);",
@@ -557,15 +557,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_005ec749",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00460910(0x26532e0,&DAT_005ec749,local_158);",
+      "text": "engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910((char *)0x26532e0,&DAT_005ec749,local_158);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 141,
       "match": "DAT_005ec8cf",
       "severity": "mild",
       "text": "(&local_58,&DAT_005ec8cf,texture_name);",
@@ -573,7 +573,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 199,
+      "line": 200,
       "match": "DAT_005ec842",
       "severity": "mild",
       "text": "support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(&local_58,&DAT_005ec842,local_1d8)",
@@ -581,7 +581,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 206,
       "match": "DAT_005ec846",
       "severity": "mild",
       "text": "(&local_58,&DAT_005ec846,local_158);",
@@ -589,7 +589,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 211,
+      "line": 212,
       "match": "DAT_005ec84a",
       "severity": "mild",
       "text": "(&local_58,&DAT_005ec84a,texture_name);",
@@ -597,7 +597,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 74,
+      "line": 75,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -605,7 +605,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 88,
+      "line": 89,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -7,7 +7,7 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[30]:
-;   core_bird.cpp_FUN_00415830 at 0041584b
+;   core_bird.cpp_setRandomMotionVariant_FUN_00415830 at 0041584b
 ;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00432e00 at 00432e23
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_00432cb0 at 00432d0f
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_004343c0 at 0043440a
@@ -16,7 +16,7 @@
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050 at 00432090
 ;   core_doc.cpp_CDoc_setup_FUN_00469060 at 00469247
 ;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400 at 00474587
-;   core_event.cpp_FUN_004a1d00 at 004a5b4d
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a5b4d
 ;   ... and 20 more
 ;
 ; *****************************************************************************

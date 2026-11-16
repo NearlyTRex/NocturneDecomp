@@ -13,7 +13,7 @@
 ;   core_hino.cpp_CHino_renderTransparent_FUN_0059d120 at 0059d303
 ;   core_kedward.cpp_CKedward_renderTransparent_FUN_00591680 at 005917ed
 ;   core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710 at 005938d0
-;   core_shadow.cpp_FUN_00545710 at 005458c6
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_00545710 at 005458c6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b8376

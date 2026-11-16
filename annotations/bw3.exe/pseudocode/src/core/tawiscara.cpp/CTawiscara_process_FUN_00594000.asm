@@ -34,13 +34,13 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_00434850
 ;   ... and 21 more
 ;
 ; *****************************************************************************
@@ -210,8 +210,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 005941be
     FSTP float ptr [ESP]                ; 005941c4
     PUSH EBX                            ; 005941c7
-    CALL core_charactr.cpp_FUN_00434850 ; 005941c8
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 005941c8
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     MOV ESI,dword ptr [EBX + 0xd054]    ; 005941cd
     ADD ESP,0x8                         ; 005941d3
     CMP ESI,0x2                         ; 005941d6
@@ -351,8 +351,8 @@ section .text
         ;   Label: LAB_00594355
     PUSH EBX                            ; 0059435b
     LEA ESI,[EBX + 0x2518]              ; 0059435c
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 00594362
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 00594362
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 00594367
     FMUL float ptr [EBP + 0x92]         ; 00594369
     FLD float ptr [ESI + 0x4]           ; 0059436f
@@ -440,8 +440,8 @@ section .text
         ;   XREF to: 00433350 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00594480
     PUSH EBX                            ; 00594483
-    CALL core_tawiscara.cpp_FUN_00596380 ; 00594484
-        ;   XREF to: 00596380 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00596380()
+    CALL core_tawiscara.cpp_CTawiscara_processChainConstraint_FUN_00596380 ; 00594484
+        ;   XREF to: 00596380 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_processChainConstraint_FUN_00596380(CTawiscara * this_ptr)
     FLD float ptr [EBP + 0x92]          ; 00594489
     FMUL double ptr [0x005d9399]        ; 0059448f | DAT_005d9399
     FLD float ptr [EBX + 0xd098]        ; 00594495
@@ -1198,8 +1198,8 @@ section .text
         ;   XREF to: 00594269 (UNCONDITIONAL_JUMP)  ; LAB_00594269
     PUSH EBX                            ; 00594d7e
         ;   Label: LAB_00594d7e
-    CALL core_tawiscara.cpp_FUN_00595710 ; 00594d7f
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710 ; 00594d7f
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710(CTawiscara * this_ptr)
     ADD ESP,0x4                         ; 00594d84
     JMP 0x00594d42                      ; 00594d87
         ;   XREF to: 00594d42 (UNCONDITIONAL_JUMP)  ; LAB_00594d42
@@ -1514,8 +1514,8 @@ section .text
     JZ 0x0059511f                       ; 00595114
         ;   XREF to: 0059511f (CONDITIONAL_JUMP)  ; LAB_0059511f
     PUSH EBX                            ; 00595116
-    CALL core_tawiscara.cpp_FUN_00595710 ; 00595117
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710 ; 00595117
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710(CTawiscara * this_ptr)
     ADD ESP,0x4                         ; 0059511c
     FLD float ptr [EBX + 0xd074]        ; 0059511f
         ;   Label: LAB_0059511f
@@ -1528,8 +1528,8 @@ section .text
     JBE 0x00594269                      ; 00595138
         ;   XREF to: 00594269 (CONDITIONAL_JUMP)  ; LAB_00594269
     PUSH EBX                            ; 0059513e
-    CALL core_tawiscara.cpp_FUN_00595710 ; 0059513f
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710 ; 0059513f
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710(CTawiscara * this_ptr)
     ADD ESP,0x4                         ; 00595144
     JMP 0x00594269                      ; 00595147
         ;   XREF to: 00594269 (UNCONDITIONAL_JUMP)  ; LAB_00594269
@@ -1838,8 +1838,8 @@ section .text
         ;   XREF to: 00595490 (UNCONDITIONAL_JUMP)  ; LAB_00595490
     PUSH EBX                            ; 005954c2
         ;   Label: LAB_005954c2
-    CALL core_tawiscara.cpp_FUN_00595710 ; 005954c3
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710 ; 005954c3
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710(CTawiscara * this_ptr)
     ADD ESP,0x4                         ; 005954c8
     JMP 0x0059548c                      ; 005954cb
         ;   XREF to: 0059548c (UNCONDITIONAL_JUMP)  ; LAB_0059548c

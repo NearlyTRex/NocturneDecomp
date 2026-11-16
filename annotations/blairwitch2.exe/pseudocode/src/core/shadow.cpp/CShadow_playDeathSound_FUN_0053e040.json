@@ -1,0 +1,135 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 14,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "0053ea00",
+      "from_addr": "0053ebb4",
+      "name": "core_shadow.cpp_CShadow_processDamage_FUN_0053ea00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053e040",
+    "address_range": [
+      [
+        "0053e040",
+        "0053e07d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shadow.cpp_CShadow_playDeathSound_FUN_0053e040",
+    "signature": "void __cdecl core_shadow_cpp_CShadow_playDeathSound_FUN_0053e040(CShadow *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00550b70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00550b70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e66eb",
+      "name": "s_shb_die_wav_005e66eb",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0053ebb4",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_CShadow_processDamage_FUN_0053ea00",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053ebd0",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_CShadow_processDamage_FUN_0053ea00",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.105263157894737,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 16,
+      "INT_ADD": 12,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 8,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 78
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0055f540",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    },
+    "bw3.exe": {
+      "addr": "00545100",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadow *"
+      }
+    ]
+  },
+  "suspects": []
+}

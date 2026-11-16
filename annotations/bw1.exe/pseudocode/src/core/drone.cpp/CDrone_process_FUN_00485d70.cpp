@@ -78,9 +78,11 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00485d70(CDrone *this_ptr,float d
     iVar4 = core_motion_cpp_CMotionController_advance_FUN_00524270(&this_ptr_00->base,&fStack_24);
     core_charactr_cpp_CCharacter_processMotion_FUN_00434a80((CCharacter *)this_ptr,iVar4);
   }
+  fVar13 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed =
        (this_ptr->base).base.model.accumulated_root_motion.z * (float)_DAT_005db69a;
-  core_charactr_cpp_FUN_00435320(this_ptr);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320
+            ((CCharacter *)this_ptr,delta_time * fVar13);
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
   iVar4 = pSVar5->state_index;
   iStack_18 = iVar4;
@@ -283,7 +285,7 @@ switchD_004863fe_caseD_3:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042d700();
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,delta_time);
     fStack_fc = (this_ptr->base).base.velocity.x * delta_time;
     afStack_f8[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_f8[1] = (this_ptr->base).base.velocity.z * delta_time;

@@ -12,7 +12,7 @@
 ;   core_baal.cpp_CBaal_renderOpaque_FUN_00597940 at 0059795a
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510 at 0042f6da
 ;   core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710 at 005938ec
-;   core_shadow.cpp_FUN_00545710 at 005458cf
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_00545710 at 005458cf
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0

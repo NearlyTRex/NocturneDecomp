@@ -30,15 +30,15 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
-;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_0042b2a0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   ... and 12 more
 ;
@@ -88,8 +88,8 @@ section .text
     MOV dword ptr [EBX + 0x2594],EAX    ; 00411a8e
     FSTP float ptr [ESP]                ; 00411a94
     PUSH EBX                            ; 00411a97
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 00411a98
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 00411a98
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00411a9d
     LEA EAX,[EBX + 0x2b4]               ; 00411aa0
     PUSH EAX                            ; 00411aa6
@@ -152,8 +152,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00411b44
     PUSH EBX                            ; 00411b4a
     LEA ESI,[EBX + 0x2588]              ; 00411b4b
-    CALL core_charactr.cpp_FUN_00423a10 ; 00411b51
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 00411b51
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 00411b56
     FMUL float ptr [EBP + 0x92]         ; 00411b58
     FLD float ptr [ESI + 0x4]           ; 00411b5e

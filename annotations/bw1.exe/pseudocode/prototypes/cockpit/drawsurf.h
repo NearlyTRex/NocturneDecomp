@@ -109,21 +109,21 @@ void __cdecl CDrawSurface::drawAnimatedDashedLine(CDrawSurface *this_ptr,int x1,
 // Address: 0047fcf0
 void __cdecl CDrawSurface::drawAnimatedFullSurface(CDrawSurface *this_ptr);
 
-// Original: cockpit_drawsurf.cpp_FUN_0047fdf0
+// Original: cockpit_drawsurf.cpp_getDashLength_FUN_0047fdf0
 // Address: 0047fdf0
-undefined4 FUN_0047fdf0(void);
+int __cdecl getDashLength(void);
 
-// Original: cockpit_drawsurf.cpp_FUN_0047fe00
+// Original: cockpit_drawsurf.cpp_getDashAnimationThreshold_FUN_0047fe00
 // Address: 0047fe00
-undefined4 FUN_0047fe00(void);
+float __cdecl getDashAnimationThreshold(void);
 
-// Original: cockpit_drawsurf.cpp_FUN_0047fe10
+// Original: cockpit_drawsurf.cpp_setDashLength_FUN_0047fe10
 // Address: 0047fe10
-void FUN_0047fe10(void);
+void __cdecl setDashLength(int length);
 
-// Original: cockpit_drawsurf.cpp_FUN_0047fe20
+// Original: cockpit_drawsurf.cpp_setDashAnimationThreshold_FUN_0047fe20
 // Address: 0047fe20
-void FUN_0047fe20(undefined4 param_1);
+void __cdecl setDashAnimationThreshold(float threshold);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0047fe30
 // Address: 0047fe30

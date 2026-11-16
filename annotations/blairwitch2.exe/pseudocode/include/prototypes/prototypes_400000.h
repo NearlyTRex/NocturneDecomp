@@ -19,6 +19,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorTransformState.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDoc.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CFlame.h"
 #include "types/classes/CInventory.h"
@@ -87,7 +88,7 @@ void __cdecl engine_2d_c_setTextWrapEnabled_FUN_00402810(int enabled);
 void __cdecl engine_2d_c_disableTextWrap_FUN_00402830(void);
 int __cdecl engine_2d_c_getTextColor_FUN_00402840(void);
 void __cdecl engine_2d_c_setTextColor_FUN_00402850(int color);
-void engine_2d_c_FUN_00402860(void);
+void __cdecl engine_2d_c_resetTextColor_FUN_00402860(void);
 void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402880(void);
 void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402940(char *filename);
 void __cdecl engine_2d_c_resetGraphicsSystem_FUN_00402ac0(void);
@@ -214,14 +215,14 @@ void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(CDemonAc
 CDemonActorType * __cdecl core_actor_cpp_CDemonActor_getActorType_FUN_00408a20(CDemonActor *this_ptr);
 char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408a80(CDemonActor *this_ptr);
-void core_actor_cpp_FUN_00408ac0(void);
+void __cdecl core_actor_cpp_CDemonActor_markResourcesInUse_FUN_00408ac0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(CDemonActor *this_ptr);
 CBoundingBox3D * __stack_esi core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408b40(CDemonActor *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_actor_cpp_CDemonActor_getCollisionType_FUN_00408b80(CDemonActor *this_ptr,SCollisionInfo *collision_info);
 float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408b90(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height );
-undefined4 core_actor_cpp_FUN_00408c20(void);
+EGroundType __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_00408c20(CDemonActor *this_ptr);
 float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30(CDemonActor *this_ptr,float radius,CVector3f *out_normal);
 CVector3f * __stack2_esi core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor *this_ptr,CVector3f *input,CVector3f *output);
 CVector3f * __stack2_esi core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408d30(CDemonActor *this_ptr,CVector3f *input_vector,CVector3f *output_vector);
@@ -231,7 +232,7 @@ uint __cdecl core_actor_cpp_CDemonActor_playSound_FUN_00408e50(CDemonActor *this
 uint __cdecl core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408e70(CDemonActor *this_ptr,char *sound_name);
 uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408e90(CDemonActor *this_ptr,char *sound_name,float delay);
 uint __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0(CDemonActor *this_ptr,char *sound_name,float delay);
-void core_actor_cpp_FUN_00408ef0(void);
+void __cdecl core_actor_cpp_CDemonActor_pickup_FUN_00408ef0(CDemonActor *this_ptr,CDemonActor *carrier);
 int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408f00(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408f90(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 CBoundingBox3D * __stack3_esi core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_004090f0(CDemonActor *this_ptr,SCollisionInfo *collision_info,int bounding_box_type,CBoundingBox3D *output_bbox);
@@ -297,9 +298,9 @@ void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c950(void);
 uint __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040c990(CDemonActor *this_ptr,float volume);
 uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40(CDemonActor *this_ptr,CVector3f *location,float volume);
 uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
-void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,int param_3);
-void core_actor_cpp_FUN_0040ce70(int param_1,int param_2,int param_3);
-void core_actor_cpp_FUN_0040cea0(int param_1,int param_2,float param_3,float param_4,float param_5);
+void __cdecl core_actor_cpp_CDemonActor_startParticleSystem_FUN_0040ce40(CDemonActor *this_ptr,int index,int reset_fade);
+void __cdecl core_actor_cpp_CDemonActor_stopParticleSystem_FUN_0040ce70(CDemonActor *this_ptr,int index,int fade_out);
+void __cdecl core_actor_cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0(CDemonActor *this_ptr,int index,float fade_start,float fade_end,float fade_duration);
 void core_actor_cpp_FUN_0040ced0(void);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040cee0(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cef0(void);
@@ -314,8 +315,8 @@ void __cdecl core_actor_cpp_crc32ProcessVector_FUN_0040d2c0(uint *crc_state,CVec
 void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040d2e0(uint *crc_state,char *string);
 float core_actor_cpp_FUN_0040d320(float *param_1);
 CVector3f * __cdecl core_actor_cpp_CVector3f_ctor_FUN_0040d340(CVector3f *this_ptr);
-void core_actor_cpp_FUN_0040d350(undefined4 *param_1,undefined4 *param_2);
-float core_actor_cpp_FUN_0040d370(float *param_1);
+void __cdecl core_actor_cpp_copyVector_FUN_0040d350(CVector3f *dst_ptr,CVector3f *src_ptr);
+float __cdecl core_actor_cpp_CVector3f_length_FUN_0040d370(CVector3f *this_ptr);
 void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_0040d3c0(CVector3f *this_ptr,CVector3i *other);
 CVector3f * __cdecl core_actor_cpp_CVector3f_dtor_FUN_0040d3f0(CVector3f *this_ptr,uint flags);
 CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor10_FUN_0040d400(CVector3f *this_ptr,uint flags);
@@ -343,7 +344,7 @@ void __cdecl core_ammo_cpp_CAmmo_archive_FUN_0040e1b0(CAmmo *this_ptr);
 ECollisionType __cdecl core_ammo_cpp_CAmmo_getCollisionType_FUN_0040e210(CAmmo *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(CAmmo *this_ptr,char *weapon_class_name);
 void __cdecl core_ammo_cpp_CAmmo_setAmmoCount_FUN_0040e440(CAmmo *this_ptr,int ammo_count);
-undefined4 core_ammo_cpp_FUN_0040e450(int param_1,int param_2);
+int __cdecl core_ammo_cpp_CAmmo_consumeForReload_FUN_0040e450(CAmmo *this_ptr,CDoc *hero);
 int __cdecl core_ammo_cpp_CAmmo_canPickup_FUN_0040e490(CAmmo *this_ptr,CDemonActor *picker);
 void __cdecl core_ammobox_cpp_staticInit_FUN_0040e4b0(void);
 CAmmoBox * __cdecl core_ammobox_cpp_factoryFuncAmmoBox_FUN_0040e4e0(void);

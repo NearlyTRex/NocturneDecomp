@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
-;   core_basicene.cpp_FUN_0059f740
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     PUSH ESI                            ; 005ab969
     PUSH dword ptr [0x00600a74]         ; 005ab96a | DAT_00600a74
     PUSH EBX                            ; 005ab970
-    CALL core_basicene.cpp_FUN_0059f740 ; 005ab971
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005ab971
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005ab976
     POP ESI                             ; 005ab979
     POP EBX                             ; 005ab97a
@@ -54,8 +54,8 @@ section .text
     PUSH ECX                            ; 005ab987
     PUSH dword ptr [0x00600a78]         ; 005ab988 | DAT_00600a78
     PUSH EBX                            ; 005ab98e
-    CALL core_basicene.cpp_FUN_0059f740 ; 005ab98f
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005ab98f
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005ab994
     POP EBX                             ; 005ab997
     RET                                 ; 005ab998

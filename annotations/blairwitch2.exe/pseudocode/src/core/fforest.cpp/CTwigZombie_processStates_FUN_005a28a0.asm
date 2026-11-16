@@ -17,9 +17,9 @@
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
-;   core_fforest.cpp_FUN_005a2ac0
-;   core_muzzle.cpp_FUN_0059d650
-;   core_muzzle.cpp_FUN_0059daa0
+;   core_fforest.cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0
+;   core_muzzle.cpp_SStateMachine_addState_FUN_0059d650
+;   core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     PUSH 0x5effe8                       ; 005a28d0 | = "Attacking"
         ;   Label: LAB_005a28d0
     PUSH EAX                            ; 005a28d5
-    CALL core_muzzle.cpp_FUN_0059d650   ; 005a28d6
-        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d650()
+    CALL core_muzzle.cpp_SStateMachine_addState_FUN_0059d650 ; 005a28d6
+        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_addState_FUN_0059d650(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a28db
     POP ESI                             ; 005a28de
     POP EBX                             ; 005a28df
@@ -66,16 +66,16 @@ section .text
     PUSH 0x5efff2                       ; 005a28e1 | = "Attacking"
         ;   Label: LAB_005a28e1
     PUSH EAX                            ; 005a28e6
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a28e7
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005a28e7
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a28ec
     TEST EAX,EAX                        ; 005a28ef
     JZ 0x005a28bd                       ; 005a28f1
         ;   XREF to: 005a28bd (CONDITIONAL_JUMP)  ; LAB_005a28bd
     PUSH dword ptr [ESP + 0x10]         ; 005a28f3
     PUSH ESI                            ; 005a28f7
-    CALL core_fforest.cpp_FUN_005a2ac0  ; 005a28f8
-        ;   XREF to: 005a2ac0 (UNCONDITIONAL_CALL)  ; undefined core_fforest.cpp_FUN_005a2ac0()
+    CALL core_fforest.cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0 ; 005a28f8
+        ;   XREF to: 005a2ac0 (UNCONDITIONAL_CALL)  ; void core_fforest.cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0(CTwigZombie * this_ptr)
     ADD ESP,0x8                         ; 005a28fd
     POP ESI                             ; 005a2900
     POP EBX                             ; 005a2901

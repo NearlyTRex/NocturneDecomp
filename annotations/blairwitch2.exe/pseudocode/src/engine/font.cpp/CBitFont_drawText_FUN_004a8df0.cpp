@@ -22,11 +22,12 @@ int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004a8df0(CBitFont *this_ptr,ch
   
   if ((this_ptr->use_3d_rendering != 0) && (_DAT_01c37788 != 0)) {
     if (this_ptr->win_font_enabled == 0) {
-      iVar1 = engine_font_cpp_FUN_004ab840(this_ptr,text,x,y,color_mode);
+      iVar1 = engine_font_cpp_CBitFont_drawTextAccelerated_FUN_004ab840
+                        (this_ptr,text,x,y,color_mode);
     }
     else {
-      iVar1 = engine_palette_cpp_FUN_00510cd0
-                        (this_ptr->win_font_helper,text,x,y,color_mode,color_value);
+      iVar1 = engine_palette_cpp_CFont_queueText_FUN_00510cd0
+                        (&this_ptr->win_font_helper->base,text,x,y,color_mode,color_value);
     }
     return iVar1;
   }

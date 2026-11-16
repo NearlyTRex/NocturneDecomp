@@ -15,7 +15,7 @@ void __cdecl core_moocow_cpp_CMooCow_processDamage_FUN_00521990(CMooCow *this_pt
   int iVar3;
   uint uVar4;
   
-  core_moocow_cpp_FUN_00521810(this_ptr,damage_info);
+  core_moocow_cpp_CMooCow_processDismemberment_FUN_00521810(this_ptr,damage_info);
   fVar1 = (this_ptr->base).hit_points - damage_info->damage_amount;
   (this_ptr->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {

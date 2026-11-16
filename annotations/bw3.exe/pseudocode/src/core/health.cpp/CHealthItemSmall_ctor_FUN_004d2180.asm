@@ -7,7 +7,7 @@
 ; CHealthItemSmall * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_health.cpp_FUN_004d2150 at 004d2163
+;   core_health.cpp_factoryFuncHealthItemSmall_FUN_004d2150 at 004d2163
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0

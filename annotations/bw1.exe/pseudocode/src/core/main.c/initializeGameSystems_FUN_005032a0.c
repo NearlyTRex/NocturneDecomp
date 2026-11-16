@@ -45,6 +45,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
       core_main_c_displayErrorAndQuit_FUN_005030e0("Please copy Nocturne to your hard drive");
     }
   }
+  pcVar11 = &stack0xfffff8d8;
   _freopen("stderr.txt","wt",(_FILE *)&DAT_00626308);
   core_flattn_cpp_doNothing_FUN_004bf770();
   core_inivar_cpp_readIniData_FUN_004f4f50();
@@ -61,8 +62,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     ;
     core_main_c_displayErrorAndQuit_FUN_005030e0(pcVar5);
   }
-  pcVar5 = &stack0xfffff8d8;
-  core_marquee_cpp_FUN_005072c0();
+  core_marquee_cpp_initializeTrigTables_FUN_005072c0();
   engine_3d_c_initTextureCache_FUN_00403790();
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005b21e0();
@@ -76,7 +76,50 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
   core_dfont_cpp_initFonts_FUN_0045e000();
   if (_DAT_02c9be78 < 0x3c00000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Windows is reporting ");
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
+    do {
+      cVar2 = *pcVar7;
+      *pcVar5 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pcVar5[1] = cVar2;
+      pcVar5 = pcVar5 + 2;
+    } while (cVar2 != '\0');
+    _sprintf(acStack_328,"%.1f");
+    pcVar5 = acStack_328;
+    iVar6 = -1;
+    pcVar7 = acStack_528;
+    do {
+      pcVar10 = pcVar7;
+      if (iVar6 == 0) break;
+      iVar6 = iVar6 + -1;
+      pcVar10 = pcVar7 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar10;
+    } while (cVar2 != '\0');
+    pcVar10 = pcVar10 + -1;
+    do {
+      cVar2 = *pcVar5;
+      *pcVar10 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
+    } while (cVar2 != '\0');
+    pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("MB of system RAM.");
+    iVar6 = -1;
+    pcVar5 = acStack_528;
+    do {
+      pcVar10 = pcVar5;
+      if (iVar6 == 0) break;
+      iVar6 = iVar6 + -1;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
+    } while (cVar2 != '\0');
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
       *pcVar10 = cVar2;
@@ -86,244 +129,223 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
       pcVar10[1] = cVar2;
       pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_328,"%.1f");
-    pcVar10 = acStack_328;
-    iVar6 = -1;
-    pcVar7 = acStack_528;
-    do {
-      pcVar11 = pcVar7;
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
-      pcVar11 = pcVar7 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar7;
-      pcVar7 = pcVar11;
-    } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
-    do {
-      cVar2 = *pcVar10;
-      *pcVar11 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
-    } while (cVar2 != '\0');
-    pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("MB of system RAM.");
-    iVar6 = -1;
-    pcVar10 = acStack_528;
-    do {
-      pcVar11 = pcVar10;
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
-    } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
-    do {
-      cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
-    } while (cVar2 != '\0');
     pcVar7 = "\n";
     iVar6 = -1;
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
     do {
-      pcVar11 = pcVar10;
+      pcVar10 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
+      *pcVar10 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Nocturne requires at least 64MB of system RAM.")
     ;
     iVar6 = -1;
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
     do {
-      pcVar11 = pcVar10;
+      pcVar10 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
+      *pcVar10 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     pcVar7 = "\n";
     iVar6 = -1;
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
     do {
-      pcVar11 = pcVar10;
+      pcVar10 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
+      *pcVar10 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("If you think you have at least 64MB of system RAM")
     ;
     iVar6 = -1;
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
     do {
-      pcVar11 = pcVar10;
+      pcVar10 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
+      *pcVar10 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     pcVar7 = "\n";
     iVar6 = -1;
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
     do {
-      pcVar11 = pcVar10;
+      pcVar10 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
+      *pcVar10 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("then ignore this message.")
     ;
     iVar6 = -1;
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
     do {
-      pcVar11 = pcVar10;
+      pcVar10 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
+      *pcVar10 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     pcVar7 = "\n";
     iVar6 = -1;
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
     do {
-      pcVar11 = pcVar10;
+      pcVar10 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
+      *pcVar10 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("See README.TXT for more information.");
     iVar6 = -1;
-    pcVar10 = acStack_528;
+    pcVar5 = acStack_528;
     do {
-      pcVar11 = pcVar10;
+      pcVar10 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar11 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
+    pcVar10 = pcVar10 + -1;
     do {
       cVar2 = *pcVar7;
-      *pcVar11 = cVar2;
+      *pcVar10 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      pcVar10[1] = cVar2;
+      pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     shape_edittool_cpp_CEditorTools_showWarning_FUN_00494340(g_CEditorToolsPtr,acStack_528);
   }
   if (_DAT_02c9be7c < 0xc800000) {
-    pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Windows is reporting ");
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Windows is reporting ");
     do {
-      cVar2 = *pcVar10;
-      *pcVar5 = cVar2;
+      cVar2 = *pcVar5;
+      *pcVar11 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      pcVar5[1] = cVar2;
+      cVar2 = pcVar5[1];
       pcVar5 = pcVar5 + 2;
+      pcVar11[1] = cVar2;
+      pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
     _sprintf(acStack_128,"%.1f");
-    pcVar5 = acStack_128;
+    pcVar11 = acStack_128;
     iVar6 = -1;
-    pcVar10 = &stack0xfffff8d8;
+    pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar10;
+      pcVar7 = pcVar5;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar10 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar7;
+      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar7;
+    } while (cVar2 != '\0');
+    pcVar7 = pcVar7 + -1;
+    do {
+      cVar2 = *pcVar11;
+      *pcVar7 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar7[1] = cVar2;
+      pcVar7 = pcVar7 + 2;
+    } while (cVar2 != '\0');
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("MB of free swap disk space.")
+    ;
+    iVar6 = -1;
+    pcVar11 = &stack0xfffff8d8;
+    do {
+      pcVar7 = pcVar11;
+      if (iVar6 == 0) break;
+      iVar6 = iVar6 + -1;
+      pcVar7 = pcVar11 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar11;
+      pcVar11 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
@@ -335,111 +357,87 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
-    pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00531090
-                        ("MB of free swap disk space.");
+    pcVar5 = "\n";
     iVar6 = -1;
-    pcVar5 = &stack0xfffff8d8;
+    pcVar11 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar5;
+      pcVar7 = pcVar11;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar5;
-      pcVar5 = pcVar7;
+      pcVar7 = pcVar11 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar11;
+      pcVar11 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
-      cVar2 = *pcVar10;
+      cVar2 = *pcVar5;
       *pcVar7 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
+      cVar2 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
-    pcVar10 = "\n";
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Nocturne runs best with at least 200MB free.");
     iVar6 = -1;
-    pcVar5 = &stack0xfffff8d8;
+    pcVar11 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar5;
+      pcVar7 = pcVar11;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar5;
-      pcVar5 = pcVar7;
+      pcVar7 = pcVar11 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar11;
+      pcVar11 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
-      cVar2 = *pcVar10;
+      cVar2 = *pcVar5;
       *pcVar7 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
+      cVar2 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
-    pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Nocturne runs best with at least 200MB free.")
-    ;
+    pcVar5 = "\n";
     iVar6 = -1;
-    pcVar5 = &stack0xfffff8d8;
+    pcVar11 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar5;
+      pcVar7 = pcVar11;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar5;
-      pcVar5 = pcVar7;
+      pcVar7 = pcVar11 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar11;
+      pcVar11 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
-      cVar2 = *pcVar10;
+      cVar2 = *pcVar5;
       *pcVar7 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
+      cVar2 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
-    pcVar10 = "\n";
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("See README.TXT for more information.");
     iVar6 = -1;
-    pcVar5 = &stack0xfffff8d8;
+    pcVar11 = &stack0xfffff8d8;
     do {
-      pcVar7 = pcVar5;
+      pcVar7 = pcVar11;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
-      cVar2 = *pcVar5;
-      pcVar5 = pcVar7;
+      pcVar7 = pcVar11 + (uint)bVar12 * -2 + 1;
+      cVar2 = *pcVar11;
+      pcVar11 = pcVar7;
     } while (cVar2 != '\0');
     pcVar7 = pcVar7 + -1;
     do {
-      cVar2 = *pcVar10;
-      *pcVar7 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      pcVar7[1] = cVar2;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar2 != '\0');
-    pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00531090("See README.TXT for more information.")
-    ;
-    iVar6 = -1;
-    pcVar5 = &stack0xfffff8d8;
-    do {
-      pcVar7 = pcVar5;
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
-      pcVar7 = pcVar5 + (uint)bVar12 * -2 + 1;
       cVar2 = *pcVar5;
-      pcVar5 = pcVar7;
-    } while (cVar2 != '\0');
-    pcVar7 = pcVar7 + -1;
-    do {
-      cVar2 = *pcVar10;
       *pcVar7 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
+      cVar2 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
@@ -456,16 +454,16 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
   }
   wincore_winvideo_cpp_playMovie_FUN_005b4cd0("video","opening.avi");
   engine_special_cpp_clearScreen_FUN_0057dc40();
-  pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading...");
-  pcVar5 = acStack_228;
+  pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading...");
+  pcVar11 = acStack_228;
   do {
-    cVar2 = *pcVar10;
-    *pcVar5 = cVar2;
+    cVar2 = *pcVar5;
+    *pcVar11 = cVar2;
     if (cVar2 == '\0') break;
-    cVar2 = pcVar10[1];
-    pcVar10 = pcVar10 + 2;
-    pcVar5[1] = cVar2;
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
+    pcVar11[1] = cVar2;
+    pcVar11 = pcVar11 + 2;
   } while (cVar2 != '\0');
   engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_0152d244,acStack_228);
   engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_0152d244,0x58);

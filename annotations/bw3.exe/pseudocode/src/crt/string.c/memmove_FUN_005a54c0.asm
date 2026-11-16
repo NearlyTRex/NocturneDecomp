@@ -12,13 +12,13 @@
 ;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0 at 00494a5a
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0 at 0049486a
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492202
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048c607
 ;   core_event.cpp_CEventList_process_FUN_0048c020 at 0048c0de
 ;   core_event.cpp_CEventList_setActorVariable_FUN_00494e70 at 00495016
 ;   core_event.cpp_CEventList_setCounter_FUN_00494bf0 at 00494c4e
 ;   core_event.cpp_CEventList_setTimerEvent_FUN_00494a70 at 00494b2e
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00495280 at 004953b9
 ;   core_event.cpp_CRuleList_insert_FUN_00495b50 at 00495be0
-;   core_event.cpp_CRuleList_remove_FUN_00495c90 at 00495cf6
 ;   ... and 34 more
 ;
 ; *****************************************************************************

@@ -30,7 +30,7 @@
 ;   core_kedward.cpp_CKedward_renderTransparent_FUN_00591680 at 00591806
 ;   core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710 at 005938b8
 ;   core_npc.cpp_CNPC_renderTransparent_FUN_005095f0 at 00509772
-;   core_shadow.cpp_FUN_00545710 at 005458ae
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_00545710 at 005458ae
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_005c9eb3

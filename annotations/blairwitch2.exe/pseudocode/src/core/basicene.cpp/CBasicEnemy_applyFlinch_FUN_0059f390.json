@@ -1,0 +1,111 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 16,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "0059f0e0",
+      "from_addr": "0059f324",
+      "name": "core_basicene.cpp_CBasicEnemy_processMovement_FUN_0059f0e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059f390",
+    "address_range": [
+      [
+        "0059f390",
+        "0059f40e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_basicene.cpp_CBasicEnemy_applyFlinch_FUN_0059f390",
+    "signature": "void __cdecl core_basicene_cpp_CBasicEnemy_applyFlinch_FUN_0059f390(CBasicEnemy *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00545a60",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0059f324",
+        "call_type": "direct",
+        "caller": "core_basicene.cpp_CBasicEnemy_processMovement_FUN_0059f0e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.675,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 67,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 21,
+      "INT_AND": 21,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 21,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 15,
+      "LOAD": 16,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 227
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBasicEnemy *"
+      }
+    ]
+  },
+  "suspects": []
+}

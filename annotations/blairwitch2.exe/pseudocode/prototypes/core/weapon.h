@@ -97,6 +97,6 @@ void __cdecl CWeapon::renderAimBeam(CWeapon *this_ptr);
 // Address: 0058a470
 void __cdecl CWeapon::onFired(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0058a5f0
+// Original: core_weapon.cpp_CWeapon_isSimulating_FUN_0058a5f0
 // Address: 0058a5f0
-undefined4 FUN_0058a5f0(int param_1);
+int __cdecl CWeapon::isSimulating(CWeapon *this_ptr);

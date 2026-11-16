@@ -13,7 +13,7 @@
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f8a1
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0 at 00495416
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5ebf
-;   core_game.cpp_FUN_004c4a60 at 004c4ba4
+;   core_game.cpp_CGame_playMusic_FUN_004c4a60 at 004c4ba4
 ;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056bf20
 ;
 ; Referenced Globals:

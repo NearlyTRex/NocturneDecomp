@@ -17,7 +17,7 @@
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930 at 00418e04
 ;   core_boxactor.cpp_CBoxActor_canPickup_FUN_004200a0 at 004200b7
 ;   core_carved.cpp_CCarved_isGrabbable_FUN_00428fc0 at 00428fca
-;   core_carved.cpp_FUN_00427bc0 at 00428387
+;   core_carved.cpp_CCarved_processPickup_FUN_00427bc0 at 00428387
 ;   ... and 46 more
 ;
 ; Called Functions:

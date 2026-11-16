@@ -8,7 +8,7 @@
 ; CLocation *      Stack[0x8]:4   teleport_target
 ;
 ; XREF[2]:
-;   core_event.cpp_FUN_0048c2e0 at 0049180f
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0049180f
 ;   core_teleport.cpp_CTeleport_process_FUN_00568e40 at 00568f0d
 ;
 ; *****************************************************************************

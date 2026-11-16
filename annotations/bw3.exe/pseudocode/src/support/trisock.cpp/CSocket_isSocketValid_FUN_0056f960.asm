@@ -10,9 +10,9 @@
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00504c10 at 00504c1d
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 at 00504cb2
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_0056fc30 at 0056fc36
-;   support_trisock.cpp_FUN_0056fa20 at 0056fa2f
-;   support_trisock.cpp_FUN_00571340 at 005714ea
-;   support_trisock.cpp_FUN_00571d80 at 00571dad
+;   support_trisock.cpp_CSocket_pollSocketStatus_FUN_0056fa20 at 0056fa2f
+;   support_trisock.cpp_httpRequestFillBuffer_FUN_00571d80 at 00571dad
+;   support_trisock.cpp_httpRequestUpdate_FUN_00571340 at 005714ea
 ;
 ; *****************************************************************************
 

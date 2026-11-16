@@ -10,8 +10,8 @@
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_00455d10 at 004560d2
-;   core_doc.cpp_FUN_004568e0 at 004574d5
+;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_004568e0 at 004574d5
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 004560d2
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0

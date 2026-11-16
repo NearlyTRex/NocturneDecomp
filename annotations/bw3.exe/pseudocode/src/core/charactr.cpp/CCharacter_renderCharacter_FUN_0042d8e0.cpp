@@ -12,7 +12,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_0042d8e0(CCharacte
   int iVar1;
   
   if (this_ptr->is_fully_burned == 0) {
-    core_charactr_cpp_FUN_0042d500(this_ptr);
+    core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_0042d500(this_ptr);
     if (this_ptr->additive == 0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
                 (&this_ptr->model,-1,0xffffffff,1,0);

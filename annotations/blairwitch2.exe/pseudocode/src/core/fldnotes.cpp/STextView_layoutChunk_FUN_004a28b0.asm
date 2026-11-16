@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01cab7f0
 ;
 ; Called Functions:
-;   core_flashlit.cpp_FUN_004a1390
+;   core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004a1390
 ;   core_fldnotes.cpp_STextView_appendWord_FUN_004a3160
 ;   core_fldnotes.cpp_STextView_flushWord_FUN_004a2b30
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0
@@ -155,8 +155,8 @@ section .text
     MOV byte ptr [ESP + EAX*0x1 + 0x200],DH ; 004a29b6
     LEA EAX,[ESP + 0x200]               ; 004a29bd
     PUSH EAX                            ; 004a29c4
-    CALL core_flashlit.cpp_FUN_004a1390 ; 004a29c5
-        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a1390()
+    CALL core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004a1390 ; 004a29c5
+        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; void core_flashlit.cpp_trimAndNormalizeWhitespace_FUN_004a1390(char * text)
     ADD ESP,0x4                         ; 004a29ca
     LEA EAX,[ESP + 0x200]               ; 004a29cd
     PUSH EAX                            ; 004a29d4

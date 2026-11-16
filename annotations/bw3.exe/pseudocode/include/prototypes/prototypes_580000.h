@@ -4,12 +4,10 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/basetsd.h"
 #include "system/winbase.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CIniFile.h"
@@ -50,15 +48,15 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_00580790(void);
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_00580800(void);
 char __cdecl wincore_winrun_cpp_getValue_FUN_00580820(void);
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_00580830(int input_value);
-void wincore_winrun_cpp_FUN_00580870(undefined4 param_1);
+void __cdecl wincore_winrun_cpp_setValue_FUN_00580870(int val);
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_00580890(int x_coord,int y_coord);
 void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005808d0(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005809c0(void);
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005809d0(int x,int y);
 LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00580a50(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_00580f70(void);
-void wincore_winrun_cpp_FUN_00581010(void);
-void wincore_winrun_cpp_FUN_00581060(void);
+void __cdecl wincore_winrun_cpp_createMainWindow_FUN_00581010(void);
+void __cdecl wincore_winrun_cpp_destroyMainWindow_FUN_00581060(void);
 int __stdcall wincore_winrun_cpp_winMain_FUN_00581080(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_00581300(char *message);
 char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00581360(EInputCodeType keycode);
@@ -68,28 +66,28 @@ int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_00581950(HANDLE mutex_han
 void __cdecl wincore_winrun_cpp_releaseMutex_FUN_00581990(HANDLE mutex_handle);
 HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_005819b0(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param);
 int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005819e0(HANDLE hThread,int priority_level);
-void wincore_winrun_cpp_FUN_00581a20(HANDLE param_1);
+void __cdecl wincore_winrun_cpp_closeThread_FUN_00581a20(HANDLE thread_handle);
 void __cdecl wincore_winrun_cpp_sleep_FUN_00581a40(double seconds);
 void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_00581aa0(char *buffer);
 void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_00581b70(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_00581bf0(char *key_path,char *value_name,char *value_data);
-void wincore_winrun_cpp_FUN_00581c70(LPCSTR param_1);
+void __cdecl wincore_winrun_cpp_outputDebugString_FUN_00581c70(LPCSTR message);
 void __cdecl wincore_winrun_cpp_initJoystick_FUN_00581c80(void);
 void __cdecl wincore_winrun_cpp_doNothing2_FUN_00581cf0(void);
 void __cdecl wincore_winrun_cpp_getJoystickState_FUN_00581d10(void);
-float wincore_winrun_cpp_FUN_00581e70(int param_1,int *param_2,float param_3,float param_4);
-void wincore_winrun_cpp_FUN_00581f50(int param_1);
-void wincore_winrun_cpp_FUN_00582370(void);
-void wincore_winrun_cpp_FUN_005823a0(int param_1,int param_2,UINT_PTR param_3);
-void wincore_winrun_cpp_FUN_005824b0(int param_1);
-void wincore_winrun_cpp_FUN_005824d0(void);
-void wincore_winrun_cpp_FUN_00582500(float param_1);
-float wincore_winrun_cpp_FUN_00582580(void);
-void wincore_winrun_cpp_FUN_005825e0(int param_1);
-void wincore_winrun_cpp_FUN_00582630(undefined4 param_1);
-undefined4 wincore_winrun_cpp_FUN_00582640(undefined4 param_1);
-void wincore_winrun_cpp_FUN_00582680(CIniFile *param_1);
-void wincore_winrun_cpp_FUN_00582830(void);
+float __cdecl wincore_winrun_cpp_normalizeControllerAxis_FUN_00581e70(int raw_value,int *axis_calibration,float out_min,float out_max);
+void __cdecl wincore_winrun_cpp_pollController_FUN_00581f50(int controller_index);
+void __cdecl wincore_winrun_cpp_pollAllControllers_FUN_00582370(void);
+void __cdecl wincore_winrun_cpp_initController_FUN_005823a0(int controller_index,int controller_type,uint pc_port);
+void __cdecl wincore_winrun_cpp_clearController_FUN_005824b0(int controller_index);
+void __cdecl wincore_winrun_cpp_resetInputIdleTimers_FUN_005824d0(void);
+void __cdecl wincore_winrun_cpp_updateInputIdleTimers_FUN_00582500(float delta_time);
+float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_00582580(void);
+void __cdecl wincore_winrun_cpp_resetControllerCalibration_FUN_005825e0(int controller_index);
+void wincore_winrun_cpp_FUN_00582630(int param_1);
+void __cdecl wincore_winrun_cpp_calibrateControllerCenter_FUN_00582640(int controller_index);
+void __cdecl wincore_winrun_cpp_saveControllerSettings_FUN_00582680(CIniFile *ini);
+void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_00582830(CIniFile *ini);
 void wincore_winrun_cpp_FUN_00582aa0(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_00582b60(HWND window_handle);
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_00582bb0(HWND parent_window,char *movie_filename);
@@ -155,7 +153,7 @@ void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00587940(void);
 void __cdecl core_xform_cpp_clampClippedVertices_FUN_00587c20(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00587cd0(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_00588410(void);
-float core_zombie_cpp_FUN_005884f0(int param_1);
+float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005884f0(CDemonActor *actor);
 CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointLocal_FUN_00588590(CDemonActor *actor,CVector3f *out_point);
 CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_00588650(CDemonActor *actor,CVector3f *out_point);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_00588750(CVector3f *dimensions);
@@ -182,19 +180,19 @@ int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_0058cb40(CZombie *this_ptr,CD
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_0058cbb0(CZombie *this_ptr);
 int __cdecl core_zombie_cpp_CZombie_isInvulnerable_FUN_0058cbe0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie *this_ptr);
-void core_zombie_cpp_FUN_0058cc90(void);
+CZombieCemetery * __cdecl core_zombie_cpp_factoryFuncZombieCemetery_FUN_0058cc90(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombieCemetery_getActorType_FUN_0058ccb0(CZombieCemetery *this_ptr);
 CZombieCemetery * __cdecl core_zombie_cpp_CZombieCemetery_ctor_FUN_0058ccc0(CZombieCemetery *this_ptr);
-void core_zombie_cpp_FUN_0058cd20(void);
+CZombieForest * __cdecl core_zombie_cpp_factoryFuncZombieForest_FUN_0058cd20(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombieForest_getActorType_FUN_0058cd40(CZombieForest *this_ptr);
 CZombieForest * __cdecl core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieForest *this_ptr);
-void core_zombie_cpp_FUN_0058cdb0(void);
+CZombieSpirit * __cdecl core_zombie_cpp_factoryFuncZombieSpirit_FUN_0058cdb0(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombieSpirit_getActorType_FUN_0058cdd0(CZombieSpirit *this_ptr);
 CZombieSpirit * __cdecl core_zombie_cpp_CZombieSpirit_ctor_FUN_0058cde0(CZombieSpirit *this_ptr);
-void core_zombie_cpp_FUN_0058ce40(void);
+CZombieIndian * __cdecl core_zombie_cpp_factoryFuncZombieIndian_FUN_0058ce40(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombieIndian_getActorType_FUN_0058ce60(CZombieIndian *this_ptr);
 CZombieIndian * __cdecl core_zombie_cpp_CZombieIndian_ctor_FUN_0058ce70(CZombieIndian *this_ptr);
-void core_zombie_cpp_FUN_0058ced0(void);
+CZombieDemon * __cdecl core_zombie_cpp_factoryFuncZombieDemon_FUN_0058ced0(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombieDemon_getActorType_FUN_0058cef0(CZombieDemon *this_ptr);
 CZombieDemon * __cdecl core_zombie_cpp_CZombieDemon_ctor_FUN_0058cf00(CZombieDemon *this_ptr);
 CZombieDemon * __cdecl core_zombie_cpp_CZombieDemon_dtor_FUN_0058cf60(CZombieDemon *this_ptr,uint flags);
@@ -204,8 +202,8 @@ CZombieForest * __cdecl core_zombie_cpp_CZombieForest_dtor_FUN_0058d110(CZombieF
 CZombieCemetery * __cdecl core_zombie_cpp_CZombieCemetery_dtor_FUN_0058d1a0(CZombieCemetery *this_ptr,uint flags);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_0058d230(CZombie *this_ptr,uint flags);
 void __cdecl core_zombiepriest_cpp_staticInit_FUN_0058d2c0(void);
-void core_zombiepriest_cpp_FUN_0058d2f0(int param_1);
-void core_zombiepriest_cpp_FUN_0058d3b0(CDemonActor *param_1);
+CVector3f * __stack_esi core_zombiepriest_cpp_getObjectGrabPointLocal_FUN_0058d2f0(CDemonActor *actor,CVector3f *out_point);
+CVector3f * __stack_esi core_zombiepriest_cpp_getObjectGrabPointWorld_FUN_0058d3b0(CDemonActor *actor,CVector3f *out_point);
 CZombiePriest * __cdecl core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void);
 CDemonActorType * __cdecl core_zombiepriest_cpp_CZombiePriest_getActorType_FUN_0058d4d0(CZombiePriest *this_ptr);
 CZombiePriest * __cdecl core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr);
@@ -217,7 +215,7 @@ int __cdecl core_zombiepriest_cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0
 void __cdecl core_zombiepriest_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest *this_ptr);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_archive_FUN_0058f510(CZombiePriest *this_ptr);
 undefined4 core_zombiepriest_cpp_FUN_0058f610(void);
-void core_zombiepriest_cpp_FUN_0058f630(CCharacter *param_1,float *param_2);
+void __cdecl core_zombiepriest_cpp_CZombiePriest_processDismemberment_FUN_0058f630(CZombiePriest *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_zombiepriest_cpp_CZombiePriest_processDamage_FUN_0058f990(CZombiePriest *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_zombiepriest_cpp_CZombiePriest_getTargetPoints_FUN_0058fb20(CZombiePriest *this_ptr,CVector3f *out_points_array);
 ECollisionType __cdecl core_zombiepriest_cpp_CZombiePriest_getCollisionType_FUN_0058fc60(CZombiePriest *this_ptr,SCollisionInfo *collision_info);

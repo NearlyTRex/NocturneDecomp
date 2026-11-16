@@ -12,6 +12,6 @@ void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_00575070(SMRGLTextureBa
 
 {
   engine_texture_cpp_ensureTextureLoaded_FUN_00574e00(texture);
-  engine_texture_cpp_FUN_00574a80(_DAT_02652eb0,texture);
+  engine_texture_cpp_CTextureCache_uploadTexture_FUN_00574a80(_DAT_02652eb0,texture);
   return;
 }

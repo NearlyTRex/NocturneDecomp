@@ -264,7 +264,7 @@ LAB_0051c08c:
         else {
           if (bone_index != 3) goto LAB_0051c08c;
           this_ptr_01 = (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor;
-          core_prye_cpp_FUN_00520da0(this_ptr);
+          core_prye_cpp_CPrye_dropRightHandObject_FUN_00520da0(this_ptr);
           iVar1 = (this_ptr->base).action_pending;
           if (iVar1 == 2) {
             if (this_ptr_01 != (CWeapon *)0x0) {

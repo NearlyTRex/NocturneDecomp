@@ -74,8 +74,8 @@
 ;   engine_mini3d.cpp_roundFloat_FUN_004f7260
 ;   engine_mini3d.cpp_setupScanEdge_FUN_004f6df0
 ;   engine_special.cpp_drawPolygon_FUN_0055f8f0
-;   engine_special.cpp_FUN_0055c45c
-;   engine_special.cpp_FUN_0055ca23
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c
 ;   engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9
 ;   engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3
 ;
@@ -576,8 +576,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0xa0]      ; 004f78ae
     MOV EBX,dword ptr [ESP + 0x9c]      ; 004f78b5
     MOV ESI,EBP                         ; 004f78bc
-    CALL engine_special.cpp_FUN_0055c45c ; 004f78be
-        ;   XREF to: 0055c45c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055c45c()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c ; 004f78be
+        ;   XREF to: 0055c45c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     MOV ECX,dword ptr [EBP + 0x8]       ; 004f78c3 | DAT_01d17ac0
         ;   Label: LAB_004f78c3
     MOV EAX,dword ptr [EBP + 0xc]       ; 004f78c6 | DAT_01d17ac4
@@ -700,8 +700,8 @@ section .text
         ;   Label: LAB_004f79f2
     MOV EBX,dword ptr [ESP + 0x9c]      ; 004f79f9
     MOV ESI,EBP                         ; 004f7a00
-    CALL engine_special.cpp_FUN_0055ca23 ; 004f7a02
-        ;   XREF to: 0055ca23 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055ca23()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23 ; 004f7a02
+        ;   XREF to: 0055ca23 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x004f78c3                      ; 004f7a07
         ;   XREF to: 004f78c3 (UNCONDITIONAL_JUMP)  ; LAB_004f78c3
     CMP dword ptr [0x006141c0],0x20     ; 004f7a0c | DAT_006141c0

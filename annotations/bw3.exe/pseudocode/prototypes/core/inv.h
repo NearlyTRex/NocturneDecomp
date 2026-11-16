@@ -21,13 +21,13 @@ char * __cdecl getItemDisplayName(CDemonActor *actor_ptr);
 // Address: 004d9eb0
 char * __cdecl getItemDescription(CDemonActor *actor_ptr);
 
-// Original: core_inv.cpp_FUN_004d9fc0
+// Original: core_inv.cpp_playSpsSound_FUN_004d9fc0
 // Address: 004d9fc0
-undefined4 FUN_004d9fc0(int param_1,char *param_2);
+int __cdecl playSpsSound(CCharacter *character,char *sound_name);
 
-// Original: core_inv.cpp_FUN_004da020
+// Original: core_inv.cpp_updateSps_FUN_004da020
 // Address: 004da020
-void FUN_004da020(void);
+void __cdecl updateSps(void);
 
 // Original: core_inv.cpp_loadItem_FUN_004da320
 // Address: 004da320
@@ -73,9 +73,9 @@ CDemonActor * __cdecl CInventory::findItemByName(CInventory *this_ptr,char *item
 // Address: 004db9e0
 CDemonActor * __cdecl CInventory::findItemOfClass(CInventory *this_ptr,char *class_name);
 
-// Original: core_inv.cpp_FUN_004dba30
+// Original: core_inv.cpp_CInventory_findWeaponByAmmoType_FUN_004dba30
 // Address: 004dba30
-undefined4 FUN_004dba30(int param_1,int param_2);
+CWeapon * __cdecl CInventory::findWeaponByAmmoType(CInventory *this_ptr,EAmmoType ammo_type);
 
 // Original: core_inv.cpp_CInventory_hasItemOfClass_FUN_004dba80
 // Address: 004dba80

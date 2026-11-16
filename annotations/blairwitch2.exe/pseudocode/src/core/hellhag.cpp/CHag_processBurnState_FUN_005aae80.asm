@@ -20,11 +20,11 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
-;   core_bwgrndma.cpp_FUN_005a7ed0
+;   core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
-;   core_muzzle.cpp_FUN_0059d880
+;   core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880
 ;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;   crt_string.c_strstr_FUN_005ba9e0
 ;
@@ -90,8 +90,8 @@ section .text
     POP ESI                             ; 005aaf74
     POP EBX                             ; 005aaf75
     RET                                 ; 005aaf76
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005aaf77
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005aaf77
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
         ;   Label: LAB_005aaf77
     TEST EAX,EAX                        ; 005aaf7c
     JZ 0x005ab1ec                       ; 005aaf7e
@@ -285,8 +285,8 @@ section .text
     ADD EAX,0x10af8                     ; 005ab22e
     PUSH EAX                            ; 005ab233
     MOV dword ptr [EAX + 0x938],0x0     ; 005ab234
-    CALL core_muzzle.cpp_FUN_0059d880   ; 005ab23e
-        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d880()
+    CALL core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880 ; 005ab23e
+        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880(SStateMachine * this_ptr, char * identifier)
     ADD ESP,0x8                         ; 005ab243
     ADD ESP,0xfc                        ; 005ab246
     POP EBP                             ; 005ab24c

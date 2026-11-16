@@ -13,18 +13,19 @@ void __cdecl core_helldog_cpp_CDog_processChaseFoodState_FUN_005ac0c0(CDog *this
   CDog *pCVar1;
   float fVar2;
   int iVar3;
-  uint uVar4;
-  SStateMachine *pSVar5;
+  char *state_name;
+  SStateMachine *pSVar4;
   
-  pSVar5 = &(this_ptr->base).state_machine;
+  pSVar4 = &(this_ptr->base).state_machine;
   if (this_ptr->food == (CDemonActor *)0x0) {
-    core_muzzle_cpp_FUN_0059d880(pSVar5,"?ChaseFoodComplete" + 1);
+    core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880
+              (pSVar4,"?ChaseFoodComplete" + 1);
     return;
   }
   pCVar1 = (CDog *)this_ptr->food[1].particle_systems[1].fade_end;
   if ((pCVar1 != (CDog *)0x0) && (this_ptr != pCVar1)) {
     this_ptr->food = (CDemonActor *)0x0;
-    core_muzzle_cpp_FUN_0059d880(pSVar5,"ChaseFoodComplete");
+    core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880(pSVar4,"ChaseFoodComplete");
     return;
   }
   iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
@@ -45,8 +46,8 @@ void __cdecl core_helldog_cpp_CDog_processChaseFoodState_FUN_005ac0c0(CDog *this
   }
   (*((this_ptr->food->vtable)._ub)->onDropped)(this_ptr->food,(CVector3f *)0x0);
   core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,this_ptr->food,1);
-  pSVar5 = &(this_ptr->base).state_machine;
-  uVar4 = core_muzzle_cpp_FUN_0059db90(pSVar5);
-  core_muzzle_cpp_FUN_0059d8e0(pSVar5,uVar4);
+  pSVar4 = &(this_ptr->base).state_machine;
+  state_name = core_muzzle_cpp_SStateMachine_getInitialStateName_FUN_0059db90(pSVar4);
+  core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(pSVar4,state_name);
   return;
 }

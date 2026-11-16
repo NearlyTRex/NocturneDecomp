@@ -9,9 +9,9 @@
 // Address: 00562560
 void __cdecl staticInit(void);
 
-// Original: core_stranger.cpp_FUN_005625c0
+// Original: core_stranger.cpp_aimPitchBlendWeightCallback_FUN_005625c0
 // Address: 005625c0
-float FUN_005625c0(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+float __cdecl aimPitchBlendWeightCallback(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance);
 
 // Original: core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_005626f0
 // Address: 005626f0

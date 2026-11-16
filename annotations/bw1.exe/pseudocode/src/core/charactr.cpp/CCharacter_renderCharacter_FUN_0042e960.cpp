@@ -12,7 +12,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_0042e960(CCharacte
   int iVar1;
   
   if (this_ptr->is_fully_burned == 0) {
-    core_charactr_cpp_FUN_0042e580(this_ptr);
+    core_charactr_cpp_CCharacter_updateFacialAnimation_FUN_0042e580(this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
               (&this_ptr->model,-1,0xffffffff,1,0);
     core_cloth_cpp_CClothList_render_FUN_00441ff0(&this_ptr->cloth_list,&this_ptr->model);

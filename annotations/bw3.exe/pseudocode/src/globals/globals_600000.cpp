@@ -188,7 +188,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_disease_cpp_FUN_0045c160
+        .func = (RUNTIME_HANDLER_FUNC *)core_disease_cpp_staticInit_FUN_0045c160
     },
     {
         .status = 0x00,
@@ -298,7 +298,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_flashlit_cpp_FUN_004a76f0
+        .func = (RUNTIME_HANDLER_FUNC *)core_flashlit_cpp_staticInit_FUN_004a76f0
     },
     {
         .status = 0x00,
@@ -398,7 +398,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_imp_cpp_FUN_004d8280
+        .func = (RUNTIME_HANDLER_FUNC *)core_imp_cpp_staticInit_FUN_004d8280
     },
     {
         .status = 0x00,
@@ -583,7 +583,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_skeleton_cpp_FUN_00550580
+        .func = (RUNTIME_HANDLER_FUNC *)core_skeleton_cpp_staticInit_FUN_00550580
     },
     {
         .status = 0x00,
@@ -693,7 +693,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_tvbat_cpp_FUN_00576230
+        .func = (RUNTIME_HANDLER_FUNC *)core_tvbat_cpp_staticInit_FUN_00576230
     },
     {
         .status = 0x00,

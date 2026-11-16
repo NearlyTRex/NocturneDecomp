@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 359,
+    "complexity_score": 373,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 169,
-    "suspect_count": 15,
+    "pseudocode_lines": 173,
+    "suspect_count": 16,
     "suspect_types": [
       "derived_field_index_pun",
       "raw_address_pointer_store",
@@ -19,7 +19,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 576
+    "total_lines": 580
   },
   "cross_references": [
     {
@@ -62,12 +62,12 @@
     {
       "addr": "0040e450",
       "is_variadic": false,
-      "name": "core_ammo.cpp_FUN_0040e450"
+      "name": "core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450"
     },
     {
       "addr": "0045d260",
       "is_variadic": false,
-      "name": "core_doc.cpp_FUN_0045d260"
+      "name": "core_doc.cpp_CDoc_startReload_FUN_0045d260"
     },
     {
       "addr": "00490f80",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 95,
       "match": "DAT_005db9ca",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005db9ca);",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 117,
+      "line": 118,
       "match": "*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
       "text": "(local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4));",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 132,
+      "line": 134,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x154))(iVar2);",
@@ -479,23 +479,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 139,
       "match": "DAT_005db95d",
       "severity": "mild",
-      "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(pCVar5,&DAT_005db95d), iVar2 == 0)) {",
+      "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(pCVar6,&DAT_005db95d), iVar2 == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 164,
+      "line": 159,
+      "match": "*(CDoc **)(_DAT_01cedef4 * 4 + 0x1cedee4",
+      "severity": "moderate",
+      "text": "(local_14,*(CDoc **)(_DAT_01cedef4 * 4 + 0x1cedee4));",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 167,
       "match": "*(CDemonActor **)(iVar2 * 4 + 0x1cedee4",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)(iVar2 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash);",
+      "text": "(*(CDemonActor **)(iVar2 * 4 + 0x1cedee4),",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 64,
+      "line": 65,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -503,7 +511,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 85,
+      "line": 86,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -511,7 +519,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 106,
+      "line": 107,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -519,7 +527,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 146,
+      "line": 148,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -527,7 +535,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 76,
+      "line": 77,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -535,7 +543,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 97,
+      "line": 98,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -543,7 +551,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 76,
+      "line": 77,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -551,17 +559,17 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 97,
+      "line": 98,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
     },
     {
-      "description": "'(char *)&pCVar5[2].particle_systems[2].max_particles' walks 2 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[2].max_particles) (0x1f4) + 0x0 = 0x75c, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar5)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 46,
+      "description": "'(char *)&pCVar6[2].particle_systems[2].max_particles' walks 2 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[2].max_particles) (0x1f4) + 0x0 = 0x75c, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar6)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 47,
       "severity": "moderate",
-      "text": "(0x01C38BC0,(char *)&pCVar5[2].particle_systems[2].max_particles,1);",
+      "text": "(0x01C38BC0,(char *)&pCVar6[2].particle_systems[2].max_particles,1);",
       "type": "derived_field_index_pun"
     }
   ]

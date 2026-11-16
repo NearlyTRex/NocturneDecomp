@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[9]:
-;   core_doc.cpp_FUN_00455d10 at 004561b6
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 004561b6
 ;   core_elephant.cpp_CElephantGun_process_FUN_00485a30 at 00485b08
 ;   core_lantern.cpp_CLantern_process_FUN_0059ccf0 at 0059ce4d
 ;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0 at 004e2ca8

@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d24ffc
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045fd80
+;   core_dirmat.cpp_sinCos_FUN_0045fd80
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     PUSH EAX                            ; 00511a6f
     LEA EAX,[ESP + 0x8]                 ; 00511a70
     PUSH EAX                            ; 00511a74
-    CALL core_dirmat.cpp_FUN_0045fd80   ; 00511a75
-        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045fd80()
+    CALL core_dirmat.cpp_sinCos_FUN_0045fd80 ; 00511a75
+        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045fd80(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 00511a7a
     LEA EAX,[EDI + 0x8]                 ; 00511a7d
     PUSH EAX                            ; 00511a80
@@ -66,8 +66,8 @@ section .text
     PUSH EAX                            ; 00511a85
     LEA EAX,[ESP + 0x14]                ; 00511a86
     PUSH EAX                            ; 00511a8a
-    CALL core_dirmat.cpp_FUN_0045fd80   ; 00511a8b
-        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045fd80()
+    CALL core_dirmat.cpp_sinCos_FUN_0045fd80 ; 00511a8b
+        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045fd80(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 00511a90
     ADD EDI,0x4                         ; 00511a93
     PUSH EDI                            ; 00511a96
@@ -75,8 +75,8 @@ section .text
     PUSH EAX                            ; 00511a9b
     LEA EAX,[ESP + 0x10]                ; 00511a9c
     PUSH EAX                            ; 00511aa0
-    CALL core_dirmat.cpp_FUN_0045fd80   ; 00511aa1
-        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045fd80()
+    CALL core_dirmat.cpp_sinCos_FUN_0045fd80 ; 00511aa1
+        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045fd80(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 00511aa6
     FLD float ptr [ESP + 0x8]           ; 00511aa9
     FMUL float ptr [ESP]                ; 00511aad

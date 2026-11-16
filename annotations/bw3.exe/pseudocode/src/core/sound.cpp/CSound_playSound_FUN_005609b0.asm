@@ -10,12 +10,12 @@
 ;
 ; XREF[12]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0 at 00413167
-;   core_event.cpp_FUN_0048c2e0 at 0048f261
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048f261
+;   core_game.cpp_CGame_playMusic_FUN_004c4a60 at 004c4b56
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb17f
-;   core_game.cpp_FUN_004c4a60 at 004c4b56
 ;   core_inv.cpp_CInventory_updateInventory_FUN_004dcdb0 at 004dd131
-;   core_inv.cpp_FUN_004d9fc0 at 004d9ff8
-;   core_inv.cpp_FUN_004da020 at 004da186
+;   core_inv.cpp_playSpsSound_FUN_004d9fc0 at 004d9ff8
+;   core_inv.cpp_updateSps_FUN_004da020 at 004da186
 ;   core_script.cpp_CScript_startDialogLine_FUN_00530150 at 005302ca
 ;   core_sound.cpp_CSound_init_FUN_0055fd30 at 0055fe25
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_00560940 at 00560992

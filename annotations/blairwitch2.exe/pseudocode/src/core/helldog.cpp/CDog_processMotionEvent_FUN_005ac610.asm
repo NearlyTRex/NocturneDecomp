@@ -16,7 +16,7 @@
 ;   undefined4 DAT_0061c068
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059f740
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     PUSH EDI                            ; 005ac640
     PUSH dword ptr [0x00600c58]         ; 005ac641 | DAT_00600c58
     PUSH EBX                            ; 005ac647
-    CALL core_basicene.cpp_FUN_0059f740 ; 005ac648
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005ac648
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005ac64d
     PUSH ESI                            ; 005ac650
     PUSH 0x5f0e54                       ; 005ac651 | = "dogbite0?.wav"
@@ -69,8 +69,8 @@ section .text
     PUSH ECX                            ; 005ac676
     PUSH dword ptr [0x00600c5c]         ; 005ac677 | DAT_00600c5c
     PUSH EBX                            ; 005ac67d
-    CALL core_basicene.cpp_FUN_0059f740 ; 005ac67e
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005ac67e
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005ac683
     PUSH ESI                            ; 005ac686
     PUSH 0x5f0e62                       ; 005ac687 | = "dogjump0?.wav"

@@ -16,7 +16,6 @@
 #include "types/classes/CMelee.h"
 #include "types/classes/CMimic.h"
 #include "types/classes/CMirrorHack.h"
-#include "types/classes/COutStream.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
@@ -48,9 +47,9 @@ void __cdecl core_lightpis_cpp_staticInit_FUN_005015b0(void);
 CLightPis * __cdecl core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void);
 CDemonActorType * __cdecl core_lightpis_cpp_CLightPis_getActorType_FUN_00501600(CLightPis *this_ptr);
 CLightPis * __cdecl core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr);
-undefined4 core_lightpis_cpp_FUN_005016d0(CDemonActor *param_1);
-undefined4 core_lightpis_cpp_FUN_00501750(CCharacter *param_1);
-void core_lightpis_cpp_FUN_005017f0(CCharacter *param_1);
+int __cdecl core_lightpis_cpp_isVampireType_FUN_005016d0(CDemonActor *actor);
+int __cdecl core_lightpis_cpp_isLightVulnerable_FUN_00501750(CCharacter *actor);
+void __cdecl core_lightpis_cpp_CLightPis_updateBeamLight_FUN_005017f0(CLightPis *this_ptr);
 CVector3f * __cdecl core_lightpis_cpp_CLightPis_getMuzzlePoint_FUN_005018c0(CLightPis *this_ptr,CVector3f *out_point);
 int __cdecl core_lightpis_cpp_CLightPis_fire_FUN_00501a70(CLightPis *this_ptr);
 void __cdecl core_lightpis_cpp_CLightPis_process_FUN_00502480(CLightPis *this_ptr,float delta_time);
@@ -138,8 +137,8 @@ void __cdecl core_marquee_cpp_CMarquee_archive_FUN_00507140(CMarquee *this_ptr);
 ECollisionType __cdecl core_marquee_cpp_CMarquee_getCollisionType_FUN_005071c0(CMarquee *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_005071d0(CMarquee *this_ptr,CBoundingBox3D *out_box);
 CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_00507250(CMarquee *this_ptr,uint flags);
-undefined8 core_marquee_cpp_FUN_005072c0(void);
-void core_marquee_cpp_FUN_00507340(void);
+void __cdecl core_marquee_cpp_initializeTrigTables_FUN_005072c0(void);
+void __cdecl core_marquee_cpp_freeTrigTables_FUN_00507340(void);
 int __cdecl engine_matrix_c_interpolatedSin_FUN_00507350(int angle);
 int __cdecl engine_matrix_c_interpolatedCos_FUN_00507390(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_005073d0(void);
@@ -181,7 +180,7 @@ void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_00509970(CMelee *th
 void __cdecl core_melee_cpp_CMelee_process_FUN_005099a0(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_00509a70(CMelee *this_ptr,int weapon_state);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_00509a90(CMelee *this_ptr,uint flags);
-void core_melee_cpp_FUN_00509b00(COutStream *param_1);
+void __cdecl core_melee_cpp_dumpHeap_FUN_00509b00(void *stream);
 void __cdecl core_menu_cpp_staticInit_FUN_00509bd0(void);
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_00509c90(int x_center,int y_top,int height_half);
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);

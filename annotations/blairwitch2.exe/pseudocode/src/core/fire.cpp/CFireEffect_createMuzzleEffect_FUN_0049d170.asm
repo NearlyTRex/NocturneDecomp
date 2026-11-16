@@ -9,8 +9,8 @@
 ; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ;
 ; XREF[2]:
-;   core_confedrt.cpp_FUN_005a14e0 at 005a1705
-;   core_union.cpp_FUN_005a5460 at 005a5685
+;   core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0 at 005a1705
+;   core_union.cpp_CUnion_fireShotgun_FUN_005a5460 at 005a5685
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c8672c

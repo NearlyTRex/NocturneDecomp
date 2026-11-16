@@ -34,7 +34,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_processDamage_FUN_00561330(CShadowsc *t
     fVar2 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar2;
     if (0.0 < fVar2) {
-      core_shadowsc_cpp_FUN_00561060(this_ptr);
+      core_shadowsc_cpp_CShadowsc_playHurtSound_FUN_00561060(this_ptr);
       core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
       return;
     }
@@ -43,7 +43,7 @@ void __cdecl core_shadowsc_cpp_CShadowsc_processDamage_FUN_00561330(CShadowsc *t
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
     if ((pSVar3->state_index != 7) && (pSVar3->state_index != 6)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,6,1);
-      core_shadowsc_cpp_FUN_005610a0(this_ptr);
+      core_shadowsc_cpp_CShadowsc_playDeathSound_FUN_005610a0(this_ptr);
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
   }

@@ -56,7 +56,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00525930 at 0052597a
+;   core_prye.cpp_CPrye_handleActionButton_FUN_00525930 at 0052597a
 ;
 ; Referenced Globals:
 ;   undefined4 s_actionPending_d_prye_cpp_005cd58e+1

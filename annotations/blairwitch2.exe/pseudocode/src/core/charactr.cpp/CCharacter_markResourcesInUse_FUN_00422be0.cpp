@@ -9,7 +9,7 @@
 void __cdecl core_charactr_cpp_CCharacter_markResourcesInUse_FUN_00422be0(CCharacter *this_ptr)
 
 {
-  core_actor_cpp_FUN_00408ac0(this_ptr);
+  core_actor_cpp_CDemonActor_markResourcesInUse_FUN_00408ac0(&this_ptr->base);
   if ((this_ptr->model).model_name[0] == '\0') {
     return;
   }

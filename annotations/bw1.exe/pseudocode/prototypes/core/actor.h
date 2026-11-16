@@ -61,9 +61,9 @@ char * __cdecl CDemonActor::getActorClassName(CDemonActor *this_ptr);
 // Address: 00408850
 void __cdecl CDemonActor::setup(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00408890
+// Original: core_actor.cpp_CDemonActor_markResourcesInUse_FUN_00408890
 // Address: 00408890
-void FUN_00408890(void);
+void __cdecl CDemonActor::markResourcesInUse(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
 // Address: 004088b0
@@ -89,9 +89,9 @@ void __cdecl CDemonActor::customIntersectCylinderXZ(CDemonActor *this_ptr,SInter
 // Address: 004089c0
 int __cdecl CDemonActor::customGetFloorHeight(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
-// Original: core_actor.cpp_FUN_004089f0
+// Original: core_actor.cpp_CDemonActor_getGroundType_FUN_004089f0
 // Address: 004089f0
-undefined4 FUN_004089f0(void);
+EGroundType __cdecl CDemonActor::getGroundType(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a00
 // Address: 00408a00
@@ -129,9 +129,9 @@ uint __cdecl CDemonActor::playSoundWithDelay(CDemonActor *this_ptr,char *sound_n
 // Address: 00408c90
 uint __cdecl CDemonActor::playAmbientSoundWithDelay(CDemonActor *this_ptr,char *sound_name,float delay);
 
-// Original: core_actor.cpp_FUN_00408cc0
+// Original: core_actor.cpp_CDemonActor_pickup_FUN_00408cc0
 // Address: 00408cc0
-void FUN_00408cc0(void);
+void __cdecl CDemonActor::pickup(CDemonActor *this_ptr,CDemonActor *carrier);
 
 // Original: core_actor.cpp_CDemonActor_testCylinderCollision_FUN_00408cd0
 // Address: 00408cd0
@@ -429,13 +429,13 @@ float FUN_0040cfc0(float *param_1);
 // Address: 0040cfe0
 CVector3f * __cdecl CVector3f::ctor(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040cff0
+// Original: core_actor.cpp_copyVector_FUN_0040cff0
 // Address: 0040cff0
-void FUN_0040cff0(undefined4 *param_1,undefined4 *param_2);
+void __cdecl copyVector(CVector3f *dst_ptr,CVector3f *src_ptr);
 
-// Original: core_actor.cpp_FUN_0040d010
+// Original: core_actor.cpp_CVector3f_length_FUN_0040d010
 // Address: 0040d010
-float FUN_0040d010(float *param_1);
+float __cdecl CVector3f::length(CVector3f *this_ptr);
 
 // Original: core_actor.cpp_CVector3f_toFixed8_FUN_0040d060
 // Address: 0040d060

@@ -71,7 +71,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b2d80(CGame *this_ptr)
   this_ptr->combat_difficulty_mode = 0;
   DAT_01cb7b50 = 0;
   this_ptr->chapter_reload_filename[0] = '\0';
-  core_game_cpp_FUN_004bb500(this_ptr,0,0x3f800000,0x40a00000,0,0,0,0);
+  core_game_cpp_CGame_setAlphaFade_FUN_004bb500(this_ptr,0.0,1.0,5.0,0.0,0.0,0.0,0);
   this_ptr->alpha_fade_active = 0;
   return this_ptr;
 }

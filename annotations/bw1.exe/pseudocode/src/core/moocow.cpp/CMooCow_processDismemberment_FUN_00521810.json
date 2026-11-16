@@ -1,0 +1,210 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 159,
+    "complexity_score": 67,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 52,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 211
+  },
+  "cross_references": [
+    {
+      "addr": "00521990",
+      "from_addr": "0052199d",
+      "name": "core_moocow.cpp_CMooCow_processDamage_FUN_00521990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00521810",
+    "address_range": [
+      [
+        "00521810",
+        "00521989"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_moocow.cpp_CMooCow_processDismemberment_FUN_00521810",
+    "signature": "void __cdecl core_moocow_cpp_CMooCow_processDismemberment_FUN_00521810(CMooCow *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd00"
+    },
+    {
+      "addr": "00419b90",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90"
+    },
+    {
+      "addr": "00418940",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418940"
+    },
+    {
+      "addr": "004311a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0"
+    },
+    {
+      "addr": "00431210",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210"
+    },
+    {
+      "addr": "004352e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_004352e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ea3d9",
+      "name": "s_limb_wav_005ea3d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea3ea",
+      "name": "DAT_005ea3ea",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ea3f2",
+      "name": "DAT_005ea3f2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ea3fa",
+      "name": "DAT_005ea3fa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "01ccf3a4",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf58c",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052199d",
+        "call_type": "direct",
+        "caller": "core_moocow.cpp_CMooCow_processDamage_FUN_00521990",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6183206106870225,
+    "instruction_count": 131,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 8,
+      "COPY": 204,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 53,
+      "INT_AND": 45,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 42,
+      "INT_LESS": 6,
+      "INT_MULT": 1,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 21,
+      "INT_SUB": 55,
+      "LOAD": 34,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 56
+    },
+    "pcode_op_count": 605
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "004f9050",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMooCow *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

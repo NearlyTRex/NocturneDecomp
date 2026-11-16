@@ -60,8 +60,8 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonA
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00460800(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00460860(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_004608b0(char *dest_path,char *directory,char *filename);
-void engine_dosio_cpp_FUN_00460900(undefined *param_1);
-void engine_dosio_cpp_FUN_00460910(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl engine_dosio_cpp_setRelativeFilePathHook_FUN_00460900(void *hook);
+void __cdecl engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910(char *dest_path,char *directory,char *filename);
 void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00460930(FileSearchHandlerFunc *handler);
 template<typename T_func0>
 inline void engine_dosio_cpp_addGetFileInfoHook_FUN_00460930(T_func0 handler) {
@@ -84,9 +84,9 @@ void __cdecl engine_dosio_cpp_makePath_FUN_004610a0(char *full_path,char *drive,
 void __cdecl engine_dosio_cpp_ensureTrailingSlash_FUN_004610d0(char *input_path,char *drive,char *output_path);
 void __cdecl engine_dosio_cpp_changeFileExtension_FUN_004611a0(char *path,char *new_extension);
 int __cdecl engine_dosio_cpp_getFullPath_FUN_00461210(char *output_path,char *input_path);
-void engine_dosio_cpp_FUN_00461260(char *param_1,char *param_2,char *param_3);
-bool engine_dosio_cpp_FUN_004613b0(char *param_1);
-bool engine_dosio_cpp_FUN_00461440(char *param_1);
+void __cdecl engine_dosio_cpp_resolveRelativePath_FUN_00461260(char *base_path,char *path,char *out_path);
+int __cdecl engine_dosio_cpp_createDirectoryTree_FUN_004613b0(char *directory);
+int __cdecl engine_dosio_cpp_deleteFile_FUN_00461440(char *filename);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_004614b0(CDemonPart *this_ptr,uint flags);
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004614d0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_free_FUN_004615d0(CDemonPart *this_ptr);
@@ -122,7 +122,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004658e0(CDr
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_00465c30(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00465c50(SFreaky *this_ptr,uint flags);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_00465c60(CDraculaBride *this_ptr,uint flags);
-CDrawSurface * core_dracbrid_cpp_FUN_00465d00(void);
+CDrawSurface * __cdecl core_dracbrid_cpp_CDrawSurface_ctor_FUN_00465d00(CDrawSurface *this_ptr);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00465d30(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_00465d70(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface );
 void __cdecl cockpit_drawsurf_cpp_setColor_FUN_00465ea0(int color_value);
@@ -149,10 +149,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_004673b0(CD
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_004674b0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedFullSurface_FUN_004677e0(CDrawSurface *this_ptr);
-undefined4 cockpit_drawsurf_cpp_FUN_004678e0(void);
-undefined4 cockpit_drawsurf_cpp_FUN_004678f0(void);
-void cockpit_drawsurf_cpp_FUN_00467900(void);
-void cockpit_drawsurf_cpp_FUN_00467910(undefined4 param_1);
+int __cdecl cockpit_drawsurf_cpp_getDashLength_FUN_004678e0(void);
+float __cdecl cockpit_drawsurf_cpp_getDashAnimationThreshold_FUN_004678f0(void);
+void __cdecl cockpit_drawsurf_cpp_setDashLength_FUN_00467900(int length);
+void __cdecl cockpit_drawsurf_cpp_setDashAnimationThreshold_FUN_00467910(float threshold);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_00467920(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00467ac0(CDrawSurface *this_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);

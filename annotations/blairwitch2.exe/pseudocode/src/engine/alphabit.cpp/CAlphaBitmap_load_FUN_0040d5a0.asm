@@ -19,8 +19,8 @@
 ; XREF[20]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_addButton_FUN_0059b3c0 at 0059b3f0
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_0059af30 at 0059af89
-;   core_flashlit.cpp_FUN_004a17f0 at 004a1852
-;   core_flashlit.cpp_FUN_004a1870 at 004a197e
+;   core_flashlit.cpp_loadNotesBitmap_FUN_004a17f0 at 004a1852
+;   core_flashlit.cpp_loadNotesBitmaps_FUN_004a1870 at 004a197e
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700 at 004a5c77
 ;   core_fldnotes.cpp_SNotesMap_load_FUN_004a38e0 at 004a38fb
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170 at 004a21d2

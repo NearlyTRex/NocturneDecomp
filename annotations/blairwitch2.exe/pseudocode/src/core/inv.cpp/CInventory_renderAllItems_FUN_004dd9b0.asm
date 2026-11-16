@@ -339,8 +339,8 @@ section .text
     PUSH EAX                            ; 004ddc3c
     MOV EDI,dword ptr [ESP + 0x8f4]     ; 004ddc3d
     PUSH EDI                            ; 004ddc44
-    CALL engine_font.cpp_FUN_004ab2b0   ; 004ddc45
-        ;   XREF to: 004ab2b0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004ab2b0()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0 ; 004ddc45
+        ;   XREF to: 004ab2b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 004ddc4a
     MOV EDI,EAX                         ; 004ddc4d
     PUSH 0x58                           ; 004ddc4f
@@ -615,8 +615,8 @@ section .text
     PUSH EAX                            ; 004ddffd
     MOV EAX,dword ptr [ESP + 0x8f4]     ; 004ddffe
     PUSH EAX                            ; 004de005
-    CALL engine_font.cpp_FUN_004ab2b0   ; 004de006
-        ;   XREF to: 004ab2b0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004ab2b0()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0 ; 004de006
+        ;   XREF to: 004ab2b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     MOV dword ptr [ESP + 0x90c],EAX     ; 004de00b
     ADD ESP,0x18                        ; 004de012
     PUSH 0x58                           ; 004de015
@@ -869,8 +869,8 @@ section .text
     PUSH EAX                            ; 004de348
     MOV EDX,dword ptr [ESP + 0x8f8]     ; 004de349
     PUSH EDX                            ; 004de350
-    CALL engine_font.cpp_FUN_004ab2b0   ; 004de351
-        ;   XREF to: 004ab2b0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004ab2b0()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0 ; 004de351
+        ;   XREF to: 004ab2b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 004de356
     PUSH 0x58                           ; 004de359
     MOV ECX,dword ptr [ESP + 0x8e8]     ; 004de35b

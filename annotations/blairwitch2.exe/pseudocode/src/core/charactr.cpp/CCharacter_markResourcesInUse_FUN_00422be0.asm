@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_markResourcesInUse_FUN_00408ac0
 ;   core_skeleton.cpp_markModelInUse_FUN_00549210
 ;
 ; *****************************************************************************
@@ -17,8 +17,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00422be0
         ;   Label: core_charactr.cpp_CCharacter_markResourcesInUse_FUN_00422be0
     PUSH EDX                            ; 00422be4
-    CALL core_actor.cpp_FUN_00408ac0    ; 00422be5
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_markResourcesInUse_FUN_00408ac0 ; 00422be5
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_markResourcesInUse_FUN_00408ac0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00422bea
     MOV EAX,dword ptr [ESP + 0x4]       ; 00422bed
     MOV DL,byte ptr [EAX + 0x2514]      ; 00422bf1

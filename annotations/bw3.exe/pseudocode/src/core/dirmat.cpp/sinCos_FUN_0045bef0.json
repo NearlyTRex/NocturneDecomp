@@ -1,0 +1,248 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 10,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [
+    {
+      "addr": "0045b550",
+      "from_addr": "0045b568",
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583940",
+      "from_addr": "0058395d",
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583800",
+      "from_addr": "0058381d",
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005861d0",
+      "from_addr": "005861f6",
+      "name": "core_xform.cpp_eulerToQuaternionIndirect_FUN_005861d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005860b0",
+      "from_addr": "005860d6",
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005860b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed1e0",
+      "from_addr": "004ed245",
+      "name": "engine_mini3d.cpp_matrixPushAndTransform_FUN_004ed1e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045bef0",
+    "address_range": [
+      [
+        "0045bef0",
+        "0045bf16"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dirmat.cpp_sinCos_FUN_0045bef0",
+    "signature": "void __cdecl core_dirmat_cpp_sinCos_FUN_0045bef0(float *sin_out,float *cos_out,float *angle)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 18,
+    "call_sites": [
+      {
+        "call_addr": "0045b568",
+        "call_type": "direct",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0045b57e",
+        "call_type": "direct",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0045b594",
+        "call_type": "direct",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0058381d",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00583833",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00583849",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0058395d",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00583973",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00583989",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005860d6",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_eulerToQuaternion_FUN_005860b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.722222222222222,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "CALLOTHER": 2,
+      "COPY": 52,
+      "FLOAT2FLOAT": 3,
+      "INT_ADD": 8,
+      "INT_SUB": 4,
+      "LOAD": 9,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 85
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00449c20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045fd80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sin_out",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "cos_out",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "angle",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -23,7 +23,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_render_FUN_005254b0
-;   core_set.cpp_FUN_00551990
+;   core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00551990
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
@@ -144,8 +144,8 @@ section .text
     PUSH 0x269cbb0                      ; 0055fd8f
     MOV EDI,dword ptr [0x00622c18]      ; 0055fd94 | g_CDemonSetPtr
     PUSH EDI                            ; 0055fd9a | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00551990      ; 0055fd9b
-        ;   XREF to: 00551990 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00551990()
+    CALL core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00551990 ; 0055fd9b
+        ;   XREF to: 00551990 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00551990(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 0055fda0
     PUSH 0xfde8                         ; 0055fda3
         ;   Label: LAB_0055fda3

@@ -12,9 +12,9 @@
 ;   engine_2d.c_drawRect_FUN_00403170 at 0040319d
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80 at 0048019a
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 at 0047f3a8
-;   shape_edittool.cpp_FUN_0047b9b0 at 0047b9d4
 ;   shape_edittool.cpp_draw3DBorder_FUN_004850a0 at 00485259
 ;   shape_edittool.cpp_draw3DInsetBorder_FUN_004852f0 at 00485424
+;   shape_edittool.cpp_editorDrawVLine_FUN_0047b9b0 at 0047b9d4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_005b51ba

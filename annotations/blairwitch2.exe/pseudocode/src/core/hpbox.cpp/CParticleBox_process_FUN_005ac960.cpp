@@ -91,7 +91,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
       iVar3 = 0;
       do {
         fStack_180 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
-        iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
+        iVar2 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
         if (iVar2 != 0) {
           fVar5 = (float10)fcos((float10)fStack_180);
           fVar6 = (float10)fsin((float10)fStack_180);
@@ -132,7 +132,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
       iVar3 = 0;
       pCStack_28 = pCVar1;
       do {
-        iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
+        iVar2 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
         if (iVar2 != 0) {
           CStack_8c.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-1.0,1.0);
           CStack_8c.z = CStack_8c.z * _DAT_005f0eab;
@@ -182,7 +182,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
       iStack_18 = 0;
       pCStack_24 = pCVar1;
       do {
-        iVar3 = core_bwgrndma_cpp_FUN_005a7ed0();
+        iVar3 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
         if (iVar3 != 0) {
           fStack_54 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-1.0,1.0);
           fStack_3c = fStack_54 * _DAT_005f0eaf;
@@ -259,7 +259,7 @@ void __cdecl core_hpbox_cpp_CParticleBox_process_FUN_005ac960(CParticleBox *this
       iStack_14 = 0;
       pCStack_1c = pCVar1;
       do {
-        iVar3 = core_bwgrndma_cpp_FUN_005a7ed0();
+        iVar3 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
         if (iVar3 != 0) {
           fStack_3c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-4.0,4.0);
           fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-5.8,-6.2);

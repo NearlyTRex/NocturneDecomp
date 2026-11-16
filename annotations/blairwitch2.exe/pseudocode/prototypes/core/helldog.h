@@ -45,9 +45,9 @@ void __cdecl CDog::processChaseFoodState(CDog *this_ptr,float delta_time);
 // Address: 005ac200
 void __cdecl CDog::processLeapAttackState(CDog *this_ptr,float delta_time);
 
-// Original: core_helldog.cpp_FUN_005ac2f0
+// Original: core_helldog.cpp_CDog_processAI_FUN_005ac2f0
 // Address: 005ac2f0
-void FUN_005ac2f0(int param_1,float param_2);
+void __cdecl CDog::processAI(CDog *this_ptr,float delta_time);
 
 // Original: core_helldog.cpp_CDog_processDeathState_FUN_005ac520
 // Address: 005ac520

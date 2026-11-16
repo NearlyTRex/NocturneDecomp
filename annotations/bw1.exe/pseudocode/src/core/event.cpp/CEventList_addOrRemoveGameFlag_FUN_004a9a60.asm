@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   add_flag
 ;
 ; XREF[3]:
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a3bf1
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00 at 004a9a38
-;   core_event.cpp_FUN_004a1d00 at 004a3bf1
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d5415
 ;
 ; Referenced Globals:

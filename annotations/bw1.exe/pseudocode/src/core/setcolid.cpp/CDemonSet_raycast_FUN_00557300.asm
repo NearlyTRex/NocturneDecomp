@@ -37,7 +37,7 @@
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420 at 004b64c6
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_004c7aa0 at 004c812b
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0 at 004ca3d9
-;   core_game.cpp_FUN_004d9260 at 004d9a5e
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004d9a5e
 ;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8850
 ;   ... and 11 more
 ;

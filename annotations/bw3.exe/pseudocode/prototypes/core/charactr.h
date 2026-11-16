@@ -31,7 +31,7 @@ void __cdecl CCharacter::markResourcesInUse(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042b430
 // Address: 0042b430
-void FUN_0042b430(int param_1);
+void FUN_0042b430(CDemonActor *param_1);
 
 // Original: core_charactr.cpp_CCharacter_archive_FUN_0042b450
 // Address: 0042b450
@@ -61,9 +61,9 @@ void __cdecl CCharacter::kill(CCharacter *this_ptr,int damage_type,CVector3f *da
 // Address: 0042c180
 void __cdecl CCharacter::applyDamage(CCharacter *this_ptr,int damage_type,float damage_amount);
 
-// Original: core_charactr.cpp_FUN_0042c1e0
+// Original: core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 // Address: 0042c1e0
-void FUN_0042c1e0(int param_1,float param_2);
+void __cdecl CCharacter::applyGravity(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 // Address: 0042c230
@@ -81,21 +81,21 @@ void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 // Address: 0042cd70
 int __cdecl CCharacter::processCharacter(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_0042d390
+// Original: core_charactr.cpp_applyFacePartToHead_FUN_0042d390
 // Address: 0042d390
-void FUN_0042d390(int *param_1,int param_2,int param_3);
+void __cdecl applyFacePartToHead(CDeformableModel *model,int head_part_index,int face_part_index);
 
-// Original: core_charactr.cpp_FUN_0042d500
+// Original: core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500
 // Address: 0042d500
-void FUN_0042d500(CDemonActor *param_1);
+void __cdecl CCharacter::updateFacialAnimation(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042d860
+// Original: core_charactr.cpp_CCharacter_setEyeFrame_FUN_0042d860
 // Address: 0042d860
-void FUN_0042d860(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CCharacter::setEyeFrame(CCharacter *this_ptr,int eye_side,int frame,float hold_time);
 
-// Original: core_charactr.cpp_FUN_0042d8a0
+// Original: core_charactr.cpp_CCharacter_setMouthFrame_FUN_0042d8a0
 // Address: 0042d8a0
-void FUN_0042d8a0(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CCharacter::setMouthFrame(CCharacter *this_ptr,int frame,float hold_time);
 
 // Original: core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
 // Address: 0042d8e0
@@ -133,9 +133,9 @@ void __cdecl CCharacter::processFire(CCharacter *this_ptr,float delta_time);
 // Address: 0042f010
 void __cdecl CCharacter::renderBurn(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042f280
+// Original: core_charactr.cpp_preloadEtherealTextures_FUN_0042f280
 // Address: 0042f280
-void FUN_0042f280(int param_1);
+void __cdecl preloadEtherealTextures(int ethereal_type);
 
 // Original: core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
 // Address: 0042f310
@@ -397,17 +397,17 @@ int __cdecl CCharacter::moveOutOfHeroWay(CCharacter *this_ptr,float delta_time);
 // Address: 00434810
 void __cdecl CCharacter::playSoundWithCooldown(CCharacter *this_ptr,char *sound_name);
 
-// Original: core_charactr.cpp_FUN_00434850
+// Original: core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850
 // Address: 00434850
-void FUN_00434850(int param_1,float param_2);
+void __cdecl CCharacter::updateTurnSpeed(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_004348b0
+// Original: core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0
 // Address: 004348b0
-int FUN_004348b0(int param_1,char *param_2);
+CWayPoint * __cdecl CCharacter::pickRandomNamedWaypoint(CCharacter *this_ptr,char *name_pattern);
 
-// Original: core_charactr.cpp_FUN_004349d0
+// Original: core_charactr.cpp_CCharacter_findNearestReachableWaypoint_FUN_004349d0
 // Address: 004349d0
-void FUN_004349d0(int param_1,CWayPoint *param_2);
+CWayPoint * __cdecl CCharacter::findNearestReachableWaypoint(CCharacter *this_ptr,CWayPoint *target_waypoint);
 
 // Original: core_charactr.cpp_setActorXPos_FUN_00434a30
 // Address: 00434a30
@@ -421,6 +421,6 @@ float __cdecl getGameDeltaTime(CGame *game_ptr);
 // Address: 00434b10
 SFire * __cdecl SFire::ctor(SFire *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00434b30
+// Original: core_charactr.cpp_expandIndexedTo16Bit_FUN_00434b30
 // Address: 00434b30
-undefined4 FUN_00434b30(void);
+void __cdecl expandIndexedTo16Bit(void *output_buffer,void *indexed_input_buffer,int pixel_count);

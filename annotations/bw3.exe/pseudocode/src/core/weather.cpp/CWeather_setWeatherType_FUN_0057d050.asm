@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[7]:
-;   core_event.cpp_FUN_0048c2e0 at 004909aa
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 004909aa
 ;   core_fire.cpp_CStormEffect_activate_FUN_004a0480 at 004a04fe
 ;   core_fire.cpp_CStormEffect_process_FUN_004a0570 at 004a05b0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bcd9f

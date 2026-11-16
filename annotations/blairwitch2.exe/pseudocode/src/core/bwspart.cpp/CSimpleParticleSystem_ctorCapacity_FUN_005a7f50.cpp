@@ -33,7 +33,7 @@ CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapac
     iVar3 = 0;
     do {
       iVar2 = iVar2 + 1;
-      core_bwspart_cpp_FUN_005a84c0((int)this_ptr->particles + iVar3);
+      core_bwspart_cpp_initSimpleParticle_FUN_005a84c0((void *)((int)this_ptr->particles + iVar3));
       iVar3 = iVar3 + 0x60;
     } while (iVar2 < this_ptr->max_particles);
   }

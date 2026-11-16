@@ -229,7 +229,8 @@ LAB_004f0f08:
            local_14 * _DAT_005dd94d + (this_ptr->base).base.walk_step_speed;
       (this_ptr->base).base.walk_step_speed =
            fVar14 * delta_time * (this_ptr->base).base.walk_step_speed;
-      core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar1);
+      core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+                ((CCharacter *)this_ptr,delta_time * fVar1);
       local_58.z = 0x40200000;
       iVar5 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
       local_58.x = 0.0;
@@ -349,7 +350,8 @@ LAB_004f0f3f:
   if (0.0 <= local_24) {
     fVar14 = (this_ptr->base).speed;
     (this_ptr->base).base.walk_step_speed = (this_ptr->base).speed * delta_time;
-    core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar14);
+    core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+              ((CCharacter *)this_ptr,delta_time * fVar14);
     local_4c.z = local_24;
     iVar5 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
     local_4c.x = 0.0;
@@ -400,7 +402,7 @@ LAB_004f0f3f:
   local_1c = pSVar2->state_index;
   if (((local_1c == 0xc) || (local_1c == 0)) &&
      ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) goto LAB_004f171f;
-  core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
   local_190 = (this_ptr->base).base.velocity.x * delta_time;
   local_18c[0] = (this_ptr->base).base.velocity.y * delta_time;
   local_18c[1] = (this_ptr->base).base.velocity.z * delta_time;

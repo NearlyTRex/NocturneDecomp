@@ -24,8 +24,8 @@
 ;   ... and 13 more
 ;
 ; Called Functions:
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910
 ;   engine_dosio.cpp_findFile_FUN_00460980
-;   engine_dosio.cpp_FUN_00460910
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH ECX                            ; 00460ab5
     LEA EAX,[ESP + 0x8]                 ; 00460ab6
     PUSH EAX                            ; 00460aba
-    CALL engine_dosio.cpp_FUN_00460910  ; 00460abb
-        ;   XREF to: 00460910 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00460910()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910 ; 00460abb
+        ;   XREF to: 00460910 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 00460ac0
     MOV EAX,ESP                         ; 00460ac3
     PUSH EAX                            ; 00460ac5

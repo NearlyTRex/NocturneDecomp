@@ -10,8 +10,8 @@
 ; XREF[5]:
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410 at 0048057f
 ;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_00481ab0 at 00481ba7
-;   shape_edittool.cpp_FUN_0047b4e0 at 0047b4f3
 ;   shape_edittool.cpp_drawDashedLine_FUN_0047b5e0 at 0047b647
+;   shape_edittool.cpp_editorPlotPixel_FUN_0047b4e0 at 0047b4f3
 ;   shape_edittool.cpp_plotPixelWithClipping_FUN_0047b510 at 0047b562
 ;
 ; Called Functions:

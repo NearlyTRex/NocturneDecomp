@@ -8,8 +8,8 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[17]:
-;   core_bwspart.cpp_FUN_005a86a0 at 005a8c60
-;   core_charactr.cpp_FUN_0042b760 at 0042be48
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a8c60
+;   core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760 at 0042be48
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_00448b00 at 00448c72
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044b020 at 0044b55b
 ;   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0044c160 at 0044c7a1

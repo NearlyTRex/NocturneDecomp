@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CInStream * __cdecl support_trstream_cpp_CInStream_copy_FUN_0059f560(CInStream *this_ptr)
+;
+; Parameters:
+; CInStream *      Stack[0x4]:4   this_ptr
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0059f560
+        ;   Label: support_trstream.cpp_CInStream_copy_FUN_0059f560
+    MOV dword ptr [EAX],0x607354        ; 0059f564
+    RET                                 ; 0059f56a
+

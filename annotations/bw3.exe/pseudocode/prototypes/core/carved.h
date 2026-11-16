@@ -9,21 +9,21 @@
 // Address: 00425550
 void __cdecl staticInit(void);
 
-// Original: core_carved.cpp_FUN_00425580
+// Original: core_carved.cpp_getObjectHeightScale_FUN_00425580
 // Address: 00425580
-float FUN_00425580(int param_1);
+float __cdecl getObjectHeightScale(CDemonActor *actor);
 
-// Original: core_carved.cpp_FUN_00425620
+// Original: core_carved.cpp_getObjectGrabPointLocal_FUN_00425620
 // Address: 00425620
-void FUN_00425620(int param_1);
+CVector3f * __stack_esi getObjectGrabPointLocal(CDemonActor *actor,CVector3f *out_point);
 
-// Original: core_carved.cpp_FUN_004256e0
+// Original: core_carved.cpp_getObjectGrabPointWorld_FUN_004256e0
 // Address: 004256e0
-void FUN_004256e0(CDemonActor *param_1);
+CVector3f * __stack_esi getObjectGrabPointWorld(CDemonActor *actor,CVector3f *out_point);
 
-// Original: core_carved.cpp_FUN_004257e0
+// Original: core_carved.cpp_classifyObjectShape_FUN_004257e0
 // Address: 004257e0
-undefined4 FUN_004257e0(float *param_1);
+int __cdecl classifyObjectShape(CVector3f *dimensions);
 
 // Original: core_carved.cpp_factoryFuncCarved_FUN_00425930
 // Address: 00425930
@@ -49,21 +49,21 @@ void __cdecl CCarved::process(CCarved *this_ptr,float delta_time);
 // Address: 00427780
 CMatrix3x4f * __stack2_esi CCarved::getCarryObjToBodyXForm(CCarved *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_carved.cpp_FUN_00427bc0
+// Original: core_carved.cpp_CCarved_processPickup_FUN_00427bc0
 // Address: 00427bc0
-undefined4 FUN_00427bc0(CCharacter *param_1,float param_2);
+int __cdecl CCarved::processPickup(CCarved *this_ptr,float delta_time);
 
-// Original: core_carved.cpp_FUN_00428520
+// Original: core_carved.cpp_CCarved_getPickupHandIndex_FUN_00428520
 // Address: 00428520
-undefined4 FUN_00428520(int param_1,uint param_2);
+int __cdecl CCarved::getPickupHandIndex(CCarved *this_ptr,int object_shape_type);
 
-// Original: core_carved.cpp_FUN_004285c0
+// Original: core_carved.cpp_CCarved_canPickupWithHand_FUN_004285c0
 // Address: 004285c0
-undefined4 FUN_004285c0(int param_1,undefined4 param_2);
+int __cdecl CCarved::canPickupWithHand(CCarved *this_ptr,int object_shape_type);
 
-// Original: core_carved.cpp_FUN_00428600
+// Original: core_carved.cpp_CCarved_dropAndClearTarget_FUN_00428600
 // Address: 00428600
-void FUN_00428600(int param_1);
+void __cdecl CCarved::dropAndClearTarget(CCarved *this_ptr);
 
 // Original: core_carved.cpp_CCarved_renderOpaque_FUN_00428640
 // Address: 00428640
@@ -77,9 +77,9 @@ void __cdecl CCarved::archive(CCarved *this_ptr);
 // Address: 004286c0
 int __cdecl CCarved::canBeAttracted(CCarved *this_ptr,CDemonActor *grabber);
 
-// Original: core_carved.cpp_FUN_00428810
+// Original: core_carved.cpp_CCarved_processDismemberment_FUN_00428810
 // Address: 00428810
-void FUN_00428810(CCharacter *param_1,float *param_2);
+void __cdecl CCarved::processDismemberment(CCarved *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_carved.cpp_CCarved_processDamage_FUN_00428a80
 // Address: 00428a80
@@ -105,9 +105,9 @@ int __cdecl CCarved::getGrabbed(CCarved *this_ptr,CDemonActor *grabber,int grab_
 // Address: 00429080
 int __cdecl CCarved::shouldIgnoreForTargeting(CCarved *this_ptr);
 
-// Original: core_carved.cpp_FUN_00429090
+// Original: core_carved.cpp_CCarved_resetChaseState_FUN_00429090
 // Address: 00429090
-void FUN_00429090(int param_1);
+void __cdecl CCarved::resetChaseState(CCarved *this_ptr);
 
 // Original: core_carved.cpp_CCarved_dtor_FUN_004291f0
 // Address: 004291f0

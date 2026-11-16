@@ -19,7 +19,8 @@ void __cdecl core_helldog_cpp_CDog_processDeathState_FUN_005ac520(CDog *this_ptr
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
     if (pSVar1->state_index == 6) {
       this_ptr->death_effect_done = 1;
-      core_charactr_cpp_FUN_0042b550(this_ptr,1,0x3f800000,0,0x40a00000,0x3f800000,0,0);
+      core_charactr_cpp_CCharacter_setPhantomEyes_FUN_0042b550
+                ((CCharacter *)this_ptr,1,1.0,0.0,5.0,(CVector3f)ZEXT812(0x3f800000));
       return;
     }
   }

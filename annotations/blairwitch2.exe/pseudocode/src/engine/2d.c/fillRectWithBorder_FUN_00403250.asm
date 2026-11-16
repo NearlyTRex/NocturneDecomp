@@ -20,7 +20,7 @@
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440 at 004846b6
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 at 0047ef69
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047e16d
-;   shape_edittool.cpp_FUN_0047a770 at 0047a880
+;   shape_edittool.cpp_editorFillRectWithBorder_FUN_0047a770 at 0047a880
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c35e60

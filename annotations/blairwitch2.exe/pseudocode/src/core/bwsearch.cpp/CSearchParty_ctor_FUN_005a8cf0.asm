@@ -12,8 +12,8 @@
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
 ;   core_bwsearch.cpp_CSearchParty_processStates_FUN_005a8db0
-;   core_muzzle.cpp_FUN_0059d990
-;   core_muzzle.cpp_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -53,12 +53,12 @@ section .text
     PUSH 0x5f084d                       ; 005a8d7c
     LEA ESI,[EBX + 0x10af8]             ; 005a8d81
     PUSH ESI                            ; 005a8d87
-    CALL core_muzzle.cpp_FUN_0059d990   ; 005a8d88
-        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d990()
+    CALL core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990 ; 005a8d88
+        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a8d8d
     PUSH ESI                            ; 005a8d90
-    CALL core_muzzle.cpp_FUN_0059dc80   ; 005a8d91
-        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dc80()
+    CALL core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80 ; 005a8d91
+        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80(SStateMachine * this_ptr)
     ADD ESP,0x4                         ; 005a8d96
     MOV EAX,EBX                         ; 005a8d99
     POP ESI                             ; 005a8d9b

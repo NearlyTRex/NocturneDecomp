@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 75,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 51,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_memset"
     ],
-    "total_lines": 175
+    "total_lines": 176
   },
   "cross_references": [],
   "function": {
@@ -52,7 +52,7 @@
     {
       "addr": "0042b2a0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042b2a0"
+      "name": "core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0"
     },
     {
       "addr": "0048e340",
@@ -207,7 +207,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 31,
+      "line": 32,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

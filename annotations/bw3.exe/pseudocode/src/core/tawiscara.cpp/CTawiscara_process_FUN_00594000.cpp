@@ -199,8 +199,10 @@ void __cdecl core_tawiscara_cpp_CTawiscara_process_FUN_00594000(CTawiscara *this
       core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,uVar7);
     }
   }
+  fVar16 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850((CCharacter *)this_ptr,param_2 * fVar16)
+  ;
   if (this_ptr->type == WEREWOLF_TYPE_FOREST) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005d9351;
   }
@@ -526,7 +528,7 @@ LAB_00594f64:
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_40,8,1);
                 iVar6 = core_actor_cpp_randomChance_FUN_0040cf40(0.85);
                 if (iVar6 != 0) {
-                  core_tawiscara_cpp_FUN_00595710();
+                  core_tawiscara_cpp_CTawiscara_playHowl_FUN_00595710(this_ptr);
                 }
                 iVar13 = 0;
                 for (iVar6 = 0; iVar6 < g_CDemonSetPtr->enemy_count; iVar6 = iVar6 + 1) {
@@ -578,14 +580,14 @@ LAB_00594f64:
             (this_ptr->base).attack_cooldown = 1.0;
             iVar6 = core_actor_cpp_randomChance_FUN_0040cf40(0.6);
             if (iVar6 != 0) {
-              core_tawiscara_cpp_FUN_00595710();
+              core_tawiscara_cpp_CTawiscara_playHowl_FUN_00595710(this_ptr);
             }
           }
         }
         fVar16 = this_ptr->howl_cooldown - param_2;
         this_ptr->howl_cooldown = fVar16;
         if (fVar16 < 0.0) {
-          core_tawiscara_cpp_FUN_00595710();
+          core_tawiscara_cpp_CTawiscara_playHowl_FUN_00595710(this_ptr);
         }
         goto LAB_00594269;
       }
@@ -809,7 +811,7 @@ LAB_005947a3:
         if ((this_ptr->base).victim == (CCharacter *)0x0) goto LAB_00594269;
         iVar6 = core_actor_cpp_randomChance_FUN_0040cf40(0.4);
         if (iVar6 != 0) {
-          core_tawiscara_cpp_FUN_00595710();
+          core_tawiscara_cpp_CTawiscara_playHowl_FUN_00595710(this_ptr);
         }
         if (uStack_1c == 0xe) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -904,7 +906,7 @@ LAB_00594269:
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042c1e0();
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,param_2);
     fStack_12c = (this_ptr->base).base.velocity.x * param_2;
     afStack_128[0] = (this_ptr->base).base.velocity.y * param_2;
     afStack_128[1] = (this_ptr->base).base.velocity.z * param_2;
@@ -942,7 +944,7 @@ LAB_00594269:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,param_2);
-  core_tawiscara_cpp_FUN_00596380();
+  core_tawiscara_cpp_CTawiscara_processChainConstraint_FUN_00596380(this_ptr);
   this_ptr->eye_glow_phase = param_2 * (float)_DAT_005d9399 + this_ptr->eye_glow_phase;
   return;
 }

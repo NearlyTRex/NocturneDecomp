@@ -30,8 +30,8 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_00426990
-;   core_charactr.cpp_FUN_0042b620
-;   core_set.cpp_FUN_005306e0
+;   core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620
+;   core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0
 ;
 ; *****************************************************************************
 
@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 00424bd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042691e
     PUSH EBX                            ; 00426921
-    CALL core_charactr.cpp_FUN_0042b620 ; 00426922
-        ;   XREF to: 0042b620 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b620()
+    CALL core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620 ; 00426922
+        ;   XREF to: 0042b620 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00426927
     PUSH EBX                            ; 0042692a
         ;   Label: LAB_0042692a
@@ -95,8 +95,8 @@ section .text
     PUSH 0x7bda98                       ; 00426937 | DAT_007bda98
     MOV EDX,dword ptr [0x0061b5a8]      ; 0042693c | g_CDemonSetPtr
     PUSH EDX                            ; 00426942 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_005306e0      ; 00426943
-        ;   XREF to: 005306e0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_005306e0()
+    CALL core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0 ; 00426943
+        ;   XREF to: 005306e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 00426948
     CMP dword ptr [EBX + 0x3564],0x0    ; 0042694b
         ;   Label: LAB_0042694b

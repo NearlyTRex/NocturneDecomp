@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
-;   core_hero.cpp_FUN_004d4840
+;   core_hero.cpp_CHero_canDoHeroAction_FUN_004d4840
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350
 ;
 ; *****************************************************************************
@@ -190,8 +190,8 @@ section .text
     PUSH EBP                            ; 0052627a
         ;   Label: caseD_0
     PUSH ESI                            ; 0052627b
-    CALL core_hero.cpp_FUN_004d4840     ; 0052627c
-        ;   XREF to: 004d4840 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d4840()
+    CALL core_hero.cpp_CHero_canDoHeroAction_FUN_004d4840 ; 0052627c
+        ;   XREF to: 004d4840 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_canDoHeroAction_FUN_004d4840(CHero * this_ptr, int action_type)
     ADD ESP,0x8                         ; 00526281
     ADD ESP,0x8                         ; 00526284
     POP EBP                             ; 00526287

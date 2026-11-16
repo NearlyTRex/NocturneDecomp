@@ -98,6 +98,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00475920",
+      "from_addr": "00475ab7",
+      "name": "core_doc.cpp_CDoc_handleFireButton_FUN_00475920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004737b0",
       "from_addr": "00473b4d",
       "name": "core_doc.cpp_CDoc_processDamage_FUN_004737b0",
@@ -122,6 +128,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00476150",
+      "from_addr": "00476184",
+      "name": "core_doc.cpp_CDoc_processWeaponTick_FUN_00476150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00471af0",
       "from_addr": "00471d9e",
       "name": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
@@ -131,6 +143,12 @@
       "addr": "00476510",
       "from_addr": "0047652f",
       "name": "core_doc.cpp_CDoc_toggleGoggles_FUN_00476510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470820",
+      "from_addr": "004708e4",
+      "name": "core_doc.cpp_CDoc_tryClimbLadder_FUN_00470820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,33 +164,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00468a90",
-      "from_addr": "00468abb",
-      "name": "core_doc.cpp_FUN_00468a90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00470820",
-      "from_addr": "004708e4",
-      "name": "core_doc.cpp_FUN_00470820",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00475920",
-      "from_addr": "00475ab7",
-      "name": "core_doc.cpp_FUN_00475920",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00476150",
-      "from_addr": "00476184",
-      "name": "core_doc.cpp_FUN_00476150",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00468b80",
       "from_addr": "00468b94",
       "name": "core_doc.cpp_getCarriedObjectVerticalOffset_FUN_00468b80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00468a90",
+      "from_addr": "00468abb",
+      "name": "core_doc.cpp_getWeaponInteractionType_FUN_00468a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -196,7 +196,7 @@
     {
       "addr": "004a1d00",
       "from_addr": "004a2e20",
-      "name": "core_event.cpp_FUN_004a1d00",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -298,7 +298,7 @@
     {
       "addr": "004d9260",
       "from_addr": "004da900",
-      "name": "core_game.cpp_FUN_004d9260",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -616,7 +616,7 @@
     {
       "addr": "00542b90",
       "from_addr": "00542baa",
-      "name": "core_scat.cpp_FUN_00542b90",
+      "name": "core_scat.cpp_CScat_scoreAimTarget_FUN_00542b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -878,7 +878,7 @@
       {
         "call_addr": "004a2e20",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_004a1d00",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -889,7 +889,7 @@
       {
         "call_addr": "004a2e4a",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_004a1d00",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -900,7 +900,7 @@
       {
         "call_addr": "004a4c27",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_004a1d00",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -911,7 +911,7 @@
       {
         "call_addr": "004a6936",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_004a1d00",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

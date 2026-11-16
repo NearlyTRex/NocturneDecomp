@@ -19,7 +19,7 @@ void __cdecl core_hellhag_cpp_CHag_processMeleeAttackState_FUN_005aab50(CHag *th
   CDemonActor *pCVar4;
   SMotion *pSVar5;
   float fVar6;
-  SStateMachine *pSVar7;
+  SStateMachine *this_ptr_01;
   int desired_state_index;
   
   pCVar4 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
@@ -31,10 +31,10 @@ void __cdecl core_hellhag_cpp_CHag_processMeleeAttackState_FUN_005aab50(CHag *th
   fVar3 = (this_ptr->base).base.base.base.location.position.z - (pCVar1->base).location.position.z;
   fVar6 = SQRT(fVar3 * fVar3 + fVar6 * fVar6);
   if (_DAT_00600a6c < fVar6) {
-    pSVar7 = &(this_ptr->base).state_machine;
+    this_ptr_01 = &(this_ptr->base).state_machine;
     (this_ptr->base).attack_range = _DAT_00600a6c;
-    core_muzzle_cpp_FUN_0059dcb0(pSVar7,0x3f000000);
-    core_muzzle_cpp_FUN_0059d8e0(pSVar7,"Chasing");
+    core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_01,0.5);
+    core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");
     return;
   }
   core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
@@ -64,7 +64,8 @@ LAB_005aabe3:
      (fVar6 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
                         (&(this_ptr->base).base.base.model.base), (float)_DAT_005f0bde < fVar6)) {
     (this_ptr->base).attack_range = _DAT_00600a70;
-    core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Chasing");
+    core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0
+              (&(this_ptr->base).state_machine,"Chasing");
     return;
   }
   return;

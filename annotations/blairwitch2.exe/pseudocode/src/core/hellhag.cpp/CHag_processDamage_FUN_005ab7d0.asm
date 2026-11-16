@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
@@ -63,8 +63,8 @@ section .text
     ADD EBX,0x10af8                     ; 005ab82d
     PUSH EBX                            ; 005ab833
     MOV dword ptr [EBX + 0xffff1ab0],0x0 ; 005ab834
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005ab83e
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005ab83e
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005ab843
     ADD ESP,0x8                         ; 005ab846
         ;   Label: LAB_005ab846

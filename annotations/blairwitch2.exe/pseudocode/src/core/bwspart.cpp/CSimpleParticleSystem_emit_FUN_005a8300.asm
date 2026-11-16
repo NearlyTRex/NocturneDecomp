@@ -28,12 +28,12 @@
 ; XREF[13]:
 ;   core_ammo.cpp_CAmmo_process_FUN_0040ded0 at 0040e0db
 ;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a066c
-;   core_confedrt.cpp_FUN_005a0bd0 at 005a0eef
+;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0eef
 ;   core_cross.cpp_CCross_process_FUN_005a6ed0 at 005a7343
 ;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451949
 ;   core_health.cpp_CHealthItem_process_FUN_004cdb60 at 004cdd8d
+;   core_hellhag.cpp_CHag_processAI_FUN_005ab260 at 005ab59c
 ;   core_hellhag.cpp_CHag_processBurnState_FUN_005aae80 at 005ab14c
-;   core_hellhag.cpp_FUN_005ab260 at 005ab59c
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c960
 ;   core_hpbox.cpp_CParticleBox_process_FUN_005ac960 at 005acb38
 ;   ... and 3 more

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 753,
-    "complexity_score": 1318,
+    "complexity_score": 1316,
     "cross_reference_count": 1,
     "function_call_count": 38,
     "global_count": 83,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 488,
+    "pseudocode_lines": 486,
     "suspect_count": 79,
     "suspect_types": [
       "pointer_cast",
@@ -19,7 +19,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1241
+    "total_lines": 1239
   },
   "cross_references": [
     {
@@ -76,7 +76,7 @@
     {
       "addr": "004e8620",
       "is_variadic": false,
-      "name": "core_marquee.cpp_FUN_004e8620"
+      "name": "core_marquee.cpp_initializeTrigTables_FUN_004e8620"
     },
     {
       "addr": "004ebe30",
@@ -922,8 +922,16 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Direct stack address reference",
       "line": 41,
+      "match": "&stack0xfffff8d8",
+      "severity": "moderate",
+      "text": "pcVar11 = &stack0xfffff8d8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
       "match": "DAT_005dc1da",
       "severity": "mild",
       "text": "_freopen(\"stderr.txt\",&DAT_005dc1da,(_FILE *)&DAT_0061ef88);",
@@ -931,19 +939,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_0061ef88",
       "severity": "mild",
       "text": "_freopen(\"stderr.txt\",&DAT_005dc1da,(_FILE *)&DAT_0061ef88);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 57,
-      "match": "&stack0xfffff8d8",
-      "severity": "moderate",
-      "text": "pcVar5 = &stack0xfffff8d8;",
-      "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
@@ -998,7 +998,7 @@
       "line": 312,
       "match": "&stack0xfffff8d8",
       "severity": "moderate",
-      "text": "pcVar10 = &stack0xfffff8d8;",
+      "text": "pcVar5 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
     {
@@ -1006,7 +1006,7 @@
       "line": 334,
       "match": "&stack0xfffff8d8",
       "severity": "moderate",
-      "text": "pcVar5 = &stack0xfffff8d8;",
+      "text": "pcVar11 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
     {
@@ -1014,7 +1014,7 @@
       "line": 353,
       "match": "DAT_005dc3d3",
       "severity": "mild",
-      "text": "pcVar10 = &DAT_005dc3d3;",
+      "text": "pcVar5 = &DAT_005dc3d3;",
       "type": "undefined_data"
     },
     {
@@ -1022,44 +1022,44 @@
       "line": 355,
       "match": "&stack0xfffff8d8",
       "severity": "moderate",
-      "text": "pcVar5 = &stack0xfffff8d8;",
+      "text": "pcVar11 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 377,
+      "line": 376,
       "match": "&stack0xfffff8d8",
       "severity": "moderate",
-      "text": "pcVar5 = &stack0xfffff8d8;",
+      "text": "pcVar11 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 396,
+      "line": 395,
       "match": "DAT_005dc402",
       "severity": "mild",
-      "text": "pcVar10 = &DAT_005dc402;",
+      "text": "pcVar5 = &DAT_005dc402;",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 398,
+      "line": 397,
       "match": "&stack0xfffff8d8",
       "severity": "moderate",
-      "text": "pcVar5 = &stack0xfffff8d8;",
+      "text": "pcVar11 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 420,
+      "line": 418,
       "match": "&stack0xfffff8d8",
       "severity": "moderate",
-      "text": "pcVar5 = &stack0xfffff8d8;",
+      "text": "pcVar11 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 439,
+      "line": 437,
       "match": "&stack0xfffff8d8",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0(g_CEditorToolsPtr,&stack0xfffff8d8);",
@@ -1067,7 +1067,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 490,
+      "line": 488,
       "match": "DAT_005dc445",
       "severity": "mild",
       "text": "(\"SOFTWARE\\\\Matrox\\\\PowerDesk\\\\Current Settings\",\"Flip on VBlank\",&DAT_005dc445);",
@@ -1075,7 +1075,7 @@
     },
     {
       "description": "Pointer value `&g_GlobalFilters` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 464,
+      "line": 462,
       "match": "(int)&g_GlobalFilters",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&g_GlobalFilters + iVar6);",
@@ -1083,7 +1083,7 @@
     },
     {
       "description": "Pointer value `&g_PlayerFilters` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 475,
+      "line": 473,
       "match": "(int)&g_PlayerFilters",
       "severity": "moderate",
       "text": "**(uint **)((int)&g_PlayerFilters + iVar8) = 0x100;",
@@ -1091,7 +1091,7 @@
     },
     {
       "description": "Pointer value `&g_PlayerFilters` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 477,
+      "line": 475,
       "match": "(int)&g_PlayerFilters",
       "severity": "moderate",
       "text": "*(uint *)(*(int *)((int)&g_PlayerFilters + iVar8) + 4) = 0x100;",
@@ -1099,7 +1099,7 @@
     },
     {
       "description": "Pointer value `&g_PlayerFilters` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 478,
+      "line": 476,
       "match": "(int)&g_PlayerFilters",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&g_PlayerFilters + iVar8);",
@@ -1227,7 +1227,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 387,
+      "line": 386,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1235,7 +1235,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 408,
+      "line": 407,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1243,7 +1243,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 430,
+      "line": 428,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1251,7 +1251,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 464,
+      "line": 462,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&g_GlobalFilters + iVar6);",
@@ -1259,7 +1259,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 475,
+      "line": 473,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "**(uint **)((int)&g_PlayerFilters + iVar8) = 0x100;",
@@ -1267,7 +1267,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 477,
+      "line": 475,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)(*(int *)((int)&g_PlayerFilters + iVar8) + 4) = 0x100;",
@@ -1275,7 +1275,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 478,
+      "line": 476,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&g_PlayerFilters + iVar8);",
@@ -1387,7 +1387,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 378,
+      "line": 377,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1395,7 +1395,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 399,
+      "line": 398,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1403,7 +1403,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 421,
+      "line": 419,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1515,7 +1515,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 378,
+      "line": 377,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1523,7 +1523,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 399,
+      "line": 398,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1531,7 +1531,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 421,
+      "line": 419,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

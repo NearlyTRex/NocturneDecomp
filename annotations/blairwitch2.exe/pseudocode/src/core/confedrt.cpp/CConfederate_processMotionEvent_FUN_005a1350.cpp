@@ -13,7 +13,7 @@ void __cdecl core_confedrt_cpp_CConfederate_processMotionEvent_FUN_005a1350(CCon
   
   switch(event_id) {
   case 0x206c:
-    core_confedrt_cpp_FUN_005a14e0(this_ptr);
+    core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(this_ptr);
     break;
   case 0x206d:
     iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,4);
@@ -32,7 +32,8 @@ void __cdecl core_confedrt_cpp_CConfederate_processMotionEvent_FUN_005a1350(CCon
     core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(&this_ptr->base,event_id);
     return;
   case 0x206f:
-    iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun2_bone,0x3f800000);
+    iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
+                      (&this_ptr->base,0x40200000,this_ptr->gun2_bone,1.0);
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"swordimpactflesh0?.wav",
@@ -42,7 +43,8 @@ void __cdecl core_confedrt_cpp_CConfederate_processMotionEvent_FUN_005a1350(CCon
     }
     break;
   case 0x2070:
-    iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun_bone,0x3f800000);
+    iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
+                      (&this_ptr->base,0x40200000,this_ptr->gun_bone,1.0);
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"riflebutt01",

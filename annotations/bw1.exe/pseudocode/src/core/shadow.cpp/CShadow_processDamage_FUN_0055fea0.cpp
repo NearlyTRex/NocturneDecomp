@@ -41,7 +41,7 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_pt
     sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[2]);
     sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[3]);
     if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
-      core_shadow_cpp_FUN_0055f4f0(this_ptr);
+      core_shadow_cpp_CShadow_playDamageSound_FUN_0055f4f0(this_ptr);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
                 ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_30);
     }
@@ -66,7 +66,7 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_pt
                     (&(this_ptr->base).base.model.base,0x15,1);
         }
       }
-      core_shadow_cpp_FUN_0055f4f0(this_ptr);
+      core_shadow_cpp_CShadow_playDamageSound_FUN_0055f4f0(this_ptr);
       core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
       return;
     }
@@ -88,7 +88,7 @@ void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_pt
         iVar5 = 0xf;
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_c,iVar5,1);
-      core_shadow_cpp_FUN_0055f540(this_ptr);
+      core_shadow_cpp_CShadow_playDeathSound_FUN_0055f540(this_ptr);
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,"ShadowDead");
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);

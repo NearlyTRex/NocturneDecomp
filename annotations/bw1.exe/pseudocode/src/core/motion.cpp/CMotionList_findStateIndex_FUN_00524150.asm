@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[12]:
-;   core_bird.cpp_FUN_00415830 at 00415875
+;   core_bird.cpp_setRandomMotionVariant_FUN_00415830 at 00415875
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00433cd0 at 00433d1e
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050 at 00432099
-;   core_event.cpp_FUN_004a1d00 at 004a5b56
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a5b56
 ;   core_hero.cpp_CHero_canBeGrabbed_FUN_004eada0 at 004eadcf
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004eadf0 at 004eae67
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004eaf20 at 004eaf66

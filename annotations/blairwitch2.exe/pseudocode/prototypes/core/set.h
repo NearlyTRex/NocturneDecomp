@@ -9,13 +9,13 @@
 // Address: 0052bbe0
 void __cdecl staticInit(void);
 
-// Original: core_set.cpp_FUN_0052bc60
+// Original: core_set.cpp_updateHighlightedActors_FUN_0052bc60
 // Address: 0052bc60
-CGame * FUN_0052bc60(void);
+void __cdecl updateHighlightedActors(void);
 
-// Original: core_set.cpp_FUN_0052bca0
+// Original: core_set.cpp_applyActorFlatColor_FUN_0052bca0
 // Address: 0052bca0
-void FUN_0052bca0(int param_1);
+void __cdecl applyActorFlatColor(CDemonActor *actor);
 
 // Original: core_set.cpp_CDemonSet_ctor_FUN_0052bd20
 // Address: 0052bd20
@@ -101,9 +101,9 @@ void __cdecl CDemonSet::addDynamicLight(CDemonSet *this_ptr,CDemonLight *light);
 // Address: 005306b0
 void __cdecl CDemonSet::addCoronaGlobe(CDemonSet *this_ptr,CDemonGlobe *globe);
 
-// Original: core_set.cpp_FUN_005306e0
+// Original: core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0
 // Address: 005306e0
-void FUN_005306e0(undefined4 param_1,int param_2);
+void __cdecl CDemonSet::removeCoronaGlobe(CDemonSet *this_ptr,CDemonGlobe *globe);
 
 // Original: core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00530750
 // Address: 00530750
@@ -257,9 +257,9 @@ int __cdecl CDemonSet::renderSinglePrimitive(CDemonSet *this_ptr,SMRGLHeaderPrim
 // Address: 00534640
 void __cdecl CDemonSet::setCameraAmbientValue(CDemonSet *this_ptr,int index,float value);
 
-// Original: core_set.cpp_FUN_00534680
+// Original: core_set.cpp_CDemonSet_setSunlight_FUN_00534680
 // Address: 00534680
-void FUN_00534680(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl CDemonSet::setSunlight(CDemonSet *this_ptr,float dir_x,float dir_y,float dir_z,float intensity);
 
 // Original: core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_005346c0
 // Address: 005346c0

@@ -112,25 +112,25 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005f1094  value=0x5F1094 (6230164)  refs=2
     CCharacter_renderEthereal
       ADD EAX,0x5f1094                    ; 0042f4ba | DAT_005f1094
-    FUN_0042f280
+    preloadEtherealTextures
       MOV EAX,0x5f1094                    ; 0042f2ea | DAT_005f1094
 
   DAT_005f1124  value=0x5F1124 (6230308)  refs=2
     CCharacter_renderEthereal
       ADD EAX,0x5f1124                    ; 0042f494 | DAT_005f1124
-    FUN_0042f280
+    preloadEtherealTextures
       MOV EAX,0x5f1124                    ; 0042f2ba | DAT_005f1124
 
   DAT_005f11b4  value=0x5F11B4 (6230452)  refs=2
     CCharacter_renderEthereal
       ADD EAX,0x5f11b4                    ; 0042f4cd | DAT_005f11b4
-    FUN_0042f280
+    preloadEtherealTextures
       MOV EAX,0x5f11b4                    ; 0042f2fb | DAT_005f11b4
 
   DAT_005f1244  value=0x5F1244 (6230596)  refs=2
     CCharacter_renderEthereal
       ADD EAX,0x5f1244                    ; 0042f4e0 | DAT_005f1244
-    FUN_0042f280
+    preloadEtherealTextures
       MOV EAX,0x5f1244                    ; 0042f2d9 | DAT_005f1244
 
   DAT_005f16c4  value=0x5F16C4 (6231748)  refs=2
@@ -198,7 +198,7 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005fde88  value=0x5FDE88 (6282888)  refs=2
     CFlame_renderTransparent
       MOV ECX,0x5fde88                    ; 004a653c | DAT_005fde88
-    FUN_004a5ad0
+    preloadFlameTextures
       MOV ESI,0x5fde88                    ; 004a5adf | DAT_005fde88
 
   DAT_005fed34  value=0x5FED34 (6286644)  refs=2
@@ -316,11 +316,11 @@ Consider removing the Ghidra label and leaving the raw number.
       ADD EAX,0x5f0f74                    ; 0042f4f3 | DAT_005f0f74
 
   DAT_007f8edc  value=0x7F8EDC (8359644)  refs=1
-    FUN_00444540
+    CConstructBone_getActorType
       MOV EAX,0x7f8edc                    ; 00444540 | DAT_007f8edc
 
   DAT_007f8f18  value=0x7F8F18 (8359704)  refs=1
-    FUN_004445f0
+    CConstructRed_getActorType
       MOV EAX,0x7f8f18                    ; 004445f0 | DAT_007f8f18
 
   DAT_0060b044  value=0x60B044 (6336580)  refs=1
@@ -460,7 +460,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5d52f4                       ; 00560049 | DAT_005d52f4
 
   DAT_00607390  value=0x607390 (6321040)  refs=1
-    FUN_00595760
+    CTawiscara_renderEyeGlow
       PUSH 0x607390                       ; 00595c91 | DAT_00607390
 
   DAT_005d7293  value=0x5D7293 (6124179)  refs=1
@@ -1005,7 +1005,7 @@ MEDIUM CONFIDENCE (120 clusters)
       0x00604d10  DAT_00604d10  undefined4
       0x00604d14  DAT_00604d14  undefined4
       0x00604d18  DAT_00604d18  undefined4
-      0x00604d1c  DAT_00604d1c  undefined8 [short]
+      0x00604d1c  DAT_00604d1c  undefined8 [double]
       0x00604d24  DAT_00604d24  undefined4 [double]
       0x00604d68  DAT_00604d68  undefined4
       ... +30 more

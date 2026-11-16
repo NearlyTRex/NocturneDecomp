@@ -54,9 +54,9 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00462820
+;   core_dlight.cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0
-;   core_dlight.cpp_FUN_00466220
 ;   core_fire.cpp_CFireEffect_render_FUN_004b5100
 ;   core_gore.cpp_CGore_renderParticles_FUN_004e5c50
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0
@@ -344,8 +344,8 @@ section .text
     PUSH EBX                            ; 00551436
     MOV ECX,dword ptr [EBP + -0x4]      ; 00551437
     PUSH ECX                            ; 0055143a
-    CALL core_dlight.cpp_FUN_00466220   ; 0055143b
-        ;   XREF to: 00466220 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_00466220()
+    CALL core_dlight.cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220 ; 0055143b
+        ;   XREF to: 00466220 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220(CDemonLight * this_ptr, int screen_x, int screen_y, int brightness_offset, ...)
     ADD ESP,0x14                        ; 00551440
     MOV ESP,EBP                         ; 00551443
     POP EBP                             ; 00551445

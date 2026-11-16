@@ -156,7 +156,7 @@ LAB_00551d88:
           core_main_c_displayErrorAndQuit_FUN_004e4330("Unknown sample file format extension: %s");
 LAB_005520db:
           _sprintf(&local_23c,"SOUND: Loaded sample %s\n");
-          wincore_winrun_cpp_FUN_00581c70(&local_23c);
+          wincore_winrun_cpp_outputDebugString_FUN_00581c70(&local_23c);
           return pCVar4;
         }
         sound_mp3_cpp_CMP3Decoder_openFile_FUN_005027b0(&g_CMP3DecoderInstance,filename);

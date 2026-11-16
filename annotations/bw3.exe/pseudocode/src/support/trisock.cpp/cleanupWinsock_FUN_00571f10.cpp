@@ -13,11 +13,11 @@ int __cdecl support_trisock_cpp_cleanupWinsock_FUN_00571f10(void)
 {
   int iVar1;
   
-  wincore_winrun_cpp_FUN_00581c70("killSockets\n");
+  wincore_winrun_cpp_outputDebugString_FUN_00581c70("killSockets\n");
   if (_DAT_02cfd8a8 != (HANDLE)0x0) {
     wincore_winrun_cpp_waitForMutex_FUN_00581930(_DAT_02cfd8a8);
-    while (_DAT_02cfd8ac != 0) {
-      support_trisock_cpp_FUN_00570e80(_DAT_02cfd8ac);
+    while (_DAT_02cfd8ac != (void *)0x0) {
+      support_trisock_cpp_dnsRequestCancel_FUN_00570e80(_DAT_02cfd8ac);
     }
     wincore_winrun_cpp_releaseMutex_FUN_00581990(_DAT_02cfd8a8);
   }

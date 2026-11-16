@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 116,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 67,
     "suspect_count": 4,
     "suspect_types": [
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 177
+    "total_lines": 178
   },
   "cross_references": [
     {
@@ -47,19 +47,19 @@
       "name": "core_fforest.cpp_CTwigZombie_processStates_FUN_005a28a0"
     },
     {
-      "addr": "0059d7f0",
+      "addr": "0059dc80",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d7f0"
+      "name": "core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80"
     },
     {
       "addr": "0059d990",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d990"
+      "name": "core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990"
     },
     {
-      "addr": "0059dc80",
+      "addr": "0059d7f0",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059dc80"
+      "name": "core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0"
     },
     {
       "addr": "005478b0",
@@ -162,7 +162,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 48,
+      "line": 49,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -170,7 +170,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 59,
+      "line": 60,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

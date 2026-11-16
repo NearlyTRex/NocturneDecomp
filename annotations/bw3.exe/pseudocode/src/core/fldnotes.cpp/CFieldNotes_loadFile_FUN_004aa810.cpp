@@ -91,7 +91,7 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004aa810(CFieldNotes *thi
       if (pcVar7 != (char *)0x0) {
         *pcVar7 = '\0';
       }
-      core_flashlit_cpp_FUN_004a7890(local_5f4);
+      core_flashlit_cpp_trimAndNormalizeWhitespace_FUN_004a7890((char *)local_5f4);
       if (local_5f4[0] != 0) {
         pcVar7 = "section";
         local_3c = local_1f4;
@@ -596,16 +596,19 @@ LAB_004ab379:
                           _sprintf(&DAT_01d0d010,"Too many \\annotations in map %s at line %d.");
                           goto LAB_004aaa32;
                         }
-                        iVar8 = iVar13 * 0xd4 + (int)puVar12 * 0x126c + 0x1d0e964;
+                        pcVar7 = (char *)(iVar13 * 0xd4 + (int)puVar12 * 0x126c + 0x1d0e964);
                         SNotesMap_ARRAY_01d0e370[(int)puVar12].annotation_count = iVar13 + 1;
                         iVar13 = sscanf((char *)local_1f4,"%[^,], %d , %d , \"%[^\"]\"");
                         if (iVar13 != 4) {
                           pcVar7 = "Syntax error in \\annotation parms on line %d";
                           goto LAB_004aaa25;
                         }
-                        core_flashlit_cpp_FUN_004a7890(iVar8);
-                        core_flashlit_cpp_FUN_004a7890(iVar8 + 100);
-                        *(uint *)(iVar8 + 0xd0) = 0;
+                        core_flashlit_cpp_trimAndNormalizeWhitespace_FUN_004a7890(pcVar7);
+                        core_flashlit_cpp_trimAndNormalizeWhitespace_FUN_004a7890(pcVar7 + 100);
+                        pcVar7[0xd0] = '\0';
+                        pcVar7[0xd1] = '\0';
+                        pcVar7[0xd2] = '\0';
+                        pcVar7[0xd3] = '\0';
                       }
                       else {
 LAB_004ab518:

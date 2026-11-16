@@ -34,13 +34,13 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   ... and 27 more
 ;
 ; *****************************************************************************
@@ -1224,8 +1224,8 @@ section .text
     MOV dword ptr [EBX + 0x2524],EAX    ; 0059f403
     FSTP float ptr [ESP]                ; 0059f409
     PUSH EBX                            ; 0059f40c
-    CALL core_charactr.cpp_FUN_00434850 ; 0059f40d
-        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00434850()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850 ; 0059f40d
+        ;   XREF to: 00434850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00434850(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059f412
     LEA EAX,[EBX + 0x158]               ; 0059f415
     PUSH EAX                            ; 0059f41b
@@ -1299,8 +1299,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0059f4d9
     PUSH EBX                            ; 0059f4df
     LEA ESI,[EBX + 0x2518]              ; 0059f4e0
-    CALL core_charactr.cpp_FUN_0042c1e0 ; 0059f4e6
-        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c1e0()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0 ; 0059f4e6
+        ;   XREF to: 0042c1e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042c1e0(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 0059f4eb
     FMUL float ptr [EBP + 0x92]         ; 0059f4ed
     FLD float ptr [ESI + 0x4]           ; 0059f4f3
@@ -2171,8 +2171,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x76]      ; 0059ff41
     PUSH ESI                            ; 0059ff44
     PUSH EBX                            ; 0059ff45
-    CALL core_styldemo.cpp_FUN_005a0480 ; 0059ff46
-        ;   XREF to: 005a0480 (UNCONDITIONAL_CALL)  ; undefined core_styldemo.cpp_FUN_005a0480()
+    CALL core_styldemo.cpp_CStylerDemon_tryAttack_FUN_005a0480 ; 0059ff46
+        ;   XREF to: 005a0480 (UNCONDITIONAL_CALL)  ; int core_styldemo.cpp_CStylerDemon_tryAttack_FUN_005a0480(CStylerDemon * this_ptr, int distance)
     ADD ESP,0x8                         ; 0059ff4b
     TEST EAX,EAX                        ; 0059ff4e
     JNZ 0x0059f486                      ; 0059ff50
@@ -2232,8 +2232,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x76]      ; 0059ffd9
     PUSH EAX                            ; 0059ffdc
     PUSH EBX                            ; 0059ffdd
-    CALL core_styldemo.cpp_FUN_005a0480 ; 0059ffde
-        ;   XREF to: 005a0480 (UNCONDITIONAL_CALL)  ; undefined core_styldemo.cpp_FUN_005a0480()
+    CALL core_styldemo.cpp_CStylerDemon_tryAttack_FUN_005a0480 ; 0059ffde
+        ;   XREF to: 005a0480 (UNCONDITIONAL_CALL)  ; int core_styldemo.cpp_CStylerDemon_tryAttack_FUN_005a0480(CStylerDemon * this_ptr, int distance)
     ADD ESP,0x8                         ; 0059ffe3
     TEST EAX,EAX                        ; 0059ffe6
     JNZ 0x0059f486                      ; 0059ffe8

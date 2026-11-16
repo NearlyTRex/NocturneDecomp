@@ -14,9 +14,9 @@
 ;
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_0052dfc0 at 0052dfdd
-;   support_trisock.cpp_FUN_0059d760 at 0059d7ff
-;   support_trisock.cpp_FUN_0059d850 at 0059d920
-;   support_trisock.cpp_FUN_0059e350 at 0059e673
+;   support_trisock.cpp_httpGetDocument_FUN_0059d760 at 0059d7ff
+;   support_trisock.cpp_httpPostDocument_FUN_0059d850 at 0059d920
+;   support_trisock.cpp_httpRequestUpdate_FUN_0059e350 at 0059e673
 ;
 ; Called Functions:
 ;   crt_wsock32.c_send

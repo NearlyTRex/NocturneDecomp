@@ -231,7 +231,7 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004eafd0(CHero *this_pt
 int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004eb090(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero *this_ptr,int ignore_lock);
-void core_hero_cpp_FUN_004eb5b0(int param_1);
+void __cdecl core_hero_cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004eb660(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero *this_ptr);
@@ -254,7 +254,7 @@ void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004ec640(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004ec950(CHero *this_ptr,int action_type);
 undefined4 switchD_004ec9a0::default(void);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004ec9e0(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004eca10(CHero *param_1,int param_2);
+int __cdecl core_hero_cpp_CHero_findHeroAction_FUN_004eca10(CHero *this_ptr,int ignore_lock);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004ecb90(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004ecba0(CHeroPlaceholder *this_ptr);
@@ -262,7 +262,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004ecc00(CHer
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004ecc60(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
 CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004ecca0(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004ecd50(CHeroPlaceholder *this_ptr);
-undefined8 core_hero_cpp_FUN_004ecda0(void);
+void __cdecl core_hero_cpp_initializeColorMasks_FUN_004ecda0(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004ecef0(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004ecf70(void);
 void __cdecl core_hiram_cpp_staticInit_FUN_004ed130(void);

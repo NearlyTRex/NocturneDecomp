@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
@@ -20,6 +21,7 @@
 #include "types/classes/CPodSearchContext.h"
 #include "types/classes/CPrye.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -107,7 +109,7 @@ void __cdecl core_podmain_cpp_staticInit_FUN_005152b0(void);
 void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005152e0(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_00515470(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_00515490(CDemonPod *this_ptr,uint flags);
-void core_podmain_cpp_FUN_005154f0(void);
+void __cdecl core_podmain_cpp_setMaxViewportScanline_FUN_005154f0(int max);
 void __cdecl engine_prim_c_setCullingMode_FUN_00515500(int culling_mode);
 void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_00515510(SRenderVertex *start_vertex,SRenderVertex *end_vertex);
 SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_005158e0(int y_value,SSoftwareEdge *edge_ptr);
@@ -124,9 +126,9 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00516b00(SRenderVertex *
 void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00516de0(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex_indices,int vertex_count);
 void __cdecl core_prye_cpp_staticInit_FUN_00517c20(void);
-float core_prye_cpp_FUN_00517c90(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
-float core_prye_cpp_FUN_00517ce0(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
-undefined4 core_prye_cpp_FUN_00517d50(CDemonActor *param_1);
+float __cdecl core_prye_cpp_aimBlendWeightCallback_FUN_00517c90(int bone,int target,float weight,int distance,CDeformableModelInstance *instance);
+float __cdecl core_prye_cpp_armBlendWeightCallback_FUN_00517ce0(int bone,int target,float weight,int distance,CDeformableModelInstance *instance);
+int __cdecl core_prye_cpp_getWeaponInteractionType_FUN_00517d50(CWeapon *weapon);
 float __cdecl core_prye_cpp_getCarriedObjectVerticalOffset_FUN_00517e80(CDemonActor *object);
 CPrye * __cdecl core_prye_cpp_factoryFuncPrye_FUN_00517f50(void);
 CDemonActorType * __cdecl core_prye_cpp_CPrye_getActorType_FUN_00517f70(CPrye *this_ptr);

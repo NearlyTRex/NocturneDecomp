@@ -61,9 +61,9 @@ char * __cdecl CDemonActor::getActorClassName(CDemonActor *this_ptr);
 // Address: 00408a80
 void __cdecl CDemonActor::setup(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00408ac0
+// Original: core_actor.cpp_CDemonActor_markResourcesInUse_FUN_00408ac0
 // Address: 00408ac0
-void FUN_00408ac0(void);
+void __cdecl CDemonActor::markResourcesInUse(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
 // Address: 00408ae0
@@ -89,9 +89,9 @@ void __cdecl CDemonActor::customIntersectCylinderXZ(CDemonActor *this_ptr,SInter
 // Address: 00408bf0
 int __cdecl CDemonActor::customGetFloorHeight(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
-// Original: core_actor.cpp_FUN_00408c20
+// Original: core_actor.cpp_CDemonActor_getGroundType_FUN_00408c20
 // Address: 00408c20
-undefined4 FUN_00408c20(void);
+EGroundType __cdecl CDemonActor::getGroundType(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30
 // Address: 00408c30
@@ -129,9 +129,9 @@ uint __cdecl CDemonActor::playSoundWithDelay(CDemonActor *this_ptr,char *sound_n
 // Address: 00408ec0
 uint __cdecl CDemonActor::playAmbientSoundWithDelay(CDemonActor *this_ptr,char *sound_name,float delay);
 
-// Original: core_actor.cpp_FUN_00408ef0
+// Original: core_actor.cpp_CDemonActor_pickup_FUN_00408ef0
 // Address: 00408ef0
-void FUN_00408ef0(void);
+void __cdecl CDemonActor::pickup(CDemonActor *this_ptr,CDemonActor *carrier);
 
 // Original: core_actor.cpp_CDemonActor_testCylinderCollision_FUN_00408f00
 // Address: 00408f00
@@ -377,17 +377,17 @@ uint __cdecl CDemonActor::processFootstepAtOffset(CDemonActor *this_ptr,CVector3
 // Address: 0040cb60
 uint __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 
-// Original: core_actor.cpp_FUN_0040ce40
+// Original: core_actor.cpp_CDemonActor_startParticleSystem_FUN_0040ce40
 // Address: 0040ce40
-void FUN_0040ce40(int param_1,int param_2,int param_3);
+void __cdecl CDemonActor::startParticleSystem(CDemonActor *this_ptr,int index,int reset_fade);
 
-// Original: core_actor.cpp_FUN_0040ce70
+// Original: core_actor.cpp_CDemonActor_stopParticleSystem_FUN_0040ce70
 // Address: 0040ce70
-void FUN_0040ce70(int param_1,int param_2,int param_3);
+void __cdecl CDemonActor::stopParticleSystem(CDemonActor *this_ptr,int index,int fade_out);
 
-// Original: core_actor.cpp_FUN_0040cea0
+// Original: core_actor.cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0
 // Address: 0040cea0
-void FUN_0040cea0(int param_1,int param_2,float param_3,float param_4,float param_5);
+void __cdecl CDemonActor::setParticleSystemFade(CDemonActor *this_ptr,int index,float fade_start,float fade_end,float fade_duration);
 
 // Original: core_actor.cpp_FUN_0040ced0
 // Address: 0040ced0
@@ -445,13 +445,13 @@ float FUN_0040d320(float *param_1);
 // Address: 0040d340
 CVector3f * __cdecl CVector3f::ctor(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040d350
+// Original: core_actor.cpp_copyVector_FUN_0040d350
 // Address: 0040d350
-void FUN_0040d350(undefined4 *param_1,undefined4 *param_2);
+void __cdecl copyVector(CVector3f *dst_ptr,CVector3f *src_ptr);
 
-// Original: core_actor.cpp_FUN_0040d370
+// Original: core_actor.cpp_CVector3f_length_FUN_0040d370
 // Address: 0040d370
-float FUN_0040d370(float *param_1);
+float __cdecl CVector3f::length(CVector3f *this_ptr);
 
 // Original: core_actor.cpp_CVector3f_toFixed8_FUN_0040d3c0
 // Address: 0040d3c0

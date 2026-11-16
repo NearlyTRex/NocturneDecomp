@@ -78,7 +78,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0053b250(CPodFile *this_pt
   }
   support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_84);
   engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(this_ptr);
-  engine_dosio_cpp_FUN_00478e20(&local_8cc,0,pod_filename);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00478e20
+            (local_8cc.found_path,(char *)0x0,pod_filename);
   iVar6 = engine_dosio_cpp_findFileNormally_FUN_00478ef0(&local_8cc);
   if (iVar6 == 0) {
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("File not found");

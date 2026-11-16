@@ -1,0 +1,1463 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 858,
+    "complexity_score": 1642,
+    "cross_reference_count": 0,
+    "function_call_count": 19,
+    "global_count": 40,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 362,
+    "suspect_count": 125,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 1220
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00571340",
+    "address_range": [
+      [
+        "00571340",
+        "00571d0d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_httpRequestUpdate_FUN_00571340",
+    "signature": "int __cdecl support_trisock_cpp_httpRequestUpdate_FUN_00571340(void *request,char *status_text)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a30d7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005a30d7"
+    },
+    {
+      "addr": "005a5b9c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_005a5b9c"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "005a3f90",
+      "is_variadic": false,
+      "name": "crt_string.c__strnicmp_FUN_005a3f90"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "00465e50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00465e50"
+    },
+    {
+      "addr": "0056f970",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_bindSocket_FUN_0056f970"
+    },
+    {
+      "addr": "0056fc30",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_closeSocket_FUN_0056fc30"
+    },
+    {
+      "addr": "0056f9c0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_connectSocket_FUN_0056f9c0"
+    },
+    {
+      "addr": "0056f900",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_createSocket_FUN_0056f900"
+    },
+    {
+      "addr": "0056f960",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_isSocketValid_FUN_0056f960"
+    },
+    {
+      "addr": "0056fa20",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_pollSocketStatus_FUN_0056fa20"
+    },
+    {
+      "addr": "0056fbb0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_sendSocketData_FUN_0056fbb0"
+    },
+    {
+      "addr": "0056fd60",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_setSocketBlocking_FUN_0056fd60"
+    },
+    {
+      "addr": "00570e20",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_dnsRequestGetResult_FUN_00570e20"
+    },
+    {
+      "addr": "0056f820",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_formatSocketAddress_FUN_0056f820"
+    },
+    {
+      "addr": "00571d80",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_httpRequestFillBuffer_FUN_00571d80"
+    },
+    {
+      "addr": "00571e50",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_httpRequestGetByte_FUN_00571e50"
+    },
+    {
+      "addr": "005806a0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005806a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00571308",
+      "name": "switchdataD_00571308",
+      "type": "undefined1*",
+      "value": "00571440"
+    },
+    {
+      "addr": "00571310",
+      "name": "PTR_caseD_fffffffb_00571310",
+      "type": "undefined1*",
+      "value": "00571440"
+    },
+    {
+      "addr": "00571314",
+      "name": "PTR_caseD_fffffffb_00571314",
+      "type": "undefined1*",
+      "value": "00571440"
+    },
+    {
+      "addr": "00571324",
+      "name": "PTR_caseD_2_00571324",
+      "type": "undefined1*",
+      "value": "00571c01"
+    },
+    {
+      "addr": "005d6bb5",
+      "name": "s_Error_connecting_socket_005d6bb5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6bd3",
+      "name": "s_DNS_error_resolving_s_005d6bd3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6bea",
+      "name": "s_Error_contacting_s_005d6bea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6bfe",
+      "name": "DAT_005d6bfe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6c03",
+      "name": "DAT_005d6c03",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6c08",
+      "name": "s_Cache_Control_no_cache_005d6c08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6c09",
+      "name": "s_Cache_Control_no_cache_005d6c08+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6c0a",
+      "name": "s_Cache_Control_no_cache_005d6c08+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6c0b",
+      "name": "s_Cache_Control_no_cache_005d6c08+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6c22",
+      "name": "s_POST_s_HTTP_1_0_Host_s_d_005d6c22",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6c5a",
+      "name": "s_GET_s_HTTP_1_0_Host_s_d_005d6c5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6c90",
+      "name": "s_Error_requesting_s_005d6c90",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6ca4",
+      "name": "s_Error_requesting_s_005d6ca4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6cb8",
+      "name": "s_Error_requesting_s_005d6cb8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6ccc",
+      "name": "s_Unknown_error_005d6ccc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6ccd",
+      "name": "s_nknown_error_005d6ccc+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6cce",
+      "name": "s_known_error_005d6ccc+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6ccf",
+      "name": "s_nown_error_005d6ccc+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6cda",
+      "name": "s_d_255_005d6cda",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6cec",
+      "name": "s_Invalid_HTTP_header_retu_005d6cec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6d13",
+      "name": "s_d_s_005d6d13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6d1a",
+      "name": "s_Not_implemented_d_s_005d6d1a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6d32",
+      "name": "s_Content_length_005d6d32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6d42",
+      "name": "DAT_005d6d42",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6d45",
+      "name": "s_Looking_up_s_005d6d45",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6d56",
+      "name": "s_Contacting_s_005d6d56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6d67",
+      "name": "s_Requesting_s_005d6d67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6d78",
+      "name": "s_Received_d_of_s_005d6d78",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6d90",
+      "name": "s_Receiving_s_005d6d90",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6da0",
+      "name": "DAT_005d6da0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d6da1",
+      "name": "DAT_005d6da1",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d6da2",
+      "name": "DAT_005d6da2",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d6da3",
+      "name": "DAT_005d6da3",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005e5a10",
+      "name": "g_IpAddrTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "00606980",
+      "name": "DAT_00606980",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00606984",
+      "name": "DAT_00606984",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4122938530734634,
+    "instruction_count": 667,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 39,
+      "BOOL_OR": 11,
+      "BRANCH": 23,
+      "BRANCHIND": 2,
+      "CALL": 43,
+      "CALLIND": 6,
+      "CBRANCH": 69,
+      "COPY": 502,
+      "INT_ADD": 286,
+      "INT_AND": 379,
+      "INT_CARRY": 68,
+      "INT_EQUAL": 331,
+      "INT_LEFT": 5,
+      "INT_LESS": 49,
+      "INT_MULT": 8,
+      "INT_NEGATE": 2,
+      "INT_NOTEQUAL": 23,
+      "INT_OR": 15,
+      "INT_SBORROW": 53,
+      "INT_SCARRY": 70,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 163,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 244,
+      "INT_XOR": 7,
+      "INT_ZEXT": 6,
+      "LOAD": 136,
+      "POPCOUNT": 159,
+      "RETURN": 7,
+      "STORE": 229,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 2943
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057ad10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7943
+    },
+    "bw1.exe": {
+      "addr": "0059e350",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "request",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "status_text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "switch(*(int *)((int)request + 0xd28)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(void *)((int)request",
+      "severity": "moderate",
+      "text": "((void *)((int)request + 0xd30),acStack_600);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "pcVar9 = (char *)((int)request + 0x400);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "this_ptr = (CSocket *)((int)request + 0xd2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0x600) = auStack_378[0];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(SNetworkAddr *)((int)request",
+      "severity": "moderate",
+      "text": "(this_ptr,(SNetworkAddr *)((int)request + 0x600));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffd;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "_sprintf((char *)((int)request + 0xa18),\"Error connecting socket to %s\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "_sprintf((char *)((int)request + 0xa18),\"DNS error resolving %s\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffe;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "((CSocket *)((int)request + 0xd2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "((CSocket *)((int)request + 0xd2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd18) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "piVar2 = *(int **)((int)request + 0xd20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 84,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((piVar2 != (int *)0x0) && (iVar5 = (**(code **)(*piVar2 + 0x18))(piVar2), -1 < iVar5)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "(**(code **)(**(int **)((int)request + 0xd20) + 0x14))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 85,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(**(int **)((int)request + 0xd20) + 0x14))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "(*(int **)((int)request + 0xd20),0,2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "uVar3 = (**(code **)(**(int **)((int)request + 0xd20) + 0x18))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 87,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar3 = (**(code **)(**(int **)((int)request + 0xd20) + 0x18))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "(*(int **)((int)request + 0xd20));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd18) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "(**(code **)(**(int **)((int)request + 0xd20) + 0x14))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 90,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(**(int **)((int)request + 0xd20) + 0x14))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "(*(int **)((int)request + 0xd20),iVar5,0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)request + 0xd18) < 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd18) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "*(int *)((int)request + 0xd18) = *(int *)((int)request + 0xd18) - iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "*(int *)((int)request + 0xd18) = *(int *)((int)request + 0xd18) - iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_00606980",
+      "severity": "mild",
+      "text": "puVar10 = &DAT_00606980;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "((char *)((int)request + 0x500),(char *)0x0,(char *)0x0,(char *)0x0,acStack_348);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_005d6bfe",
+      "severity": "mild",
+      "text": "iVar5 = _stricmp(acStack_348,&DAT_005d6bfe);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_005d6c03",
+      "severity": "mild",
+      "text": "(iVar5 = _stricmp(acStack_348,&DAT_005d6c03), iVar5 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)request + 0xd18) < 1) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "((CSocket *)((int)request + 0xd2c),acStack_a00,~uVar7 - 1,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "_sprintf((char *)((int)request + 0xa18),\"Error requesting %s\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffd;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 148,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "_sprintf((char *)((int)request + 0xa18),\"Error contacting %s\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "((CSocket *)((int)request + 0xd2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "((CSocket *)((int)request + 0xd2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)request + 0xd18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 162,
+      "match": "(byte *)((int)request",
+      "severity": "moderate",
+      "text": "*(byte *)((int)request + 0x810) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd1c) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 171,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "iVar5 = (**(code **)(**(int **)((int)request + 0xd20) + 0x10))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 171,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar5 = (**(code **)(**(int **)((int)request + 0xd20) + 0x10))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "(*(int **)((int)request + 0xd20),(char *)((int)request + 0x610),iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "(*(int **)((int)request + 0xd20),(char *)((int)request + 0x610),iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 175,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "((CSocket *)((int)request + 0xd2c),(char *)((int)request + 0x610),iVar4,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 175,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "((CSocket *)((int)request + 0xd2c),(char *)((int)request + 0x610),iVar4,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 181,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "*(int *)((int)request + 0xd18) = *(int *)((int)request + 0xd18) - iVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 181,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "*(int *)((int)request + 0xd18) = *(int *)((int)request + 0xd18) - iVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "_sprintf((char *)((int)request + 0xa18),\"Error requesting %s\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 191,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 192,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "_sprintf((char *)((int)request + 0xa18),\"Error requesting %s\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 196,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)request + 0xd28) == 4) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 197,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "pcStack_20 = (char *)((int)request + 0xa18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 199,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "pcStack_1c = (char *)((int)request + 0x81f);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 200,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "pcStack_14 = (char *)((int)request + 0x810);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 203,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (1 < *(int *)((int)request + 0xd1c)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 233,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)request + 0xd1c) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 249,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffb;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 254,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffb;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 259,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffb;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0x60c) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 263,
+      "match": "(byte *)((int)request",
+      "severity": "moderate",
+      "text": "*(byte *)((int)request + 0x810) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 264,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd1c) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 266,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 269,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)request + 0xd1c) != 1) goto LAB_00571960;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 270,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(char *)((int)request + 0x810) == '\\0') {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 271,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd1c) = 2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 272,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0x608) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 273,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)request + 0xd28) != 4) break;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 278,
+      "match": "DAT_005d6d42",
+      "severity": "mild",
+      "text": "sscanf(pcStack_1c,&DAT_005d6d42);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 280,
+      "match": "(byte *)((int)request",
+      "severity": "moderate",
+      "text": "*(byte *)((int)request + 0x810) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 281,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 287,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "switch(*(uint *)((int)request + 0xd28)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 290,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "return *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 293,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "return *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 296,
+      "match": "(SNetworkAddr *)((int)request",
+      "severity": "moderate",
+      "text": "((SNetworkAddr *)((int)request + 0x600),acStack_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 298,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "return *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 301,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "return *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 304,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)request + 0x60c)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 305,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "iVar5 = (*(int *)((int)request + 0x608) * 100) / *(int *)((int)request + 0x60c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 305,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "iVar5 = (*(int *)((int)request + 0x608) * 100) / *(int *)((int)request + 0x60c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 309,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "return *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 312,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "return *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 314,
+      "match": "DAT_005d6da0",
+      "severity": "mild",
+      "text": "pcVar9 = &DAT_005d6da0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 317,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30((CSocket *)((int)request + 0xd2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 318,
+      "match": "(char *)((int)request",
+      "severity": "moderate",
+      "text": "pcVar9 = (char *)((int)request + 0xa18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 329,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "return *(int *)((int)request + 0xd28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 331,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)request + 0xa10) < *(int *)((int)request + 0xa14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 331,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)request + 0xa10) < *(int *)((int)request + 0xa14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 332,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)((int)request + 0xa14) - *(int *)((int)request + 0xa10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 332,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)((int)request + 0xa14) - *(int *)((int)request + 0xa10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 333,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if ((-1 < *(int *)((int)request + 0x60c)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 334,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "(iVar6 = *(int *)((int)request + 0x60c) - *(int *)((int)request + 0x608), iVar6 < iVar8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 334,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "(iVar6 = *(int *)((int)request + 0x60c) - *(int *)((int)request + 0x608), iVar6 < iVar8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 338,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "iVar6 = (**(code **)(**(int **)((int)request + 0xd24) + 8))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 338,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar6 = (**(code **)(**(int **)((int)request + 0xd24) + 8))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 339,
+      "match": "(int **)((int)request",
+      "severity": "moderate",
+      "text": "(*(int **)((int)request + 0xd24),iStack_18 + *(int *)((int)request + 0xa10),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 339,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "(*(int **)((int)request + 0xd24),iStack_18 + *(int *)((int)request + 0xa10),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 342,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 0xfffffffa;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 343,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30((CSocket *)((int)request + 0xd2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 346,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "*(int *)((int)request + 0x608) = *(int *)((int)request + 0x608) + iVar8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 346,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "*(int *)((int)request + 0x608) = *(int *)((int)request + 0x608) + iVar8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 347,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "*(int *)((int)request + 0xa10) = *(int *)((int)request + 0xa10) + iVar8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 347,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "*(int *)((int)request + 0xa10) = *(int *)((int)request + 0xa10) + iVar8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 350,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "if (((-1 < *(int *)((int)request + 0x60c)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 351,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "(*(int *)((int)request + 0x60c) <= *(int *)((int)request + 0x608))) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 351,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "(*(int *)((int)request + 0x60c) <= *(int *)((int)request + 0x608))) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 353,
+      "match": "(int *)((int)request",
+      "severity": "moderate",
+      "text": "(request,(uint)(*(int *)((int)request + 0x60c) < 0)), iVar8 == -2)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 354,
+      "match": "(uint *)((int)request",
+      "severity": "moderate",
+      "text": "*(uint *)((int)request + 0xd28) = 5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 355,
+      "match": "(CSocket *)((int)request",
+      "severity": "moderate",
+      "text": "support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30((CSocket *)((int)request + 0xd2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 42,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 113,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 237,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 320,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 101,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0x40; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 131,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 211,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

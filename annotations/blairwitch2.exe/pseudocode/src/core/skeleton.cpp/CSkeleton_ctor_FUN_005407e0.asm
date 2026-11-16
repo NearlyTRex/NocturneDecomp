@@ -7,7 +7,7 @@
 ; CSkeleton *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_moon.cpp_FUN_00502760
+;   core_moon.cpp_CMotionList_ctor_FUN_00502760
 ;   crt_unknown.c_FUN_005badc7
 ;
 ; *****************************************************************************
@@ -20,8 +20,8 @@ section .text
         ;   XREF to: 005badc7 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005badc7()
     MOV EDX,dword ptr [ESP + 0x4]       ; 005407ea
     PUSH EDX                            ; 005407ee
-    CALL core_moon.cpp_FUN_00502760     ; 005407ef
-        ;   XREF to: 00502760 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502760()
+    CALL core_moon.cpp_CMotionList_ctor_FUN_00502760 ; 005407ef
+        ;   XREF to: 00502760 (UNCONDITIONAL_CALL)  ; CMotionList * core_moon.cpp_CMotionList_ctor_FUN_00502760(CMotionList * this_ptr)
     MOV dword ptr [EAX + 0x1d1f8],0x0   ; 005407f4
     MOV dword ptr [EAX + 0x1e00c],0x0   ; 005407fe
     MOV dword ptr [EAX + 0x1e010],0x0   ; 00540808

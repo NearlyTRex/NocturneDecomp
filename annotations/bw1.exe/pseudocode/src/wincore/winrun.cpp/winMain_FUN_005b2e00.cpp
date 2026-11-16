@@ -118,7 +118,7 @@ LAB_005b2f58:
   local_58.lpszMenuName = (LPCSTR)0x0;
   RegisterClassA(&local_58);
   _DAT_02c9be6c = hInstance;
-  wincore_winrun_cpp_FUN_005b2d90();
+  wincore_winrun_cpp_createMainWindow_FUN_005b2d90();
   ShowWindow(_DAT_02c9be68,nCmdShow);
   UpdateWindow(_DAT_02c9be68);
   hThread = GetCurrentProcess();

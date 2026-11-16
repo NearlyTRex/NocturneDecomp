@@ -36,7 +36,7 @@
 ;   core_exorcism.cpp_CExorcism_fire_FUN_0048b020 at 0048b274
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20 at 004a2ed8
 ;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aea91
-;   core_game.cpp_FUN_004c07b0 at 004c11fa
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c11fa
 ;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d11e0
 ;   core_lightsta.cpp_CLightStaff_fire_FUN_004e1070 at 004e1f92
 ;   ... and 6 more

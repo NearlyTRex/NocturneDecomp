@@ -273,7 +273,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
-;   core_door.cpp_FUN_0045efe0
+;   core_door.cpp_CDoor_setState_FUN_0045efe0
 ;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
@@ -6023,8 +6023,8 @@ section .text
         ;   XREF to: 00489af6 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH EAX                            ; 0048cbbb
     PUSH EBX                            ; 0048cbbc
-    CALL core_door.cpp_FUN_0045efe0     ; 0048cbbd
-        ;   XREF to: 0045efe0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_0045efe0()
+    CALL core_door.cpp_CDoor_setState_FUN_0045efe0 ; 0048cbbd
+        ;   XREF to: 0045efe0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_setState_FUN_0045efe0(CDoor * this_ptr, EDoorState state)
     ADD ESP,0x8                         ; 0048cbc2
     JMP 0x00489af6                      ; 0048cbc5
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -6869,8 +6869,8 @@ section .text
     PUSH EDI                            ; 0048d432
     MOV EAX,[0x0061b5a8]                ; 0048d433 | g_CDemonSetPtr
     PUSH EAX                            ; 0048d438 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00534680      ; 0048d439
-        ;   XREF to: 00534680 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00534680()
+    CALL core_set.cpp_CDemonSet_setSunlight_FUN_00534680 ; 0048d439
+        ;   XREF to: 00534680 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setSunlight_FUN_00534680(CDemonSet * this_ptr, float dir_x, float dir_y, float dir_z, ...)
     ADD ESP,0x14                        ; 0048d43e
     JMP 0x00489af6                      ; 0048d441
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6

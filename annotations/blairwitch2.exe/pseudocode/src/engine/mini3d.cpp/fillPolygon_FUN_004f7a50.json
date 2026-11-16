@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 289,
+    "complexity_score": 253,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 144,
-    "suspect_count": 13,
+    "pseudocode_lines": 138,
+    "suspect_count": 10,
     "suspect_types": [
       "undefined_data",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 466
+    "total_lines": 460
   },
   "cross_references": [
     {
@@ -49,14 +49,14 @@
       "name": "engine_mini3d.cpp_setupScanEdge_FUN_004f6df0"
     },
     {
-      "addr": "0055c45c",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055c45c"
-    },
-    {
       "addr": "0055ca23",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055ca23"
+      "name": "engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23"
+    },
+    {
+      "addr": "0055c45c",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c"
     },
     {
       "addr": "0055d2e9",
@@ -305,7 +305,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_01d17ab8",
       "severity": "mild",
       "text": "local_18 = (SSoftwareEdge *)&DAT_01d17ab8;",
@@ -313,7 +313,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_01d17ab8",
       "severity": "mild",
       "text": "local_14 = (SSoftwareEdge *)&DAT_01d17ab8;",
@@ -329,7 +329,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_01d17ab8",
       "severity": "mild",
       "text": "local_14 = (SSoftwareEdge *)&DAT_01d17ab8;",
@@ -337,7 +337,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 96,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "if (DAT_006141c0 == 0x20) {",
@@ -345,7 +345,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 105,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "else if (DAT_006141c0 == 0x20) {",
@@ -353,7 +353,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 124,
+      "line": 134,
       "match": "field_0x48",
       "severity": "mild",
       "text": "*(int *)&local_18->field_0x48 =",
@@ -361,7 +361,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 125,
+      "line": 135,
       "match": "field_0x48",
       "severity": "mild",
       "text": "*(int *)&local_18->field_0x48 + *(int *)&local_18->field_0x4c;",
@@ -369,34 +369,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 125,
+      "line": 135,
       "match": "field_0x4c",
       "severity": "mild",
       "text": "*(int *)&local_18->field_0x48 + *(int *)&local_18->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 140,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(int *)&local_14->field_0x48 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 141,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(int *)&local_14->field_0x48 + *(int *)&local_14->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 141,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(int *)&local_14->field_0x48 + *(int *)&local_14->field_0x4c;",
       "type": "unnamed_field"
     }
   ]

@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[56]:
+;   core_baal.cpp_CBaal_chooseAttack_FUN_00597700 at 0059776c
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 0059706a
-;   core_baal.cpp_FUN_00597700 at 0059776c
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422a00 at 00422c43
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 0042743b
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042f9a0

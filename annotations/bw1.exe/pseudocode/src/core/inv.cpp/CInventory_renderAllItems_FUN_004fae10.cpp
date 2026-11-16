@@ -67,6 +67,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004fae10(CInventory *thi
   int local_84;
   int local_7c;
   int local_78;
+  int local_74;
   int local_70;
   int local_6c;
   int local_68;
@@ -270,7 +271,8 @@ LAB_004fb13d:
   }
   pCVar6 = local_20;
   local_30 = local_20;
-  iVar8 = engine_font_cpp_FUN_004c4260(local_20,acStack_2e4,0x1d06f78,10,0x100);
+  iVar8 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
+                    (local_20,acStack_2e4,(char *)0x1d06f78,10,0x100,local_58 - local_74);
   local_38 = iVar8;
   local_40 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(pCVar6,0x58);
   iVar9 = (DAT_0061b49c - local_64) + local_4c;
@@ -323,7 +325,8 @@ LAB_004fb230:
       core_inv_cpp_getItemDisplayName_FUN_004f62e0(this_ptr->selected_item);
       _sprintf(acStack_3e4,"%s\n\n%s");
       local_44 = local_20;
-      local_28 = engine_font_cpp_FUN_004c4260(local_20,acStack_3e4,0x1d07978,10,0x100);
+      local_28 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
+                           (local_20,acStack_3e4,(char *)0x1d07978,10,0x100,iVar9 - local_70);
       local_18 = (float)local_28;
       local_3c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_20,0x58);
       iVar8 = (DAT_0061b49c - iVar8) + iVar4;
@@ -386,11 +389,15 @@ LAB_004fb230:
     }
     engine_3d_c_setRenderAlpha_FUN_00406bd0(local_78);
     local_1c = _DAT_0152d248;
+    iVar8 = 0x00000060;
     if (DAT_0061b49c < 0x180) {
+      iVar8 = 0x00000060 / 2;
       local_1c = _DAT_0152d250;
     }
     pCVar6 = (CBitFont *)
-             engine_font_cpp_FUN_004c4260(local_1c,this_ptr->message_text,0x1d08378,10,0x100);
+             engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
+                       (local_1c,this_ptr->message_text,(char *)0x1d08378,10,0x100,
+                        (DAT_0061b498 - iVar8) + -4);
     local_24 = pCVar6;
     local_48 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
     iVar8 = (DAT_0061b49c + -4) - local_48 * (int)pCVar6;

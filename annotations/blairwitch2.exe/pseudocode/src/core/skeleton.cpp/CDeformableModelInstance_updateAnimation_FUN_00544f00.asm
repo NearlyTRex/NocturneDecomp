@@ -9,7 +9,7 @@
 ; XREF[43]:
 ;   core_armour.cpp_CArmour_process_FUN_0040ef00 at 0040efb9
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fafa
-;   core_basicene.cpp_FUN_0059f0e0 at 0059f31b
+;   core_basicene.cpp_CBasicEnemy_processMovement_FUN_0059f0e0 at 0059f31b
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411c52
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004131a3
 ;   core_beast.cpp_CBeast_process_FUN_00414a80 at 00414aec

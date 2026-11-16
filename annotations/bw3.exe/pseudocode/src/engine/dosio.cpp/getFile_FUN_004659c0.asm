@@ -29,9 +29,9 @@
 ;   crt_ctype.c_toupper_FUN_005a4120
 ;   crt_stdio.c_fopen_FUN_005a43ec
 ;   crt_stdio.c_fseek_FUN_005a457c
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660
+;   engine_dosio.cpp_createDirectoryTree_FUN_00466190
 ;   engine_dosio.cpp_findFile_FUN_004656d0
-;   engine_dosio.cpp_FUN_00465660
-;   engine_dosio.cpp_FUN_00466190
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004659e0
     PUSH EAX                            ; 004659e4
     MOV EBX,ESI                         ; 004659e5
-    CALL engine_dosio.cpp_FUN_00465660  ; 004659e7
-        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00465660()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660 ; 004659e7
+        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660(char * dest_path, char * directory, char * filename)
     MOV AH,byte ptr [ESI]               ; 004659ec
     ADD ESP,0xc                         ; 004659ee
     TEST AH,AH                          ; 004659f1
@@ -71,8 +71,8 @@ section .text
     JZ 0x00465a14                       ; 00465a09
         ;   XREF to: 00465a14 (CONDITIONAL_JUMP)  ; LAB_00465a14
     PUSH EDI                            ; 00465a0b
-    CALL engine_dosio.cpp_FUN_00466190  ; 00465a0c
-        ;   XREF to: 00466190 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00466190()
+    CALL engine_dosio.cpp_createDirectoryTree_FUN_00466190 ; 00465a0c
+        ;   XREF to: 00466190 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_createDirectoryTree_FUN_00466190(char * directory)
     ADD ESP,0x4                         ; 00465a11
     PUSH ESI                            ; 00465a14
         ;   Label: LAB_00465a14

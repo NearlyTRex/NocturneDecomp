@@ -11,12 +11,13 @@
 CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr)
 
 {
+  CCharacter *leader;
   uint uVar1;
   CDemonActor *pCVar2;
   CDeformableModelInstance *pCVar3;
   CClothList *pCVar4;
   void *pvVar5;
-  int iVar6;
+  SFollowFormation *pSVar6;
   CCharacter *pCVar7;
   byte bVar9;
   uint auStackY_1070 [1012];
@@ -60,10 +61,13 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *
                      ((CClothList *)&pCVar3[1].bone_transform.pose_data.bone_rotations[0xf].x);
   pvVar5 = __arrinit(pCVar4[1].filenames[0] + 8,0xf,&g_CVectorTypeInfo);
   pvVar5 = __arrinit((void *)((int)pvVar5 + 0xb4),0xf,&g_CVectorTypeInfo);
-  iVar6 = core_muzzle_cpp_FUN_0059ded0((int)pvVar5 + 0xd0);
-  pvVar5 = __arrinit((void *)(iVar6 + 0x518),0x32,&g_SFireTypeInfo);
+  pSVar6 = core_muzzle_cpp_SFollowFormation_ctor_FUN_0059ded0
+                     ((SFollowFormation *)((int)pvVar5 + 0xd0));
+  pvVar5 = __arrinit
+                     (&pSVar6[1].slots[5].target_position,0x32,&g_SFireTypeInfo);
   pvVar5 = __arrinit((void *)((int)pvVar5 + 0x4b0),0x32,&g_CFlameTypeInfo)
   ;
+  leader = (CCharacter *)((int)pvVar5 + -0x3a20);
   *(CCharacter_full_vtable **)((int)pvVar5 + -0x3770) = &g_CCharacterVTable;
   *(uint *)((int)pvVar5 + -0x14b4) = 1;
   *(uint *)((int)pvVar5 + -0x14b8) = 0;
@@ -103,7 +107,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *
   *(uint *)((int)pvVar5 + -0x1234) = 0;
   *(uint *)((int)pvVar5 + -0x1230) = 0;
   *(uint *)((int)pvVar5 + -0x1240) = 0xffffffff;
-  pCVar7 = (CCharacter *)((int)pvVar5 + -0x3a20);
+  pCVar7 = leader;
   do {
     pcVar8 = (pCVar7->base).create_event;
     pCVar7->carry_hands[0].carry_actor = (CDemonActor *)0x0;
@@ -176,7 +180,8 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *
   *(uint *)((int)pvVar5 + 0xcfac) = 0;
   *(uint *)((int)pvVar5 + 0xcfb8) = 0xfffffffe;
   *(uint *)((int)pvVar5 + 0xcfb0) = uVar1;
-  core_muzzle_cpp_FUN_0059df80();
+  core_muzzle_cpp_SFollowFormation_setLeader_FUN_0059df80
+            ((SFollowFormation *)((int)pvVar5 + -0x9c8),leader);
   *(uint *)((int)pvVar5 + -0x5f4) = 0;
   local_28 = 0xbdc6a7f0;
   local_24 = 0x3ea7ef9e;
@@ -231,5 +236,5 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *
     *(uint *)((int)pvVar5 + 0xd024) = 0x3f800000;
   }
   *(uint *)((int)pvVar5 + 0xd004) = 0xffffffff;
-  return (CCharacter *)((int)pvVar5 + -0x3a20);
+  return leader;
 }

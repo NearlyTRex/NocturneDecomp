@@ -13,7 +13,7 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *directory_path
 {
   int iVar1;
   int unaff_EBX;
-  uint in_stack_00000014;
+  char *in_stack_00000014;
   uint in_stack_00000018;
   char acStack_214 [4];
   char acStack_210 [4];
@@ -23,7 +23,8 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *directory_path
   ios_clear
             ((ios *)((file_stream->_fstreambase_core)._filebuf.__unbuffered_get_area +
                     *(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);
-  engine_dosio_cpp_FUN_00465660(acStack_214,directory_path,in_stack_00000014);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00465660
+            (acStack_214,directory_path,in_stack_00000014);
   if ((in_stack_00000018 & 0x52) == 0) {
     iVar1 = engine_dosio_cpp_findFile_FUN_004656d0((SFoundFileInfo *)acStack_214);
     if (iVar1 != 0) {

@@ -410,8 +410,8 @@ section .text
     ADD ESP,0xc                         ; 0056ec02
     MOV EAX,ESP                         ; 0056ec05
     PUSH EAX                            ; 0056ec07
-    CALL wincore_winrun.cpp_FUN_005b3a90 ; 0056ec08
-        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b3a90()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_005b3a90 ; 0056ec08
+        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_005b3a90(LPCSTR message)
     ADD ESP,0x4                         ; 0056ec0d
     MOV EAX,EBP                         ; 0056ec10
     MOV EBX,dword ptr [0x02c78ff0]      ; 0056ec12 | DAT_02c78ff0

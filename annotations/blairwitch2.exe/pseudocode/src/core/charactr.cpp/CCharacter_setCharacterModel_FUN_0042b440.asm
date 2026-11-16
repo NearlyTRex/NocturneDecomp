@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390
-;   core_charactr.cpp_FUN_004247f0
+;   core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
 ;   core_cloth.cpp_CClothList_load_FUN_005b14a0
 ;   core_cloth.cpp_CClothList_remove_FUN_005b1640
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 00429390 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042b4e4
     PUSH EBX                            ; 0042b4e7
-    CALL core_charactr.cpp_FUN_004247f0 ; 0042b4e8
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004247f0()
+    CALL core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0 ; 0042b4e8
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0(CCharacter * this_ptr)
     MOV ESI,dword ptr [EBX + 0x2d0c]    ; 0042b4ed
     ADD ESP,0x4                         ; 0042b4f3
     TEST ESI,ESI                        ; 0042b4f6

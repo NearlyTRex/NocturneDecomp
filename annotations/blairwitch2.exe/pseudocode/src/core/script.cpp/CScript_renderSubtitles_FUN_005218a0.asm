@@ -41,7 +41,7 @@
 ;   engine_font.cpp_CBitFont_drawText_FUN_004a8df0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
-;   engine_font.cpp_FUN_004ab2b0
+;   engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
 ;
 ; *****************************************************************************
 
@@ -172,8 +172,8 @@ section .text
     ADD EDI,0x50                        ; 005219f9
     PUSH EDI                            ; 005219fc
     PUSH EBP                            ; 005219fd
-    CALL engine_font.cpp_FUN_004ab2b0   ; 005219fe
-        ;   XREF to: 004ab2b0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004ab2b0()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0 ; 005219fe
+        ;   XREF to: 004ab2b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 00521a03
     PUSH 0x58                           ; 00521a06
     PUSH EBP                            ; 00521a08

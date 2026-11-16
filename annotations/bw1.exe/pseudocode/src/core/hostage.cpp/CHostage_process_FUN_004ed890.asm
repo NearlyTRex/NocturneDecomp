@@ -35,12 +35,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
-;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   ... and 26 more
 ;
 ; *****************************************************************************
@@ -321,8 +321,8 @@ section .text
     FLD float ptr [EBX + 0x24a4]        ; 004edc1b
     PUSH EBX                            ; 004edc21
     FSTP float ptr [EBX + 0x2524]       ; 004edc22
-    CALL core_charactr.cpp_FUN_00435320 ; 004edc28
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 004edc28
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004edc2d
     PUSH 0xa                            ; 004edc30
     MOV ESI,dword ptr [ESP + 0x26c]     ; 004edc32
@@ -1565,8 +1565,8 @@ section .text
         ;   Label: LAB_004eeb2d
     PUSH EBX                            ; 004eeb30
     LEA ESI,[EBX + 0x2518]              ; 004eeb31
-    CALL core_charactr.cpp_FUN_0042d700 ; 004eeb37
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 004eeb37
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004eeb3c
     FLD float ptr [ESI]                 ; 004eeb3f
     FMUL float ptr [EBP + 0x18]         ; 004eeb41

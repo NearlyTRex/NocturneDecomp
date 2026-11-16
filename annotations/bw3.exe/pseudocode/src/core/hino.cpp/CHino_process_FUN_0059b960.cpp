@@ -256,7 +256,8 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
   }
   fVar11 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar11);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar11);
   pCStack_5c = &(this_ptr->base).base.model;
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCStack_5c->base);
   iVar4 = pSVar5->state_index;
@@ -473,7 +474,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       break;
     case 9:
       if (this_ptr->platform_check_done == 0) {
-        iVar4 = core_hino_cpp_FUN_0059d000(this_ptr);
+        iVar4 = core_hino_cpp_CHino_isHeroAtPlatform_FUN_0059d000(this_ptr);
         this_ptr->near_platform = iVar4;
         if (0x02D0C1A0->weather_type == WEATHER_TYPE_NONE) {
           iVar4 = g_CDemonSetPtr->selected_camera_index;
@@ -817,7 +818,7 @@ switchD_0059ceee_caseD_3:
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0((CCharacter *)this_ptr);
   if (iVar4 != 0) {
     if ((iStack_6c == 8) || (iStack_6c == 7)) {
-      core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+      core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
     }
     fStack_e0 = (this_ptr->base).base.velocity.x * delta_time;
     fStack_dc = (this_ptr->base).base.velocity.y * delta_time;

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   add_flag
 ;
 ; XREF[3]:
-;   core_event.cpp_FUN_004a1d00 at 004a3ae0
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a3ae0
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d03ce
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ee76f
 ;

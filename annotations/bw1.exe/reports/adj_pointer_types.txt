@@ -1,7 +1,7 @@
-Scanning 536 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw1.exe/pseudocode/src...
+Scanning 539 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw1.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (178 files still need ADJ)
+UNFINISHED CTORS/DTORS (180 files still need ADJ)
 ======================================================================
 
   [core/ammo.cpp]
@@ -575,6 +575,10 @@ UNFINISHED CTORS/DTORS (178 files still need ADJ)
     CDeformableModel_ctor_FUN_00563690:
       _arrinit @ this+0x2290 (8848) -> CDeformableModel_ptr_8848
       _arrinit @ this+0x274c (10060) -> CDeformableModel_ptr_10060
+    CSkeleton_ctor_FUN_00562dd0:
+      CMotionList_ctor @ ??? (UNKNOWN)
+    CSkeleton_dtor_FUN_00562e30:
+      CMotionList_dtor @ ??? (UNKNOWN)
     SVert_ctor_FUN_0056b990:
       _arrinit @ this+0x10 (16) -> SVert_ptr_16
 
@@ -962,7 +966,7 @@ NEEDED ADJ POINTER TYPES
 Total: 193 types across 131 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (98 calls with unknown offset)
+MANUAL REVIEW NEEDED (100 calls with unknown offset)
 ======================================================================
   CArmour_dtor_FUN_0040ecc0.asm: CClothList_dtor
   CArmour_dtor_FUN_0040ecc0.asm: CDeformableModelInstance_dtor
@@ -1039,6 +1043,8 @@ MANUAL REVIEW NEEDED (98 calls with unknown offset)
   CShadow_dtor_FUN_005603b0.asm: CDeformableModelInstance_dtor
   CShadowsc_dtor_FUN_005614d0.asm: CClothList_dtor
   CShadowsc_dtor_FUN_005614d0.asm: CDeformableModelInstance_dtor
+  CSkeleton_ctor_FUN_00562dd0.asm: CMotionList_ctor
+  CSkeleton_dtor_FUN_00562e30.asm: CMotionList_dtor
   CSmiley_dtor_FUN_0056d400.asm: CClothList_dtor
   CSmiley_dtor_FUN_0056d400.asm: CDeformableModelInstance_dtor
   CSuccubus_dtor_FUN_00592ce0.asm: CClothList_dtor

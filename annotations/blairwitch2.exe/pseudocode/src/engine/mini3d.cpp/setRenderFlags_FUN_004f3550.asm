@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   flags
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004a97a0 at 004a97fc
+;   engine_font.cpp_CBitFont_flushAccelBatch_FUN_004a97a0 at 004a97fc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d09858

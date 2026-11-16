@@ -54,7 +54,8 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00573b80(CTextureCa
   memset((void *)0x2652eb8,0,0x214);
   memset((void *)0x26530cc,0,0x214);
   memset((void *)0x26532e0,0,0x214);
-  engine_dosio_cpp_FUN_00460910(0x2652eb8,&DAT_005ec6f1,texture_name);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910
+            ((char *)0x2652eb8,&DAT_005ec6f1,texture_name);
   iVar5 = engine_dosio_cpp_findFile_FUN_00460980((SFoundFileInfo *)0x2652eb8);
   if (iVar5 == 0) {
     _DAT_01d046a0 = "..\\engine\\texture.cpp";
@@ -88,7 +89,7 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00573b80(CTextureCa
     pcVar13 = pcVar13 + 2;
   } while (cVar1 != '\0');
   engine_dosio_cpp_changeFileExtension_FUN_004611a0(local_1d8,&DAT_005ec73b);
-  engine_dosio_cpp_FUN_00460910(0x26530cc,&DAT_005ec740,local_1d8);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910((char *)0x26530cc,&DAT_005ec740,local_1d8);
   local_30 = engine_dosio_cpp_findFile_FUN_00460980((SFoundFileInfo *)0x26530cc);
   pcVar12 = local_158;
   pcVar10 = texture_name;
@@ -102,7 +103,7 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00573b80(CTextureCa
     pcVar12 = pcVar12 + 2;
   } while (cVar1 != '\0');
   engine_dosio_cpp_changeFileExtension_FUN_004611a0(local_158,&DAT_005ec744);
-  engine_dosio_cpp_FUN_00460910(0x26532e0,&DAT_005ec749,local_158);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910((char *)0x26532e0,&DAT_005ec749,local_158);
   iVar5 = engine_dosio_cpp_findFile_FUN_00460980((SFoundFileInfo *)0x26532e0);
   if (local_30 == 0) {
     if (uVar7 < 0x10000) {

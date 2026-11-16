@@ -41,8 +41,8 @@
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_setupScanEdge_FUN_004f13a0
-;   engine_special.cpp_FUN_00561fdc
-;   engine_special.cpp_FUN_005625a3
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc
 ;   engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00562e69
 ;   engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
 ;
@@ -228,8 +228,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 004f2276
     MOV ESI,dword ptr [ESP + 0x14]      ; 004f227a
     MOV EBX,dword ptr [ESP + 0xc]       ; 004f227e
-    CALL engine_special.cpp_FUN_00561fdc ; 004f2282
-        ;   XREF to: 00561fdc (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00561fdc()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc ; 004f2282
+        ;   XREF to: 00561fdc (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_00561fdc(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     MOV EDX,dword ptr [ESP + 0x14]      ; 004f2287
         ;   Label: LAB_004f2287
     MOV EAX,dword ptr [ESP + 0x14]      ; 004f228b
@@ -370,8 +370,8 @@ section .text
         ;   Label: LAB_004f23d7
     MOV ESI,dword ptr [ESP + 0x14]      ; 004f23db
     MOV EBX,dword ptr [ESP + 0xc]       ; 004f23df
-    CALL engine_special.cpp_FUN_005625a3 ; 004f23e3
-        ;   XREF to: 005625a3 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_005625a3()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3 ; 004f23e3
+        ;   XREF to: 005625a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x004f2287                      ; 004f23e8
         ;   XREF to: 004f2287 (UNCONDITIONAL_JUMP)  ; LAB_004f2287
     MOV EAX,[0x005fba20]                ; 004f23ed | DAT_005fba20

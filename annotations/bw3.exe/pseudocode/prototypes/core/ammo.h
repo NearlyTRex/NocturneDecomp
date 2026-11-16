@@ -53,9 +53,9 @@ void __cdecl CAmmo::setAmmoCount(CAmmo *this_ptr,int ammo_count);
 // Address: 0040e080
 int __cdecl CAmmo::canPickup(CAmmo *this_ptr,CDemonActor *picker);
 
-// Original: core_ammo.cpp_FUN_0040e0c0
+// Original: core_ammo.cpp_factoryFuncAmmoMana_FUN_0040e0c0
 // Address: 0040e0c0
-void FUN_0040e0c0(void);
+CAmmoMana * __cdecl factoryFuncAmmoMana(void);
 
 // Original: core_ammo.cpp_CAmmoMana_getActorType_FUN_0040e0e0
 // Address: 0040e0e0
@@ -69,9 +69,9 @@ CAmmoMana * __cdecl CAmmoMana::ctor(CAmmoMana *this_ptr);
 // Address: 0040e140
 void __cdecl CAmmoMana::process(CAmmoMana *this_ptr,float delta_time);
 
-// Original: core_ammo.cpp_FUN_0040e230
+// Original: core_ammo.cpp_factoryFuncAmmoManaLarge_FUN_0040e230
 // Address: 0040e230
-void FUN_0040e230(void);
+CAmmoManaLarge * __cdecl factoryFuncAmmoManaLarge(void);
 
 // Original: core_ammo.cpp_CAmmoManaLarge_getActorType_FUN_0040e250
 // Address: 0040e250
@@ -85,9 +85,9 @@ CAmmoManaLarge * __cdecl CAmmoManaLarge::ctor(CAmmoManaLarge *this_ptr);
 // Address: 0040e2b0
 void __cdecl CAmmoManaLarge::process(CAmmoManaLarge *this_ptr,float delta_time);
 
-// Original: core_ammo.cpp_FUN_0040e3a0
+// Original: core_ammo.cpp_factoryFuncAmmoBullet_FUN_0040e3a0
 // Address: 0040e3a0
-void FUN_0040e3a0(void);
+CAmmoBullet * __cdecl factoryFuncAmmoBullet(void);
 
 // Original: core_ammo.cpp_CAmmoBullet_getActorType_FUN_0040e3c0
 // Address: 0040e3c0

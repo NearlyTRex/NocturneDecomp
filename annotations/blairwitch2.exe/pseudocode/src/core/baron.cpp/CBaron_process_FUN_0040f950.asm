@@ -27,11 +27,11 @@
 ;   core_baron.cpp_CBaron_advanceMotion_FUN_00410590
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410080
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_0042b2a0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230
 ;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0049e850
@@ -121,8 +121,8 @@ section .text
     PUSH dword ptr [ESP + 0xc0]         ; 0040fa13
         ;   Label: LAB_0040fa13
     PUSH EBX                            ; 0040fa1a
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 0040fa1b
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 0040fa1b
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0040fa20
     FLD float ptr [EBX + 0x10a60]       ; 0040fa23
     FSUB float ptr [ESP + 0xc0]         ; 0040fa29
@@ -185,8 +185,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 0040fada
     MOV EDX,dword ptr [EAX + 0x4]       ; 0040fadd
     MOV dword ptr [EAX],EDX             ; 0040fae0
-    CALL core_charactr.cpp_FUN_00423a10 ; 0040fae2
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 0040fae2
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0040fae7
     PUSH EBX                            ; 0040faea
     CALL core_charactr.cpp_CCharacter_preProcess_FUN_00424470 ; 0040faeb

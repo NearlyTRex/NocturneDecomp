@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00445e87
-;   core_djien.cpp_FUN_004615b0 at 00462174
+;   core_djien.cpp_CDjien_getSackTargetPoints_FUN_004615b0 at 00462174
 ;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004b7150 at 004b7219
 ;
 ; Referenced Globals:

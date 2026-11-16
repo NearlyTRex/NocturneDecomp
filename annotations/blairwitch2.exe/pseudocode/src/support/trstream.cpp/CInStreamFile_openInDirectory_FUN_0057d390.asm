@@ -16,9 +16,9 @@
 ;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015ad
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7e9a
 ;   engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0 at 004a8603
-;   engine_font.cpp_FUN_004a7fd0 at 004a813b
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0 at 004a813b
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573e76
-;   engine_texture.cpp_FUN_00575150 at 00575249
+;   engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150 at 00575249
 ;   ... and 5 more
 ;
 ; Referenced Globals:
@@ -26,8 +26,8 @@
 ;
 ; Called Functions:
 ;   CreateFileA
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910
 ;   engine_dosio.cpp_findFile_FUN_00460980
-;   engine_dosio.cpp_FUN_00460910
 ;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0057d3b7
     PUSH EAX                            ; 0057d3bb
     MOV dword ptr [EBX + 0x10],0x0      ; 0057d3bc
-    CALL engine_dosio.cpp_FUN_00460910  ; 0057d3c3
-        ;   XREF to: 00460910 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00460910()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910 ; 0057d3c3
+        ;   XREF to: 00460910 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 0057d3c8
     MOV EAX,ESP                         ; 0057d3cb
     PUSH EAX                            ; 0057d3cd

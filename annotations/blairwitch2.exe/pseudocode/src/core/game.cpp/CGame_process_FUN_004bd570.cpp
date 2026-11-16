@@ -29,7 +29,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
   }
   core_actor_cpp_setRandomSeed_FUN_0040cee0(seed_value);
   core_game_cpp_CGame_updateFadeTransition_FUN_004bb2f0(this_ptr);
-  core_game_cpp_FUN_004bb5b0();
+  core_game_cpp_CGame_updateAlphaFade_FUN_004bb5b0(this_ptr);
   if (g_CGamePtr->profile_mode == 1) {
     _DAT_01cb8118 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   }

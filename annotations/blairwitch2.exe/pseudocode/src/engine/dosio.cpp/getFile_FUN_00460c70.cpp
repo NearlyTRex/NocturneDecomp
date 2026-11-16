@@ -16,14 +16,14 @@ _FILE * __cdecl engine_dosio_cpp_getFile_FUN_00460c70(char *directory,char *file
   byte *pbVar5;
   SFoundFileInfo local_220;
   
-  engine_dosio_cpp_FUN_00460910(&local_220,directory,filename);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910(local_220.found_path,directory,filename);
   bVar2 = *mode;
   pbVar5 = (byte *)mode;
   while (bVar2 != 0) {
     iVar3 = toupper((uint)*pbVar5);
     if (iVar3 == 0x57) {
       if (directory != (char *)0x0) {
-        engine_dosio_cpp_FUN_004613b0(directory);
+        engine_dosio_cpp_createDirectoryTree_FUN_004613b0(directory);
       }
       p_Var4 = _fopen(local_220.found_path,mode);
       return p_Var4;

@@ -9,10 +9,10 @@
 ; XREF[6]:
 ;   sound_sndmain.cpp_processAudio_FUN_00559120 at 0055918b
 ;   sound_sndmain.cpp_unlockSound_FUN_00556fd0 at 00557000
-;   support_trisock.cpp_FUN_00570ae0 at 00570b93
-;   support_trisock.cpp_FUN_00570ea0 at 00570f42
-;   support_trisock.cpp_FUN_00570fb0 at 00571025
 ;   support_trisock.cpp_cleanupWinsock_FUN_00571f10 at 00571f86
+;   support_trisock.cpp_dnsLookupThreadProc_FUN_00570ae0 at 00570b93
+;   support_trisock.cpp_dnsRequestQueue_FUN_00570ea0 at 00570f42
+;   support_trisock.cpp_dnsRequestUnlink_FUN_00570fb0 at 00571025
 ;
 ; Referenced Globals:
 ;   void* PTR_ReleaseMutex_005b361c = 001b410c

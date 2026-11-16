@@ -13,11 +13,11 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090
-;   core_bwgrndma.cpp_FUN_005a7ed0
+;   core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
-;   core_mine.cpp_FUN_005ad940
+;   core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940
 ;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
 ;   core_xform.cpp_transformVector3x4_FUN_00591530
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 0041c090 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_process_FUN_0041c090(CBoxActor * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005ad569
     PUSH EBX                            ; 005ad56c
-    CALL core_mine.cpp_FUN_005ad940     ; 005ad56d
-        ;   XREF to: 005ad940 (UNCONDITIONAL_CALL)  ; undefined core_mine.cpp_FUN_005ad940()
+    CALL core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940 ; 005ad56d
+        ;   XREF to: 005ad940 (UNCONDITIONAL_CALL)  ; void core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940(CSpiritMine * this_ptr)
     MOV ESI,dword ptr [0x01cedef4]      ; 005ad572 | DAT_01cedef4
     LEA EAX,[EBX + 0x20]                ; 005ad578
     MOV ESI,dword ptr [ESI*0x4 + 0x1cedee4] ; 005ad57b
@@ -250,8 +250,8 @@ section .text
         ;   XREF to: 005ad74b (CONDITIONAL_JUMP)  ; LAB_005ad74b
     MOV EDI,dword ptr [EBP + 0x72]      ; 005ad7c3
     XOR ESI,ESI                         ; 005ad7c6
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005ad7c8
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005ad7c8
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
         ;   Label: LAB_005ad7c8
     TEST EAX,EAX                        ; 005ad7cd
     JNZ 0x005ad83e                      ; 005ad7cf

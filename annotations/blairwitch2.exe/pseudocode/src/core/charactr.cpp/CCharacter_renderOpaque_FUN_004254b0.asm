@@ -39,7 +39,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0
 ;   core_motion.cpp_CMotionController_render_FUN_005042e0
-;   core_muzzle.cpp_FUN_0059e0f0
+;   core_muzzle.cpp_SFollowFormation_getSlots_FUN_0059e0f0
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407c40
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80
@@ -181,8 +181,8 @@ section .text
     PUSH EAX                            ; 004255ff
     MOV dword ptr [ESP + 0x80],EBX      ; 00425600
     MOV dword ptr [ESP + 0x84],EBX      ; 00425607
-    CALL core_muzzle.cpp_FUN_0059e0f0   ; 0042560e
-        ;   XREF to: 0059e0f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059e0f0()
+    CALL core_muzzle.cpp_SFollowFormation_getSlots_FUN_0059e0f0 ; 0042560e
+        ;   XREF to: 0059e0f0 (UNCONDITIONAL_CALL)  ; SFollowSlotStruct * core_muzzle.cpp_SFollowFormation_getSlots_FUN_0059e0f0(SFollowFormation * this_ptr)
     ADD ESP,0x4                         ; 00425613
     MOV dword ptr [ESP + 0xb8],EAX      ; 00425616
     MOV dword ptr [ESP + 0xbc],EAX      ; 0042561d

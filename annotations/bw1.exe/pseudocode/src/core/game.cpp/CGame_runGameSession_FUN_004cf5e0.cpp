@@ -193,7 +193,7 @@ LAB_004cfb22:
     if (_DAT_01cd01f8 == 0) {
       iVar5 = (*0x01D1BCA0->vtable->getAndClearKeyState)(0x01D1BCA0,DIK_ESCAPE);
       if (iVar5 == 0) goto LAB_004cfde8;
-      if (*(int *)(0x01D2C900 + 0x1014) != 0) goto LAB_004cf9e0;
+      if (0x01D2C900->teleport_requested != 0) goto LAB_004cf9e0;
       shape_edittool_cpp_CPickList_clear_FUN_0049c370(&g_CPickList);
       this_ptr->wait_for_keypress = 0;
       if (g_CFieldNotesPtr->is_displayed == 0) {
@@ -285,7 +285,7 @@ LAB_004cfb22:
               }
             }
             if (iVar4 == 5) {
-              core_game_cpp_FUN_004d5e80(this_ptr);
+              core_game_cpp_CGame_resetIrisFade_FUN_004d5e80(this_ptr);
               iVar4 = core_script_cpp_CScript_skipCinematic_FUN_0054ae40(g_CScriptPtr);
               this_ptr->cinematic_skip_in_progress = (uint)(iVar4 == 0);
             }
@@ -413,7 +413,7 @@ LAB_004cfbd7:
     } while (iVar4 != 1);
     shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&local_4e0,0);
   }
-  iVar4 = core_mission_cpp_FUN_0051c410(0x01D2C900);
+  iVar4 = core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_0051c410(0x01D2C900);
   this_ptr_00 = 0x01D1BCA0;
   this_ptr->damageable_enemy_count = iVar4;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004fd2b0(this_ptr_00,0);

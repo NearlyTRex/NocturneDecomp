@@ -14,6 +14,6 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_00562e30(CSkeleton *thi
   
   FUN_005c3187(0xc);
   core_skeleton_cpp_CSkeleton_free_FUN_00562f70(unaff_retaddr,1);
-  pCVar1 = (CSkeleton *)core_morph_cpp_FUN_005238f0(unaff_retaddr,1);
+  pCVar1 = (CSkeleton *)core_morph_cpp_CMotionList_dtor_FUN_005238f0(&unaff_retaddr->motion_list);
   return pCVar1;
 }

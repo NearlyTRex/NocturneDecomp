@@ -26,10 +26,10 @@
 ;   core_set.cpp_CDemonSet_clearLights_FUN_00537520
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d2e0
+;   engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d300
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
-;   engine_alphabit.cpp_FUN_0040dbe0
 ;   engine_special.cpp_lockFrame_FUN_00565820
 ;   engine_special.cpp_unlockFrame_FUN_00565870
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
@@ -138,8 +138,8 @@ section .text
     CALL engine_special.cpp_lockFrame_FUN_00565820 ; 004f71b5
         ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_00565820()
     PUSH ESI                            ; 004f71ba
-    CALL engine_alphabit.cpp_FUN_0040dbe0 ; 004f71bb
-        ;   XREF to: 0040dbe0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dbe0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0 ; 004f71bb
+        ;   XREF to: 0040dbe0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f71c0
     PUSH 0x0                            ; 004f71c3
     CALL engine_special.cpp_unlockFrame_FUN_00565870 ; 004f71c5

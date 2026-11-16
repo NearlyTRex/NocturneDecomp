@@ -41,8 +41,8 @@
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_setupScanEdge_FUN_00515bd0
-;   engine_special.cpp_FUN_0057eeac
-;   engine_special.cpp_FUN_0057f473
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0057f473
+;   engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0057eeac
 ;   engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39
 ;   engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03
 ;
@@ -228,8 +228,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 00516aa6
     MOV ESI,dword ptr [ESP + 0x14]      ; 00516aaa
     MOV EBX,dword ptr [ESP + 0xc]       ; 00516aae
-    CALL engine_special.cpp_FUN_0057eeac ; 00516ab2
-        ;   XREF to: 0057eeac (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0057eeac()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0057eeac ; 00516ab2
+        ;   XREF to: 0057eeac (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0057eeac(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     MOV EDX,dword ptr [ESP + 0x14]      ; 00516ab7
         ;   Label: LAB_00516ab7
     MOV EAX,dword ptr [ESP + 0x14]      ; 00516abb
@@ -370,8 +370,8 @@ section .text
         ;   Label: LAB_00516c07
     MOV ESI,dword ptr [ESP + 0x14]      ; 00516c0b
     MOV EBX,dword ptr [ESP + 0xc]       ; 00516c0f
-    CALL engine_special.cpp_FUN_0057f473 ; 00516c13
-        ;   XREF to: 0057f473 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0057f473()
+    CALL engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0057f473 ; 00516c13
+        ;   XREF to: 0057f473 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0057f473(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x00516ab7                      ; 00516c18
         ;   XREF to: 00516ab7 (UNCONDITIONAL_JUMP)  ; LAB_00516ab7
     MOV EAX,[0x0061b4a0]                ; 00516c1d | DAT_0061b4a0

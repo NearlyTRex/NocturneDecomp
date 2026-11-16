@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   engine_font.cpp_FUN_004b13a0 at 004b143b
+;   engine_font.cpp_CBitFont_flushAccelBatch_FUN_004b13a0 at 004b143b
 ;   engine_mini3d.cpp_fillRect_FUN_004f37e0 at 004f3a30
 ;
 ; Referenced Globals:

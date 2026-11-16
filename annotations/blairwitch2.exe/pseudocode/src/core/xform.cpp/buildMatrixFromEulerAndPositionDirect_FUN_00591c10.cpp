@@ -16,9 +16,9 @@ void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(C
   float local_14;
   float local_10;
   
-  core_dirmat_cpp_FUN_00449c20(&local_24,&local_20,euler_angles);
-  core_dirmat_cpp_FUN_00449c20(&local_1c,&local_14,&euler_angles->z);
-  core_dirmat_cpp_FUN_00449c20(&local_10,&local_18,&euler_angles->y);
+  core_dirmat_cpp_sinCos_FUN_00449c20(&local_24,&local_20,&euler_angles->x);
+  core_dirmat_cpp_sinCos_FUN_00449c20(&local_1c,&local_14,&euler_angles->z);
+  core_dirmat_cpp_sinCos_FUN_00449c20(&local_10,&local_18,&euler_angles->y);
   output_matrix->m[0].w = local_18 * local_14 + local_10 * local_24 * local_1c;
   output_matrix->m[0].x = -local_18 * local_1c + local_10 * local_24 * local_14;
   output_matrix->m[0].y = local_10 * local_20;

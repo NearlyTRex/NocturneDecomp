@@ -267,7 +267,7 @@ LAB_004b6635:
                 }
               }
               if (iVar5 == 5) {
-                core_game_cpp_FUN_004bb090(this_ptr);
+                core_game_cpp_CGame_resetIrisFade_FUN_004bb090(this_ptr);
                 iVar5 = core_script_cpp_CScript_skipCinematic_FUN_00529b30(g_CScriptPtr);
                 this_ptr->cinematic_skip_in_progress = (uint)(iVar5 == 0);
               }

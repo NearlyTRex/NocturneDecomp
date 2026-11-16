@@ -25,9 +25,9 @@ CFlame * __cdecl CFlame::ctor(CFlame *this_ptr);
 // Address: 004a5aa0
 void __cdecl CFlame::setup(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004a5ad0
+// Original: core_flame.cpp_preloadFlameTextures_FUN_004a5ad0
 // Address: 004a5ad0
-void FUN_004a5ad0(int param_1);
+void __cdecl preloadFlameTextures(int flame_type);
 
 // Original: core_flame.cpp_CFlame_process_FUN_004a5b10
 // Address: 004a5b10

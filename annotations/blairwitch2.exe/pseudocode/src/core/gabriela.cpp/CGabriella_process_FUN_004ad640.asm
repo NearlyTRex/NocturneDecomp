@@ -36,11 +36,11 @@
 ;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e600
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_00423a10
 ;   ... and 34 more
 ;
 ; *****************************************************************************
@@ -264,8 +264,8 @@ section .text
     FADD float ptr [EBP + 0x6a]         ; 004ad8c0
     PUSH EBX                            ; 004ad8c3
     FSTP float ptr [EBP + 0x6a]         ; 004ad8c4
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 004ad8c7
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 004ad8c7
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ad8cc
     FLD float ptr [EBP + 0x92]          ; 004ad8cf
         ;   Label: LAB_004ad8cf
@@ -1415,8 +1415,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004ae608
         ;   Label: LAB_004ae608
     PUSH EBX                            ; 004ae60e
-    CALL core_charactr.cpp_FUN_00423a10 ; 004ae60f
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 004ae60f
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x2588]              ; 004ae614
     FLD float ptr [EAX]                 ; 004ae61a
     FMUL float ptr [EBP + 0x92]         ; 004ae61c

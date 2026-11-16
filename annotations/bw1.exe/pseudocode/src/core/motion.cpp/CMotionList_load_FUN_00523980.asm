@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
-;   core_morph.cpp_FUN_00523910
+;   core_morph.cpp_CMotionList_free_FUN_00523910
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fscanf_FUN_005c04b0
@@ -55,8 +55,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x30]      ; 00523987
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0052398b
     PUSH EDX                            ; 0052398f
-    CALL core_morph.cpp_FUN_00523910    ; 00523990
-        ;   XREF to: 00523910 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_00523910()
+    CALL core_morph.cpp_CMotionList_free_FUN_00523910 ; 00523990
+        ;   XREF to: 00523910 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMotionList_free_FUN_00523910(CMotionList * this_ptr)
     MOV ECX,0xffffffff                  ; 00523995
     ADD ESP,0x4                         ; 0052399a
     MOV EBX,EDI                         ; 0052399d

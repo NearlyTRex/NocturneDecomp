@@ -23,15 +23,18 @@
 #include "types/classes/CGore.h"
 #include "types/classes/CGrave.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CInventory.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CVector4i.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/EBloodType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SPlayerInput.h"
 #include "types/structs/SQuadVertices.h"
 #include "types/unions/UOrientationVector.h"
 
@@ -40,16 +43,16 @@
 // =============================================================================
 
 void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr);
-void core_game_cpp_FUN_004c07b0(int param_1,undefined4 *param_2);
-void core_game_cpp_FUN_004c4870(int param_1);
+void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame *this_ptr,SPlayerInput *player_control);
+void __cdecl core_game_cpp_CGame_onSetLoaded_FUN_004c4870(CGame *this_ptr);
 void __cdecl core_game_cpp_loadCursorBitmaps_FUN_004c48b0(void);
 void __cdecl core_game_cpp_freeCursorBitmaps_FUN_004c49f0(void);
 void __cdecl core_game_cpp_drawCursor_FUN_004c4a10(void);
-void core_game_cpp_FUN_004c4a60(void *param_1,char *param_2,int param_3,uint param_4);
-void core_game_cpp_FUN_004c4bc0(int param_1);
-void core_game_cpp_FUN_004c4cc0(int param_1);
+void __cdecl core_game_cpp_CGame_playMusic_FUN_004c4a60(CGame *this_ptr,char *music_name,double start_position);
+void __cdecl core_game_cpp_CGame_updateMusic_FUN_004c4bc0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_saveMusicPosition_FUN_004c4cc0(CGame *this_ptr);
 void core_game_cpp_FUN_004c4d10(int param_1);
-undefined4 core_game_cpp_FUN_004c4d50(int param_1);
+CWeapon * __cdecl core_game_cpp_getSelectedWeapon_FUN_004c4d50(CInventory *inventory_ptr);
 CAlphaBitmap * __cdecl core_game_cpp_CAlphaBitmap_arrdtor8_FUN_004c4d60(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl core_gargoyle_cpp_staticInit_FUN_004c4d80(void);
 CGargoyle * __cdecl core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void);

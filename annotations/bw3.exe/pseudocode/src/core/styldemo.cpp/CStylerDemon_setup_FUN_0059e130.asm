@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
-;   core_charactr.cpp_FUN_0042f280
+;   core_charactr.cpp_preloadEtherealTextures_FUN_0042f280
 ;   core_enemy.cpp_CEnemy_setup_FUN_00489110
 ;   core_morph.cpp_CMorph_getReady_FUN_004fac10
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_004fa9c0
@@ -64,16 +64,16 @@ section .text
         ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0059e16a
     PUSH 0x2                            ; 0059e16d
-    CALL core_charactr.cpp_FUN_0042f280 ; 0059e16f
-        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042f280()
+    CALL core_charactr.cpp_preloadEtherealTextures_FUN_0042f280 ; 0059e16f
+        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_preloadEtherealTextures_FUN_0042f280(int ethereal_type)
     ADD ESP,0x4                         ; 0059e174
     PUSH 0x4                            ; 0059e177
-    CALL core_charactr.cpp_FUN_0042f280 ; 0059e179
-        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042f280()
+    CALL core_charactr.cpp_preloadEtherealTextures_FUN_0042f280 ; 0059e179
+        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_preloadEtherealTextures_FUN_0042f280(int ethereal_type)
     ADD ESP,0x4                         ; 0059e17e
     PUSH 0x3                            ; 0059e181
-    CALL core_charactr.cpp_FUN_0042f280 ; 0059e183
-        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042f280()
+    CALL core_charactr.cpp_preloadEtherealTextures_FUN_0042f280 ; 0059e183
+        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_preloadEtherealTextures_FUN_0042f280(int ethereal_type)
     ADD ESP,0x4                         ; 0059e188
     PUSH EDI                            ; 0059e18b
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0 ; 0059e18c

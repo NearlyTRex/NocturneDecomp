@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50
-;   core_thehand.cpp_FUN_00599be0
+;   core_thehand.cpp_CTheHand_getHandBoneMatrix_FUN_00599be0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_getTranslation_FUN_005b6270
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005b72c0
@@ -63,8 +63,8 @@ section .text
     PUSH EBX                            ; 00599a8e
     LEA ESI,[ESP + 0x40]                ; 00599a8f
     LEA EDI,[ESP + 0x100]               ; 00599a93
-    CALL core_thehand.cpp_FUN_00599be0  ; 00599a9a
-        ;   XREF to: 00599be0 (UNCONDITIONAL_CALL)  ; undefined core_thehand.cpp_FUN_00599be0()
+    CALL core_thehand.cpp_CTheHand_getHandBoneMatrix_FUN_00599be0 ; 00599a9a
+        ;   XREF to: 00599be0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_thehand.cpp_CTheHand_getHandBoneMatrix_FUN_00599be0(CTheHand * this_ptr, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 00599a9f
     ADD ESP,0x4                         ; 00599aa4
     LEA EAX,[ESP + 0xfc]                ; 00599aa7

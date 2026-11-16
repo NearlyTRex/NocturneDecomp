@@ -49,7 +49,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
-;   core_set.cpp_FUN_00537320
+;   core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00537320
 ;
 ; *****************************************************************************
 
@@ -186,8 +186,8 @@ section .text
     PUSH 0x7e2af0                       ; 0042f695 | DAT_007e2af0
     MOV EDX,dword ptr [0x00603b28]      ; 0042f69a | g_CDemonSetPtr
     PUSH EDX                            ; 0042f6a0 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00537320      ; 0042f6a1
-        ;   XREF to: 00537320 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00537320()
+    CALL core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00537320 ; 0042f6a1
+        ;   XREF to: 00537320 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00537320(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 0042f6a6
     CMP dword ptr [EBX + 0x33a0],0x0    ; 0042f6a9
         ;   Label: LAB_0042f6a9

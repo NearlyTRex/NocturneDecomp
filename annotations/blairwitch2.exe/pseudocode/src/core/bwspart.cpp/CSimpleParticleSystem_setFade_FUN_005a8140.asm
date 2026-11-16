@@ -10,7 +10,7 @@
 ; float            Stack[0x10]:4   fade_duration
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040cea0 at 0040cec7
+;   core_actor.cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0 at 0040cec7
 ;
 ; *****************************************************************************
 

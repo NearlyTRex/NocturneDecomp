@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 425,
-    "complexity_score": 589,
+    "complexity_score": 590,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 234,
+    "pseudocode_lines": 235,
     "suspect_count": 32,
     "suspect_types": [
       "pointer_truncation",
@@ -18,7 +18,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 659
+    "total_lines": 660
   },
   "cross_references": [
     {
@@ -110,7 +110,7 @@
     {
       "addr": "004ab2b0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab2b0"
+      "name": "engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0"
     },
     {
       "addr": "0055b1f0",
@@ -588,10 +588,10 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 217,
+      "line": 218,
       "match": "&stack0xfffffaa4",
       "severity": "moderate",
-      "text": "iVar3 = engine_font_cpp_FUN_004ab2b0(local_2c,&stack0xfffffaa4,0x1cb2520,0x14,0x100,0xc0);",
+      "text": "(local_2c,&stack0xfffffaa4,(char *)0x1cb2520,0x14,0x100,0xc0);",
       "type": "stack_ref"
     },
     {

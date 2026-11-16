@@ -25,9 +25,9 @@ void __cdecl CWeapon::setup(CWeapon *this_ptr);
 // Address: 0057af80
 int __cdecl CWeapon::renderOpaque(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057b030
+// Original: core_weapon.cpp_CWeapon_setRenderAlpha_FUN_0057b030
 // Address: 0057b030
-void FUN_0057b030(int param_1,undefined4 param_2);
+void __cdecl CWeapon::setRenderAlpha(CWeapon *this_ptr,int alpha);
 
 // Original: core_weapon.cpp_CWeapon_renderTransparent_FUN_0057b040
 // Address: 0057b040

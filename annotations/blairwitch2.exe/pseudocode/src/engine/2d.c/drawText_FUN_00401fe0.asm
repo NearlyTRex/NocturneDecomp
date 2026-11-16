@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   y
 ;
 ; XREF[22]:
-;   core_basicene.cpp_FUN_0059fae0 at 0059fbe8
+;   core_basicene.cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0 at 0059fbe8
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 at 004259e6
 ;   core_event.cpp_CEventList_render_FUN_0048e490 at 0048e4e0
 ;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5711

@@ -7,7 +7,7 @@
 ; CZombieDemon *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_0058ced0 at 0058cee3
+;   core_zombie.cpp_factoryFuncZombieDemon_FUN_0058ced0 at 0058cee3
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0

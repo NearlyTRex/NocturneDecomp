@@ -17,8 +17,8 @@
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00480200 at 00480377
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80 at 00480190
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 at 0047f397
-;   shape_edittool.cpp_FUN_0047b980 at 0047b9a4
 ;   shape_edittool.cpp_draw3DBorder_FUN_004850a0 at 0048524c
+;   shape_edittool.cpp_draw3DInsetBorder_FUN_004852f0 at 0048536c
 ;   ... and 1 more
 ;
 ; Referenced Globals:

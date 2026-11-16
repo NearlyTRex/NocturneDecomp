@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 690,
-    "complexity_score": 564,
+    "complexity_score": 549,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 56,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 224,
-    "suspect_count": 31,
+    "suspect_count": 30,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -41,19 +40,19 @@
   },
   "function_calls": [
     {
-      "addr": "004b9e30",
+      "addr": "004ba540",
       "is_variadic": false,
-      "name": "core_flashlit.cpp_FUN_004b9e30"
+      "name": "core_flashlit.cpp_hitTestPageArrows_FUN_004ba540"
     },
     {
       "addr": "004ba490",
       "is_variadic": false,
-      "name": "core_flashlit.cpp_FUN_004ba490"
+      "name": "core_flashlit.cpp_hitTestSectionTab_FUN_004ba490"
     },
     {
-      "addr": "004ba540",
+      "addr": "004b9e30",
       "is_variadic": false,
-      "name": "core_flashlit.cpp_FUN_004ba540"
+      "name": "core_flashlit.cpp_updateTooltip_FUN_004b9e30"
     },
     {
       "addr": "004bc130",
@@ -775,7 +774,7 @@
       "line": 183,
       "match": "(code **)((int)pSVar2",
       "severity": "moderate",
-      "text": "(iVar5 = (**(code **)((int)pSVar2->vtable + 8))",
+      "text": "(iVar4 = (**(code **)((int)pSVar2->vtable + 8))",
       "type": "pointer_cast"
     },
     {
@@ -783,7 +782,7 @@
       "line": 183,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar5 = (**(code **)((int)pSVar2->vtable + 8))",
+      "text": "(iVar4 = (**(code **)((int)pSVar2->vtable + 8))",
       "type": "unresolved_funcptr"
     },
     {
@@ -791,7 +790,7 @@
       "line": 201,
       "match": "DAT_005e02c5",
       "severity": "mild",
-      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005e02c5);",
+      "text": "text = support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005e02c5);",
       "type": "undefined_data"
     },
     {
@@ -847,16 +846,8 @@
       "line": 183,
       "match": "(int)pSVar2->vtable",
       "severity": "moderate",
-      "text": "(iVar5 = (**(code **)((int)pSVar2->vtable + 8))",
+      "text": "(iVar4 = (**(code **)((int)pSVar2->vtable + 8))",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex literal 0x1cc44b4 matches address of SNotesSection_ARRAY_01cc4474 (+64 bytes into) (type SNotesSection[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 173,
-      "match": "0x1cc44b4",
-      "severity": "moderate",
-      "text": "core_flashlit_cpp_FUN_004b9e30(iVar5 * 0x2e4 + 0x1cc44b4);",
-      "type": "raw_address_constant"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

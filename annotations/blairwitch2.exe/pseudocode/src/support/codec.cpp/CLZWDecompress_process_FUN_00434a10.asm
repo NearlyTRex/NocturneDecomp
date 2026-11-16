@@ -12,7 +12,7 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc2a4
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00434490
+;   support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_00434490
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
         ;   Label: LAB_00434a40
     PUSH EDI                            ; 00434a41
     PUSH ESI                            ; 00434a42
-    CALL support_codec.cpp_FUN_00434490 ; 00434a43
-        ;   XREF to: 00434490 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434490()
+    CALL support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_00434490 ; 00434a43
+        ;   XREF to: 00434490 (UNCONDITIONAL_CALL)  ; uint support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_00434490(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, void * istream)
     ADD ESP,0xc                         ; 00434a48
     TEST EAX,EAX                        ; 00434a4b
     JL 0x00434a54                       ; 00434a4d

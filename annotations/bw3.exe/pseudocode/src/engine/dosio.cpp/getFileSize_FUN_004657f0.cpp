@@ -12,7 +12,7 @@ int __cdecl engine_dosio_cpp_getFileSize_FUN_004657f0(char *directory,char *file
   int iVar1;
   SFoundFileInfo local_214;
   
-  engine_dosio_cpp_FUN_00465660(&local_214,directory,filename);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00465660(local_214.found_path,directory,filename);
   iVar1 = engine_dosio_cpp_findFile_FUN_004656d0(&local_214);
   if (iVar1 != 0) {
     return local_214.file_size;

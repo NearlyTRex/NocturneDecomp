@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_weapon.cpp_CWeapon_fire_FUN_0058a290 at 0058a29c
-;   core_weapon.cpp_FUN_0058a5f0 at 0058a601
+;   core_weapon.cpp_CWeapon_isSimulating_FUN_0058a5f0 at 0058a601
 ;
 ; *****************************************************************************
 

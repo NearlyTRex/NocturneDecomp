@@ -19,11 +19,11 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[19]:
-;   core_confedrt.cpp_FUN_005a1030 at 005a1090
-;   core_confedrt.cpp_FUN_005a1180 at 005a11d2
+;   core_confedrt.cpp_CConfederate_processMeleeAttackState_FUN_005a1180 at 005a11d2
+;   core_confedrt.cpp_CConfederate_processRangeAttackState_FUN_005a1030 at 005a1090
 ;   core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130 at 005a215c
 ;   core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40 at 005a2026
-;   core_fforest.cpp_FUN_005a2ac0 at 005a2af8
+;   core_fforest.cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0 at 005a2af8
 ;   core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580 at 005a95d4
 ;   core_hand.cpp_CHand_processMeleeAttackState_FUN_005a9ed0 at 005a9f05
 ;   core_hand.cpp_CHand_processSleepingState_FUN_005a9ff0 at 005aa0fa

@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046bd93
-;   core_event.cpp_FUN_004a1d00 at 004a3a44
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a3a44
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 005881b3
 ;
 ; Called Functions:

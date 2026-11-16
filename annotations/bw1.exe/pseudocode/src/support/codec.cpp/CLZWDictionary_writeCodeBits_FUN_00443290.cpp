@@ -13,7 +13,7 @@ void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_00443290(CLZWDic
   int iVar2;
   uint uVar3;
   
-  iVar1 = support_codec_cpp_FUN_004427a0(bit_buffer,ostream);
+  iVar1 = support_codec_cpp_writeWholeBytesToStream_FUN_004427a0(bit_buffer,ostream);
   if (-1 < iVar1) {
     iVar1 = this_ptr->entry_count;
     uVar3 = 1 << ((char)this_ptr->current_num_bits - 1U & 0x1f);

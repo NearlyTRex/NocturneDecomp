@@ -71,7 +71,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
     this_ptr->flinch_active = 0;
     pfVar3 = &this_ptr->burn_timer;
     for (; iStack_20 < this_ptr->skeleton->bone_count; iStack_20 = iStack_20 + 1) {
-      iVar1 = core_bwgrndma_cpp_FUN_005a7ed0();
+      iVar1 = core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0();
       if (iVar1 != 0) {
         pcVar2 = strstr
                            (this_ptr->skeleton->bone_list[0].bone_name + iStack_24,"Bip01")
@@ -163,6 +163,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
     return;
   }
   this_ptr->burn_timer = 0.0;
-  core_muzzle_cpp_FUN_0059d880(&this_ptr->state_machine,"BurnComplete");
+  core_muzzle_cpp_SStateMachine_setNextRefState_FUN_0059d880
+            (&this_ptr->state_machine,"BurnComplete");
   return;
 }

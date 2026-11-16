@@ -19,7 +19,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_wsock32.c_WSAStartup
 ;   wincore_winrun.cpp_createMutex_FUN_00581920
-;   wincore_winrun.cpp_FUN_00581c70
+;   wincore_winrun.cpp_outputDebugString_FUN_00581c70
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     SUB ESP,0x190                       ; 00571ea0
         ;   Label: support_trisock.cpp_startupWinsock_FUN_00571ea0
     PUSH 0x5d6dc0                       ; 00571ea6 | = "initSockets\n"
-    CALL wincore_winrun.cpp_FUN_00581c70 ; 00571eab
-        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00581c70()
+    CALL wincore_winrun.cpp_outputDebugString_FUN_00581c70 ; 00571eab
+        ;   XREF to: 00581c70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_00581c70(LPCSTR message)
     ADD ESP,0x4                         ; 00571eb0
     MOV EAX,ESP                         ; 00571eb3
     PUSH EAX                            ; 00571eb5

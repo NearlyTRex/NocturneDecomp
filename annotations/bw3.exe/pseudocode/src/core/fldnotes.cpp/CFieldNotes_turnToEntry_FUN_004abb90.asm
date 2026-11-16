@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   entry_name
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_0048c2e0 at 0049105e
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0049105e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CFieldNotes_turnToEntry_005c16e6

@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_00455d10 at 00455f1a
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00455f1a
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyQuaternion_FUN_00593c60

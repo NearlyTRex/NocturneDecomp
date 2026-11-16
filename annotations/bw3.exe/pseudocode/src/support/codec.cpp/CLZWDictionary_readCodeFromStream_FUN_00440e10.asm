@@ -15,8 +15,8 @@
 ;   support_codec.cpp_CLZWDecompress_process_FUN_00441390 at 004413c3
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00440210
 ;   support_codec.cpp_readBitsFromStream_FUN_004400f0
+;   support_codec.cpp_ungetBits_FUN_00440210
 ;
 ; *****************************************************************************
 
@@ -84,8 +84,8 @@ section .text
     PUSH EBP                            ; 00440e7a
     MOV ECX,dword ptr [ESP + 0x28]      ; 00440e7b
     PUSH ECX                            ; 00440e7f
-    CALL support_codec.cpp_FUN_00440210 ; 00440e80
-        ;   XREF to: 00440210 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00440210()
+    CALL support_codec.cpp_ungetBits_FUN_00440210 ; 00440e80
+        ;   XREF to: 00440210 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_ungetBits_FUN_00440210(SBitBuffer * bit_buffer, int bit_count, uint bits)
     ADD ESP,0xc                         ; 00440e85
     MOV EAX,ESI                         ; 00440e88
     JMP 0x00440e71                      ; 00440e8a
@@ -133,8 +133,8 @@ section .text
     PUSH EBP                            ; 00440ec8
     MOV ECX,dword ptr [ESP + 0x28]      ; 00440ec9
     PUSH ECX                            ; 00440ecd
-    CALL support_codec.cpp_FUN_00440210 ; 00440ece
-        ;   XREF to: 00440210 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00440210()
+    CALL support_codec.cpp_ungetBits_FUN_00440210 ; 00440ece
+        ;   XREF to: 00440210 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_ungetBits_FUN_00440210(SBitBuffer * bit_buffer, int bit_count, uint bits)
     MOV EAX,0xffffffff                  ; 00440ed3
     ADD ESP,0xc                         ; 00440ed8
     ADD ESP,0x8                         ; 00440edb

@@ -29,6 +29,6 @@ float __cdecl angleFromSinCos(double y,double x);
 // Address: 0045b9b0
 CVector3f * __stack_esi CMatrix3x3f::getEulerAngles(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 
-// Original: core_dirmat.cpp_FUN_0045bef0
+// Original: core_dirmat.cpp_sinCos_FUN_0045bef0
 // Address: 0045bef0
-void FUN_0045bef0(float *param_1,float *param_2,float *param_3);
+void __cdecl sinCos(float *sin_out,float *cos_out,float *angle);

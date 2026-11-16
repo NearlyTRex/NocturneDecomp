@@ -14,21 +14,21 @@
   },
   "cross_references": [
     {
+      "addr": "00574e00",
+      "from_addr": "00574e33",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_00574e00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00574ea0",
       "from_addr": "00574ecf",
-      "name": "engine_texture.cpp_FUN_00574ea0",
+      "name": "engine_texture.cpp_storePalettedTexture_FUN_00574ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00574f60",
       "from_addr": "00574f8f",
-      "name": "engine_texture.cpp_FUN_00574f60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00574e00",
-      "from_addr": "00574e33",
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_00574e00",
+      "name": "engine_texture.cpp_storeTrueColorTexture_FUN_00574f60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -69,7 +69,7 @@
       {
         "call_addr": "00574ecf",
         "call_type": "direct",
-        "caller": "engine_texture.cpp_FUN_00574ea0",
+        "caller": "engine_texture.cpp_storePalettedTexture_FUN_00574ea0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -80,7 +80,7 @@
       {
         "call_addr": "00574f8f",
         "call_type": "direct",
-        "caller": "engine_texture.cpp_FUN_00574f60",
+        "caller": "engine_texture.cpp_storeTrueColorTexture_FUN_00574f60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -39,8 +39,8 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_isOfClass_FUN_0040c840
-;   core_ammo.cpp_FUN_0040e450
-;   core_doc.cpp_FUN_0045d260
+;   core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450
+;   core_doc.cpp_CDoc_startReload_FUN_0045d260
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
 ;   core_health.cpp_CHealthItem_useItem_FUN_004cdf90
@@ -171,8 +171,8 @@ section .text
     PUSH ESI                            ; 004dc9f5
     MOV EDI,dword ptr [EBP + -0x4]      ; 004dc9f6
     PUSH EDI                            ; 004dc9f9
-    CALL core_ammo.cpp_FUN_0040e450     ; 004dc9fa
-        ;   XREF to: 0040e450 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_FUN_0040e450()
+    CALL core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450 ; 004dc9fa
+        ;   XREF to: 0040e450 (UNCONDITIONAL_CALL)  ; int core_ammo.cpp_CAmmo_consumeForReload_FUN_0040e450(CAmmo * this_ptr, CDoc * hero)
     ADD ESP,0x8                         ; 004dc9ff
     CMP EAX,0x1                         ; 004dca02
     JNZ 0x004dca5a                      ; 004dca05
@@ -193,8 +193,8 @@ section .text
     JZ 0x004dca4e                       ; 004dca43
         ;   XREF to: 004dca4e (CONDITIONAL_JUMP)  ; LAB_004dca4e
     PUSH EAX                            ; 004dca45
-    CALL core_doc.cpp_FUN_0045d260      ; 004dca46
-        ;   XREF to: 0045d260 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045d260()
+    CALL core_doc.cpp_CDoc_startReload_FUN_0045d260 ; 004dca46
+        ;   XREF to: 0045d260 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_startReload_FUN_0045d260(CDoc * this_ptr)
     ADD ESP,0x4                         ; 004dca4b
     MOV EAX,dword ptr [EBP + -0x4]      ; 004dca4e
         ;   Label: LAB_004dca4e

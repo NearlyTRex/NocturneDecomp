@@ -409,7 +409,7 @@ void __cdecl core_doc_cpp_CDoc_processFrame_FUN_00469550(CDoc *this_ptr,float de
     }
   }
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00435320(this_ptr);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320((CCharacter *)this_ptr,delta_time);
   if ((this_ptr->base).nearby_interactive_actor == (CDemonActor *)0x0) {
     fVar10 = this_ptr->interact_blend - delta_time * (float)_DAT_005d9d7c * (float)_DAT_005d9d7c;
     this_ptr->interact_blend = fVar10;
@@ -1320,7 +1320,7 @@ LAB_0046a09c:
     (this_ptr->left_arm_aim).recoil_timer = 0.0;
   }
   if (iStack_18 != 0) {
-    core_doc_cpp_FUN_00474ef0();
+    core_doc_cpp_CDoc_handleActionButton_FUN_00474ef0(this_ptr);
   }
   core_doc_cpp_CDoc_updateProceduralAnimation_FUN_0046caa0(this_ptr);
   if ((((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (this_ptr->weapon != (CWeapon *)0x0)) &&
@@ -1332,7 +1332,7 @@ LAB_0046a09c:
     core_doc_cpp_CDoc_updateProceduralAnimation_FUN_0046caa0(this_ptr);
   }
   core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(this_ptr,delta_time,iStack_1c);
-  core_doc_cpp_FUN_00476080();
+  core_doc_cpp_CDoc_updateClothSimulation_FUN_00476080(this_ptr);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,delta_time);
   pCVar2 = &(this_ptr->base).base.model;
   fVar10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_00524a40(&pCVar2->base,0x11);
@@ -1382,17 +1382,17 @@ LAB_0046a09c:
   core_doc_cpp_CDoc_updateWeaponPosition_FUN_0046f610(this_ptr,0);
   core_doc_cpp_CDoc_autoAimAtThreat_FUN_004724a0(this_ptr,0,delta_time);
   core_doc_cpp_CDoc_autoAimAtThreat_FUN_004724a0(this_ptr,1,delta_time);
-  core_doc_cpp_FUN_00475920(this_ptr);
+  core_doc_cpp_CDoc_handleFireButton_FUN_00475920(this_ptr,delta_time);
   core_inv_cpp_CInventory_updateInventory_FUN_004f9f10(&(this_ptr->base).inventory);
-  core_doc_cpp_FUN_00476150(this_ptr);
+  core_doc_cpp_CDoc_processWeaponTick_FUN_00476150(this_ptr,delta_time);
   if (iStack_18 == 0) {
-    core_hero_cpp_FUN_004eb5b0();
+    core_hero_cpp_CHero_clearHeroAction_FUN_004eb5b0(&this_ptr->base);
   }
   else {
     fVar10 = (this_ptr->base).hero_action_range + delta_time;
     (this_ptr->base).hero_action_range = fVar10;
     if ((float)_DAT_005d9dbc < fVar10) {
-      core_hero_cpp_FUN_004eca10(this_ptr);
+      core_hero_cpp_CHero_findHeroAction_FUN_004eca10(&this_ptr->base,1);
     }
   }
   if ((this_ptr->weapon != (CWeapon *)0x0) && ((this_ptr->weapon->base).is_transparent != 0)) {

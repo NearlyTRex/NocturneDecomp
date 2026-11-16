@@ -27,9 +27,9 @@
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d540 at 0041d6d5
 ;   core_colonel.cpp_CColonel_process_FUN_00444550 at 0044484c
 ;   core_construc.cpp_CConstruct_explode_FUN_004472a0 at 0044743a
-;   core_construc.cpp_FUN_00447560 at 00447595
+;   core_construc.cpp_CConstruct_startRecombine_FUN_00447560 at 00447595
 ;   core_conveyor.cpp_CConveyor_setup_FUN_00447810 at 0044784b
-;   core_djien.cpp_FUN_00460cb0 at 00460e11
+;   core_djien.cpp_CDjien_blowApart_FUN_00460cb0 at 00460e11
 ;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046d42e
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8a0b
 ;   ... and 7 more
@@ -38,7 +38,7 @@
 ;   undefined4 DAT_005fa1bc
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045fd80
+;   core_dirmat.cpp_sinCos_FUN_0045fd80
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 005b7eed
     PUSH EAX                            ; 005b7ef1
     FSTP float ptr [ESP + 0x30]         ; 005b7ef2
-    CALL core_dirmat.cpp_FUN_0045fd80   ; 005b7ef6
-        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045fd80()
+    CALL core_dirmat.cpp_sinCos_FUN_0045fd80 ; 005b7ef6
+        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045fd80(float * sin_out, float * cos_out, float * angle)
     FLD float ptr [ESI + 0x8]           ; 005b7efb
     LEA EAX,[ESP + 0x40]                ; 005b7efe
     ADD ESP,0xc                         ; 005b7f02
@@ -71,8 +71,8 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 005b7f11
     PUSH EAX                            ; 005b7f15
     FSTP float ptr [ESP + 0x40]         ; 005b7f16
-    CALL core_dirmat.cpp_FUN_0045fd80   ; 005b7f1a
-        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045fd80()
+    CALL core_dirmat.cpp_sinCos_FUN_0045fd80 ; 005b7f1a
+        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045fd80(float * sin_out, float * cos_out, float * angle)
     FLD float ptr [ESI + 0x4]           ; 005b7f1f
     LEA EAX,[ESP + 0x38]                ; 005b7f22
     ADD ESP,0xc                         ; 005b7f26
@@ -83,8 +83,8 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 005b7f35
     PUSH EAX                            ; 005b7f39
     FSTP float ptr [ESP + 0x38]         ; 005b7f3a
-    CALL core_dirmat.cpp_FUN_0045fd80   ; 005b7f3e
-        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045fd80()
+    CALL core_dirmat.cpp_sinCos_FUN_0045fd80 ; 005b7f3e
+        ;   XREF to: 0045fd80 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045fd80(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 005b7f43
     FLD float ptr [ESP + 0x1c]          ; 005b7f46
     FMUL float ptr [ESP + 0x18]         ; 005b7f4a

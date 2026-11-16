@@ -36,11 +36,11 @@
 ;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e1a0
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
-;   core_charactr.cpp_FUN_0042d700
 ;   ... and 34 more
 ;
 ; *****************************************************************************
@@ -264,8 +264,8 @@ section .text
     FADD float ptr [EBP + 0x66]         ; 004c6870
     PUSH EBX                            ; 004c6873
     FSTP float ptr [EBP + 0x66]         ; 004c6874
-    CALL core_charactr.cpp_FUN_00435320 ; 004c6877
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 004c6877
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004c687c
     FLD float ptr [EBP + 0x92]          ; 004c687f
         ;   Label: LAB_004c687f
@@ -1411,8 +1411,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004c759f
         ;   Label: LAB_004c759f
     PUSH EBX                            ; 004c75a5
-    CALL core_charactr.cpp_FUN_0042d700 ; 004c75a6
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 004c75a6
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x2518]              ; 004c75ab
     FLD float ptr [EAX]                 ; 004c75b1
     FMUL float ptr [EBP + 0x92]         ; 004c75b3

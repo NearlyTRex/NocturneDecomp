@@ -20,7 +20,7 @@
 ;   core_kedward.cpp_CKedward_renderTransparent_FUN_00591680 at 005917b6
 ;   core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710 at 00593896
 ;   core_npc.cpp_CNPC_renderTransparent_FUN_005095f0 at 0050974f
-;   core_shadow.cpp_FUN_00545710 at 0054588b
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_00545710 at 0054588b
 ;   ... and 2 more
 ;
 ; Called Functions:

@@ -239,7 +239,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_p
         rect = rect + 1;
       } while (iVar3 < _DAT_01fc8e84);
     }
-    core_dcamera_cpp_FUN_0043d770
+    core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0043d770
               (&g_CDemonCameraInstance,&this_ptr->directional_light_dir,
                this_ptr->directional_light_intensity);
   }

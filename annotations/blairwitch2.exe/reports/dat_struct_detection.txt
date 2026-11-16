@@ -54,14 +54,14 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x61b190                       ; 0050fabf | DAT_0061b190
 
   DAT_005fe2f0  value=0x5FE2F0 (6284016)  refs=5
+    CDoc_applyArmAimRotation
+      PUSH 0x5fe2f0                       ; 004564e0 | DAT_005fe2f0
+    CDoc_updateLantern
+      PUSH 0x5fe2f0                       ; 00455f2f | DAT_005fe2f0
     CScat_blendAimBones
       PUSH 0x5fe2f0                       ; 005202a6 | DAT_005fe2f0
     CStranger_applyArmAimRotation
       PUSH 0x5fe2f0                       ; 0056818e | DAT_005fe2f0
-    FUN_00455d10
-      PUSH 0x5fe2f0                       ; 00455f2f | DAT_005fe2f0
-    FUN_004562a0
-      PUSH 0x5fe2f0                       ; 004564e0 | DAT_005fe2f0
 
   DAT_007bdadc  value=0x7BDADC (8116956)  refs=3
     CCharacter_renderAttachedModels
@@ -192,7 +192,7 @@ Consider removing the Ghidra label and leaving the raw number.
       MOV EAX,0x7bcc4c                    ; 0041cf50 | DAT_007bcc4c
 
   DAT_0061ec00  value=0x61EC00 (6417408)  refs=1
-    FUN_005a86a0
+    renderSimpleParticle
       ADD EAX,0x61ec00                    ; 005a895c | DAT_0061ec00
 
   DAT_007bdb54  value=0x7BDB54 (8117076)  refs=1
@@ -219,13 +219,13 @@ Consider removing the Ghidra label and leaving the raw number.
     CCharacter_renderEthereal
       ADD EAX,0x609a10                    ; 004267c9 | DAT_00609a10
 
+  DAT_00609ae4  value=0x609AE4 (6331108)  refs=1
+    CCharacter_renderEyeGlow
+      PUSH 0x609ae4                       ; 0042bde2 | DAT_00609ae4
+
   DAT_007bda98  value=0x7BDA98 (8116888)  refs=1
     CCharacter_renderTransparent
       PUSH 0x7bda98                       ; 00426937 | DAT_007bda98
-
-  DAT_00609ae4  value=0x609AE4 (6331108)  refs=1
-    FUN_0042b760
-      PUSH 0x609ae4                       ; 0042bde2 | DAT_00609ae4
 
   DAT_00622044  value=0x622044 (6430788)  refs=1
     CCrater_render
@@ -319,6 +319,10 @@ Consider removing the Ghidra label and leaving the raw number.
     CFlame_renderTransparent
       PUSH 0x615ae8                       ; 004a010a | DAT_00615ae8
 
+  DAT_006164ac  value=0x6164AC (6382764)  refs=1
+    CGame_renderAlphaFade
+      ADD EAX,0x6164ac                    ; 004bb78a | DAT_006164ac
+
   DAT_005d8427  value=0x5D8427 (6128679)  refs=1
     CGame_saveGame
       PUSH 0x5d8427                       ; 004bb9fd | DAT_005d8427
@@ -334,10 +338,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005d8434  value=0x5D8434 (6128692)  refs=1
     CGame_saveGame
       PUSH 0x5d8434                       ; 004bbe58 | DAT_005d8434
-
-  DAT_006164ac  value=0x6164AC (6382764)  refs=1
-    FUN_004bb620
-      ADD EAX,0x6164ac                    ; 004bb78a | DAT_006164ac
 
   DAT_005f8274  value=0x5F8274 (6259316)  refs=1
     CHero_dtor
@@ -1066,7 +1066,7 @@ MEDIUM CONFIDENCE (138 clusters)
       0x0061c780  DAT_0061c780  undefined4
       0x0061c784  DAT_0061c784  undefined4
       0x0061c788  DAT_0061c788  undefined4
-      0x0061c78c  DAT_0061c78c  undefined8 [short]
+      0x0061c78c  DAT_0061c78c  undefined8 [double]
       0x0061c794  DAT_0061c794  undefined4 [double]
       0x0061c7d8  DAT_0061c7d8  undefined4
       ... +30 more

@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_enemy.cpp_FUN_00489c90
+;   core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90
 ;   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0054f7f0
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     RET                                 ; 0042ffc8
     PUSH EAX                            ; 0042ffc9
         ;   Label: LAB_0042ffc9
-    CALL core_enemy.cpp_FUN_00489c90    ; 0042ffca
-        ;   XREF to: 00489c90 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_00489c90()
+    CALL core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90 ; 0042ffca
+        ;   XREF to: 00489c90 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0042ffcf
     MOV dword ptr [EBX + 0x70],0x2      ; 0042ffd2
     POP EBX                             ; 0042ffd9

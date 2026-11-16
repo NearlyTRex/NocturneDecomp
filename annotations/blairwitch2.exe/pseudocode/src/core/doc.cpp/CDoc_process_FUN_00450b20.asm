@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
-;   core_charactr.cpp_FUN_0042b5e0
+;   core_charactr.cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0
 ;   core_doc.cpp_CDoc_processFrame_FUN_00450c60
 ;   core_game.cpp_CGame_slamDT_FUN_004bd460
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
@@ -92,8 +92,8 @@ section .text
         ;   Label: LAB_00450bc2
     PUSH dword ptr [ESP + 0x18]         ; 00450bc3
     PUSH EBX                            ; 00450bc7
-    CALL core_charactr.cpp_FUN_0042b5e0 ; 00450bc8
-        ;   XREF to: 0042b5e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b5e0()
+    CALL core_charactr.cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0 ; 00450bc8
+        ;   XREF to: 0042b5e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0(CCharacter * this_ptr, float delta_time)
     MOV EAX,[0x00616494]                ; 00450bcd | g_CGamePtr
     ADD ESP,0x8                         ; 00450bd2
     FLD float ptr [EAX + 0x284]         ; 00450bd5 | g_CGameInstance.delta_time_float

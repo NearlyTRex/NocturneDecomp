@@ -1,0 +1,107 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 77,
+    "complexity_score": 30,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 107
+  },
+  "cross_references": [
+    {
+      "addr": "00518cd0",
+      "from_addr": "00519c97",
+      "name": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00526cf0",
+    "address_range": [
+      [
+        "00526cf0",
+        "00526db1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_prye.cpp_CPrye_updateClothSimulation_FUN_00526cf0",
+    "signature": "void __cdecl core_prye_cpp_CPrye_updateClothSimulation_FUN_00526cf0(CPrye *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fc070",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00519c97",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.676923076923077,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 59,
+      "INT_ADD": 39,
+      "INT_AND": 34,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 36,
+      "INT_LESS": 9,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 17,
+      "INT_SUB": 16,
+      "INT_XOR": 2,
+      "LOAD": 22,
+      "POPCOUNT": 17,
+      "RETURN": 3,
+      "STORE": 19
+    },
+    "pcode_op_count": 304
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPrye *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -29,13 +29,13 @@ void __cdecl CSpawner::setup(CSpawner *this_ptr);
 // Address: 00563970
 void __cdecl CSpawner::process(CSpawner *this_ptr,float param_2);
 
-// Original: core_spawner.cpp_FUN_00563e40
+// Original: core_spawner.cpp_CSpawner_renderOpaque_FUN_00563e40
 // Address: 00563e40
-undefined4 FUN_00563e40(void);
+int __cdecl CSpawner::renderOpaque(CSpawner *this_ptr);
 
-// Original: core_spawner.cpp_FUN_00563e50
+// Original: core_spawner.cpp_CSpawner_archive_FUN_00563e50
 // Address: 00563e50
-void FUN_00563e50(CDemonActor *param_1);
+void __cdecl CSpawner::archive(CSpawner *this_ptr);
 
 // Original: core_spawner.cpp_CSpawner_dtor_FUN_00563f70
 // Address: 00563f70

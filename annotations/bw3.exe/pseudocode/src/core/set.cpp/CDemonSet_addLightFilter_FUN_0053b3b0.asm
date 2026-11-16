@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 0049399e
-;   core_event.cpp_FUN_0048c2e0 at 0048cbe1
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048cbe1
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052b497
 ;
 ; Referenced Globals:

@@ -79,7 +79,7 @@
 ;   core_motion.cpp_CMotionController_advance_FUN_004fbb70
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_prye.cpp_CPrye_processPickupComplete_FUN_00520d20
+;   core_prye.cpp_CPrye_dropRightHandObject_FUN_00520da0
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -189,8 +189,8 @@ section .text
     PUSH EBX                            ; 0051b67e
         ;   Label: LAB_0051b67e
     MOV ESI,dword ptr [EBX + 0x2628]    ; 0051b67f
-    CALL core_prye.cpp_FUN_00520da0     ; 0051b685
-        ;   XREF to: 00520da0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00520da0()
+    CALL core_prye.cpp_CPrye_dropRightHandObject_FUN_00520da0 ; 0051b685
+        ;   XREF to: 00520da0 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_dropRightHandObject_FUN_00520da0(CPrye * this_ptr)
     MOV EDI,dword ptr [EBX + 0x20b64]   ; 0051b68a
     ADD ESP,0x4                         ; 0051b690
     CMP EDI,0x2                         ; 0051b693

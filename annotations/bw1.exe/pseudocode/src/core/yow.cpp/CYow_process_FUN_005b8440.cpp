@@ -101,7 +101,8 @@ void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float param_2
   iVar6 = pSVar8->state_index;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iStack_20 = iVar6;
-  core_charactr_cpp_FUN_00435320(this_ptr,param_2 * fVar13);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320((CCharacter *)this_ptr,param_2 * fVar13)
+  ;
   if (iVar6 == 8) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005fa324;
   }
@@ -419,7 +420,7 @@ switchD_005b8e99_caseD_4:
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
                 (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
-    core_charactr_cpp_FUN_0042d700(this_ptr,param_2);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,param_2);
     fStack_e4 = (this_ptr->base).base.velocity.x * param_2;
     afStack_e0[0] = (this_ptr->base).base.velocity.y * param_2;
     afStack_e0[1] = (this_ptr->base).base.velocity.z * param_2;

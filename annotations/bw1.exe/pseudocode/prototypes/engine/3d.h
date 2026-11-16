@@ -61,9 +61,9 @@ SMRGLHeaderExtended * __cdecl renderPolygonTexturedLitOp7(SMRGLHeaderPrimitive *
 // Address: 00403d30
 SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedWrappedOp8(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_FUN_00403dd0
+// Original: engine_3d.c_skipOldFuncOp_FUN_00403dd0
 // Address: 00403dd0
-undefined4 FUN_00403dd0(void);
+SMRGLHeaderExtended * __cdecl skipOldFuncOp(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_processPolygonColor_FUN_00403de0
 // Address: 00403de0

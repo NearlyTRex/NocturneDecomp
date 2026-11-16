@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60
-;   core_spireagl.cpp_FUN_00599c80
+;   core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5d9a15                       ; 00599db5 | DAT_005d9a15
     PUSH ESI                            ; 00599dba
         ;   Label: LAB_00599dba
-    CALL core_spireagl.cpp_FUN_00599c80 ; 00599dbb
-        ;   XREF to: 00599c80 (UNCONDITIONAL_CALL)  ; undefined core_spireagl.cpp_FUN_00599c80()
+    CALL core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80 ; 00599dbb
+        ;   XREF to: 00599c80 (UNCONDITIONAL_CALL)  ; int core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80(CMotionController * controller, char * motion_name)
     ADD ESP,0x8                         ; 00599dc0
     PUSH EDI                            ; 00599dc3
         ;   Label: LAB_00599dc3

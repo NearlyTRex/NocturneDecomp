@@ -45,9 +45,9 @@ void __cdecl CAlphaBitmap::initPalette(CAlphaBitmap *this_ptr);
 // Address: 0040dbb0
 void __cdecl CAlphaBitmap::fillOpa(CAlphaBitmap *this_ptr,int value);
 
-// Original: engine_alphabit.cpp_FUN_0040dbe0
+// Original: engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040dbe0
 // Address: 0040dbe0
-void FUN_0040dbe0(CAlphaBitmap *param_1);
+void __cdecl CAlphaBitmap::displayFullScreen(CAlphaBitmap *this_ptr);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_arrdtor5_FUN_004144e0
 // Address: 004144e0

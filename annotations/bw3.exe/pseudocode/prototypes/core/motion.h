@@ -49,9 +49,9 @@ SMotion * __cdecl CMotionController::getCurrentMotion(CMotionController *this_pt
 // Address: 004fc090
 void __cdecl CMotionController::reset(CMotionController *this_ptr);
 
-// Original: core_motion.cpp_FUN_004fc0c0
+// Original: core_motion.cpp_CMotionController_getStateIndex_FUN_004fc0c0
 // Address: 004fc0c0
-undefined4 FUN_004fc0c0(int param_1);
+int __cdecl CMotionController::getStateIndex(CMotionController *this_ptr);
 
 // Original: core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 // Address: 004fc0d0
@@ -73,9 +73,9 @@ int __cdecl CMotionController::findPatchToFrame(CMotionController *this_ptr,int 
 // Address: 004fc280
 void __cdecl CMotionController::setMotionList(CMotionController *this_ptr,CMotionList *motion_list);
 
-// Original: core_motion.cpp_FUN_004fc2c0
+// Original: core_motion.cpp_CMotionController_detachMotionList_FUN_004fc2c0
 // Address: 004fc2c0
-void FUN_004fc2c0(CMotionController *param_1);
+void __cdecl CMotionController::detachMotionList(CMotionController *this_ptr);
 
 // Original: core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 // Address: 004fc310

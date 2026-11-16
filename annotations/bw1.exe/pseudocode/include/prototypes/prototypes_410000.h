@@ -165,7 +165,7 @@ void __cdecl core_bird_cpp_CBird_renderBackground_FUN_00415660(CBird *this_ptr,i
 int __cdecl core_bird_cpp_CBird_renderOpaque_FUN_00415690(CBird *this_ptr);
 int __cdecl core_bird_cpp_CBird_renderTransparent_FUN_00415730(CBird *this_ptr);
 void __cdecl core_bird_cpp_CBird_archive_FUN_00415780(CBird *this_ptr);
-undefined4 core_bird_cpp_FUN_00415830(CMotionController *param_1,char *param_2);
+int __cdecl core_bird_cpp_setRandomMotionVariant_FUN_00415830(CMotionController *motion_controller,char *motion_name);
 void __cdecl core_bird_cpp_CBird_processDamage_FUN_00415910(CBird *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_bird_cpp_CBird_isInvulnerable_FUN_004159c0(CBird *this_ptr);
 CPathMap * __cdecl core_bird_cpp_CBird_getPathMap_FUN_004159e0(CBird *this_ptr);
@@ -189,7 +189,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecP
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_00416620(CAudioRecPuzzle *this_ptr);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00416790(CAudioRecPuzzle *this_ptr,float delta_time);
 int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_00416cf0(CAudioRecPuzzle *this_ptr,int button);
-void __cdecl core_bmppuzzl_cpp_FUN_00416d50(CAudioRecPuzzle *this_ptr);
+void __cdecl core_bmppuzzl_cpp_doNothing_FUN_00416d50(void);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00416d60(CAudioRecPuzzle *this_ptr);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20(CAudioRecPuzzle *this_ptr,int knob);
 int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_00416f10(CAudioRecPuzzle *this_ptr,int x,int y);

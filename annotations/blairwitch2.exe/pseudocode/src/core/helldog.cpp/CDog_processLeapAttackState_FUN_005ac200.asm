@@ -19,8 +19,8 @@
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_muzzle.cpp_FUN_0059d7f0
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0
 ;
 ; *****************************************************************************
 
@@ -110,13 +110,13 @@ section .text
     FLD float ptr [0x00600c50]          ; 005ac2ba | DAT_00600c50
     PUSH EBX                            ; 005ac2c0
     FSTP float ptr [EBX + 0x89c]        ; 005ac2c1
-    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005ac2c7
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005ac2c7
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005ac2cc
     PUSH 0x5f0dec                       ; 005ac2cf | = "Chasing"
     PUSH EBX                            ; 005ac2d4
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005ac2d5
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005ac2d5
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005ac2da
     MOV ESP,EBP                         ; 005ac2dd
     POP EBP                             ; 005ac2df

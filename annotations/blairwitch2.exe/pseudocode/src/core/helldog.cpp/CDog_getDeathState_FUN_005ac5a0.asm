@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
-;   core_muzzle.cpp_FUN_0059daa0
+;   core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -24,16 +24,16 @@ section .text
     PUSH 0x5f0e44                       ; 005ac5a5 | = "Death"
     ADD EBX,0x10af8                     ; 005ac5aa
     PUSH EBX                            ; 005ac5b0
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005ac5b1
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005ac5b1
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005ac5b6
     TEST EAX,EAX                        ; 005ac5b9
     JNZ 0x005ac5cf                      ; 005ac5bb
         ;   XREF to: 005ac5cf (CONDITIONAL_JUMP)  ; LAB_005ac5cf
     PUSH 0x5f0e4a                       ; 005ac5bd | = "Animation"
     PUSH EBX                            ; 005ac5c2
-    CALL core_muzzle.cpp_FUN_0059daa0   ; 005ac5c3
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0 ; 005ac5c3
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005ac5c8
     TEST EAX,EAX                        ; 005ac5cb
     JZ 0x005ac5fe                       ; 005ac5cd

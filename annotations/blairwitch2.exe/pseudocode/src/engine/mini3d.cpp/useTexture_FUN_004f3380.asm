@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   texture
 ;
 ; XREF[3]:
-;   engine_font.cpp_FUN_004a97a0 at 004a97f2
+;   engine_font.cpp_CBitFont_flushAccelBatch_FUN_004a97a0 at 004a97f2
 ;   engine_mini3d.cpp_fillRect_FUN_004f90d0 at 004f92ec
 ;   engine_mini3d.cpp_useDefaultTexture_FUN_004f9330 at 004f9335
 ;

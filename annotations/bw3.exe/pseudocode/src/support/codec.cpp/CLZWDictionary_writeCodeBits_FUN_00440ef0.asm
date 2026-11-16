@@ -16,8 +16,8 @@
 ;   support_codec.cpp_CLZWCompress_process_FUN_00441190 at 004411ef
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00440400
 ;   support_codec.cpp_writeBitsToStream_FUN_00440260
+;   support_codec.cpp_writeWholeBytesToStream_FUN_00440400
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EDI                            ; 00440eff
     MOV EDX,dword ptr [EBP + 0x1c]      ; 00440f00
     PUSH EDX                            ; 00440f03
-    CALL support_codec.cpp_FUN_00440400 ; 00440f04
-        ;   XREF to: 00440400 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00440400()
+    CALL support_codec.cpp_writeWholeBytesToStream_FUN_00440400 ; 00440f04
+        ;   XREF to: 00440400 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_writeWholeBytesToStream_FUN_00440400(SBitBuffer * bit_buffer, void * ostream)
     ADD ESP,0x8                         ; 00440f09
     TEST EAX,EAX                        ; 00440f0c
     JL 0x00440f3f                       ; 00440f0e

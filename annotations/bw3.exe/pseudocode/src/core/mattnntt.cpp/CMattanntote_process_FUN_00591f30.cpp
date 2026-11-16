@@ -483,8 +483,11 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
         *(uint *)((int)(this_ptr->flames + 5 + 7) + 0x2c) = uVar6;
       }
 LAB_00592354:
+      fVar15 = (this_ptr->base).speed;
+      fVar4 = (float)_DAT_005d91cb;
       (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-      core_charactr_cpp_FUN_00434850(this_ptr);
+      core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+                ((CCharacter *)this_ptr,delta_time * fVar15 * fVar4);
       pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                          ((CMotionController *)pCStack_20);
       iVar5 = pSVar7->state_index;
@@ -518,7 +521,7 @@ LAB_00592354:
           if (iVar5 == 0) {
             iVar5 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
             if (iVar5 != 0) {
-              core_mattnntt_cpp_FUN_00593a90(this_ptr);
+              core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(this_ptr);
             }
             (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
                       (&this_ptr->base,delta_time);
@@ -564,7 +567,7 @@ LAB_00592354:
                   break;
                 }
               }
-              core_mattnntt_cpp_FUN_00593a90();
+              core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(this_ptr);
             }
           }
           break;
@@ -618,7 +621,7 @@ LAB_00592354:
           else if (pCVar8 == (CCharacter *)0x0) {
             in_stack_fffffce0 = (CMattanntote *)0x592f4f;
             in_stack_fffffce4 = this_ptr;
-            core_mattnntt_cpp_FUN_00593a90();
+            core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(this_ptr);
           }
           else {
             pCStack_28->z = 0.0;
@@ -739,7 +742,7 @@ LAB_00592354:
           if ((this_ptr->base).victim == (CCharacter *)0x0) {
             in_stack_fffffce0 = (CMattanntote *)0x5933ae;
             in_stack_fffffce4 = this_ptr;
-            core_mattnntt_cpp_FUN_00593a90();
+            core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(this_ptr);
           }
           else {
             iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
@@ -775,7 +778,7 @@ LAB_00592354:
           if ((this_ptr->base).victim == (CCharacter *)0x0) {
             in_stack_fffffce0 = (CMattanntote *)0x5934ab;
             in_stack_fffffce4 = this_ptr;
-            core_mattnntt_cpp_FUN_00593a90();
+            core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(this_ptr);
           }
           else {
             iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
@@ -811,7 +814,7 @@ LAB_00592354:
           if ((this_ptr->base).victim == (CCharacter *)0x0) {
             in_stack_fffffce0 = (CMattanntote *)0x5932bb;
             in_stack_fffffce4 = this_ptr;
-            core_mattnntt_cpp_FUN_00593a90();
+            core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(this_ptr);
           }
           else {
             iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
@@ -847,7 +850,7 @@ LAB_00592354:
           if ((this_ptr->base).victim == (CCharacter *)0x0) {
             in_stack_fffffce0 = (CMattanntote *)0x59328d;
             in_stack_fffffce4 = this_ptr;
-            core_mattnntt_cpp_FUN_00593a90();
+            core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(this_ptr);
           }
           break;
         case 9:
@@ -914,7 +917,7 @@ switchD_00593661_caseD_e:
           if (EVar2 == WALK_STATE_WALKING) {
 LAB_005923d6:
             if (iVar5 != 2) {
-              core_mattnntt_cpp_FUN_00593a90();
+              core_mattnntt_cpp_CMattanntote_chooseMoveState_FUN_00593a90(this_ptr);
             }
           }
           else {
@@ -944,7 +947,7 @@ LAB_00592a8c:
                   ((CMotionController *)pCStack_20,0xd,1);
         this_ptr->alerted = 1;
       }
-      core_charactr_cpp_FUN_0042c1e0(this_ptr);
+      core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
       fStack_300 = pCStack_30->x * delta_time;
       fStack_2fc = pCStack_30->y * delta_time;
       fStack_2f8 = pCStack_30->z * delta_time;

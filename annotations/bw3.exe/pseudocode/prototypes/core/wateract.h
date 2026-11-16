@@ -65,9 +65,9 @@ float __cdecl CWaterActor::customRayIntersect(CWaterActor *this_ptr,CVector3f *r
 // Address: 00578fc0
 void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_info);
 
-// Original: core_wateract.cpp_FUN_00578ff0
+// Original: core_wateract.cpp_factoryFuncLava_FUN_00578ff0
 // Address: 00578ff0
-void FUN_00578ff0(void);
+CLava * __cdecl factoryFuncLava(void);
 
 // Original: core_wateract.cpp_CLava_getActorType_FUN_00579010
 // Address: 00579010

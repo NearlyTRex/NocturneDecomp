@@ -25,21 +25,21 @@ char * __cdecl getItemDescription(CDemonActor *actor_ptr);
 // Address: 004f63c0
 void FUN_004f63c0(float param_1,float param_2);
 
-// Original: core_inv.cpp_FUN_004f64f0
+// Original: core_inv.cpp_renderSps_FUN_004f64f0
 // Address: 004f64f0
-void FUN_004f64f0(void);
+void __cdecl renderSps(void);
 
-// Original: core_inv.cpp_FUN_004f6560
+// Original: core_inv.cpp_renderCompass_FUN_004f6560
 // Address: 004f6560
-void FUN_004f6560(void);
+void __cdecl renderCompass(void);
 
-// Original: core_inv.cpp_FUN_004f6b50
+// Original: core_inv.cpp_playSpsSound_FUN_004f6b50
 // Address: 004f6b50
-undefined4 FUN_004f6b50(int param_1,char *param_2);
+int __cdecl playSpsSound(CCharacter *character,char *sound_name);
 
-// Original: core_inv.cpp_FUN_004f6bb0
+// Original: core_inv.cpp_updateSps_FUN_004f6bb0
 // Address: 004f6bb0
-void FUN_004f6bb0(void);
+void __cdecl updateSps(void);
 
 // Original: core_inv.cpp_loadItem_FUN_004f6e90
 // Address: 004f6e90
@@ -141,9 +141,9 @@ int __cdecl CInventory::select(CInventory *this_ptr,CDemonActor *actor_ptr);
 // Address: 004f9ed0
 CLightGun * __cdecl CInventory::getActiveLightGun(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004f9ef0
+// Original: core_inv.cpp_CInventory_getActiveGoggles_FUN_004f9ef0
 // Address: 004f9ef0
-int FUN_004f9ef0(int param_1);
+CGoggles * __cdecl CInventory::getActiveGoggles(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_updateInventory_FUN_004f9f10
 // Address: 004f9f10

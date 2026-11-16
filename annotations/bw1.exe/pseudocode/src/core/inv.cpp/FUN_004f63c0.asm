@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 at 004fb9d6
-;   core_inv.cpp_FUN_004f6560 at 004f6759
+;   core_inv.cpp_renderCompass_FUN_004f6560 at 004f6759
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e5fb8

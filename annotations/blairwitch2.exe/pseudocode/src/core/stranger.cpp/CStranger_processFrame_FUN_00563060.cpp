@@ -392,7 +392,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00563060(CStranger *th
     }
   }
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0((CCharacter *)this_ptr,delta_time);
   pCVar2 = &(this_ptr->base).base.model;
   pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar2->base);
   if ((pSVar18->state_index == 4) ||

@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01c56ed0
 ;
 ; Called Functions:
-;   core_event.cpp_FUN_004a1d00
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
@@ -96,8 +96,8 @@ section .text
     PUSH EDX                            ; 004a1c08
     PUSH ESI                            ; 004a1c09
     MOV byte ptr [EAX],0x0              ; 004a1c0a
-    CALL core_event.cpp_FUN_004a1d00    ; 004a1c0d
-        ;   XREF to: 004a1d00 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004a1d00()
+    CALL core_event.cpp_CEventList_executeCommand_FUN_004a1d00 ; 004a1c0d
+        ;   XREF to: 004a1d00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommand_FUN_004a1d00(CEventList * this_ptr, char * command_buffer)
     ADD ESP,0x8                         ; 004a1c12
     TEST EAX,EAX                        ; 004a1c15
     JNZ 0x004a1ba6                      ; 004a1c17

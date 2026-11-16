@@ -86,7 +86,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
   }
   fVar3 = this_ptr->speed;
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar3);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850(&this_ptr->base,delta_time * fVar3);
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660(&this_ptr->base,delta_time);
   pCVar1 = &(this_ptr->base).model;
   if (iVar5 == 0) {
@@ -147,7 +147,7 @@ LAB_005092c8:
   if (this_ptr->fade_timer < 0.0) {
     this_ptr->fade_timer = 0.0;
   }
-  core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0(&this_ptr->base,delta_time);
   fStack_68 = (this_ptr->base).velocity.x * delta_time;
   afStack_64[0] = (this_ptr->base).velocity.y * delta_time;
   afStack_64[1] = (this_ptr->base).velocity.z * delta_time;

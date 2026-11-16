@@ -16,7 +16,7 @@ void __cdecl core_yow_cpp_CYow_processDamage_FUN_005b9170(CYow *this_ptr,SDamage
   uint uVar4;
   int iVar5;
   
-  core_yow_cpp_FUN_005b8eb0(this_ptr,param_2);
+  core_yow_cpp_CYow_processDismemberment_FUN_005b8eb0(this_ptr,param_2);
   fVar1 = (this_ptr->base).base.hit_points - param_2->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;

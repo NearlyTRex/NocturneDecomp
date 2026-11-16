@@ -1,0 +1,257 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 5,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 10
+  },
+  "cross_references": [
+    {
+      "addr": "00551d20",
+      "from_addr": "005520f8",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_00551d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a560",
+      "from_addr": "0055a59f",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_0055a560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571f10",
+      "from_addr": "00571f1e",
+      "name": "support_trisock.cpp_cleanupWinsock_FUN_00571f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570ae0",
+      "from_addr": "00570c70",
+      "name": "support_trisock.cpp_dnsLookupThreadProc_FUN_00570ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571ea0",
+      "from_addr": "00571eab",
+      "name": "support_trisock.cpp_startupWinsock_FUN_00571ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574e80",
+      "from_addr": "00574e93",
+      "name": "support_trstream.cpp_COutStreamDebug_putChar_FUN_00574e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574eb0",
+      "from_addr": "00574f10",
+      "name": "support_trstream.cpp_COutStreamDebug_write_FUN_00574eb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00581c70",
+    "address_range": [
+      [
+        "00581c70",
+        "00581c7c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_outputDebugString_FUN_00581c70",
+    "signature": "void __cdecl wincore_winrun_cpp_outputDebugString_FUN_00581c70(LPCSTR message)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000086",
+      "is_variadic": false,
+      "name": "OutputDebugStringA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3608",
+      "name": "PTR_OutputDebugStringA_005b3608",
+      "type": "void*",
+      "value": "001b40a0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 17,
+    "call_sites": [
+      {
+        "call_addr": "00571f1e",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_cleanupWinsock_FUN_00571f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055a59f",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_logSoundError_FUN_0055a560",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055a5aa",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_logSoundError_FUN_0055a560",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055a5b7",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_logSoundError_FUN_0055a560",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005520f8",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_00551d20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00571eab",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_startupWinsock_FUN_00571ea0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00574e93",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_COutStreamDebug_putChar_FUN_00574e80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00574f10",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_COutStreamDebug_write_FUN_00574eb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00574f47",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_COutStreamDebug_write_FUN_00574eb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00570c70",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_dnsLookupThreadProc_FUN_00570ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.25,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 3,
+      "INT_ADD": 2,
+      "INT_SUB": 2,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 13
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058ffc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005b3a90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00600790",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "message",
+        "offset": 4,
+        "size": 4,
+        "type": "LPCSTR"
+      }
+    ]
+  },
+  "suspects": []
+}

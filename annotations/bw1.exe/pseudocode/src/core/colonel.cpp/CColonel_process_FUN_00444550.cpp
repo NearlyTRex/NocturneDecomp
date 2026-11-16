@@ -78,7 +78,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,f
     core_colonel_cpp_CColonel_processAI_FUN_00444b50(this_ptr,delta_time);
   }
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00435320((CCharacter *)this_ptr,delta_time);
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240
                     ((CCharacter *)this_ptr,delta_time);
   pCVar13 = &(this_ptr->base).base.model;
@@ -175,7 +175,7 @@ LAB_00444639:
 switchD_00444a17_caseD_4:
   pCVar3 = (this_ptr->base).base.grabbed_by;
   if (pCVar3 == (CDemonActor *)0x0) {
-    core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042d700((CCharacter *)this_ptr,delta_time);
     local_60 = (this_ptr->base).base.velocity.x * delta_time;
     pCVar15 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_5c[0] = (this_ptr->base).base.velocity.y * delta_time;

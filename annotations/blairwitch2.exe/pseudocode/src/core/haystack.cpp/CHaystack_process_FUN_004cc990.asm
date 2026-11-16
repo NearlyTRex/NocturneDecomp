@@ -23,12 +23,12 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_0042b2a0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
@@ -61,8 +61,8 @@ section .text
     PUSH dword ptr [ESP + 0xc4]         ; 004cc9c6
         ;   Label: LAB_004cc9c6
     PUSH EBX                            ; 004cc9cd
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 004cc9ce
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 004cc9ce
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004cc9d3
     FLD float ptr [EBX + 0x10a60]       ; 004cc9d6
     FSUB float ptr [ESP + 0xc4]         ; 004cc9dc
@@ -512,8 +512,8 @@ section .text
         ;   Label: LAB_004ccebc
     PUSH EBX                            ; 004ccec3
     LEA EDI,[ESP + 0x40]                ; 004ccec4
-    CALL core_charactr.cpp_FUN_00423a10 ; 004ccec8
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 004ccec8
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x2508]              ; 004ccecd
     LEA ESI,[ESP + 0x34]                ; 004cced3
     ADD ESP,0x8                         ; 004cced7

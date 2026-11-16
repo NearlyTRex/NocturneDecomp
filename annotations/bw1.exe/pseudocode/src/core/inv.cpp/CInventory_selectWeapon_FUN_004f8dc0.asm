@@ -14,7 +14,7 @@
 ; XREF[8]:
 ;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046bbc5
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0 at 004d11e0
-;   core_game.cpp_FUN_004d9260 at 004d9492
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004d9492
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0 at 004eb046
 ;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f8809
 ;   core_inv.cpp_CInventory_select_FUN_004f9bd0 at 004f9cec

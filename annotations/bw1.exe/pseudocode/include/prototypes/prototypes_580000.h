@@ -85,7 +85,7 @@ int __cdecl engine_special_cpp_unlockTexture_FUN_00582bd0(void);
 int __cdecl engine_special_cpp_getTextureInfo_FUN_00582bf0(int texture_size);
 int __cdecl engine_special_cpp_setVideoModeX_FUN_00582c10(int width,int height,int bits_per_pixel,int flags);
 int __cdecl engine_special_cpp_lockFrameX_FUN_00582c90(void);
-undefined4 engine_special_cpp_FUN_00582cf0(void);
+int __cdecl engine_special_cpp_toggleX_FUN_00582cf0(void);
 void __cdecl engine_special_cpp_CExternalRenderer_ctor_FUN_00582d10(CExternalRenderer *this_ptr);
 int __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00582d60(CExternalRenderer *this_ptr,CExternalRenderer *capabilities);
 int __cdecl engine_special_cpp_switchRenderer_FUN_00582ec0(char *new_dll_name,int card_index);
@@ -138,7 +138,7 @@ void __cdecl core_stone_cpp_CTempleStone_archive_FUN_00584ee0(CTempleStone *this
 int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_00584f10(CTempleStone *this_ptr,CDemonActor *picker);
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_00584f70(CTempleStone *this_ptr,uint flags);
 void __cdecl core_stranger_cpp_staticInit_FUN_00584fe0(void);
-float core_stranger_cpp_FUN_00585040(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+float __cdecl core_stranger_cpp_aimPitchBlendWeightCallback_FUN_00585040(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance);
 float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00585170(CDemonActor *object);
 CStranger * __cdecl core_stranger_cpp_factoryFuncStranger_FUN_00585240(void);
 CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_00585260(CStranger *this_ptr);

@@ -31,8 +31,8 @@
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004b97b0
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004b9960
 ;   core_game.cpp_CGame_processMouseControls_FUN_004ba2e0
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
-;   core_game.cpp_FUN_004c07b0
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_00507f10
 ;
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 004b9388
         ;   Label: caseD_3
     PUSH ESI                            ; 004b9389
-    CALL core_game.cpp_FUN_004c07b0     ; 004b938a
-        ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004c07b0()
+    CALL core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 ; 004b938a
+        ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame * this_ptr, SPlayerInput * player_control)
     JMP 0x004b9336                      ; 004b938f
         ;   XREF to: 004b9336 (UNCONDITIONAL_JUMP)  ; LAB_004b9336
     MOV EDX,0x5c27c0                    ; 004b9391 | = "..\\core\\game.cpp"

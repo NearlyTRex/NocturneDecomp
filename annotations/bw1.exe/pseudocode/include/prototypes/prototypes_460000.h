@@ -5,20 +5,20 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
-#include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CDjien.h"
 #include "types/classes/CDoc.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -31,9 +31,9 @@
 // =============================================================================
 
 void __cdecl core_djien_cpp_CDjien_process_FUN_00460230(CDjien *this_ptr,float delta_time);
-void core_djien_cpp_FUN_00460960(int param_1);
-void core_djien_cpp_FUN_004609c0(CEnemy *param_1);
-void core_djien_cpp_FUN_00460cb0(CCharacter *param_1);
+void __cdecl core_djien_cpp_CDjien_hesitate_FUN_00460960(CDjien *this_ptr);
+void __cdecl core_djien_cpp_CDjien_doStumpAttack_FUN_004609c0(CDjien *this_ptr);
+void __cdecl core_djien_cpp_CDjien_blowApart_FUN_00460cb0(CDjien *this_ptr);
 void __cdecl core_djien_cpp_CDjien_archive_FUN_00460e80(CDjien *this_ptr);
 void __cdecl core_djien_cpp_CDjien_damageSack_FUN_00460f90(CDjien *this_ptr,SDamageInfo *damage);
 ECollisionType __cdecl core_djien_cpp_CDjien_getCollisionType_FUN_00461090(CDjien *this_ptr,SCollisionInfo *collision_info);
@@ -41,10 +41,10 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
 void __cdecl core_djien_cpp_CDjien_processDamage_FUN_004613b0(CDjien *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_djien_cpp_CDjien_getSackIndex_FUN_00461530(CDjien *this_ptr,int part_id);
 int __cdecl core_djien_cpp_CDjien_getTargetPoints_FUN_00461590(CDjien *this_ptr,CVector3f *out_points_array);
-int core_djien_cpp_FUN_004615b0(CCharacter *param_1,CVector3f *param_2,int param_3);
+int __cdecl core_djien_cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien *this_ptr,CVector3f *out_points,int *out_sack_parts);
 CDjien * __cdecl core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags);
 SDjienBox * __cdecl core_djien_cpp_SDjienBox_ctor_FUN_00462440(SDjienBox *this_ptr);
-void core_djien_cpp_FUN_00462450(void);
+void __cdecl core_djien_cpp_staticInit_FUN_00462450(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_00462470(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00462530(CDemonLight *this_ptr,uint flags);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_00462590(CDemonLight *this_ptr);
@@ -77,7 +77,7 @@ int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_004657c0(CDemonL
 void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_00465890(CVector3f *position,CVector3f *rotation,float fov,float falloff);
 void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(CDemonLight *this_ptr,float intensity);
 void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
-void core_dlight_cpp_FUN_00466220(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl core_dlight_cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset,int tint_mode);
 int __cdecl core_dlight_cpp_CDemonLight_testVisibility_FUN_004665c0(CDemonLight *this_ptr,CVector3i *corners);
 void __cdecl core_dmodel_cpp_staticInit_FUN_00466780(void);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_004667e0(CKeyFramedModel *this_ptr);
@@ -109,8 +109,8 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FU
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(CKeyFramedModelInstance *this_ptr,char *filename);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_00468990(CKeyFramedModel *this_ptr,uint flags);
 void __cdecl core_doc_cpp_staticInit_FUN_004689b0(void);
-float core_doc_cpp_FUN_00468a20(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
-undefined4 core_doc_cpp_FUN_00468a90(CDemonActor *param_1);
+float __cdecl core_doc_cpp_blendWeightCallback_FUN_00468a20(int bone,int target,float weight,int distance,CDeformableModelInstance *instance);
+int __cdecl core_doc_cpp_getWeaponInteractionType_FUN_00468a90(CWeapon *weapon);
 float __cdecl core_doc_cpp_getCarriedObjectVerticalOffset_FUN_00468b80(CDemonActor *object);
 CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_00468c50(void);
 CDemonActorType * __cdecl core_doc_cpp_CDoc_getActorType_FUN_00468c70(CDoc *this_ptr);

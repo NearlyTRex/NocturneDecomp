@@ -13,13 +13,15 @@ void __cdecl core_hellhag_cpp_CHag_processMotionEvent_FUN_005ab940(CHag *this_pt
   
   if ((uint)event_id < 0x20d1) {
     if (event_id == 0x20d0) {
-      core_basicene_cpp_FUN_0059f740(this_ptr,0x41C80000,this_ptr->hand_bone,0x40000000);
+      core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
+                (&this_ptr->base,0x41C80000,this_ptr->hand_bone,2.0);
       return;
     }
   }
   else {
     if ((uint)event_id < 0x20d2) {
-      core_basicene_cpp_FUN_0059f740(this_ptr,0x41700000,this_ptr->hand_bone,0x40000000);
+      core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
+                (&this_ptr->base,0x41700000,this_ptr->hand_bone,2.0);
       return;
     }
     if (event_id != 0x20d2) {

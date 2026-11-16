@@ -10,7 +10,6 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonSet.h"
-#include "types/classes/CGame.h"
 #include "types/classes/CRifle.h"
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
@@ -49,9 +48,9 @@ int __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_00541de0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00541e30(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_00542090(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_00542270(CScat *this_ptr,int hand_index);
-void core_scat_cpp_FUN_005424f0(CDemonActor *param_1,float param_2,float param_3);
-undefined4 core_scat_cpp_FUN_00542b90(CDemonActor *param_1,CDemonActor *param_2,int param_3);
-void core_scat_cpp_FUN_00542f20(int param_1);
+void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005424f0(CScat *this_ptr,float delta_time,int is_holstered);
+float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00542b90(CScat *this_ptr,CDemonActor *target,int is_current_target);
+void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_00542f20(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00543070(CScat *this_ptr,uint flags);
 void __cdecl core_script_cpp_staticInit_FUN_005430c0(void);
 int __cdecl core_script_cpp_validateActorVariableName_FUN_00543100(char *variable_name);
@@ -105,8 +104,8 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0054cc80(CSentinel *
 ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_0054ce10(CSentinel *this_ptr,SCollisionInfo *collision_info);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_0054ce30(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_0054cec0(void);
-CGame * core_set_cpp_FUN_0054cf40(void);
-void core_set_cpp_FUN_0054cf80(int param_1);
+void __cdecl core_set_cpp_updateHighlightedActors_FUN_0054cf40(void);
+void __cdecl core_set_cpp_applyActorFlatColor_FUN_0054cf80(CDemonActor *actor);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0054d000(CDemonSet *this_ptr);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0054d340(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_0054d370(CDemonSet *this_ptr);

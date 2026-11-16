@@ -10,7 +10,7 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 0042288f
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 0042231f
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0 at 0042bdf5
-;   core_game.cpp_FUN_004c07b0 at 004c1998
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c1998
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c6c80 at 004c6e20
 ;   core_waypoint.cpp_CWayPoint_isReachable_FUN_00579130 at 00579202
 ;

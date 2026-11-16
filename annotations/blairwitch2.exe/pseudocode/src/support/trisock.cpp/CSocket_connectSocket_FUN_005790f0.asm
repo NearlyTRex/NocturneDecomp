@@ -11,8 +11,8 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_00579890 at 005799ec
-;   support_trisock.cpp_FUN_0057ad10 at 0057adef
+;   support_trisock.cpp_httpConnectToUrl_FUN_00579890 at 005799ec
+;   support_trisock.cpp_httpRequestUpdate_FUN_0057ad10 at 0057adef
 ;
 ; Called Functions:
 ;   crt_wsock32.c_connect

@@ -9,13 +9,13 @@
 int __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_00434c90(CAsciiUnarmor *this_ptr,void *istream,void *ostream)
 
 {
-  int iVar1;
+  int ch;
   uint bit_value;
   
   while( true ) {
-    iVar1 = (**(code **)(*(int *)istream + 4))(istream);
-    if (iVar1 < 0) break;
-    bit_value = support_codec_cpp_FUN_00434b10(iVar1);
+    ch = (**(code **)(*(int *)istream + 4))(istream);
+    if (ch < 0) break;
+    bit_value = support_codec_cpp_decodeArmorChar_FUN_00434b10(ch);
     if (-1 < (int)bit_value) {
       support_codec_cpp_writeBitsToStream_FUN_004338f0(&this_ptr->bit_buffer,6,bit_value,ostream);
     }

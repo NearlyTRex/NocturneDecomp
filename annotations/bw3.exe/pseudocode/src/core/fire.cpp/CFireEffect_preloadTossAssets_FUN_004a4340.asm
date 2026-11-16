@@ -13,7 +13,7 @@
 ;   core_storm.cpp_CStorm_setup_FUN_00568c10 at 00568c52
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042f280
+;   core_charactr.cpp_preloadEtherealTextures_FUN_0042f280
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00462500
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
@@ -85,8 +85,8 @@ section .text
         ;   XREF to: 00462580 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004a43d3
     PUSH 0x0                            ; 004a43d6
-    CALL core_charactr.cpp_FUN_0042f280 ; 004a43d8
-        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042f280()
+    CALL core_charactr.cpp_preloadEtherealTextures_FUN_0042f280 ; 004a43d8
+        ;   XREF to: 0042f280 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_preloadEtherealTextures_FUN_0042f280(int ethereal_type)
     ADD ESP,0x4                         ; 004a43dd
     JMP 0x004a437c                      ; 004a43e0
         ;   XREF to: 004a437c (UNCONDITIONAL_JUMP)  ; LAB_004a437c

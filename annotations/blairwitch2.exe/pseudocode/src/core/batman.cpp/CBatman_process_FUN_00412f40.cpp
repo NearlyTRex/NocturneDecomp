@@ -130,7 +130,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
   }
   fVar17 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar17);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
+            ((CCharacter *)this_ptr,delta_time * fVar17);
   pCVar5 = &(this_ptr->base).base.model;
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar5->base);
   iVar6 = pSVar7->state_index;
@@ -564,7 +565,7 @@ switchD_004135d2_default:
   }
   iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_00424430((CCharacter *)this_ptr);
   if ((iVar6 != 0) && (iStack_1c != 9)) {
-    core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_00423a10((CCharacter *)this_ptr,delta_time);
     fStack_234 = (this_ptr->base).base.velocity.x * delta_time;
     afStack_230[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_230[1] = (this_ptr->base).base.velocity.z * delta_time;

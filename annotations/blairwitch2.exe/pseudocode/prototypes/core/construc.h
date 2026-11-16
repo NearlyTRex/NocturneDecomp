@@ -49,9 +49,9 @@ int __cdecl CConstruct::getTargetPoints(CConstruct *this_ptr,CVector3f *out_poin
 // Address: 00438060
 void __cdecl CConstruct::explode(CConstruct *this_ptr);
 
-// Original: core_construc.cpp_FUN_004382a0
+// Original: core_construc.cpp_CConstruct_startRecombine_FUN_004382a0
 // Address: 004382a0
-void FUN_004382a0(int param_1);
+void __cdecl CConstruct::startRecombine(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_CConstruct_getCollisionType_FUN_00438370
 // Address: 00438370

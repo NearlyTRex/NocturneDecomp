@@ -18,9 +18,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 
 | Step | First needed by | TUs | Functions | Instructions | Done | Partial | % Done | BW variants | BW done |
 |---|---|---|---|---|---|---|---|---|---|
-| 0 | Math value types | 3 | 13 | 791 | 13 | 0 | 100.0% | 5 | 0 |
+| 0 | Math value types | 3 | 13 | 791 | 13 | 0 | 100.0% | 6 | 0 |
 | 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 0 | 100.0% | 14 | 0 |
-| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 28 | 2 | 93.3% | 21 | 0 |
+| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 28 | 2 | 93.3% | 22 | 0 |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 124 | 8365 | 121 | 2 | 97.5% | 88 | 0 |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% | 20 | 0 |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 32 | 3 | 64.0% | 27 | 0 |
@@ -29,7 +29,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 35 | 0 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 32 | 0 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 24 | 0 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 133 | 59 | 22.9% | 292 | 0 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 133 | 59 | 22.9% | 294 | 0 |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% | 15 | 0 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 0 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 20 | 0 |
@@ -37,7 +37,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 15 | 0 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 14 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
-| 19 | Not reached from startup: `engine/` | 23 | 278 | 19700 | 26 | 2 | 9.3% | 59 | 0 |
+| 19 | Not reached from startup: `engine/` | 23 | 278 | 19700 | 26 | 2 | 9.3% | 60 | 0 |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% | 4 | 0 |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% | 31 | 0 |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% | 19 | 0 |
@@ -46,12 +46,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 53 | 7 | 19.0% | 117 | 0 |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 17 | 289 | 19797 | 52 | 7 | 17.9% | 136 | 0 |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 261 | 17995 | 63 | 11 | 24.1% | 147 | 0 |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 17 | 297 | 21844 | 46 | 11 | 15.4% | 137 | 0 |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 20 | 296 | 26063 | 79 | 12 | 26.6% | 161 | 0 |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 17 | 297 | 21844 | 46 | 11 | 15.4% | 138 | 0 |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 20 | 296 | 26063 | 79 | 12 | 26.6% | 164 | 0 |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% | 164 | 0 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 67 | 0 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 0 |
-| | **All** | | **4487** | **402625** | **1205** | **235** | **26.8%** | **2140** | **0** |
+| | **All** | | **4487** | **402625** | **1205** | **235** | **26.8%** | **2149** | **0** |
 
 ## Step 0: Math value types
 
@@ -60,6 +60,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `ctor` 0x00410340 (2, compiler-generated)
   - [x] `dtor` 0x00410350 (2, compiler-generated)
   - [x] `length` 0x00410380 (15)
+    - BW: [ ] bw1 0x0040d010 = bw2 0x0040d370 = bw3 0x0040d250 (logic-change)
   - [x] `zero` 0x004103b0 (7)
   - [x] `toFixed8` 0x004103d0 (14)
   - [x] `copy` 0x004104a0 (14, compiler-generated)
@@ -177,6 +178,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `engine/matrix.c` (1 functions, 41 instructions, 1 done, 0 partial)
 - free functions
   - [x] `initializeTrigTables` 0x0050c530 (41)
+    - BW: [ ] bw1 0x005072c0 = bw2 0x004e8620 = bw3 0x004e4d00 (logic-change)
 
 ### `engine/texture.cpp` (2 functions, 34 instructions, 1 done, 1 partial)
 - class `CTextureCache`
@@ -1835,7 +1837,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: each function's work: the flags, counters, timers and sounds, the actors, the set's lights, cameras and shake, the weather and the fire effects, with executeCommands
     - deferred: playSfx not starting a cue again while it plays, killHero killing the hero who set the trigger off or every hero in a network game, with CNetGame's sessions and the cue sounds
     - deferred: the commands after a setLeverState in the same string running while checking, and their errors only printed, as the original's condition check ends the dry run, with executeCommands
-    - BW: [ ] bw2 0x00489670 (logic-change)
+    - BW: [ ] bw1 0x004a1d00 (logic-change); [ ] bw2 0x00489670 (logic-change); [ ] bw3 0x0048c2e0 (logic-change)
   - [x] `executeCommandString` 0x004aac00 (69)
     - BW: [ ] bw1 0x004a1b90 = bw3 0x0048c170 (operand-change)
   - [ ] `executeCommands` 0x004aabe0 (11)
@@ -1858,6 +1860,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/gabriela.cpp` (1 functions, 3 instructions, 0 done, 0 partial)
 - free functions
   - [ ] `getSelectedWeapon` 0x004d7650 (3)
+    - BW: [ ] bw2 0x0045e1b0 (logic-change)
 
 ### `core/netgame.cpp` (1 functions, 34 instructions, 0 done, 1 partial)
 - class `CNetGame`
@@ -2763,6 +2766,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `parseBodyPartMask` 0x00559730 (66)
     - BW: [ ] bw2 0x00521500 (const-change)
   - [ ] `makeVector` 0x00567d00 (14)
+    - BW: [ ] bw1 0x00476620 = bw2 0x0042bef0 = bw3 0x00527200 (logic-change)
 
 ## Step 12: `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene`
 
@@ -3570,7 +3574,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/mission.cpp` (1 functions, 35 instructions, 0 done, 0 partial)
 - class `CDemonMission`
   - [ ] `countDamageableEnemies` 0x00524e00 (35)
-    - BW: [ ] bw2 0x004fd450 (logic-change)
+    - BW: [ ] bw1 0x0051c410 = bw2 0x004fd450 = bw3 0x004f7bf0 (logic-change)
 
 ### `core/inv.cpp` (1 functions, 43 instructions, 0 done, 0 partial)
 - free functions
@@ -3641,7 +3645,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00442490 = bw2 0x00433780 = bw3 0x004400f0 (logic-change)
 - class `CLZWDictionary`
   - [ ] `readCodeFromStream` 0x0043f030 (76)
-    - BW: [ ] bw1 0x004431b0 = bw3 0x00440e10 (logic-change)
+    - BW: [ ] bw1 0x004431b0 = bw2 0x00434490 = bw3 0x00440e10 (logic-change)
   - [ ] `writeCodeSequence` 0x0043f200 (45)
     - BW: [ ] bw1 0x00443370 = bw2 0x00434650 = bw3 0x00440fd0 (logic-change)
 
@@ -4160,6 +4164,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CTextureCache`
   - [ ] `free` 0x005dcb00 (6)
   - [ ] `renderAllTextures` 0x005dd580 (67)
+    - BW: [ ] bw1 0x00597900 = bw2 0x00574ce0 = bw3 0x0056a8f0 (logic-change)
 
 ### `engine/winfont.cpp` (8 functions, 638 instructions, 8 done, 0 partial)
 - class `CWinFont`
@@ -4179,7 +4184,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x005bee80 = bw2 0x00599e10 = bw3 0x005a1c00 (const-change)
   - [ ] `addRasterizerEdgeWithDepth` 0x005fce40 (105)
   - [ ] `findRasterizerEdge` 0x005fcf80 (22)
-    - BW: [ ] bw2 0x0059a070 (const-change)
+    - BW: [ ] bw1 0x005bf0e0 = bw2 0x0059a070 = bw3 0x005a1e60 (const-change)
 
 ## Step 20: Not reached from startup: `support/`
 
@@ -7545,6 +7550,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `load` 0x0052cd70 (332)
     - BW: [x] bw1 0x00523980 = bw3 0x004fb280 (logic-change); [ ] bw2 0x00502820 (logic-change)
   - [x] `ctor` 0x0052cd50 (4)
+    - BW: [ ] bw1 0x005238c0 = bw3 0x004fb1c0 (logic-change); [ ] bw2 0x00502760 (logic-change)
   - [ ] `save` 0x0052d170 (248)
     - BW: [ ] bw1 0x00523db0 = bw3 0x004fb6b0 (logic-change); [ ] bw2 0x00502c20 (logic-change)
 
@@ -7774,8 +7780,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00542270 (logic-change); [ ] bw2 0x00520140 (logic-change)
   - [ ] `blendLayerAction` 0x005582c0 (153)
   - [ ] `scoreAimTarget` 0x00558cf0 (204)
+    - BW: [ ] bw1 0x00542b90 = bw2 0x00520a60 (logic-change)
   - [ ] `updateAiming` 0x00558720 (344)
+    - BW: [ ] bw1 0x005424f0 (logic-change); [ ] bw2 0x005203c0 (logic-change)
   - [ ] `updateWeaponAttachment` 0x00558fd0 (155)
+    - BW: [ ] bw1 0x00542f20 (logic-change); [ ] bw2 0x00520df0 (logic-change)
   - [ ] `process` 0x005571f0 (526)
     - BW: [ ] bw1 0x00540df0 (logic-change); [ ] bw2 0x0051ecc0 (logic-change)
   - [x] `archive` 0x00557db0 (5)
@@ -8344,7 +8353,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw2 0x005626f0 (const-change)
   - [ ] `adjustAimAngleForOffset` 0x005c3750 (56)
   - [ ] `calculateAimAnglesWithOffset` 0x005c37e0 (136)
-    - BW: [ ] bw1 0x0058e9a0 = bw2 0x0056bd50 = bw3 0x00522950 (logic-change)
+    - BW: [ ] bw1 0x0058e9a0 = bw2 0x0056bd50 (logic-change)
   - [ ] `setMatrixTranslation` 0x005c6930 (9)
   - [ ] `isProcessDisabled` 0x005c6950 (3)
   - [ ] `getScaleY` 0x005c6960 (3)
@@ -8879,7 +8888,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `getActorType` 0x005efc00 (2)
   - [ ] `playHowl` 0x005f11e0 (20)
   - [ ] `processChainConstraint` 0x005f1e40 (166)
-    - BW: [ ] bw3 0x0057fad0 (logic-change)
+    - BW: [ ] bw1 0x005b1850 = bw2 0x0058dd00 = bw3 0x0057fad0 (logic-change)
   - [ ] `process` 0x005efde0 (1387)
     - BW: [ ] bw1 0x005af4a0 (logic-change); [ ] bw2 0x0058b950 (logic-change); [ ] bw3 0x0057d720 (logic-change)
   - [ ] `setWalkTarget` 0x005f11a0 (18)
@@ -9058,176 +9067,153 @@ the retail game has it too. Sizes are in instructions.
 | Unit | Functions | Named | Instructions | Done |
 |---|---|---|---|---|
 | `cockpit/ckptutil.c` | 3 | 0 | 18 | 0 |
-| `cockpit/drawsurf.cpp` | 12 | 0 | 30 | 0 |
 | `cockpit/pkbitmap.cpp` | 1 | 0 | 12 | 0 |
 | `cockpit/pkbmpset.cpp` | 1 | 0 | 5 | 0 |
-| `core/actor.cpp` | 16 | 0 | 95 | 0 |
-| `core/ammo.cpp` | 15 | 11 | 345 | 0 |
+| `core/actor.cpp` | 6 | 4 | 53 | 0 |
+| `core/ammo.cpp` | 15 | 15 | 345 | 0 |
 | `core/asgaya.cpp` | 15 | 15 | 1218 | 0 |
-| `core/baal.cpp` | 14 | 12 | 1676 | 0 |
-| `core/basicene.cpp` | 37 | 20 | 2623 | 0 |
-| `core/basicnpc.cpp` | 14 | 13 | 193 | 0 |
-| `core/belling.cpp` | 13 | 12 | 181 | 0 |
+| `core/baal.cpp` | 14 | 13 | 1676 | 0 |
+| `core/basicene.cpp` | 37 | 37 | 2623 | 0 |
+| `core/basicnpc.cpp` | 14 | 14 | 193 | 0 |
+| `core/belling.cpp` | 13 | 13 | 181 | 0 |
 | `core/bindevil.cpp` | 8 | 8 | 160 | 0 |
-| `core/bird.cpp` | 16 | 14 | 778 | 0 |
+| `core/bird.cpp` | 15 | 15 | 692 | 0 |
 | `core/blundrbs.cpp` | 8 | 8 | 1304 | 0 |
-| `core/bmppuzzl.cpp` | 57 | 54 | 3651 | 0 |
-| `core/boneguy.cpp` | 19 | 15 | 1326 | 0 |
-| `core/burncrss.cpp` | 12 | 11 | 1059 | 0 |
-| `core/bwgrndma.cpp` | 16 | 13 | 298 | 0 |
-| `core/bwsearch.cpp` | 13 | 12 | 176 | 0 |
-| `core/bwspart.cpp` | 18 | 15 | 1039 | 0 |
-| `core/carved.cpp` | 37 | 17 | 5705 | 0 |
-| `core/charactr.cpp` | 31 | 4 | 2043 | 0 |
-| `core/confedrt.cpp` | 20 | 15 | 1422 | 0 |
-| `core/confzomb.cpp` | 16 | 15 | 883 | 0 |
-| `core/construc.cpp` | 27 | 18 | 2582 | 0 |
-| `core/cross.cpp` | 14 | 12 | 1216 | 0 |
-| `core/darkwolf.cpp` | 15 | 14 | 791 | 0 |
-| `core/dcamera.cpp` | 2 | 0 | 117 | 0 |
-| `core/demnfolk.cpp` | 41 | 21 | 6663 | 0 |
-| `core/dirmat.cpp` | 1 | 0 | 18 | 0 |
-| `core/disease.cpp` | 8 | 7 | 154 | 0 |
-| `core/djien.cpp` | 20 | 15 | 2534 | 0 |
-| `core/dlight.cpp` | 2 | 0 | 511 | 0 |
-| `core/doc.cpp` | 87 | 46 | 20969 | 0 |
-| `core/dog.cpp` | 12 | 9 | 237 | 0 |
-| `core/door.cpp` | 4 | 0 | 148 | 0 |
+| `core/bmppuzzl.cpp` | 55 | 55 | 3649 | 0 |
+| `core/boneguy.cpp` | 19 | 19 | 1326 | 0 |
+| `core/burncrss.cpp` | 12 | 12 | 1059 | 0 |
+| `core/bwgrndma.cpp` | 16 | 16 | 298 | 0 |
+| `core/bwsearch.cpp` | 13 | 13 | 176 | 0 |
+| `core/bwspart.cpp` | 18 | 18 | 1039 | 0 |
+| `core/carved.cpp` | 27 | 27 | 4346 | 0 |
+| `core/charactr.cpp` | 19 | 17 | 1284 | 0 |
+| `core/confedrt.cpp` | 20 | 20 | 1422 | 0 |
+| `core/confzomb.cpp` | 16 | 16 | 883 | 0 |
+| `core/construc.cpp` | 25 | 23 | 2456 | 0 |
+| `core/cross.cpp` | 14 | 14 | 1216 | 0 |
+| `core/darkwolf.cpp` | 15 | 15 | 791 | 0 |
+| `core/dcamera.cpp` | 2 | 2 | 117 | 0 |
+| `core/demnfolk.cpp` | 31 | 31 | 5357 | 0 |
+| `core/dirmat.cpp` | 1 | 1 | 18 | 0 |
+| `core/disease.cpp` | 8 | 8 | 154 | 0 |
+| `core/djien.cpp` | 19 | 19 | 2529 | 0 |
+| `core/dlight.cpp` | 1 | 1 | 268 | 0 |
+| `core/doc.cpp` | 61 | 60 | 14816 | 0 |
+| `core/dog.cpp` | 12 | 12 | 237 | 0 |
+| `core/door.cpp` | 2 | 2 | 74 | 0 |
 | `core/dpart.cpp` | 1 | 0 | 8 | 0 |
-| `core/dtri.cpp` | 6 | 0 | 12 | 0 |
-| `core/enemy.cpp` | 3 | 1 | 281 | 0 |
-| `core/event.cpp` | 4 | 0 | 13685 | 0 |
+| `core/enemy.cpp` | 3 | 3 | 281 | 0 |
+| `core/event.cpp` | 1 | 1 | 16 | 0 |
 | `core/exorcism.cpp` | 11 | 11 | 1284 | 0 |
-| `core/fforest.cpp` | 13 | 11 | 665 | 0 |
+| `core/fforest.cpp` | 13 | 13 | 665 | 0 |
 | `core/fire.cpp` | 40 | 40 | 2519 | 0 |
-| `core/firestff.cpp` | 12 | 11 | 947 | 0 |
-| `core/flame.cpp` | 1 | 0 | 21 | 0 |
-| `core/flashlit.cpp` | 24 | 2 | 1472 | 0 |
+| `core/firestff.cpp` | 12 | 12 | 947 | 0 |
+| `core/flame.cpp` | 1 | 1 | 21 | 0 |
+| `core/flashlit.cpp` | 24 | 24 | 1226 | 0 |
 | `core/flattn.cpp` | 9 | 0 | 272 | 0 |
 | `core/fldnotes.cpp` | 82 | 82 | 6190 | 0 |
 | `core/flintlck.cpp` | 8 | 8 | 911 | 0 |
-| `core/game.cpp` | 29 | 3 | 8538 | 0 |
-| `core/ghostchi.cpp` | 16 | 15 | 720 | 0 |
+| `core/game.cpp` | 18 | 16 | 3410 | 0 |
+| `core/ghostchi.cpp` | 16 | 16 | 720 | 0 |
 | `core/gmehook.cpp` | 5 | 5 | 210 | 0 |
-| `core/goggles.cpp` | 12 | 11 | 167 | 0 |
-| `core/hand.cpp` | 18 | 17 | 772 | 0 |
+| `core/goggles.cpp` | 13 | 13 | 176 | 0 |
+| `core/hand.cpp` | 18 | 18 | 772 | 0 |
 | `core/heal.cpp` | 8 | 8 | 262 | 0 |
-| `core/health.cpp` | 5 | 4 | 109 | 0 |
+| `core/health.cpp` | 5 | 5 | 109 | 0 |
 | `core/hecaitmx.cpp` | 10 | 10 | 696 | 0 |
-| `core/helldog.cpp` | 16 | 15 | 1039 | 0 |
-| `core/hellhag.cpp` | 19 | 18 | 1491 | 0 |
-| `core/hero.cpp` | 14 | 7 | 892 | 0 |
-| `core/hino.cpp` | 15 | 13 | 2262 | 0 |
+| `core/helldog.cpp` | 16 | 16 | 1039 | 0 |
+| `core/hellhag.cpp` | 19 | 19 | 1491 | 0 |
+| `core/hero.cpp` | 9 | 9 | 587 | 0 |
+| `core/hino.cpp` | 15 | 15 | 2262 | 0 |
 | `core/holycrss.cpp` | 11 | 11 | 210 | 0 |
-| `core/hotdemon.cpp` | 12 | 9 | 231 | 0 |
-| `core/hpatrol.cpp` | 10 | 9 | 494 | 0 |
+| `core/hotdemon.cpp` | 12 | 12 | 231 | 0 |
+| `core/hpatrol.cpp` | 10 | 10 | 494 | 0 |
 | `core/hpbox.cpp` | 8 | 8 | 747 | 0 |
-| `core/imp.cpp` | 1 | 0 | 1 | 0 |
-| `core/inv.cpp` | 11 | 2 | 1223 | 0 |
-| `core/kedward.cpp` | 11 | 10 | 2008 | 0 |
-| `core/lantern.cpp` | 15 | 14 | 398 | 0 |
+| `core/imp.cpp` | 2 | 2 | 10 | 0 |
+| `core/inv.cpp` | 10 | 8 | 977 | 0 |
+| `core/kedward.cpp` | 11 | 11 | 2008 | 0 |
+| `core/lantern.cpp` | 15 | 15 | 398 | 0 |
 | `core/lightgun.cpp` | 2 | 1 | 86 | 0 |
-| `core/lightpis.cpp` | 13 | 10 | 1457 | 0 |
+| `core/lightpis.cpp` | 13 | 13 | 1457 | 0 |
 | `core/lightsta.cpp` | 11 | 11 | 2687 | 0 |
-| `core/main.c` | 1 | 0 | 1 | 0 |
-| `core/marquee.cpp` | 3 | 0 | 40 | 0 |
-| `core/mattnntt.cpp` | 13 | 12 | 2292 | 0 |
-| `core/melee.cpp` | 1 | 0 | 90 | 0 |
-| `core/meleeaxe.cpp` | 6 | 5 | 122 | 0 |
+| `core/marquee.cpp` | 1 | 1 | 1 | 0 |
+| `core/mattnntt.cpp` | 13 | 13 | 2292 | 0 |
+| `core/melee.cpp` | 1 | 1 | 90 | 0 |
+| `core/meleeaxe.cpp` | 6 | 6 | 122 | 0 |
 | `core/menu.cpp` | 1 | 0 | 200 | 0 |
-| `core/mine.cpp` | 11 | 10 | 507 | 0 |
-| `core/mission.cpp` | 3 | 1 | 60 | 0 |
-| `core/moocow.cpp` | 12 | 10 | 816 | 0 |
-| `core/moon.cpp` | 4 | 1 | 62 | 0 |
-| `core/morph.cpp` | 3 | 0 | 55 | 0 |
-| `core/motion.cpp` | 2 | 0 | 36 | 0 |
-| `core/muzzle.cpp` | 33 | 4 | 1231 | 0 |
+| `core/mine.cpp` | 11 | 11 | 507 | 0 |
+| `core/mission.cpp` | 1 | 1 | 56 | 0 |
+| `core/moocow.cpp` | 11 | 11 | 685 | 0 |
+| `core/moon.cpp` | 1 | 1 | 7 | 0 |
+| `core/morph.cpp` | 2 | 2 | 42 | 0 |
+| `core/motion.cpp` | 2 | 2 | 36 | 0 |
+| `core/muzzle.cpp` | 33 | 32 | 1231 | 0 |
 | `core/necklace.cpp` | 6 | 6 | 272 | 0 |
 | `core/netgame.cpp` | 1 | 1 | 6 | 0 |
 | `core/npc.cpp` | 2 | 2 | 77 | 0 |
-| `core/passngr.cpp` | 1 | 0 | 5 | 0 |
-| `core/podmain.cpp` | 3 | 0 | 9 | 0 |
-| `core/prye.cpp` | 54 | 43 | 15425 | 0 |
+| `core/prye.cpp` | 53 | 52 | 15384 | 0 |
 | `core/pryemorp.cpp` | 10 | 10 | 651 | 0 |
 | `core/rifle.cpp` | 11 | 11 | 765 | 0 |
-| `core/scat.cpp` | 6 | 0 | 1516 | 0 |
-| `core/schngeis.cpp` | 15 | 14 | 1032 | 0 |
-| `core/script.cpp` | 1 | 0 | 4 | 0 |
-| `core/set.cpp` | 8 | 1 | 518 | 0 |
+| `core/schngeis.cpp` | 15 | 15 | 1032 | 0 |
+| `core/script.cpp` | 1 | 1 | 4 | 0 |
+| `core/set.cpp` | 5 | 5 | 383 | 0 |
 | `core/setdir.cpp` | 2 | 0 | 196 | 0 |
-| `core/shadow.cpp` | 53 | 20 | 4397 | 0 |
-| `core/shadowsc.cpp` | 17 | 12 | 1269 | 0 |
-| `core/skeleton.cpp` | 4 | 3 | 96 | 0 |
+| `core/shadow.cpp` | 37 | 36 | 3214 | 0 |
+| `core/shadowsc.cpp` | 17 | 16 | 1269 | 0 |
+| `core/skeleton.cpp` | 4 | 4 | 96 | 0 |
 | `core/smiley.cpp` | 1 | 1 | 10 | 0 |
 | `core/sound.cpp` | 1 | 1 | 2 | 0 |
-| `core/spawner.cpp` | 9 | 7 | 541 | 0 |
+| `core/spawner.cpp` | 9 | 9 | 541 | 0 |
 | `core/spirbear.cpp` | 14 | 14 | 861 | 0 |
-| `core/spireagl.cpp` | 15 | 14 | 1018 | 0 |
+| `core/spireagl.cpp` | 15 | 15 | 1018 | 0 |
 | `core/spirindi.cpp` | 14 | 14 | 823 | 0 |
 | `core/sps.cpp` | 7 | 7 | 104 | 0 |
 | `core/storm.cpp` | 8 | 8 | 170 | 0 |
-| `core/stranger.cpp` | 2 | 0 | 40 | 0 |
-| `core/styldemo.cpp` | 16 | 15 | 2911 | 0 |
+| `core/stranger.cpp` | 1 | 1 | 20 | 0 |
+| `core/styldemo.cpp` | 16 | 16 | 2911 | 0 |
 | `core/styler.cpp` | 11 | 11 | 690 | 0 |
-| `core/tawiscara.cpp` | 16 | 13 | 2886 | 0 |
-| `core/terrain.cpp` | 1 | 0 | 3 | 0 |
-| `core/thehand.cpp` | 12 | 11 | 919 | 0 |
+| `core/tawiscara.cpp` | 16 | 16 | 2886 | 0 |
+| `core/thehand.cpp` | 12 | 12 | 919 | 0 |
 | `core/toxhand.cpp` | 1 | 1 | 9 | 0 |
-| `core/tvbat.cpp` | 1 | 0 | 5 | 0 |
-| `core/union.cpp` | 18 | 13 | 1252 | 0 |
-| `core/unionzom.cpp` | 16 | 15 | 785 | 0 |
-| `core/villain.cpp` | 13 | 12 | 222 | 0 |
-| `core/wateract.cpp` | 4 | 3 | 50 | 0 |
-| `core/weapon.cpp` | 3 | 1 | 86 | 0 |
-| `core/weather.cpp` | 2 | 0 | 46 | 0 |
-| `core/weaver.cpp` | 14 | 13 | 861 | 0 |
-| `core/werewolf.cpp` | 2 | 0 | 368 | 0 |
+| `core/tvbat.cpp` | 2 | 2 | 14 | 0 |
+| `core/union.cpp` | 18 | 18 | 1252 | 0 |
+| `core/unionzom.cpp` | 16 | 16 | 785 | 0 |
+| `core/villain.cpp` | 13 | 13 | 222 | 0 |
+| `core/wateract.cpp` | 4 | 4 | 50 | 0 |
+| `core/weapon.cpp` | 3 | 3 | 86 | 0 |
+| `core/weather.cpp` | 2 | 2 | 46 | 0 |
+| `core/weaver.cpp` | 14 | 14 | 861 | 0 |
 | `core/xform.cpp` | 1 | 0 | 288 | 0 |
-| `core/yow.cpp` | 11 | 10 | 1554 | 0 |
-| `core/zombie.cpp` | 24 | 16 | 557 | 0 |
-| `core/zombiepriest.cpp` | 18 | 14 | 2980 | 0 |
-| `engine/2d.c` | 3 | 0 | 9 | 0 |
-| `engine/3d.c` | 2 | 0 | 4 | 0 |
-| `engine/alphabit.cpp` | 4 | 3 | 211 | 0 |
+| `core/yow.cpp` | 11 | 11 | 1554 | 0 |
+| `core/zombie.cpp` | 21 | 21 | 407 | 0 |
+| `core/zombiepriest.cpp` | 16 | 15 | 2825 | 0 |
+| `engine/2d.c` | 1 | 1 | 3 | 0 |
+| `engine/3d.c` | 1 | 1 | 2 | 0 |
+| `engine/alphabit.cpp` | 4 | 4 | 211 | 0 |
 | `engine/clipper.c` | 2 | 0 | 76 | 0 |
-| `engine/dosio.cpp` | 7 | 0 | 183 | 0 |
+| `engine/dosio.cpp` | 5 | 5 | 177 | 0 |
 | `engine/drender.cpp` | 4 | 3 | 43 | 0 |
-| `engine/font.cpp` | 13 | 0 | 1519 | 0 |
-| `engine/ini.cpp` | 3 | 1 | 89 | 0 |
-| `engine/light.cpp` | 1 | 0 | 3 | 0 |
-| `engine/mini3d.cpp` | 131 | 130 | 8551 | 0 |
-| `engine/palette.cpp` | 3 | 0 | 218 | 0 |
+| `engine/font.cpp` | 8 | 7 | 947 | 0 |
+| `engine/ini.cpp` | 3 | 3 | 89 | 0 |
+| `engine/mini3d.cpp` | 131 | 131 | 8551 | 0 |
+| `engine/palette.cpp` | 2 | 2 | 176 | 0 |
 | `engine/prim.c` | 1 | 0 | 58 | 0 |
-| `engine/special.cpp` | 3 | 0 | 685 | 0 |
-| `engine/texture.cpp` | 16 | 1 | 1395 | 0 |
-| `shape/edittool.cpp` | 18 | 1 | 515 | 0 |
-| `sound/snddx.cpp` | 3 | 1 | 106 | 0 |
+| `engine/special.cpp` | 3 | 2 | 685 | 0 |
+| `engine/texture.cpp` | 12 | 12 | 989 | 0 |
+| `shape/edittool.cpp` | 14 | 11 | 447 | 0 |
+| `sound/snddx.cpp` | 3 | 3 | 106 | 0 |
 | `sound/sndmain.cpp` | 16 | 16 | 647 | 0 |
 | `sound/sndwav.cpp` | 1 | 1 | 1 | 0 |
-| `support/codec.cpp` | 33 | 27 | 1004 | 0 |
-| `support/trisock.cpp` | 35 | 2 | 3263 | 0 |
-| `support/trstream.cpp` | 81 | 79 | 3090 | 0 |
-| `wincore/winrun.cpp` | 23 | 0 | 1225 | 0 |
-| **All** | **2076** | **1448** | **191833** | **0** |
+| `support/codec.cpp` | 33 | 33 | 1004 | 0 |
+| `support/trisock.cpp` | 33 | 31 | 2582 | 0 |
+| `support/trstream.cpp` | 80 | 80 | 3087 | 0 |
+| `wincore/winrun.cpp` | 19 | 15 | 935 | 0 |
+| **All** | **1888** | **1836** | **156162** | **0** |
 
 ### `cockpit/ckptutil.c`
 - [ ] unnamed bw1 0x00438280, bw2 0x0042d570, bw3 0x00435e90 (6)
 - [ ] unnamed bw1 0x00438310, bw2 0x0042d600, bw3 0x00435f20 (6)
 - [ ] unnamed bw1 0x00438440, bw2 0x0042d730, bw3 0x00436050 (6)
-
-### `cockpit/drawsurf.cpp`
-- [ ] unnamed bw1 0x0047fdf0 (2)
-- [ ] unnamed bw1 0x0047fe00 (2)
-- [ ] unnamed bw1 0x0047fe10 (3)
-- [ ] unnamed bw1 0x0047fe20 (3)
-- [ ] unnamed bw2 0x004678e0 (2)
-- [ ] unnamed bw2 0x004678f0 (2)
-- [ ] unnamed bw2 0x00467900 (3)
-- [ ] unnamed bw2 0x00467910 (3)
-- [ ] unnamed bw3 0x004694b0 (2)
-- [ ] unnamed bw3 0x004694c0 (2)
-- [ ] unnamed bw3 0x004694d0 (3)
-- [ ] unnamed bw3 0x004694e0 (3)
 
 ### `cockpit/pkbitmap.cpp`
 - [ ] unnamed bw1 0x00537fd8, bw2 0x00516c88, bw3 0x0050fcb8 (12)
@@ -9236,39 +9222,29 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw1 0x00539100, bw2 0x00517db0, bw3 0x00510de0 (5)
 
 ### `core/actor.cpp`
-- [ ] unnamed bw1 0x00408890 (1)
-- [ ] unnamed bw1 0x004089f0 (2)
-- [ ] unnamed bw1 0x00408cc0 (1)
+- [ ] `CDemonActor::markResourcesInUse` bw1 0x00408890, bw2 0x00408ac0, bw3 0x004088d0 (1)
+- [ ] `CDemonActor::startParticleSystem` bw2 0x0040ce40 (14)
+- [ ] `CDemonActor::stopParticleSystem` bw2 0x0040ce70 (14)
+- [ ] `CDemonActor::setParticleSystemFade` bw2 0x0040cea0 (15)
 - [ ] unnamed bw1 0x0040cfc0, bw2 0x0040d320, bw3 0x0040d200 (8)
-- [ ] unnamed bw1 0x0040cff0, bw2 0x0040d350, bw3 0x0040d230 (12)
-- [ ] unnamed bw1 0x0040d010, bw2 0x0040d370, bw3 0x0040d250 (19)
-- [ ] unnamed bw2 0x00408ac0 (1)
-- [ ] unnamed bw2 0x00408c20 (2)
-- [ ] unnamed bw2 0x00408ef0 (1)
-- [ ] unnamed bw2 0x0040ce40 (14)
-- [ ] unnamed bw2 0x0040ce70 (14)
-- [ ] unnamed bw2 0x0040cea0 (15)
 - [ ] unnamed bw2 0x0040ced0 (1)
-- [ ] unnamed bw3 0x004088d0 (1)
-- [ ] unnamed bw3 0x00408a30 (2)
-- [ ] unnamed bw3 0x00408d00 (1)
 
 ### `core/ammo.cpp`
+- [ ] `CAmmo::consumeForReload` bw2 0x0040e450 (19)
+- [ ] `factoryFuncAmmoMana` bw3 0x0040e0c0 (10)
 - [ ] `CAmmoMana::getActorType` bw3 0x0040e0e0 (2)
 - [ ] `CAmmoMana::ctor` bw3 0x0040e0f0 (17)
 - [ ] `CAmmoMana::process` bw3 0x0040e140 (73)
+- [ ] `factoryFuncAmmoManaLarge` bw3 0x0040e230 (10)
 - [ ] `CAmmoManaLarge::getActorType` bw3 0x0040e250 (2)
 - [ ] `CAmmoManaLarge::ctor` bw3 0x0040e260 (17)
 - [ ] `CAmmoManaLarge::process` bw3 0x0040e2b0 (73)
+- [ ] `factoryFuncAmmoBullet` bw3 0x0040e3a0 (10)
 - [ ] `CAmmoBullet::getActorType` bw3 0x0040e3c0 (2)
 - [ ] `CAmmoBullet::ctor` bw3 0x0040e3d0 (17)
 - [ ] `CAmmoBullet::dtor` bw3 0x0040e420 (31)
 - [ ] `CAmmoManaLarge::dtor` bw3 0x0040e470 (31)
 - [ ] `CAmmoMana::dtor` bw3 0x0040e4c0 (31)
-- [ ] unnamed bw2 0x0040e450 (19)
-- [ ] unnamed bw3 0x0040e0c0 (10)
-- [ ] unnamed bw3 0x0040e230 (10)
-- [ ] unnamed bw3 0x0040e3a0 (10)
 
 ### `core/asgaya.cpp`
 - [ ] `staticInit` bw3 0x005a09b0 (9)
@@ -9294,53 +9270,53 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBaal::ctor` bw3 0x00596660 (38)
 - [ ] `CBaal::setup` bw3 0x00596730 (78)
 - [ ] `CBaal::process` bw3 0x005968a0 (1010)
+- [ ] `CBaal::chooseAttack` bw3 0x00597700 (105)
 - [ ] `CBaal::getCarryObjToBodyXForm` bw3 0x00597810 (78)
 - [ ] `CBaal::renderOpaque` bw3 0x00597940 (17)
 - [ ] `CBaal::renderTransparent` bw3 0x00597970 (109)
 - [ ] `CBaal::processDamage` bw3 0x00597af0 (80)
 - [ ] `CBaal::archive` bw3 0x00597c70 (38)
 - [ ] `CBaal::dtor` bw3 0x00597d00 (47)
-- [ ] unnamed bw3 0x00597700 (105)
 - [ ] unnamed bw3 0x00597be0 (55)
 
 ### `core/basicene.cpp`
 - [ ] `staticInit` bw2 0x0059e380 (9)
 - [ ] `CBasicEnemy::ctor` bw2 0x0059e3b0 (149)
 - [ ] `CBasicEnemy::setup` bw2 0x0059e6a0 (69)
+- [ ] `CBasicEnemy::setAIState` bw2 0x0059e7a0 (8)
+- [ ] `CBasicEnemy::setAnimation` bw2 0x0059e7c0 (4)
 - [ ] `CBasicEnemy::advanceMotion` bw2 0x0059e7d0 (60)
 - [ ] `CBasicEnemy::processMotionEvent` bw2 0x0059e880 (16)
 - [ ] `CBasicEnemy::processStates` bw2 0x0059e8c0 (219)
+- [ ] `CBasicEnemy::processNothingState` bw2 0x0059ebc0 (8)
 - [ ] `CBasicEnemy::processAnimationState` bw2 0x0059ebe0 (12)
+- [ ] `CBasicEnemy::processAlertState` bw2 0x0059ec10 (94)
+- [ ] `CBasicEnemy::processAlertInvisibleState` bw2 0x0059ed50 (51)
+- [ ] `CBasicEnemy::processPatrolState` bw2 0x0059ee00 (129)
 - [ ] `CBasicEnemy::processChasingState` bw2 0x0059ef90 (109)
+- [ ] `CBasicEnemy::processMovement` bw2 0x0059f0e0 (207)
+- [ ] `CBasicEnemy::applyFlinch` bw2 0x0059f390 (40)
 - [ ] `CBasicEnemy::process` bw2 0x0059f420 (99)
+- [ ] `CBasicEnemy::startFade` bw2 0x0059f570 (9)
+- [ ] `CBasicEnemy::updateFade` bw2 0x0059f5b0 (45)
+- [ ] `CBasicEnemy::updateFlinch` bw2 0x0059f660 (14)
+- [ ] `CBasicEnemy::processAI` bw2 0x0059f6a0 (1)
 - [ ] `CBasicEnemy::checkVictim` bw2 0x0059f6b0 (48)
+- [ ] `CBasicEnemy::attackFromBone` bw2 0x0059f740 (60)
 - [ ] `CBasicEnemy::processDamage` bw2 0x0059f800 (90)
 - [ ] `CBasicNPC::getDeathState` bw2 0x0059f930 (10)
 - [ ] `CBasicEnemy::getCollisionType` bw2 0x0059f960 (7)
 - [ ] `CBasicEnemy::renderTransparent` bw2 0x0059f980 (50)
 - [ ] `CBasicEnemy::renderOpaque` bw2 0x0059fa20 (31)
 - [ ] `CBasicEnemy::isGrabbable` bw2 0x0059fa70 (48)
+- [ ] `CBasicEnemy::renderDebugInfo` bw2 0x0059fae0 (101)
 - [ ] `CBasicEnemy::archive` bw2 0x0059fc10 (385)
+- [ ] `CBasicEnemy::setFade` bw2 0x005a01a0 (8)
+- [ ] `CBasicEnemy::initFlinch` bw2 0x005a01d0 (36)
+- [ ] `CBasicEnemy::resetInitialPos` bw2 0x005a0240 (11)
 - [ ] `CBasicEnemy::startBurn` bw2 0x005a0270 (98)
 - [ ] `CBasicEnemy::processBurnState` bw2 0x005a0380 (261)
 - [ ] `CBasicEnemy::dtor` bw2 0x005a0780 (27)
-- [ ] unnamed bw2 0x0059e7a0 (8)
-- [ ] unnamed bw2 0x0059e7c0 (4)
-- [ ] unnamed bw2 0x0059ebc0 (8)
-- [ ] unnamed bw2 0x0059ec10 (94)
-- [ ] unnamed bw2 0x0059ed50 (51)
-- [ ] unnamed bw2 0x0059ee00 (129)
-- [ ] unnamed bw2 0x0059f0e0 (207)
-- [ ] unnamed bw2 0x0059f390 (40)
-- [ ] unnamed bw2 0x0059f570 (9)
-- [ ] unnamed bw2 0x0059f5b0 (45)
-- [ ] unnamed bw2 0x0059f660 (14)
-- [ ] unnamed bw2 0x0059f6a0 (1)
-- [ ] unnamed bw2 0x0059f740 (60)
-- [ ] unnamed bw2 0x0059fae0 (101)
-- [ ] unnamed bw2 0x005a01a0 (8)
-- [ ] unnamed bw2 0x005a01d0 (36)
-- [ ] unnamed bw2 0x005a0240 (11)
 
 ### `core/basicnpc.cpp`
 - [ ] `staticInit` bw2 0x005a4750 (9)
@@ -9350,13 +9326,13 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBasicNPC::setup` bw2 0x005a4870 (5)
 - [ ] `CBasicNPC::processStates` bw2 0x005a4880 (11)
 - [ ] `CBasicNPC::processDeathState` bw2 0x005a48a0 (9)
+- [ ] `CBasicNPC::processAI` bw2 0x005a48d0 (25)
 - [ ] `CBasicNPC::processMotionEvent` bw2 0x005a48f0 (1)
 - [ ] `CBasicNPC::renderOpaque` bw2 0x005a4920 (5)
 - [ ] `CBasicNPC::archive` bw2 0x005a4930 (5)
 - [ ] `CBasicNPC::getTargetPoints` bw2 0x005a4940 (2)
 - [ ] `CBasicNPC::isGrabbable` bw2 0x005a4950 (17)
 - [ ] `CBasicNPC::dtor` bw2 0x005a4980 (52)
-- [ ] unnamed bw2 0x005a48d0 (25)
 
 ### `core/belling.cpp`
 - [ ] `staticInit` bw2 0x005a8f20 (9)
@@ -9365,13 +9341,13 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBelling::ctor` bw2 0x005a8f80 (43)
 - [ ] `CBelling::setup` bw2 0x005a9050 (5)
 - [ ] `CBelling::processStates` bw2 0x005a9060 (11)
+- [ ] `CBelling::processAI` bw2 0x005a9080 (26)
 - [ ] `CBelling::processDeathState` bw2 0x005a90d0 (8)
 - [ ] `CBelling::getDeathState` bw2 0x005a90f0 (4)
 - [ ] `CBelling::processMotionEvent` bw2 0x005a9100 (1)
 - [ ] `CBelling::renderOpaque` bw2 0x005a9110 (5)
 - [ ] `CBelling::archive` bw2 0x005a9120 (5)
 - [ ] `CBelling::dtor` bw2 0x005a9130 (52)
-- [ ] unnamed bw2 0x005a9080 (26)
 
 ### `core/bindevil.cpp`
 - [ ] `staticInit` bw3 0x0040f720 (9)
@@ -9394,12 +9370,11 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBird::renderOpaque` bw1 0x00415690, bw3 0x0040fe90 (57)
 - [ ] `CBird::renderTransparent` bw1 0x00415730, bw3 0x0040ff30 (22)
 - [ ] `CBird::archive` bw1 0x00415780, bw3 0x0040ff80 (48)
+- [ ] `setRandomMotionVariant` bw1 0x00415830, bw3 0x00410030 (86)
 - [ ] `CBird::processDamage` bw1 0x00415910, bw3 0x00410110 (52)
 - [ ] `CBird::isInvulnerable` bw1 0x004159c0, bw3 0x004101c0 (5)
 - [ ] `CBird::getPathMap` bw1 0x004159e0, bw3 0x004101e0 (3, differs)
 - [ ] `CBird::dtor` bw1 0x004159f0, bw3 0x004101f0 (52, differs)
-- [ ] unnamed bw1 0x00415830 (86)
-- [ ] unnamed bw3 0x00410030 (86)
 
 ### `core/blundrbs.cpp`
 - [ ] `staticInit` bw3 0x00410390 (9)
@@ -9430,6 +9405,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CAudioRecPuzzle::render` bw1 0x00416620, bw2 0x0059b430, bw3 0x004123c0 (124, differs)
 - [ ] `CAudioRecPuzzle::process` bw1 0x00416790, bw2 0x0059b5a0, bw3 0x00412530 (395, differs)
 - [ ] `CAudioRecPuzzle::isButtonHovered` bw1 0x00416cf0, bw2 0x0059b900, bw3 0x004129f0 (38, differs)
+- [ ] `doNothing` bw1 0x00416d50, bw2 0x0059b960, bw3 0x00412a50 (1)
 - [ ] `CAudioRecPuzzle::moveTransportSwitch` bw1 0x00416d60, bw2 0x0059b970, bw3 0x00412a60 (63, differs)
 - [ ] `CAudioRecPuzzle::turnKnob` bw1 0x00416e20, bw2 0x0059ba10, bw3 0x00412b00 (75, differs)
 - [ ] `CAudioRecPuzzle::hitTestButtons` bw1 0x00416f10, bw2 0x0059bad0, bw3 0x00412bc0 (45, differs)
@@ -9466,18 +9442,19 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CExamplePuzzle::getName` bw2 0x0059be40 (2)
 - [ ] `CExamplePuzzle::ctor` bw2 0x0059bf50 (6)
 - [ ] `CExamplePuzzle::dtor` bw2 0x0059bf70 (31)
-- [ ] unnamed bw1 0x00416d50 (1)
-- [ ] unnamed bw2 0x0059b960 (1)
-- [ ] unnamed bw3 0x00412a50 (1)
 
 ### `core/boneguy.cpp`
 - [ ] `CBoneGuy::getDeathState` bw3 0x00419880 (14)
+- [ ] `factoryFuncSkeletonForest` bw3 0x004198b0 (10)
 - [ ] `CSkeletonForest::getActorType` bw3 0x004198d0 (2)
 - [ ] `CSkeletonForest::ctor` bw3 0x004198e0 (21)
+- [ ] `factoryFuncSkeletonIndian` bw3 0x00419950 (10)
 - [ ] `CSkeletonIndian::getActorType` bw3 0x00419970 (2)
 - [ ] `CSkeletonIndian::ctor` bw3 0x00419980 (21)
+- [ ] `factoryFuncSkeletonDemon` bw3 0x004199f0 (10)
 - [ ] `CSkeletonDemon::getActorType` bw3 0x00419a10 (2)
 - [ ] `CSkeletonDemon::ctor` bw3 0x00419a20 (21)
+- [ ] `factoryFuncBaalSkel` bw3 0x00419a90 (10)
 - [ ] `CBaalSkel::getActorType` bw3 0x00419ab0 (2)
 - [ ] `CBaalSkel::ctor` bw3 0x00419ac0 (21)
 - [ ] `CBaalSkel::process` bw3 0x00419b40 (945)
@@ -9486,10 +9463,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSkeletonDemon::dtor` bw3 0x0041a950 (47)
 - [ ] `CSkeletonIndian::dtor` bw3 0x0041a9e0 (47)
 - [ ] `CSkeletonForest::dtor` bw3 0x0041aa70 (47)
-- [ ] unnamed bw3 0x004198b0 (10)
-- [ ] unnamed bw3 0x00419950 (10)
-- [ ] unnamed bw3 0x004199f0 (10)
-- [ ] unnamed bw3 0x00419a90 (10)
 
 ### `core/burncrss.cpp`
 - [ ] `staticInit` bw3 0x004243d0 (9)
@@ -9503,7 +9476,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CBurncross::renderOpaque` bw3 0x00425360 (39)
 - [ ] `CBurncross::setup` bw3 0x004253d0 (22)
 - [ ] `CBurncross::dtor` bw3 0x00425420 (37)
-- [ ] unnamed bw3 0x00425490 (7)
+- [ ] `CFlame::arrdtor8` bw3 0x00425490 (7)
 
 ### `core/bwgrndma.cpp`
 - [ ] `staticInit` bw2 0x005a7ab0 (9)
@@ -9512,6 +9485,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CGrandma::ctor` bw2 0x005a7b10 (43)
 - [ ] `CGrandma::setup` bw2 0x005a7be0 (15)
 - [ ] `CGrandma::processStates` bw2 0x005a7c20 (11)
+- [ ] `CGrandma::processAI` bw2 0x005a7c40 (26)
 - [ ] `CGrandma::processDeathState` bw2 0x005a7c90 (8)
 - [ ] `CGrandma::getDeathState` bw2 0x005a7cb0 (4)
 - [ ] `CGrandma::processMotionEvent` bw2 0x005a7cc0 (1)
@@ -9519,9 +9493,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CGrandma::archive` bw2 0x005a7ce0 (5)
 - [ ] `CGrandma::getCarryObjToBodyXForm` bw2 0x005a7cf0 (90)
 - [ ] `CGrandma::dtor` bw2 0x005a7e10 (52)
-- [ ] unnamed bw2 0x005a7c40 (26)
-- [ ] unnamed bw2 0x005a7eb0 (8)
-- [ ] unnamed bw2 0x005a7ed0 (9)
+- [ ] `staticInit` bw2 0x005a7eb0 (8)
+- [ ] `shouldSpawnParticle` bw2 0x005a7ed0 (9)
 
 ### `core/bwsearch.cpp`
 - [ ] `staticInit` bw2 0x005a8c90 (9)
@@ -9530,13 +9503,13 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSearchParty::ctor` bw2 0x005a8cf0 (38)
 - [ ] `CSearchParty::setup` bw2 0x005a8da0 (5)
 - [ ] `CSearchParty::processStates` bw2 0x005a8db0 (11)
+- [ ] `CSearchParty::processAI` bw2 0x005a8dd0 (26)
 - [ ] `CSearchParty::processDeathState` bw2 0x005a8e20 (8)
 - [ ] `CSearchParty::getDeathState` bw2 0x005a8e40 (4)
 - [ ] `CSearchParty::processMotionEvent` bw2 0x005a8e50 (1)
 - [ ] `CSearchParty::renderOpaque` bw2 0x005a8e60 (5)
 - [ ] `CSearchParty::archive` bw2 0x005a8e70 (5)
 - [ ] `CSearchParty::dtor` bw2 0x005a8e80 (52)
-- [ ] unnamed bw2 0x005a8dd0 (26)
 
 ### `core/bwspart.cpp`
 - [ ] `CSimpleParticleSystem::ctor` bw2 0x005a7ef0 (15)
@@ -9554,81 +9527,59 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSimpleParticleSystem::updateFade` bw2 0x005a8250 (24)
 - [ ] `CSimpleParticleSystem::render` bw2 0x005a8290 (54)
 - [ ] `CSimpleParticleSystem::emit` bw2 0x005a8300 (142)
-- [ ] unnamed bw2 0x005a84c0 (72)
-- [ ] unnamed bw2 0x005a85c0 (76)
-- [ ] unnamed bw2 0x005a86a0 (408)
+- [ ] `initSimpleParticle` bw2 0x005a84c0 (72)
+- [ ] `processSimpleParticle` bw2 0x005a85c0 (76)
+- [ ] `renderSimpleParticle` bw2 0x005a86a0 (408)
 
 ### `core/carved.cpp`
 - [ ] `staticInit` bw1 0x004282c0, bw3 0x00425550 (9)
+- [ ] `getObjectHeightScale` bw1 0x004282f0, bw3 0x00425580 (50)
+- [ ] `getObjectGrabPointLocal` bw1 0x00428390, bw3 0x00425620 (67)
+- [ ] `getObjectGrabPointWorld` bw1 0x00428450, bw3 0x004256e0 (88)
+- [ ] `classifyObjectShape` bw1 0x00428550, bw3 0x004257e0 (117)
 - [ ] `factoryFuncCarved` bw1 0x004286a0, bw3 0x00425930 (10, differs)
 - [ ] `CCarved::getActorType` bw1 0x004286c0, bw3 0x00425950 (2)
 - [ ] `CCarved::ctor` bw1 0x004286d0, bw3 0x00425960 (47, differs)
 - [ ] `CCarved::setup` bw1 0x004287e0, bw3 0x00425ab0 (172, differs)
 - [ ] `CCarved::process` bw1 0x00428ae0, bw3 0x00425da0 (1807, differs)
 - [ ] `CCarved::getCarryObjToBodyXForm` bw1 0x0042a4f0, bw3 0x00427780 (327)
+- [ ] `CCarved::processPickup` bw1 0x0042a930, bw3 0x00427bc0 (615, differs)
+- [ ] `CCarved::getPickupHandIndex` bw1 0x0042b290, bw3 0x00428520 (67)
+- [ ] `CCarved::canPickupWithHand` bw1 0x0042b330, bw3 0x004285c0 (22)
+- [ ] `CCarved::dropAndClearTarget` bw1 0x0042b370, bw3 0x00428600 (17)
 - [ ] `CCarved::renderOpaque` bw1 0x0042b3b0, bw3 0x00428640 (5)
 - [ ] `CCarved::archive` bw1 0x0042b3c0, bw3 0x00428650 (32, differs)
 - [ ] `CCarved::canBeAttracted` bw1 0x0042b430, bw3 0x004286c0 (108)
+- [ ] `CCarved::processDismemberment` bw1 0x0042b580, bw3 0x00428810 (215, differs)
 - [ ] `CCarved::processDamage` bw1 0x0042b850, bw3 0x00428a80 (145, differs)
 - [ ] `CCarved::getTargetPoints` bw1 0x0042ba40, bw3 0x00428cb0 (208)
 - [ ] `CCarved::isGrabbable` bw1 0x0042bd50, bw3 0x00428fc0 (18)
 - [ ] `CCarved::canBeGrabbed` bw1 0x0042bd90, bw3 0x00429000 (4)
 - [ ] `CCarved::getGrabbed` bw1 0x0042bda0, bw3 0x00429010 (29)
 - [ ] `CCarved::shouldIgnoreForTargeting` bw1 0x0042be10, bw3 0x00429080 (5)
+- [ ] `CCarved::resetChaseState` bw1 0x0042be20, bw3 0x00429090 (113, differs)
 - [ ] `CCarved::dtor` bw1 0x0042bf50, bw3 0x004291f0 (47, differs)
-- [ ] unnamed bw1 0x004282f0 (50)
-- [ ] unnamed bw1 0x00428390 (67)
-- [ ] unnamed bw1 0x00428450 (88)
-- [ ] unnamed bw1 0x00428550 (117)
-- [ ] unnamed bw1 0x0042a930 (615)
-- [ ] unnamed bw1 0x0042b290 (67)
-- [ ] unnamed bw1 0x0042b330 (22)
-- [ ] unnamed bw1 0x0042b370 (17)
-- [ ] unnamed bw1 0x0042b580 (215)
-- [ ] unnamed bw1 0x0042be20 (113)
-- [ ] unnamed bw3 0x00425580 (50)
-- [ ] unnamed bw3 0x00425620 (67)
-- [ ] unnamed bw3 0x004256e0 (88)
-- [ ] unnamed bw3 0x004257e0 (117)
-- [ ] unnamed bw3 0x00427bc0 (615)
-- [ ] unnamed bw3 0x00428520 (67)
-- [ ] unnamed bw3 0x004285c0 (22)
-- [ ] unnamed bw3 0x00428600 (17)
-- [ ] unnamed bw3 0x00428810 (193)
-- [ ] unnamed bw3 0x00429090 (123)
 
 ### `core/charactr.cpp`
 - [ ] `CCharacter::markResourcesInUse` bw1 0x0042c7a0, bw2 0x00422be0, bw3 0x0042b400 (14, differs)
+- [ ] `CCharacter::applyGravity` bw1 0x0042d700, bw2 0x00423a10, bw3 0x0042c1e0 (14, differs)
+- [ ] `applyFacePartToHead` bw1 0x0042e410, bw2 0x004246e0, bw3 0x0042d390 (124, differs)
+- [ ] `CCharacter::updateFacialAnimation` bw1 0x0042e580, bw2 0x004247f0, bw3 0x0042d500 (229)
+- [ ] `CCharacter::setEyeFrame` bw1 0x0042e8e0, bw2 0x00424b50, bw3 0x0042d860 (12)
+- [ ] `CCharacter::setMouthFrame` bw1 0x0042e920, bw2 0x00424b90, bw3 0x0042d8a0 (6)
 - [ ] `CCharacter::onLaserHit` bw1 0x00431160, bw2 0x00427730, bw3 0x004304e0 (19)
 - [ ] `CCharacter::isGrabbable` bw1 0x00431430, bw2 0x00427a00 (2)
+- [ ] `CCharacter::updateTurnSpeed` bw1 0x00435320, bw2 0x0042b2a0, bw3 0x00434850 (29)
+- [ ] `CCharacter::pickRandomNamedWaypoint` bw1 0x00435380, bw2 0x0042b300, bw3 0x004348b0 (86, differs)
+- [ ] `CCharacter::findNearestReachableWaypoint` bw1 0x004354a0, bw2 0x0042b420, bw3 0x004349d0 (10)
 - [ ] `CCharacter::setCharacterModel` bw2 0x0042b440 (78)
+- [ ] `CCharacter::setPhantomEyes` bw2 0x0042b550 (34)
+- [ ] `CCharacter::updatePhantomEyes` bw2 0x0042b5e0 (14)
+- [ ] `CCharacter::renderPhantomEyes` bw2 0x0042b620 (99)
+- [ ] `CCharacter::renderEyeGlow` bw2 0x0042b760 (439)
+- [ ] `preloadEtherealTextures` bw3 0x0042f280 (55)
 - [ ] unnamed bw1 0x0042c7d0 (10)
-- [ ] unnamed bw1 0x0042d700, bw3 0x0042c1e0 (14)
-- [ ] unnamed bw1 0x0042e410, bw3 0x0042d390 (124)
-- [ ] unnamed bw1 0x0042e580 (229)
-- [ ] unnamed bw1 0x0042e8e0 (12)
-- [ ] unnamed bw1 0x0042e920 (6)
-- [ ] unnamed bw1 0x00435320 (29)
-- [ ] unnamed bw1 0x00435380, bw3 0x004348b0 (86)
-- [ ] unnamed bw1 0x004354a0, bw3 0x004349d0 (10)
 - [ ] unnamed bw2 0x00422c10 (10)
-- [ ] unnamed bw2 0x00423a10 (16)
-- [ ] unnamed bw2 0x004246e0 (95)
-- [ ] unnamed bw2 0x004247f0 (229)
-- [ ] unnamed bw2 0x00424b50 (12)
-- [ ] unnamed bw2 0x00424b90 (6)
-- [ ] unnamed bw2 0x0042b2a0 (29)
-- [ ] unnamed bw2 0x0042b300 (86)
-- [ ] unnamed bw2 0x0042b420 (10)
-- [ ] unnamed bw2 0x0042b550 (34)
-- [ ] unnamed bw2 0x0042b5e0 (14)
-- [ ] unnamed bw2 0x0042b620 (99)
-- [ ] unnamed bw2 0x0042b760 (439)
-- [ ] unnamed bw3 0x0042d500 (229)
-- [ ] unnamed bw3 0x0042d860 (12)
-- [ ] unnamed bw3 0x0042d8a0 (6)
-- [ ] unnamed bw3 0x0042f280 (55)
-- [ ] unnamed bw3 0x00434850 (29)
 
 ### `core/confedrt.cpp`
 - [ ] `staticInit` bw2 0x005a07e0 (9)
@@ -9638,19 +9589,19 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CConfederate::dtor` bw2 0x005a09c0 (65)
 - [ ] `CConfederate::setup` bw2 0x005a0a90 (42)
 - [ ] `CConfederate::processStates` bw2 0x005a0b20 (63)
+- [ ] `CConfederate::processAI` bw2 0x005a0bd0 (325)
 - [ ] `CConfederate::processAnimationState` bw2 0x005a0fd0 (12)
 - [ ] `CConfederate::processDeathState` bw2 0x005a1000 (9)
+- [ ] `CConfederate::processRangeAttackState` bw2 0x005a1030 (105)
+- [ ] `CConfederate::processMeleeAttackState` bw2 0x005a1180 (105)
 - [ ] `CConfederate::getDeathState` bw2 0x005a12d0 (35)
 - [ ] `CConfederate::processMotionEvent` bw2 0x005a1350 (115)
 - [ ] `CConfederate::renderOpaque` bw2 0x005a1490 (5)
 - [ ] `CConfederate::renderTransparent` bw2 0x005a14a0 (11)
 - [ ] `CConfederate::archive` bw2 0x005a14d0 (5)
+- [ ] `CConfederate::fireShotgun` bw2 0x005a14e0 (372)
 - [ ] `CConfederate::processDamage` bw2 0x005a1a70 (21)
-- [ ] unnamed bw2 0x005a0bd0 (325)
-- [ ] unnamed bw2 0x005a1030 (105)
-- [ ] unnamed bw2 0x005a1180 (105)
-- [ ] unnamed bw2 0x005a14e0 (372)
-- [ ] unnamed bw2 0x005a1ab0 (15)
+- [ ] `getDistanceXZ` bw2 0x005a1ab0 (15)
 
 ### `core/confzomb.cpp`
 - [ ] `staticInit` bw2 0x005a1ae0 (9)
@@ -9663,12 +9614,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CConfederateZombie::processDeathState` bw2 0x005a1ed0 (32)
 - [ ] `CConfederateZombie::processRangeAttackState` bw2 0x005a1f40 (159)
 - [ ] `CConfederateZombie::processMeleeAttackState` bw2 0x005a2130 (86)
+- [ ] `CConfederateZombie::processAI` bw2 0x005a2240 (171)
 - [ ] `CConfederateZombie::getDeathState` bw2 0x005a24a0 (33)
 - [ ] `CConfederateZombie::processMotionEvent` bw2 0x005a2520 (85)
 - [ ] `CConfederateZombie::getTargetPoints` bw2 0x005a2600 (14)
 - [ ] `CConfederateZombie::renderTransparent` bw2 0x005a2630 (14)
 - [ ] `CConfederateZombie::archive` bw2 0x005a2660 (5)
-- [ ] unnamed bw2 0x005a2240 (171)
 
 ### `core/construc.cpp`
 - [ ] `staticInit` bw1 0x004457c0, bw2 0x00436aa0, bw3 0x00442380 (9, differs)
@@ -9682,22 +9633,20 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CConstruct::processDamage` bw1 0x00447090, bw2 0x00437de0, bw3 0x00443f00 (86, differs)
 - [ ] `CConstruct::getTargetPoints` bw1 0x004471a0, bw2 0x00437ee0, bw3 0x00444010 (86, differs)
 - [ ] `CConstruct::explode` bw1 0x004472a0, bw2 0x00438060, bw3 0x00444110 (153, differs)
+- [ ] `CConstruct::startRecombine` bw1 0x00447560, bw2 0x004382a0, bw3 0x004443d0 (62, differs)
 - [ ] `CConstruct::getCollisionType` bw1 0x00447630, bw2 0x00438370, bw3 0x004444c0 (15, differs)
 - [ ] `CConstruct::dtor` bw1 0x00447660, bw2 0x00438390, bw3 0x00444780 (47, differs)
 - [ ] `CConstruct::getDeathState` bw3 0x004444f0 (14)
+- [ ] `factoryFuncConstructBone` bw3 0x00444520 (10)
+- [ ] `CConstructBone::getActorType` bw3 0x00444540 (2)
 - [ ] `CConstructBone::ctor` bw3 0x00444550 (23)
+- [ ] `factoryFuncConstructRed` bw3 0x004445d0 (10)
+- [ ] `CConstructRed::getActorType` bw3 0x004445f0 (2)
 - [ ] `CConstructRed::ctor` bw3 0x00444600 (14)
 - [ ] `CConstructRed::dtor` bw3 0x00444660 (47)
 - [ ] `CConstructBone::dtor` bw3 0x004446f0 (47)
 - [ ] unnamed bw1 0x004474d0 (56)
-- [ ] unnamed bw1 0x00447560 (62)
-- [ ] unnamed bw2 0x004382a0 (62)
 - [ ] unnamed bw3 0x00444340 (56)
-- [ ] unnamed bw3 0x004443d0 (64)
-- [ ] unnamed bw3 0x00444520 (10)
-- [ ] unnamed bw3 0x00444540 (2)
-- [ ] unnamed bw3 0x004445d0 (10)
-- [ ] unnamed bw3 0x004445f0 (2)
 
 ### `core/cross.cpp`
 - [ ] `staticInit` bw2 0x005a6970 (17)
@@ -9708,12 +9657,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CCross::setup` bw2 0x005a6b90 (5)
 - [ ] `CCross::renderOpaque` bw2 0x005a6ba0 (8)
 - [ ] `CCross::renderTransparent` bw2 0x005a6bc0 (78)
+- [ ] `CCross::activate` bw2 0x005a6cf0 (140)
 - [ ] `CCross::process` bw2 0x005a6ed0 (739)
+- [ ] `factoryFuncSimpleCross` bw2 0x005a7950 (10)
 - [ ] `CSimpleCross::getActorType` bw2 0x005a7970 (2)
 - [ ] `CSimpleCross::ctor` bw2 0x005a7980 (66)
 - [ ] `CSimpleCross::dtor` bw2 0x005a7a60 (31)
-- [ ] unnamed bw2 0x005a6cf0 (140)
-- [ ] unnamed bw2 0x005a7950 (10)
 
 ### `core/darkwolf.cpp`
 - [ ] `staticInit` bw3 0x00598700 (17)
@@ -9726,27 +9675,36 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDarkwolf::isInvulnerable` bw3 0x00598ef0 (2)
 - [ ] `CDarkwolf::shouldIgnoreForTargeting` bw3 0x00598f00 (10)
 - [ ] `CDarkwolf::archive` bw3 0x00598f30 (39)
+- [ ] `factoryFuncWhitewolf` bw3 0x00598fb0 (10)
 - [ ] `CWhitewolf::getActorType` bw3 0x00598fd0 (2)
 - [ ] `CWhitewolf::ctor` bw3 0x00598fe0 (18)
 - [ ] `CWhitewolf::dtor` bw3 0x00599030 (52)
 - [ ] `CDarkwolf::dtor` bw3 0x005990d0 (52)
-- [ ] unnamed bw3 0x00598fb0 (10)
 
 ### `core/dcamera.cpp`
-- [ ] unnamed bw1 0x0044ee30, bw2 0x0043d770, bw3 0x0044af70 (81)
-- [ ] unnamed bw1 0x00451bc0, bw2 0x00440500, bw3 0x0044dd00 (36)
+- [ ] `CDemonCamera::computeDirectionalLightMap` bw1 0x0044ee30, bw2 0x0043d770, bw3 0x0044af70 (81)
+- [ ] `CDemonCamera::addDirectionalLightMap` bw1 0x00451bc0, bw2 0x00440500, bw3 0x0044dd00 (36)
 
 ### `core/demnfolk.cpp`
+- [ ] `getObjectHeightScale` bw1 0x00458630, bw3 0x00454780 (50)
+- [ ] `getObjectGrabPointLocal` bw1 0x004586d0, bw3 0x00454820 (67)
+- [ ] `getObjectGrabPointWorld` bw1 0x00458790, bw3 0x004548e0 (88)
+- [ ] `classifyObjectShape` bw1 0x00458890, bw3 0x004549e0 (117)
 - [ ] `factoryFuncDemnfolk` bw1 0x004589e0, bw3 0x00454b30 (10, differs)
 - [ ] `CDemnfolk::getActorType` bw1 0x00458a00, bw3 0x00454b50 (2)
 - [ ] `CDemnfolk::ctor` bw1 0x00458a10, bw3 0x00454b60 (77, differs)
 - [ ] `CDemnfolk::setup` bw1 0x00458bc0, bw3 0x00454d20 (294, differs)
 - [ ] `CDemnfolk::process` bw1 0x00459100, bw3 0x00455080 (2216, differs)
 - [ ] `CDemnfolk::getCarryObjToBodyXForm` bw1 0x0045b120, bw3 0x00457300 (327)
+- [ ] `CDemnfolk::processPickup` bw1 0x0045b560, bw3 0x00457740 (619, differs)
+- [ ] `CDemnfolk::getPickupHandIndex` bw1 0x0045bec0, bw3 0x004580a0 (67)
+- [ ] `CDemnfolk::canPickupWithHand` bw1 0x0045bf60, bw3 0x00458140 (22)
+- [ ] `CDemnfolk::dropAndClearTarget` bw1 0x0045bfa0, bw3 0x00458180 (17)
 - [ ] `CDemnfolk::renderOpaque` bw1 0x0045bfe0, bw3 0x004581c0 (18, differs)
 - [ ] `CDemnfolk::renderTransparent` bw1 0x0045c020, bw3 0x00458200 (162)
 - [ ] `CDemnfolk::archive` bw1 0x0045c1e0, bw3 0x004583c0 (97, differs)
 - [ ] `CDemnfolk::canBeAttracted` bw1 0x0045c350, bw3 0x00458530 (108, differs)
+- [ ] `CDemnfolk::processDismemberment` bw1 0x0045c4a0, bw3 0x00458680 (229, differs)
 - [ ] `CDemnfolk::processDamage` bw1 0x0045c7b0, bw3 0x00458950 (159, differs)
 - [ ] `CDemnfolk::getTargetPoints` bw1 0x0045c9f0, bw3 0x00458bb0 (208)
 - [ ] `CDemnfolk::isGrabbable` bw1 0x0045cd00, bw3 0x00458ec0 (18)
@@ -9757,30 +9715,11 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDemnfolk::playHurtSound` bw1 0x0045cec0 (74)
 - [ ] `CDemnfolk::playDeathSound` bw1 0x0045cf70 (74)
 - [ ] `CDemnfolk::playFeedingSound` bw1 0x0045d020 (17)
+- [ ] `CDemnfolk::resetChaseState` bw1 0x0045d060, bw3 0x00458fb0 (44, differs)
 - [ ] `CDemnfolk::dtor` bw1 0x0045d0e0, bw3 0x00459030 (47, differs)
-- [ ] unnamed bw1 0x00458630 (50)
-- [ ] unnamed bw1 0x004586d0 (67)
-- [ ] unnamed bw1 0x00458790 (88)
-- [ ] unnamed bw1 0x00458890 (117)
-- [ ] unnamed bw1 0x0045b560 (619)
-- [ ] unnamed bw1 0x0045bec0 (67)
-- [ ] unnamed bw1 0x0045bf60 (22)
-- [ ] unnamed bw1 0x0045bfa0 (17)
-- [ ] unnamed bw1 0x0045c4a0 (229)
-- [ ] unnamed bw1 0x0045d060 (44)
-- [ ] unnamed bw3 0x00454780 (50)
-- [ ] unnamed bw3 0x00454820 (67)
-- [ ] unnamed bw3 0x004548e0 (88)
-- [ ] unnamed bw3 0x004549e0 (117)
-- [ ] unnamed bw3 0x00457740 (619)
-- [ ] unnamed bw3 0x004580a0 (67)
-- [ ] unnamed bw3 0x00458140 (22)
-- [ ] unnamed bw3 0x00458180 (17)
-- [ ] unnamed bw3 0x00458680 (215)
-- [ ] unnamed bw3 0x00458fb0 (44)
 
 ### `core/dirmat.cpp`
-- [ ] unnamed bw1 0x0045fd80, bw2 0x00449c20, bw3 0x0045bef0 (18)
+- [ ] `sinCos` bw1 0x0045fd80, bw2 0x00449c20, bw3 0x0045bef0 (18)
 
 ### `core/disease.cpp`
 - [ ] `staticInit` bw3 0x0045bf20 (9)
@@ -9790,7 +9729,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDisease::fire` bw3 0x0045c040 (48)
 - [ ] `CDisease::setup` bw3 0x0045c0d0 (16)
 - [ ] `CDisease::dtor` bw3 0x0045c110 (31)
-- [ ] unnamed bw3 0x0045c160 (5)
+- [ ] `staticInit` bw3 0x0045c160 (5)
 
 ### `core/djien.cpp`
 - [ ] `staticInit` bw1 0x0045fdb0 (9)
@@ -9799,6 +9738,9 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDjien::ctor` bw1 0x0045fe10 (43)
 - [ ] `CDjien::setup` bw1 0x0045ff00 (208)
 - [ ] `CDjien::process` bw1 0x00460230 (511)
+- [ ] `CDjien::hesitate` bw1 0x00460960 (20)
+- [ ] `CDjien::doStumpAttack` bw1 0x004609c0 (201)
+- [ ] `CDjien::blowApart` bw1 0x00460cb0 (136)
 - [ ] `CDjien::archive` bw1 0x00460e80 (73)
 - [ ] `CDjien::damageSack` bw1 0x00460f90 (84)
 - [ ] `CDjien::getCollisionType` bw1 0x00461090 (11)
@@ -9806,53 +9748,58 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDjien::processDamage` bw1 0x004613b0 (125)
 - [ ] `CDjien::getSackIndex` bw1 0x00461530 (25)
 - [ ] `CDjien::getTargetPoints` bw1 0x00461590 (11)
+- [ ] `CDjien::getSackTargetPoints` bw1 0x004615b0 (804)
 - [ ] `CDjien::dtor` bw1 0x004623b0 (47)
 - [ ] `SDjienBox::ctor` bw1 0x00462440 (2)
-- [ ] unnamed bw1 0x00460960 (20)
-- [ ] unnamed bw1 0x004609c0 (201)
-- [ ] unnamed bw1 0x00460cb0 (136)
-- [ ] unnamed bw1 0x004615b0 (804)
-- [ ] unnamed bw1 0x00462450 (5)
 
 ### `core/dlight.cpp`
-- [ ] unnamed bw1 0x00466220 (268)
-- [ ] unnamed bw3 0x0045ff30 (243)
+- [ ] `CDemonLight::drawMonsterVisionBuffer` bw1 0x00466220, bw3 0x0045ff30 (268, differs)
 
 ### `core/doc.cpp`
 - [ ] `staticInit` bw1 0x004689b0, bw2 0x0044fdd0 (29, differs)
-- [ ] `getCarriedObjectVerticalOffset` bw1 0x00468b80 (78)
+- [ ] `blendWeightCallback` bw1 0x00468a20, bw2 0x0044fe40 (20)
+- [ ] `getCarriedObjectVerticalOffset` bw1 0x00468b80, bw2 0x0044ffd0 (78, differs)
 - [ ] `factoryFuncDoc` bw1 0x00468c50, bw2 0x004500a0 (10, differs)
 - [ ] `CDoc::getActorType` bw1 0x00468c70, bw2 0x004500c0 (2)
 - [ ] `CDoc::ctor` bw1 0x00468c80, bw2 0x004500d0 (236, differs)
 - [ ] `CDoc::setup` bw1 0x00469060, bw2 0x00450620 (236, differs)
 - [ ] `CDoc::process` bw1 0x004693e0, bw2 0x00450b20 (99, differs)
 - [ ] `CDoc::processFrame` bw1 0x00469550, bw2 0x00450c60 (2519, differs)
-- [ ] `CDoc::processMotionEvents` bw1 0x0046bde0 (742)
+- [ ] `CDoc::processMotionEvents` bw1 0x0046bde0, bw2 0x00453250 (742, differs)
 - [ ] `CDoc::getCarryLightIntensity` bw1 0x0046c980, bw2 0x00453c60 (26)
-- [ ] `CDoc::getHandsMidpoint` bw1 0x0046c9e0 (70)
-- [ ] `CDoc::updateProceduralAnimation` bw1 0x0046caa0 (1717)
-- [ ] `CDoc::extractTurnPose` bw1 0x0046e630 (70)
-- [ ] `CDoc::updateTurnBlending` bw1 0x0046e730 (211)
+- [ ] `CDoc::getHandsMidpoint` bw1 0x0046c9e0, bw2 0x00453cc0 (70, differs)
+- [ ] `CDoc::updateProceduralAnimation` bw1 0x0046caa0, bw2 0x00453d80 (1717, differs)
+- [ ] `CDoc::extractTurnPose` bw1 0x0046e630, bw2 0x00455170 (70, differs)
+- [ ] `CDoc::updateTurnBlending` bw1 0x0046e730, bw2 0x00455270 (211)
 - [ ] `CDoc::setPositionAndOrientation` bw1 0x0046ea40, bw2 0x00455580 (25)
 - [ ] `CDoc::makeDrawDecision` bw1 0x0046ea80, bw2 0x004555c0 (501, differs)
-- [ ] `CDoc::applyArmAimRotation` bw1 0x0046f200 (295)
-- [ ] `CDoc::updateWeaponPosition` bw1 0x0046f610 (83)
-- [ ] `CDoc::computeWeaponAttachXForm` bw1 0x0046f740 (1011)
-- [ ] `CDoc::processPickupComplete` bw1 0x00470750 (36)
+- [ ] `CDoc::applyArmAimRotation` bw1 0x0046f200, bw2 0x004562a0 (295, differs)
+- [ ] `CDoc::updateWeaponPosition` bw1 0x0046f610, bw2 0x004567c0 (83, differs)
+- [ ] `CDoc::computeWeaponAttachXForm` bw1 0x0046f740, bw2 0x004568e0 (1011, differs)
+- [ ] `CDoc::processPickupComplete` bw1 0x00470750, bw2 0x00458320 (36, differs)
+- [ ] `CDoc::dropRightHandObject` bw1 0x004707d0, bw2 0x004583a0 (20, differs)
+- [ ] `CDoc::tryClimbLadder` bw1 0x00470820, bw2 0x004583f0 (345, differs)
 - [ ] `CDoc::tryPlaceObject` bw1 0x004712b0 (494)
 - [ ] `CDoc::archive` bw1 0x00471970, bw2 0x004597a0 (86, differs)
 - [ ] `CDoc::renderOpaque` bw1 0x00471af0, bw2 0x004599a0 (516, differs)
 - [ ] `CDoc::renderTransparent` bw1 0x00472220, bw2 0x00459d40 (19, differs)
+- [ ] `adjustAimAngleForOffset` bw1 0x00472260, bw2 0x00459db0 (56)
+- [ ] `calculateAimAnglesWithOffset` bw1 0x004722f0 (141)
 - [ ] `CDoc::autoAimAtThreat` bw1 0x004724a0, bw2 0x00459ff0 (763, differs)
 - [ ] `CDoc::aimLeftPistol` bw1 0x00473160, bw2 0x0045ab40 (395, differs)
 - [ ] `CDoc::processDamage` bw1 0x004737b0, bw2 0x0045b190 (326, differs)
 - [ ] `CDoc::updateArmRecoilBlend` bw1 0x00473c10, bw2 0x0045b510 (424, differs)
 - [ ] `CDoc::getCarryObjToBodyXForm` bw1 0x00474250, bw2 0x0045bb50 (26)
-- [ ] `CDoc::getThrowDirection` bw1 0x004742a0 (38)
-- [ ] `CDoc::updateWeaponLayerActions` bw1 0x00474400 (711)
+- [ ] `CDoc::getThrowDirection` bw1 0x004742a0, bw2 0x0045bba0 (38)
+- [ ] `CDoc::updateWeaponLayerActions` bw1 0x00474400, bw2 0x0045bdc0 (711, differs)
+- [ ] `CDoc::handleActionButton` bw1 0x00474ef0, bw2 0x0045c960 (44, differs)
 - [ ] `CDoc::doHeroAction` bw1 0x00474fc0, bw2 0x0045ca30 (483, differs)
 - [ ] `CDoc::canDoHeroAction` bw1 0x00475650, bw2 0x0045d0c0 (191, differs)
+- [ ] `CDoc::tryThrowDynamite` bw1 0x00475890, bw2 0x0045d1f0 (33, differs)
+- [ ] `CDoc::handleFireButton` bw1 0x00475920, bw2 0x0045d2c0 (199, differs)
 - [ ] `CDoc::canReachPickup` bw1 0x00475c20, bw2 0x0045d6d0 (321, differs)
+- [ ] `CDoc::updateClothSimulation` bw1 0x00476080, bw2 0x0045db40 (65, differs)
+- [ ] `CDoc::processWeaponTick` bw1 0x00476150, bw2 0x0045dbf0 (53, differs)
 - [ ] `CDoc::isWeaponDrawn` bw1 0x00476210, bw2 0x0045dc20 (3)
 - [ ] `CDoc::drawWeapon` bw1 0x00476220, bw2 0x0045dc30 (16, differs)
 - [ ] `CDoc::getGrabbed` bw1 0x00476260, bw2 0x0045dc40 (112, differs)
@@ -9863,91 +9810,42 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDoc::toggleGoggles` bw1 0x00476510 (45)
 - [ ] `CDoc::dtor` bw1 0x00476700, bw2 0x00450580 (31, differs)
 - [ ] `CDoc::setCharacterModel` bw2 0x00450a60 (44)
+- [ ] `CDoc::updateLantern` bw2 0x00455d10 (413)
+- [ ] `CDoc::startReload` bw2 0x0045d260 (4)
 - [ ] `CDoc::getTargetPoints` bw2 0x0045de80 (39)
 - [ ] `CDoc::setInventoryIndex` bw2 0x0045def0 (12)
-- [ ] unnamed bw1 0x00468a20 (20)
-- [ ] unnamed bw1 0x00468a90 (22)
-- [ ] unnamed bw1 0x004707d0 (20)
-- [ ] unnamed bw1 0x00470820 (345)
-- [ ] unnamed bw1 0x00472260, bw2 0x00459db0 (56)
-- [ ] unnamed bw1 0x004722f0 (141)
-- [ ] unnamed bw1 0x00474ef0 (44)
-- [ ] unnamed bw1 0x00475890 (33)
-- [ ] unnamed bw1 0x00475920 (199)
-- [ ] unnamed bw1 0x00476080 (65)
-- [ ] unnamed bw1 0x00476150 (53)
-- [ ] unnamed bw1 0x004765f0, bw2 0x0045e040, bw3 0x005271d0 (19)
-- [ ] unnamed bw1 0x00476620, bw2 0x0042bef0, bw3 0x00527200 (17)
-- [ ] unnamed bw1 0x004766f0 (3)
-- [ ] unnamed bw2 0x0044fe40 (20)
-- [ ] unnamed bw2 0x0044fec0 (24)
-- [ ] unnamed bw2 0x0044ffd0 (78)
-- [ ] unnamed bw2 0x00453250 (634)
-- [ ] unnamed bw2 0x00453cc0 (70)
-- [ ] unnamed bw2 0x00453d80 (1257)
-- [ ] unnamed bw2 0x00455170 (70)
-- [ ] unnamed bw2 0x00455270 (211)
-- [ ] unnamed bw2 0x00455d10 (413)
-- [ ] unnamed bw2 0x004562a0 (360)
-- [ ] unnamed bw2 0x004567c0 (81)
-- [ ] unnamed bw2 0x004568e0 (1658)
-- [ ] unnamed bw2 0x00458320 (36)
-- [ ] unnamed bw2 0x004583a0 (20)
-- [ ] unnamed bw2 0x004583f0 (345)
+- [ ] `CDoc::isLanternToggleBlocked` bw2 0x0045df30 (71)
+- [ ] `dotProduct` bw2 0x0045e010 (15)
 - [ ] unnamed bw2 0x00459555 (158)
-- [ ] unnamed bw2 0x0045bba0 (38)
-- [ ] unnamed bw2 0x0045bdc0 (757)
-- [ ] unnamed bw2 0x0045c960 (41)
-- [ ] unnamed bw2 0x0045d1f0 (36)
-- [ ] unnamed bw2 0x0045d260 (4)
-- [ ] unnamed bw2 0x0045d2c0 (279)
-- [ ] unnamed bw2 0x0045db40 (61)
-- [ ] unnamed bw2 0x0045dbf0 (12)
-- [ ] unnamed bw2 0x0045df30 (71)
-- [ ] unnamed bw2 0x0045e010 (15)
-- [ ] unnamed bw2 0x0045e1b0 (4)
 
 ### `core/dog.cpp`
+- [ ] `factoryFuncDogForest` bw3 0x00463650 (10)
 - [ ] `CDogForest::getActorType` bw3 0x00463670 (2)
 - [ ] `CDogForest::ctor` bw3 0x00463680 (19)
+- [ ] `factoryFuncDemonDog` bw3 0x004636e0 (10)
 - [ ] `CDemonDog::getActorType` bw3 0x00463700 (2)
 - [ ] `CDemonDog::ctor` bw3 0x00463710 (21)
+- [ ] `factoryFuncEtherealDog` bw3 0x00463780 (10)
 - [ ] `CEtherealDog::getActorType` bw3 0x004637a0 (2)
 - [ ] `CEtherealDog::ctor` bw3 0x004637b0 (20)
 - [ ] `CEtherealDog::dtor` bw3 0x00463810 (47)
 - [ ] `CDemonDog::dtor` bw3 0x004638a0 (47)
 - [ ] `CDogForest::dtor` bw3 0x00463930 (47)
-- [ ] unnamed bw3 0x00463650 (10)
-- [ ] unnamed bw3 0x004636e0 (10)
-- [ ] unnamed bw3 0x00463780 (10)
 
 ### `core/door.cpp`
-- [ ] unnamed bw1 0x004774f0, bw3 0x00463d30 (15)
-- [ ] unnamed bw1 0x004783d0, bw3 0x00464c10 (59)
-- [ ] unnamed bw2 0x0045efe0 (15)
-- [ ] unnamed bw2 0x0045fec0 (59)
+- [ ] `CDoor::setState` bw1 0x004774f0, bw2 0x0045efe0, bw3 0x00463d30 (15)
+- [ ] `CDoor::getHandlePosition` bw1 0x004783d0, bw2 0x0045fec0, bw3 0x00464c10 (59)
 
 ### `core/dpart.cpp`
 - [ ] unnamed bw1 0x00479b22, bw2 0x00461612, bw3 0x004663f2 (8)
 
-### `core/dtri.cpp`
-- [ ] unnamed bw1 0x004922e0 (2)
-- [ ] unnamed bw1 0x004922f0 (2)
-- [ ] unnamed bw2 0x00479df0 (2)
-- [ ] unnamed bw2 0x00479e00 (2)
-- [ ] unnamed bw3 0x0047ae80 (2)
-- [ ] unnamed bw3 0x0047ae90 (2)
-
 ### `core/enemy.cpp`
+- [ ] `CEnemy::spawnItems` bw3 0x00489c90 (245)
+- [ ] `CEnemy::testPainThreshold` bw3 0x0048a1b0 (27)
 - [ ] `CEnemy::isGrabbable` bw3 0x0048a200 (9)
-- [ ] unnamed bw3 0x00489c90 (245)
-- [ ] unnamed bw3 0x0048a1b0 (27)
 
 ### `core/event.cpp`
-- [ ] unnamed bw1 0x004a1d00 (6511)
-- [ ] unnamed bw2 0x00491240 (16)
-- [ ] unnamed bw2 0x00492630 (3)
-- [ ] unnamed bw3 0x0048c2e0 (7155)
+- [ ] `CEventList::getTimerValue` bw2 0x00491240 (16)
 
 ### `core/exorcism.cpp`
 - [ ] `staticInit` bw3 0x0048a2b0 (9)
@@ -9969,13 +9867,13 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CTwigZombie::ctor` bw2 0x005a26d0 (92)
 - [ ] `CTwigZombie::setup` bw2 0x005a2820 (40)
 - [ ] `CTwigZombie::processStates` bw2 0x005a28a0 (40)
+- [ ] `CTwigZombie::processAI` bw2 0x005a2910 (110)
 - [ ] `CTwigZombie::processDeathState` bw2 0x005a2a90 (9)
+- [ ] `CTwigZombie::processMeleeAttackState` bw2 0x005a2ac0 (228)
 - [ ] `CTwigZombie::getDeathState` bw2 0x005a2dc0 (35)
 - [ ] `CTwigZombie::processMotionEvent` bw2 0x005a2e30 (30)
 - [ ] `CTwigZombie::processDamage` bw2 0x005a2e90 (8)
 - [ ] `CTwigZombie::dtor` bw2 0x005a2eb0 (52)
-- [ ] unnamed bw2 0x005a2910 (110)
-- [ ] unnamed bw2 0x005a2ac0 (228)
 
 ### `core/fire.cpp`
 - [ ] `CFirefly::process` bw1 0x004ad860, bw2 0x00494ec0, bw3 0x004988b0 (98)
@@ -10031,36 +9929,36 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CFirestaff::renderOpaque` bw3 0x004a57c0 (55)
 - [ ] `CFirestaff::setup` bw3 0x004a5870 (22)
 - [ ] `CFirestaff::dtor` bw3 0x004a58c0 (37)
-- [ ] unnamed bw3 0x004a5930 (7)
+- [ ] `CFlame::arrdtor12` bw3 0x004a5930 (7)
 
 ### `core/flame.cpp`
-- [ ] unnamed bw3 0x004a5ad0 (21)
+- [ ] `preloadFlameTextures` bw3 0x004a5ad0 (21)
 
 ### `core/flashlit.cpp`
+- [ ] `staticInit` bw1 0x004b98b0 (9)
 - [ ] `CFlashlight::renderAimBeam` bw1 0x004b99a0, bw2 0x004a10f0, bw3 0x004a75e0 (1)
 - [ ] `CFlashlight::getMuzzlePoint` bw1 0x004b99c0, bw2 0x004a1110, bw3 0x004a7600 (41, differs)
-- [ ] unnamed bw1 0x004b9ab0 (97)
-- [ ] unnamed bw1 0x004b9c50, bw2 0x004a1390, bw3 0x004a7890 (66)
-- [ ] unnamed bw1 0x004b9ce0, bw2 0x004a1420, bw3 0x004a7920 (13)
-- [ ] unnamed bw1 0x004b9d10, bw2 0x004a1450, bw3 0x004a7950 (66)
-- [ ] unnamed bw1 0x004b9db0, bw2 0x004a14f0, bw3 0x004a79f0 (35)
-- [ ] unnamed bw1 0x004b9e00, bw2 0x004a1540 (8)
-- [ ] unnamed bw1 0x004b9e30, bw2 0x004a1570, bw3 0x004a7a70 (101)
-- [ ] unnamed bw1 0x004b9f70, bw2 0x004a16b0, bw3 0x004a7bb0 (44)
-- [ ] unnamed bw1 0x004b9ff0, bw2 0x004a1730, bw3 0x004a7c30 (49)
-- [ ] unnamed bw1 0x004ba0b0, bw2 0x004a17f0, bw3 0x004a7cf0 (34)
-- [ ] unnamed bw1 0x004ba130, bw3 0x004a7d70 (197)
-- [ ] unnamed bw1 0x004ba440, bw2 0x004a1b60, bw3 0x004a8080 (28)
-- [ ] unnamed bw1 0x004ba490, bw2 0x004a1bb0, bw3 0x004a80d0 (59)
-- [ ] unnamed bw1 0x004ba540, bw2 0x004a1c60, bw3 0x004a8180 (59)
-- [ ] unnamed bw1 0x004ba5e0, bw2 0x004a1d00, bw3 0x004a8220 (32)
-- [ ] unnamed bw1 0x004ba630, bw3 0x004a8270 (38)
-- [ ] unnamed bw1 0x004ba6b0, bw3 0x004a82f0 (43)
-- [ ] unnamed bw2 0x004a1200 (91)
-- [ ] unnamed bw2 0x004a1870 (191)
-- [ ] unnamed bw2 0x004a1d50 (36)
-- [ ] unnamed bw2 0x004a1dd0 (46)
-- [ ] unnamed bw3 0x004a76f0 (97)
+- [ ] `staticInit` bw1 0x004b9ab0 (97)
+- [ ] `trimAndNormalizeWhitespace` bw1 0x004b9c50, bw2 0x004a1390, bw3 0x004a7890 (66)
+- [ ] `stripCommentAndTrim` bw1 0x004b9ce0, bw2 0x004a1420, bw3 0x004a7920 (13)
+- [ ] `matchCommand` bw1 0x004b9d10, bw2 0x004a1450, bw3 0x004a7950 (66)
+- [ ] `findNotesEntry` bw1 0x004b9db0, bw2 0x004a14f0, bw3 0x004a79f0 (35)
+- [ ] `resetTooltip` bw1 0x004b9e00, bw2 0x004a1540 (8)
+- [ ] `updateTooltip` bw1 0x004b9e30, bw2 0x004a1570, bw3 0x004a7a70 (101)
+- [ ] `drawTooltip` bw1 0x004b9f70, bw2 0x004a16b0, bw3 0x004a7bb0 (44)
+- [ ] `freeNotesBitmaps` bw1 0x004b9ff0, bw2 0x004a1730, bw3 0x004a7c30 (49)
+- [ ] `loadNotesBitmap` bw1 0x004ba0b0, bw2 0x004a17f0, bw3 0x004a7cf0 (34)
+- [ ] `loadNotesBitmaps` bw1 0x004ba130, bw2 0x004a1870, bw3 0x004a7d70 (197, differs)
+- [ ] `findSectionForPage` bw1 0x004ba440, bw2 0x004a1b60, bw3 0x004a8080 (28)
+- [ ] `hitTestSectionTab` bw1 0x004ba490, bw2 0x004a1bb0, bw3 0x004a80d0 (59)
+- [ ] `hitTestPageArrows` bw1 0x004ba540, bw2 0x004a1c60, bw3 0x004a8180 (59)
+- [ ] `hitTestExitButton` bw1 0x004ba5e0, bw2 0x004a1d00, bw3 0x004a8220 (32)
+- [ ] `layoutSections` bw1 0x004ba630, bw2 0x004a1d50, bw3 0x004a8270 (38, differs)
+- [ ] `relayoutSectionsIfDirty` bw1 0x004ba6b0, bw2 0x004a1dd0, bw3 0x004a82f0 (43, differs)
+- [ ] `staticInit` bw2 0x004a1000 (9)
+- [ ] `staticInit` bw2 0x004a1200 (91)
+- [ ] `staticInit` bw3 0x004a74f0 (9)
+- [ ] `staticInit` bw3 0x004a76f0 (97)
 
 ### `core/flattn.cpp`
 - [ ] unnamed bw1 0x004bf780 (29)
@@ -10168,35 +10066,24 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CFlintlock::dtor` bw3 0x004af630 (31)
 
 ### `core/game.cpp`
+- [ ] `CGame::setGogglesActive` bw1 0x004d1760, bw2 0x004b7fc0, bw3 0x004ba220 (28, differs)
+- [ ] `CGame::setSpecialViewActive` bw1 0x004d17c0, bw2 0x004b8030, bw3 0x004ba280 (28, differs)
+- [ ] `CGame::resetIrisFade` bw1 0x004d5e80, bw2 0x004bb090, bw3 0x004bd470 (3)
+- [ ] `CGame::processPointAndClickControls` bw1 0x004d9260, bw2 0x004be8a0, bw3 0x004c07b0 (2763, differs)
+- [ ] `CGame::onSetLoaded` bw1 0x004dc000, bw2 0x004bfa70, bw3 0x004c4870 (17, differs)
 - [ ] `loadCursorBitmaps` bw1 0x004dc040, bw3 0x004c48b0 (82)
 - [ ] `freeCursorBitmaps` bw1 0x004dc180, bw3 0x004c49f0 (13)
 - [ ] `drawCursor` bw1 0x004dc1a0, bw3 0x004c4a10 (20)
-- [ ] unnamed bw1 0x004d1760 (28)
-- [ ] unnamed bw1 0x004d17c0 (28)
-- [ ] unnamed bw1 0x004d5e80 (3)
-- [ ] unnamed bw1 0x004d9260 (2763)
-- [ ] unnamed bw1 0x004dc000 (17)
+- [ ] `CGame::setAlphaFade` bw2 0x004bb500 (16)
+- [ ] `CGame::startAlphaFade` bw2 0x004bb550 (7)
+- [ ] `CGame::stopAlphaFade` bw2 0x004bb580 (5)
+- [ ] `CGame::updateAlphaFade` bw2 0x004bb5b0 (25)
+- [ ] `CGame::renderAlphaFade` bw2 0x004bb620 (166)
+- [ ] `CGame::playMusic` bw3 0x004c4a60 (110)
+- [ ] `CGame::updateMusic` bw3 0x004c4bc0 (79)
+- [ ] `CGame::saveMusicPosition` bw3 0x004c4cc0 (22)
 - [ ] unnamed bw2 0x004b2930 (19)
-- [ ] unnamed bw2 0x004b7fc0 (34)
-- [ ] unnamed bw2 0x004b8030 (34)
-- [ ] unnamed bw2 0x004bb090 (3)
-- [ ] unnamed bw2 0x004bb500 (16)
-- [ ] unnamed bw2 0x004bb550 (7)
-- [ ] unnamed bw2 0x004bb580 (5)
-- [ ] unnamed bw2 0x004bb5b0 (25)
-- [ ] unnamed bw2 0x004bb620 (166)
-- [ ] unnamed bw2 0x004be8a0 (1143)
-- [ ] unnamed bw2 0x004bfa70 (2)
-- [ ] unnamed bw3 0x004ba220 (28)
-- [ ] unnamed bw3 0x004ba280 (28)
-- [ ] unnamed bw3 0x004bd470 (3)
-- [ ] unnamed bw3 0x004c07b0 (3833)
-- [ ] unnamed bw3 0x004c4870 (17)
-- [ ] unnamed bw3 0x004c4a60 (110)
-- [ ] unnamed bw3 0x004c4bc0 (79)
-- [ ] unnamed bw3 0x004c4cc0 (22)
 - [ ] unnamed bw3 0x004c4d10 (7)
-- [ ] unnamed bw3 0x004c4d50 (3)
 
 ### `core/ghostchi.cpp`
 - [ ] `staticInit` bw2 0x005a91d0 (9)
@@ -10208,13 +10095,13 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CGhostChild::processStates` bw2 0x005a94c0 (65)
 - [ ] `CGhostChild::processMeleeAttackState` bw2 0x005a9580 (147)
 - [ ] `CGhostChild::processSleepState` bw2 0x005a9770 (76)
+- [ ] `CGhostChild::processAI` bw2 0x005a9890 (78)
 - [ ] `CGhostChild::processDeathState` bw2 0x005a9980 (32)
 - [ ] `CGhostChild::getTargetPoints` bw2 0x005a99f0 (48)
 - [ ] `CGhostChild::getDeathState` bw2 0x005a9a80 (35)
 - [ ] `CGhostChild::processMotionEvent` bw2 0x005a9af0 (38)
 - [ ] `CGhostChild::archive` bw2 0x005a9b60 (5)
 - [ ] `CGhostChild::renderTransparent` bw2 0x005a9b70 (14)
-- [ ] unnamed bw2 0x005a9890 (78)
 
 ### `core/gmehook.cpp`
 - [ ] `CGameHook::ctor` bw2 0x0059c290 (6)
@@ -10224,7 +10111,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CGameHook::showDebugMenu` bw2 0x0059c3d0 (129)
 
 ### `core/goggles.cpp`
-- [ ] `staticInit` bw1 0x004e3ad0, bw2 0x0059c000, bw3 0x004cc660 (9)
+- [ ] `staticInit` bw1 0x004e3ad0, bw3 0x004cc660 (9)
 - [ ] `factoryFuncGoggles` bw1 0x004e3b00, bw2 0x0059c030, bw3 0x004cc690 (10, differs)
 - [ ] `CGoggles::getActorType` bw1 0x004e3b20, bw2 0x0059c050, bw3 0x004cc6b0 (2)
 - [ ] `CGoggles::setup` bw1 0x004e3b80, bw2 0x0059c0b0, bw3 0x004cc710 (10, differs)
@@ -10235,7 +10122,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CGoggles::getCollisionType` bw1 0x004e3ca0, bw2 0x0059c1d0, bw3 0x004cc830 (2)
 - [ ] `CGoggles::getBoundingBox` bw1 0x004e3cb0, bw2 0x0059c1e0, bw3 0x004cc840 (22, differs)
 - [ ] `CGoggles::dtor` bw1 0x004e3cf0, bw2 0x0059c220, bw3 0x004cc880 (31)
-- [ ] unnamed bw2 0x0059c270 (7)
+- [ ] `staticInit` bw2 0x0059c000 (9)
+- [ ] `staticInit` bw2 0x0059c270 (7)
 
 ### `core/hand.cpp`
 - [ ] `staticInit` bw2 0x005a9ba0 (9)
@@ -10247,6 +10135,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CHand::processStates` bw2 0x005a9e10 (65)
 - [ ] `CHand::processMeleeAttackState` bw2 0x005a9ed0 (105)
 - [ ] `CHand::processSleepingState` bw2 0x005a9ff0 (141)
+- [ ] `CHand::processAI` bw2 0x005aa1a0 (26)
 - [ ] `CHand::processDamage` bw2 0x005aa1f0 (17)
 - [ ] `CHand::processDeathState` bw2 0x005aa230 (9)
 - [ ] `CHand::getDeathState` bw2 0x005aa260 (40)
@@ -10255,7 +10144,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CHand::renderOpaque` bw2 0x005aa450 (5)
 - [ ] `CHand::archive` bw2 0x005aa460 (15)
 - [ ] `CHand::renderTransparent` bw2 0x005aa4a0 (78)
-- [ ] unnamed bw2 0x005aa1a0 (26)
 
 ### `core/heal.cpp`
 - [ ] `staticInit` bw3 0x004d1900 (9)
@@ -10269,10 +10157,10 @@ the retail game has it too. Sizes are in instructions.
 
 ### `core/health.cpp`
 - [ ] `CHealthItem::renderTransparent` bw2 0x004cde20 (49)
+- [ ] `factoryFuncHealthItemSmall` bw3 0x004d2150 (10)
 - [ ] `CHealthItemSmall::getActorType` bw3 0x004d2170 (2)
 - [ ] `CHealthItemSmall::ctor` bw3 0x004d2180 (17)
 - [ ] `CHealthItemSmall::dtor` bw3 0x004d21d0 (31)
-- [ ] unnamed bw3 0x004d2150 (10)
 
 ### `core/hecaitmx.cpp`
 - [ ] `staticInit` bw3 0x00597d90 (9)
@@ -10297,12 +10185,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CDog::processMeleeAttackState` bw2 0x005abfa0 (103)
 - [ ] `CDog::processChaseFoodState` bw2 0x005ac0c0 (103)
 - [ ] `CDog::processLeapAttackState` bw2 0x005ac200 (83)
+- [ ] `CDog::processAI` bw2 0x005ac2f0 (162)
 - [ ] `CDog::processDeathState` bw2 0x005ac520 (38)
 - [ ] `CDog::getDeathState` bw2 0x005ac5a0 (35)
 - [ ] `CDog::processMotionEvent` bw2 0x005ac610 (70)
 - [ ] `CDog::archive` bw2 0x005ac6d0 (22)
 - [ ] `CDog::renderTransparent` bw2 0x005ac720 (8)
-- [ ] unnamed bw2 0x005ac2f0 (162)
 
 ### `core/hellhag.cpp`
 - [ ] `staticInit` bw2 0x005aa5a0 (9)
@@ -10317,37 +10205,34 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CHag::processHealingState` bw2 0x005aaca0 (64)
 - [ ] `CHag::startBurn` bw2 0x005aad70 (96)
 - [ ] `CHag::processBurnState` bw2 0x005aae80 (238)
+- [ ] `CHag::processAI` bw2 0x005ab260 (374)
 - [ ] `CHag::processDeathState` bw2 0x005ab760 (9)
 - [ ] `CHag::renderTransparent` bw2 0x005ab790 (19)
 - [ ] `CHag::processDamage` bw2 0x005ab7d0 (77)
 - [ ] `CHag::getDeathState` bw2 0x005ab8d0 (35)
 - [ ] `CHag::processMotionEvent` bw2 0x005ab940 (50)
 - [ ] `CHag::archive` bw2 0x005ab9d0 (5)
-- [ ] unnamed bw2 0x005ab260 (374)
 
 ### `core/hero.cpp`
 - [ ] `CHero::canReachPickup` bw1 0x004eade0, bw2 0x004cea40, bw3 0x004d2ae0 (2)
+- [ ] `CHero::clearHeroAction` bw1 0x004eb5b0, bw2 0x004cf200, bw3 0x004d3210 (6, differs)
 - [ ] `CHero::toggleLeverNow` bw1 0x004eb7f0, bw2 0x004cf440, bw3 0x004d3460 (53)
 - [ ] `CHero::tryPickupActorOfClass` bw1 0x004ec090, bw2 0x004cfd60, bw3 0x004d3e20 (93, differs)
 - [ ] `CHero::doHeroAction` bw1 0x004ec640, bw2 0x004d03b0, bw3 0x004d4520 (265, differs)
-- [ ] `CHero::canDoHeroAction` bw1 0x004ec950, bw2 0x004d06c0 (33, differs)
+- [ ] `CHero::canDoHeroAction` bw1 0x004ec950, bw2 0x004d06c0, bw3 0x004d4840 (33, differs)
 - [ ] `CHero::toggleGoggles` bw1 0x004ec9e0, bw2 0x004d0750, bw3 0x004d48d0 (15)
+- [ ] `CHero::findHeroAction` bw1 0x004eca10, bw2 0x004d0780, bw3 0x004d4900 (115, differs)
 - [ ] `CHero::setInventoryIndex` bw2 0x004ce3b0 (5)
-- [ ] unnamed bw1 0x004eb5b0 (6)
-- [ ] unnamed bw1 0x004eca10 (115)
-- [ ] unnamed bw2 0x004cf200 (6)
-- [ ] unnamed bw2 0x004d0780 (115)
-- [ ] unnamed bw3 0x004d3210 (7)
-- [ ] unnamed bw3 0x004d4840 (35)
-- [ ] unnamed bw3 0x004d4900 (142)
 
 ### `core/hino.cpp`
 - [ ] `staticInit` bw3 0x0059b610 (9)
 - [ ] `factoryFuncHino` bw3 0x0059b640 (10)
 - [ ] `CHino::getActorType` bw3 0x0059b660 (2)
 - [ ] `CHino::ctor` bw3 0x0059b670 (39)
+- [ ] `percentToFixedAlpha` bw3 0x0059b740 (11)
 - [ ] `CHino::setup` bw3 0x0059b770 (90)
 - [ ] `CHino::process` bw3 0x0059b960 (1570)
+- [ ] `CHino::isHeroAtPlatform` bw3 0x0059d000 (89)
 - [ ] `CHino::renderTransparent` bw3 0x0059d120 (140)
 - [ ] `CHino::archive` bw3 0x0059d310 (23)
 - [ ] `CHino::processDamage` bw3 0x0059d360 (58)
@@ -10355,8 +10240,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CHino::getCarryObjToBodyXForm` bw3 0x0059d510 (78)
 - [ ] `CHino::getCollisionType` bw3 0x0059d640 (7)
 - [ ] `CHino::dtor` bw3 0x0059d660 (47)
-- [ ] unnamed bw3 0x0059b740 (11)
-- [ ] unnamed bw3 0x0059d000 (89)
 
 ### `core/holycrss.cpp`
 - [ ] `staticInit` bw3 0x004d5070 (9)
@@ -10372,18 +10255,18 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CHolycross::dtor` bw3 0x004d5320 (31)
 
 ### `core/hotdemon.cpp`
+- [ ] `factoryFuncAngelForest` bw3 0x004d62e0 (10)
 - [ ] `CAngelForest::getActorType` bw3 0x004d6300 (2)
 - [ ] `CAngelForest::ctor` bw3 0x004d6310 (18)
+- [ ] `factoryFuncAngelSpirit` bw3 0x004d6360 (10)
 - [ ] `CAngelSpirit::getActorType` bw3 0x004d6380 (2)
 - [ ] `CAngelSpirit::ctor` bw3 0x004d6390 (18)
+- [ ] `factoryFuncAngelDemon` bw3 0x004d63e0 (10)
 - [ ] `CAngelDemon::getActorType` bw3 0x004d6400 (2)
 - [ ] `CAngelDemon::ctor` bw3 0x004d6410 (18)
 - [ ] `CAngelDemon::dtor` bw3 0x004d6460 (47)
 - [ ] `CAngelSpirit::dtor` bw3 0x004d64f0 (47)
 - [ ] `CAngelForest::dtor` bw3 0x004d6580 (47)
-- [ ] unnamed bw3 0x004d62e0 (10)
-- [ ] unnamed bw3 0x004d6360 (10)
-- [ ] unnamed bw3 0x004d63e0 (10)
 
 ### `core/hpatrol.cpp`
 - [ ] `staticInit` bw2 0x0059c580 (9)
@@ -10395,7 +10278,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CPatrolPoint::process` bw2 0x0059c680 (256)
 - [ ] `CPatrolPoint::renderOpaque` bw2 0x0059c980 (8)
 - [ ] `CPatrolPoint::renderTransparent` bw2 0x0059c9a0 (7)
-- [ ] unnamed bw2 0x0059c9c0 (158)
+- [ ] `findNextPatrolPoint` bw2 0x0059c9c0 (158)
 
 ### `core/hpbox.cpp`
 - [ ] `staticInit` bw2 0x005ac740 (9)
@@ -10408,20 +10291,20 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CParticleBox::renderTransparent` bw2 0x005ad300 (24)
 
 ### `core/imp.cpp`
-- [ ] unnamed bw3 0x004d8280 (1)
+- [ ] `staticInit` bw3 0x004d66a0 (9)
+- [ ] `staticInit` bw3 0x004d8280 (1)
 
 ### `core/inv.cpp`
+- [ ] `renderSps` bw1 0x004f64f0 (33)
+- [ ] `renderCompass` bw1 0x004f6560, bw2 0x004da130 (348)
+- [ ] `playSpsSound` bw1 0x004f6b50, bw3 0x004d9fc0 (33)
+- [ ] `updateSps` bw1 0x004f6bb0, bw3 0x004da020 (236, differs)
 - [ ] `CInventory::findItemOfClass` bw1 0x004f8c90, bw3 0x004db9e0 (35)
 - [ ] `setupItems` bw1 0x004f9b20, bw2 0x004dc850, bw3 0x004dcad0 (53, differs)
+- [ ] `CInventory::getActiveGoggles` bw1 0x004f9ef0 (9)
+- [ ] `CInventory::findWeaponByAmmoType` bw3 0x004dba30 (38)
 - [ ] unnamed bw1 0x004f63c0 (95)
-- [ ] unnamed bw1 0x004f64f0 (33)
-- [ ] unnamed bw1 0x004f6560, bw2 0x004da130 (348)
-- [ ] unnamed bw1 0x004f6b50, bw3 0x004d9fc0 (33)
-- [ ] unnamed bw1 0x004f6bb0 (236)
-- [ ] unnamed bw1 0x004f9ef0 (9)
 - [ ] unnamed bw2 0x004d9ff0 (97)
-- [ ] unnamed bw3 0x004da020 (246)
-- [ ] unnamed bw3 0x004dba30 (38)
 
 ### `core/kedward.cpp`
 - [ ] `factoryFuncKedward` bw3 0x0058fd40 (10)
@@ -10432,9 +10315,9 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CKedward::renderOpaque` bw3 0x00591670 (5)
 - [ ] `CKedward::renderTransparent` bw3 0x00591680 (164)
 - [ ] `CKedward::processDamage` bw3 0x005918e0 (63)
+- [ ] `CKedward::resetChaseState` bw3 0x005919a0 (26)
 - [ ] `CKedward::archive` bw3 0x005919f0 (54)
 - [ ] `CKedward::dtor` bw3 0x00591ab0 (47)
-- [ ] unnamed bw3 0x005919a0 (26)
 
 ### `core/lantern.cpp`
 - [ ] `staticInit` bw2 0x0059cb70 (9)
@@ -10444,6 +10327,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CLantern::setup` bw2 0x0059ccc0 (7)
 - [ ] `CLantern::fire` bw2 0x0059cce0 (2)
 - [ ] `CLantern::process` bw2 0x0059ccf0 (106)
+- [ ] `CLantern::updateLightTransform` bw2 0x0059ced0 (97)
 - [ ] `CLantern::renderOpaque` bw2 0x0059d000 (21)
 - [ ] `CLantern::renderTransparent` bw2 0x0059d040 (26)
 - [ ] `CLantern::renderAimBeam` bw2 0x0059d0a0 (1)
@@ -10451,7 +10335,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CLantern::canPickup` bw2 0x0059d0c0 (2)
 - [ ] `CLantern::getMuzzlePoint` bw2 0x0059d0d0 (41)
 - [ ] `CLantern::dtor` bw2 0x0059d170 (31)
-- [ ] unnamed bw2 0x0059ced0 (97)
 
 ### `core/lightgun.cpp`
 - [ ] `CLightGun::getMuzzlePoint` bw1 0x00500160, bw2 0x004e2cc0 (30, differs)
@@ -10462,15 +10345,15 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `factoryFuncLightPis` bw1 0x005015e0 (10)
 - [ ] `CLightPis::getActorType` bw1 0x00501600 (2)
 - [ ] `CLightPis::ctor` bw1 0x00501610 (32)
+- [ ] `isVampireType` bw1 0x005016d0 (43)
+- [ ] `isLightVulnerable` bw1 0x00501750 (56)
+- [ ] `CLightPis::updateBeamLight` bw1 0x005017f0 (58)
 - [ ] `CLightPis::getMuzzlePoint` bw1 0x005018c0 (30)
 - [ ] `CLightPis::fire` bw1 0x00501a70 (652)
 - [ ] `CLightPis::process` bw1 0x00502480 (132)
 - [ ] `CLightPis::getDamage` bw1 0x00502680 (30)
 - [ ] `CLightPis::renderAimBeam` bw1 0x005026f0 (372)
 - [ ] `CLightPis::dtor` bw1 0x00502cc0 (31)
-- [ ] unnamed bw1 0x005016d0 (43)
-- [ ] unnamed bw1 0x00501750 (56)
-- [ ] unnamed bw1 0x005017f0 (58)
 
 ### `core/lightsta.cpp`
 - [ ] `staticInit` bw3 0x004e0f10 (9)
@@ -10485,13 +10368,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CLightStaff::setup` bw3 0x004e3eb0 (25)
 - [ ] `CLightStaff::dtor` bw3 0x004e3f10 (31)
 
-### `core/main.c`
-- [ ] unnamed bw3 0x004e4d80 (1)
-
 ### `core/marquee.cpp`
-- [ ] unnamed bw1 0x005072c0, bw2 0x004e8620, bw3 0x004e4d00 (38)
-- [ ] unnamed bw1 0x00507340 (1)
-- [ ] unnamed bw2 0x004e86a0 (1)
+- [ ] `freeTrigTables` bw1 0x00507340, bw2 0x004e86a0, bw3 0x004e4d80 (1)
 
 ### `core/mattnntt.cpp`
 - [ ] `staticInit` bw3 0x00591b40 (9)
@@ -10503,13 +10381,13 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CMattanntote::renderOpaque` bw3 0x00593700 (5)
 - [ ] `CMattanntote::renderTransparent` bw3 0x00593710 (176)
 - [ ] `CMattanntote::processDamage` bw3 0x005939b0 (75)
+- [ ] `CMattanntote::chooseMoveState` bw3 0x00593a90 (27)
 - [ ] `CMattanntote::getCarryObjToBodyXForm` bw3 0x00593ae0 (78)
 - [ ] `CMattanntote::archive` bw3 0x00593c10 (38)
 - [ ] `CMattanntote::dtor` bw3 0x00593ca0 (52)
-- [ ] unnamed bw3 0x00593a90 (27)
 
 ### `core/melee.cpp`
-- [ ] unnamed bw1 0x00509b00, bw2 0x004eada0, bw3 0x004e7540 (90)
+- [ ] `dumpHeap` bw1 0x00509b00, bw2 0x004eada0, bw3 0x004e7540 (90)
 
 ### `core/meleeaxe.cpp`
 - [ ] `staticInit` bw2 0x0059d1c0 (9)
@@ -10517,7 +10395,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CMeleeAxe::getActorType` bw2 0x0059d210 (2)
 - [ ] `CMeleeAxe::ctor` bw2 0x0059d220 (66)
 - [ ] `CMeleeAxe::dtor` bw2 0x0059d300 (31)
-- [ ] unnamed bw2 0x0059d350 (4)
+- [ ] `staticInit` bw2 0x0059d350 (4)
 
 ### `core/menu.cpp`
 - [ ] unnamed bw2 0x004eba50 (200)
@@ -10532,13 +10410,11 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSpiritMine::process` bw2 0x005ad530 (292)
 - [ ] `CSpiritMine::renderOpaque` bw2 0x005ad900 (2)
 - [ ] `CSpiritMine::renderTransparent` bw2 0x005ad910 (14)
+- [ ] `CSpiritMine::updateGlobe` bw2 0x005ad940 (54)
 - [ ] `CSpiritMine::archive` bw2 0x005ad9f0 (27)
-- [ ] unnamed bw2 0x005ad940 (54)
 
 ### `core/mission.cpp`
 - [ ] `CDemonMission::changeSetName` bw1 0x0051b500, bw2 0x004fc5a0, bw3 0x004f6cd0 (56, differs)
-- [ ] unnamed bw1 0x0051c410 (2)
-- [ ] unnamed bw3 0x004f7bf0 (2)
 
 ### `core/moocow.cpp`
 - [ ] `staticInit` bw1 0x005212a0, bw3 0x004f8ae0 (9)
@@ -10548,61 +10424,56 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CMooCow::setup` bw1 0x00521370, bw3 0x004f8bb0 (71)
 - [ ] `CMooCow::process` bw1 0x00521480, bw3 0x004f8cc0 (268)
 - [ ] `CMooCow::archive` bw1 0x005217d0, bw3 0x004f9010 (16)
+- [ ] `CMooCow::processDismemberment` bw1 0x00521810, bw3 0x004f9050 (131, differs)
 - [ ] `CMooCow::processDamage` bw1 0x00521990, bw3 0x004f91d0 (68)
 - [ ] `CMooCow::getTargetPoints` bw1 0x00521a60, bw3 0x004f92a0 (39)
 - [ ] `CMooCow::dtor` bw1 0x00521ad0, bw3 0x004f9310 (47, differs)
-- [ ] unnamed bw1 0x00521810 (131)
-- [ ] unnamed bw3 0x004f9050 (131)
 
 ### `core/moon.cpp`
 - [ ] `CAlphaBitmap::arrdtor75` bw2 0x00502720 (7)
-- [ ] unnamed bw2 0x00502760 (13)
-- [ ] unnamed bw2 0x00502790 (8)
-- [ ] unnamed bw2 0x005027b0 (34)
 
 ### `core/morph.cpp`
-- [ ] unnamed bw1 0x005238c0, bw3 0x004fb1c0 (13)
-- [ ] unnamed bw1 0x005238f0, bw3 0x004fb1f0 (8)
-- [ ] unnamed bw1 0x00523910, bw3 0x004fb210 (34)
+- [ ] `CMotionList::dtor` bw1 0x005238f0, bw2 0x00502790, bw3 0x004fb1f0 (8)
+- [ ] `CMotionList::free` bw1 0x00523910, bw2 0x005027b0, bw3 0x004fb210 (34, differs)
 
 ### `core/motion.cpp`
-- [ ] unnamed bw1 0x005249b0, bw2 0x00503810, bw3 0x004fc2c0 (33)
-- [ ] unnamed bw3 0x004fc0c0 (3)
+- [ ] `CMotionController::detachMotionList` bw1 0x005249b0, bw2 0x00503810, bw3 0x004fc2c0 (33)
+- [ ] `CMotionController::getStateIndex` bw3 0x004fc0c0 (3)
 
 ### `core/muzzle.cpp`
 - [ ] `CMuzzleEffect::init` bw2 0x0059d360 (67)
 - [ ] `CMuzzleEffect::process` bw2 0x0059d420 (9)
 - [ ] `CMuzzleEffect::render` bw2 0x0059d440 (125)
+- [ ] `loadMuzzleEffectAssets` bw2 0x0059d5f0 (8)
+- [ ] `SStateMachine::init` bw2 0x0059d610 (7)
+- [ ] `SStateMachine::addState` bw2 0x0059d650 (64)
+- [ ] `SStateMachine::addRefState` bw2 0x0059d6f0 (91)
+- [ ] `SStateMachine::setRefState` bw2 0x0059d7f0 (57)
+- [ ] `SStateMachine::setNextRefState` bw2 0x0059d880 (42)
+- [ ] `SStateMachine::setNextState` bw2 0x0059d8e0 (39)
+- [ ] `SStateMachine::setNextStateIndex` bw2 0x0059d960 (12)
+- [ ] `SStateMachine::setInitialState` bw2 0x0059d990 (39)
+- [ ] `SStateMachine::process` bw2 0x0059da20 (28)
+- [ ] `SStateMachine::applyNextState` bw2 0x0059da70 (9)
+- [ ] `SStateMachine::isState` bw2 0x0059daa0 (21)
+- [ ] `SStateMachine::isRefStateTarget` bw2 0x0059dae0 (46)
+- [ ] `SStateMachine::getStateName` bw2 0x0059db70 (9)
+- [ ] `SStateMachine::getInitialStateName` bw2 0x0059db90 (9)
+- [ ] `SStateMachine::getRefStateTarget` bw2 0x0059dbe0 (7)
+- [ ] `SStateMachine::getRefStateIdentifier` bw2 0x0059dc00 (8)
+- [ ] `SStateMachine::getRefStateCount` bw2 0x0059dc70 (3)
+- [ ] `SStateMachine::reset` bw2 0x0059dc80 (19)
+- [ ] `SStateMachine::setTransitionDelay` bw2 0x0059dcb0 (11)
+- [ ] `SStateMachine::isTransitionPending` bw2 0x0059dce0 (11)
+- [ ] `SFollowFormation::updateSlot` bw2 0x0059dd00 (159)
+- [ ] `SFollowFormation::ctor` bw2 0x0059ded0 (30)
+- [ ] `SFollowFormation::dtor` bw2 0x0059df70 (2)
+- [ ] `SFollowFormation::addFollower` bw2 0x0059df90 (85)
+- [ ] `SFollowFormation::findSlot` bw2 0x0059e0a0 (33)
+- [ ] `SFollowFormation::getSlots` bw2 0x0059e0f0 (3)
+- [ ] `SFollowFormation::process` bw2 0x0059e110 (169)
 - [ ] `SFollowSlotStruct::ctor` bw2 0x0059e370 (2)
-- [ ] unnamed bw2 0x0059d5f0 (8)
-- [ ] unnamed bw2 0x0059d610 (7)
-- [ ] unnamed bw2 0x0059d650 (64)
-- [ ] unnamed bw2 0x0059d6f0 (91)
-- [ ] unnamed bw2 0x0059d7f0 (57)
-- [ ] unnamed bw2 0x0059d880 (42)
-- [ ] unnamed bw2 0x0059d8e0 (39)
 - [ ] unnamed bw2 0x0059d940 (7)
-- [ ] unnamed bw2 0x0059d960 (12)
-- [ ] unnamed bw2 0x0059d990 (39)
-- [ ] unnamed bw2 0x0059da20 (28)
-- [ ] unnamed bw2 0x0059da70 (9)
-- [ ] unnamed bw2 0x0059daa0 (21)
-- [ ] unnamed bw2 0x0059dae0 (46)
-- [ ] unnamed bw2 0x0059db70 (9)
-- [ ] unnamed bw2 0x0059db90 (9)
-- [ ] unnamed bw2 0x0059dbe0 (7)
-- [ ] unnamed bw2 0x0059dc00 (8)
-- [ ] unnamed bw2 0x0059dc70 (3)
-- [ ] unnamed bw2 0x0059dc80 (19)
-- [ ] unnamed bw2 0x0059dcb0 (11)
-- [ ] unnamed bw2 0x0059dce0 (11)
-- [ ] unnamed bw2 0x0059dd00 (159)
-- [ ] unnamed bw2 0x0059ded0 (30)
-- [ ] unnamed bw2 0x0059df70 (2)
-- [ ] unnamed bw2 0x0059df90 (85)
-- [ ] unnamed bw2 0x0059e0a0 (33)
-- [ ] unnamed bw2 0x0059e0f0 (3)
-- [ ] unnamed bw2 0x0059e110 (169)
 
 ### `core/necklace.cpp`
 - [ ] `staticInit` bw2 0x005ada50 (9)
@@ -10619,16 +10490,10 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CNPC::renderOpaque` bw1 0x00531b10, bw2 0x00510900, bw3 0x00509560 (55)
 - [ ] `CNPC::renderTransparent` bw1 0x00531ba0, bw2 0x00510990, bw3 0x005095f0 (22, differs)
 
-### `core/passngr.cpp`
-- [ ] unnamed bw1 0x00532ea0 (5)
-
-### `core/podmain.cpp`
-- [ ] unnamed bw1 0x0053d790 (3)
-- [ ] unnamed bw2 0x0051c190 (3)
-- [ ] unnamed bw3 0x005154f0 (3)
-
 ### `core/prye.cpp`
 - [ ] `staticInit` bw3 0x00517c20 (29)
+- [ ] `aimBlendWeightCallback` bw3 0x00517c90 (28)
+- [ ] `armBlendWeightCallback` bw3 0x00517ce0 (20)
 - [ ] `factoryFuncPrye` bw3 0x00517f50 (10)
 - [ ] `CPrye::getActorType` bw3 0x00517f70 (2)
 - [ ] `CPrye::ctor` bw3 0x00517f80 (309)
@@ -10649,6 +10514,8 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CPrye::updateWeaponPosition` bw3 0x0051f360 (83)
 - [ ] `CPrye::computeWeaponAttachXForm` bw3 0x0051f490 (1557)
 - [ ] `CPrye::processPickupComplete` bw3 0x00520d20 (36)
+- [ ] `CPrye::dropRightHandObject` bw3 0x00520da0 (20)
+- [ ] `CPrye::tryClimbLadder` bw3 0x00520df0 (345)
 - [ ] `CPrye::tryPlaceObject` bw3 0x00521880 (494)
 - [ ] `CPrye::archive` bw3 0x00521f40 (86)
 - [ ] `CPrye::renderOpaque` bw3 0x005220d0 (549)
@@ -10660,9 +10527,14 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CPrye::getCarryObjToBodyXForm` bw3 0x005247b0 (26)
 - [ ] `CPrye::getThrowDirection` bw3 0x00524800 (38)
 - [ ] `CPrye::updateWeaponLayerActions` bw3 0x00524940 (999)
+- [ ] `CPrye::handleActionButton` bw3 0x00525930 (44)
 - [ ] `CPrye::doHeroAction` bw3 0x00525a20 (483)
 - [ ] `CPrye::canDoHeroAction` bw3 0x005260b0 (189)
+- [ ] `CPrye::tryThrowDynamite` bw3 0x005262f0 (44)
+- [ ] `CPrye::handleFireButton` bw3 0x005263c0 (248)
 - [ ] `CPrye::canReachPickup` bw3 0x005267c0 (346)
+- [ ] `CPrye::updateClothSimulation` bw3 0x00526cf0 (65)
+- [ ] `CPrye::processWeaponTick` bw3 0x00526dc0 (12)
 - [ ] `CPrye::isWeaponDrawn` bw3 0x00526df0 (3)
 - [ ] `CPrye::drawWeapon` bw3 0x00526e00 (11)
 - [ ] `CPrye::getGrabbed` bw3 0x00526e30 (98)
@@ -10671,16 +10543,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CPrye::drop` bw3 0x00527050 (23)
 - [ ] `CPrye::toggleGoggles` bw3 0x005270a0 (32)
 - [ ] `CPrye::dtor` bw3 0x00527300 (31)
-- [ ] unnamed bw3 0x00517c90 (28)
-- [ ] unnamed bw3 0x00517ce0 (20)
-- [ ] unnamed bw3 0x00517d50 (41)
-- [ ] unnamed bw3 0x00520da0 (20)
-- [ ] unnamed bw3 0x00520df0 (345)
-- [ ] unnamed bw3 0x00525930 (44)
-- [ ] unnamed bw3 0x005262f0 (44)
-- [ ] unnamed bw3 0x005263c0 (248)
-- [ ] unnamed bw3 0x00526cf0 (65)
-- [ ] unnamed bw3 0x00526dc0 (12)
 - [ ] unnamed bw3 0x00527110 (51)
 
 ### `core/pryemorp.cpp`
@@ -10708,14 +10570,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CRifle::renderAimBeam` bw1 0x005409b0, bw3 0x00528650 (5)
 - [ ] `CRifle::dtor` bw1 0x005409c0, bw3 0x00528660 (31)
 
-### `core/scat.cpp`
-- [ ] unnamed bw1 0x005424f0 (400)
-- [ ] unnamed bw1 0x00542b90 (243)
-- [ ] unnamed bw1 0x00542f20 (115)
-- [ ] unnamed bw2 0x005203c0 (400)
-- [ ] unnamed bw2 0x00520a60 (243)
-- [ ] unnamed bw2 0x00520df0 (115)
-
 ### `core/schngeis.cpp`
 - [ ] `staticInit` bw2 0x005a2f50 (9)
 - [ ] `factoryFuncSchnellGeist` bw2 0x005a2f80 (10)
@@ -10726,25 +10580,22 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSchnellGeist::processMeleeAttackState` bw2 0x005a3280 (108)
 - [ ] `CSchnellGeist::processLeapAttackState` bw2 0x005a33b0 (24)
 - [ ] `CSchnellGeist::processMotionEvent` bw2 0x005a3420 (97)
+- [ ] `CSchnellGeist::processAI` bw2 0x005a3560 (450)
 - [ ] `CSchnellGeist::processDeathState` bw2 0x005a3b10 (8)
 - [ ] `CSchnellGeist::getDeathState` bw2 0x005a3b30 (35)
 - [ ] `CSchnellGeist::processDamage` bw2 0x005a3ba0 (21)
 - [ ] `CSchnellGeist::archive` bw2 0x005a3bf0 (15)
 - [ ] `CSchnellGeist::dtor` bw2 0x005a3c30 (52)
-- [ ] unnamed bw2 0x005a3560 (450)
 
 ### `core/script.cpp`
-- [ ] unnamed bw2 0x0052a6a0 (4)
+- [ ] `CInventory::getSelectedItem` bw2 0x0052a6a0 (4)
 
 ### `core/set.cpp`
+- [ ] `updateHighlightedActors` bw1 0x0054cf40, bw2 0x0052bc60, bw3 0x00532630 (21, differs)
+- [ ] `applyActorFlatColor` bw1 0x0054cf80, bw2 0x0052bca0, bw3 0x005326b0 (40, differs)
 - [ ] `CDemonSet::renderMonsterVisionView` bw1 0x00551170, bw2 0x0052fea0, bw3 0x00536990 (263, differs)
-- [ ] unnamed bw1 0x0054cf40 (21)
-- [ ] unnamed bw1 0x0054cf80, bw2 0x0052bca0 (40)
-- [ ] unnamed bw1 0x00551990, bw2 0x005306e0, bw3 0x00537320 (42)
-- [ ] unnamed bw1 0x00555930, bw2 0x00534680, bw3 0x0053b2c0 (17)
-- [ ] unnamed bw2 0x0052bc60 (21)
-- [ ] unnamed bw3 0x00532630 (32)
-- [ ] unnamed bw3 0x005326b0 (82)
+- [ ] `CDemonSet::removeCoronaGlobe` bw1 0x00551990, bw2 0x005306e0, bw3 0x00537320 (42)
+- [ ] `CDemonSet::setSunlight` bw1 0x00555930, bw2 0x00534680, bw3 0x0053b2c0 (17)
 
 ### `core/setdir.cpp`
 - [ ] unnamed bw1 0x00559c10 (98)
@@ -10755,55 +10606,39 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `factoryFuncShadow` bw1 0x0055daa0, bw2 0x0053c1d0, bw3 0x005434d0 (10, differs)
 - [ ] `CShadow::getActorType` bw1 0x0055dac0, bw2 0x0053c1f0, bw3 0x005434f0 (2)
 - [ ] `CShadow::ctor` bw1 0x0055dad0, bw2 0x0053c200, bw3 0x00543500 (41, differs)
-- [ ] `CShadow::setup` bw1 0x0055dbf0, bw2 0x0053c310 (122, differs)
+- [ ] `CShadow::setup` bw1 0x0055dbf0, bw2 0x0053c310, bw3 0x00543680 (122, differs)
 - [ ] `CShadow::process` bw1 0x0055de50, bw2 0x0053c500, bw3 0x005438d0 (1411, differs)
 - [ ] `CShadow::setWalkTarget` bw1 0x0055f3d0, bw2 0x0053df10, bw3 0x00544fd0 (14, differs)
-- [ ] `CShadow::renderOpaque` bw1 0x0055fbf0, bw2 0x0053e640 (39, differs)
-- [ ] `CShadow::renderTransparent` bw1 0x0055fc60, bw2 0x0053e6c0 (124, differs)
+- [ ] `CShadow::playHitAlertSound` bw1 0x0055f400, bw2 0x0053df40, bw3 0x00545000 (21, differs)
+- [ ] `CShadow::playAlertSound` bw1 0x0055f450, bw2 0x0053df80, bw3 0x00545040 (21, differs)
+- [ ] `CShadow::playAttackSound` bw1 0x0055f4a0, bw2 0x0053dfc0, bw3 0x00545080 (21, differs)
+- [ ] `CShadow::playDamageSound` bw1 0x0055f4f0, bw2 0x0053e000, bw3 0x005450c0 (21, differs)
+- [ ] `CShadow::playDeathSound` bw1 0x0055f540, bw2 0x0053e040, bw3 0x00545100 (21, differs)
+- [ ] `CShadow::playHowlSound` bw1 0x0055f590 (21)
+- [ ] `CShadow::playEmergeSound` bw1 0x0055f5e0 (21)
+- [ ] `CShadow::renderOpaque` bw1 0x0055fbf0, bw2 0x0053e640, bw3 0x00545700 (39, differs)
+- [ ] `CShadow::renderTransparent` bw1 0x0055fc60, bw2 0x0053e6c0, bw3 0x00545710 (124, differs)
 - [ ] `CShadow::archive` bw1 0x0055fe00, bw2 0x0053e860, bw3 0x00545910 (46, differs)
 - [ ] `CShadow::processDamage` bw1 0x0055fea0, bw2 0x0053ea00, bw3 0x005459b0 (195, differs)
 - [ ] `CShadow::getDeathState` bw1 0x00560110, bw2 0x0053ec30, bw3 0x00545bd0 (21, differs)
 - [ ] `CShadow::getTargetPoints` bw1 0x00560150, bw2 0x0053ec70, bw3 0x00545c10 (39, differs)
+- [ ] `CShadow::processChainConstraint` bw1 0x005601c0, bw2 0x0053ece0, bw3 0x00545c80 (184)
 - [ ] `CShadow::dtor` bw1 0x005603b0, bw2 0x0053eed0, bw3 0x005461d0 (47, differs)
+- [ ] `CShadow::renderDebugMarker` bw2 0x0053e080, bw3 0x00545140 (350)
+- [ ] `CShadow::scaleDamageByHitBone` bw2 0x0053e9a0 (33)
+- [ ] `factoryFuncShadowForest` bw3 0x00545e70 (10)
+- [ ] `CShadowForest::getActorType` bw3 0x00545e90 (2)
 - [ ] `CShadowForest::ctor` bw3 0x00545ea0 (19)
+- [ ] `factoryFuncSpiritShadow` bw3 0x00545f00 (10)
+- [ ] `CSpiritShadow::getActorType` bw3 0x00545f20 (2)
 - [ ] `CSpiritShadow::ctor` bw3 0x00545f30 (19)
+- [ ] `factoryFuncDemonShadow` bw3 0x00545f90 (10)
+- [ ] `CDemonShadow::getActorType` bw3 0x00545fb0 (2)
 - [ ] `CDemonShadow::ctor` bw3 0x00545fc0 (19)
 - [ ] `CDemonShadow::dtor` bw3 0x00546020 (47)
 - [ ] `CSpiritShadow::dtor` bw3 0x005460b0 (47)
 - [ ] `CShadowForest::dtor` bw3 0x00546140 (47)
-- [ ] unnamed bw1 0x0055f400 (21)
-- [ ] unnamed bw1 0x0055f450 (21)
-- [ ] unnamed bw1 0x0055f4a0 (21)
-- [ ] unnamed bw1 0x0055f4f0 (21)
-- [ ] unnamed bw1 0x0055f540 (21)
-- [ ] unnamed bw1 0x0055f590 (21)
-- [ ] unnamed bw1 0x0055f5e0 (21)
 - [ ] unnamed bw1 0x0055f9c0 (132)
-- [ ] unnamed bw1 0x005601c0 (184)
-- [ ] unnamed bw2 0x0053df40 (19)
-- [ ] unnamed bw2 0x0053df80 (19)
-- [ ] unnamed bw2 0x0053dfc0 (19)
-- [ ] unnamed bw2 0x0053e000 (19)
-- [ ] unnamed bw2 0x0053e040 (19)
-- [ ] unnamed bw2 0x0053e080 (350)
-- [ ] unnamed bw2 0x0053e9a0 (33)
-- [ ] unnamed bw2 0x0053ece0 (184)
-- [ ] unnamed bw3 0x00543680 (115)
-- [ ] unnamed bw3 0x00545000 (19)
-- [ ] unnamed bw3 0x00545040 (19)
-- [ ] unnamed bw3 0x00545080 (19)
-- [ ] unnamed bw3 0x005450c0 (19)
-- [ ] unnamed bw3 0x00545100 (19)
-- [ ] unnamed bw3 0x00545140 (350)
-- [ ] unnamed bw3 0x00545700 (5)
-- [ ] unnamed bw3 0x00545710 (155)
-- [ ] unnamed bw3 0x00545c80 (184)
-- [ ] unnamed bw3 0x00545e70 (10)
-- [ ] unnamed bw3 0x00545e90 (2)
-- [ ] unnamed bw3 0x00545f00 (10)
-- [ ] unnamed bw3 0x00545f20 (2)
-- [ ] unnamed bw3 0x00545f90 (10)
-- [ ] unnamed bw3 0x00545fb0 (2)
 
 ### `core/shadowsc.cpp`
 - [ ] `staticInit` bw1 0x00560440 (9)
@@ -10812,6 +10647,10 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CShadowsc::ctor` bw1 0x005604a0, bw3 0x005462c0 (24, differs)
 - [ ] `CShadowsc::setup` bw1 0x00560510, bw3 0x00546360 (62, differs)
 - [ ] `CShadowsc::process` bw1 0x00560630, bw3 0x00546400 (730, differs)
+- [ ] `CShadowsc::playAttackSound` bw1 0x00561020 (19)
+- [ ] `CShadowsc::playHurtSound` bw1 0x00561060 (19)
+- [ ] `CShadowsc::playDeathSound` bw1 0x005610a0 (19)
+- [ ] `CShadowsc::playEmergeSound` bw1 0x005610e0 (19)
 - [ ] `CShadowsc::renderOpaque` bw1 0x00561120 (40)
 - [ ] `CShadowsc::renderTransparent` bw1 0x005611a0 (92)
 - [ ] `CShadowsc::archive` bw1 0x005612d0, bw3 0x00546d50 (28, differs)
@@ -10819,16 +10658,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CShadowsc::getTargetPoints` bw1 0x00561460, bw3 0x00546ed0 (39)
 - [ ] `CShadowsc::dtor` bw1 0x005614d0, bw3 0x00546f40 (47, differs)
 - [ ] unnamed bw1 0x00560fe0 (19)
-- [ ] unnamed bw1 0x00561020 (19)
-- [ ] unnamed bw1 0x00561060 (19)
-- [ ] unnamed bw1 0x005610a0 (19)
-- [ ] unnamed bw1 0x005610e0 (19)
 
 ### `core/skeleton.cpp`
 - [ ] `clearModelAndSkeletonInUseFlags` bw1 0x0056b830, bw2 0x00549180, bw3 0x005503c0 (11)
 - [ ] `freeUnusedModelsAndSkeletons` bw1 0x0056b860, bw2 0x005491b0, bw3 0x005503f0 (30, differs)
 - [ ] `markModelInUse` bw1 0x0056b8c0, bw2 0x00549210, bw3 0x00550450 (54, differs)
-- [ ] unnamed bw3 0x00550580 (1)
+- [ ] `staticInit` bw3 0x00550580 (1)
 
 ### `core/smiley.cpp`
 - [ ] `factoryFuncSmiley` bw1 0x0056be20, bw2 0x005497a0 (10, differs, in nocturne)
@@ -10843,9 +10678,9 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSpawner::ctor` bw3 0x005638a0 (21)
 - [ ] `CSpawner::setup` bw3 0x00563910 (40)
 - [ ] `CSpawner::process` bw3 0x00563970 (346)
+- [ ] `CSpawner::renderOpaque` bw3 0x00563e40 (2)
+- [ ] `CSpawner::archive` bw3 0x00563e50 (74)
 - [ ] `CSpawner::dtor` bw3 0x00563f70 (37)
-- [ ] unnamed bw3 0x00563e40 (2)
-- [ ] unnamed bw3 0x00563e50 (74)
 
 ### `core/spirbear.cpp`
 - [ ] `staticInit` bw3 0x0059aa40 (9)
@@ -10874,11 +10709,11 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSpiritEagle::renderOpaque` bw3 0x00599a70 (56)
 - [ ] `CSpiritEagle::renderTransparent` bw3 0x00599b20 (50)
 - [ ] `CSpiritEagle::archive` bw3 0x00599bc0 (55)
+- [ ] `playRandomMotionVariant` bw3 0x00599c80 (86)
 - [ ] `CSpiritEagle::processDamage` bw3 0x00599d60 (52)
 - [ ] `CSpiritEagle::isInvulnerable` bw3 0x00599e10 (5)
 - [ ] `CSpiritEagle::getPathMap` bw3 0x00599e30 (3)
 - [ ] `CSpiritEagle::dtor` bw3 0x00599e40 (62)
-- [ ] unnamed bw3 0x00599c80 (86)
 
 ### `core/spirindi.cpp`
 - [ ] `staticInit` bw3 0x00599f00 (9)
@@ -10916,8 +10751,7 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CStorm::dtor` bw3 0x00568c80 (31)
 
 ### `core/stranger.cpp`
-- [ ] unnamed bw1 0x00585040 (20)
-- [ ] unnamed bw2 0x005625c0 (20)
+- [ ] `aimPitchBlendWeightCallback` bw1 0x00585040, bw2 0x005625c0 (20)
 
 ### `core/styldemo.cpp`
 - [ ] `staticInit` bw3 0x0059e010 (9)
@@ -10931,11 +10765,11 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CStylerDemon::shouldIgnoreForTargeting` bw3 0x005a02b0 (10)
 - [ ] `CStylerDemon::archive` bw3 0x005a02e0 (23)
 - [ ] `CStylerDemon::processDamage` bw3 0x005a0330 (103)
+- [ ] `CStylerDemon::tryAttack` bw3 0x005a0480 (189)
 - [ ] `CStylerDemon::getTargetPoints` bw3 0x005a06c0 (89)
 - [ ] `CStylerDemon::getCarryObjToBodyXForm` bw3 0x005a07c0 (78)
 - [ ] `CStylerDemon::getCollisionType` bw3 0x005a08f0 (7)
 - [ ] `CStylerDemon::dtor` bw3 0x005a0910 (52)
-- [ ] unnamed bw3 0x005a0480 (189)
 
 ### `core/styler.cpp`
 - [ ] `staticInit` bw3 0x0059d6f0 (9)
@@ -10958,18 +10792,15 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CTawiscara::setup` bw3 0x00593e80 (90)
 - [ ] `CTawiscara::process` bw3 0x00594000 (1613)
 - [ ] `CTawiscara::setWalkTarget` bw3 0x005956d0 (18)
+- [ ] `CTawiscara::playHowl` bw3 0x00595710 (20)
+- [ ] `CTawiscara::renderEyeGlow` bw3 0x00595760 (350)
 - [ ] `CTawiscara::renderTransparent` bw3 0x00595d20 (111)
 - [ ] `CTawiscara::archive` bw3 0x00595e90 (68)
 - [ ] `CTawiscara::processDamage` bw3 0x00595f90 (258)
 - [ ] `CTawiscara::getDeathState` bw3 0x005962d0 (22)
 - [ ] `CTawiscara::getTargetPoints` bw3 0x00596310 (39)
+- [ ] `CTawiscara::processChainConstraint` bw3 0x00596380 (184)
 - [ ] `CTawiscara::dtor` bw3 0x00596570 (47)
-- [ ] unnamed bw3 0x00595710 (20)
-- [ ] unnamed bw3 0x00595760 (350)
-- [ ] unnamed bw3 0x00596380 (184)
-
-### `core/terrain.cpp`
-- [ ] unnamed bw2 0x0057b9e0 (3)
 
 ### `core/thehand.cpp`
 - [ ] `staticInit` bw1 0x00599010 (9)
@@ -10982,14 +10813,15 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CTheHand::archive` bw1 0x005998d0, bw3 0x0056c8c0 (20)
 - [ ] `CTheHand::findNearbyTarget` bw1 0x00599910, bw3 0x0056c900 (90)
 - [ ] `CTheHand::attractActorToward` bw1 0x00599a10, bw3 0x0056ca00 (101)
+- [ ] `CTheHand::getHandBoneMatrix` bw1 0x00599be0, bw3 0x0056cbd0 (21)
 - [ ] `CTheHand::dtor` bw1 0x00599c20, bw3 0x0056cc10 (47, differs)
-- [ ] unnamed bw1 0x00599be0, bw3 0x0056cbd0 (21)
 
 ### `core/toxhand.cpp`
 - [ ] `staticInit` bw3 0x0056c000 (9)
 
 ### `core/tvbat.cpp`
-- [ ] unnamed bw3 0x00576230 (5)
+- [ ] `staticInit` bw3 0x00574fd0 (9)
+- [ ] `staticInit` bw3 0x00576230 (5)
 
 ### `core/union.cpp`
 - [ ] `staticInit` bw2 0x005a4a20 (9)
@@ -10998,18 +10830,18 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CUnion::ctor` bw2 0x005a4a80 (96)
 - [ ] `CUnion::setup` bw2 0x005a4c00 (26)
 - [ ] `CUnion::processStates` bw2 0x005a4c50 (86)
+- [ ] `CUnion::processAI` bw2 0x005a4d50 (88)
 - [ ] `CUnion::processDeathState` bw2 0x005a4e60 (9)
+- [ ] `CUnion::processRangeAttackState` bw2 0x005a4e90 (102)
+- [ ] `CUnion::processMeleeAttackState` bw2 0x005a4fe0 (105)
+- [ ] `CUnion::processSupportStandState` bw2 0x005a5130 (110)
 - [ ] `CUnion::getDeathState` bw2 0x005a5280 (35)
 - [ ] `CUnion::processMotionEvent` bw2 0x005a5300 (115)
 - [ ] `CUnion::renderOpaque` bw2 0x005a5440 (5)
 - [ ] `CUnion::archive` bw2 0x005a5450 (5)
+- [ ] `CUnion::fireShotgun` bw2 0x005a5460 (372)
 - [ ] `CUnion::processDamage` bw2 0x005a59f0 (25)
 - [ ] `CUnion::dtor` bw2 0x005a5a40 (52)
-- [ ] unnamed bw2 0x005a4d50 (88)
-- [ ] unnamed bw2 0x005a4e90 (102)
-- [ ] unnamed bw2 0x005a4fe0 (105)
-- [ ] unnamed bw2 0x005a5130 (110)
-- [ ] unnamed bw2 0x005a5460 (372)
 
 ### `core/unionzom.cpp`
 - [ ] `staticInit` bw2 0x005a3cd0 (9)
@@ -11022,12 +10854,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CUnionZombie::processDeathState` bw2 0x005a4080 (32)
 - [ ] `CUnionZombie::processVanishAttackState` bw2 0x005a40f0 (91)
 - [ ] `CUnionZombie::processMeleeAttackState` bw2 0x005a4220 (86)
+- [ ] `CUnionZombie::processAI` bw2 0x005a4330 (169)
 - [ ] `CUnionZombie::getDeathState` bw2 0x005a4580 (33)
 - [ ] `CUnionZombie::processMotionEvent` bw2 0x005a4600 (85)
 - [ ] `CUnionZombie::getTargetPoints` bw2 0x005a46e0 (14)
 - [ ] `CUnionZombie::renderTransparent` bw2 0x005a4710 (14)
 - [ ] `CUnionZombie::archive` bw2 0x005a4740 (5)
-- [ ] unnamed bw2 0x005a4330 (169)
 
 ### `core/villain.cpp`
 - [ ] `staticInit` bw2 0x005a5ae0 (9)
@@ -11036,28 +10868,28 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CSteuben::ctor` bw2 0x005a5b40 (43)
 - [ ] `CSteuben::setup` bw2 0x005a5c10 (5)
 - [ ] `CSteuben::processStates` bw2 0x005a5c20 (11)
+- [ ] `CSteuben::processAI` bw2 0x005a5c40 (67)
 - [ ] `CSteuben::processDeathState` bw2 0x005a5d10 (8)
 - [ ] `CSteuben::getDeathState` bw2 0x005a5d30 (4)
 - [ ] `CSteuben::processMotionEvent` bw2 0x005a5d40 (1)
 - [ ] `CSteuben::renderOpaque` bw2 0x005a5d50 (5)
 - [ ] `CSteuben::archive` bw2 0x005a5d60 (5)
 - [ ] `CSteuben::dtor` bw2 0x005a5d70 (52)
-- [ ] unnamed bw2 0x005a5c40 (67)
 
 ### `core/wateract.cpp`
+- [ ] `factoryFuncLava` bw3 0x00578ff0 (10)
 - [ ] `CLava::getActorType` bw3 0x00579010 (2)
 - [ ] `CLava::ctor` bw3 0x00579020 (7)
 - [ ] `CLava::dtor` bw3 0x00579050 (31)
-- [ ] unnamed bw3 0x00578ff0 (10)
 
 ### `core/weapon.cpp`
+- [ ] `CWeapon::isSimulating` bw2 0x0058a5f0 (9)
+- [ ] `CWeapon::setRenderAlpha` bw3 0x0057b030 (4)
 - [ ] `CWeapon::renderTransparent` bw3 0x0057b040 (73)
-- [ ] unnamed bw2 0x0058a5f0 (9)
-- [ ] unnamed bw3 0x0057b030 (4)
 
 ### `core/weather.cpp`
-- [ ] unnamed bw1 0x005ae560, bw3 0x0057c2c0 (5)
-- [ ] unnamed bw3 0x0057d420 (41)
+- [ ] `getCurrentCameraAmbientValue` bw1 0x005ae560, bw3 0x0057c2c0 (5)
+- [ ] `CWeather::preloadAssets` bw3 0x0057d420 (41)
 
 ### `core/weaver.cpp`
 - [ ] `staticInit` bw2 0x005a5e10 (9)
@@ -11068,16 +10900,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CRobin::setup` bw2 0x005a6030 (43)
 - [ ] `CRobin::processStates` bw2 0x005a60d0 (41)
 - [ ] `CRobin::processMeleeAttackState` bw2 0x005a6140 (61)
+- [ ] `CRobin::processAI` bw2 0x005a61f0 (405)
 - [ ] `CRobin::processDeathState` bw2 0x005a6720 (8)
 - [ ] `CRobin::processMotionEvent` bw2 0x005a6740 (1)
 - [ ] `CRobin::archive` bw2 0x005a6750 (5)
 - [ ] `CRobin::renderTransparent` bw2 0x005a6760 (19)
 - [ ] `CRobin::getCarryObjToBodyXForm` bw2 0x005a67a0 (138)
-- [ ] unnamed bw2 0x005a61f0 (405)
-
-### `core/werewolf.cpp`
-- [ ] unnamed bw1 0x005b1850 (184)
-- [ ] unnamed bw2 0x0058dd00 (184)
 
 ### `core/xform.cpp`
 - [ ] unnamed bw1 0x005b6920, bw2 0x00592dd0, bw3 0x00584b00 (288)
@@ -11089,22 +10917,27 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CYow::ctor` bw1 0x005b8160, bw3 0x00586340 (23, differs)
 - [ ] `CYow::setup` bw1 0x005b81d0, bw3 0x005863e0 (143, differs)
 - [ ] `CYow::process` bw1 0x005b8440, bw3 0x00586500 (792, differs)
+- [ ] `CYow::processDismemberment` bw1 0x005b8eb0 (193)
 - [ ] `CYow::archive` bw1 0x005b9110, bw3 0x00586e50 (28, differs)
 - [ ] `CYow::processDamage` bw1 0x005b9170, bw3 0x00586eb0 (90, differs)
 - [ ] `CYow::getTargetPoints` bw1 0x005b9290, bw3 0x00586fa0 (217)
 - [ ] `CYow::dtor` bw1 0x005b95a0, bw3 0x005872b0 (47, differs)
-- [ ] unnamed bw1 0x005b8eb0 (193)
 
 ### `core/zombie.cpp`
 - [ ] `CZombie::isInvulnerable` bw3 0x0058cbe0 (16)
+- [ ] `factoryFuncZombieCemetery` bw3 0x0058cc90 (10)
 - [ ] `CZombieCemetery::getActorType` bw3 0x0058ccb0 (2)
 - [ ] `CZombieCemetery::ctor` bw3 0x0058ccc0 (19)
+- [ ] `factoryFuncZombieForest` bw3 0x0058cd20 (10)
 - [ ] `CZombieForest::getActorType` bw3 0x0058cd40 (2)
 - [ ] `CZombieForest::ctor` bw3 0x0058cd50 (19)
+- [ ] `factoryFuncZombieSpirit` bw3 0x0058cdb0 (10)
 - [ ] `CZombieSpirit::getActorType` bw3 0x0058cdd0 (2)
 - [ ] `CZombieSpirit::ctor` bw3 0x0058cde0 (19)
+- [ ] `factoryFuncZombieIndian` bw3 0x0058ce40 (10)
 - [ ] `CZombieIndian::getActorType` bw3 0x0058ce60 (2)
 - [ ] `CZombieIndian::ctor` bw3 0x0058ce70 (19)
+- [ ] `factoryFuncZombieDemon` bw3 0x0058ced0 (10)
 - [ ] `CZombieDemon::getActorType` bw3 0x0058cef0 (2)
 - [ ] `CZombieDemon::ctor` bw3 0x0058cf00 (20)
 - [ ] `CZombieDemon::dtor` bw3 0x0058cf60 (47)
@@ -11112,14 +10945,6 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CZombieSpirit::dtor` bw3 0x0058d080 (47)
 - [ ] `CZombieForest::dtor` bw3 0x0058d110 (47)
 - [ ] `CZombieCemetery::dtor` bw3 0x0058d1a0 (47)
-- [ ] unnamed bw1 0x005ba730 (50)
-- [ ] unnamed bw2 0x005956b0 (50)
-- [ ] unnamed bw3 0x005884f0 (50)
-- [ ] unnamed bw3 0x0058cc90 (10)
-- [ ] unnamed bw3 0x0058cd20 (10)
-- [ ] unnamed bw3 0x0058cdb0 (10)
-- [ ] unnamed bw3 0x0058ce40 (10)
-- [ ] unnamed bw3 0x0058ced0 (10)
 
 ### `core/zombiepriest.cpp`
 - [ ] `factoryFuncZombiePriest` bw3 0x0058d4b0 (10)
@@ -11132,42 +10957,35 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CZombiePriest::processWeaponPickup` bw3 0x0058efb0 (346)
 - [ ] `CZombiePriest::startFiringAttack` bw3 0x0058f4a0 (39)
 - [ ] `CZombiePriest::archive` bw3 0x0058f510 (65)
+- [ ] `CZombiePriest::processDismemberment` bw3 0x0058f630 (259)
 - [ ] `CZombiePriest::processDamage` bw3 0x0058f990 (123)
 - [ ] `CZombiePriest::getTargetPoints` bw3 0x0058fb20 (104)
 - [ ] `CZombiePriest::getCollisionType` bw3 0x0058fc60 (7)
 - [ ] `CZombiePriest::dtor` bw3 0x0058fc80 (47)
-- [ ] unnamed bw3 0x0058d2f0 (67)
-- [ ] unnamed bw3 0x0058d3b0 (88)
 - [ ] unnamed bw3 0x0058f610 (2)
-- [ ] unnamed bw3 0x0058f630 (259)
 
 ### `engine/2d.c`
-- [ ] unnamed bw1 0x00402860 (3)
-- [ ] unnamed bw2 0x00402860 (3)
-- [ ] unnamed bw3 0x00402860 (3)
+- [ ] `resetTextColor` bw1 0x00402860, bw2 0x00402860, bw3 0x00402860 (3)
 
 ### `engine/3d.c`
-- [ ] unnamed bw1 0x00403dd0 (2)
-- [ ] unnamed bw3 0x00403dd0 (2)
+- [ ] `skipOldFuncOp` bw1 0x00403dd0, bw3 0x00403dd0 (2)
 
 ### `engine/alphabit.cpp`
 - [ ] `CAlphaBitmap::allocate` bw1 0x0040d0e0, bw2 0x0040d460, bw3 0x0040d320 (66)
 - [ ] `CAlphaBitmap::fillOpa` bw1 0x0040d970, bw2 0x0040dd20, bw3 0x0040dbb0 (15)
+- [ ] `CAlphaBitmap::displayFullScreen` bw1 0x0040d9a0, bw3 0x0040dbe0 (123)
 - [ ] `CAlphaBitmap::arrdtor4` bw1 0x004188f0, bw2 0x0059bfe0, bw3 0x00414500 (7)
-- [ ] unnamed bw1 0x0040d9a0, bw3 0x0040dbe0 (123)
 
 ### `engine/clipper.c`
 - [ ] unnamed bw1 0x0043d880, bw2 0x00432a20, bw3 0x0043b4e0 (7)
 - [ ] unnamed bw3 0x0043b3c0 (69)
 
 ### `engine/dosio.cpp`
-- [ ] unnamed bw1 0x00478e10 (3)
-- [ ] unnamed bw1 0x00478e20, bw2 0x00460910, bw3 0x00465660 (11)
-- [ ] unnamed bw1 0x00479770, bw2 0x00461260, bw3 0x00466040 (100)
-- [ ] unnamed bw1 0x004798c0, bw2 0x004613b0, bw3 0x00466190 (55)
-- [ ] unnamed bw1 0x00479950, bw2 0x00461440, bw3 0x00466220 (8)
-- [ ] unnamed bw2 0x00460900 (3)
-- [ ] unnamed bw3 0x00465650 (3)
+- [ ] `setRelativeFilePathHook` bw1 0x00478e10, bw2 0x00460900, bw3 0x00465650 (3)
+- [ ] `callRelativeFilePathHook` bw1 0x00478e20, bw2 0x00460910, bw3 0x00465660 (11)
+- [ ] `resolveRelativePath` bw1 0x00479770, bw2 0x00461260, bw3 0x00466040 (100)
+- [ ] `createDirectoryTree` bw1 0x004798c0, bw2 0x004613b0, bw3 0x00466190 (55)
+- [ ] `deleteFile` bw1 0x00479950, bw2 0x00461440, bw3 0x00466220 (8)
 
 ### `engine/drender.cpp`
 - [ ] `matrixPush` bw1 0x00483990, bw2 0x0046b490, bw3 0x0046d070 (2)
@@ -11176,27 +10994,19 @@ the retail game has it too. Sizes are in instructions.
 - [ ] unnamed bw2 0x0046a190, bw3 0x0046bd80 (37)
 
 ### `engine/font.cpp`
-- [ ] unnamed bw1 0x004c0fa0, bw3 0x004afbf0 (346)
-- [ ] unnamed bw1 0x004c1520, bw2 0x004a8540, bw3 0x004b0170 (7)
-- [ ] unnamed bw1 0x004c2750, bw3 0x004b13a0 (52)
-- [ ] unnamed bw1 0x004c4030, bw3 0x004b2c10 (168)
-- [ ] unnamed bw1 0x004c4260, bw2 0x004ab2b0, bw3 0x004b2e40 (76)
-- [ ] unnamed bw1 0x004c47f0, bw2 0x004ab840, bw3 0x004b33d0 (219)
-- [ ] unnamed bw1 0x004c4bf0 (2)
+- [ ] `CBitFont::setAcceleration` bw1 0x004c0fa0, bw2 0x004a7fd0, bw3 0x004afbf0 (346, differs)
+- [ ] `CBitFont::setAccelScale` bw1 0x004c1520, bw2 0x004a8540, bw3 0x004b0170 (7)
+- [ ] `CBitFont::flushAccelBatch` bw1 0x004c2750, bw2 0x004a97a0, bw3 0x004b13a0 (52, differs)
+- [ ] `CBitFont::wrapLine` bw1 0x004c4030, bw2 0x004ab090, bw3 0x004b2c10 (168, differs)
+- [ ] `CBitFont::wrapTextToLines` bw1 0x004c4260, bw2 0x004ab2b0, bw3 0x004b2e40 (76)
+- [ ] `CBitFont::drawTextAccelerated` bw1 0x004c47f0, bw2 0x004ab840, bw3 0x004b33d0 (219)
+- [ ] `getAlpha` bw1 0x004c4bf0, bw2 0x004abc40, bw3 0x004b37d0 (2)
 - [ ] unnamed bw1 0x004c4c51 (77)
-- [ ] unnamed bw2 0x004a7fd0 (343)
-- [ ] unnamed bw2 0x004a97a0 (58)
-- [ ] unnamed bw2 0x004ab090 (167)
-- [ ] unnamed bw2 0x004abc40 (2)
-- [ ] unnamed bw3 0x004b37d0 (2)
 
 ### `engine/ini.cpp`
 - [ ] `CIniFile::dtor` bw1 0x004f4b30, bw2 0x004d8940, bw3 0x004d8a50 (27)
-- [ ] unnamed bw1 0x004f4e70, bw2 0x004d8c80, bw3 0x004d8d90 (36)
-- [ ] unnamed bw1 0x004f4ee0, bw2 0x004d8cf0, bw3 0x004d8e00 (26)
-
-### `engine/light.cpp`
-- [ ] unnamed bw3 0x004e0b80 (3)
+- [ ] `CIniFile::getDouble` bw1 0x004f4e70, bw2 0x004d8c80, bw3 0x004d8d90 (36)
+- [ ] `CIniFile::setDoubleValue` bw1 0x004f4ee0, bw2 0x004d8cf0, bw3 0x004d8e00 (26)
 
 ### `engine/mini3d.cpp`
 - [ ] `staticInit` bw1 0x00510f20, bw2 0x004f2190, bw3 0x004ec6f0 (14)
@@ -11329,63 +11139,54 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `SDynamicLight::dtor` bw1 0x00518370, bw2 0x004f9420, bw3 0x004f3b40 (2)
 - [ ] `mirrorFaces` bw2 0x004f34d0 (34)
 - [ ] `setLightConstants` bw2 0x004f4f00 (19)
-- [ ] unnamed bw3 0x004f0310 (12)
+- [ ] `enableCulling` bw3 0x004f0310 (12)
 
 ### `engine/palette.cpp`
-- [ ] unnamed bw1 0x00531ee0, bw3 0x00509bc0 (138)
-- [ ] unnamed bw1 0x005320b0, bw2 0x00510d50, bw3 0x00509d90 (38)
-- [ ] unnamed bw2 0x00510cd0 (42)
+- [ ] `CFont::queueText` bw1 0x00531ee0, bw2 0x00510cd0, bw3 0x00509bc0 (138, differs)
+- [ ] `CFont::flushTextQueue` bw1 0x005320b0, bw2 0x00510d50, bw3 0x00509d90 (38)
 
 ### `engine/prim.c`
 - [ ] unnamed bw1 0x0053df50 (58)
 
 ### `engine/special.cpp`
+- [ ] `renderMMXPerspectiveScanlineTrueColor32` bw1 0x0057eeac, bw2 0x0055c45c, bw3 0x00561fdc (322)
+- [ ] `renderMMXPerspectiveScanlineTrueColor16` bw1 0x0057f473, bw2 0x0055ca23, bw3 0x005625a3 (358)
 - [ ] unnamed bw1 0x0057e570, bw2 0x0055bb20, bw3 0x005616a0 (5)
-- [ ] unnamed bw1 0x0057eeac, bw2 0x0055c45c, bw3 0x00561fdc (322)
-- [ ] unnamed bw1 0x0057f473, bw2 0x0055ca23, bw3 0x005625a3 (358)
 
 ### `engine/texture.cpp`
 - [ ] `CTextureCache::findFreeSlot` bw1 0x00596680, bw2 0x00573a60, bw3 0x00569670 (93)
-- [ ] unnamed bw1 0x00596e60, bw2 0x00574240, bw3 0x00569e50 (39)
-- [ ] unnamed bw1 0x00596ed0, bw2 0x005742b0, bw3 0x00569ec0 (35)
-- [ ] unnamed bw1 0x00596f30, bw2 0x00574310, bw3 0x00569f20 (73)
-- [ ] unnamed bw1 0x00597000, bw2 0x005743e0, bw3 0x00569ff0 (67)
-- [ ] unnamed bw1 0x00597620, bw2 0x00574a00, bw3 0x0056a610 (40)
-- [ ] unnamed bw1 0x005976a0, bw2 0x00574a80, bw3 0x0056a690 (43)
-- [ ] unnamed bw1 0x005977e0, bw2 0x00574bc0, bw3 0x0056a7d0 (106)
-- [ ] unnamed bw1 0x00597900, bw2 0x00574ce0, bw3 0x0056a8f0 (42)
-- [ ] unnamed bw1 0x00597ac0, bw2 0x00574ea0, bw3 0x0056aab0 (68)
-- [ ] unnamed bw1 0x00597b80, bw2 0x00574f60, bw3 0x0056ab70 (60)
-- [ ] unnamed bw1 0x00597d60 (2)
-- [ ] unnamed bw1 0x00597d70, bw3 0x0056ad60 (363)
-- [ ] unnamed bw2 0x00575140 (2)
-- [ ] unnamed bw2 0x00575150 (360)
-- [ ] unnamed bw3 0x0056ad50 (2)
+- [ ] `CTextureCache::addPalettedTexture` bw1 0x00596e60, bw2 0x00574240, bw3 0x00569e50 (39)
+- [ ] `CTextureCache::addTrueColorTexture` bw1 0x00596ed0, bw2 0x005742b0, bw3 0x00569ec0 (35)
+- [ ] `CTextureCache::replacePalettedTexture` bw1 0x00596f30, bw2 0x00574310, bw3 0x00569f20 (73)
+- [ ] `CTextureCache::replaceTrueColorTexture` bw1 0x00597000, bw2 0x005743e0, bw3 0x00569ff0 (67)
+- [ ] `CTextureCache::selectTextureByHandle` bw1 0x00597620, bw2 0x00574a00, bw3 0x0056a610 (40)
+- [ ] `CTextureCache::uploadTexture` bw1 0x005976a0, bw2 0x00574a80, bw3 0x0056a690 (43)
+- [ ] `CTextureCache::printTextureList` bw1 0x005977e0, bw2 0x00574bc0, bw3 0x0056a7d0 (106)
+- [ ] `storePalettedTexture` bw1 0x00597ac0, bw2 0x00574ea0, bw3 0x0056aab0 (68)
+- [ ] `storeTrueColorTexture` bw1 0x00597b80, bw2 0x00574f60, bw3 0x0056ab70 (60)
+- [ ] `freezeTextureCache` bw1 0x00597d60, bw2 0x00575140, bw3 0x0056ad50 (2)
+- [ ] `cacheTextureAtFullSize` bw1 0x00597d70, bw2 0x00575150, bw3 0x0056ad60 (363, differs)
 
 ### `shape/edittool.cpp`
+- [ ] `editorPlotPixel` bw1 0x00492940, bw2 0x0047a450, bw3 0x0047b4e0 (14)
+- [ ] `editorSetColor` bw1 0x00492bd0, bw2 0x0047a720, bw3 0x0047b770 (24)
+- [ ] `editorFillRectWithBorder` bw1 0x00492c20, bw2 0x0047a770, bw3 0x0047b7c0 (102)
+- [ ] `editorFillRectColor` bw1 0x00492d40, bw2 0x0047a890, bw3 0x0047b8e0 (55)
+- [ ] `editorDrawHLine` bw1 0x00492de0, bw2 0x0047a930, bw3 0x0047b980 (17)
+- [ ] `editorDrawVLine` bw1 0x00492e10, bw2 0x0047a960, bw3 0x0047b9b0 (17)
+- [ ] `editorSetAlpha` bw1 0x00492e40, bw2 0x0047a990, bw3 0x0047b9e0 (15)
 - [ ] `restoreScreen` bw1 0x00494110, bw2 0x0047bbd0, bw3 0x0047ccb0 (67)
-- [ ] unnamed bw1 0x00492940, bw2 0x0047a450, bw3 0x0047b4e0 (14)
-- [ ] unnamed bw1 0x00492bd0, bw2 0x0047a720, bw3 0x0047b770 (24)
-- [ ] unnamed bw1 0x00492c20, bw2 0x0047a770, bw3 0x0047b7c0 (102)
-- [ ] unnamed bw1 0x00492d40, bw2 0x0047a890, bw3 0x0047b8e0 (55)
-- [ ] unnamed bw1 0x00492de0 (17)
-- [ ] unnamed bw1 0x00492e10 (17)
-- [ ] unnamed bw1 0x00492e40, bw2 0x0047a990, bw3 0x0047b9e0 (15)
+- [ ] `CEditorTools::setMini3DMode` bw1 0x00499360, bw2 0x00480d00, bw3 0x00481f00 (11)
+- [ ] `CStrList::populateRecursive` bw1 0x0049a300, bw2 0x00481ca0, bw3 0x00482ea0 (107)
+- [ ] `CStrList::populateRecursiveFromRoot` bw1 0x0049a460, bw2 0x00481e00, bw3 0x00483000 (12)
 - [ ] unnamed bw1 0x00499350 (2)
-- [ ] unnamed bw1 0x00499360, bw2 0x00480d00, bw3 0x00481f00 (11)
-- [ ] unnamed bw1 0x0049a300, bw2 0x00481ca0, bw3 0x00482ea0 (107)
-- [ ] unnamed bw1 0x0049a460, bw2 0x00481e00, bw3 0x00483000 (12)
-- [ ] unnamed bw2 0x0047a930 (17)
-- [ ] unnamed bw2 0x0047a960 (17)
 - [ ] unnamed bw2 0x00480cf0 (2)
-- [ ] unnamed bw3 0x0047b980 (17)
-- [ ] unnamed bw3 0x0047b9b0 (17)
 - [ ] unnamed bw3 0x00481ef0 (2)
 
 ### `sound/snddx.cpp`
+- [ ] `volumeToDirectSoundAttenuation` bw1 0x005779b0, bw2 0x00554f80, bw3 0x0055ab20 (60)
+- [ ] `clampDirectSoundFrequency` bw1 0x00577a50, bw2 0x00555020, bw3 0x0055abc0 (18)
 - [ ] `CDirectSoundDevice::commitDeferredSettings` bw1 0x0057a230, bw2 0x00557800, bw3 0x0055d360 (28, in nocturne)
-- [ ] unnamed bw1 0x005779b0, bw2 0x00554f80, bw3 0x0055ab20 (60)
-- [ ] unnamed bw1 0x00577a50, bw2 0x00555020, bw3 0x0055abc0 (18)
 
 ### `sound/sndmain.cpp`
 - [ ] `findSfxSampleByName` bw1 0x0056e7f0, bw2 0x0054c180, bw3 0x00551ce0 (26, differs)
@@ -11409,6 +11210,12 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CWavOutDevice::commitDeferredSettings` bw1 0x0057b560, bw2 0x00558b30, bw3 0x0055e690 (1, in nocturne)
 
 ### `support/codec.cpp`
+- [ ] `ungetBits` bw1 0x004425b0, bw2 0x004338a0, bw3 0x00440210 (19)
+- [ ] `takeBitBuffer` bw1 0x004425e0, bw2 0x004338d0, bw3 0x00440240 (10)
+- [ ] `writeWholeBytesToStream` bw1 0x004427a0, bw2 0x00433a90, bw3 0x00440400 (30)
+- [ ] `crc32UpdateFromFile` bw1 0x00442a80, bw3 0x004406e0 (43)
+- [ ] `CLZWDictionary::resumeCodeSequence` bw1 0x004433f0, bw2 0x004346d0, bw3 0x00441050 (74)
+- [ ] `decodeArmorChar` bw1 0x00443830, bw2 0x00434b10, bw3 0x00441490 (39)
 - [ ] `CAsciiArmor::ctor` bw1 0x00443890, bw2 0x00434b70, bw3 0x004414f0 (6)
 - [ ] `CAsciiArmor::encode` bw1 0x004438d0, bw2 0x00434bb0, bw3 0x00441530 (27)
 - [ ] `CAsciiArmor::flush` bw1 0x00443920, bw2 0x00434c00, bw3 0x00441580 (25)
@@ -11436,54 +11243,47 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `CCheesyCipher::dtor` bw1 0x00444120, bw2 0x00435400, bw3 0x00441d80 (31)
 - [ ] `CAsciiUnarmor::dtor` bw1 0x00444170, bw2 0x00435450, bw3 0x00441dd0 (31)
 - [ ] `CAsciiArmor::dtor` bw1 0x004441c0, bw2 0x004354a0, bw3 0x00441e20 (31)
-- [ ] unnamed bw1 0x004425b0, bw2 0x004338a0, bw3 0x00440210 (19)
-- [ ] unnamed bw1 0x004425e0, bw2 0x004338d0, bw3 0x00440240 (10)
-- [ ] unnamed bw1 0x004427a0, bw2 0x00433a90, bw3 0x00440400 (30)
-- [ ] unnamed bw1 0x00442a80, bw3 0x004406e0 (43)
-- [ ] unnamed bw1 0x004433f0, bw2 0x004346d0, bw3 0x00441050 (74)
-- [ ] unnamed bw1 0x00443830, bw2 0x00434b10, bw3 0x00441490 (39)
 
 ### `support/trisock.cpp`
 - [ ] `Socket_copy` bw1 0x0059c8b0, bw2 0x00578fd0, bw3 0x0056f8a0 (9, differs)
+- [ ] `CSocket::pollSocketStatus` bw1 0x0059ca30, bw2 0x00579150, bw3 0x0056fa20 (71)
+- [ ] `defaultHttpStatusCallback` bw1 0x0059cef0, bw2 0x00579880, bw3 0x0056fee0 (4)
+- [ ] `httpConnectToUrl` bw1 0x0059cf00, bw2 0x00579890, bw3 0x0056fef0 (212)
+- [ ] `httpReaderInit` bw1 0x0059d330, bw2 0x00579cc0, bw3 0x00570320 (8)
+- [ ] `httpReaderGetChar` bw1 0x0059d360, bw2 0x00579cf0, bw3 0x00570350 (75)
+- [ ] `httpReaderReadLine` bw1 0x0059d430, bw2 0x00579dc0, bw3 0x00570420 (50)
+- [ ] `httpReceiveResponse` bw1 0x0059d4b0, bw2 0x00579e40, bw3 0x005704a0 (203)
+- [ ] `httpGetDocument` bw1 0x0059d760, bw2 0x0057a0f0, bw3 0x00570750 (85)
+- [ ] `httpPostDocument` bw1 0x0059d850, bw2 0x0057a1e0, bw3 0x00570840 (146)
+- [ ] `parseUrl` bw1 0x0059d9d0, bw2 0x0057a360, bw3 0x005709c0 (108)
+- [ ] `dnsLookupThreadProc` bw1 0x0059daf0, bw2 0x0057a480, bw3 0x00570ae0 (162)
+- [ ] `initDnsRequest` bw1 0x0059dd40, bw2 0x0057a6d0, bw3 0x00570d30 (21)
+- [ ] `dnsRequestLookupHost` bw1 0x0059ddc0, bw2 0x0057a750, bw3 0x00570db0 (28)
+- [ ] `dnsRequestLookupAddr` bw1 0x0059de00, bw2 0x0057a790, bw3 0x00570df0 (13)
+- [ ] `dnsRequestGetResult` bw1 0x0059de30, bw2 0x0057a7c0, bw3 0x00570e20 (31)
+- [ ] `dnsRequestCancel` bw1 0x0059de90, bw2 0x0057a820, bw3 0x00570e80 (8)
+- [ ] `dnsRequestQueue` bw1 0x0059deb0, bw2 0x0057a840, bw3 0x00570ea0 (78, differs)
+- [ ] `dnsRequestUnlink` bw1 0x0059dfc0, bw2 0x0057a980, bw3 0x00570fb0 (44)
+- [ ] `initHttpRequest` bw1 0x0059e040, bw2 0x0057aa00, bw3 0x00571030 (51)
+- [ ] `httpRequestStart` bw1 0x0059e270, bw2 0x0057ac30, bw3 0x00571260 (55)
+- [ ] `httpRequestUpdate` bw1 0x0059e350, bw2 0x0057ad10, bw3 0x00571340 (667, differs)
+- [ ] `httpRequestReset` bw1 0x0059ed20, bw3 0x00571d10 (19)
+- [ ] `httpRequestFillBuffer` bw1 0x0059ed90, bw3 0x00571d80 (57)
+- [ ] `httpRequestGetByte` bw1 0x0059ee60, bw3 0x00571e50 (25)
+- [ ] `copyHostent` bw1 0x0059efd0, bw2 0x00579550, bw3 0x00571fc0 (154)
+- [ ] `lookupHostByName` bw1 0x0059f1a0, bw2 0x00579720, bw3 0x00572190 (50)
+- [ ] `lookupHostByAddr` bw1 0x0059f230, bw2 0x005797b0, bw3 0x00572220 (33)
+- [ ] `getLocalHostInfo` bw1 0x0059f2a0, bw2 0x00579820, bw3 0x00572290 (24)
 - [ ] `IpAddr_ctor` bw1 0x0059f300, bw2 0x0057b780, bw3 0x005722f0 (2)
-- [ ] unnamed bw1 0x0059ca30, bw2 0x00579150, bw3 0x0056fa20 (71)
-- [ ] unnamed bw1 0x0059cef0, bw2 0x00579880, bw3 0x0056fee0 (4)
-- [ ] unnamed bw1 0x0059cf00, bw2 0x00579890, bw3 0x0056fef0 (212)
-- [ ] unnamed bw1 0x0059d330, bw2 0x00579cc0, bw3 0x00570320 (8)
-- [ ] unnamed bw1 0x0059d360, bw2 0x00579cf0, bw3 0x00570350 (75)
-- [ ] unnamed bw1 0x0059d430, bw2 0x00579dc0, bw3 0x00570420 (50)
-- [ ] unnamed bw1 0x0059d4b0, bw2 0x00579e40, bw3 0x005704a0 (203)
-- [ ] unnamed bw1 0x0059d760, bw2 0x0057a0f0, bw3 0x00570750 (85)
-- [ ] unnamed bw1 0x0059d850, bw2 0x0057a1e0, bw3 0x00570840 (146)
-- [ ] unnamed bw1 0x0059d9d0, bw2 0x0057a360, bw3 0x005709c0 (108)
-- [ ] unnamed bw1 0x0059daf0, bw2 0x0057a480, bw3 0x00570ae0 (162)
-- [ ] unnamed bw1 0x0059dd40, bw2 0x0057a6d0, bw3 0x00570d30 (21)
-- [ ] unnamed bw1 0x0059ddc0, bw2 0x0057a750, bw3 0x00570db0 (28)
-- [ ] unnamed bw1 0x0059de00, bw2 0x0057a790, bw3 0x00570df0 (13)
-- [ ] unnamed bw1 0x0059de30, bw2 0x0057a7c0, bw3 0x00570e20 (31)
-- [ ] unnamed bw1 0x0059de90, bw2 0x0057a820, bw3 0x00570e80 (8)
-- [ ] unnamed bw1 0x0059deb0, bw3 0x00570ea0 (78)
-- [ ] unnamed bw1 0x0059dfc0, bw2 0x0057a980, bw3 0x00570fb0 (44)
-- [ ] unnamed bw1 0x0059e040, bw2 0x0057aa00, bw3 0x00571030 (51)
-- [ ] unnamed bw1 0x0059e270, bw2 0x0057ac30, bw3 0x00571260 (55)
-- [ ] unnamed bw1 0x0059e350, bw3 0x00571340 (667)
-- [ ] unnamed bw1 0x0059ed20, bw3 0x00571d10 (19)
-- [ ] unnamed bw1 0x0059ed90, bw3 0x00571d80 (57)
-- [ ] unnamed bw1 0x0059ee60, bw3 0x00571e50 (25)
-- [ ] unnamed bw1 0x0059efd0, bw2 0x00579550, bw3 0x00571fc0 (154)
-- [ ] unnamed bw1 0x0059f1a0, bw2 0x00579720, bw3 0x00572190 (50)
-- [ ] unnamed bw1 0x0059f230, bw2 0x005797b0, bw3 0x00572220 (33)
-- [ ] unnamed bw1 0x0059f2a0, bw2 0x00579820, bw3 0x00572290 (24)
-- [ ] unnamed bw1 0x0059f320, bw2 0x0057b7a0, bw3 0x00572310 (9)
+- [ ] `initHostInfo` bw1 0x0059f320, bw2 0x0057b7a0, bw3 0x00572310 (9)
 - [ ] unnamed bw1 0x0059f340, bw2 0x0057b7c0, bw3 0x00572330 (10)
-- [ ] unnamed bw2 0x0057a840 (84)
-- [ ] unnamed bw2 0x0057ad10 (597)
 - [ ] unnamed bw2 0x0057b680 (70)
 
 ### `support/trstream.cpp`
 - [ ] `staticInit` bw1 0x0059f520, bw2 0x0057b9a0, bw3 0x00572510 (7)
 - [ ] `CInStream::ctor` bw1 0x0059f540, bw2 0x0057b9c0, bw3 0x00572530 (3)
 - [ ] `CInStream::dtor` bw1 0x0059f550, bw2 0x0057b9d0, bw3 0x00572540 (3)
+- [ ] `CInStream::copy` bw1 0x0059f560, bw2 0x0057b9e0, bw3 0x00572550 (3)
 - [ ] `CInStream::ungetChar` bw1 0x0059f580, bw2 0x0057ba00, bw3 0x00572570 (2)
 - [ ] `CInStream::tell` bw1 0x0059f590, bw2 0x0057ba10, bw3 0x00572580 (2)
 - [ ] `CInStream::scanf` bw1 0x0059f5a0, bw2 0x0057ba20, bw3 0x00572590 (17)
@@ -11560,30 +11360,24 @@ the retail game has it too. Sizes are in instructions.
 - [ ] `COutStreamDebug::write` bw1 0x005a1ec0, bw2 0x0057e270, bw3 0x00574eb0 (66)
 - [ ] `COutStreamDebug::seek` bw1 0x005a1f80, bw2 0x0057e330, bw3 0x00574f70 (9, differs)
 - [ ] `COutStreamDebug::tell` bw1 0x005a1fb0, bw2 0x0057e360, bw3 0x00574fa0 (9, differs)
-- [ ] unnamed bw1 0x0059f560 (3)
-- [ ] unnamed bw3 0x00572550 (3)
 
 ### `wincore/winrun.cpp`
-- [ ] unnamed bw1 0x005b25f0 (3)
-- [ ] unnamed bw1 0x005b2d90, bw3 0x00581010 (24)
-- [ ] unnamed bw1 0x005b2de0, bw3 0x00581060 (6)
-- [ ] unnamed bw1 0x005b3840, bw3 0x00581a20 (7)
-- [ ] unnamed bw1 0x005b3c90, bw2 0x005901c0, bw3 0x00581e70 (79)
-- [ ] unnamed bw1 0x005b3d70, bw3 0x00581f50 (305)
-- [ ] unnamed bw1 0x005b4190, bw2 0x00590650, bw3 0x00582370 (16)
-- [ ] unnamed bw1 0x005b41c0, bw2 0x00590680, bw3 0x005823a0 (75)
-- [ ] unnamed bw1 0x005b42d0, bw2 0x00590790, bw3 0x005824b0 (8)
-- [ ] unnamed bw1 0x005b42f0, bw2 0x005907b0, bw3 0x005824d0 (12)
-- [ ] unnamed bw1 0x005b4320, bw2 0x005907e0, bw3 0x00582500 (34)
-- [ ] unnamed bw1 0x005b43a0, bw2 0x00590860, bw3 0x00582580 (29)
-- [ ] unnamed bw1 0x005b4400, bw2 0x005908c0, bw3 0x005825e0 (26)
+- [ ] `createMainWindow` bw1 0x005b2d90, bw3 0x00581010 (24)
+- [ ] `destroyMainWindow` bw1 0x005b2de0, bw3 0x00581060 (6)
+- [ ] `closeThread` bw1 0x005b3840, bw3 0x00581a20 (7)
+- [ ] `normalizeControllerAxis` bw1 0x005b3c90, bw2 0x005901c0, bw3 0x00581e70 (79)
+- [ ] `pollController` bw1 0x005b3d70, bw2 0x005902a0, bw3 0x00581f50 (305, differs)
+- [ ] `pollAllControllers` bw1 0x005b4190, bw2 0x00590650, bw3 0x00582370 (16)
+- [ ] `initController` bw1 0x005b41c0, bw2 0x00590680, bw3 0x005823a0 (75)
+- [ ] `clearController` bw1 0x005b42d0, bw2 0x00590790, bw3 0x005824b0 (8)
+- [ ] `resetInputIdleTimers` bw1 0x005b42f0, bw2 0x005907b0, bw3 0x005824d0 (12)
+- [ ] `updateInputIdleTimers` bw1 0x005b4320, bw2 0x005907e0, bw3 0x00582500 (34)
+- [ ] `getInputIdleTime` bw1 0x005b43a0, bw2 0x00590860, bw3 0x00582580 (29)
+- [ ] `resetControllerCalibration` bw1 0x005b4400, bw2 0x005908c0, bw3 0x005825e0 (26)
+- [ ] `calibrateControllerCenter` bw1 0x005b4460, bw2 0x00590920, bw3 0x00582640 (14)
+- [ ] `saveControllerSettings` bw1 0x005b44a0, bw2 0x00590960, bw3 0x00582680 (121)
+- [ ] `loadControllerSettings` bw1 0x005b4650, bw2 0x00590b10, bw3 0x00582830 (113)
 - [ ] unnamed bw1 0x005b4450 (5)
-- [ ] unnamed bw1 0x005b4460, bw2 0x00590920, bw3 0x00582640 (14)
-- [ ] unnamed bw1 0x005b44a0, bw2 0x00590960, bw3 0x00582680 (121)
-- [ ] unnamed bw1 0x005b4650, bw2 0x00590b10, bw3 0x00582830 (113)
 - [ ] unnamed bw1 0x005b48c0, bw2 0x00590d80, bw3 0x00582aa0 (51)
-- [ ] unnamed bw2 0x0058ebb0 (3)
-- [ ] unnamed bw2 0x005902a0 (281)
 - [ ] unnamed bw2 0x00590910 (5)
-- [ ] unnamed bw3 0x00580870 (3)
 - [ ] unnamed bw3 0x00582630 (5)

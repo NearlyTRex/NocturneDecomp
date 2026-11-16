@@ -18,7 +18,7 @@
     {
       "addr": "0059d880",
       "from_addr": "0059d8d3",
-      "name": "core_muzzle.cpp_FUN_0059d880",
+      "name": "core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -32,13 +32,13 @@
     ],
     "convention": "unknown",
     "name": "core_muzzle.cpp_FUN_0059d940",
-    "signature": "void core_muzzle_cpp_FUN_0059d940(undefined4 param_1,undefined4 param_2)"
+    "signature": "void core_muzzle_cpp_FUN_0059d940(SStateMachine *param_1,char *param_2)"
   },
   "function_calls": [
     {
       "addr": "0059d8e0",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d8e0"
+      "name": "core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0"
     }
   ],
   "globals": [],
@@ -48,7 +48,7 @@
       {
         "call_addr": "0059d8d3",
         "call_type": "direct",
-        "caller": "core_muzzle.cpp_FUN_0059d880",
+        "caller": "core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -99,7 +99,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_muzzle_cpp_FUN_0059d940(uint param_1,uint param_2)",
+      "text": "void core_muzzle_cpp_FUN_0059d940(SStateMachine *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -107,7 +107,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_muzzle_cpp_FUN_0059d940(uint param_1,uint param_2)",
+      "text": "void core_muzzle_cpp_FUN_0059d940(SStateMachine *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -115,7 +115,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_muzzle_cpp_FUN_0059d8e0(param_1,param_2);",
+      "text": "core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -123,7 +123,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_muzzle_cpp_FUN_0059d8e0(param_1,param_2);",
+      "text": "core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(param_1,param_2);",
       "type": "unnamed_param"
     }
   ]

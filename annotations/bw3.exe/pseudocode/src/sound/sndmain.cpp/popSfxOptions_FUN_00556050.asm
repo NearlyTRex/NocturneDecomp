@@ -9,11 +9,11 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 004180c0
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f8c3
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0 at 0042ed1f
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048f26b
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0 at 00495434
-;   core_event.cpp_FUN_0048c2e0 at 0048f26b
 ;   core_fire.cpp_CFireball_onCollision_FUN_00499eb0 at 00499f5e
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5ee5
-;   core_game.cpp_FUN_004c4a60 at 004c4b7e
+;   core_game.cpp_CGame_playMusic_FUN_004c4a60 at 004c4b7e
 ;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9e4f
 ;   ... and 9 more
 ;

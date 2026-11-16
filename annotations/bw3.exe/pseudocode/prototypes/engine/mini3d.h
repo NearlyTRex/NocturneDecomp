@@ -305,9 +305,9 @@ void __cdecl enableClipping(void);
 // Address: 004f0300
 int __cdecl isClippingEnabled(void);
 
-// Original: engine_mini3d.cpp_FUN_004f0310
+// Original: engine_mini3d.cpp_enableCulling_FUN_004f0310
 // Address: 004f0310
-void FUN_004f0310(void);
+void __cdecl enableCulling(int enable);
 
 // Original: engine_mini3d.cpp_setRenderSurface_FUN_004f0340
 // Address: 004f0340

@@ -26,7 +26,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
@@ -76,8 +76,8 @@ section .text
     ADD EBX,0x10af8                     ; 0059f862
     PUSH EBX                            ; 0059f868
     MOV dword ptr [EBX + 0xffff1ab0],0x0 ; 0059f869
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 0059f873
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 0059f873
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 0059f878
         ;   Label: LAB_0059f878
     ADD ESP,0x4                         ; 0059f87b

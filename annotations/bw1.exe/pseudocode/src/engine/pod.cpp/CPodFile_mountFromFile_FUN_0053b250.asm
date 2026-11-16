@@ -91,8 +91,8 @@
 ;   crt_stdlib.c__qsort_FUN_005bfc68
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20
 ;   engine_dosio.cpp_findFileNormally_FUN_00478ef0
-;   engine_dosio.cpp_FUN_00478e20
 ;   engine_dosio.cpp_splitPath_FUN_00479580
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_0053be30
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
@@ -133,8 +133,8 @@ section .text
     PUSH 0x0                            ; 0053b29e
     LEA EAX,[ESP + 0x8]                 ; 0053b2a0
     PUSH EAX                            ; 0053b2a4
-    CALL engine_dosio.cpp_FUN_00478e20  ; 0053b2a5
-        ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00478e20()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20 ; 0053b2a5
+        ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 0053b2aa
     MOV EAX,ESP                         ; 0053b2ad
     PUSH EAX                            ; 0053b2af

@@ -23,13 +23,11 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
   CBoxActor *this_ptr_01;
   CVector3f *start_pos;
   CVector3f *pCVar6;
-  uint uVar7;
   CVector3f CStack_70;
   CVector3f CStack_64;
   CVector3f CStack_58;
   CVector3f CStack_4c;
-  float fStack_40;
-  float afStack_3c [2];
+  CVector3f CStack_40;
   CVector3f CStack_34;
   float fStack_28;
   float afStack_24 [2];
@@ -43,7 +41,7 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
-  core_charactr_cpp_FUN_0042b620(this_ptr);
+  core_charactr_cpp_CCharacter_renderPhantomEyes_FUN_0042b620((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   fStack_c = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                        ((CCharacter *)this_ptr,4);
@@ -63,12 +61,13 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,&this_ptr->weapon->base);
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
-      core_doc_cpp_FUN_0045bba0(this_ptr);
+      core_doc_cpp_CDoc_getThrowDirection_FUN_0045bba0(this_ptr,&CStack_40);
       pCVar6 = &CStack_1c;
-      CStack_1c.x = fStack_40;
-      *(float *)((int)&CStack_1c + (uint)bVar5 * -8 + 4) = afStack_3c[(uint)bVar5 * -2];
-      *(float *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-           afStack_3c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      CStack_1c.x = CStack_40.x;
+      *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4) =
+           *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + 4);
+      *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+           *(uint *)((int)&CStack_40 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
                 ((CDemonActor *)this_ptr,pCVar6,&CStack_70);
       pCVar6 = &CStack_64;
@@ -96,14 +95,14 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
     if (pCVar2 != (CWeapon *)0x0) {
       if ((pCVar2->weapon_type == WEAPON_TYPE_GUN) &&
          (pCVar2 != (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) {
-        uVar7 = 1;
+        iVar3 = 1;
       }
       else {
         if ((CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor == this_ptr->weapon)
         goto LAB_00459b81;
-        uVar7 = 0;
+        iVar3 = 0;
       }
-      core_doc_cpp_FUN_004567c0(this_ptr,uVar7);
+      core_doc_cpp_CDoc_updateWeaponPosition_FUN_004567c0(this_ptr,iVar3);
       (*((this_ptr->weapon->base).vtable._ub)->renderOpaque)(&this_ptr->weapon->base);
     }
 LAB_00459b81:
